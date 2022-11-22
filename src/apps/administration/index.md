@@ -8,21 +8,21 @@ You can modify the appearance and extend capabilities of the Administration by c
 
 All these can be done via [apps](https://developer.shopware.com/docs/guides/plugins/apps/administration) or [plugins](https://developer.shopware.com/docs/guides/plugins/plugins/administration).
 
-### Rules
+## Rules
 
 You can create [custom rules](https://developer.shopware.com/docs/guides/plugins/plugins/framework/rule/add-custom-rules) to handle almost anything ecommerce-related for the customer, product or cart. It gives you control over what has to happen if a specific condition is fulfilled.
 
-### Flow Builder
+## Flow Builder
 
 [Flow Builder](https://developer.shopware.com/docs/guides/plugins/plugins/framework/flow/add-flow-builder-action#add-custom-action-in-administration) lets you build workflow to automate a business process.
 
-### Admin API
+## Admin API
 
 Extending the Administration component also involves creating necessary API interfaces and services.
 
 To provide CRUD operations for every entity within Shopware, the [Admin API](https://developer.shopware.com/docs/concepts/api/admin-api) offers a full range of commerce options making it possible for an ecommerce business to handle backend data.
 
-### Code and Test
+## Code and Test
 
 Coding standards, like for many large projects, Shopware Open Source also has [coding standards](https://developer.shopware.com/docs/resources/guidelines/code). Use these standards when you contribute to the codebase or create extensions.
 
