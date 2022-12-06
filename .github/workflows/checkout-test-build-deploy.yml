@@ -84,7 +84,7 @@ jobs:
           name: full-checkout
 
       - name: Unzip artifact
-        run: unzip full-checkout.zip .
+        run: unzip full-checkout.zip
 
       - name: Build project
         run: pnpm run build
