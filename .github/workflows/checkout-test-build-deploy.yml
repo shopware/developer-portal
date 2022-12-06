@@ -35,8 +35,8 @@ jobs:
           version: 6.0.2
 
       # @T00D00 - "pnpm run build" fails with symlinks
-      - name: Clone sub-docs
-        run: sh ./.github/scripts/embed.sh
+      #- name: Clone sub-docs
+      #  run: sh ./.github/scripts/embed.sh
 
       - name: Get pnpm store directory
         id: pnpm-cache
