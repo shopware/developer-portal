@@ -1,14 +1,14 @@
 #! /usr/bin/env bash
 set -e
 
-# run this script to SYMLINK dir/docs/foo into ../developer-portal/demo/foo
+# run this script to SYMLINK dir/docs/foo into ../developer-portal/src/foo
 # this only works for DEV preview
 # ln.sh [src] [dst]
 # example: sh ../developer-portal/.github/scripts/ln.sh apps/docs/src frontends
 
 # prepare variables
 SRC="$PWD/$1"
-DST="../developer-portal/demo/$2"
+DST="../developer-portal/src/$2"
 
 # delete existent symlink
 if [ -L $DST ]; then

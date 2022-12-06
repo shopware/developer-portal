@@ -1,6 +1,31 @@
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
+//import {readSidebar} from "vitepress-shopware-docs/src/core/composables/Sidebar";
+
+// /www/developer-portal/node_modules/
+//import {readSidebar} from "vitepress-shopware-docs/src/core/composables/Sidebar";
+//import {readSidebar} from "vitepress-shopware-docs/src/core/composables/Sidebar2";
+//import {readSidebar} from "vitepress-shopware-docs/sidebarJs";
+//import {readSidebar} from "vitepress-shopware-docs/src/core/composables/Sidebar";
+//import sidebarModule from "vitepress-shopware-docs/sidebar";
+//import sidebarModule from "vitepress-shopware-docs/sidebarTs";
+//const {readSidebar} = sidebarModule;
+//import {readSidebar} from "vitepress-shopware-docs/sidebar";
+//import {readSidebar} from "vitepress-shopware-docs/src/core/composables/sidebar";
+//import core from "vitepress-shopware-docs/core";
+//console.log(core);
+import {readSidebar} from "../Sidebar";
+
+const sidebar = {
+  '/apps/': readSidebar('apps', './src/apps/'),
+  '/apps2/': [
+    {
+      text: 'Test',
+      items: []
+    }
+  ]
+};
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -15,7 +40,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   head: [],
 
   themeConfig: {
-    // sidebar,
+    sidebar,
 
     // remove if edit not needed
     editLink: {

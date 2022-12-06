@@ -8,7 +8,7 @@ set -e
 
 # prepare variables
 SRC="$PWD/$1"
-DST="../developer-portal/demo/$2"
+DST="../developer-portal/src/$2"
 
 # delete existent symlink
 if [ -d $DST ]; then
