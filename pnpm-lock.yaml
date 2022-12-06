@@ -4,14 +4,14 @@ specifiers:
   terser: ^5.15.1
   vite: 3.2.5
   vitepress: 1.0.0-alpha.30
-  vitepress-shopware-docs: ^0.2.0b
+  vitepress-shopware-docs: ^0.2.0-beta.2
   vue: ^3.2.41
 
 dependencies:
   terser: 5.16.1
   vite: 3.2.5_terser@5.16.1
   vitepress: 1.0.0-alpha.30_terser@5.16.1
-  vitepress-shopware-docs: 0.2.0-beta_h3cbgll5qfvt34uen3kczerac4
+  vitepress-shopware-docs: 0.2.0-beta.2_h3cbgll5qfvt34uen3kczerac4
   vue: 3.2.45
 
 packages:
@@ -4660,8 +4660,8 @@ packages:
       vitepress: 1.0.0-alpha.30_terser@5.16.1
     dev: false
 
-  /vitepress-shopware-docs/0.2.0-beta_h3cbgll5qfvt34uen3kczerac4:
-    resolution: {integrity: sha512-6SxV64gFCtRWh0OVtuuC7yYl2RrfDAebNLLFAKEmoshl/hpLU0oBSAvevFazqP5HVVXcsgyPhlb+5fxGwUb8pQ==}
+  /vitepress-shopware-docs/0.2.0-beta.2_h3cbgll5qfvt34uen3kczerac4:
+    resolution: {integrity: sha512-5A9Tl3VWkTQoowWI7UrShy55nkcsDtParqPWe59IfNNY5w9evTTL0mxuEMZAVGNFdPb89q7zdEptCugKXKkEWg==}
     dependencies:
       '@docsearch/css': 3.3.0
       '@docsearch/js': 3.3.0
