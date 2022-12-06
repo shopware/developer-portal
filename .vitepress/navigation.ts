@@ -1,36 +1,7 @@
 
-import {readSidebar} from "../node_modules/vitepress-shopware-docs/src/core/composables/Sidebar";
-//import {readSidebar} from "vitepress-shopware-docs/src/core/composables/Sidebar";
-//import {readSidebar} from "vitepress-shopware-docs";
+import {buildSidebarNav} from "../node_modules/vitepress-shopware-docs/src/core/composables/Sidebar";
 
-const multiSidebar = (links) => links.reduce((data, item) => {
-    const {link, text, items, from, repo} = item;
-
-    // build sidebar
-    if (link) {
-        data.sidebar[link] = readSidebar(link.substring(1, link.length - 2), from, false);
-    }
-
-    // add to navigation
-    const nav = {
-        text,
-        link,
-    };
-    if (link) {
-        nav.activeMatch = `^${link}`;
-    }
-    if (repo) {
-        nav.repo = repo;
-    }
-    if (items) {
-        nav.items = items;
-    }
-    data.nav.push(nav);
-
-    return data;
-}, {sidebar: {}, nav: []});
-
-export default multiSidebar([
+export default buildSidebarNav([
     {
         link: '/apps/',
         text: 'Apps',
@@ -107,19 +78,3 @@ export default multiSidebar([
         ]
     },
 ]);
-
-/*const sidebar = {
-  '/apps/': readSidebar('apps', './src/apps/'),
-  '/frontends/': readSidebar('frontends', './src/frontends/'),
-  '/integrations/': readSidebar('integrations', './src/integrations/'),
-  '/resources/': readSidebar('resources', './src/resources/'),
-  '/themes/': readSidebar('themes', './src/themes/'),
-};
-
-const nav = [
-  {
-    activeMatch: "^/apps/",
-    text: "Apps2",
-    link: '/apps/'
-  },
-];*/
