@@ -55,10 +55,13 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
+      - name: Zip folder
+        run: zip -r full-checkout.zip .
+
       - uses: actions/upload-artifact@v3
         with:
           name: full-checkout
-          path: ./
+          path: full-checkout.zip
 
   test:
     name: Test
@@ -80,14 +83,20 @@ jobs:
         with:
           name: full-checkout
 
+      - name: Unzip artifact
+        run: unzip full-checkout.zip .
+
       - name: Build project
         run: pnpm run build
+
+      - name: Zip folder
+        run: zip -r full-build.zip .vitepress/dist/
 
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
           name: full-build
-          path: .vitepress/dist/
+          path: full-build.zip
 
   deploy:
     name: Deploy build
@@ -101,6 +110,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: full-build
+
+      - name: Unzip artifact
+        run: |
+          mkdir -p .vitepress/dist
+          unzip full-build.zip .vitepress/dist
 
       - name: Deploy
         uses: reggionick/s3-deploy@v3
