@@ -11,6 +11,7 @@ on:
     paths:
       - 'src/*'
       - '.github/scripts/embed.sh'
+      - '.github/workflows/*'
   pull_request:
     branches:
       - main
@@ -35,7 +36,7 @@ jobs:
 
       # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
-        run: ./.github/scripts/embed.sh
+        run: sh ./.github/scripts/embed.sh
 
       - name: Get pnpm store directory
         id: pnpm-cache
