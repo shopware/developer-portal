@@ -129,15 +129,35 @@ jobs:
           unzip full-build.zip
           ls -la .vitepress/dist
 
-      - name: Deploy
-        uses: reggionick/s3-deploy@v3
+      #- name: Deploy
+      #  uses: reggionick/s3-deploy@v3
+      #  with:
+      #    folder: .vitepress/dist
+      #    bucket: ${{ secrets.STAGING_S3_BUCKET }}
+      #    bucket-region: ${{ secrets.STAGING_S3_BUCKET_REGION }}
+      #    dist-id: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
+      #    invalidation: /
+      #    delete-removed: true
+      #    no-cache: true
+      #    #private: false
+      #    filesToInclude: ".*/*,*/*,**"
+
+      - uses: jakejarvis/s3-sync-action@master
         with:
-          folder: .vitepress/dist
-          bucket: ${{ secrets.STAGING_S3_BUCKET }}
-          bucket-region: ${{ secrets.STAGING_S3_BUCKET_REGION }}
-          dist-id: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
-          invalidation: /
-          delete-removed: true
-          no-cache: true
-          #private: false
-          filesToInclude: ".*/*,*/*,**"
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.STAGING_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.STAGING_S3_BUCKET_REGION }}
+          SOURCE_DIR: '.vitepress/dist'
+
+      # Invalidate Cloudfront (this action)
+      - name: invalidate
+        uses: chetan/invalidate-cloudfront-action@master
+        env:
+          DISTRIBUTION: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
+          PATHS: '/*'
+          AWS_REGION: ${{ secrets.STAGING_S3_BUCKET_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
