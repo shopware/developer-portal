@@ -139,5 +139,5 @@ jobs:
           invalidation: /
           delete-removed: true
           no-cache: true
-          private: false
+          #private: false
           filesToInclude: ".*/*,*/*,**"
