@@ -106,7 +106,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           if-no-files-found: error
-          name: full-build-${{ GITHUB_SHA }}
+          name: full-build-${{ github.sha }}
           path: full-build.zip
 
   deploy:
@@ -121,7 +121,7 @@ jobs:
 
       - uses: actions/download-artifact@v3
         with:
-          name: full-build
+          name: full-build-${{ github.sha }}
 
       - name: Unzip artifact
         run: |
