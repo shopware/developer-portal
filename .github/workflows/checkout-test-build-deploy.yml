@@ -126,7 +126,7 @@ jobs:
       - name: Unzip artifact
         run: |
           mkdir -p .vitepress/dist
-          unzip full-build.zip .vitepress/dist
+          unzip full-build.zip -d .vitepress/dist
 
       - name: Deploy
         uses: reggionick/s3-deploy@v3
