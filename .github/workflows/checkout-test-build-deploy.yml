@@ -56,61 +56,61 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Zip folder
-        run: zip -r full-checkout.zip .
+#      - name: Zip folder
+#        run: zip -r full-checkout.zip .
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: full-checkout
-          path: full-checkout.zip
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: full-checkout
+#          path: full-checkout.zip
 
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: checkout
-    steps:
+#  test:
+#    name: Test
+#    runs-on: ubuntu-latest
+#    timeout-minutes: 5
+#    needs: checkout
+#    steps:
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: full-checkout
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: full-checkout
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+#      - name: Install Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: 18
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
+#      - name: Install pnpm
+#        uses: pnpm/action-setup@v2
+#        with:
+#          version: 7
 
       - name: Test
         run: pnpm run test
 
-  build:
-    name: Build VitePress
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: checkout
-    steps:
+#  build:
+#    name: Build VitePress
+#    runs-on: ubuntu-latest
+#    timeout-minutes: 5
+#    needs: checkout
+#    steps:
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: full-checkout
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: full-checkout
 
-      - name: Unzip artifact
-        run: unzip full-checkout.zip
+#      - name: Unzip artifact
+#        run: unzip full-checkout.zip
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+#      - name: Install Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: 18
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
+#      - name: Install pnpm
+#        uses: pnpm/action-setup@v2
+#        with:
+#          version: 7
 
       - name: Build project
         run: pnpm run build
@@ -132,7 +132,8 @@ jobs:
     name: Deploy build
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [test, build]
+    #needs: [test, build]
+    needs: checkout
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
