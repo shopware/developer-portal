@@ -55,46 +55,46 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-#      - name: Zip folder
-#        run: zip -r full-checkout.zip .
+      - name: Zip folder
+        run: zip -r full-checkout.zip .
 
-#      - uses: actions/upload-artifact@v3
-#        with:
-#          name: full-checkout
-#          path: full-checkout.zip
+      - uses: actions/upload-artifact@v3
+        with:
+          name: full-checkout
+          path: full-checkout.zip
 
-#  test:
-#    name: Test
-#    runs-on: ubuntu-latest
-#    needs: checkout
-#    steps:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: checkout
+    steps:
 
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: full-checkout
+      - uses: actions/download-artifact@v3
+        with:
+          name: full-checkout
 
-#  build:
-#    name: Build VitePress
-#    runs-on: ubuntu-latest
-#    needs: checkout
-#    steps:
+  build:
+    name: Build VitePress
+    runs-on: ubuntu-latest
+    needs: checkout
+    steps:
 
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: full-checkout
+      - uses: actions/download-artifact@v3
+        with:
+          name: full-checkout
 
-#      - name: Unzip artifact
-#        run: unzip full-checkout.zip
+      - name: Unzip artifact
+        run: unzip full-checkout.zip
 
-#      - name: Install Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 18
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-#      - name: Install pnpm
-#        uses: pnpm/action-setup@v2
-#        with:
-#          version: 6.0.2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.0.2
 
       - name: Build project
         run: pnpm run build
@@ -129,6 +129,7 @@ jobs:
           unzip full-build.zip
           ls -la .vitepress/dist
 
+      # disabled due to public bucket and disabled ACL
       #- name: Deploy
       #  uses: reggionick/s3-deploy@v3
       #  with:
