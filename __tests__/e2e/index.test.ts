@@ -1,0 +1,32 @@
+describe('render correct content', async () => {
+    beforeAll(async () => {
+        await goto('/')
+    })
+
+    test('navigation', async() => {
+        const navBarLocator = page.locator('.VPNavBarMenu > .VPNavBarMenuLink');
+        const links = await navBarLocator.allTextContents()
+        expect(links).toEqual(['Apps', 'Themes', 'Frontends', 'Integrations'])
+
+        const subNavBarLocator = page.locator('.VPNavBarMenu > .VPNavBarMenuGroup .vt-flyout-button-text');
+        const groupLinks = await subNavBarLocator.allTextContents()
+        expect(groupLinks).toEqual(['Resources '])
+    })
+
+    test('main content', async () => {
+        const h1Locator = page.locator('.VPContent h1')
+
+        const h1Contents = await h1Locator.allTextContents()
+
+        expect(h1Contents).toEqual(['Shopware Developer Documentation', 'Explore Resources'])
+    })
+
+    test('outline', async () => {
+        const outlineLinksLocator = page.locator(
+            '.VPDocAsideOutline .root .outline-link'
+        )
+
+        const outlineLinksCount = await outlineLinksLocator.count()
+        //expect(outlineLinksCount).toEqual(4)
+    })
+})

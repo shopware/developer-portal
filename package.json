@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run -r __tests__/e2e",
+    "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "dev": "vitepress",
     "build": "vitepress build",
     "serve": "vitepress serve"
@@ -18,6 +19,14 @@
     "vitepress": "1.0.0-alpha.30",
     "vitepress-shopware-docs": "^0.2.0-beta.3",
     "vue": "^3.2.41"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.28.1",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "get-port": "^6.1.2",
+    "playwright-chromium": "^1.28.1",
+    "vitest": "^0.25.6",
+    "@vue/test-utils": "^2.2.6"
   },
   "pnpm": {
     "peerDependencyRules": {
