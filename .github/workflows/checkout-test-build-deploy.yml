@@ -37,6 +37,8 @@ jobs:
 
       # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
+        env:
+          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
         run: sh ./.github/scripts/embed.sh
 
       #- name: Get pnpm store directory
