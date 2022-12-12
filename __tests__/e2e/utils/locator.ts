@@ -10,3 +10,8 @@ export async function eachLocator(elements, callback) {
 }
 
 export const port = process.env.PORT;
+export const isBuilt = process.env.VITE_TEST_BUILD;
+
+export const host = false && isBuilt
+    ? `http://localhost`
+    : `http://localhost:${port}`;

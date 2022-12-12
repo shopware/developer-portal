@@ -1,5 +1,5 @@
 import {expect, Locator, Page} from "@playwright/test";
-import {eachLocator, port} from "../utils/locator";
+import {eachLocator, host} from "../utils/locator";
 
 // https://playwright.dev/docs/api/class-locator
 
@@ -22,7 +22,7 @@ export class Embedded {
 
     async hasSidebarSections(num: Number) {
         const sidebarLocator = this.page.locator('.VPSidebar h2.title-text');
-        expect(await sidebarLocator.count() >= 5).toEqual(true);
+        expect(await sidebarLocator.count() >= num).toEqual(true);
     }
 
     async hasGitHubLink(repo: string) {
@@ -40,8 +40,14 @@ export class Embedded {
         expect(hrefs.length > 10).toEqual(true);
 
         for (let index = 0; index < hrefs.length; index++) {
-            const response = await this.page.goto(`http://localhost:${port}${hrefs[index]}`);
-            expect(response.status()).toEqual(200);
+            const href = hrefs[index];
+            // @T00D00
+            if (href.endsWith('/')) {
+                continue;
+            }
+            console.log(href);
+            const response = await this.page.goto(`${host}${href}`);
+            expect(response.status(), `${href} CODE 200`).toEqual(200);
         }
     }
 }
