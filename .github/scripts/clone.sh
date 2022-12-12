@@ -26,7 +26,7 @@ fi
 
 # clone into tmp dir
 echo "Cloning branch $2 in repo $1"
-git clone --depth 1 -b $2 ssh://$1 /tmp/mount-all
+git clone --depth 1 -b $2 https://$1 /tmp/mount-all
 
 # create deep dir
 echo "Creating deep dir $DST"
