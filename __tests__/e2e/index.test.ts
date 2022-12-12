@@ -29,4 +29,14 @@ describe('render correct content', async () => {
         const outlineLinksCount = await outlineLinksLocator.count()
         //expect(outlineLinksCount).toEqual(4)
     })
+
+    test('no sidebar', async() => {
+        const sidebarLocator = page.locator('.VPSidebar h2.title-text');
+        expect(await sidebarLocator.count()).to.equal(0);
+    })
+
+    test('has search', async() => {
+        const searchLocator = page.locator('#docsearch');
+        expect(await searchLocator).not.to.be.null;
+    })
 })

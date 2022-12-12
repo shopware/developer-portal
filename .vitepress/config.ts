@@ -17,14 +17,21 @@ export default defineConfigWithTheme<ThemeConfig>({
   head: [],
 
   themeConfig: {
-    nav: [],
-    sidebar: {},
     ...navigation, // add sidebar and nav config
 
     // remove if edit not needed
     editLink: {
       repo: "shopware/developer-documentation-vuepress",
       text: "Edit this page on GitHub",
+    },
+
+    algolia: {
+      indexName: "",
+      appId: "",
+      apiKey: "",
+      // searchParameters: {
+      //   facetFilters: ["version:v1"],
+      // },
     },
   },
 
