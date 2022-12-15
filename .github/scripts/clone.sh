@@ -29,6 +29,14 @@ fi
 echo "Cloning branch $2 in repo $1"
 git clone --depth 1 -b $2 https://$1 /tmp/mount-all
 
+# special flow
+if [ "$5" = "meteor-icon-kit" ]; then
+echo "Running additional steps"
+  # requires FIGMA secrets
+  npm run build --prefix /tmp/mount-all
+  npm run build --prefix /tmp/mount-all/docs
+fi
+
 # create deep dir
 echo "Creating deep dir $DST"
 mkdir -p ${DST}
