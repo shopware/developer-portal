@@ -9,6 +9,7 @@ set -e
 echo "\nCloning to $4 from $3 in $2@$1"
 SRC="/tmp/mount-all/$3"
 DST="./src/$4"
+DST="../developer-portal/src/$4"
 
 # delete existent dir
 if [ -d $DST ]; then
@@ -40,6 +41,6 @@ rm -r $DST
 echo "Copying $SRC to $DST"
 cp -R ${SRC} ${DST}
 
-# cleanup tmp dri
+# cleanup tmp dir
 echo "Cleaning up"
 rm -rf /tmp/mount-all

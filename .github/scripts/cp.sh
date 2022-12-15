@@ -24,7 +24,14 @@ echo "Creating deep dir $DST"
 
 # create a new symlink
 echo "Copying $SRC to $DST"
-cp -R ${SRC} ${DST}
+#cp -R ${SRC} ${DST} -not -path ./node_modules -not -path ./.vitepress
+rsync -a ${SRC}/ ${DST} \
+ --exclude=node_modules \
+ --exclude=.vitepress \
+ --exclude=.gitignore \
+ --exclude=package.json \
+ --exclude=package-lock.json \
+ --exclude=pnpm-lock.yaml
 
 # run dev preview
 # echo "Building parent"

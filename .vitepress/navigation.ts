@@ -52,7 +52,7 @@ export default buildSidebarNav([
                     },
                     {
                         text: "Meteor Icon Kit",
-                        link: "/resources/meteor-icon-kit",
+                        link: "/resources/meteor-icon-kit/",
                         repo: 'github.com/shopware/meteor-icon-kit',
                     },
                     {
