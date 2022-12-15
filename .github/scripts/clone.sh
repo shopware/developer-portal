@@ -33,8 +33,9 @@ git clone --depth 1 -b $2 https://$1 /tmp/mount-all
 if [ "$5" = "meteor-icon-kit" ]; then
 echo "Running additional steps"
   # requires FIGMA secrets
-  npm run build --prefix /tmp/mount-all
-  npm run build --prefix /tmp/mount-all/docs
+  pnpm i --dir /tmp/mount-all
+  pnpm run build --dir /tmp/mount-all
+  pnpm run build --dir /tmp/mount-all/docs
 fi
 
 # create deep dir
