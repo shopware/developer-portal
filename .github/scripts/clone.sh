@@ -34,8 +34,8 @@ if [ "$5" = "meteor-icon-kit" ]; then
 echo "Running additional steps"
   # requires FIGMA secrets
   pnpm i --dir /tmp/mount-all
-  pnpm run build --dir /tmp/mount-all
-  pnpm run build --dir /tmp/mount-all/docs
+  pnpm run --dir /tmp/mount-all build
+  pnpm run --dir /tmp/mount-all/docs build
 fi
 
 # create deep dir
