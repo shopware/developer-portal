@@ -1,7 +1,9 @@
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
+import ViteRequireContext from '@originjs/vite-plugin-require-context'
 
+import {copyAdditionalAssets} from "./helpers";
 import navigation from "./navigation";
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -53,9 +55,22 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true,
     },
+    plugins: [
+      ViteRequireContext({
+        projectBasePath: `${process.cwd()}/src`
+      })
+    ],
   },
 
   vue: {
     reactivityTransform: true,
   },
+  async buildEnd(){
+
+    copyAdditionalAssets([
+      'resources/meteor-icon-kit/public/icons/regular',
+      'resources/meteor-icon-kit/public/icons/solid',
+    ]);
+
+  }
 });
