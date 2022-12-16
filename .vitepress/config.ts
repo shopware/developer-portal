@@ -5,6 +5,9 @@ import ViteRequireContext from '@originjs/vite-plugin-require-context'
 
 import {copyAdditionalAssets} from "./helpers";
 import navigation from "./navigation";
+import {readSidebar} from "../node_modules/vitepress-shopware-docs/src/core/composables/Sidebar";
+
+navigation.sidebar['/resources/admin-extension-sdk/'] = readSidebar('/resources/admin-extension-sdk/', './src/resources/admin-extension-sdk/');
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,

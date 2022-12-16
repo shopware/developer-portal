@@ -47,7 +47,7 @@ export default buildSidebarNav([
                 items: [
                     {
                         text: "Admin Extension SDK",
-                        link: "/resources/api/admin-extension-sdk",
+                        link: "/resources/admin-extension-sdk/",
                         repo: 'shopware/admin-extension-sdk',
                     },
                     {
