@@ -56,6 +56,7 @@ jobs:
       # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
         env:
+          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
           GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
