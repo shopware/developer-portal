@@ -1,7 +1,6 @@
+import {buildSidebarNav, readSidebar} from "../node_modules/vitepress-shopware-docs/src/core/composables/Sidebar";
 
-import {buildSidebarNav} from "../node_modules/vitepress-shopware-docs/src/core/composables/Sidebar";
-
-export default buildSidebarNav([
+const navigation = buildSidebarNav([
     {
         link: '/apps/',
         text: 'Apps',
@@ -57,8 +56,8 @@ export default buildSidebarNav([
                     },
                     {
                         text: "Component Library",
-                        link: "/resources/meteor-component-library",
-                        repo: 'shopware/meteor-component-library',
+                        link: "/resources/meteor-component-library/",
+                        repo: 'shopware/meteor-component-library/',
                     }
                 ]
             },
@@ -78,3 +77,8 @@ export default buildSidebarNav([
         ]
     },
 ]);
+
+// added to admin-extension-sdk/.github/scripts/docs.yml
+navigation.sidebar['/resources/admin-extension-sdk/'] = readSidebar('resources/admin-extension-sdk', './src/resources/admin-extension-sdk/');
+
+export default navigation;

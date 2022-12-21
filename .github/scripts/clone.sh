@@ -29,13 +29,10 @@ fi
 echo "Cloning branch $2 in repo $1"
 git clone --depth 1 -b $2 https://$1 /tmp/mount-all
 
-# special flow
-if [ "$5" = "meteor-icon-kit" ]; then
-echo "Running additional steps"
-  # requires FIGMA secrets
-  pnpm i --dir /tmp/mount-all
-  pnpm run --dir /tmp/mount-all build
-  pnpm run --dir /tmp/mount-all/docs build
+# special flows
+if [ -f /tmp/mount-all/.github/scripts/docs-after-clone.sh ]; then
+  echo "Running additional steps"
+  sh /tmp/mount-all/.github/scripts/docs-after-clone.sh
 fi
 
 # create deep dir
