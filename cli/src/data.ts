@@ -3,6 +3,8 @@ import {env} from "process";
 export const repositories = [
     /*{
         name: 'shopware/docs',
+        src: 'docs',
+        dst: 'docs/docs',
     },*/
     {
         name: 'shopware/frontends',

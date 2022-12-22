@@ -1,4 +1,3 @@
-// @ts-ignore
 import {JSONStorage} from "node-localstorage";
 import {output} from "./output";
 import {resolve} from "path";

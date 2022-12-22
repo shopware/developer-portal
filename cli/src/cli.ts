@@ -2,7 +2,16 @@ import {Command} from "commander";
 import {commands} from './commands';
 import {output} from './output';
 
-const createCommand = (program, {name, description, options, handler, args, commands}) => {
+export interface MyCommand {
+    name: string,
+    handler: Function,
+    description: string,
+    options?: [],
+    args?: [],
+    commands?: MyCommand[]
+}
+
+const createCommand = (program: Command, {name, description, options, handler, args, commands}: MyCommand) => {
     // add command
     const command = program
         .command(name)
@@ -24,7 +33,11 @@ const createCommand = (program, {name, description, options, handler, args, comm
     command.action(() => output.log(`Available commands: \n${availableCommands}`))
 }
 
-const registerCommand = (command, {args, options, handler}) => {
+const registerCommand = (command: Command, {
+    args,
+    options,
+    handler
+}: { args?: [], options?: [], handler: Function }) => {
     // register arguments
     args && args.forEach(({name, description, defaultValue, example}) => {
         command.command(`<${name}>`, description || name, defaultValue || example || null);
@@ -40,16 +53,17 @@ const registerCommand = (command, {args, options, handler}) => {
         try {
             const {verbose, debug} = options.opts();
 
-            if (true || verbose) {
+            if (verbose) {
                 output.setVerbose(true);
             }
 
-            if (true || debug) {
+            if (debug) {
                 output.setDebug(true);
             }
 
+            // @ts-ignore
             (handler || ((str, options, cli) => {
-                output.error('Empty handler', options.args);
+                output.error('Empty handler');
             }))(str, options, cli);
         } catch (e) {
             output.error(e);
@@ -63,7 +77,7 @@ const cli = {
 
         program
             .name('docs-cli')
-            .description('CLI for Shopware Docs')
+            .description('Shopware Docs CLI')
             .version('0.0.1');
 
         // more data

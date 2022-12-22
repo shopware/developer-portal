@@ -1,4 +1,3 @@
-import getDeveloperPortalPath from "../flow/getDeveloperPortalPath";
 import {output} from "../output";
 import {pnpm} from "../helpers";
 
@@ -7,12 +6,10 @@ export default {
     description: 'Preview docs',
     options: [],
     handler: async ({}, program: any) => {
+        output.notice('Previewing docs');
 
-        const dir = await getDeveloperPortalPath();
+        await pnpm('dev');
 
-        output.log('Previewing docs in', dir);
-        await pnpm('dev', [], {dir});
-        output.log('Previewed');
-
+        output.success('Docs previewed');
     }
 };

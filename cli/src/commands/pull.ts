@@ -1,19 +1,17 @@
-import getDeveloperPortalPath from "../flow/getDeveloperPortalPath";
+import {pnpm, sh} from "../helpers";
+import {output} from "../output";
 
 export default {
     name: 'pull',
-    description: 'Pull docs and install new dependencies',
+    description: 'Pull docs and install new dependencies in developer-portal',
     options: [],
     handler: async ({}, program: any) => {
+        output.notice('Pulling from git');
+        await sh('git', ['pull', '--ff']);
 
-        const dir = await getDeveloperPortalPath();
+        output.notice('Installing new packages');
+        await pnpm('i');
 
-        console.log(
-            'PULLING',
-            dir,
-            'git pull --ff',
-            'pnpm i',
-        );
-
+        output.success('Up to date');
     }
 };

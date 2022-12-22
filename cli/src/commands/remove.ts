@@ -1,14 +1,14 @@
-import {optionDst} from "../options";
-import getDeveloperPortalPath from "../flow/getDeveloperPortalPath";
+import {output} from "../output";
 
 export default {
     name: 'remove',
-    description: 'Remove <dst>',
-    options: [
-        optionDst
-    ],
-    handler: async (options: object, program: any) => {
-        const dir = await getDeveloperPortalPath();
+    description: 'Remove <dst> in developer-portal',
+    options: [],
+    handler: async () => {
+        // @T00D00 - implement!
+        return output.error('NOT IMPLEMENTED');
+
+        output.notice('Removing symlinks and copied dirs');
 
         // other directories are embedded (symlinked/copied) and can be removed
         const core = [
@@ -18,5 +18,7 @@ export default {
             'resources/api',
             'themes',
         ];
+
+        output.notice('Project cleaned up');
     }
 };

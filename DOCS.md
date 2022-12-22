@@ -8,37 +8,35 @@ Usage: docs-cli [options] [command]
 CLI for Shopware Docs
 
 Options:
-  -V, --version      output the version number
-  --vv               --verbose
-  --vvv              --debug
-  -h, --help         display help for command
+  -V, --version     output the version number
+  --vv              --verbose
+  --vvv             --debug
+  -h, --help        display help for command
 
 Commands:
-  install            Update aliases/scripts in package.json
-  embed              Clone <src> from <branch> in <repository> to <dst>
-  clone [options]    Clone <src> from <branch> in <repository> to <dst>
-  copy [options]     Copy <src> to <dst>
-  symlink [options]  Symlink <src> from <branch> in <repository> to <dst>
-  remove [options]   Remove <dst>
-  rsync [options]    Reync <src> to <dst>
-  preview            Preview docs
-  build              Build docs
-  test [options]     Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run test on the build.
-  pull               Pull docs and install new dependencies
-  help [command]     display help for command
+  install           Update aliases/scripts in package.json
+  embed [options]   Embed all docs repositories to developer-portal
+  clone [options]   Clone <src> from <branch> in <repository> to <dst> in developer-portal
+  link [options]    Copy <src> from current working directory to <dst> in developer-portal
+  remove [options]  Remove <dst> in developer-portal
+  preview           Preview docs
+  build             Build docs in developer-portal
+  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run test on the build instead of dev server.
+  pull              Pull docs and install new dependencies in developer-portal
+  help [command]    display help for command
 ```
 
 # TL;DR
 
 - Clone `shopware/developer-portal` repository and install dependencies (`pnpm i`)
 - _(one-time)_ Set up aliases in your `package.json` - `../developer-portal/docs-cli install`
-- Preview local documentation - `pnpm run docs:preview --symlink` (or `--copy` or `--rsync`)
+- _(one-time)_ Link local documentation - `pnpm run docs:link` (or `--symlink` (default) or `--copy` or `--rsync`)
+- Preview local documentation - `pnpm run docs:preview`
 
-You might also want/need to:
+You might also want or need to:
 
-- _(optional)_ Embed some or all docs from remote repositories directly from your project - `pnpm run docs:embed`
-- _(every now and then)_ Pull changes in `developer-portal` directly from your project - `pnpm run docs:pull`
-- _(one-time) Symlink your docs by running `pnpm run docs:symlink`
+- Optionally, embed some or all docs from remote repositories directly from your project - `pnpm run docs:embed`
+- Occasionally, pull changes in `developer-portal` directly from your project - `pnpm run docs:pull`
 
 # Setup
 
@@ -58,8 +56,8 @@ $ pnpm i
 The tool will ask you to configure your _root_ projects directory and `developer-portal` repository on-the-fly when it
 needs to reference the correct dir.
 
-For ease of use, CLI will create a `.docs-cli` directory in your root/projects dir and save some configuration (env vars
-for Figma, GitLab credentials, ...):
+CLI will create a `.docs-cli` directory in your root/projects dir and save some configuration (directory configuration,
+env vars for Figma, GitLab credentials, ...):
 
 - `/www/.docs-cli` if you have your projects located in `/www/$project`
 - `/home/user/projects/.docs-cli` if you have your projects located in `/home/user/projects/$project`
@@ -74,7 +72,7 @@ running `../developer-portal/docs-cli install` from your project root and select
 $ ../developer-portal/docs-cli install
 ```
 
-This will alter your `package.json` scripts with some aliases:
+This will alter your `package.json` scripts with selected aliases:
 
 ```json
 {
@@ -91,7 +89,7 @@ This will alter your `package.json` scripts with some aliases:
 ## Mount all docs
 
 Clone all repositories into your `developer-portal` checkout. This is only needed for the `build` and `test` processes
-to work.
+to work because they require all docs to be properly mounted.
 
 ```sh
 $ pnpm run docs:embed
@@ -99,8 +97,8 @@ $ pnpm run docs:embed
 $ ../developer-portal/docs-cli embed
 ```
 
-You can use `--quick` flag for quick/input-less process, or you can skip the flag and override `branch`
-or `organization` (for forked repositories).
+You can use `--configure` (or `-c`) and manually enter custom branches and organizations for testing feature branches
+and forked repositories.
 
 ## Remove mount points
 
@@ -134,19 +132,14 @@ Keep your local `developer-portal` checkout up to date by running the `pull` com
 
 ```sh
 $ pnpm run docs:pull
+# or
+$ ../developer-portal/docs-cli pull
+# or
+$ cd ../developer-portal && git pull --ff && pnpm i
 ```
 
-This command will pull changes on your current branch and install dependencies.
+This command will pull changes on your current branch and install the latest dependencies.
 
 ## More
 
-### Symlink, rsync, copy and clone
-
-You can use those commands to mount your local repositories (instead of using `embed` which clones remote repositories):
-
-- `symlink` - you can use symlinking method for a preview. Symlinking won't work with `build` command because of some
-  issues with symlinks and rollup bundler
-- `rsync` - (long-running process) do this when you are actively developing your docs and you want to build docs
-  with `build` command
-- `copy` - do this for a one-time copy with `cp` command when you want to build docs with `build` command
-- `clone` - `embed` command is a wrapper for `clone` command as configured in [./cli/src/data.ts](./cli/src/data.ts)
+See default repository and branch configuration in [./cli/src/data.ts](./cli/src/data.ts).

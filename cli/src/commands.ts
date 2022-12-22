@@ -1,25 +1,31 @@
 import clone from "./commands/clone";
 import install from "./commands/install";
-import copy from "./commands/copy";
-import symlink from "./commands/symlink";
+import link from "./commands/link";
 import remove from "./commands/remove";
-import rsync from "./commands/rsync";
 import preview from "./commands/preview";
 import build from "./commands/build";
 import test from "./commands/test";
 import pull from "./commands/pull";
 import embed from "./commands/embed";
+import {MyCommand} from "./cli";
 
-export const commands = [
+export const commands: MyCommand[] = [
+    // @ts-ignore
     install,
+    // @ts-ignore
     embed,
+    // @ts-ignore
     clone,
-    copy,
-    symlink,
+    // @ts-ignore
+    link,
+    // @ts-ignore
     remove,
-    rsync,
+    // @ts-ignore
     preview,
+    // @ts-ignore
     build,
+    // @ts-ignore
     test,
+    // @ts-ignore
     pull,
 ];

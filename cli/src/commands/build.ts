@@ -1,18 +1,15 @@
 import {output} from "../output";
-import getDeveloperPortalPath from "../flow/getDeveloperPortalPath";
 import {pnpm} from "../helpers";
 
 export default {
     name: 'build',
-    description: 'Build docs',
+    description: 'Build docs in developer-portal',
     options: [],
-    handler: async ({}, program: any) => {
+    handler: async () => {
+        output.notice('Building docs');
 
-        const dir = await getDeveloperPortalPath();
+        await pnpm('build');
 
-        output.log('Building docs in', dir);
-        await pnpm('build', [], {dir});
-        output.log('Built');
-
+        output.success('Docs built');
     }
 };

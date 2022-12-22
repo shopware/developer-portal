@@ -19,34 +19,24 @@ class Output {
 
     setVerbose(verbose: boolean) {
         this.isVerbose = verbose;
-
-        return this;
     }
 
     setDebug(debug: boolean) {
         this.isDebug = debug;
-
-        return this;
     }
 
     verbose(...messages: string[]) {
         if (this.isDebug) {
             messages.forEach((message) => console.log(warn(message)));
         }
-
-        return this;
     }
 
     debug(...messages: string[]) {
         console.log(...messages);
-
-        return this;
     }
 
     log(...messages: string[]) {
         console.log(...messages);
-
-        return this;
     }
 
     lines(...lines: string[]) {
@@ -55,8 +45,6 @@ class Output {
 
     warn(...messages: string[]) {
         messages.forEach((message) => console.log(this.makeWarn(message)));
-
-        return this;
     }
 
     makeWarn(message: string) {
@@ -71,7 +59,7 @@ class Output {
         return notice(message);
     }
 
-    error(...messages: string[]) {
+    error(...messages: string[] | any[]) {
         messages.forEach((message) => console.log(this.makeError(message)));
 
         return this;

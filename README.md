@@ -1,6 +1,15 @@
 # Shopware Developer Portal
 
-This repository contains
+This repository extends
+[shopware/developer-documentation-vitepress](https://github.com/shopware/developer-documentation-vitepress) and embeds:
+
+- [shopware/docs](https://github.com/shopware/docs)
+- [shopware/frontends](https://github.com/shopware/frontends)
+- [shopware/admin-extension-sdk](https://github.com/shopware/admin-extension-sdk)
+- [shopware/meteor-icon-kit](https://github.com/shopware/meteor-icon-kit)
+- [shopware/meteor-component-library](https://github.com/shopware/meteor-component-library)
+
+See [./DOCS.md](./DOCS.md) for more info about Shopware Docs CLI.
 
 # Setup
 
@@ -36,13 +45,4 @@ $ docker run -dit \
  -p 8765:80 \
  -v "$PWD/.vitepress/dist":/usr/local/apache2/htdocs/ \
  httpd:2.4
-```
-
-## Embed repositories
-
-Update [`./.github/scripts/embed.sh`](./.github/scripts/embed.sh) to include other repositories.
-
-# More
-
-See [`shopware/developer-documentation-vitepress`](https://github.com/shopware/developer-documentation-vitepress) for
-more info about the VitePress template.
+```late.

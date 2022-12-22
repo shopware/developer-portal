@@ -1,4 +1,3 @@
-import {sh} from "../helpers";
 import {output} from "../output";
 import clone from "./clone";
 import {repositories} from "../data";
@@ -7,29 +6,38 @@ import confirm from '@inquirer/confirm';
 
 export default {
     name: 'embed',
-    description: 'Clone <src> from <branch> in <repository> to <dst>',
-    options: [],
-    handler: async ({}, program: any) => {
+    description: 'Embed all docs repositories to developer-portal',
+    options: [
+        {
+            name: 'c --configure',
+            description: 'Apply manual configuration for embedding feature branches and forks',
+            defaultValue: false,
+        }
+    ],
+    handler: async ({configure}: { configure: boolean | null }, program: any) => {
+        output.notice('Embedding repositories');
 
-        const {repositories: selectedRepositories} = await inquirer.prompt([
+        const {selectedRepositories} = await inquirer.prompt([
             {
                 type: 'checkbox',
-                name: 'repositories',
+                name: 'selectedRepositories',
                 message: 'Select repositories to embed',
                 choices: repositories.map(({name}) => ({name, value: name})),
+                when: !!configure,
             }
         ]);
 
         for (const repo of repositories) {
-            if (!selectedRepositories.includes(repo.name)) {
+            if (configure && !selectedRepositories.includes(repo.name)) {
                 continue;
             }
 
             output.notice(`Processing ${repo.name}`);
 
+            // allow custom branch (features) and organization (forks)
             let branch = repo.branch;
             let org = 'shopware';
-            if (await confirm({message: 'Would you like to override branch or organization?'})) {
+            if (configure && await confirm({message: 'Would you like to override branch or organization?'})) {
                 const response = await inquirer.prompt([
                     {
                         type: 'text',
@@ -48,20 +56,18 @@ export default {
                 org = response.org;
             }
 
+            // call clone command
             await clone.handler({
                 repository: repo.name,
                 src: repo.src,
                 dst: repo.dst,
                 branch,
                 org,
-            }, program);
+            });
 
             output.success(`Processed ${repo.name}`);
         }
 
-        // can't call .sh because we need to collect data
-        // await sh(`.github/scripts/embed.sh`, [], {env: {}});
-
-        output.success('Embedded');
+        output.success('Repositories embedded');
     }
 };
