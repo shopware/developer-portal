@@ -28,7 +28,21 @@ Commands:
   help [command]     display help for command
 ```
 
-# Usage
+# TL;DR
+
+- Clone `shopware/developer-portal` repository and install dependencies (`pnpm i`)
+- _(one-time)_ Set up aliases in your `package.json` - `../developer-portal/docs-cli install`
+- Preview local documentation - `pnpm run docs:preview --symlink` (or `--copy` or `--rsync`)
+
+You might also want/need to:
+
+- _(optional)_ Embed some or all docs from remote repositories directly from your project - `pnpm run docs:embed`
+- _(every now and then)_ Pull changes in `developer-portal` directly from your project - `pnpm run docs:pull`
+- _(one-time) Symlink your docs by running `pnpm run docs:symlink`
+
+# Setup
+
+## Clone and install `developer-portal`
 
 Clone `developer-portal` repository to your computer and install dependencies.
 
@@ -39,14 +53,66 @@ $ cd developer-portal
 $ pnpm i
 ```
 
-## Install aliases to package.json
+## Local storage
 
-Continue by adding common aliases to your project's `package.json`. You can do this automatically by
-running `docs-cli install` and select aliases that you would like to use.
+The tool will ask you to configure your _root_ projects directory and `developer-portal` repository on-the-fly when it
+needs to reference the correct dir.
+
+For ease of use, CLI will create a `.docs-cli` directory in your root/projects dir and save some configuration (env vars
+for Figma, GitLab credentials, ...):
+
+- `/www/.docs-cli` if you have your projects located in `/www/$project`
+- `/home/user/projects/.docs-cli` if you have your projects located in `/home/user/projects/$project`
+- `/projects-bar/.docs-cli` if you have your projects located in `/projects-bar/$project`
+
+## Install aliases to your `package.json`
+
+Continue by adding common aliases to your projects' `package.json`. You can do this automatically by
+running `../developer-portal/docs-cli install` from your project root and select aliases that you would like to use.
 
 ```sh
 $ ../developer-portal/docs-cli install
 ```
+
+This will alter your `package.json` scripts with some aliases:
+
+```json
+{
+  "scripts": {
+    "docs:copy": "../developer-portal/docs-cli copy",
+    "docs:preview": "../developer-portal/docs-cli preview",
+    "docs:embed": "../developer-portal/docs-cli embed"
+  }
+}
+```
+
+# Usage
+
+## Mount all docs
+
+Clone all repositories into your `developer-portal` checkout. This is only needed for the `build` and `test` processes
+to work.
+
+```sh
+$ pnpm run docs:embed
+# or
+$ ../developer-portal/docs-cli embed
+```
+
+You can use `--quick` flag for quick/input-less process, or you can skip the flag and override `branch`
+or `organization` (for forked repositories).
+
+## Remove mount points
+
+You can remove mounted repositories by running the `remove` command.
+
+```sh
+$ pnpm run docs:remove
+# or
+$ ../developer-portal/docs-cli remove
+```
+
+This command will remove symlinks and other mounted folders.
 
 ## Preview your docs
 
@@ -54,22 +120,33 @@ Once your aliases are set up, you can use `pnpm`/`npm`/`yarn` to preview docs.
 
 ```sh
 $ pnpm run docs:preview
+# or
 $ npm run docs:preview
+# or
 $ yarn docs:preview
+# or without an alias
+$ ../developer-portal/docs-cli preview
 ```
 
 ## Update `developer-portal` repository
 
-Keep your local `developer-portal` checkout up to date.
+Keep your local `developer-portal` checkout up to date by running the `pull` command.
 
 ```sh
 $ pnpm run docs:pull
 ```
 
-## Mount all docs
+This command will pull changes on your current branch and install dependencies.
 
-Clone all repositories into your `developer-portal` checkout.
+## More
 
-```sh
-$ pnpm run docs:embed
-```
+### Symlink, rsync, copy and clone
+
+You can use those commands to mount your local repositories (instead of using `embed` which clones remote repositories):
+
+- `symlink` - you can use symlinking method for a preview. Symlinking won't work with `build` command because of some
+  issues with symlinks and rollup bundler
+- `rsync` - (long-running process) do this when you are actively developing your docs and you want to build docs
+  with `build` command
+- `copy` - do this for a one-time copy with `cp` command when you want to build docs with `build` command
+- `clone` - `embed` command is a wrapper for `clone` command as configured in [./cli/src/data.ts](./cli/src/data.ts)
