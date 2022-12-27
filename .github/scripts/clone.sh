@@ -32,7 +32,8 @@ git clone --depth 1 -b $2 https://$1 /tmp/mount-all
 # special flows
 if [ -f /tmp/mount-all/.github/scripts/docs-after-clone.sh ]; then
   echo "Running additional steps"
-  sh /tmp/mount-all/.github/scripts/docs-after-clone.sh
+  chmod +x /tmp/mount-all/.github/scripts/docs-after-clone.sh
+  /tmp/mount-all/.github/scripts/docs-after-clone.sh
 fi
 
 # create deep dir
