@@ -38,7 +38,10 @@ export const repositories = [
             FIGMA_API_KEY: 'Figma API key',
         }
     },
-    /*{
+    {
         name: 'shopware/meteor-component-library',
-    },*/
+        src: 'docs',
+        dst: 'resources/meteor-component-library',
+        branch: env.BRANCH_METEOR_COMPONENT_LIBRARY || 'DX-231' || 'main',
+    }
 ];

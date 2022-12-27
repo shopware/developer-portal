@@ -6,7 +6,7 @@ import fs from "fs";
 
 const allAliases = {
     'docs:link': 'Link docs from your docs dir to the target/destination dir (symlink, rsync or copy strategies)',
-    'docs:remove': 'Remove (rm) docs from your docs dir to the target/destination dir',
+    'docs:remove': 'Remove docs from your docs dir to the target/destination dir',
     'docs:preview': 'Preview docs (npm run dev)',
     'docs:build': 'Build docs (npm run build)',
     'docs:test': 'Run e2e docs tests (dev)',

@@ -5,7 +5,9 @@ set -e
 BRANCH_FRONTENDS=DX-202
 BRANCH_ADMIN_EXTENSION_SDK=DX-223
 BRANCH_METEOR_ICON_KIT=DX-223
+BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 ORG_METEOR_ICON_KIT=bojanrajh
+ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
 
 echo "Cleanup previous scripts"
 #rm -rf ./src/docs/frontends || true
@@ -20,8 +22,11 @@ sh ./.github/scripts/clone.sh git@github.com/shopware/admin-extension-sdk.git ${
 #sh ./.github/scripts/clone.sh git@github.com/shopware/store-api-reference.git main docs docs/resources/store-api-reference
 #sh ./.github/scripts/clone.sh git@github.com/shopware/admin-api-reference.git main docs docs/resources/admin-api-reference
 
-echo "\nBuilding icons"
+echo "\nBuilding Meteor icon kit"
 sh ./.github/scripts/clone.sh git@github.com/${ORG_METEOR_ICON_KIT}/meteor-icon-kit.git ${BRANCH_METEOR_ICON_KIT} docs resources/meteor-icon-kit
+
+echo "\nBuilding Meteor component library"
+sh ./.github/scripts/clone.sh git@github.com/${ORG_METEOR_COMPONENT_LIBRARY}/meteor-icon-kit.git ${BRANCH_METEOR_COMPONENT_LIBRARY} docs resources/meteor-component-library
 
 echo "\nClone versioned repositories"
 #sh ./.github/scripts/clone.sh git@github.com/shopware/docs.git v6.4 . v/6.4/docs

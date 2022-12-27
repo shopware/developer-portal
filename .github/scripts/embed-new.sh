@@ -4,8 +4,12 @@ set -e
 # custom branches
 BRANCH_FRONTENDS=DX-202
 BRANCH_ADMIN_EXTENSION_SDK=DX-223
+
 BRANCH_METEOR_ICON_KIT=DX-223
 ORG_METEOR_ICON_KIT=bojanrajh
+
+BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
+ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
 
 if [[ "$STR" != *"/developer-portal" ]]; then
   echo "DANGEROUS, WRONG PWD"
@@ -35,10 +39,16 @@ fi
  --src docs/docs/guide \
  --dst resources/admin-extension-sdk
 
-# --repository git@github.com/${ORG_METEOR_ICON_KIT}/meteor-icon-kit.git \
 ./docs-cli clone \
  --repository git@github.com/shopware/meteor-icon-kit.git \
  --branch ${BRANCH_METEOR_ICON_KIT} \
  --src docs \
  --dst resources/meteor-icon-kit \
  --org ${ORG_METEOR_ICON_KIT}
+
+./docs-cli clone \
+ --repository git@github.com/shopware/meteor-component-library.git \
+ --branch ${BRANCH_METEOR_COMPONENT_LIBRARY} \
+ --src docs \
+ --dst resources/meteor-component-library \
+ --org ${ORG_METEOR_COMPONENT_LIBRARY}
