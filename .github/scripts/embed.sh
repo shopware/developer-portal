@@ -26,7 +26,7 @@ echo "\nBuilding Meteor icon kit"
 sh ./.github/scripts/clone.sh git@github.com/${ORG_METEOR_ICON_KIT}/meteor-icon-kit.git ${BRANCH_METEOR_ICON_KIT} docs resources/meteor-icon-kit
 
 echo "\nBuilding Meteor component library"
-sh ./.github/scripts/clone.sh git@github.com/${ORG_METEOR_COMPONENT_LIBRARY}/meteor-icon-kit.git ${BRANCH_METEOR_COMPONENT_LIBRARY} docs resources/meteor-component-library
+sh ./.github/scripts/clone.sh git@github.com/${ORG_METEOR_COMPONENT_LIBRARY}/meteor-component-library.git ${BRANCH_METEOR_COMPONENT_LIBRARY} docs resources/meteor-component-library
 
 echo "\nClone versioned repositories"
 #sh ./.github/scripts/clone.sh git@github.com/shopware/docs.git v6.4 . v/6.4/docs
