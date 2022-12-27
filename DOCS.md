@@ -77,7 +77,7 @@ This will alter your `package.json` scripts with selected aliases:
 ```json
 {
   "scripts": {
-    "docs:copy": "../developer-portal/docs-cli copy",
+    "docs:link": "../developer-portal/docs-cli link",
     "docs:preview": "../developer-portal/docs-cli preview",
     "docs:embed": "../developer-portal/docs-cli embed"
   }
@@ -88,8 +88,7 @@ This will alter your `package.json` scripts with selected aliases:
 
 ## Mount all docs
 
-Clone all repositories into your `developer-portal` checkout. This is only needed for the `build` and `test` processes
-to work because they require all docs to be properly mounted.
+This is only needed for the `build` and `test` processes to work because they require all docs to be properly mounted.
 
 ```sh
 $ pnpm run docs:embed
@@ -97,8 +96,8 @@ $ pnpm run docs:embed
 $ ../developer-portal/docs-cli embed
 ```
 
-You can use `--configure` (or `-c`) and manually enter custom branches and organizations for testing feature branches
-and forked repositories.
+This command will clone all repositories into your `developer-portal` checkout. You can use `--configure` (or `-c`) and
+manually enter custom branches and organizations for testing feature branches and forked repositories.
 
 ## Remove mount points
 
@@ -110,7 +109,7 @@ $ pnpm run docs:remove
 $ ../developer-portal/docs-cli remove
 ```
 
-This command will remove symlinks and other mounted folders.
+This command will remove symlinks and other mounted folders from your local `developer-portal` checkout.
 
 ## Preview your docs
 
@@ -119,12 +118,10 @@ Once your aliases are set up, you can use `pnpm`/`npm`/`yarn` to preview docs.
 ```sh
 $ pnpm run docs:preview
 # or
-$ npm run docs:preview
-# or
-$ yarn docs:preview
-# or without an alias
 $ ../developer-portal/docs-cli preview
 ```
+
+This command will run `dev` process in your local `developer-portal` checkout.
 
 ## Update `developer-portal` repository
 
@@ -138,7 +135,7 @@ $ ../developer-portal/docs-cli pull
 $ cd ../developer-portal && git pull --ff && pnpm i
 ```
 
-This command will pull changes on your current branch and install the latest dependencies.
+This command will pull changes in `developer-portal` on your current branch and install the latest dependencies.
 
 ## More
 
