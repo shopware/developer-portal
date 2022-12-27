@@ -52,12 +52,12 @@ const navigation = buildSidebarNav([
                     {
                         text: "Meteor Icon Kit",
                         link: "/resources/meteor-icon-kit/",
-                        repo: 'github.com/shopware/meteor-icon-kit',
+                        repo: 'shopware/meteor-icon-kit',
                     },
                     {
                         text: "Component Library",
                         link: "/resources/meteor-component-library/",
-                        repo: 'shopware/meteor-component-library/',
+                        repo: 'shopware/meteor-component-library',
                     }
                 ]
             },
