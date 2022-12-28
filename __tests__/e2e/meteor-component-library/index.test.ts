@@ -8,9 +8,14 @@ describe('render correct content', async () => {
         await embeddedPage.open('/resources/meteor-component-library/')
     })
 
-    test('has search', async () => {
-        return;
-        const searchLocator = await embeddedPage.page.locator('input[name="searchbar"]');
-        expect(await searchLocator.count()).toEqual(1);
+    test('has sidebar', async () => {
+        const urls = [
+            '/resources/meteor-component-library/component/',
+            '/resources/meteor-component-library/directive/',
+        ];
+        for (const url of urls) {
+            await embeddedPage.open(url)
+            await embeddedPage.hasSidebarSections(2);
+        }
     })
 })
