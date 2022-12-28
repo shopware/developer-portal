@@ -80,5 +80,6 @@ const navigation = buildSidebarNav([
 
 // added to admin-extension-sdk/.github/scripts/docs.yml
 navigation.sidebar['/resources/admin-extension-sdk/'] = readSidebar('resources/admin-extension-sdk', './src/resources/admin-extension-sdk/');
+navigation.sidebar['/resources/meteor-component-library/'] = readSidebar('resources/meteor-component-library', './src/resources/meteor-component-library/');
 
 export default navigation;
