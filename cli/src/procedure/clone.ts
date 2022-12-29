@@ -50,7 +50,7 @@ export const clone = async ({
         await run(`${tmpDir}/${docsAfterClone}`, [], {
             dir: tmpDir,
             env: {
-                FIGMA_API_KEY: env.FIGMA_API_KEY,
+                FIGMA_TOKEN: env.FIGMA_TOKEN,
                 FIGMA_FILE: env.FIGMA_FILE,
             }
         });

@@ -35,7 +35,7 @@ export const repositories = [
         branch: env.BRANCH_METEOR_ICON_KIT || 'DX-223' || 'main',
         env: {
             FIGMA_FILE: 'Figma file ID',
-            FIGMA_API_KEY: 'Figma API key',
+            FIGMA_TOKEN: 'Figma API key',
         }
     },
     {
