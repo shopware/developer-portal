@@ -1,6 +1,11 @@
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
+import ViteRequireContext from '@originjs/vite-plugin-require-context'
+const {resolve} = require('path');
+
+import {copyAdditionalAssets} from "./helpers";
+import navigation from "./navigation";
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -13,14 +18,25 @@ export default defineConfigWithTheme<ThemeConfig>({
   scrollOffset: "header",
 
   head: [],
+  // tmp?
+  ignoreDeadLinks: true,
 
   themeConfig: {
-    // sidebar,
+    ...navigation, // add sidebar and nav config
 
     // remove if edit not needed
     editLink: {
       repo: "shopware/developer-documentation-vuepress",
       text: "Edit this page on GitHub",
+    },
+
+    algolia: {
+      indexName: "dev_shopware_docs",
+      appId: "BZSKX72NEG",
+      apiKey: "51af8af7f609453a7fdf160ea0df3b2f",
+      // searchParameters: {
+      //   facetFilters: ["version:v1"],
+      // },
     },
   },
 
@@ -42,9 +58,31 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true,
     },
+    plugins: [
+      ViteRequireContext({
+        projectBasePath: `${process.cwd()}/src`
+      })
+    ],
   },
 
   vue: {
-    reactivityTransform: true,
+    // https://github.com/vitejs/vite/issues/7854
+    reactivityTransform: resolve(__dirname, 'src'), // true
   },
+  async buildEnd(){
+
+    copyAdditionalAssets([
+      // added to meteor-icon-kit/.github/scripts/docs.yml
+      'resources/meteor-icon-kit/public/icons/regular',
+      'resources/meteor-icon-kit/public/icons/solid',
+      // added to admin-extension-sdk/.github/scripts/docs.yml
+      'resources/admin-extension-sdk/api-reference/assets',
+      'resources/admin-extension-sdk/api-reference/ui/assets',
+      'resources/admin-extension-sdk/concepts/assets',
+      'resources/admin-extension-sdk/getting-started/assets',
+      'resources/admin-extension-sdk/internals/assets',
+      'resources/admin-extension-sdk/tooling/assets',
+    ]);
+
+  }
 });
