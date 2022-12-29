@@ -66,7 +66,7 @@ export const clone = async ({
 
     // create a new symlink
     output.notice(`Copying ${src} to ${dst}`);
-    await run('cp', ['-R', src, dst], {dir: tmpDir});
+    await run('cp', ['-ra', `${src}/.`, `${dst}/`], {dir: tmpDir});
 
     // cleanup tmp dir
     output.notice('Cleaning up');
