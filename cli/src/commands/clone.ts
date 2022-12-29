@@ -5,6 +5,7 @@ import {repositories} from "../data";
 import inquirer from "inquirer";
 import {storage} from "../storage";
 import {env} from "process";
+import {clone} from "../procedure/clone";
 
 export default {
     name: 'clone',
@@ -77,15 +78,18 @@ export default {
             }
         }
 
-        // @T00D00 - rewrite
-        await sh(`.github/scripts/clone.sh`, [
+        await clone({
             repository,
             branch,
             src,
             dst,
+            options: {env: myEnv}
+        });
+        /*await sh(`.github/scripts/clone.sh`, [
+
         ], {
             env: myEnv
-        });
+        });*/
 
         output.success(`${repository} cloned`);
     }

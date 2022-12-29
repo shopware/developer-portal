@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest run -r __tests__/e2e",
+    "test": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "dev": "SHOPWARE_DEV=1 vitepress",
     "build": "vitepress build",
@@ -26,6 +26,7 @@
     "@playwright/test": "^1.28.1",
     "@vitejs/plugin-vue": "^3.2.0",
     "@types/jest": "^29.2.4",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^16.9.1",
     "get-port": "^6.1.2",
     "playwright-chromium": "^1.28.1",

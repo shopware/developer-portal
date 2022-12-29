@@ -26,7 +26,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     // remove if edit not needed
     editLink: {
-      repo: "shopware/developer-documentation-vuepress",
+      repo: "shopware/developer-documentation-vitepress",
       text: "Edit this page on GitHub",
     },
 
@@ -71,6 +71,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
   async buildEnd(){
 
+    return;
     copyAdditionalAssets([
       // added to meteor-icon-kit/.github/scripts/docs.yml
       'resources/meteor-icon-kit/public/icons/regular',

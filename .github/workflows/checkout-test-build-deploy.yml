@@ -53,6 +53,12 @@ jobs:
             libxkbcommon0 \
             libasound2
 
+      - name: Install dependencies
+        run: pnpm i && cd cli && pnpm i
+
+      - name: Build CLI
+        run: cd ./cli && pnpm run build && pnpm run pkg && cd ..
+
       # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
         env:
@@ -60,7 +66,14 @@ jobs:
           GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
-        run: sh ./.github/scripts/embed.sh
+        run: |
+          chmod +x ./.github/scripts/embed.sh
+          .github/scripts/embed.sh
+          ls -la ../..
+          ls -la ..
+          ls -la .
+          ls -la ./src
+          ls -la ./src/resources
 
       #- name: Get pnpm store directory
       #  id: pnpm-cache
@@ -75,9 +88,6 @@ jobs:
       #    key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
       #    restore-keys: |
       #      ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm i
 
 #      - name: Zip folder
 #        run: zip -r full-checkout.zip .

@@ -5,6 +5,7 @@ specifiers:
   '@playwright/test': ^1.28.1
   '@types/jest': ^29.2.4
   '@types/markdown-it': ^12.2.3
+  '@types/mocha': ^10.0.1
   '@types/node': ^16.9.1
   '@vitejs/plugin-vue': ^3.2.0
   '@vue/test-utils': ^2.2.6
@@ -32,6 +33,7 @@ devDependencies:
   '@playwright/test': 1.28.1
   '@types/jest': 29.2.4
   '@types/markdown-it': 12.2.3
+  '@types/mocha': 10.0.1
   '@types/node': 16.18.9
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.5+vue@3.2.45
   '@vue/test-utils': 2.2.6_vue@3.2.45
@@ -1436,6 +1438,10 @@ packages:
 
   /@types/mdurl/1.0.2:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
+
+  /@types/mocha/10.0.1:
+    resolution: {integrity: sha512-/fvYntiO1GeICvqbQ3doGDIP97vWmvFt83GKguJ6prmQM2iXZfFcq6YE8KteFyRtX2/h5Hf91BYvPodJKFYv5Q==}
+    dev: true
 
   /@types/node/16.18.9:
     resolution: {integrity: sha512-nhrqXYxiQ+5B/tPorWum37VgAiefi/wmfJ1QZKGKKecC8/3HqcTTJD0O+VABSPwtseMMF7NCPVT9uGgwn0YqsQ==}

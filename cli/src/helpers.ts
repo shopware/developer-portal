@@ -64,6 +64,18 @@ export const sh = async (run: string, args: string[], options: { dir?: string, [
         ...options,
     }));
 }
+export const run = async (run: string, args: string[], options: { dir?: string, [key: string]: any } = {}) => {
+    const cwd = options.dir || await getDeveloperPortalPath();
+
+    // no cwd!
+    return pipe(execa(run, [
+        ...args
+    ], {
+        cwd,
+        stdio: [0, 1, 2]
+        //...options,
+    }));
+}
 
 export const choices = (choices: { [key: string]: string }) => {
     return Object.keys(choices).reduce((reduced, key) => {
