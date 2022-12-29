@@ -40,12 +40,12 @@ fi
  --src docs/docs/guide \
  --dst resources/admin-extension-sdk
 
-#./docs-cli clone \
-# --repository git@github.com/shopware/meteor-icon-kit.git \
-# --branch ${BRANCH_METEOR_ICON_KIT} \
-# --src docs \
-# --dst resources/meteor-icon-kit \
-# --org ${ORG_METEOR_ICON_KIT}
+./cli/dist/docs-cli-linux clone \
+ --repository git@github.com/shopware/meteor-icon-kit.git \
+ --branch ${BRANCH_METEOR_ICON_KIT} \
+ --src docs \
+ --dst resources/meteor-icon-kit \
+ --org ${ORG_METEOR_ICON_KIT}
 
 ./cli/dist/docs-cli-linux clone \
  --repository git@github.com/shopware/meteor-component-library.git \
