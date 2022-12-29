@@ -22,6 +22,6 @@ export default {
         shebang({
             include: 'dist/docs-cli.js',
         }),
-        //terser()
+        terser()
     ]
 };
