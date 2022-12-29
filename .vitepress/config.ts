@@ -71,7 +71,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
   async buildEnd(){
 
-    return;
     copyAdditionalAssets([
       // added to meteor-icon-kit/.github/scripts/docs.yml
       'resources/meteor-icon-kit/public/icons/regular',
