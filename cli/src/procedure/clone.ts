@@ -1,7 +1,7 @@
 import {output} from "../output";
 import fs from "fs";
 import {getDeveloperPortalPath, run, sh} from "../helpers";
-import process, {env} from "process";
+//import process, {env} from "process";
 import {execSync} from 'child_process';
 
 export const clone = async ({
@@ -13,8 +13,8 @@ export const clone = async ({
                             }: { repository: string, branch: string, src: string, dst: string, options: { env?: object } }) => {
     // prepare variables
     const tmpDir = '/tmp/mount-all';
-    //const developerDir = await getDeveloperPortalPath();
-    const developerDir = process.cwd();
+    const developerDir = await getDeveloperPortalPath();
+    //const developerDir = process.cwd();
     src = `${tmpDir}/${src}`
     //dst = `../developer-portal/src/${dst}`;
     dst = `${developerDir}/src/${dst}`;
