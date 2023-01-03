@@ -57,7 +57,8 @@ jobs:
         run: pnpm i && cd cli && pnpm i
 
       - name: Build CLI
-        run: cd ./cli && pnpm run build && pnpm run pkg && cd ..
+        run: cd ./cli && pnpm run build && cd ..
+        #run: cd ./cli && pnpm run build && pnpm run pkg && cd ..
 
       # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
@@ -68,6 +69,7 @@ jobs:
           FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
         run: |
           chmod +x ./.github/scripts/embed.sh
+          chmod +x ./docs-cli
           .github/scripts/embed.sh
           ls -la ../..
           ls -la ..
