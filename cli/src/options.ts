@@ -10,6 +10,6 @@ export const optionDst = {
     example: 'my-folder'
 };
 export const optionCI = {
-    name: '--ci',
+    name: 'ci',
     defaultValue: false
 };
