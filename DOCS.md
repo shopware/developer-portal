@@ -227,6 +227,8 @@ $ pnpm docs:link
 You need to use `--rsync` or `--copy` if you want to `test` or `build` docs locally due to symlinking issues with
 Rollup.
 
+![Link current repository](./cli/demo/link.gif)
+
 ## Preview your docs
 
 Once your aliases are set up, you can run `preview` command to preview docs.
@@ -236,6 +238,8 @@ $ pnpm docs:preview
 ```
 
 This command will run `dev` process in your local `developer-portal` checkout.
+
+![Preview developer-portal docs](./cli/demo/preview.gif)
 
 ## Build all docs
 
@@ -247,6 +251,8 @@ $ pnpm docs:build
 
 This command will run `build` process in your local `developer-portal` checkout and requires all docs to be cloned from
 remote or linked with `--rsync` or `--copy` strategy.
+
+![Build developer-portal docs](./cli/demo/build.gif)
 
 ## Test all docs
 
