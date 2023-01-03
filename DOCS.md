@@ -193,6 +193,8 @@ $ pnpm run docs:embed
 This command will ask you to enter your configuration and clone all remote repositories into your
 local `developer-portal` checkout.
 
+![Embed all docs](./cli/demo/embed.gif)
+
 ## Clone single repository
 
 The `embed` command uses `clone` command under the hood. You can manually clone remote repositories by running the
@@ -291,6 +293,8 @@ $ cd ../developer-portal && git pull --ff && pnpm i
 ```
 
 This command will pull changes in `developer-portal` on your current branch and install the latest dependencies.
+
+![Pull developer-portal](./cli/demo/pull.gif)
 
 ## More
 
