@@ -109,6 +109,6 @@ export default {
             options: {env: myEnv}
         });
 
-        output.success(`${repository} cloned`);
+        output.success(`Cloned`);
     }
 };
