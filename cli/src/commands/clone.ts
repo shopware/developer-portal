@@ -1,5 +1,5 @@
 import {composeRepository, sh} from "../helpers";
-import {optionDst, optionSrc} from "../options";
+import {optionDst, optionSrc, optionCI} from "../options";
 import {output} from "../output";
 import {repositories} from "../data";
 import inquirer from "inquirer";
@@ -41,10 +41,7 @@ export default {
             name: 'g --git <git>',
             defaultValue: null
         },
-        {
-            name: 'c --ci',
-            defaultValue: false
-        },
+        optionCI,
     ],
     handler: async ({
                         repository,

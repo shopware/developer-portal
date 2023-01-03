@@ -9,3 +9,7 @@ export const optionDst = {
     description: 'Mount destination',
     example: 'my-folder'
 };
+export const optionCI = {
+    name: '--ci',
+    defaultValue: false
+};
