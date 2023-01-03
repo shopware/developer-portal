@@ -27,7 +27,7 @@ export const pnpm = async (run: string, args = [], options: { dir?: string, [key
 
     const runParams = run === 'i'
         ? ['i']
-        : ['run', ...run];
+        : ['run', run];
 
     return pipe(execa(`pnpm`, [
         '--dir',
