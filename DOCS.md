@@ -31,14 +31,14 @@ Commands:
 
 - Clone `shopware/developer-portal` repository and install dependencies for all workspaces (`pnpm i`)
 - _(one-time)_ Set up aliases in your `package.json` - `../developer-portal/docs-cli install`
-- _(one-time)_ Link local documentation - `pnpm run docs:link` (optional `--copy`, `--rsync` or `--symlink` (default)
+- _(one-time)_ Link local documentation - `pnpm docs:link` (optional `--copy`, `--rsync` or `--symlink` (default)
   flags)
-- Write your docs and preview local documentation - `pnpm run docs:preview`
+- Write your docs and preview local documentation - `pnpm docs:preview`
 
 You might also want or need to:
 
-- Embed some or all docs from remote repositories directly from your project - `pnpm run docs:embed`
-- Pull changes in `developer-portal` directly from your project - `pnpm run docs:pull`
+- Embed some or all docs from remote repositories directly from your project - `pnpm docs:embed`
+- Pull changes in `developer-portal` directly from your project - `pnpm docs:pull`
 
 Read following sections for more in-depth description about the workflow.
 
@@ -124,7 +124,7 @@ You can use `--configure` (or `-c`) and manually enter custom branches and organ
 and forked repositories.
 
 ```sh
-$ pnpm run docs:embed --configure
+$ pnpm docs:embed --configure
 ```
 
 Configured data will be saved in your parent `.docs-cli` directory unencrypted. You can manually delete those files or
@@ -132,11 +132,11 @@ reconfigure them by running `config` command.
 
 ```bash
 # reconfigure
-$ pnpm run docs:config
+$ pnpm docs:config
 # view all configs
-$ pnpm run docs:config --view
+$ pnpm docs:config --view
 # destroy configuration
-$ pnpm run docs:config --destroy
+$ pnpm docs:config --destroy
 
 ```
 
@@ -187,7 +187,7 @@ Organization configs default to `shopware`.
 This is only needed for the `build` and `test` processes to work because they require all docs to be properly mounted.
 
 ```sh
-$ pnpm run docs:embed
+$ pnpm docs:embed
 ```
 
 This command will ask you to enter your configuration and clone all remote repositories into your
@@ -201,7 +201,7 @@ The `embed` command uses `clone` command under the hood. You can manually clone 
 `docs:clone` command.
 
 ```bash
-$ pnpm run docs:clone \
+$ pnpm docs:clone \
   --repository shopware/frontends \
   --branch feature-branch \
   --org your-user
@@ -214,12 +214,14 @@ This command will one-time clone the `feature-branch` from your `your-user/front
 mount `app/docs/src` into `docs/frontend-test` directory in `developer-portal`, making it accessible on
 the [https://localhost:2345/frontends-test](https://localhost:2345/frontends-test) URL.
 
+![Clone single repository](./cli/demo/clone.gif)
+
 ## Link your docs
 
 This command links your local repository into your local `developer-portal` checkout.
 
 ```sh
-$ pnpm run docs:link
+$ pnpm docs:link
 ```
 
 You need to use `--rsync` or `--copy` if you want to `test` or `build` docs locally due to symlinking issues with
@@ -230,7 +232,7 @@ Rollup.
 Once your aliases are set up, you can run `preview` command to preview docs.
 
 ```sh
-$ pnpm run docs:preview
+$ pnpm docs:preview
 ```
 
 This command will run `dev` process in your local `developer-portal` checkout.
@@ -240,7 +242,7 @@ This command will run `dev` process in your local `developer-portal` checkout.
 You can create a static build of all docs by running the `build` command.
 
 ```sh
-$ pnpm run docs:build
+$ pnpm docs:build
 ```
 
 This command will run `build` process in your local `developer-portal` checkout and requires all docs to be cloned from
@@ -251,9 +253,9 @@ remote or linked with `--rsync` or `--copy` strategy.
 You can run tests in `developer-portal` repository by running `test` or `test:build` commands.
 
 ```sh
-$ pnpm run docs:test
+$ pnpm docs:test
 # or
-$ pnpm run docs:test:build
+$ pnpm docs:test:build
 ```
 
 Standard `test` command will run Vitest tests with the bundled dev server and works with partially mounted docs.
@@ -268,7 +270,7 @@ symlinks).
 You can remove mounted repositories by running the `remove` command.
 
 ```sh
-$ pnpm run docs:remove
+$ pnpm docs:remove
 ```
 
 This command will remove symlinks and other mounted folders from your local `developer-portal` checkout.
@@ -288,7 +290,7 @@ $ rm -r docs/resources/admin-extension-sdk
 Keep your local `developer-portal` checkout up to date by running the `pull` command.
 
 ```sh
-$ pnpm run docs:pull
+$ pnpm docs:pull
 # or
 $ cd ../developer-portal && git pull --ff && pnpm i
 
@@ -302,7 +304,7 @@ This command will pull changes in `developer-portal` on your current branch and 
 
 ```bash
 # aliased
-pnpm run docs:COMMAND
+pnpm docs:COMMAND
 # equals
 ../developer-portal/docs-cli COMMAND
 
