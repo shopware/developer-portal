@@ -1,4 +1,4 @@
-import {pnpm, sh} from "../helpers";
+import {pnpm, run} from "../helpers";
 import {output} from "../output";
 
 export default {
@@ -7,7 +7,7 @@ export default {
     options: [],
     handler: async ({}, program: any) => {
         output.notice('Pulling from git');
-        await sh('git', ['pull', '--ff']);
+        await run('git', ['pull', '--ff']);
 
         output.notice('Installing new packages');
         await pnpm('i');
