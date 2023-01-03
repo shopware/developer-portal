@@ -11,7 +11,7 @@ export const clone = async ({
                                 dst, // 4
                                 ci,
                                 options
-                            }: { repository: string, branch: string, src: string, dst: string, ci: boolean, options: { env?: object } }) => {
+                            }: { repository: string, branch: string, src: string, dst: string, ci: boolean | undefined, options: { env?: object } }) => {
     // prepare variables
     const tmpDir = '/tmp/mount-all';
     const developerDir = ci

@@ -54,9 +54,15 @@ export default {
                         git,
                         ci
                     }: {
-        [key: string]: string,
-        // @ts-ignore
-        ci: boolean
+        repository: string,
+        branch: string,
+        src: string,
+        dst: string,
+        org?: string,
+        user?: string,
+        pass?: string,
+        git?: string,
+        ci?: boolean
     }) => {
         output.notice(`Preparing ${repository}`);
 

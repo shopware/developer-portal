@@ -64,7 +64,7 @@ export const sh = async (run: string, args: string[], options: { dir?: string, [
         ...options,
     }));
 }
-export const run = async (run: string, args: string[], options: { dir?: string, env?:object, [key: string]: any } = {}) => {
+export const run = async (run: string, args: string[], options: { dir?: string, env?: object, [key: string]: any } = {}) => {
     const cwd = options.dir || await getDeveloperPortalPath();
 
     // no cwd!
@@ -102,7 +102,7 @@ export const requireParam = async (param: string | undefined, option: { name: st
 
     return response.param;
 }
-export const composeRepository = (repo: string, {git, org, user, pass}: { [key: string]: string }) => {
+export const composeRepository = (repo: string, {git, org, user, pass}: { [key: string]: string | undefined }) => {
     // append git
     if (!repo.endsWith('.git')) {
         repo = `${repo}.git`;
