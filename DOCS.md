@@ -72,6 +72,8 @@ $ ./cli/dist/docs-cli.js
 $ ./cli/dist/docs-cli-linux
 ```
 
+![Checkout developer-portal](./cli/demo/checkout.gif)
+
 ## Local storage
 
 The tool will ask you to configure your _root_ projects directory and `developer-portal` repository on-the-fly when it
@@ -104,6 +106,8 @@ This will alter your `package.json` scripts with selected aliases:
   }
 }
 ```
+
+![Install CLI](./cli/demo/install.gif)
 
 # Config
 
