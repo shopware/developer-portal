@@ -1,15 +1,22 @@
-# Product and Catalogue Overview
+# Product and Catalogue
 
-A [product catalog](https://developer.shopware.com/docs/concepts/commerce/catalog) enlists essential [product information](https://developer.shopware.com/docs/concepts/commerce/catalog/products) that is categorized well and helps buyers make a purchase decision easier.
+A product catalog classifies products as categories and helps buyers make purchase decisions easier. Every product can be assigned to categories in two ways - [Explicit assignment or by Dynamic Product Group](https://developer.shopware.com/docs/concepts/commerce/catalog/categories#product-assignments).
 
-Every product can be assigned to categories in [two ways](https://developer.shopware.com/docs/concepts/commerce/catalog/categories#product-assignments).
+## Changing the behavior
 
-Products can be made searchable by extending fields of the product entity to the [elasticsearch engine](https://developer.shopware.com/docs/concepts/framework/elasticsearch). This is done via [plugins](https://developer.shopware.com/docs/guides/plugins/plugins/elasticsearch). They can also be [custom-sorted](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-custom-sorting-product-listing) for product listing.
+Do you want to perform any of the following:
 
-The [app script](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts) extends data loading, compiles calculations, line-item splitting, cache configurations etc.
+* [Extend data loading to customize storefront templates](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/data-loading),
+* [Cache configurations to improve the end-user experience](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching),
+* [Defining of search criteria](https://developer.shopware.com/docs/guides/plugins/plugins/framework/data-handling/reading-data#filtering)
+* [Calculate stock availability](https://developer.shopware.com/docs/resources/references/adr/inventory/2022-03-25-available-stock) ?
 
-The [CMS](https://developer.shopware.com/docs/guides/plugins/plugins/content/cms) takes care of creating, registering, and rendering new elements.
+Then this can be done via [App Scripts](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts) that modifies the internal logic.
 
-Refer to [data handling](https://developer.shopware.com/docs/guides/plugins/plugins/framework/data-handling) to know all the features of the product catalogue, how to read, write, extend and remove them.
+Also, you can read, write, extend, filter, and remove all the features of the product catalog via [Data handling](https://developer.shopware.com/docs/guides/plugins/plugins/framework/data-handling).
 
-Lastly, perform [end-to-end testing](https://developer.shopware.com/docs/guides/plugins/plugins/testing/end-to-end-testing) of created product and its properties.
+## Changing the look
+
+You can manipulate the look and feel of your online store's homepage, landing page, product detail page, product listing page, etc by assigning respective categories and entities to a defined [CMS](https://developer.shopware.com/docs/guides/plugins/plugins/content/cms) layout.
+
+On the other hand, you can customize the style of the layout with [apps](https://developer.shopware.com/docs/guides/plugins/apps/storefront/apps-as-themes).
