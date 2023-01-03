@@ -261,6 +261,8 @@ Standard `test` command will run Vitest tests with the bundled dev server and wo
 THe `test:build` command will create a production build on-the-fly and requires all docs to be hard-mounted (no
 symlinks).
 
+![Test](./cli/demo/test.gif)
+
 ## Remove mount points
 
 You can remove mounted repositories by running the `remove` command.
