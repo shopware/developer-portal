@@ -41,8 +41,26 @@ export default {
             name: 'g --git <git>',
             defaultValue: null
         },
+        {
+            name: 'c --ci',
+            defaultValue: false
+        },
     ],
-    handler: async ({repository, branch, src, dst, org, user, pass, git}: { [key: string]: string }) => {
+    handler: async ({
+                        repository,
+                        branch,
+                        src,
+                        dst,
+                        org,
+                        user,
+                        pass,
+                        git,
+                        ci
+                    }: {
+        [key: string]: string,
+        // @ts-ignore
+        ci: boolean
+    }) => {
         output.notice(`Preparing ${repository}`);
 
         const myEnv: { [key: string]: string } = {};
@@ -106,6 +124,7 @@ export default {
             branch,
             src,
             dst,
+            ci,
             options: {env: myEnv}
         });
 

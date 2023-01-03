@@ -20,12 +20,14 @@ fi
 #alias docs-cli="./cli/dist/docs-cli-linux"
 
 ./docs-cli clone \
+ --ci \
  --repository shopware/frontends \
  --branch main \
  --src apps/docs/src \
  --dst frontends
 
 ./docs-cli clone \
+ --ci \
  --repository gitlab.shopware.com/product/engineering/platform-group/pwa/frontends \
  --user ${GITLAB_FRONTENDS_USERNAME} \
  --pass ${GITLAB_FRONTENDS_ACCESS_KEY} \
@@ -35,12 +37,14 @@ fi
  --git gitlab.shopware.com
 
 ./docs-cli clone \
+ --ci \
  --repository shopware/admin-extension-sdk \
  --branch ${BRANCH_ADMIN_EXTENSION_SDK} \
  --src docs/docs/guide \
  --dst resources/admin-extension-sdk
 
 ./docs-cli clone \
+ --ci \
  --repository shopware/meteor-icon-kit \
  --branch ${BRANCH_METEOR_ICON_KIT} \
  --src docs \
@@ -48,6 +52,7 @@ fi
  --org ${ORG_METEOR_ICON_KIT}
 
 ./docs-cli clone \
+ --ci \
  --repository shopware/meteor-component-library \
  --branch ${BRANCH_METEOR_COMPONENT_LIBRARY} \
  --src docs \

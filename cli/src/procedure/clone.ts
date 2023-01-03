@@ -9,14 +9,15 @@ export const clone = async ({
                                 branch, // 2
                                 src, // 3
                                 dst, // 4
+                                ci,
                                 options
-                            }: { repository: string, branch: string, src: string, dst: string, options: { env?: object } }) => {
+                            }: { repository: string, branch: string, src: string, dst: string, ci: boolean, options: { env?: object } }) => {
     // prepare variables
     const tmpDir = '/tmp/mount-all';
-    const developerDir = await getDeveloperPortalPath();
-    //const developerDir = process.cwd();
+    const developerDir = ci
+        ? process.cwd()
+        : await getDeveloperPortalPath();
     src = `${tmpDir}/${src}`
-    //dst = `../developer-portal/src/${dst}`;
     dst = `${developerDir}/src/${dst}`;
 
     const cleanRepo = repository.split('@')[1];
