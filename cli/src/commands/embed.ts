@@ -36,7 +36,7 @@ export default {
 
             // allow custom branch (features) and organization (forks)
             let branch = repo.branch;
-            let org = 'shopware';
+            let org = repo.org;
             if (configure && await confirm({message: 'Would you like to override branch or organization?'})) {
                 const response = await inquirer.prompt([
                     {
@@ -57,6 +57,7 @@ export default {
             }
 
             // call clone command
+            output.notice(`Embedding ${repo.name}`);
             await clone.handler({
                 repository: repo.name,
                 src: repo.src,

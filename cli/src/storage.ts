@@ -1,6 +1,7 @@
 import {JSONStorage} from "node-localstorage";
 import {output} from "./output";
 import {resolve} from "path";
+import process from "process";
 
 let localStorage: JSONStorage;
 

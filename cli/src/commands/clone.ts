@@ -16,6 +16,10 @@ export default {
             example: 'frontends | shopware/frontends | shopware/frontends.git | github.com/shopware/frontends.git | ssh://git@gitlab.com/shopware/frontends.git'
         },
         {
+            name: 'a --as <as>',
+            example: 'shopware/frontends'
+        },
+        {
             name: 'b --branch <branch>',
             defaultValue: 'main'
         },
@@ -23,7 +27,7 @@ export default {
         optionDst,
         {
             name: 'o --org <org>',
-            defaultValue: 'shopware'
+            defaultValue: null
         },
         {
             name: 'u --user <user>',
@@ -35,21 +39,26 @@ export default {
         },
         {
             name: 'g --git <git>',
-            defaultValue: 'github.com'
+            defaultValue: null
         },
     ],
     handler: async ({repository, branch, src, dst, org, user, pass, git}: { [key: string]: string }) => {
-        output.notice(`Cloning ${repository}`);
-
-        repository = composeRepository(repository, {git, org, user, pass});
+        output.notice(`Preparing ${repository}`);
 
         const myEnv: { [key: string]: string } = {};
         for (const repo of repositories) {
-            if (typeof repo !== 'object' || typeof repo.env === "undefined") {
+            if (repo.name !== repository) {
                 continue;
             }
 
-            for (const key of Object.keys(repo.env)) {
+            if (typeof repo.env === "undefined") {
+                continue;
+            }
+
+            output.notice('Gathering env vars');
+            // @ts-ignore
+            const repoEnv: { [key: string]: { description: string, as?: string } } = repo.env || {};
+            for (const key of Object.keys(repoEnv)) {
                 // check for env variable
                 if (env[key]) {
                     // @ts-ignore
@@ -62,22 +71,36 @@ export default {
                 if (saved) {
                     output.notice(`Exists ${key}`);
                     myEnv[key] = saved;
-                    continue;
+                } else {
+                    const message = typeof repoEnv[key] === 'string'
+                        ? repoEnv[key]
+                        : repoEnv[key].description;
+                    const {value} = await inquirer.prompt([
+                        {
+                            name: 'value',
+                            type: 'password',
+                            // @ts-ignore
+                            message: `${message} - ${key}`,
+                        }
+                    ]);
+
+                    storage.set(key, value);
+                    myEnv[key] = value;
                 }
 
-                const {value} = await inquirer.prompt([
-                    {
-                        name: 'value',
-                        type: 'password',
-                        // @ts-ignore
-                        message: `${repo.env[key]} - ${key}`,
+                // @T00D00 - simplify?
+                if (typeof repoEnv[key] === 'object') {
+                    if (myEnv[key] && repoEnv[key].as === 'user') {
+                        user = myEnv[key];
+                    } else if (myEnv[key] && repoEnv[key].as === 'pass') {
+                        pass = myEnv[key];
                     }
-                ]);
-
-                storage.set(key, value);
+                }
             }
         }
 
+        output.notice(`Cloning ${repository}`);
+        repository = composeRepository(repository, {git, org, user, pass});
         await clone({
             repository,
             branch,
@@ -85,11 +108,6 @@ export default {
             dst,
             options: {env: myEnv}
         });
-        /*await sh(`.github/scripts/clone.sh`, [
-
-        ], {
-            env: myEnv
-        });*/
 
         output.success(`${repository} cloned`);
     }

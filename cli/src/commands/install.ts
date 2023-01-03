@@ -12,7 +12,9 @@ const allAliases = {
     'docs:test': 'Run e2e docs tests (dev)',
     'docs:test:build': 'Run e2e docs tests (build)',
     'docs:pull': 'Pull latest changes from remote',
-    'docs:embed': 'Embed other repositories',
+    'docs:embed': 'Embed other repositories (multi-clone)',
+    'docs:clone': 'Clone other repositories',
+    'docs:config': 'Reconfigure CLI',
 };
 
 export default {

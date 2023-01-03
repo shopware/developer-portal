@@ -64,7 +64,7 @@ export const sh = async (run: string, args: string[], options: { dir?: string, [
         ...options,
     }));
 }
-export const run = async (run: string, args: string[], options: { dir?: string, [key: string]: any } = {}) => {
+export const run = async (run: string, args: string[], options: { dir?: string, env?:object, [key: string]: any } = {}) => {
     const cwd = options.dir || await getDeveloperPortalPath();
 
     // no cwd!
@@ -72,6 +72,8 @@ export const run = async (run: string, args: string[], options: { dir?: string, 
         ...args
     ], {
         cwd,
+        // @ts-ignore
+        env: options.env ?? {},
         stdio: [0, 1, 2]
         //...options,
     }));
@@ -107,21 +109,22 @@ export const composeRepository = (repo: string, {git, org, user, pass}: { [key: 
     }
 
     // append org
-    if (!repo.includes('/')) {
-        repo = `${org}/${repo}`;
-    }
+    //if (!repo.includes('/')) {
+    //    repo = `${org}/${repo}`;
+    //}
 
     // append org
-    if (!repo.includes('shopware/')) {
+    if (repo.includes('shopware.com/')) {
+        // keep hardcoded
+    } else if (!repo.includes('shopware/')) {
         repo = `${org || 'shopware'}/${repo}`;
     } else if (org) {
         // replace org
         repo = repo.replace('shopware/', `${org}/`);
-        //repo = `${org}/${repo.split('/').slice(1).join('/')}`;
     }
 
-    // append git
-    if (!repo.includes('gitlab.com') && !repo.includes('github.com')) {
+    // append domain
+    if (!repo.includes('gitlab.com') && !repo.includes('github.com') && !repo.includes('gitlab.shopware.com')) {
         repo = `${git || 'github.com'}/${repo}`;
     } else if (git) {
         // replace org

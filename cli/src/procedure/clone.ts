@@ -2,15 +2,15 @@ import {output} from "../output";
 import fs from "fs";
 import {getDeveloperPortalPath, run, sh} from "../helpers";
 import process, {env} from "process";
-import { execSync } from 'child_process';
+import {execSync} from 'child_process';
 
 export const clone = async ({
                                 repository, // 1
                                 branch, // 2
                                 src, // 3
                                 dst, // 4
-                                ...options
-                            }: { repository: string, branch: string, src: string, dst: string, options: {} }) => {
+                                options
+                            }: { repository: string, branch: string, src: string, dst: string, options: { env?: object } }) => {
     // prepare variables
     const tmpDir = '/tmp/mount-all';
     //const developerDir = await getDeveloperPortalPath();
@@ -18,7 +18,9 @@ export const clone = async ({
     src = `${tmpDir}/${src}`
     //dst = `../developer-portal/src/${dst}`;
     dst = `${developerDir}/src/${dst}`;
-    output.notice(`Cloning to ${dst} from ${src} in ${branch}@${repository}`);
+
+    const cleanRepo = repository.split('@')[1];
+    output.notice(`Cloning to ${dst} from ${src} in ${branch}@${cleanRepo}`);
 
     // delete existent dir
     if (fs.existsSync(dst) && fs.lstatSync(dst).isDirectory()) {
@@ -35,9 +37,13 @@ export const clone = async ({
     }
 
     // clone into tmp dir
-    output.notice(`Cloning branch ${branch} in repo ${repository}`);
-    const gitCloneOutput = execSync(`git clone --depth 1 -b ${branch} https://${repository} ${tmpDir}`);
-    output.log(`${gitCloneOutput}`);
+    output.notice(`Cloning branch ${branch} in repo ${cleanRepo}`);
+    try {
+        const gitCloneOutput = execSync(`git clone --depth 1 -b ${branch} https://${repository} ${tmpDir}`);
+        output.log(`${gitCloneOutput}`);
+    } catch (e) {
+        throw `Error cloning ${cleanRepo}`;
+    }
     //await run('which', ['git'], {dir: tmpDir});
     //await run('/usr/local/bin/git', ['--version'], {dir: tmpDir});
     //await run('git', ['clone', '--depth', '1', '-b', branch, `https://${repository}`, tmpDir], {dir: tmpDir});
@@ -49,10 +55,10 @@ export const clone = async ({
         fs.chmodSync(`${tmpDir}/${docsAfterClone}`, 0o777);
         await run(`${tmpDir}/${docsAfterClone}`, [], {
             dir: tmpDir,
-            env: {
+            env: options.env/*{
                 FIGMA_TOKEN: env.FIGMA_TOKEN,
                 FIGMA_FILE: env.FIGMA_FILE,
-            }
+            }*/
         });
     }
 
