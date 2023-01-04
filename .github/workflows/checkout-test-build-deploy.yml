@@ -60,6 +60,9 @@ jobs:
         run: cd ./cli && pnpm run build && cd ..
         #run: cd ./cli && pnpm run build && pnpm run pkg && cd ..
 
+      - name: Test CLI
+        run: pnpm test:cli
+
       # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
         env:

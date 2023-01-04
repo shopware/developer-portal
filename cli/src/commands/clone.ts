@@ -13,11 +13,13 @@ export default {
     options: [
         {
             name: 'r --repository <repository>',
-            example: 'frontends | shopware/frontends | shopware/frontends.git | github.com/shopware/frontends.git | ssh://git@gitlab.com/shopware/frontends.git'
+            example: 'frontends | shopware/frontends | shopware/frontends.git | github.com/shopware/frontends.git | ssh://git@gitlab.com/shopware/frontends.git',
+            defaultValue: null
         },
         {
             name: 'a --as <as>',
-            example: 'shopware/frontends'
+            example: 'shopware/frontends',
+            defaultValue: null
         },
         {
             name: 'b --branch <branch>',

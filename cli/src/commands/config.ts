@@ -17,6 +17,11 @@ export default {
     handler: async ({destroy, view}: { destroy: boolean, view: boolean }) => {
         const docsCLI = '../.docs-cli';
 
+        if ((destroy || view) && !fs.existsSync(docsCLI)) {
+            output.log('Configuration dir non-existent');
+            return;
+        }
+
         if (destroy) {
             output.error(`Destroying ${docsCLI} folder config`);
             fs.rmSync(docsCLI, {recursive: true});
@@ -24,8 +29,8 @@ export default {
             return;
         }
 
-        const files = fs.readdirSync(docsCLI);
         if (view) {
+            const files = fs.readdirSync(docsCLI);
             for (const file of files) {
                 const content = await fs.readFileSync(`${docsCLI}/${file}`);
                 output.log(`${file}: ${content}`);
