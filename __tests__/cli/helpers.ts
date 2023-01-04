@@ -116,3 +116,11 @@ export const createConfig = (projectsDir, contents: object) => {
         fs.writeFileSync(`${dirCLI}/${file}`, JSON.stringify(contents[file]));
     })
 }
+
+export const withDirConfig = (sandbox, secrets = {}) => {
+    createConfig(sandbox.projectsPath, {
+        'dir.root': sandbox.projectsPath,
+        'dir.developer-portal': `${sandbox.projectsPath}/developer-portal`,
+        ...secrets,
+    });
+}

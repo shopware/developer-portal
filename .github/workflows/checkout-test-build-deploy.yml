@@ -10,7 +10,7 @@ on:
   push:
     paths:
       - 'src/*'
-      - '.github/scripts/embed.sh'
+      - 'cli/*'
       - '.github/workflows/*'
   pull_request:
     branches:
@@ -61,6 +61,11 @@ jobs:
         #run: cd ./cli && pnpm run build && pnpm run pkg && cd ..
 
       - name: Test CLI
+        env:
+          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
+          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
         run: pnpm test:cli
 
       # @T00D00 - "pnpm run build" fails with symlinks
@@ -72,7 +77,6 @@ jobs:
           FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
         run: |
           chmod +x ./.github/scripts/embed.sh
-          chmod +x ./docs-cli
           .github/scripts/embed.sh
           ls -la ../..
           ls -la ..

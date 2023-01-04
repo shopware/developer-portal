@@ -42,7 +42,8 @@
     "fuse.js": "^6.6.2",
     "sass": "^1.56.2",
     "uuid": "^9.0.0",
-    "@vitest/coverage-c8": "^0.26.3"
+    "@vitest/coverage-c8": "^0.26.3",
+    "execa": "^6.1.0"
   },
   "pnpm": {
     "peerDependencyRules": {
