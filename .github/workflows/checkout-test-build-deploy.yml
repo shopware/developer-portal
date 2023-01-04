@@ -57,7 +57,7 @@ jobs:
         run: pnpm i && cd cli && pnpm i
 
       - name: Build CLI
-        run: cd ./cli && pnpm run build && cd ..
+        run: pnpm cli:build
         #run: cd ./cli && pnpm run build && pnpm run pkg && cd ..
 
       - name: Test CLI
