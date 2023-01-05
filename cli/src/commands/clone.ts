@@ -82,8 +82,11 @@ export default {
             // @ts-ignore
             const repoEnv: { [key: string]: { description: string, as?: string } } = repo.env || {};
             for (const key of Object.keys(repoEnv)) {
+                console.log(`Gathering: ${key}`);
+
                 // check for env variable
                 if (env[key]) {
+                    console.log(`Exists in process.env, has length of ${env[key].length}: ${key}`);
                     // @ts-ignore
                     myEnv[key] = env[key];
                     continue;
@@ -92,9 +95,10 @@ export default {
                 // check for local storage
                 const saved = storage.get(key);
                 if (saved) {
-                    output.notice(`Exists ${key}`);
+                    output.notice(`Exists in local storage: ${key}`);
                     myEnv[key] = saved;
                 } else {
+                    output.notice(`Prompting: ${key}`);
                     const message = typeof repoEnv[key] === 'string'
                         ? repoEnv[key]
                         : repoEnv[key].description;
@@ -102,7 +106,6 @@ export default {
                         {
                             name: 'value',
                             type: 'password',
-                            // @ts-ignore
                             message: `${message} - ${key}`,
                         }
                     ]);

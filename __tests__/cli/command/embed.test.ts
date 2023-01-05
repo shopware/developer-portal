@@ -44,14 +44,14 @@ describe('cli embed', async () => {
     // vars are added to CI secrets OR read from parent dir
     const secrets = fetchSecrets();
     // @ts-ignore
-    test.skipIf(!Object.values(secrets)[0])('Embed configured paths', async () => {
+    test.only.skipIf(!Object.values(secrets)[0])('Embed configured paths', async () => {
         withDirConfig(sandbox, secrets);
 
-        const result = await docsCli(['embed'], sandbox.cwd, {...timeout.high, env: secrets});
-
-        expect(result.stdout).toContain('Embedding repositories');
+        const result = await docsCli(['embed'], sandbox.cwd, {...timeout.high/*, env: secrets*/});
 
         console.log(result);
+
+        expect(result.stdout).toContain('Embedding repositories');
 
         expect(result.stdout).toContain('Embedding shopware/frontends');
         expect(result.stdout).toContain('Embedding shopware/admin-extension-sdk');
