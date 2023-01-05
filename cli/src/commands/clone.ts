@@ -82,21 +82,16 @@ export default {
             // @ts-ignore
             const repoEnv: { [key: string]: { description: string, as?: string } } = repo.env || {};
             for (const key of Object.keys(repoEnv)) {
-                console.log(`Gathering: ${key}`);
-
                 // check for env variable
                 if (env[key]) {
-                    console.log(`Exists in process.env, has length of ${env[key].length}: ${key}`);
                     // @ts-ignore
                     myEnv[key] = env[key];
                 } else {
                     // check for local storage
                     const saved = storage.get(key);
                     if (saved) {
-                        output.notice(`Exists in local storage: ${key}`);
                         myEnv[key] = saved;
                     } else {
-                        output.notice(`Prompting: ${key}`);
                         const message = repoEnv[key].description;
                         const {value} = await inquirer.prompt([
                             {
