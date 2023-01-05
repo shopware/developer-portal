@@ -2,7 +2,7 @@ import {composeRepository} from "../../cli/src/helpers";
 
 describe('composeRepository', async () => {
 
-    test('composes', () => {
+    test('composes github', () => {
         const repositories = [
             'frontends',
             'shopware/frontends',
@@ -32,6 +32,25 @@ describe('composeRepository', async () => {
                 pass: 'pass',
                 org: 'my-org',
                 git: 'gitlab.shopware.com',
+            },
+        };
+
+        for (const repository of repositories) {
+            for (const output of Object.keys(outputs)) {
+                expect(composeRepository(repository, outputs[output])).toEqual(output);
+            }
+        }
+    })
+
+    test('composes gitlab', () => {
+        const repositories = [
+            'gitlab.shopware.com/product/engineering/platform-group/pwa/frontends',
+        ];
+        const outputs = {
+            'git@gitlab.shopware.com/product/engineering/platform-group/pwa/frontends.git': {},
+            'user:pass@gitlab.shopware.com/product/engineering/platform-group/pwa/frontends.git': {
+                user: 'user',
+                pass: 'pass',
             },
         };
 
