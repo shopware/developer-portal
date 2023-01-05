@@ -47,9 +47,11 @@ describe('cli embed', async () => {
     test.skipIf(!Object.values(secrets)[0])('Embed configured paths', async () => {
         withDirConfig(sandbox, secrets);
 
-        const result = await docsCli(['embed'], sandbox.cwd, timeout.high, true);
+        const result = await docsCli(['embed'], sandbox.cwd, timeout.high);
 
         expect(result.stdout).toContain('Embedding repositories');
+
+        console.log(result);
 
         expect(result.stdout).toContain('Embedding shopware/frontends');
         expect(result.stdout).toContain('Embedding shopware/admin-extension-sdk');
