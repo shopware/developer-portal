@@ -23,7 +23,7 @@ export const storage = {
         output.debug(`Getting ${key}`);
         const value = this.storage().getItem(key);
         if (!value) {
-            output.debug(`No value for ${key}`);
+            output.log(`No value for ${key}`);
             return def;
         }
 

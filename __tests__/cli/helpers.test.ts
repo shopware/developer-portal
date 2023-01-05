@@ -1,0 +1,45 @@
+import {composeRepository} from "../../cli/src/helpers";
+
+describe('composeRepository', async () => {
+
+    test('composes', () => {
+        const repositories = [
+            'frontends',
+            'shopware/frontends',
+            'frontends.git',
+            'shopware/frontends.git',
+            'github.com/shopware/frontends',
+            'ssh://github.com/shopware/frontends',
+            'https://github.com/shopware/frontends',
+            'https://git@github.com/shopware/frontends',
+        ];
+        const outputs = {
+            'git@github.com/shopware/frontends.git': {},
+            'custom@github.com/shopware/frontends.git': {
+                user: 'custom',
+            },
+            'custom:pass@github.com/shopware/frontends.git': {
+                user: 'custom',
+                pass: 'pass',
+            },
+            'custom:pass@gitlab.shopware.com/shopware/frontends.git': {
+                user: 'custom',
+                pass: 'pass',
+                git: 'gitlab.shopware.com',
+            },
+            'custom:pass@gitlab.shopware.com/my-org/frontends.git': {
+                user: 'custom',
+                pass: 'pass',
+                org: 'my-org',
+                git: 'gitlab.shopware.com',
+            },
+        };
+
+        for (const repository of repositories) {
+            for (const output of Object.keys(outputs)) {
+                expect(composeRepository(repository, outputs[output])).toEqual(output);
+            }
+        }
+    })
+
+})

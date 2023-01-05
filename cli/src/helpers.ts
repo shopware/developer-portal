@@ -151,7 +151,7 @@ export const composeRepository = (repo: string, {git, org, user, pass}: { [key: 
     }
 
     // add schema
-    if (!repo.includes('ssh://') && !repo.includes('ssh://')) {
+    if (!repo.includes('ssh://') && !repo.includes('https://')) {
         repo = `https://${repo}`;
     } else {
         // replace schema to https
