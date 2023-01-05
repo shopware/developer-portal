@@ -6,8 +6,6 @@ export default {
     options: [],
     handler: async () => {
         // @T00D00 - implement!
-        return output.error('NOT IMPLEMENTED');
-
         output.notice('Removing symlinks and copied dirs');
 
         // other directories are embedded (symlinked/copied) and can be removed

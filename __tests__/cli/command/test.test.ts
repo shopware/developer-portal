@@ -2,7 +2,7 @@ import {createSandbox, destroySandbox, docsCli, timeout, withDirConfig, terminat
 import {expectEmptyRootPath} from "../expect";
 import {prepareDeveloperPortalCheckout} from "../prepare";
 
-describe('cli pull', async () => {
+describe('cli test', async () => {
     let sandbox;
     beforeEach(() => {
         sandbox = createSandbox();
@@ -12,23 +12,21 @@ describe('cli pull', async () => {
         sandbox = destroySandbox(sandbox);
     })
 
-    test('Default pull (empty)', async () => {
-        const result = await terminates(docsCli(['pull'], sandbox.cwd, timeout.low));
+    test('Default test (empty)', async () => {
+        const result = await terminates(docsCli(['test'], sandbox.cwd, timeout.low));
 
         // terminates
         expectEmptyRootPath(result);
     })
 
-    test('Pull configured paths', async () => {
+    test('Test configured paths', async () => {
         withDirConfig(sandbox);
 
         // prepare developer-portal checkout
         prepareDeveloperPortalCheckout(sandbox);
 
-        const result = await docsCli(['pull'], sandbox.cwd, timeout.medium);
+        const result = await docsCli(['test'], sandbox.cwd, timeout.medium);
 
-        // test "git pull --ff" and "pnpm i"
-        expect(result.stdout).toContain('Up to date');
-        expect(result.stdout).toContain('Done in ');
+        expect(result.stdout).toContain('Running test');
     })
 })

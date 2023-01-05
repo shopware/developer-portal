@@ -124,3 +124,27 @@ export const withDirConfig = (sandbox, secrets = {}) => {
         ...secrets,
     });
 }
+
+export const fetchSecrets = () => {
+    const secrets = {
+        GITLAB_FRONTENDS_USERNAME: process.env.GITLAB_FRONTENDS_USERNAME,
+        GITLAB_FRONTENDS_ACCESS_KEY: process.env.GITLAB_FRONTENDS_ACCESS_KEY,
+        FIGMA_TOKEN: process.env.FIGMA_TOKEN,
+        FIGMA_FILE: process.env.FIGMA_FILE,
+    };
+
+    Object.keys(secrets).forEach(secret => {
+        if (secrets[secret]) {
+            return;
+        }
+
+        if (!fs.existsSync(`../.docs-cli/${secret}`)) {
+            return;
+        }
+
+        // perse from parent (local) env config
+        secrets[secret] = JSON.parse(fs.readFileSync(`../.docs-cli/${secret}`));
+    });
+
+    return secrets;
+}
