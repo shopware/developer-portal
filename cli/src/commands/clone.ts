@@ -89,38 +89,33 @@ export default {
                     console.log(`Exists in process.env, has length of ${env[key].length}: ${key}`);
                     // @ts-ignore
                     myEnv[key] = env[key];
-                    continue;
-                }
-
-                // check for local storage
-                const saved = storage.get(key);
-                if (saved) {
-                    output.notice(`Exists in local storage: ${key}`);
-                    myEnv[key] = saved;
                 } else {
-                    output.notice(`Prompting: ${key}`);
-                    const message = typeof repoEnv[key] === 'string'
-                        ? repoEnv[key]
-                        : repoEnv[key].description;
-                    const {value} = await inquirer.prompt([
-                        {
-                            name: 'value',
-                            type: 'password',
-                            message: `${message} - ${key}`,
-                        }
-                    ]);
+                    // check for local storage
+                    const saved = storage.get(key);
+                    if (saved) {
+                        output.notice(`Exists in local storage: ${key}`);
+                        myEnv[key] = saved;
+                    } else {
+                        output.notice(`Prompting: ${key}`);
+                        const message = repoEnv[key].description;
+                        const {value} = await inquirer.prompt([
+                            {
+                                name: 'value',
+                                type: 'password',
+                                message: `${message} - ${key}`,
+                            }
+                        ]);
 
-                    storage.set(key, value);
-                    myEnv[key] = value;
+                        storage.set(key, value);
+                        myEnv[key] = value;
+                    }
                 }
 
                 // @T00D00 - simplify?
-                if (typeof repoEnv[key] === 'object') {
-                    if (myEnv[key] && repoEnv[key].as === 'user') {
-                        user = myEnv[key];
-                    } else if (myEnv[key] && repoEnv[key].as === 'pass') {
-                        pass = myEnv[key];
-                    }
+                if (myEnv[key] && repoEnv[key].as === 'user') {
+                    user = myEnv[key];
+                } else if (myEnv[key] && repoEnv[key].as === 'pass') {
+                    pass = myEnv[key];
                 }
             }
         }
