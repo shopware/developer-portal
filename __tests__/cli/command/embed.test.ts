@@ -49,6 +49,8 @@ describe('cli embed', async () => {
 
         const result = await docsCli(['embed'], sandbox.cwd, {...timeout.high/*, env: secrets*/});
 
+        console.log(result);
+
         expect(result.stdout).toContain('Embedding repositories');
 
         expect(result.stdout).toContain('Embedding shopware/frontends');
