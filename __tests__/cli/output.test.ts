@@ -11,6 +11,7 @@ describe('output', async () => {
     afterEach(() => {
         myLog = [];
         log = null;
+        vi.restoreAllMocks();
     });
 
     const mockLog = () => {
