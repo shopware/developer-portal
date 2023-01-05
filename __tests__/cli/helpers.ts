@@ -18,7 +18,7 @@ export const createProgram = (data?: string[]) => {
     return program;
 }
 
-export const docsCli = (args, cwd = '.', options: ExecOptions = {}): Promise<{ code, error, stdout, stderr }> => new Promise(resolve => {
+export const docsCli = (args, cwd = '.', options: ExecOptions = {}, output = false): Promise<{ code, error, stdout, stderr }> => new Promise(resolve => {
     // avoid referencing
     const finalOptions = {...options};
 
@@ -36,6 +36,9 @@ export const docsCli = (args, cwd = '.', options: ExecOptions = {}): Promise<{ c
         command,
         finalOptions,
         (error, stdout, stderr) => {
+            if (output) {
+                console.log('stdout', stdout, 'stderr', stderr, 'error', error);
+            }
             resolve({
                 code: error && error.code ? error.code : 0,
                 error,
