@@ -1,7 +1,6 @@
 import {output} from "../output";
 import fs from "fs";
-import {getDeveloperPortalPath, run, sh} from "../helpers";
-//import process, {env} from "process";
+import {getDeveloperPortalPath, run} from "../helpers";
 import {execSync} from 'child_process';
 
 export const clone = async ({
@@ -40,14 +39,14 @@ export const clone = async ({
     // clone into tmp dir
     output.notice(`Cloning branch ${branch} in repo ${cleanRepo}`);
     try {
+        //await run('which', ['git'], {dir: tmpDir});
+        //await run('/usr/local/bin/git', ['--version'], {dir: tmpDir});
+        //await run('git', ['clone', '--depth', '1', '-b', branch, `https://${repository}`, tmpDir], {dir: tmpDir});
         const gitCloneOutput = execSync(`git clone --depth 1 -b ${branch} https://${repository} ${tmpDir}`);
         output.log(`${gitCloneOutput}`);
     } catch (e) {
         throw `Error cloning ${cleanRepo}`;
     }
-    //await run('which', ['git'], {dir: tmpDir});
-    //await run('/usr/local/bin/git', ['--version'], {dir: tmpDir});
-    //await run('git', ['clone', '--depth', '1', '-b', branch, `https://${repository}`, tmpDir], {dir: tmpDir});
 
     // special flows
     const docsAfterClone = '.github/scripts/docs-after-clone.sh';
@@ -56,20 +55,13 @@ export const clone = async ({
         fs.chmodSync(`${tmpDir}/${docsAfterClone}`, 0o777);
         await run(`${tmpDir}/${docsAfterClone}`, [], {
             dir: tmpDir,
-            env: options.env/*{
-                FIGMA_TOKEN: env.FIGMA_TOKEN,
-                FIGMA_FILE: env.FIGMA_FILE,
-            }*/
+            env: options.env
         });
     }
 
     // create deep dir
     output.notice(`Creating deep dir ${dst}`);
     fs.mkdirSync(dst, {recursive: true});
-
-    // tmp delete last dir
-    //output.notice('Deleting last dir');
-    //fs.rmdirSync(dst, {recursive: true});
 
     // create a new symlink
     output.notice(`Copying ${src} to ${dst}`);

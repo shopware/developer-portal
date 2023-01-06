@@ -106,7 +106,6 @@ export default {
                     }
                 }
 
-                // @T00D00 - simplify?
                 if (myEnv[key] && repoEnv[key].as === 'user') {
                     user = myEnv[key];
                 } else if (myEnv[key] && repoEnv[key].as === 'pass') {

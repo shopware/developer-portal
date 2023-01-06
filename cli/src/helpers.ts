@@ -21,7 +21,6 @@ const pipe = (subprocess: ExecaChildProcess) => {
     return subprocess;
 };
 
-//export const wd = resolve(`${process.cwd()}/../`);
 export const pnpm = async (run: string, args = [], options: { dir?: string, [key: string]: any } = {}) => {
     const cwd = options.dir || await getDeveloperPortalPath();
 
@@ -107,11 +106,6 @@ export const composeRepository = (repo: string, {git, org, user, pass}: { [key: 
     if (!repo.endsWith('.git')) {
         repo = `${repo}.git`;
     }
-
-    // append org
-    //if (!repo.includes('/')) {
-    //    repo = `${org}/${repo}`;
-    //}
 
     // append org
     if (repo.includes('shopware.com/')) {
