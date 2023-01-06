@@ -14,7 +14,7 @@ describe('cli clone', async () => {
     test('Default clone (empty)', async () => {
         const result = await docsCli(['clone'], sandbox.cwd, timeout.low);
 
-        expect(result.stdout).toContain('Preparing frontends');
+        expect(result.stdout).toContain('Repository is required');
     })
 
     test('Clone configured paths', async () => {
@@ -23,7 +23,7 @@ describe('cli clone', async () => {
         // prepare developer-portal checkout
         prepareDeveloperPortalCheckout(sandbox);
 
-        const result = await docsCli(['clone'], sandbox.cwd, timeout.medium);
+        const result = await docsCli(['clone', '--repository', 'frontends'], sandbox.cwd, timeout.medium);
 
         expect(result.stdout).toContain('Preparing frontends');
     })

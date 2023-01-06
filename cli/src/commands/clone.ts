@@ -61,6 +61,11 @@ export default {
         git?: string,
         ci?: boolean
     }) => {
+        if (!repository) {
+            output.error('Repository is required');
+            return;
+        }
+
         output.notice(`Preparing ${repository}`);
 
         const myEnv: { [key: string]: string } = {};
