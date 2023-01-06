@@ -44,7 +44,8 @@
     "sass": "^1.56.2",
     "uuid": "^9.0.0",
     "@vitest/coverage-c8": "^0.26.3",
-    "execa": "^6.1.0"
+    "execa": "^6.1.0",
+    "shell-escape": "^0.2.0"
   },
   "pnpm": {
     "peerDependencyRules": {
