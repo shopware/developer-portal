@@ -68,11 +68,28 @@ Run it.
 $ ./docs-cli
 # from the source
 $ ./cli/dist/docs-cli.js
-# pkg version
-$ ./cli/dist/docs-cli-linux
+
 ```
 
 ![Checkout developer-portal](./cli/demo/checkout.gif)
+
+### Using pkg
+
+Optionally, you can pack your build afterwards with pkg using `cli:pkg` command.
+
+```bash
+$ pnpm cli:pkg
+```
+
+This command will replace all `require` and `import` statements, embed package dependencies in single file, and prepare
+a built specific to your OS.
+
+```bash
+$ ./cli/dist/docs-cli-linux
+$ ./cli/dist/docs-cli-mac
+$ ./cli/dist/docs-cli-win.bat
+
+```
 
 ## Local storage
 

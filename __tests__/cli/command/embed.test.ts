@@ -44,7 +44,7 @@ describe('cli embed', async () => {
     // vars are added to CI secrets OR read from parent dir
     const secrets = fetchSecrets();
     // @ts-ignore
-    test.only.skipIf(!Object.values(secrets)[0])('Embed configured paths', async () => {
+    test.skipIf(!Object.values(secrets)[0])('Embed configured paths', async () => {
         withDirConfig(sandbox, secrets);
 
         const result = await docsCli(['embed'], sandbox.cwd, {...timeout.high/*, env: secrets*/});

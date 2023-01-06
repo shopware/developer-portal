@@ -1,6 +1,6 @@
 import {Stoplight} from "../page-objects/stoplight";
 
-describe.skip('render correct content', async () => {
+describe('render correct content', async () => {
     let embeddedPage: Stoplight;
 
     beforeAll(async () => {
