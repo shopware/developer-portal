@@ -14,12 +14,10 @@ export default {
         {
             name: 'r --repository <repository>',
             example: 'frontends | shopware/frontends | shopware/frontends.git | github.com/shopware/frontends.git | ssh://git@gitlab.com/shopware/frontends.git',
-            defaultValue: null
         },
         {
             name: 'a --as <as>',
             example: 'shopware/frontends',
-            defaultValue: null
         },
         {
             name: 'b --branch <branch>',
@@ -29,7 +27,6 @@ export default {
         optionDst,
         {
             name: 'o --org <org>',
-            defaultValue: null
         },
         {
             name: 'u --user <user>',
@@ -37,11 +34,9 @@ export default {
         },
         {
             name: 'p --pass <pass>',
-            defaultValue: null
         },
         {
             name: 'g --git <git>',
-            defaultValue: null
         },
         optionCI,
     ],
