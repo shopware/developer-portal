@@ -229,20 +229,6 @@ jobs:
           unzip full-build.zip
           ls -la .vitepress/dist
 
-      # disabled due to public bucket and disabled ACL
-      #- name: Deploy
-      #  uses: reggionick/s3-deploy@v3
-      #  with:
-      #    folder: .vitepress/dist
-      #    bucket: ${{ secrets.STAGING_S3_BUCKET }}
-      #    bucket-region: ${{ secrets.STAGING_S3_BUCKET_REGION }}
-      #    dist-id: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
-      #    invalidation: /
-      #    delete-removed: true
-      #    no-cache: true
-      #    #private: false
-      #    filesToInclude: ".*/*,*/*,**"
-
       - uses: jakejarvis/s3-sync-action@master
         with:
           # args: --acl public-read --follow-symlinks --delete
