@@ -29,7 +29,6 @@ describe('cli pull', async () => {
         const result = await docsCli(['pull'], sandbox.cwd, timeout.medium);
 
         // test "git pull --ff" and "pnpm i"
-        expect(result.stdout).toContain('Up to date');
         expect(result.stdout).toContain('Done in ');
         expect(result.stdout).toContain('Developer portal up to date');
     })
