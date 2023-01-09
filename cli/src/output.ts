@@ -26,13 +26,15 @@ class Output {
     }
 
     verbose(...messages: string[]) {
-        if (this.isDebug) {
+        if (this.isVerbose) {
             messages.forEach((message) => console.log(warn(message)));
         }
     }
 
     debug(...messages: string[]) {
-        console.log(...messages);
+        if (this.isDebug) {
+            messages.forEach((message) => console.log(warn(message)));
+        }
     }
 
     log(...messages: string[]) {

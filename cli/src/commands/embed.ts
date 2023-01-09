@@ -3,6 +3,7 @@ import clone from "./clone";
 import {repositories} from "../data";
 import inquirer from "inquirer";
 import confirm from '@inquirer/confirm';
+import {optionCI} from "../options";
 
 export default {
     name: 'embed',
@@ -12,9 +13,10 @@ export default {
             name: 'c --configure',
             description: 'Apply manual configuration for embedding feature branches and forks',
             defaultValue: false,
-        }
+        },
+        optionCI,
     ],
-    handler: async ({configure}: { configure: boolean | null }, program: any) => {
+    handler: async ({configure, ci}: { configure: boolean | null, ci: boolean }, program: any) => {
         output.notice('Embedding repositories');
 
         const {selectedRepositories} = await inquirer.prompt([
@@ -36,7 +38,7 @@ export default {
 
             // allow custom branch (features) and organization (forks)
             let branch = repo.branch;
-            let org = 'shopware';
+            let org = repo.org;
             if (configure && await confirm({message: 'Would you like to override branch or organization?'})) {
                 const response = await inquirer.prompt([
                     {
@@ -57,12 +59,14 @@ export default {
             }
 
             // call clone command
+            output.notice(`Embedding ${repo.name}`);
             await clone.handler({
                 repository: repo.name,
                 src: repo.src,
                 dst: repo.dst,
                 branch,
                 org,
+                ci,
             });
 
             output.success(`Processed ${repo.name}`);

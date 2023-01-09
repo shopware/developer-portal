@@ -1,10 +1,11 @@
-import {composeRepository, sh} from "../helpers";
-import {optionDst, optionSrc} from "../options";
+import {composeRepository, requireParam, sh} from "../helpers";
+import {optionDst, optionSrc, optionCI} from "../options";
 import {output} from "../output";
 import {repositories} from "../data";
 import inquirer from "inquirer";
 import {storage} from "../storage";
 import {env} from "process";
+import {clone} from "../procedure/clone";
 
 export default {
     name: 'clone',
@@ -12,7 +13,11 @@ export default {
     options: [
         {
             name: 'r --repository <repository>',
-            example: 'frontends | shopware/frontends | shopware/frontends.git | github.com/shopware/frontends.git | ssh://git@gitlab.com/shopware/frontends.git'
+            example: 'frontends | shopware/frontends | shopware/frontends.git | github.com/shopware/frontends.git | ssh://git@gitlab.com/shopware/frontends.git',
+        },
+        {
+            name: 'a --as <as>',
+            example: 'shopware/frontends',
         },
         {
             name: 'b --branch <branch>',
@@ -22,7 +27,6 @@ export default {
         optionDst,
         {
             name: 'o --org <org>',
-            defaultValue: 'shopware'
         },
         {
             name: 'u --user <user>',
@@ -30,63 +34,100 @@ export default {
         },
         {
             name: 'p --pass <pass>',
-            defaultValue: null
         },
         {
             name: 'g --git <git>',
-            defaultValue: 'github.com'
         },
+        optionCI,
     ],
-    handler: async ({repository, branch, src, dst, org, user, pass, git}: { [key: string]: string }) => {
-        output.notice(`Cloning ${repository}`);
+    handler: async ({
+                        repository,
+                        branch,
+                        src,
+                        dst,
+                        org,
+                        user,
+                        pass,
+                        git,
+                        ci
+                    }: {
+        repository: string,
+        branch: string,
+        src: string,
+        dst: string,
+        org?: string,
+        user?: string,
+        pass?: string,
+        git?: string,
+        ci?: boolean
+    }) => {
+        if (!repository) {
+            output.error('Repository is required');
+            return;
+        }
 
-        repository = composeRepository(repository, {git, org, user, pass});
+        output.notice(`Preparing ${repository}`);
+
+        src = await requireParam(src, optionSrc);
+        dst = await requireParam(dst, optionDst);
 
         const myEnv: { [key: string]: string } = {};
         for (const repo of repositories) {
-            if (typeof repo !== 'object' || typeof repo.env === "undefined") {
+            if (repo.name !== repository) {
                 continue;
             }
 
-            for (const key of Object.keys(repo.env)) {
+            if (typeof repo.env === "undefined") {
+                continue;
+            }
+
+            output.notice('Gathering env vars');
+            // @ts-ignore
+            const repoEnv: { [key: string]: { description: string, as?: string } } = repo.env || {};
+            for (const key of Object.keys(repoEnv)) {
                 // check for env variable
                 if (env[key]) {
                     // @ts-ignore
                     myEnv[key] = env[key];
-                    continue;
-                }
+                } else {
+                    // check for local storage
+                    const saved = storage.get(key);
+                    if (saved) {
+                        myEnv[key] = saved;
+                    } else {
+                        const message = repoEnv[key].description;
+                        const {value} = await inquirer.prompt([
+                            {
+                                name: 'value',
+                                type: 'password',
+                                message: `${message} - ${key}`,
+                            }
+                        ]);
 
-                // check for local storage
-                const saved = storage.get(key);
-                if (saved) {
-                    output.notice(`Exists ${key}`);
-                    myEnv[key] = saved;
-                    continue;
-                }
-
-                const {value} = await inquirer.prompt([
-                    {
-                        name: 'value',
-                        type: 'password',
-                        // @ts-ignore
-                        message: `${repo.env[key]} - ${key}`,
+                        storage.set(key, value);
+                        myEnv[key] = value;
                     }
-                ]);
+                }
 
-                storage.set(key, value);
+                if (myEnv[key] && repoEnv[key].as === 'user') {
+                    user = myEnv[key];
+                } else if (myEnv[key] && repoEnv[key].as === 'pass') {
+                    pass = myEnv[key];
+                }
             }
         }
 
-        // @T00D00 - rewrite
-        await sh(`.github/scripts/clone.sh`, [
+        output.notice(`Cloning ${repository}`);
+        repository = composeRepository(repository, {git, org, user, pass});
+        await clone({
             repository,
             branch,
             src,
             dst,
-        ], {
-            env: myEnv
+            ci,
+            options: {env: myEnv}
         });
 
-        output.success(`${repository} cloned`);
+        output.success(`Repository cloned`);
     }
 };

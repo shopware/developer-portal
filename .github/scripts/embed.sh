@@ -2,32 +2,59 @@
 set -e
 
 # custom branches
-BRANCH_FRONTENDS=DX-202
-BRANCH_ADMIN_EXTENSION_SDK=DX-223
-BRANCH_METEOR_ICON_KIT=DX-223
-BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
-ORG_METEOR_ICON_KIT=bojanrajh
-ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
+export BRANCH_FRONTENDS=DX-202
+export BRANCH_ADMIN_EXTENSION_SDK=DX-223
 
-echo "Cleanup previous scripts"
-#rm -rf ./src/docs/frontends || true
-#rm -rf ./src/docs/resources || true
-rm -rf ./src/v || true
+export BRANCH_METEOR_ICON_KIT=DX-223
+export ORG_METEOR_ICON_KIT=bojanrajh
 
-echo "\nCloning repositories"
-sh ./.github/scripts/clone.sh git@github.com/shopware/frontends.git main apps/docs/src frontends
-sh ./.github/scripts/clone.sh ${GITLAB_FRONTENDS_USERNAME}:${GITLAB_FRONTENDS_ACCESS_KEY}@gitlab.shopware.com/product/engineering/platform-group/pwa/frontends.git ${BRANCH_FRONTENDS} apps/docs/src frontends-gl
-sh ./.github/scripts/clone.sh git@github.com/shopware/admin-extension-sdk.git ${BRANCH_ADMIN_EXTENSION_SDK} docs/docs/guide resources/admin-extension-sdk
+export BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
+export ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
 
-#sh ./.github/scripts/clone.sh git@github.com/shopware/store-api-reference.git main docs docs/resources/store-api-reference
-#sh ./.github/scripts/clone.sh git@github.com/shopware/admin-api-reference.git main docs docs/resources/admin-api-reference
+if [[ "$PWD" != *"/developer-portal" ]]; then
+  echo "DANGEROUS, WRONG PWD"
+  echo $PWD
+  exit 1
+fi
 
-echo "\nBuilding Meteor icon kit"
-sh ./.github/scripts/clone.sh git@github.com/${ORG_METEOR_ICON_KIT}/meteor-icon-kit.git ${BRANCH_METEOR_ICON_KIT} docs resources/meteor-icon-kit
+#alias docs-cli="./cli/dist/docs-cli-linux"
 
-echo "\nBuilding Meteor component library"
-sh ./.github/scripts/clone.sh git@github.com/${ORG_METEOR_COMPONENT_LIBRARY}/meteor-component-library.git ${BRANCH_METEOR_COMPONENT_LIBRARY} docs resources/meteor-component-library
+./docs-cli clone \
+ --ci \
+ --repository shopware/frontends \
+ --branch main \
+ --src apps/docs/src \
+ --dst frontends
 
-echo "\nClone versioned repositories"
-#sh ./.github/scripts/clone.sh git@github.com/shopware/docs.git v6.4 . v/6.4/docs
-#sh ./.github/scripts/clone.sh git@github.com/shopware/docs.git v6.3.0 . v/6.3/docs
+./docs-cli clone \
+ --ci \
+ --repository gitlab.shopware.com/product/engineering/platform-group/pwa/frontends \
+ --user ${GITLAB_FRONTENDS_USERNAME} \
+ --pass ${GITLAB_FRONTENDS_ACCESS_KEY} \
+ --branch ${BRANCH_FRONTENDS} \
+ --src apps/docs/src \
+ --dst frontends-gl \
+ --git gitlab.shopware.com
+
+./docs-cli clone \
+ --ci \
+ --repository shopware/admin-extension-sdk \
+ --branch ${BRANCH_ADMIN_EXTENSION_SDK} \
+ --src docs/docs/guide \
+ --dst resources/admin-extension-sdk
+
+./docs-cli clone \
+ --ci \
+ --repository shopware/meteor-icon-kit \
+ --branch ${BRANCH_METEOR_ICON_KIT} \
+ --src docs \
+ --dst resources/meteor-icon-kit \
+ --org ${ORG_METEOR_ICON_KIT}
+
+./docs-cli clone \
+ --ci \
+ --repository shopware/meteor-component-library \
+ --branch ${BRANCH_METEOR_COMPONENT_LIBRARY} \
+ --src docs \
+ --dst resources/meteor-component-library \
+ --org ${ORG_METEOR_COMPONENT_LIBRARY}

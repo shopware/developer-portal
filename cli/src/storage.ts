@@ -1,6 +1,7 @@
 import {JSONStorage} from "node-localstorage";
 import {output} from "./output";
 import {resolve} from "path";
+import process from "process";
 
 let localStorage: JSONStorage;
 
@@ -22,7 +23,7 @@ export const storage = {
         output.debug(`Getting ${key}`);
         const value = this.storage().getItem(key);
         if (!value) {
-            output.debug(`No value for ${key}`);
+            output.log(`No value for ${key}`);
             return def;
         }
 

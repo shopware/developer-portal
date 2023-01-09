@@ -26,7 +26,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     // remove if edit not needed
     editLink: {
-      repo: "shopware/developer-documentation-vuepress",
+      repo: "shopware/developer-documentation-vitepress",
       text: "Edit this page on GitHub",
     },
 

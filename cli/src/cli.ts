@@ -45,7 +45,16 @@ const registerCommand = (command: Command, {
 
     // register options
     options && options.forEach(({name, description, defaultValue, example}) => {
-        command.option(`--${name}`, description || name, defaultValue || example || null);
+        let desc = `${description || name}`;
+        if (example) {
+            desc = `${desc} (example: ${example})`;
+        }
+
+        if (typeof defaultValue !== "undefined") {
+            command.option(`--${name}`, desc, defaultValue);
+        } else {
+            command.option(`--${name}`, desc);
+        }
     });
 
     // register handler
@@ -72,7 +81,7 @@ const registerCommand = (command: Command, {
 }
 
 const cli = {
-    run() {
+    program() {
         const program = new Command();
 
         program
@@ -89,10 +98,15 @@ const cli = {
         // register commands
         commands.forEach(command => createCommand(program, command));
 
+        return program;
+    },
+    run() {
+        const program = this.program();
+
         try {
             program.parse();
         } catch (e) {
-            output.error(e);
+            output.error("ERROR in CLI", e);
         }
     }
 };

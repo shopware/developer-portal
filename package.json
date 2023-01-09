@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest run -r __tests__/e2e",
+    "test": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
+    "test:cli": "vitest run -r __tests__/cli --no-threads --sequence.shuffle",
+    "test:cli:coverage": "vitest run -r __tests__/cli --no-threads --coverage",
     "dev": "SHOPWARE_DEV=1 vitepress",
     "build": "vitepress build",
-    "serve": "vitepress serve"
+    "serve": "vitepress serve",
+    "preview": "docker run -dit -p 8765:80 -v \"$PWD/.vitepress/dist\":/usr/local/apache2/htdocs/ httpd:2.4",
+    "cli:dev": "pnpm --dir ./cli dev && chmod +x ./cli/dist/docs-cli.js",
+    "cli:build": "pnpm --dir ./cli build && chmod +x ./cli/dist/docs-cli.js",
+    "cli:pkg": "pnpm --dir ./cli pkg",
+    "docs:embed": "./docs-cli embed"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +23,7 @@
   "dependencies": {
     "terser": "^5.15.1",
     "vite": "3.2.5",
-    "vitepress": "1.0.0-alpha.33",
+    "vitepress": "1.0.0-alpha.35",
     "vitepress-shopware-docs": "^0.2.0-beta.5",
     "vue": "^3.2.41"
   },
@@ -26,14 +33,20 @@
     "@playwright/test": "^1.28.1",
     "@vitejs/plugin-vue": "^3.2.0",
     "@types/jest": "^29.2.4",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^16.9.1",
+    "@types/shell-escape": "^0.2.1",
     "get-port": "^6.1.2",
     "playwright-chromium": "^1.28.1",
     "vitest": "^0.25.6",
     "@vue/test-utils": "^2.2.6",
     "jest-expect-message": "^1.1.3",
     "fuse.js": "^6.6.2",
-    "sass": "^1.56.2"
+    "sass": "^1.56.2",
+    "uuid": "^9.0.0",
+    "@vitest/coverage-c8": "^0.26.3",
+    "execa": "^6.1.0",
+    "shell-escape": "^0.2.0"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -46,5 +59,8 @@
         "mkdirp"
       ]
     }
-  }
+  },
+  "workspaces": [
+    "cli"
+  ]
 }

@@ -1,6 +1,8 @@
-import {requireParam, sh} from "../helpers";
+import {getDeveloperPortalPath, requireParam, sh} from "../helpers";
 import {optionDst, optionSrc} from "../options";
 import {output} from "../output";
+import fs from "fs";
+import {execSync} from "child_process";
 
 export default {
     name: 'link',
@@ -37,18 +39,85 @@ export default {
 
         output.notice('Linking docs directory');
 
-        const strategy = symlink
-            ? 'ln'
-            : (rsync ? 'sync' : 'cp');
-
         src = await requireParam(src, optionSrc);
         dst = await requireParam(dst, optionDst);
 
-        // @T00D00 - refactor
-        await sh(`.github/scripts/${strategy}.sh`, [
-            src,
-            dst,
-        ]);
+        if (symlink && dst === '.') {
+            output.error('Destination cannot be . when using --symlink - use --copy or --rsync');
+            return;
+        }
+
+        const strategies = {
+            rsync: ({src, dst}: { src: string, dst: string }) => {
+                output.notice(`Rsyncing from ${src} to ${dst}`);
+                const excludes = [
+                    '--exclude=node_modules',
+                    '--exclude=.vitepress',
+                    '--exclude=.gitignore',
+                    '--exclude=package.json',
+                    '--exclude=package-lock.json',
+                    '--exclude=pnpm-lock.yaml',
+                ];
+                try {
+
+                    // create deep dir
+                    output.notice(`Creating deep dir ${dst}`);
+                    fs.mkdirSync(dst, {recursive: true});
+
+                    const response = execSync(`rsync -a ${src}/ ${dst} ${excludes.join(' ')}`);
+                    output.log(`${response}`);
+                } catch (e) {
+                    throw `Error rsyncing ${src}`;
+                }
+            },
+            symlink: ({src, dst}: { src: string, dst: string }) => {
+                output.notice(`Symlinking from ${src} to ${dst}`);
+                try {
+                    const response = execSync(`ln -s ${src} ${dst}`);
+                    output.log(`${response}`);
+                } catch (e) {
+                    throw `Error symlinking ${src}`;
+                }
+            },
+            copy: ({src, dst}: { src: string, dst: string }) => {
+                output.notice(`Copying from ${src} to ${dst}`);
+                try {
+                    const response = execSync(`cp -r ${src} ${dst}`);
+                    output.log(`${response}`);
+                } catch (e) {
+                    throw `Error copying ${src}`;
+                }
+            }
+        };
+
+        const strategy = symlink
+            ? strategies.symlink
+            : (rsync ? strategies.rsync : strategies.copy);
+
+        const toDelete = dst !== '.';
+
+        const cwdDir = process.cwd();
+        const developerDir = await getDeveloperPortalPath();
+        src = `${cwdDir}/${src}`
+        dst = `${developerDir}/src/${dst}`;
+
+        output.notice(`Linking to ${dst} from ${src}`);
+
+        // delete existent dir
+        if (toDelete && fs.existsSync(dst)) {
+            if (fs.lstatSync(dst).isDirectory()) {
+                output.notice(`Deleting dir ${dst}`);
+            } else if (fs.lstatSync(dst).isSymbolicLink()) {
+                output.notice(`Deleting symlink ${dst}`);
+            } else {
+                throw `Unknown destination type ${dst}`;
+            }
+
+            fs.rmSync(dst, {recursive: true, force: true});
+        }
+
+        // rsync into destination
+        await strategy({src, dst});
 
         output.success('Docs directory linked');
     }

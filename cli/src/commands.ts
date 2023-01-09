@@ -7,6 +7,7 @@ import build from "./commands/build";
 import test from "./commands/test";
 import pull from "./commands/pull";
 import embed from "./commands/embed";
+import config from "./commands/config";
 import {MyCommand} from "./cli";
 
 export const commands: MyCommand[] = [
@@ -28,4 +29,6 @@ export const commands: MyCommand[] = [
     test,
     // @ts-ignore
     pull,
+    // @ts-ignore
+    config,
 ];

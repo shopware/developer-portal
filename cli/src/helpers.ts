@@ -21,13 +21,12 @@ const pipe = (subprocess: ExecaChildProcess) => {
     return subprocess;
 };
 
-//export const wd = resolve(`${process.cwd()}/../`);
 export const pnpm = async (run: string, args = [], options: { dir?: string, [key: string]: any } = {}) => {
     const cwd = options.dir || await getDeveloperPortalPath();
 
     const runParams = run === 'i'
         ? ['i']
-        : ['run', ...run];
+        : ['run', run];
 
     return pipe(execa(`pnpm`, [
         '--dir',
@@ -64,6 +63,20 @@ export const sh = async (run: string, args: string[], options: { dir?: string, [
         ...options,
     }));
 }
+export const run = async (run: string, args: string[], options: { dir?: string, env?: object, [key: string]: any } = {}) => {
+    const cwd = options.dir || await getDeveloperPortalPath();
+
+    // no cwd!
+    return pipe(execa(run, [
+        ...args
+    ], {
+        cwd,
+        // @ts-ignore
+        env: options.env ?? {},
+        stdio: [0, 1, 2]
+        //...options,
+    }));
+}
 
 export const choices = (choices: { [key: string]: string }) => {
     return Object.keys(choices).reduce((reduced, key) => {
@@ -88,28 +101,24 @@ export const requireParam = async (param: string | undefined, option: { name: st
 
     return response.param;
 }
-export const composeRepository = (repo: string, {git, org, user, pass}: { [key: string]: string }) => {
+export const composeRepository = (repo: string, {git, org, user, pass}: { [key: string]: string | undefined }) => {
     // append git
     if (!repo.endsWith('.git')) {
         repo = `${repo}.git`;
     }
 
     // append org
-    if (!repo.includes('/')) {
-        repo = `${org}/${repo}`;
-    }
-
-    // append org
-    if (!repo.includes('shopware/')) {
+    if (repo.includes('shopware.com/')) {
+        // keep hardcoded
+    } else if (!repo.includes('shopware/')) {
         repo = `${org || 'shopware'}/${repo}`;
     } else if (org) {
         // replace org
         repo = repo.replace('shopware/', `${org}/`);
-        //repo = `${org}/${repo.split('/').slice(1).join('/')}`;
     }
 
-    // append git
-    if (!repo.includes('gitlab.com') && !repo.includes('github.com')) {
+    // append domain
+    if (!repo.includes('gitlab.com') && !repo.includes('github.com') && !repo.includes('gitlab.shopware.com')) {
         repo = `${git || 'github.com'}/${repo}`;
     } else if (git) {
         // replace org
@@ -136,7 +145,7 @@ export const composeRepository = (repo: string, {git, org, user, pass}: { [key: 
     }
 
     // add schema
-    if (!repo.includes('ssh://') && !repo.includes('ssh://')) {
+    if (!repo.includes('ssh://') && !repo.includes('https://')) {
         repo = `https://${repo}`;
     } else {
         // replace schema to https
