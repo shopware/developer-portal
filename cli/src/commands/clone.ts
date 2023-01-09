@@ -1,4 +1,4 @@
-import {composeRepository, sh} from "../helpers";
+import {composeRepository, requireParam, sh} from "../helpers";
 import {optionDst, optionSrc, optionCI} from "../options";
 import {output} from "../output";
 import {repositories} from "../data";
@@ -67,6 +67,9 @@ export default {
         }
 
         output.notice(`Preparing ${repository}`);
+
+        src = await requireParam(src, optionSrc);
+        dst = await requireParam(dst, optionDst);
 
         const myEnv: { [key: string]: string } = {};
         for (const repo of repositories) {
