@@ -20,4 +20,10 @@ You can modify the appearance and styling of the Administration by customizing i
 
 ## API
 
-To provide CRUD operations for every entity within Shopware, the [Admin API](https://developer.shopware.com/docs/concepts/api/admin-api) offers a full range of commerce options making it possible for an ecommerce business to handle backend data.
+The [Admin API](https://developer.shopware.com/docs/concepts/api/admin-api) offers a full range of commerce options making it possible to:
+
+* Configure the shop
+* Access to individual store's data
+* Sync data between your shop and business systems like an ERP
+* Extending new features inside Shopware admin for better user experience
+* Enhancing the way that stores display information to customers
