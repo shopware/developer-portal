@@ -1,13 +1,13 @@
 import {env} from "process";
 
 export const repositories = [
-    /*{
+    {
         name: 'shopware/docs',
         src: 'docs',
-        dst: 'docs/docs',
-        branch: env.BRANCH_DOCS || 'main',
+        dst: '.',
+        branch: env.BRANCH_DOCS || 'refactor-vitepress-format' || 'main',
         org: env.ORG_DOCS || 'shopware',
-    },*/
+    },
     {
         name: 'shopware/frontends',
         src: 'apps/docs/src',

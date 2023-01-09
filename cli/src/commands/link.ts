@@ -42,6 +42,11 @@ export default {
         src = await requireParam(src, optionSrc);
         dst = await requireParam(dst, optionDst);
 
+        if (symlink && dst === '.') {
+            output.error('Destination cannot be . when using --symlink - use --copy or --rsync');
+            return;
+        }
+
         const strategies = {
             rsync: ({src, dst}: { src: string, dst: string }) => {
                 output.notice(`Rsyncing from ${src} to ${dst}`);
@@ -89,6 +94,8 @@ export default {
             ? strategies.symlink
             : (rsync ? strategies.rsync : strategies.copy);
 
+        const toDelete = dst !== '.';
+
         const cwdDir = process.cwd();
         const developerDir = await getDeveloperPortalPath();
         src = `${cwdDir}/${src}`
@@ -97,7 +104,7 @@ export default {
         output.notice(`Linking to ${dst} from ${src}`);
 
         // delete existent dir
-        if (fs.existsSync(dst)) {
+        if (toDelete && fs.existsSync(dst)) {
             if (fs.lstatSync(dst).isDirectory()) {
                 output.notice(`Deleting dir ${dst}`);
             } else if (fs.lstatSync(dst).isSymbolicLink()) {

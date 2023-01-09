@@ -31,3 +31,24 @@ export const prepareDeveloperPortalMounts = (sandbox) => {
         fs.mkdirSync(`${sandbox.developerPortal}/src/${dir}`, {recursive: true});
     }
 }
+
+export const prepareDummySource = (sandbox) => {
+    const dirs = [
+        'foo',
+        'foo/bar',
+    ];
+    for (const dir of dirs) {
+        fs.mkdirSync(`${sandbox.cwd}/${dir}`, {recursive: true});
+    }
+
+    const files = [
+        'root.md',
+        'foo/index.md',
+        'foo/bar.md',
+        'foo/bar/index.md',
+        'foo/bar/baz.md',
+    ];
+    for (const file of files) {
+        fs.writeFileSync(`${sandbox.cwd}/${file}`, file);
+    }
+}
