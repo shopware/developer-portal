@@ -4,7 +4,7 @@ export const repositories = [
     {
         name: 'shopware/docs',
         src: '.',
-        dst: '.',
+        dst: 'docs',
         branch: env.BRANCH_DOCS || 'refactor-vitepress-format' || 'main',
         org: env.ORG_DOCS || 'shopware',
     },
