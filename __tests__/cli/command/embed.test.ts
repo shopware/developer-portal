@@ -59,6 +59,7 @@ describe('cli embed', async () => {
         expect(result.stdout).toContain('Embedding shopware/meteor-component-library');
 
         expect(result.stdout).toContain('Running additional steps');
+        expect(result.stdout).toContain('Repositories embedded');
         // long-running
     }, timeout.high.timeout);
 })

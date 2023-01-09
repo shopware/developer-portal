@@ -14,6 +14,6 @@ export default {
         output.notice('Installing new packages');
         await pnpm('i', [], {dir: developerPortalPath});
 
-        output.success('Up to date');
+        output.success('Developer portal up to date');
     }
 };

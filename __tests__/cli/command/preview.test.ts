@@ -17,6 +17,7 @@ describe('cli preview', async () => {
 
         // terminates
         expectEmptyRootPath(result);
+        expect(result.stdout).not.toContain('Docs previewed');
     })
 
     test('Preview configured paths', async () => {
@@ -28,5 +29,6 @@ describe('cli preview', async () => {
         const result = await docsCli(['preview'], sandbox.cwd, timeout.medium);
 
         expect(result.stdout).toContain('Previewing docs');
+        expect(result.stdout).not.toContain('Docs previewed'); // *long-running
     })
 })

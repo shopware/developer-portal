@@ -17,6 +17,7 @@ describe('cli test', async () => {
 
         // terminates
         expectEmptyRootPath(result);
+        expect(result.stdout).not.toContain('Tests ran');
     })
 
     test('Test configured paths', async () => {
@@ -28,5 +29,6 @@ describe('cli test', async () => {
         const result = await docsCli(['test'], sandbox.cwd, timeout.medium);
 
         expect(result.stdout).toContain('Running test');
+        expect(result.stdout).toContain('Tests ran');
     })
 })

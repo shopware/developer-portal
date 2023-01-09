@@ -58,6 +58,7 @@ export const createSandbox = () => {
     return {
         projectsPath,
         cwd,
+        developerPortal: `${projectsPath}/developer-portal`,
     }
 }
 

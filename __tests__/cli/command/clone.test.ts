@@ -15,6 +15,7 @@ describe('cli clone', async () => {
         const result = await docsCli(['clone'], sandbox.cwd, timeout.low);
 
         expect(result.stdout).toContain('Repository is required');
+        expect(result.stdout).not.toContain('Repository cloned');
     })
 
     test('Clone configured paths', async () => {
@@ -26,5 +27,6 @@ describe('cli clone', async () => {
         const result = await docsCli(['clone', '--repository', 'frontends'], sandbox.cwd, timeout.medium);
 
         expect(result.stdout).toContain('Preparing frontends');
+        expect(result.stdout).toContain('Repository cloned');
     })
 })

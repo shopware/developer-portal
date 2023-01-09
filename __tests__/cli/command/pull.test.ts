@@ -17,6 +17,7 @@ describe('cli pull', async () => {
 
         // terminates
         expectEmptyRootPath(result);
+        expect(result.stdout).not.toContain('Developer portal up to date');
     })
 
     test('Pull configured paths', async () => {
@@ -30,5 +31,6 @@ describe('cli pull', async () => {
         // test "git pull --ff" and "pnpm i"
         expect(result.stdout).toContain('Up to date');
         expect(result.stdout).toContain('Done in ');
+        expect(result.stdout).toContain('Developer portal up to date');
     })
 })
