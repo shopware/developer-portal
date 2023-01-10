@@ -2,6 +2,7 @@ import {output} from "../output";
 import fs from "fs";
 import {getDeveloperPortalPath, run} from "../helpers";
 import {execSync} from 'child_process';
+import {v4 as uuid} from 'uuid';
 
 export const clone = async ({
                                 repository, // 1
@@ -12,12 +13,22 @@ export const clone = async ({
                                 options
                             }: { repository: string, branch: string, src: string, dst: string, ci: boolean | undefined, options: { env?: object } }) => {
     // prepare variables
-    const tmpDir = '/tmp/mount-all';
+    const tmpDir = `/tmp/developer-portal/${uuid()}`;
     const developerDir = ci
         ? process.cwd()
         : await getDeveloperPortalPath();
     src = `${tmpDir}/${src}`
     dst = `${developerDir}/src/${dst}`;
+
+    const cleanupTmpDir = () => {
+        if (!fs.existsSync(tmpDir)) {
+            output.notice(`No need for cleaning - ${tmpDir}`);
+            return;
+        }
+
+        output.notice('Cleaning up');
+        fs.rmSync(tmpDir, {recursive: true, force: true});
+    }
 
     const cleanRepo = repository.split('@')[1];
     output.notice(`Cloning to ${dst} from ${src} in ${branch}@${cleanRepo}`);
@@ -30,44 +41,46 @@ export const clone = async ({
         output.notice(`Dir does not exist ${dst}`);
     }
 
-    // cleanup previous checkout
-    if (fs.existsSync(tmpDir) && fs.lstatSync(tmpDir).isDirectory()) {
-        output.notice(`Cleaning up dir ${tmpDir}`);
-        fs.rmSync(tmpDir, {recursive: true, force: true});
-    }
-
-    // clone into tmp dir
-    output.notice(`Cloning branch ${branch} in repo ${cleanRepo}`);
+    let caughtException;
     try {
+        // clone into tmp dir
+        output.notice(`Cloning branch ${branch} in repo ${cleanRepo}`);
+
         //await run('which', ['git'], {dir: tmpDir});
         //await run('/usr/local/bin/git', ['--version'], {dir: tmpDir});
         //await run('git', ['clone', '--depth', '1', '-b', branch, `https://${repository}`, tmpDir], {dir: tmpDir});
         const gitCloneOutput = execSync(`git clone --depth 1 -b ${branch} https://${repository} ${tmpDir}`);
         output.log(`${gitCloneOutput}`);
+
+        // special flows
+        const docsAfterClone = '.github/scripts/docs-after-clone.sh';
+        if (fs.existsSync(`${tmpDir}/${docsAfterClone}`) && fs.lstatSync(`${tmpDir}/${docsAfterClone}`).isFile()) {
+            output.notice('Running additional steps');
+            // make executable
+            fs.chmodSync(`${tmpDir}/${docsAfterClone}`, 0o777);
+
+            // run after-clone script
+            await run(`${tmpDir}/${docsAfterClone}`, [], {
+                dir: tmpDir,
+                env: options.env
+            });
+        }
+
+        // create deep dir
+        output.notice(`Creating deep dir ${dst}`);
+        fs.mkdirSync(dst, {recursive: true});
+
+        // create a new symlink
+        output.notice(`Copying ${src} to ${dst}`);
+        await run('cp', ['-ra', `${src}/.`, `${dst}/`], {dir: tmpDir});
     } catch (e) {
-        throw `Error cloning ${cleanRepo}`;
+        caughtException = e;
     }
-
-    // special flows
-    const docsAfterClone = '.github/scripts/docs-after-clone.sh';
-    if (fs.existsSync(`${tmpDir}/${docsAfterClone}`) && fs.lstatSync(`${tmpDir}/${docsAfterClone}`).isFile()) {
-        output.notice('Running additional steps');
-        fs.chmodSync(`${tmpDir}/${docsAfterClone}`, 0o777);
-        await run(`${tmpDir}/${docsAfterClone}`, [], {
-            dir: tmpDir,
-            env: options.env
-        });
-    }
-
-    // create deep dir
-    output.notice(`Creating deep dir ${dst}`);
-    fs.mkdirSync(dst, {recursive: true});
-
-    // create a new symlink
-    output.notice(`Copying ${src} to ${dst}`);
-    await run('cp', ['-ra', `${src}/.`, `${dst}/`], {dir: tmpDir});
 
     // cleanup tmp dir
-    output.notice('Cleaning up');
-    fs.rmSync(tmpDir, {recursive: true, force: true});
+    cleanupTmpDir();
+
+    if (caughtException) {
+        throw caughtException;
+    }
 }
