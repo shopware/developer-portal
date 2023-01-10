@@ -146,7 +146,7 @@ export const fetchSecrets = () => {
             return;
         }
 
-        // perse from parent (local) env config
+        // parse from parent (local) env config
         secrets[secret] = JSON.parse(fs.readFileSync(`../.docs-cli/${secret}`));
     });
 
