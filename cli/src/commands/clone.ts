@@ -68,8 +68,17 @@ export default {
 
         output.notice(`Preparing ${repository}`);
 
-        src = await requireParam(src, optionSrc);
-        dst = await requireParam(dst, optionDst);
+        const repo = repositories.find(repo => repo.name.endsWith(`/${repository.split('/')[0]}`));
+
+        if (!repo) {
+            output.warn('Manually configuring');
+        }
+
+        const defaultSrc = repo?.src ?? null;
+        const defaultDst = repo?.dst ?? null;
+
+        src = await requireParam(src, optionSrc, defaultSrc);
+        dst = await requireParam(dst, optionDst, defaultDst);
 
         const myEnv: { [key: string]: string } = {};
         for (const repo of repositories) {

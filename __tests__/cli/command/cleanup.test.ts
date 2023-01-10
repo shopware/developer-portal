@@ -1,7 +1,7 @@
 import {createSandbox, destroySandbox, docsCli, timeout, withDirConfig} from "../helpers";
 import {prepareDeveloperPortalCheckout} from "../prepare";
 
-describe('cli remove', async () => {
+describe('cli cleanup', async () => {
     let sandbox;
     beforeEach(() => {
         sandbox = createSandbox();
@@ -11,20 +11,20 @@ describe('cli remove', async () => {
         sandbox = destroySandbox(sandbox);
     })
 
-    test('Default remove (empty)', async () => {
-        const result = await docsCli(['remove'], sandbox.cwd, timeout.low);
+    test('Default cleanup (empty)', async () => {
+        const result = await docsCli(['cleanup'], sandbox.cwd, timeout.low);
 
         expect(result.stdout).toContain('Removing symlinks and copied dirs');
         expect(result.stdout).toContain('Project cleaned up');
     })
 
-    test('Remove configured paths', async () => {
+    test('Cleanup configured paths', async () => {
         withDirConfig(sandbox);
 
         // prepare developer-portal checkout
         prepareDeveloperPortalCheckout(sandbox);
 
-        const result = await docsCli(['remove'], sandbox.cwd, timeout.medium);
+        const result = await docsCli(['cleanup'], sandbox.cwd, timeout.medium);
 
         expect(result.stdout).toContain('Removing symlinks and copied dirs');
         expect(result.stdout).toContain('Project cleaned up');

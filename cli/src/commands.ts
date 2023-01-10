@@ -1,7 +1,7 @@
 import clone from "./commands/clone";
 import install from "./commands/install";
 import link from "./commands/link";
-import remove from "./commands/remove";
+import cleanup from "./commands/cleanup";
 import preview from "./commands/preview";
 import build from "./commands/build";
 import test from "./commands/test";
@@ -20,7 +20,7 @@ export const commands: MyCommand[] = [
     // @ts-ignore
     link,
     // @ts-ignore
-    remove,
+    cleanup,
     // @ts-ignore
     preview,
     // @ts-ignore
