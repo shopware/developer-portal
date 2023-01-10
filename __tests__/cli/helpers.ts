@@ -105,6 +105,9 @@ export const timeout = {
     medium: {
         timeout: 15000,
     },
+    moderate: {
+        timeout: 30000,
+    },
     high: {
         timeout: 120000,
     },
