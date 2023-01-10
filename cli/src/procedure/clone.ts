@@ -13,7 +13,7 @@ export const clone = async ({
                                 options
                             }: { repository: string, branch: string, src: string, dst: string, ci: boolean | undefined, options: { env?: object } }) => {
     // prepare variables
-    const tmpDir = `/tmp/developer-portal/${uuid()}`;
+    const tmpDir = `/tmp/${uuid()}`;
     const developerDir = ci
         ? process.cwd()
         : await getDeveloperPortalPath();
