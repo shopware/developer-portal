@@ -60,7 +60,7 @@ export const clone = async ({
             fs.chmodSync(`${tmpDir}/${docsAfterClone}`, 0o777);
 
             // run after-clone script
-            await run(`${tmpDir}/${docsAfterClone}`, [], {
+            await run(`${tmpDir}/${docsAfterClone}`, [tmpDir], {
                 dir: tmpDir,
                 env: options.env
             });
