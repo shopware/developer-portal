@@ -196,16 +196,16 @@ jobs:
         run: npm install -g vercel@latest
 
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }}
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
 
       - name: Build Project Artifacts
-        run: vercel build ./vitepress/dist --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > ./vercel.env
 
       - name: Vercel URL
-        run: echo ./vercel.env
+        run: cat ./vercel.env
 
   deploy:
     name: Deploy build
@@ -228,20 +228,6 @@ jobs:
           mkdir -p .vitepress/dist
           unzip full-build.zip
           ls -la .vitepress/dist
-
-      # disabled due to public bucket and disabled ACL
-      #- name: Deploy
-      #  uses: reggionick/s3-deploy@v3
-      #  with:
-      #    folder: .vitepress/dist
-      #    bucket: ${{ secrets.STAGING_S3_BUCKET }}
-      #    bucket-region: ${{ secrets.STAGING_S3_BUCKET_REGION }}
-      #    dist-id: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
-      #    invalidation: /
-      #    delete-removed: true
-      #    no-cache: true
-      #    #private: false
-      #    filesToInclude: ".*/*,*/*,**"
 
       - uses: jakejarvis/s3-sync-action@master
         with:
