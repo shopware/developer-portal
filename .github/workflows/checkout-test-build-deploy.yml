@@ -205,7 +205,7 @@ jobs:
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > ./vercel.env
 
       - name: Vercel URL
-        run: echo ./vercel.env
+        run: cat ./vercel.env
 
   deploy:
     name: Deploy build
