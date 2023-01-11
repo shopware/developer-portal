@@ -28,5 +28,9 @@ export const storage = {
         }
 
         return value;
+    },
+    delete(key: string) {
+        output.debug(`Deleting ${key}`);
+        this.storage().removeItem(key);
     }
 };

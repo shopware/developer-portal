@@ -8,13 +8,14 @@ import {commands} from "../commands";
 
 const allAliases = {
     'docs:link': 'Link docs from your docs dir to the target/destination dir (symlink, rsync or copy strategies)',
-    'docs:remove': 'Remove docs from your docs dir to the target/destination dir',
+    'docs:cleanup': 'Remove docs in your local developer-portal checkout',
     'docs:preview': 'Preview docs (npm run dev)',
     'docs:build': 'Build docs (npm run build)',
     'docs:test': 'Run e2e docs tests (dev)',
     'docs:test:build': 'Run e2e docs tests (build)',
     'docs:pull': 'Pull latest changes from remote',
     'docs:embed': 'Embed other repositories (multi-clone)',
+    'docs:manage': 'Manage mount points',
     'docs:clone': 'Clone other repositories',
     'docs:config': 'Reconfigure CLI',
 };
@@ -108,7 +109,7 @@ export default {
 
             output.success(`Aliases installed in ${packageJson}`);
         } catch (err) {
-            console.error(err);
+            output.error(err);
             return;
         }
     }

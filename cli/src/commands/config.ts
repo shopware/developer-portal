@@ -1,5 +1,9 @@
 import {output} from "../output";
 import fs from "fs";
+import {repositories} from "../data";
+import inquirer from "inquirer";
+import {choices} from "../helpers";
+import {storage} from "../storage";
 
 export default {
     name: 'config',
@@ -38,7 +42,43 @@ export default {
             return;
         }
 
-        // @T00D00 - select key to reconfigure
-        output.log('Not yet implemented');
+        const keys = Object.values(repositories)
+            .reduce((reduced, repository) => {
+                Object.keys(repository.env || {})
+                    .forEach(key => reduced.push(key));
+
+                return reduced;
+            }, [
+                'dir.developer-portal',
+                'dir.root',
+            ]);
+
+        const {reconfigure} = await inquirer.prompt([
+            {
+                type: 'checkbox',
+                name: 'reconfigure',
+                message: `Pick config keys that you would like to change`,
+                choices: keys,
+            }
+        ]);
+
+        for (const key of reconfigure) {
+            const {value} = await inquirer.prompt([
+                {
+                    type: key.toUpperCase() === key ? 'password' : 'input',
+                    name: 'value',
+                    message: `Enter new value for ${key}, keep empty to delete it`,
+                }
+            ]);
+
+            if (!value.trim()) {
+                storage.delete(key);
+                continue;
+            }
+
+            storage.set(key, value);
+        }
+
+        output.success('Reconfigured');
     }
 };

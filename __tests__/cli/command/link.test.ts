@@ -20,10 +20,17 @@ describe('cli link', async () => {
     test('Default link (empty)', async () => {
         const result = await terminates(docsCli(['link'], sandbox.cwd, timeout.low));
 
+        // terminates
+        expect(result.stdout).toContain('Enter root path for ALL of your projects');
+    })
+
+    test('Link configured paths, manually', async () => {
+        withDirConfig(sandbox);
+        const result = await terminates(docsCli(['link'], sandbox.cwd, timeout.low));
+
         expect(result.stdout).toContain('Linking docs directory');
         // terminates
         expect(result.stdout).toContain('Mount source');
-        expect(result.stdout).not.toContain('Docs directory linked');
     })
 
     test('Link configured paths', async () => {
@@ -75,5 +82,16 @@ describe('cli link', async () => {
         expect(fs.lstatSync(`${sandbox.developerPortal}/src/foo`).isDirectory()).toBeTruthy();
         expect(fs.lstatSync(`${sandbox.developerPortal}/src/root.md`).isFile()).toBeTruthy();
         expect(fs.lstatSync(`${sandbox.developerPortal}/src/foo/bar.md`).isFile()).toBeTruthy();
+    })
+
+    test('Link developer-portal (self-reference)', async () => {
+        withDirConfig(sandbox)
+
+        // prepare developer-portal checkout
+        prepareDeveloperPortalCheckout(sandbox);
+
+        const result = await docsCli(['link'], sandbox.developerPortal, timeout.low);
+
+        expect(result.stdout).toContain('This command can\'t run in developer-portal');
     })
 })

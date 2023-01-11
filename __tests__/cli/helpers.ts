@@ -105,6 +105,9 @@ export const timeout = {
     medium: {
         timeout: 15000,
     },
+    moderate: {
+        timeout: 30000,
+    },
     high: {
         timeout: 120000,
     },
@@ -143,7 +146,7 @@ export const fetchSecrets = () => {
             return;
         }
 
-        // perse from parent (local) env config
+        // parse from parent (local) env config
         secrets[secret] = JSON.parse(fs.readFileSync(`../.docs-cli/${secret}`));
     });
 
