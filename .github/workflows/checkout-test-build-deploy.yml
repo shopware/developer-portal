@@ -12,6 +12,8 @@ on:
       - 'src/*'
       - 'cli/*'
       - '.github/workflows/*'
+    branches:
+      - main
   pull_request:
     branches:
       - main
