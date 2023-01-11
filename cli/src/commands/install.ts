@@ -8,7 +8,7 @@ import {commands} from "../commands";
 
 const allAliases = {
     'docs:link': 'Link docs from your docs dir to the target/destination dir (symlink, rsync or copy strategies)',
-    'docs:remove': 'Remove docs from your docs dir to the target/destination dir',
+    'docs:cleanup': 'Remove docs in your local developer-portal checkout',
     'docs:preview': 'Preview docs (npm run dev)',
     'docs:build': 'Build docs (npm run build)',
     'docs:test': 'Run e2e docs tests (dev)',

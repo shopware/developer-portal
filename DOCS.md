@@ -291,10 +291,10 @@ symlinks).
 
 ## Remove mount points
 
-You can remove mounted repositories by running the `remove` command.
+You can remove mounted repositories by running the `cleanup` command.
 
 ```sh
-$ pnpm docs:remove
+$ pnpm docs:cleanup
 ```
 
 This command will remove symlinks and other mounted folders from your local `developer-portal` checkout.
