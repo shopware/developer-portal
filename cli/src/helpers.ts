@@ -85,7 +85,7 @@ export const choices = (choices: { [key: string]: string }) => {
     }, <{ value: string, name: string }[]>[])
 }
 
-export const requireParam = async (param: string | undefined, option: { name: string, description?: string }): Promise<string> => {
+export const requireParam = async (param: string | undefined, option: { name: string, description?: string }, defaultValue?: string | null | undefined): Promise<string> => {
     if (param) {
         return param;
     }
@@ -95,7 +95,7 @@ export const requireParam = async (param: string | undefined, option: { name: st
             type: 'input',
             name: 'param',
             message: option.description || option.name,
-            default: null,
+            default: defaultValue ?? null,
         }
     ]);
 

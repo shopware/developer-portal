@@ -6,8 +6,8 @@
   "scripts": {
     "test": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
-    "test:cli": "vitest run -r __tests__/cli --no-threads --sequence.shuffle",
-    "test:cli:coverage": "vitest run -r __tests__/cli --no-threads --coverage",
+    "test:cli": "vitest run -r __tests__/cli --sequence.shuffle",
+    "test:cli:coverage": "vitest run -r __tests__/cli --coverage",
     "dev": "SHOPWARE_DEV=1 vitepress",
     "build": "vitepress build",
     "serve": "vitepress serve",
@@ -36,6 +36,7 @@
     "@types/mocha": "^10.0.1",
     "@types/node": "^16.9.1",
     "@types/shell-escape": "^0.2.1",
+    "@types/uuid": "^9.0.0",
     "get-port": "^6.1.2",
     "playwright-chromium": "^1.28.1",
     "vitest": "^0.25.6",

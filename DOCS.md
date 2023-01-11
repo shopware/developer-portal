@@ -18,10 +18,12 @@ Commands:
   embed [options]   Embed all docs repositories to developer-portal
   clone [options]   Clone <src> from <branch> in <repository> to <dst> in developer-portal
   link [options]    Copy <src> from current working directory to <dst> in developer-portal
-  remove            Remove <dst> in developer-portal
+  cleanup           Remove <dst> in developer-portal
+  manage            Add or remove mountpoints in developer-portal
   preview           Preview docs
   build             Build docs in developer-portal
-  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run test on the build instead of dev server.
+  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run
+                    test on the build instead of dev server.
   pull              Pull docs and install new dependencies in developer-portal
   config [options]  Reconfigure .docs-cli
   help [command]    display help for command
@@ -193,6 +195,7 @@ Organization configs default to `shopware`.
 - [Embed all docs]()
 - [Clone single repository]()
 - [Link your docs]()
+- [Manage all docs]()
 - [Preview your docs]()
 - [Build all docs]()
 - [Test all docs]()
@@ -246,6 +249,14 @@ Rollup.
 
 ![Link current repository](./cli/demo/link.gif)
 
+## Manage your docs
+
+This command removes selected mountpoints and re-mounts them in `developer-portal` checkout.
+
+```sh
+$ pnpm docs:manage
+```
+
 ## Preview your docs
 
 Once your aliases are set up, you can run `preview` command to preview docs.
@@ -290,10 +301,10 @@ symlinks).
 
 ## Remove mount points
 
-You can remove mounted repositories by running the `remove` command.
+You can remove mounted repositories by running the `cleanup` command.
 
 ```sh
-$ pnpm docs:remove
+$ pnpm docs:cleanup
 ```
 
 This command will remove symlinks and other mounted folders from your local `developer-portal` checkout.

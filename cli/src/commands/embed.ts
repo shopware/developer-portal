@@ -1,9 +1,8 @@
 import {output} from "../output";
-import clone from "./clone";
 import {repositories} from "../data";
 import inquirer from "inquirer";
-import confirm from '@inquirer/confirm';
 import {optionCI} from "../options";
+import {cloneCustom} from "../procedure/clone";
 
 export default {
     name: 'embed',
@@ -35,41 +34,7 @@ export default {
             }
 
             output.notice(`Processing ${repo.name}`);
-
-            // allow custom branch (features) and organization (forks)
-            let branch = repo.branch;
-            let org = repo.org;
-            if (configure && await confirm({message: 'Would you like to override branch or organization?'})) {
-                const response = await inquirer.prompt([
-                    {
-                        type: 'text',
-                        name: 'branch',
-                        message: 'Branch',
-                        default: branch,
-                    },
-                    {
-                        type: 'text',
-                        name: 'org',
-                        message: 'Organization',
-                        default: org,
-                    }
-                ]);
-                branch = response.branch;
-                org = response.org;
-            }
-
-            // call clone command
-            output.notice(`Embedding ${repo.name}`);
-            await clone.handler({
-                repository: repo.name,
-                src: repo.src,
-                dst: repo.dst,
-                branch,
-                org,
-                ci,
-            });
-
-            output.success(`Processed ${repo.name}`);
+            await cloneCustom(repo, configure, ci);
         }
 
         output.success('Repositories embedded');

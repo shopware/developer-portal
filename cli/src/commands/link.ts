@@ -30,10 +30,16 @@ export default {
                         rsync,
                         copy
                     }: { src?: string, dst?: string, symlink?: boolean, rsync?: boolean, copy?: boolean }) => {
-
         // validate strategy
         if (((symlink ? 1 : 0) + (rsync ? 1 : 0) + (copy ? 1 : 0)) > 1) {
             output.error('You can use only one link strategy - symlink, rsync or copy');
+            return;
+        }
+
+        const cwdDir = process.cwd();
+        const developerDir = await getDeveloperPortalPath();
+        if (cwdDir === developerDir) {
+            output.error('This command can\'t run in developer-portal');
             return;
         }
 
@@ -96,8 +102,6 @@ export default {
 
         const toDelete = dst !== '.';
 
-        const cwdDir = process.cwd();
-        const developerDir = await getDeveloperPortalPath();
         src = `${cwdDir}/${src}`
         dst = `${developerDir}/src/${dst}`;
 

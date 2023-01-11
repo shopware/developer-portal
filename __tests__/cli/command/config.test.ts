@@ -1,4 +1,4 @@
-import {createSandbox, destroySandbox, docsCli, timeout, createConfig} from "../helpers";
+import {createSandbox, destroySandbox, docsCli, timeout, createConfig, terminates} from "../helpers";
 import fs from "fs-extra";
 
 describe('cli config', async () => {
@@ -12,10 +12,10 @@ describe('cli config', async () => {
     })
 
     test('Default config (empty)', async () => {
-        const result = await docsCli(['config'], sandbox.cwd, timeout.low);
+        const result = await terminates(docsCli(['config'], sandbox.cwd, timeout.low));
 
-        expect(result.error).toBeNull();
-        expect(result.stdout).toContain('Not yet implemented');
+        // terminates
+        expect(result.stdout).toContain('Pick config keys that you would like to change');
     })
 
     test('Default view (empty)', async () => {
