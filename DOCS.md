@@ -19,6 +19,7 @@ Commands:
   clone [options]   Clone <src> from <branch> in <repository> to <dst> in developer-portal
   link [options]    Copy <src> from current working directory to <dst> in developer-portal
   cleanup           Remove <dst> in developer-portal
+  manage            Add or remove mountpoints in developer-portal
   preview           Preview docs
   build             Build docs in developer-portal
   test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run
@@ -194,6 +195,7 @@ Organization configs default to `shopware`.
 - [Embed all docs]()
 - [Clone single repository]()
 - [Link your docs]()
+- [Manage all docs]()
 - [Preview your docs]()
 - [Build all docs]()
 - [Test all docs]()
@@ -246,6 +248,14 @@ You need to use `--rsync` or `--copy` if you want to `test` or `build` docs loca
 Rollup.
 
 ![Link current repository](./cli/demo/link.gif)
+
+## Manage your docs
+
+This command removes selected mountpoints and re-mounts them in `developer-portal` checkout.
+
+```sh
+$ pnpm docs:manage
+```
 
 ## Preview your docs
 

@@ -68,10 +68,10 @@ export default {
 
         output.notice(`Preparing ${repository}`);
 
-        const repo = repositories.find(repo => repo.name.endsWith(`/${repository.split('/')[0]}`));
+        const repo = repositories.find(repo => repo.name.endsWith(`/${repository.split('/').reverse()[0]}`));
 
         if (!repo) {
-            output.warn('Manually configuring');
+            output.warn('Manually configuring', repository);
         }
 
         const defaultSrc = repo?.src ?? null;

@@ -4,6 +4,7 @@ import inquirer from "inquirer";
 import {getDeveloperPortalPath} from "../helpers";
 import confirm from '@inquirer/confirm';
 import fs from "fs";
+import {cleanup} from "../procedure/cleanup";
 
 export default {
     name: 'cleanup',
@@ -43,20 +44,7 @@ export default {
                 continue;
             }
 
-            if (!await confirm({message: `Do you really want to delete ${type} ${fullPath}`})) {
-                continue;
-            }
-
-            output.notice(`Deleting ${type} ${fullPath}`);
-            if (type === 'dir') {
-                fs.rmSync(fullPath, {recursive: true});
-            } else if (type === 'symlink') {
-                fs.rmSync(fullPath);
-            } else {
-                continue;
-            }
-
-            output.success(`Deleted ${type} ${fullPath}`);
+            await cleanup({type, fullPath});
         }
 
         output.success('Project cleaned up');

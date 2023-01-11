@@ -3,6 +3,9 @@ import fs from "fs";
 import {getDeveloperPortalPath, run} from "../helpers";
 import {execSync} from 'child_process';
 import {v4 as uuid} from 'uuid';
+import confirm from "@inquirer/confirm";
+import inquirer from "inquirer";
+import cloneCommand from "../commands/clone";
 
 export const clone = async ({
                                 repository, // 1
@@ -83,4 +86,41 @@ export const clone = async ({
     if (caughtException) {
         throw caughtException;
     }
+}
+
+export const cloneCustom = async (repo: { name: string, src: string, dst: string, branch: string, org: string }, configure: boolean | null, ci: boolean) => {
+    // allow custom branch (features) and organization (forks)
+    let branch = repo.branch;
+    let org = repo.org;
+    if (configure) {
+        const response = await inquirer.prompt([
+            {
+                type: 'text',
+                name: 'branch',
+                message: 'Branch',
+                default: branch,
+            },
+            {
+                type: 'text',
+                name: 'org',
+                message: 'Organization (fork)',
+                default: org,
+            }
+        ]);
+        branch = response.branch;
+        org = response.org;
+    }
+
+    // call clone command
+    output.notice(`Embedding ${repo.name}`);
+    await cloneCommand.handler({
+        repository: repo.name,
+        src: repo.src,
+        dst: repo.dst,
+        branch,
+        org,
+        ci,
+    });
+
+    output.success(`Processed ${repo.name}`);
 }

@@ -76,4 +76,15 @@ describe('cli link', async () => {
         expect(fs.lstatSync(`${sandbox.developerPortal}/src/root.md`).isFile()).toBeTruthy();
         expect(fs.lstatSync(`${sandbox.developerPortal}/src/foo/bar.md`).isFile()).toBeTruthy();
     })
+
+    test('Link developer-portal (self-reference)', async () => {
+        withDirConfig(sandbox)
+
+        // prepare developer-portal checkout
+        prepareDeveloperPortalCheckout(sandbox);
+
+        const result = await docsCli(['link'], sandbox.developerPortal, timeout.low);
+
+        expect(result.stdout).toContain('This command can\'t run in developer-portal');
+    })
 })

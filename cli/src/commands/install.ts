@@ -15,6 +15,7 @@ const allAliases = {
     'docs:test:build': 'Run e2e docs tests (build)',
     'docs:pull': 'Pull latest changes from remote',
     'docs:embed': 'Embed other repositories (multi-clone)',
+    'docs:manage': 'Manage mount points',
     'docs:clone': 'Clone other repositories',
     'docs:config': 'Reconfigure CLI',
 };
@@ -108,7 +109,7 @@ export default {
 
             output.success(`Aliases installed in ${packageJson}`);
         } catch (err) {
-            console.error(err);
+            output.error(err);
             return;
         }
     }
