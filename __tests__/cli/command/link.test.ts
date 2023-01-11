@@ -20,10 +20,17 @@ describe('cli link', async () => {
     test('Default link (empty)', async () => {
         const result = await terminates(docsCli(['link'], sandbox.cwd, timeout.low));
 
+        // terminates
+        expect(result.stdout).toContain('Enter root path for ALL of your projects');
+    })
+
+    test('Link configured paths, manually', async () => {
+        withDirConfig(sandbox);
+        const result = await terminates(docsCli(['link'], sandbox.cwd, timeout.low));
+
         expect(result.stdout).toContain('Linking docs directory');
         // terminates
         expect(result.stdout).toContain('Mount source');
-        expect(result.stdout).not.toContain('Docs directory linked');
     })
 
     test('Link configured paths', async () => {
