@@ -1,6 +1,6 @@
 # Quick start for Shopware Docs CLI
 
-_TThis document covers the most basic steps for working with the CLI in your repository. You can find more detailed
+_This document covers the most basic steps for working with the CLI in your repository. You can find more detailed
 information on the CLI in the [./DOCS.md](./DOCS.md) file._
 
 In this introduction, you will learn how to:
