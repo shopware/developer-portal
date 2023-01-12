@@ -1,0 +1,37 @@
+name: Run Algolia Crawler
+
+on:
+  workflow_run:
+    workflows: [ Build and deploy ]
+    branches: [ main ]
+    types: [ completed ]
+
+jobs:
+  crawl:
+    name: Trigger Crawler
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    env:
+      CRAWLER_USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
+      CRAWLER_API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
+      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+      ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+      # CRAWLER_ID: ${{ secrets.CRAWLER_ID }}
+    steps:
+
+      - name: Algolia crawler creation and crawl
+        uses: algolia/algoliasearch-crawler-github-actions@v1
+        id: algolia_crawler
+        with:
+          crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
+          crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
+          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
+          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
+          site-url: 'https://beta-developer.shopware.com/'
+
+      #- name: Call API
+      #  run: |
+      #    curl -H "Content-Type: application/json" \
+      #    -X POST --user ${CRAWLER_USER_ID}:${CRAWLER_API_KEY} \
+      #    "https://crawler.algolia.com/api/1/crawlers/${CRAWLER_ID}/run"
