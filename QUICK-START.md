@@ -95,3 +95,67 @@ your changes integrate with all other repositories.
 
 Based on the configuration in the `developer-portal` repository, the latest versions of all `main` branches will be
 deployed automatically whenever the Build-Test-Deploy workflow is completed successfully.
+
+# Next steps (advanced usage)
+
+All steps below are executed directly in the `developer-portal` directory, or by using `docs:*` commands from your
+repository.
+
+**Clone other repositories one by one**
+
+You can clone other repositories, choose a different branch, or organisation when mounting a forked repository.
+
+```bash
+$ ./docs-cli clone
+# or
+$ pnpm docs:clone
+
+```
+
+**Embed all repositories at once**
+
+This command is useful if you really want to test production build locally. Some repositories require special
+environment variables (secrets) because a part of them is not publicly available. For example, the Meteor Icon Kit
+requires `FIGMA_FILE` and `FIGMA_TOKEN`, and Frontends on GitLab require `GITLAB_FRONTENDS_USERNAME` and
+`GITLAB_FRONTENDS_ACCESS_KEY`.
+
+```bash
+$ ./docs-cli embed
+# or
+$ pnpm docs:embed
+
+```
+
+**Manage mount points**
+
+You can run this command to add and/or remove multiple mount points in a single run.
+
+```bash
+$ ./docs-cli manage
+# or
+$ pnpm docs:manage
+
+```
+
+**Pull the latest version**
+
+This command is just an alias for pulling changes from remote, installing NPM dependencies and rebuilding the CLI.
+
+```bash
+$ ./docs-cli pull
+# or
+$ pnpm docs:pull
+
+```
+
+**Explore the CLI**
+
+There are a few more commands available that you can explore by yourself:
+
+- `./docs-cli install` - add aliases to your package.json
+- `./docs-cli cleanup` - remove added mount points
+- `./docs-cli test` - run e2e test suite
+- `./docs-cli build` - make a production build (requires all repositories to be mounted)
+- `./docs-cli config` - configure CLI paths and variables
+
+You can find more detailed information on the CLI in the [./DOCS.md](./DOCS.md) file.
