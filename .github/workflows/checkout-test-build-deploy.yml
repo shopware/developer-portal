@@ -8,10 +8,6 @@ on:
         required: false
         default: 'No source specified'
   push:
-    paths:
-      - 'src/*'
-      - 'cli/*'
-      - '.github/workflows/*'
     branches:
       - main
   pull_request:

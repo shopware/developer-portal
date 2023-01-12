@@ -3,7 +3,7 @@ import {repositories} from "../../cli/src/data";
 import fs from "fs-extra";
 
 export const prepareDeveloperPortalCheckout = (sandbox) => {
-    execSync(`git clone --depth 1 -b DX-236 https://github.com/shopware/developer-portal.git ${sandbox.developerPortal}`);
+    execSync(`git clone --depth 1 -b main https://github.com/shopware/developer-portal.git ${sandbox.developerPortal}`);
 }
 
 export const prepareDeveloperPortalNpm = (sandbox) => {

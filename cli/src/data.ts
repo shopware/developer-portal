@@ -19,7 +19,7 @@ export const repositories = [
         name: 'gitlab.shopware.com/product/engineering/platform-group/pwa/frontends',
         src: 'apps/docs/src',
         dst: 'frontends-gl',
-        branch: env.BRANCH_FRONTENDS || 'DX-202' || 'main',
+        branch: env.BRANCH_FRONTENDS || 'main',
         org: env.ORG_FRONTENDS || 'shopware',
         env: {
             GITLAB_FRONTENDS_USERNAME: {
