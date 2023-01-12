@@ -192,15 +192,15 @@ Organization configs default to `shopware`.
 
 # Available commands
 
-- [Embed all docs]()
-- [Clone single repository]()
-- [Link your docs]()
-- [Manage all docs]()
-- [Preview your docs]()
-- [Build all docs]()
-- [Test all docs]()
-- [Remove mount points]()
-- [Update developer-portal repository]()
+- [Embed all docs](#embed-all-docs)
+- [Clone single repository](#clone-single-repository)
+- [Link your docs](#link-your-docs)
+- [Manage all docs](#manage-your-docs)
+- [Preview your docs](#preview-your-docs)
+- [Build all docs](#build-all-docs)
+- [Test all docs](#test-all-docs)
+- [Remove mount points](#remove-mount-points)
+- [Update developer-portal repository](#update-developer-portal-repository)
 
 ## Embed all docs
 
