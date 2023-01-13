@@ -31,7 +31,7 @@ fi
  --repository gitlab.shopware.com/product/engineering/platform-group/pwa/frontends \
  --user ${GITLAB_FRONTENDS_USERNAME} \
  --pass ${GITLAB_FRONTENDS_ACCESS_KEY} \
- --branch ${BRANCH_FRONTENDS} \
+ --branch ${BRANCH_FRONTENDS:-main} \
  --src apps/docs/src \
  --dst frontends-gl \
  --git gitlab.shopware.com
@@ -39,22 +39,22 @@ fi
 ./docs-cli clone \
  --ci \
  --repository shopware/admin-extension-sdk \
- --branch ${BRANCH_ADMIN_EXTENSION_SDK} \
+ --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
  --src docs/docs/guide \
  --dst resources/admin-extension-sdk
 
 ./docs-cli clone \
  --ci \
  --repository shopware/meteor-icon-kit \
- --branch ${BRANCH_METEOR_ICON_KIT} \
+ --branch ${BRANCH_METEOR_ICON_KIT:-main} \
  --src docs \
  --dst resources/meteor-icon-kit \
- --org ${ORG_METEOR_ICON_KIT}
+ --org ${ORG_METEOR_ICON_KIT:-shopware}
 
 ./docs-cli clone \
  --ci \
  --repository shopware/meteor-component-library \
- --branch ${BRANCH_METEOR_COMPONENT_LIBRARY} \
+ --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
  --src docs \
  --dst resources/meteor-component-library \
- --org ${ORG_METEOR_COMPONENT_LIBRARY}
+ --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
