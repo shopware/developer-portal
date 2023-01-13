@@ -17,7 +17,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
   scrollOffset: "header",
 
-  head: [],
+  head: [
+    ['link', {rel: "icon", type: "image/png", href: "/favicon.webp"}],
+    ['link', {rel: "shortcut icon", href: "/favicon.webp"}],
+  ],
+
   // tmp?
   ignoreDeadLinks: true,
 
