@@ -18,8 +18,20 @@ export default defineConfigWithTheme<ThemeConfig>({
   scrollOffset: "header",
 
   head: [
+    // favicon
     ['link', {rel: "icon", type: "image/png", href: "/favicon.webp"}],
     ['link', {rel: "shortcut icon", href: "/favicon.webp"}],
+
+    // Google Analytics - UA-64631238-1
+    [
+      'script',
+      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=UA-64631238-1' }
+    ],
+    [
+      'script',
+      {},
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'UA-64631238-1');"
+    ]
   ],
 
   // tmp?
