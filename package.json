@@ -23,10 +23,10 @@
   "license": "ISC",
   "dependencies": {
     "terser": "^5.16.1",
+    "vue": "^3.2.45",
     "vite": "^3.2.5",
-    "vitepress": "1.0.0-alpha.40",
-    "vitepress-shopware-docs": "0.2.0-beta.10",
-    "vue": "^3.2.45"
+    "vitepress": "1.0.0-alpha.44",
+    "vitepress-shopware-docs": "^0.3.0-beta.6"
   },
   "devDependencies": {
     "@originjs/vite-plugin-require-context": "^1.0.9",
