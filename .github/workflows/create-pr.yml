@@ -28,7 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: DX-250
+          ref: main
 
       - name: Overwrite branch
         run: |
