@@ -33,15 +33,19 @@ jobs:
       - name: Overwrite branch
         run: |
           if [[ "${{ inputs.repository }}" == *"/frontends" ]]; then
+            echo "Using custom branch for frontends"
             sed -i '0,/BRANCH_FRONTENDS.*/s/.*BRANCH_FRONTENDS.*/BRANCH_FRONTENDS=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
           elif [[ "${{ inputs.repository }}" == *"/admin-extension-sdk" ]]; then
+            echo "Using custom branch for admin-extension-sdk"
             sed -i '0,/BRANCH_ADMIN_EXTENSION_SDK.*/s/.*BRANCH_ADMIN_EXTENSION_SDK.*/BRANCH_ADMIN_EXTENSION_SDK=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
           elif [[ "${{ inputs.repository }}" == *"/meteor-icon-kit" ]]; then
+            echo "Using custom branch for meteor-icon-kit"
             sed -i '0,/BRANCH_METEOR_ICON_KIT.*/s/.*BRANCH_METEOR_ICON_KIT.*/BRANCH_METEOR_ICON_KIT=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
           elif [[ "${{ inputs.repository }}" == *"/meteor-component-library" ]]; then
+            echo "Using custom branch for meteor-component-library"
             sed -i '0,/BRANCH_METEOR_COMPONENT_LIBRARY.*/s/.*BRANCH_METEOR_COMPONENT_LIBRARY.*/BRANCH_METEOR_COMPONENT_LIBRARY=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
           else
@@ -49,21 +53,27 @@ jobs:
             echo "Branch ${{inputs.branch}}"
             exit 1
           fi
+          
+          cat ./.github/scripts/embed.sh
 
       - name: Overwrite repository (fork)
         run: |
           ORG=$(dirname ${{inputs.repository}})
           
           if [[ "${{ inputs.repository }}" == *"/frontends" ]]; then
+            echo "Using custom org for frontends"
             sed -i "0,/ORG_FRONTENDS.*/s/.*ORG_FRONTENDS.*/ORG_FRONTENDS=$ORG/" ./.github/scripts/embed.sh
           
           elif [[ "${{ inputs.repository }}" == *"/admin-extension-sdk" ]]; then
+            echo "Using custom org for admin-extension-sdk"
             sed -i "0,/ORG_ADMIN_EXTENSION_SDK.*/s/.*ORG_ADMIN_EXTENSION_SDK.*/ORG_ADMIN_EXTENSION_SDK=$ORG/" ./.github/scripts/embed.sh
           
           elif [[ "${{ inputs.repository }}" == *"/meteor-icon-kit" ]]; then
+            echo "Using custom org for meteor-icon-kit"
             sed -i "0,/ORG_METEOR_ICON_KIT.*/s/.*ORG_METEOR_ICON_KIT.*/ORG_METEOR_ICON_KIT=$ORG/" ./.github/scripts/embed.sh
           
           elif [[ "${{ inputs.repository }}" == *"/meteor-component-library" ]]; then
+            echo "Using custom org for meteor-component-library"
             sed -i "0,/ORG_METEOR_COMPONENT_LIBRARY.*/s/.*ORG_METEOR_COMPONENT_LIBRARY.*/ORG_METEOR_COMPONENT_LIBRARY=$ORG/" ./.github/scripts/embed.sh
           
           else
@@ -72,6 +82,8 @@ jobs:
             echo "Org $ORG"
             exit 1
           fi
+          
+          cat ./.github/scripts/embed.sh
 
       - name: Create PR
         uses: peter-evans/create-pull-request@v4
