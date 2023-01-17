@@ -1,4 +1,5 @@
 name: Build and deploy
+concurrency: single
 
 on:
   workflow_dispatch:
