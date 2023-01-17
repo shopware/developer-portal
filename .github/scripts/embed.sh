@@ -2,12 +2,14 @@
 set -e
 
 # custom config
+BRANCH_DOCS=refactor-vitepress-format
 BRANCH_FRONTENDS=main
 BRANCH_ADMIN_EXTENSION_SDK=DX-223
 BRANCH_METEOR_ICON_KIT=DX-223
 BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 
 # custom orgs
+ORG_DOCS=shopware
 ORG_FRONTENDS=shopware
 ORG_ADMIN_EXTENSION_SDK=shopware
 ORG_METEOR_ICON_KIT=bojanrajh
@@ -20,6 +22,14 @@ if [[ "$PWD" != *"/developer-portal" ]]; then
 fi
 
 #alias docs-cli="./cli/dist/docs-cli-linux"
+
+./docs-cli clone \
+ --ci \
+ --repository shopware/docs \
+ --branch ${BRANCH_DOCS:-main} \
+ --src . \
+ --dst docs \
+ --org ${ORG_DOCS:-shopware}
 
 ./docs-cli clone \
  --ci \
