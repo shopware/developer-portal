@@ -8,10 +8,10 @@
     "lvl3": "#VPContent .content h4",
     "lvl4": "#VPContent .content h5",
     "lvl5": "#VPContent .content h6",
-    "text": "#VPContent .content p, #VPContent .content ol, #VPContent .content li, #VPContent .content pre"
+    "text": "#VPContent .content p:not(.edit-link), #VPContent .content ol, #VPContent .content li, #VPContent .content pre"
   },
   "stop_urls": [
-    "test(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)",
-    "test(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)"
+    "(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)",
+    "(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)"
   ]
 }
