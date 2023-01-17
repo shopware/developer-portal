@@ -32,16 +32,16 @@ jobs:
 
       - name: Overwrite branch
         run: |
-          if [ "${{ inputs.repository }}" == *"/frontends" ]; then
+          if [[ "${{ inputs.repository }}" == *"/frontends" ]]; then
             sed -i '0,/BRANCH_FRONTENDS.*/s/.*BRANCH_FRONTENDS.*/BRANCH_FRONTENDS=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
-          elif [ "${{ inputs.repository }}" == *"/admin-extension-sdk" ]; then
+          elif [[ "${{ inputs.repository }}" == *"/admin-extension-sdk" ]]; then
             sed -i '0,/BRANCH_ADMIN_EXTENSION_SDK.*/s/.*BRANCH_ADMIN_EXTENSION_SDK.*/BRANCH_ADMIN_EXTENSION_SDK=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
-          elif [ "${{ inputs.repository }}" == *"/meteor-icon-kit" ]; then
+          elif [[ "${{ inputs.repository }}" == *"/meteor-icon-kit" ]]; then
             sed -i '0,/BRANCH_METEOR_ICON_KIT.*/s/.*BRANCH_METEOR_ICON_KIT.*/BRANCH_METEOR_ICON_KIT=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
-          elif [ "${{ inputs.repository }}" == *"/meteor-component-library" ]; then
+          elif [[ "${{ inputs.repository }}" == *"/meteor-component-library" ]]; then
             sed -i '0,/BRANCH_METEOR_COMPONENT_LIBRARY.*/s/.*BRANCH_METEOR_COMPONENT_LIBRARY.*/BRANCH_METEOR_COMPONENT_LIBRARY=${{inputs.branch}}/' ./.github/scripts/embed.sh
           
           else
@@ -54,16 +54,16 @@ jobs:
         run: |
           ORG=$(dirname ${{inputs.repository}})
           
-          if [ "${{ inputs.repository }}" == *"/frontends" ]; then
+          if [[ "${{ inputs.repository }}" == *"/frontends" ]]; then
             sed -i "0,/ORG_FRONTENDS.*/s/.*ORG_FRONTENDS.*/ORG_FRONTENDS=$ORG/" ./.github/scripts/embed.sh
           
-          elif [ "${{ inputs.repository }}" == *"/admin-extension-sdk" ]; then
+          elif [[ "${{ inputs.repository }}" == *"/admin-extension-sdk" ]]; then
             sed -i "0,/ORG_ADMIN_EXTENSION_SDK.*/s/.*ORG_ADMIN_EXTENSION_SDK.*/ORG_ADMIN_EXTENSION_SDK=$ORG/" ./.github/scripts/embed.sh
           
-          elif [ "${{ inputs.repository }}" == *"/meteor-icon-kit" ]; then
+          elif [[ "${{ inputs.repository }}" == *"/meteor-icon-kit" ]]; then
             sed -i "0,/ORG_METEOR_ICON_KIT.*/s/.*ORG_METEOR_ICON_KIT.*/ORG_METEOR_ICON_KIT=$ORG/" ./.github/scripts/embed.sh
           
-          elif [ "${{ inputs.repository }}" == *"/meteor-component-library" ]; then
+          elif [[ "${{ inputs.repository }}" == *"/meteor-component-library" ]]; then
             sed -i "0,/ORG_METEOR_COMPONENT_LIBRARY.*/s/.*ORG_METEOR_COMPONENT_LIBRARY.*/ORG_METEOR_COMPONENT_LIBRARY=$ORG/" ./.github/scripts/embed.sh
           
           else
