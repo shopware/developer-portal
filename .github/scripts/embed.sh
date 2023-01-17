@@ -1,15 +1,17 @@
 #! /usr/bin/env bash
 set -e
 
-# custom branches
-# BRANCH_FRONTENDS=DX-202
+# custom config
+BRANCH_FRONTENDS=main
 BRANCH_ADMIN_EXTENSION_SDK=DX-223
+BRANCH_METEOR_ICON_KIT=DX-223
+BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 
-export BRANCH_METEOR_ICON_KIT=DX-223
-export ORG_METEOR_ICON_KIT=bojanrajh
-
-export BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
-export ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
+# custom orgs
+ORG_FRONTENDS=shopware
+ORG_ADMIN_EXTENSION_SDK=shopware
+ORG_METEOR_ICON_KIT=bojanrajh
+ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
 
 if [[ "$PWD" != *"/developer-portal" ]]; then
   echo "DANGEROUS, WRONG PWD"
@@ -22,9 +24,10 @@ fi
 ./docs-cli clone \
  --ci \
  --repository shopware/frontends \
- --branch main \
+ --branch ${BRANCH_FRONTENDS:-main} \
  --src apps/docs/src \
- --dst frontends
+ --dst frontends \
+ --org ${ORG_FRONTENDS:-shopware}
 
 ./docs-cli clone \
  --ci \
@@ -41,7 +44,8 @@ fi
  --repository shopware/admin-extension-sdk \
  --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
  --src docs/docs/guide \
- --dst resources/admin-extension-sdk
+ --dst resources/admin-extension-sdk \
+ --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
 ./docs-cli clone \
  --ci \
