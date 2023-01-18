@@ -1,0 +1,17 @@
+{
+  "index_name": "dev_shopware_docs",
+  "start_urls": ["https://beta-developer.shopware.com/"],
+  "selectors": {
+    "lvl0": "#VPContent .content h1",
+    "lvl1": "#VPContent .content h2",
+    "lvl2": "#VPContent .content h3",
+    "lvl3": "#VPContent .content h4",
+    "lvl4": "#VPContent .content h5",
+    "lvl5": "#VPContent .content h6",
+    "text": "#VPContent .content p:not(.edit-link), #VPContent .content ol, #VPContent .content li, #VPContent .content pre"
+  },
+  "stop_urls": [
+    "(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)",
+    "(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)"
+  ]
+}
