@@ -15,6 +15,12 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: "Name of the documentation",
   srcDir: "src",
   // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
+  srcExclude: [
+    "docs/guides/plugins/**",
+    "docs/products/paas/**",
+    "docs/products/extensions/**",
+    "docs/resources/**"
+  ],
   scrollOffset: "header",
 
   head: [
