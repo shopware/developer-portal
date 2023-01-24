@@ -23,8 +23,8 @@
   "dependencies": {
     "terser": "^5.15.1",
     "vite": "3.2.5",
-    "vitepress": "1.0.0-alpha.35",
-    "vitepress-shopware-docs": "^0.2.0-beta.5",
+    "vitepress": "1.0.0-alpha.40",
+    "vitepress-shopware-docs": "^0.2.0-beta.7",
     "vue": "^3.2.41"
   },
   "devDependencies": {
