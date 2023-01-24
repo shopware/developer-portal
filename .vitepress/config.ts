@@ -83,7 +83,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     plugins: [
       ViteRequireContext({
         projectBasePath: `${process.cwd()}/src`
-      })
+      }),
     ],
   },
 
