@@ -133,7 +133,6 @@ jobs:
 
   deploy-vercel:
     name: Deploy to Vercel
-    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs:
@@ -162,7 +161,13 @@ jobs:
         run: npm install -g vercel@latest
 
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
+        run: |
+          VERCEL_ENV="preview"
+          if [[ "${{github.ref}}" == "refs/heads/main" ]]; then
+            VERCEL_ENV="production"
+          fi
+          
+          vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
 
       - name: Build Project Artifacts
         run: vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }}
@@ -172,48 +177,3 @@ jobs:
 
       - name: Vercel URL
         run: cat ./vercel.env
-
-  deploy:
-    name: Deploy build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    #needs: [test, build]
-    needs:
-      - test-cli
-      - test-dev
-      - test-build
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: full-build-${{ github.sha }}
-
-      - name: Unzip artifact
-        run: |
-          mkdir -p .vitepress/dist
-          unzip full-build.zip
-          ls -la .vitepress/dist
-
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          # args: --acl public-read --follow-symlinks --delete
-          args: --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.STAGING_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.STAGING_S3_BUCKET_REGION }}
-          SOURCE_DIR: '.vitepress/dist'
-
-      # Invalidate Cloudfront (this action)
-      - name: invalidate
-        uses: chetan/invalidate-cloudfront-action@master
-        env:
-          DISTRIBUTION: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
-          PATHS: '/*'
-          AWS_REGION: ${{ secrets.STAGING_S3_BUCKET_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
