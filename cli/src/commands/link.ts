@@ -3,6 +3,7 @@ import {optionDst, optionSrc} from "../options";
 import {output} from "../output";
 import fs from "fs";
 import {execSync} from "child_process";
+import {copyConfig} from "../procedure/copyConfig";
 
 export default {
     name: 'link',
@@ -122,6 +123,9 @@ export default {
 
         // rsync into destination
         await strategy({src, dst});
+
+        // copy additional config
+        await copyConfig(src, dst);
 
         output.success('Docs directory linked');
     }

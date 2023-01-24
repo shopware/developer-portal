@@ -87,20 +87,10 @@ export default defineConfigWithTheme<ThemeConfig>({
     // https://github.com/vitejs/vite/issues/7854
     reactivityTransform: resolve(__dirname, 'src'), // true
   },
-  async buildEnd(){
-
-    copyAdditionalAssets([
-      // added to meteor-icon-kit/.github/scripts/docs.yml
-      'resources/meteor-icon-kit/public/icons/regular',
-      'resources/meteor-icon-kit/public/icons/solid',
-      // added to admin-extension-sdk/.github/scripts/docs.yml
-      'resources/admin-extension-sdk/api-reference/assets',
-      'resources/admin-extension-sdk/api-reference/ui/assets',
-      'resources/admin-extension-sdk/concepts/assets',
-      'resources/admin-extension-sdk/getting-started/assets',
-      'resources/admin-extension-sdk/internals/assets',
-      'resources/admin-extension-sdk/tooling/assets',
-    ]);
-
+  async buildEnd() {
+    /**
+     * Copy additional assets not present in the assets or public dir.
+     */
+    await copyAdditionalAssets();
   }
 });

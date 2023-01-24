@@ -3,9 +3,9 @@ import fs from "fs";
 import {getDeveloperPortalPath, run} from "../helpers";
 import {execSync} from 'child_process';
 import {v4 as uuid} from 'uuid';
-import confirm from "@inquirer/confirm";
 import inquirer from "inquirer";
 import cloneCommand from "../commands/clone";
+import {copyConfig} from "./copyConfig";
 
 export const clone = async ({
                                 repository, // 1
@@ -76,6 +76,9 @@ export const clone = async ({
         // create a new symlink
         output.notice(`Copying ${src} to ${dst}`);
         await run('cp', ['-ra', `${src}/.`, `${dst}/`], {dir: tmpDir});
+
+        // copy additional config
+        await copyConfig(tmpDir, dst);
     } catch (e) {
         caughtException = e;
     }
