@@ -16,48 +16,16 @@ on:
       - main
 
 jobs:
-  checkout:
-    name: Checkout
+  test-cli:
+    name: Test CLI
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
-
-      - name: Install system
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libnss3 \
-            libnspr4 \
-            libatk1.0-0 \
-            libatk-bridge2.0-0 \
-            libcups2 \
-            libdrm2 \
-            libatspi2.0-0 \
-            libxcomposite1 \
-            libxdamage1 \
-            libxfixes3 \
-            libxrandr2 \
-            libgbm1 \
-            libxkbcommon0 \
-            libasound2
-
-      - name: Install dependencies
-        run: pnpm i && cd cli && pnpm i
-
-      - name: Build CLI
-        run: pnpm cli:build
-        #run: cd ./cli && pnpm run build && pnpm run pkg && cd ..
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
 
       - name: Test CLI
         env:
@@ -66,6 +34,17 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
         run: pnpm test:cli
+
+  embed-docs:
+    name: Embed docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
 
       # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
@@ -83,75 +62,58 @@ jobs:
           ls -la ./src
           ls -la ./src/resources
 
-      #- name: Get pnpm store directory
-      #  id: pnpm-cache
-      #  shell: bash
-      #  run: |
-      #    echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Zip folder
+        run: zip -r embed.zip ./src/
 
-      #- uses: actions/cache@v3
-      #  name: Setup pnpm cache
-      #  with:
-      #    path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-      #    key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-      #    restore-keys: |
-      #      ${{ runner.os }}-pnpm-store-
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          if-no-files-found: error
+          name: embed-${{ github.sha }}
+          path: embed.zip
 
-#      - name: Zip folder
-#        run: zip -r full-checkout.zip .
+  test-dev:
+    name: Test dev
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: embed-docs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-#      - uses: actions/upload-artifact@v3
-#        with:
-#          name: full-checkout
-#          path: full-checkout.zip
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
 
-#  test:
-#    name: Test
-#    runs-on: ubuntu-latest
-#    timeout-minutes: 5
-#    needs: checkout
-#    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: embed-${{ github.sha }}
 
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: full-checkout
-
-#      - name: Install Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 18
-
-#      - name: Install pnpm
-#        uses: pnpm/action-setup@v2
-#        with:
-#          version: 7
+      - name: Unzip artifact
+        run: |
+          unzip -o embed.zip
 
       - name: Test
         run: pnpm run test
 
-#  build:
-#    name: Build VitePress
-#    runs-on: ubuntu-latest
-#    timeout-minutes: 5
-#    needs: checkout
-#    steps:
+  test-build:
+    name: Test build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: embed-docs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-#      - uses: actions/download-artifact@v3
-#        with:
-#          name: full-checkout
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
 
-#      - name: Unzip artifact
-#        run: unzip full-checkout.zip
+      - uses: actions/download-artifact@v3
+        with:
+          name: embed-${{ github.sha }}
 
-#      - name: Install Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 18
-
-#      - name: Install pnpm
-#        uses: pnpm/action-setup@v2
-#        with:
-#          version: 7
+      - name: Unzip artifact
+        run: |
+          unzip -o embed.zip
 
       - name: Build project
         run: pnpm run build
@@ -174,12 +136,17 @@ jobs:
     if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: checkout
+    needs:
+      - test-cli
+      - test-dev
+      - test-build
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - uses: actions/download-artifact@v3
         with:
@@ -212,12 +179,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     #needs: [test, build]
-    needs: checkout
+    needs:
+      - test-cli
+      - test-dev
+      - test-build
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
     steps:
-
       - uses: actions/download-artifact@v3
         with:
           name: full-build-${{ github.sha }}
