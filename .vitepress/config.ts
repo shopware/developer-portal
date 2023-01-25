@@ -7,6 +7,16 @@ const {resolve} = require('path');
 import {copyAdditionalAssets} from "./helpers";
 import navigation from "./navigation";
 
+const srcExclude = [
+  "docs/guides/plugins/apps/app-base-guide.md", // {% api-method %}
+  "docs/resources/references/app-reference/payment-reference.md", // {% api-method %}
+  "docs/resources/references/adr/inventory/2020-08-14-implement-individual-sorting.md", // ```json5
+  "docs/resources/references/app-reference/script-reference/cart-manipulation-script-services-reference.md",
+  "docs/resources/references/app-reference/script-reference/custom-endpoint-script-services-reference.md",
+  "docs/resources/references/app-reference/script-reference/data-loading-script-services-reference.md",
+  "docs/resources/references/app-reference/script-reference/miscellaneous-script-services-reference.md",
+];
+
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -14,15 +24,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: "Shopware",
   description: "Name of the documentation",
   srcDir: "src",
-  srcExclude: [
-    "docs/guides/plugins/apps/app-base-guide.md", // {% api-method %}
-    "docs/resources/references/app-reference/payment-reference.md", // {% api-method %}
-    "docs/resources/references/adr/inventory/2020-08-14-implement-individual-sorting.md", // ```json5
-    "docs/resources/references/app-reference/script-reference/cart-manipulation-script-services-reference.md",
-    "docs/resources/references/app-reference/script-reference/custom-endpoint-script-services-reference.md",
-    "docs/resources/references/app-reference/script-reference/data-loading-script-services-reference.md",
-    "docs/resources/references/app-reference/script-reference/miscellaneous-script-services-reference.md",
-  ],
+  srcExclude,
   scrollOffset: "header",
 
   head: [

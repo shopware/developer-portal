@@ -16,7 +16,7 @@
  *    $ find ./src/docs/ -name "*.md" -exec rm {} \;
  *
  *  - build docker image
- *    $ docker build -t my-pnpm -f Dockerfile .
+ *    $ docker build -t my-pnpm -f ./.github/scripts/Dockerfile .
  *
  *  - add dir exclusions to the "srcExclude" section in ./.vitepress/config.ts
  *    - "docs-raw/**"
@@ -27,7 +27,7 @@
  *    "vitepress build && echo 'REALLYBUILT'"
  *
  *  - run debug script from the "raw" dir
- *    $ node ./.github/scripts/debug.js raw
+ *    $ node ./.github/scripts/debug.js raw docs
  *
  *  - review and fix issues in the "broken" dir
  *
@@ -35,7 +35,7 @@
  *    $ find src/docs-broken -name '*.md'
  *
  *  - re-run debug script from the "broken" dir
- *    $ node ./.github/scripts/debug.js broken
+ *    $ node ./.github/scripts/debug.js broken docs
  */
 
 const {execSync} = require('child_process');
@@ -44,11 +44,13 @@ const path = require('path');
 const {clearTimeout} = require("timers");
 
 const sourceDir = process.argv[2];
+const checkDir = process.argv[3];
 
-if (['raw', 'broken'].includes(sourceDir)) {
+if (!['raw', 'broken'].includes(sourceDir)) {
     throw "Dir param should be 'raw' or 'broken'";
 }
 
+const containerName = 'developer-portal-debug';
 const files = [];
 
 const fullProcess = async () => {
@@ -57,9 +59,9 @@ const fullProcess = async () => {
         console.log(`FILE ${i} ${file}`);
         i++;
 
-        const dir = path.dirname(`./src/docs/${file}`);
-        const dir2 = path.dirname(`./src/docs-broken/${file}`);
-        const dir3 = path.dirname(`./src/docs-working/${file}`);
+        const dir = path.dirname(`./src/${checkDir}/${file}`);
+        const dir2 = path.dirname(`./src/${checkDir}-broken/${file}`);
+        const dir3 = path.dirname(`./src/${checkDir}-working/${file}`);
 
         // create tmp dirs
         try {
@@ -77,11 +79,11 @@ const fullProcess = async () => {
 
         // copy file
         console.log(`Copying ${file}`);
-        fs.writeFileSync(`./src/docs/${file}`, fs.readFileSync(`./src/docs-${sourceDir}/${file}`));
+        fs.writeFileSync(`./src/${checkDir}/${file}`, fs.readFileSync(`./src/${checkDir}-${sourceDir}/${file}`));
 
         // start container
         console.log(`Starting container`);
-        execSync(`docker run -dit --name my_container -v $PWD:/www/ my-pnpm /bin/sh`);
+        execSync(`docker run -dit --name ${containerName} -v $PWD:/www/ my-pnpm /bin/sh`);
 
         // run build script
         console.log(`Building with ${file}`);
@@ -93,7 +95,7 @@ const fullProcess = async () => {
             }, 60000);
 
             try {
-                const buildResponse = execSync(`docker container exec -t my_container pnpm --dir /www/ build`, {
+                const buildResponse = execSync(`docker container exec -t ${containerName} pnpm --dir /www/ build`, {
                     timeout: 55000
                 });
                 if (`${buildResponse}`.includes('REALLYBUILT')) {
@@ -115,10 +117,10 @@ const fullProcess = async () => {
             await promise;
 
             // mark as working
-            fs.writeFileSync(`./src/docs-working/${file}`, fs.readFileSync(`./src/docs-raw/${file}`));
+            fs.writeFileSync(`./src/${checkDir}-working/${file}`, fs.readFileSync(`./src/${checkDir}-raw/${file}`));
         } catch (e) {
             // mark as broken
-            fs.writeFileSync(`./src/docs-broken/${file}`, fs.readFileSync(`./src/docs-raw/${file}`));
+            fs.writeFileSync(`./src/${checkDir}-broken/${file}`, fs.readFileSync(`./src/${checkDir}-raw/${file}`));
 
             if (e?.output) {
                 console.error('REJECTED', `${e.output}`, `${e.stdout}`, `${e.stderr}`)
@@ -126,8 +128,8 @@ const fullProcess = async () => {
                 console.error('REJECTED', e);
             }
         } finally {
-            fs.rmSync(`./src/docs/${file}`);
-            execSync(`docker rm -f my_container`);
+            fs.rmSync(`./src/${checkDir}/${file}`);
+            execSync(`docker rm -f ${containerName}`);
         }
     }
 }
