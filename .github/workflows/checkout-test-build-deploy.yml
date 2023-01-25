@@ -170,5 +170,5 @@ jobs:
           fi
           
           vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
-          vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV
-          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV > ./vercel.env
+          vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG
+          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
