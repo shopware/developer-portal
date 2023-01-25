@@ -5,7 +5,7 @@ export const repositories = [
         name: 'shopware/docs',
         src: '.',
         dst: 'docs',
-        branch: env.BRANCH_DOCS || 'refactor-vitepress-format' || 'main',
+        branch: env.BRANCH_DOCS || 'DX-266' || 'main',
         org: env.ORG_DOCS || 'shopware',
     },
     {

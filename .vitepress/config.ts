@@ -7,6 +7,32 @@ const {resolve} = require('path');
 import {copyAdditionalAssets} from "./helpers";
 import navigation from "./navigation";
 
+const srcExclude = [
+  "docs-raw/**",
+  "docs-working/**",
+  "docs-broken/**",
+  //"docs/products/extensions/b2b-suite/guides/storefront/product-search.md",
+  //"docs/products/extensions/b2b-suite/guides/storefront/complex-views.md",
+  //"docs/products/extensions/b2b-suite/guides/storefront/company.md",
+  "docs/products/extensions/b2b-suite/guides/storefront/modal-component.md",
+  "docs/products/extensions/b2b-suite/guides/storefront/ajax-panel.md",
+  //"docs/products/extensions/b2b-suite/guides/core/audit-log.md",
+  //"docs/products/extensions/b2b-suite/guides/core/currency.md",
+  //"docs/products/extensions/b2b-suite/guides/core/assignment-service.md",
+  //"docs/products/extensions/b2b-suite/guides/core/authentication.md",
+  //"docs/products/extensions/b2b-suite/guides/core/crud-service.md",
+  //"docs/products/extensions/b2b-suite/guides/core/entity-acl.md",
+  //"docs/products/extensions/b2b-suite/guides/core/listing-service.md",
+  //"docs/products/extensions/b2b-suite/concepts/line-item-list.md",
+  //"docs/products/extensions/b2b-suite/concepts/system-architecture.md",
+  "docs/guides/plugins/plugins/administration/adding-responsive-behavior.md",
+  "docs/guides/plugins/plugins/storefront/using-the-datepicker-plugin.md",
+  "docs/guides/plugins/plugins/content/mail/add-mail-template.md",
+  "docs/concepts/commerce/content/shopping-experiences-cms.md",
+  //"docs/resources/references/adr/checkout/2021-10-01-payment-flow.md",
+  "docs/resources/references/adr/performance/2022-03-25-profiler-integrations.md",
+];
+
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -15,12 +41,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: "Name of the documentation",
   srcDir: "src",
   // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
-  srcExclude: [
-    "docs/guides/plugins/**",
-    "docs/products/paas/**",
-    "docs/products/extensions/**",
-    "docs/resources/**"
-  ],
+  srcExclude,
   scrollOffset: "header",
 
   head: [
