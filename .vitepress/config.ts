@@ -14,26 +14,14 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: "Shopware",
   description: "Name of the documentation",
   srcDir: "src",
-  // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
   srcExclude: [
-    "docs/concepts/commerce/content/shopping-experiences-cms.md",
-    "docs/resources/references/adr/performance/2022-03-25-profiler-integrations.md",
-    "docs/guides/hosting/infrastructure/elasticsearch/elasticsearch-debugging.md",
-    "docs/guides/hosting/infrastructure/reverse-http-cache.md",
-    "docs/guides/installation/devenv.md",
-    "docs/guides/plugins/apps/app-base-guide.md",
-    "docs/guides/plugins/apps/configuration.md",
-    "docs/guides/plugins/apps/local-development/app-development-with-docker.md",
-    "docs/guides/plugins/plugins/administration/customizing-components.md",
-    "docs/products/extensions/b2b-suite/concepts/basic-conventions.md",
-    "docs/resources/guidelines/code/backward-compatibility.md",
-    "docs/resources/references/adr/inventory/2020-08-14-implement-individual-sorting.md",
-    "docs/resources/references/app-reference/payment-reference.md",
+    "docs/guides/plugins/apps/app-base-guide.md", // {% api-method %}
+    "docs/resources/references/app-reference/payment-reference.md", // {% api-method %}
+    "docs/resources/references/adr/inventory/2020-08-14-implement-individual-sorting.md", // ```json5
     "docs/resources/references/app-reference/script-reference/cart-manipulation-script-services-reference.md",
     "docs/resources/references/app-reference/script-reference/custom-endpoint-script-services-reference.md",
     "docs/resources/references/app-reference/script-reference/data-loading-script-services-reference.md",
     "docs/resources/references/app-reference/script-reference/miscellaneous-script-services-reference.md",
-    "docs/products/extensions/b2b-suite/guides/storefront/ajax-panel.md",
   ],
   scrollOffset: "header",
 
