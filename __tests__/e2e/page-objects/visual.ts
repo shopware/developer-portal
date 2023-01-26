@@ -53,7 +53,6 @@ export class Visual {
                 customSnapshotIdentifier: identifier,
                 //updatePassedSnapshot: true,
             });
-            //await expect(page).toMatchSnapshot();
         } catch (e) {
             console.log(e);
         }
