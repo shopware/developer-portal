@@ -16,20 +16,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: "src",
   // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
   srcExclude: [
-    "docs/products/extensions/b2b-suite/guides/storefront/modal-component.md",
-    "docs/guides/plugins/plugins/administration/adding-responsive-behavior.md",
-    "docs/guides/plugins/plugins/storefront/using-the-datepicker-plugin.md",
-    "docs/guides/plugins/plugins/content/mail/add-mail-template.md",
     "docs/concepts/commerce/content/shopping-experiences-cms.md",
     "docs/resources/references/adr/performance/2022-03-25-profiler-integrations.md",
-    // additional
-    "docs/guides/plugins/plugins/content/media/add-custom-file-extension.md",
-    "docs/guides/plugins/plugins/framework/data-handling/add-data-indexer.md",
-    "docs/guides/plugins/plugins/framework/data-handling/add-data-translations.md",
-    "docs/guides/plugins/plugins/framework/filesystem/filesystem.md",
-    "docs/guides/plugins/plugins/framework/flow/add-flow-builder-action.md",
-    "docs/guides/plugins/plugins/framework/flow/add-flow-builder-trigger.md",
-    // new?
     "docs/guides/hosting/infrastructure/elasticsearch/elasticsearch-debugging.md",
     "docs/guides/hosting/infrastructure/reverse-http-cache.md",
     "docs/guides/installation/devenv.md",
