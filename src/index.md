@@ -19,7 +19,7 @@ footer: false
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-        <div i-carbon-model-alt class="h-7 w-7 text-shopware" />
+        <div class="i-carbon-model-alt h-7 w-7 text-shopware" />
         Apps
       </span>
     </div>
@@ -32,7 +32,7 @@ footer: false
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div i-carbon-cobb-angle class="h-7 w-7 text-shopware" />
+      <div class="i-carbon-cobb-angle h-7 w-7 text-shopware" />
         Themes
       </span>
     </div>
@@ -45,7 +45,7 @@ footer: false
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div i-carbon-image class="h-7 w-7 text-shopware" />
+      <div class="i-carbon-image h-7 w-7 text-shopware" />
         Custom Frontends
       </span>
     </div>
@@ -58,7 +58,7 @@ footer: false
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div i-carbon-connect class="h-7 w-7 text-shopware" />
+      <div class="i-carbon-connect h-7 w-7 text-shopware" />
         Integrations
       </span>
     </div>
@@ -79,7 +79,7 @@ footer: false
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div i-carbon-logo-github class="h-7 w-7 text-shopware" />
+      <div class="i-carbon-logo-github h-7 w-7 text-shopware" />
         Shopware Core
       </span>
     </div>
@@ -92,7 +92,7 @@ footer: false
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div i-carbon-model-alt class="h-7 w-7 text-shopware" />
+      <div class="i-carbon-model-alt h-7 w-7 text-shopware" />
         Shopware Developer Docs
       </span>
     </div>
@@ -105,7 +105,7 @@ footer: false
    <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div i-carbon-terminal class="h-7 w-7 text-shopware" />
+      <div class="i-carbon-terminal h-7 w-7 text-shopware" />
         Shopware API Documentation
       </span>
     </div>
