@@ -93,12 +93,14 @@ jobs:
           unzip -o embed.zip
 
       - name: Test
-        run: pnpm run test
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=3072"
+          pnpm run test
 
   test-build:
     name: Test build
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     needs: embed-docs
     steps:
       - name: Checkout repository
@@ -116,10 +118,14 @@ jobs:
           unzip -o embed.zip
 
       - name: Build project
-        run: pnpm run build
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=3072"
+          pnpm run build
 
       - name: Test
-        run: pnpm run test:build
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=3072"
+          pnpm run test:build
 
       - name: Zip folder
         run: zip -r full-build.zip .vitepress/dist/

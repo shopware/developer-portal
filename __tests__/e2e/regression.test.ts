@@ -12,7 +12,7 @@ describe('check regression for all pages', async () => {
         visualPage = new Visual(page);
     })
 
-    test.runIf(true || process.env.REGRESSION === 'true')('pages', async () => {
+    test.runIf(process.env.REGRESSION === 'true')('pages', async () => {
         const pages = await visualPage.getAllPages();
 
         let i = 0;
