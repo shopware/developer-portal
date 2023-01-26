@@ -19,21 +19,23 @@ importers:
       fuse.js: ^6.6.2
       get-port: ^6.1.2
       jest-expect-message: ^1.1.3
+      jest-image-snapshot: ^6.1.0
       playwright-chromium: ^1.28.1
       sass: ^1.56.2
       shell-escape: ^0.2.0
+      slugify: ^1.6.5
       terser: ^5.15.1
       uuid: ^9.0.0
       vite: 3.2.5
       vitepress: 1.0.0-alpha.40
-      vitepress-shopware-docs: ^0.2.0-beta.8
+      vitepress-shopware-docs: 0.2.0-beta.9
       vitest: ^0.25.6
       vue: ^3.2.41
     dependencies:
       terser: 5.16.1
       vite: 3.2.5_tppraggtjgvhpdo5dgubyr52me
       vitepress: 1.0.0-alpha.40_tppraggtjgvhpdo5dgubyr52me
-      vitepress-shopware-docs: 0.2.0-beta.8_lqswy3f5ev24jqx23qfhrkulve
+      vitepress-shopware-docs: 0.2.0-beta.9_lqswy3f5ev24jqx23qfhrkulve
       vue: 3.2.45
     devDependencies:
       '@originjs/vite-plugin-require-context': 1.0.9
@@ -51,9 +53,11 @@ importers:
       fuse.js: 6.6.2
       get-port: 6.1.2
       jest-expect-message: 1.1.3
+      jest-image-snapshot: 6.1.0
       playwright-chromium: 1.28.1
       sass: 1.56.2
       shell-escape: 0.2.0
+      slugify: 1.6.5
       uuid: 9.0.0
       vitest: 0.25.6_sass@1.56.2+terser@5.16.1
 
@@ -3962,6 +3966,11 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
+  /get-stdin/5.0.1:
+    resolution: {integrity: sha512-jZV7n6jGE3Gt7fgSTJoz91Ak5MuTLwMwkoYdjxuJ/AmjIsE1UC03y/IWkZCQGEvVNS9qoRNwy5BCqxImv0FVeA==}
+    engines: {node: '>=0.12.0'}
+    dev: true
+
   /get-stream/6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
@@ -4023,6 +4032,10 @@ packages:
       merge2: 1.4.1
       slash: 4.0.0
     dev: false
+
+  /glur/1.1.2:
+    resolution: {integrity: sha512-l+8esYHTKOx2G/Aao4lEQ0bnHWg4fWtJbVoZZT9Knxi01pB8C80BR85nONLFwkkQoFRCmXY+BUcGZN3yZ2QsRA==}
+    dev: true
 
   /google-fonts-helper/3.2.2:
     resolution: {integrity: sha512-AFvST/RZnRwgU8S5dSgEypaHLAji5OmaQPU1OTQxAope0tnWNzD7/3t2hy8tsX/iL4Qf1arsNcLiVHpmaUTJWQ==}
@@ -4661,6 +4674,23 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dev: true
 
+  /jest-image-snapshot/6.1.0:
+    resolution: {integrity: sha512-LZYoks6V1HAkYqyi80gUjMWVsa++Oy0fckAGMLBQseVweZT9AmJNKAINwHLqX1fpeMy2hTG5CCEe4IUX2N3Nmg==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      jest: '>=20 <=29'
+    dependencies:
+      chalk: 4.1.2
+      get-stdin: 5.0.1
+      glur: 1.1.2
+      lodash: 4.17.21
+      mkdirp: 0.5.6
+      pixelmatch: 5.3.0
+      pngjs: 3.4.0
+      rimraf: 2.7.1
+      ssim.js: 3.5.0
+    dev: true
+
   /jest-matcher-utils/29.3.1:
     resolution: {integrity: sha512-fkRMZUAScup3txIKfMe3AIZZmPEjWEdsPJFK3AIy5qRohWqQFg1qrmKfYXR9qEkNc7OdAu2N4KPHibEmy4HPeQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -5242,6 +5272,13 @@ packages:
         optional: true
     dev: false
 
+  /mkdirp/0.5.6:
+    resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
+    hasBin: true
+    dependencies:
+      minimist: 1.2.7
+    dev: true
+
   /mlly/1.0.0:
     resolution: {integrity: sha512-QL108Hwt+u9bXdWgOI0dhzZfACovn5Aen4Xvc8Jasd9ouRH4NjnrXEiyP3nVvJo91zPlYjVRckta0Nt2zfoR6g==}
     dependencies:
@@ -5583,6 +5620,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /pixelmatch/5.3.0:
+    resolution: {integrity: sha512-o8mkY4E/+LNUf6LzX96ht6k6CEDi65k9G2rjMtBe9Oo+VPKSvl+0GKHuH/AlG+GA5LPG/i5hrekkxUc3s2HU+Q==}
+    hasBin: true
+    dependencies:
+      pngjs: 6.0.0
+    dev: true
+
   /pkg-fetch/3.4.2:
     resolution: {integrity: sha512-0+uijmzYcnhC0hStDjm/cl2VYdrmVVBpe7Q8k9YBojxmR5tG8mvR9/nooQq3QSXiQqORDVOTY3XqMEqJVIzkHA==}
     hasBin: true
@@ -5649,6 +5693,16 @@ packages:
     resolution: {integrity: sha512-3PixLnGPno0E8rSBJjtwqTwJe3Yw72QwBBBxNoukIj3lEeBNXwbNiKrNuB1oyQgTBw5QHUhNO3SteEtHaMK6ag==}
     engines: {node: '>=14'}
     hasBin: true
+    dev: true
+
+  /pngjs/3.4.0:
+    resolution: {integrity: sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==}
+    engines: {node: '>=4.0.0'}
+    dev: true
+
+  /pngjs/6.0.0:
+    resolution: {integrity: sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==}
+    engines: {node: '>=12.13.0'}
     dev: true
 
   /polished/4.2.2:
@@ -6031,6 +6085,13 @@ packages:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
+  /rimraf/2.7.1:
+    resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
+    hasBin: true
+    dependencies:
+      glob: 7.2.3
+    dev: true
+
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
@@ -6239,6 +6300,11 @@ packages:
     resolution: {integrity: sha512-NwrtjCg+lZoqhFU8fOwl4ay2ei8PaqCBOUV3/ektPY9trO1yQ1oXEfmHAhKArUVUr/hOHvy5f6AdP17dCM0zMw==}
     dev: true
 
+  /slugify/1.6.5:
+    resolution: {integrity: sha512-8mo9bslnBO3tr5PEVFzMPIWwWnipGS0xVbYf65zxDqfNwmzYn1LpiKNrR6DlClusuvo+hDHd1zKpmfAe83NQSQ==}
+    engines: {node: '>=8.0.0'}
+    dev: true
+
   /smob/0.0.6:
     resolution: {integrity: sha512-V21+XeNni+tTyiST1MHsa84AQhT1aFZipzPpOFAVB8DkHzwJyjjAmt9bgwnuZiZWnIbMo2duE29wybxv/7HWUw==}
     dev: true
@@ -6279,6 +6345,10 @@ packages:
   /sprintf-js/1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
     dev: false
+
+  /ssim.js/3.5.0:
+    resolution: {integrity: sha512-Aj6Jl2z6oDmgYFFbQqK7fght19bXdOxY7Tj03nF+03M9gCBAjeIiO8/PlEGMfKDwYpw4q6iBqVq2YuREorGg/g==}
+    dev: true
 
   /stack-generator/2.0.10:
     resolution: {integrity: sha512-mwnua/hkqM6pF4k8SnmZ2zfETsRUpWXREfA/goT8SLCV4iOFa4bzOX2nDipWAZFPTjLvQB82f5yaodMVhK0yJQ==}
@@ -7112,8 +7182,8 @@ packages:
       vitepress: 1.0.0-alpha.40_tppraggtjgvhpdo5dgubyr52me
     dev: false
 
-  /vitepress-shopware-docs/0.2.0-beta.8_lqswy3f5ev24jqx23qfhrkulve:
-    resolution: {integrity: sha512-QLopRzxE4SYYn59732JzE3wtGzKNbMsJez9k8hSqQyLyzHHb9Joc9oktrzBgzpjoJVcr73MuXmbdMw8jZmtP6Q==}
+  /vitepress-shopware-docs/0.2.0-beta.9_lqswy3f5ev24jqx23qfhrkulve:
+    resolution: {integrity: sha512-rDJNNBXq9Aj2TB4Pdj+TSWBtDy/iHHoN0ZICfQWzROJUG9Txnx4Fb4FQhbWtDlS0xOs0XcQP/v5eSotfnOouzA==}
     dependencies:
       '@docsearch/css': 3.3.1
       '@docsearch/js': 3.3.1

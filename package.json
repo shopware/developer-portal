@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
+    "test:regression": "VITE_TEST_BUILD=1 REGRESSION=1 vitest run regression -r __tests__/e2e",
     "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "test:cli": "vitest run -r __tests__/cli --sequence.shuffle",
     "test:cli:coverage": "vitest run -r __tests__/cli --coverage",
@@ -24,7 +25,7 @@
     "terser": "^5.15.1",
     "vite": "3.2.5",
     "vitepress": "1.0.0-alpha.40",
-    "vitepress-shopware-docs": "^0.2.0-beta.8",
+    "vitepress-shopware-docs": "0.2.0-beta.9",
     "vue": "^3.2.41"
   },
   "devDependencies": {
@@ -47,7 +48,9 @@
     "uuid": "^9.0.0",
     "@vitest/coverage-c8": "^0.26.3",
     "execa": "^6.1.0",
-    "shell-escape": "^0.2.0"
+    "shell-escape": "^0.2.0",
+    "jest-image-snapshot": "^6.1.0",
+    "slugify": "^1.6.5"
   },
   "pnpm": {
     "peerDependencyRules": {
