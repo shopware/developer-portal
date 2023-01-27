@@ -68,14 +68,17 @@ export default {
 
         output.notice(`Preparing ${repository}`);
 
-        const repo = repositories.find(repo => repo.name.endsWith(`/${repository.split('/').reverse()[0]}`));
+        const configuredRepo = repositories.find(repo => repo.name.endsWith(`/${repository.split('/').reverse()[0]}`));
 
-        if (!repo) {
+        if (!configuredRepo) {
             output.warn('Manually configuring', repository);
+        } else {
+            // overwrite so we can match it later
+            repository = configuredRepo.name;
         }
 
-        const defaultSrc = repo?.src ?? null;
-        const defaultDst = repo?.dst ?? null;
+        const defaultSrc = configuredRepo?.src ?? null;
+        const defaultDst = configuredRepo?.dst ?? null;
 
         src = await requireParam(src, optionSrc, defaultSrc);
         dst = await requireParam(dst, optionDst, defaultDst);
