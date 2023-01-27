@@ -72,9 +72,6 @@ export default {
 
         if (!configuredRepo) {
             output.warn('Manually configuring', repository);
-        } else {
-            // overwrite so we can match it later
-            repository = configuredRepo.name;
         }
 
         const defaultSrc = configuredRepo?.src ?? null;
@@ -85,7 +82,7 @@ export default {
 
         const myEnv: { [key: string]: string } = {};
         for (const repo of repositories) {
-            if (repo.name !== repository) {
+            if (repo.name !== configuredRepo?.name) {
                 continue;
             }
 
