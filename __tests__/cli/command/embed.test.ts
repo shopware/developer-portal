@@ -48,13 +48,21 @@ describe('cli embed', async () => {
         withDirConfig(sandbox, secrets);
 
         const result = await docsCli(['embed'], sandbox.cwd, {...timeout.high/*, env: secrets*/});
+        console.log(result);
 
         expect(result.stdout).toContain('Embedding repositories');
 
         expect(result.stdout).toContain('Embedding shopware/frontends');
+        expect(result.stdout).toContain('Processed shopware/frontends');
+
         expect(result.stdout).toContain('Embedding shopware/admin-extension-sdk');
+        expect(result.stdout).toContain('Processed shopware/admin-extension-sdk');
+
         expect(result.stdout).toContain('Embedding shopware/meteor-icon-kit');
+        expect(result.stdout).toContain('Processed shopware/meteor-icon-kit');
+
         expect(result.stdout).toContain('Embedding shopware/meteor-component-library');
+        expect(result.stdout).toContain('Processed shopware/meteor-component-library');
 
         expect(result.stdout).toContain('Running additional steps');
         expect(result.stdout).toContain('Repositories embedded');
