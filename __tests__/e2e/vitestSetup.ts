@@ -12,8 +12,8 @@ beforeAll(async () => {
 })
 
 afterAll(async () => {
-    await page.close()
-    await browser.close()
+    // await page.close()
+    // await browser.close()
     // @ts-ignore
     delete globalThis.page
     // @ts-ignore

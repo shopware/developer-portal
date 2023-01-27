@@ -13,7 +13,7 @@ importers:
       '@types/shell-escape': ^0.2.1
       '@types/uuid': ^9.0.0
       '@vitejs/plugin-vue': ^3.2.0
-      '@vitest/coverage-c8': ^0.28.2
+      '@vitest/coverage-c8': 0.28.2
       '@vue/test-utils': ^2.2.8
       execa: ^6.1.0
       fuse.js: ^6.6.2
@@ -29,7 +29,7 @@ importers:
       vite: ^3.2.5
       vitepress: 1.0.0-alpha.40
       vitepress-shopware-docs: 0.2.0-beta.10
-      vitest: ^0.28.2
+      vitest: 0.28.2
       vue: ^3.2.45
     dependencies:
       terser: 5.16.1
