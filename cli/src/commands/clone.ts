@@ -82,7 +82,7 @@ export default {
 
         const myEnv: { [key: string]: string } = {};
         for (const repo of repositories) {
-            if (repo.name !== configuredRepo?.name) {
+            if (repo.name !== repository) {
                 continue;
             }
 
