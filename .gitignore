@@ -4,3 +4,4 @@ dist
 .idea
 .vercel
 .algolia/.env
+__tests__/e2e/__image_snapshots__/
