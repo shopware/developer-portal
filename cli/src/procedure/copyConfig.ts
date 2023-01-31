@@ -4,7 +4,7 @@ import {run} from "../helpers";
 
 export const copyConfig = async (src: string, dst: string) => {
     const docsConfig = '.github/scripts/docs.yml';
-    if (!fs.existsSync(`${src}/${docsConfig}`) || !fs.lstatSync(`${dst}/${docsConfig}`).isFile()) {
+    if (!fs.existsSync(`${src}/${docsConfig}`) || !fs.lstatSync(`${src}/${docsConfig}`).isFile()) {
         return;
     }
     
