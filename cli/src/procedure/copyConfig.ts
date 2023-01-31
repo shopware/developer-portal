@@ -9,5 +9,5 @@ export const copyConfig = async (src: string, dst: string) => {
     }
     
     output.notice('Copying external config');
-    await run('cp', [`${src}/${docsConfig}`, `${dst}/docs.yml`]);
+    await run('cp', [`${src}/${docsConfig}`, `${dst}/docs.yml`], {dir: src});
 }
