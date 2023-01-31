@@ -1,11 +1,30 @@
 import fs from "fs-extra";
+import glob from "glob";
+import yaml from "js-yaml";
+import path from "path";
 
-export const copyAdditionalAssets = (publicDirs) => {
+export const copyAdditionalAssets = async (customDirs = []) => {
+    const sourceRoot = 'src/';
+    const publicDirs: string[] = await new Promise((resolve, reject) => {
+        console.log('Discovering docs.yml');
+        glob("**/docs.yml", {}, (er, files) => {
+            const directories = files.reduce((reduced, file) => {
+                const content = yaml.load(fs.readFileSync(file))
+                const filesToCopy = content?.['build-end']?.['copy-additional-assets'] ?? [];
+                const dirName = path.dirname(file);
 
-    console.log('COPYING NOT-STANDARD ASSETS', `${process.cwd()}/.vitepress/dist/`)
+                return [
+                    ...reduced,
+                    ...filesToCopy.map(fileToCopy => `${dirName.substring(sourceRoot.length)}/${fileToCopy}`)
+                ];
+            }, customDirs);
+            resolve(directories)
+        });
+    });
 
+    console.log(`Copying non-standard static assets from ${process.cwd()}/${sourceRoot} to ${process.cwd()}/.vitepress/dist/`);
     publicDirs.forEach(dir => {
-        const dirToCopy = `${process.cwd()}/src/${dir}`;
+        const dirToCopy = `${process.cwd()}/${sourceRoot}${dir}`;
         const distDir = `${process.cwd()}/.vitepress/dist/${dir}`;
 
         // make sure dir exists
