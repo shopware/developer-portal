@@ -3,6 +3,7 @@ import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
 const {resolve} = require('path');
+import { MarkdownTransform } from "./plugins/markdownTransform";
 
 import {copyAdditionalAssets} from "./helpers";
 import navigation from "./navigation";
@@ -11,8 +12,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   lang: "en-US",
-  title: "Shopware",
-  description: "Name of the documentation",
+  title: "Shopware Documentation",
+  description: "Documentation for Shopware developers",
   srcDir: "src",
   srcExclude: [],
   scrollOffset: "header",
@@ -78,6 +79,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       ViteRequireContext({
         projectBasePath: `${process.cwd()}/src`
       }),
+      MarkdownTransform(),
     ],
   },
 

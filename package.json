@@ -50,7 +50,8 @@
     "execa": "^6.1.0",
     "shell-escape": "^0.2.0",
     "jest-image-snapshot": "^6.1.0",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "prettier": "^2.8.3"
   },
   "pnpm": {
     "peerDependencyRules": {
