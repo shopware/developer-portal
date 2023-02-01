@@ -52,7 +52,8 @@
     "jest-image-snapshot": "^6.1.0",
     "slugify": "^1.6.5",
     "prettier": "^2.8.3",
-    "@mermaid-js/mermaid-mindmap": "9.3.0"
+    "@mermaid-js/mermaid-mindmap": "9.3.0",
+    "sitemap": "^7.1.1"
   },
   "pnpm": {
     "peerDependencyRules": {
