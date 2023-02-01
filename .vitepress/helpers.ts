@@ -54,7 +54,7 @@ export const createSitemap = async () => {
                 .map(file => file.endsWith('/index.html')
                     ? file.substring(0, file.length - 'index.html'.length)
                     : file)
-                .filter(file => file !== '404.html');
+                .filter(file => file !== '/404.html');
             resolve(urls);
         });
     });
