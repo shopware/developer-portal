@@ -5,7 +5,7 @@ import ViteRequireContext from '@originjs/vite-plugin-require-context'
 const {resolve} = require('path');
 import { MarkdownTransform } from "./plugins/markdownTransform";
 
-import {copyAdditionalAssets} from "./helpers";
+import {copyAdditionalAssets, createSitemap} from "./helpers";
 import navigation from "./navigation";
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -92,5 +92,10 @@ export default defineConfigWithTheme<ThemeConfig>({
      * Copy additional assets not present in the assets or public dir.
      */
     await copyAdditionalAssets();
+
+    /**
+     * Create public sitemap.xml.
+     */
+    await createSitemap();
   }
 });

@@ -2,6 +2,7 @@ import fs from "fs-extra";
 import glob from "glob";
 import yaml from "js-yaml";
 import path from "path";
+import {simpleSitemapAndIndex, SitemapItemLoose, EnumChangefreq} from "sitemap";
 
 export const copyAdditionalAssets = async (customDirs = []) => {
     const sourceRoot = 'src/';
@@ -42,5 +43,61 @@ export const copyAdditionalAssets = async (customDirs = []) => {
             fs.writeFileSync(`${distDir}/${file}`, fs.readFileSync(`${dirToCopy}/${file}`));
         });
     })
+
+}
+
+export const createSitemap = async () => {
+    console.log('Discovering *.html');
+    const files: string[] = await new Promise((resolve) => {
+        glob("./.vitepress/dist/**/*.html", {}, (er, files) => {
+            const urls = files.map(file => file.substring('./.vitepress/dist'.length))
+                .map(file => file.endsWith('/index.html')
+                    ? file.substring(0, file.length - 'index.html'.length)
+                    : file)
+                .filter(file => file !== '404.html');
+            resolve(urls);
+        });
+    });
+
+    const priorities = {
+        2: 1.0,
+        3: 0.8,
+        4: 0.6,
+        5: 0.4,
+        6: 0.2,
+    };
+    const sourceData: SitemapItemLoose[] = files.map((url: string): SitemapItemLoose => ({
+        url,
+        changefreq: EnumChangefreq.MONTHLY,
+        priority: priorities[url.split('/').length] || 0.1
+    }));
+
+    console.log('Writing sitemap.xml');
+    const destinationDir = './.vitepress/dist/';
+    const limit = 50_000;
+    await simpleSitemapAndIndex({
+        hostname: 'https://beta-developer.shopware.com',
+        destinationDir,
+        sourceData,
+        limit,
+        gzip: false
+    })
+
+    // create robots.txt
+    const robots = [
+        'User-agent: *',
+        'Allow: *',
+        'Sitemap: https://beta-developer.shopware.com/sitemap.xml'
+    ].join("\n");
+    fs.writeFileSync(`${destinationDir}robots.txt`, robots);
+
+    if (limit >= sourceData.length) {
+        // transform to single no-indexed sitemap
+        fs.rmSync(`${destinationDir}sitemap-index.xml`);
+        fs.rename(`${destinationDir}sitemap-0.xml`, `${destinationDir}sitemap.xml`);
+    } else {
+        // rename index
+        fs.rename(`${destinationDir}sitemap-index.xml`, `${destinationDir}sitemap.xml`);
+    }
 
 }
