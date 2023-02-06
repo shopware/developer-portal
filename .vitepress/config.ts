@@ -48,9 +48,9 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     algolia: {
-      indexName: "dev_shopware_docs",
-      appId: "BZSKX72NEG",
-      apiKey: "51af8af7f609453a7fdf160ea0df3b2f",
+      indexName: "beta-developer-shopware",
+      appId: "J1Y01X9HGM",
+      apiKey: "711e1cadf66a3957aaf183a58aad12a7",
       // searchParameters: {
       //   facetFilters: ["version:v1"],
       // },
