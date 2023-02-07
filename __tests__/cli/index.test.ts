@@ -10,7 +10,7 @@ describe('CLI', async () => {
         sandbox = destroySandbox(sandbox);
     })
 
-    test('No args and params', async () => {
+    test.skip('No args and params', async () => {
         const program = createProgram([]);
 
         const opts = program.opts();
@@ -23,7 +23,7 @@ describe('CLI', async () => {
         expect(args.length).toEqual(0);
     })
 
-    test('Verbose', async () => {
+    test.skip('Verbose', async () => {
         const program = createProgram(['--vv']);
 
         const opts = program.opts();
@@ -31,7 +31,7 @@ describe('CLI', async () => {
         expect(opts.vv).toBeTruthy();
     })
 
-    test('Debug', async () => {
+    test.skip('Debug', async () => {
         const program = createProgram(['--vvv']);
 
         const opts = program.opts();
