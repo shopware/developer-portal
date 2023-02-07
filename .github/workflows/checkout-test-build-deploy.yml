@@ -83,6 +83,8 @@ jobs:
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
+        with:
+          apt: true
 
       - uses: actions/download-artifact@v3
         with:
@@ -108,6 +110,8 @@ jobs:
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
+        with:
+          apt: true
 
       - uses: actions/download-artifact@v3
         with:
