@@ -17,5 +17,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": ":url(^(?!.*\\.).*[^/]$)",
+      "destination": ":url.html",
+      "statusCode": 301
+    }
   ]
 }
