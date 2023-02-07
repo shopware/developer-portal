@@ -4,11 +4,11 @@ Frontend (Storefront) is a crucial aspect of your e-commerce business that onlin
 
 ## Capabilities
 
-Shopware's Storefront is well structured and predominantly consists of design templates that match your brand and store themes. So if you are looking at custom design templates, custom styling, etc., that can modify the whole appearance of your store, then take a look at our [Guide on Storefront](https://developer.shopware.com/docs/guides/plugins/apps/storefront).
+Shopware's Storefront is well structured and predominantly consists of design templates that match your brand and store themes. So if you are looking at custom design templates, custom styling, etc., that can modify the whole appearance of your store, then take a look at our [Guide on Storefront](/docs/guides/plugins/apps/storefront).
 
 ### Store API
 
-The [Store API](https://developer.shopware.com/docs/concepts/api/store-api) offers a full range of commerce options making it possible for customers to:
+The [Store API](/docs/concepts/api/store-api) offers a full range of commerce options making it possible for customers to:
 
 * Search products
 * Create carts

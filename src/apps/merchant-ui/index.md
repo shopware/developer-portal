@@ -16,11 +16,11 @@ The Administration component is tightly coupled with Shopware's core, which help
 
 ## Changing the look
 
-You can modify the appearance and styling of the Administration by customizing its [Templates](https://developer.shopware.com/docs/guides/plugins/plugins/administration/writing-templates)
+You can modify the appearance and styling of the Administration by customizing its [Templates](/docs/guides/plugins/plugins/administration/writing-templates)
 
 ## API
 
-The [Admin API](https://developer.shopware.com/docs/concepts/api/admin-api) offers a full range of commerce options making it possible to:
+The [Admin API](/docs/concepts/api/admin-api) offers a full range of commerce options making it possible to:
 
 * Configure the shop
 * Access to individual store's data
