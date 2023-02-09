@@ -1,5 +1,29 @@
 # Frequently asked questions
 
+## I am experiencing issues with building the docs.
+
+There are a few known issues:
+
+- you are missing some static assets - you will get an error `Error resolving an import`
+- the docs are partially embedded - you can use `./docs-cli embed` method to locally embed all repos
+- `Duplicate attribute`
+- My build breaks
+
+## PHPStorm does not reformat my frontmatter config properly.
+
+Please, enable registry key `markdown.experimental.frontmatter.support.enable=true` in your PhpStorm registry settings.
+
+```
+Shift+Shift -> Registry -> Find and enable key
+```
+
+See [https://youtrack.jetbrains.com/issue/IDEA-291881/Frontmatter-Support](IDEA-291881) in JetBrains issue tracker for
+more info.
+
+## GitHub workflow is broken
+
+Give it another try. Sometimes the process takes too long and reaches the timeout setting.
+
 ## What is the difference between the basic (embedded) and advanced (standalone) usages.
 
 **General overview**
@@ -69,12 +93,3 @@ This is how Developer portal is actually built.
 | Content         | /                                 | /                                                             |
 | Custom features | Independent features              | Sharing the same feature, making it available in all docs     |
 | GitHub actions  | Faster execution                  | Multiple repositories                                         |
-
-## I am experiencing issues with building the docs.
-
-There are a few known issues:
-
-- you are missing some static assets - you will get an error `Error resolving an import`
-- the docs are partially embedded - you can use `./docs-cli embed` method to locally embed all repos
-- `Duplicate attribute`
-- My build breaks
