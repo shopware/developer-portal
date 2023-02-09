@@ -9,6 +9,9 @@ There are a few known issues:
 - `Duplicate attribute`
 - My build breaks
 
+If the build breaks for no reason, check out `./.github/scripts/debug.js` for automatically debugging hundreds of .md
+files for issues.
+
 ## PHPStorm does not reformat my frontmatter config properly.
 
 Please, enable registry key `markdown.experimental.frontmatter.support.enable=true` in your PhpStorm registry settings.
