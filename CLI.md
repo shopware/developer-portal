@@ -22,8 +22,8 @@ Commands:
   manage            Add or remove mountpoints in developer-portal
   preview           Preview docs
   build             Build docs in developer-portal
-  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run
-                    test on the build instead of dev server.
+  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) 
+  to run test on the build instead of dev server.
   pull              Pull docs and install new dependencies in developer-portal
   config [options]  Reconfigure .docs-cli
   help [command]    display help for command

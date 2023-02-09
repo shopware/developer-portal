@@ -1,7 +1,7 @@
 # Quick start for Shopware Docs CLI
 
 _This document covers the most basic steps for working with the CLI in your repository. You can find more detailed
-information on the CLI in the [./DOCS.md](./DOCS.md) file._
+information on the CLI in the [./CLI.md](./CLI.md) file._
 
 In this introduction, you will learn how to:
 
@@ -158,4 +158,4 @@ There are a few more commands available that you can explore by yourself:
 - `./docs-cli build` - make a production build (requires all repositories to be mounted)
 - `./docs-cli config` - configure CLI paths and variables
 
-You can find more detailed information on the CLI in the [./DOCS.md](./DOCS.md) file.
+You can find more detailed information on the CLI in the [./CLI.md](./CLI.md) file.

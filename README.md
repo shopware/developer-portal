@@ -9,7 +9,7 @@ We want to make it easy for everyone to set up and maintain / preview / deploy t
 dedicated "ownership" so people have less to worry about. Ultimately - we want the majority of teams to adopt that
 approach, not being force into. :slightly_smiling_face:
 
-This repository extends
+This repository reuses our official Vitepress-based library
 [`shopware/developer-documentation-vitepress`](https://github.com/shopware/developer-documentation-vitepress) and
 embeds:
 
@@ -21,7 +21,7 @@ embeds:
 - [shopware/store-api-reference](https://github.com/shopware/store-api-reference)
 - [shopware/admin-api-reference](https://github.com/shopware/admin-api-reference)
 
-Technically, the idea is to:
+The idea is to:
 
 - provide Shopware Docs CLI (`./docs-cli`) for embedding, previewing and managing embedded resources
 - embed static files from a dedicated `docs` folder (source) in sub-repositories/projects to the `docs/mount-point`
@@ -29,52 +29,10 @@ Technically, the idea is to:
 - have a single deployment workflow with the build being served from a single
   domain - [https://beta-developer.shopware.com](https://beta-developer.shopware.com)
 
-See [./FEATURES.md](./FEATURES.md) for more info about built-in features.
-
 # Setup
 
-Clone repository and change dir.
-
-```bash
-$ git clone ssh://git@github.com:shopware/developer-portal.git
-$ cd developer-portal
-```
-
-Install NPM dependencies for all workspaces.
-
-```bash
-$ pnpm i
-```
-
-## Build CLI
-
-To embed some or all docs repositories, you first need to build CLI using `cli:dev` (non-minimized build)
-or `cli:build` (minimized build) commands.
-
-See [./DOCS.md](./DOCS.md) for more info about Shopware Docs CLI.
-
-```bash
-$ pnpm cli:build
-```
-
-You can then run CLI.
-
-```bash
-# from a symlink
-$ ./docs-cli
-# from the source
-$ ./cli/dist/docs-cli.js
-
-```
-
-## Embed all doc repositories
-
-Once you've built your CLI, you can embed selected docs repositories.
-
-```bash
-$ ./docs-cli embed
-
-```
+See [./QUICK-START.md](./QUICK-START.md) for more info on how to start using Developer Portal, including examples on 
+how to embed docs repos using Shopware Docs [CLI](./CLI.md), preview, build and test Developer portal.
 
 ## Dev preview
 
@@ -103,7 +61,7 @@ $ pnpm preview
 
 # Tests
 
-There are 4 test groups configured in `package.json:scripts`:
+There are a few test groups configured in `package.json:scripts`:
 
 - `test` - runs e2e vitest (& Playwright) tests in `./__tests__/e2e/` using internal vitest server, allowing partial
   embeddings
@@ -112,6 +70,7 @@ There are 4 test groups configured in `package.json:scripts`:
 - `test:cli` - runs CLI vitest tests in `./__tests__/cli/` using pre-built `./docs-cli` (`./cli/dist/docs-cli.js`)
   and `sandbox` directory as a working directory
 - `test:cli:coverage` - runs coverage for CLI
+- `test:regression` - run visual regression tests for all embedded pages
 
 E2E tests make sure all docs repositories are properly embedded and that all layout elements are available.
 
