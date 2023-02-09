@@ -282,6 +282,12 @@ remote or linked with `--rsync` or `--copy` strategy.
 
 ![Build developer-portal docs](./cli/demo/build.gif)
 
+Preview production build with `httpd:2.4` in Docker container - [http://localhost:8765](http://localhost:8765).
+
+```sh
+$ pnpm docs:preview:http
+```
+
 ## Test all docs
 
 You can run tests in `developer-portal` repository by running `test` or `test:build` commands.
