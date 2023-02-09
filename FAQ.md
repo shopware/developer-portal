@@ -22,7 +22,13 @@ more info.
 
 ## GitHub workflow is broken
 
-Give it another try. Sometimes the process takes too long and reaches the timeout setting.
+Give it another try. Sometimes the process takes too long and reaches the timeout setting. You can also try running the
+pipeline locally using the [./.github/scripts/act.sh](./.github/scripts/act.sh).
+
+## What is the difference between the library and project?
+
+Library (`developer-documentation-vitepress`) holds Shopware-flavoured Vitepress theme that can be reused by different
+projects. Our project (Developer portal) reuses the library.
 
 ## What is the difference between the basic (embedded) and advanced (standalone) usages.
 
