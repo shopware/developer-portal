@@ -29,6 +29,13 @@ Static assets copy during the `buildEnd` hook using `copyAdditionalAssets()` hel
 See [./.github/workflows/create-pr.yml](./.github/workflows/create-pr.yml)
 and [./.github/workflows/self-trigger.yml](./.github/workflows/self-trigger.yml).
 
+## Versioning
+
+Multiple branches of the same repository can be mounted by adding them to the `.github/scripts/embed.sh`. See
+`.github/scripts/embed.sh` and `cli/src/data.ts` for reference.
+
+_Note: make sure to also add versioned links to the sidebar in `.vitepress/sidebar.ts`._
+
 # Examples:
 
 - Meteor Icon Kit - see custom `docs-after-deploy.sh` script in Meteor Icon Kit to see how to run a special build
