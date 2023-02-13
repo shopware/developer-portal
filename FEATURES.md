@@ -8,15 +8,8 @@ library for all globally available features.
 See official [VitePress documentation](https://vitepress.vuejs.org/) for in-depth description of all features provided
 by VitePress itself, such as Markdown formatting, frontmatter configuration and theme settings.
 
-On top of that, there are additional Shopware flavoured features globally available, provided by Developer Portal:
-
-## Generate TS/JS docs (TBD)
-
-`MarkdownTransform` and `TsGenerator` Vite plugins from Frontends.
-
-## Generate sitemap
-
-Sitemap is automatically generated during the `buildEnd` hook using `createSitemap()` helper.
+On top of that, there are additional Shopware flavoured features globally available, provided by Developer Portal, as
+described in the following sections.
 
 ## Copy additional static assets
 
@@ -86,3 +79,11 @@ Multiple branches of the same repository can be mounted by adding them to the `.
 `.github/scripts/embed.sh` and `cli/src/data.ts` for reference.
 
 _Note: make sure to also add versioned links to the sidebar in `.vitepress/sidebar.ts`._
+
+## Generate TS/JS docs (TBD)
+
+`MarkdownTransform` and `TsGenerator` Vite plugins from Frontends.
+
+## Generate sitemap
+
+Sitemap is automatically generated during the `buildEnd` hook using `createSitemap()` helper.
