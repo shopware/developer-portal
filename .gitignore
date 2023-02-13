@@ -1,7 +1,10 @@
 node_modules
 .pnpm-debug.log
-dist
 .idea
 .vercel
 .algolia/.env
 __tests__/e2e/__image_snapshots__/
+.act.env
+bin/
+.vitepress/cache/
+.vitepress/dist/

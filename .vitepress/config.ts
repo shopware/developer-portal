@@ -11,12 +11,10 @@ import navigation from "./navigation";
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
-  lang: "en-US",
   title: "Shopware Documentation",
   description: "Documentation for Shopware developers",
   srcDir: "src",
   srcExclude: [],
-  scrollOffset: "header",
 
   head: [
     // favicon
@@ -41,40 +39,14 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     ...navigation, // add sidebar and nav config
 
-    // remove if edit not needed
-    editLink: {
-      repo: "shopware/developer-documentation-vitepress",
-      text: "Edit this page on GitHub",
-    },
-
     algolia: {
       indexName: "beta-developer-shopware",
       appId: "J1Y01X9HGM",
       apiKey: "711e1cadf66a3957aaf183a58aad12a7",
-      // searchParameters: {
-      //   facetFilters: ["version:v1"],
-      // },
     },
   },
 
   vite: {
-    define: {
-      __VUE_OPTIONS_API__: false,
-    },
-    server: {
-      host: true,
-      fs: {
-        // for when developing with locally linked theme
-        allow: ["../.."],
-      },
-    },
-    build: {
-      minify: "terser",
-      chunkSizeWarningLimit: Infinity,
-    },
-    json: {
-      stringify: true,
-    },
     plugins: [
       ViteRequireContext({
         projectBasePath: `${process.cwd()}/src`
@@ -87,6 +59,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     // https://github.com/vitejs/vite/issues/7854
     reactivityTransform: resolve(__dirname, 'src'), // true
   },
+
   async buildEnd() {
     /**
      * Copy additional assets not present in the assets or public dir.

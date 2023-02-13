@@ -26,7 +26,7 @@
     "vue": "^3.2.47",
     "vite": "^3.2.5",
     "vitepress": "^1.0.0-alpha.45",
-    "vitepress-shopware-docs": "^0.3.0-beta.8"
+    "vitepress-shopware-docs": "^0.3.0-beta.10"
   },
   "devDependencies": {
     "@originjs/vite-plugin-require-context": "^1.0.9",
@@ -69,5 +69,8 @@
   },
   "workspaces": [
     "cli"
-  ]
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

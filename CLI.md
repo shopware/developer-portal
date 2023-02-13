@@ -22,8 +22,8 @@ Commands:
   manage            Add or remove mountpoints in developer-portal
   preview           Preview docs
   build             Build docs in developer-portal
-  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run
-                    test on the build instead of dev server.
+  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) 
+  to run test on the build instead of dev server.
   pull              Pull docs and install new dependencies in developer-portal
   config [options]  Reconfigure .docs-cli
   help [command]    display help for command
@@ -281,6 +281,12 @@ This command will run `build` process in your local `developer-portal` checkout 
 remote or linked with `--rsync` or `--copy` strategy.
 
 ![Build developer-portal docs](./cli/demo/build.gif)
+
+Preview production build with `httpd:2.4` in Docker container - [http://localhost:8765](http://localhost:8765).
+
+```sh
+$ pnpm docs:preview:http
+```
 
 ## Test all docs
 

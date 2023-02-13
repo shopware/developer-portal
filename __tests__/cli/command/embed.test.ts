@@ -48,9 +48,6 @@ describe('cli embed', async () => {
         withDirConfig(sandbox, secrets);
 
         const result = await docsCli(['embed'], sandbox.cwd, {...timeout.high/*, env: secrets*/});
-        console.log(result);
-
-        console.log(result);
 
         expect(result.stdout).toContain('Embedding repositories');
 
