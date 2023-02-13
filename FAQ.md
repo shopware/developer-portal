@@ -57,6 +57,8 @@ projects. Our project (Developer portal) reuses the library.
 - **Custom features:** - all features by provided by `developer-portal` or `developer-documentation-vitepress`
 - **GitHub actions:** - custom [checkout-install](./.github/actions/checkout-install) is provided and reused by other
   repos
+- **`PageRef` / Sidebar** - sidebars are automatically generated, meta data is provided to all pages and available to
+  components
 
 **Both approaches**
 
@@ -69,36 +71,38 @@ Here's a table explaining pros and cons using for both methods.
 
 This is how Developer portal is intended to work.
 
-| Feature         | Pros                                     | Cons                                                  |
-|-----------------|------------------------------------------|-------------------------------------------------------|
-| Setup           | Single setup to maintain                 | More complex setup                                    |
-| Configuration   | Single config to maintain                | More complex configuration                            |
-| Dependencies    | Single list of all dependencies          | Globally available dependencies                       |
-| Algolia search  | Single source to maintain                | Larger index                                          |
-| Sitemap         | Single sitemap                           | Larger sitemap                                        |
-| Development     | Single dev environment and workflow      | More complex development                              |
-| Updates         | Single update method                     | More complex structure                                |
-| Navigation      | Single config                            | /                                                     |
-| Deployments     | Single production environment            | Larger and more frequent deployments                  |
-| Content         | Only embed .md files with static content | Need to extend the library to provide custom features |
-| Custom features | Available once-and-for-all               | May break other docs                                  |
-| GitHub actions  | Single GitHub workflow                   | Longer execution                                      |
+| Feature             | Pros                                     | Cons                                                  |
+|---------------------|------------------------------------------|-------------------------------------------------------|
+| Setup               | Single setup to maintain                 | More complex setup                                    |
+| Configuration       | Single config to maintain                | More complex configuration                            |
+| Dependencies        | Single list of all dependencies          | Globally available dependencies                       |
+| Algolia search      | Single source to maintain                | Larger index                                          |
+| Sitemap             | Single sitemap                           | Larger sitemap                                        |
+| Development         | Single dev environment and workflow      | More complex development                              |
+| Updates             | Single update method                     | More complex structure                                |
+| Navigation          | Single config                            | /                                                     |
+| Deployments         | Single production environment            | Larger and more frequent deployments                  |
+| Content             | Only embed .md files with static content | Need to extend the library to provide custom features |
+| Custom features     | Available once-and-for-all               | May break other docs                                  |
+| GitHub actions      | Single GitHub workflow                   | Longer execution                                      |
+| Sidebar / `PageRef` | Automatic link discovery                 | Larger build size                                     |
 
 **With Vitepress template/library (standalone) - multiple projects, multiple builds, multiple deployments**
 
 This is how Developer portal is actually built.
 
-| Feature         | Pros                              | Cons                                                          |
-|-----------------|-----------------------------------|---------------------------------------------------------------|
-| Setup           | Independent setup                 | More setups to maintain                                       |
-| Configuration   | Independent project configuration | More configs to maintain                                      |
-| Dependencies    | Dedicated dependencies            | More projects to maintain                                     |
-| Algolia search  | Having a separate index           | Not being able to display results from other docs             |
-| Sitemap         | Smaller sitemap                   | /                                                             |
-| Development     | Independent components            | Using the same version of dependency across multiple projects |
-| Updates         | Independent updates               | Outdated code and features                                    |
-| Navigation      | Custom navigation                 | Keeping navigation up to date                                 |
-| Deployments     | Independent deployments           | Multiple production environments                              |
-| Content         | /                                 | /                                                             |
-| Custom features | Independent features              | Sharing the same feature, making it available in all docs     |
-| GitHub actions  | Faster execution                  | Multiple repositories                                         |
+| Feature             | Pros                              | Cons                                                          |
+|---------------------|-----------------------------------|---------------------------------------------------------------|
+| Setup               | Independent setup                 | More setups to maintain                                       |
+| Configuration       | Independent project configuration | More configs to maintain                                      |
+| Dependencies        | Dedicated dependencies            | More projects to maintain                                     |
+| Algolia search      | Having a separate index           | Not being able to display results from other docs             |
+| Sitemap             | Smaller sitemap                   | /                                                             |
+| Development         | Independent components            | Using the same version of dependency across multiple projects |
+| Updates             | Independent updates               | Outdated code and features                                    |
+| Navigation          | Custom navigation                 | Keeping navigation up to date                                 |
+| Deployments         | Independent deployments           | Multiple production environments                              |
+| Content             | /                                 | /                                                             |
+| Custom features     | Independent features              | Sharing the same feature, making it available in all docs     |
+| GitHub actions      | Faster execution                  | Multiple repositories                                         |
+| Sidebar / `PageRef` | Smaller build size                | Managing links, titles and descriptions                       |
