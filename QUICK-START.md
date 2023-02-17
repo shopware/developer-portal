@@ -11,6 +11,10 @@ In this introduction, you will learn how to:
 - [Preview your changes](#4-preview-your-changes)
 - [Commit, merge and deploy your changes](#5-commit-merge-and-deploy-your-changes)
 
+## 0. Prerequisites
+
+ - Node v18
+
 ## 1. Checkout the developer-portal repository
 
 The `developer-portal` repository allows you to set up a local environment for
@@ -23,11 +27,17 @@ To get started, follow these steps:
 
 ```bash
 $ cd /www/
-$ git clone ssh://git@github.com:shopware/developer-portal.git
+$ git clone ssh://git@github.com/shopware/developer-portal.git
 $ cd developer-portal
 $ pnpm i
 $ pnpm cli:build
 
+```
+
+Validate CLI:
+
+```bash
+$ ./docs-cli
 ```
 
 ## 2. Checkout the repository you want to work on

@@ -4,6 +4,7 @@ import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
 const {resolve} = require('path');
 import { MarkdownTransform } from "./plugins/markdownTransform";
+import Inspect from "vite-plugin-inspect";
 
 import {copyAdditionalAssets, createSitemap} from "./helpers";
 import navigation from "./navigation";
@@ -14,7 +15,9 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: "Shopware Documentation",
   description: "Documentation for Shopware developers",
   srcDir: "src",
-  srcExclude: [],
+  srcExclude: [
+      "**/_source/**"
+  ],
 
   head: [
     // favicon
@@ -48,6 +51,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   vite: {
     plugins: [
+      Inspect(),
       ViteRequireContext({
         projectBasePath: `${process.cwd()}/src`
       }),
