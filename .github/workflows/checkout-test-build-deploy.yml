@@ -182,3 +182,21 @@ jobs:
           vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
           vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG
           vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
+  
+  rebuild-index:
+    name: Send documents
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+    #  - deploy-vercel
+      - embed-docs
+
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: embed-${{ github.sha }}
+
+      - name: Send artifact
+        env:
+          AI_INDEX_ENDPOINT: ${{ secrets.AI_INDEX_ENDPOINT }}
+        run: curl -v -F upload=@embed.zip $AI_INDEX_ENDPOINT
