@@ -199,4 +199,10 @@ jobs:
       - name: Send artifact
         env:
           AI_INDEX_ENDPOINT: ${{ secrets.AI_INDEX_ENDPOINT }}
-        run: curl -v -F upload=@embed.zip $AI_INDEX_ENDPOINT
+        run: |
+          COLLECTION_PARAM=""
+          if [[ "${{github.ref}}" != "refs/heads/main" ]]; then
+            BRANCH=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
+            COLLECTION_PARAM="-F collection=shopware--developer-portal--$BRANCH"
+          fo
+          curl -v -F upload=@embed.zip $COLLECTION_PARAM $AI_INDEX_ENDPOINT
