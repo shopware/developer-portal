@@ -47,6 +47,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       appId: "J1Y01X9HGM",
       apiKey: "711e1cadf66a3957aaf183a58aad12a7",
     },
+
+    swag: {
+      similarArticlesHost: 'https://ai-ml.fly.dev',
+    }
   },
 
   vite: {
