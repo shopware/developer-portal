@@ -33,14 +33,14 @@ importers:
       vite: ^3.2.5
       vite-plugin-inspect: ^0.7.15
       vitepress: ^1.0.0-alpha.45
-      vitepress-shopware-docs: ^0.3.0-beta.16
+      vitepress-shopware-docs: ^0.3.0-beta.17
       vitest: ^0.28.4
       vue: ^3.2.47
     dependencies:
       terser: 5.16.5
       vite: 3.2.5_fmyp3kkbhzlhfkonroyoepdmjy
       vitepress: 1.0.0-alpha.49_fmyp3kkbhzlhfkonroyoepdmjy
-      vitepress-shopware-docs: 0.3.0-beta.16_byuo66m6fncky5ifs7vyqww6sq
+      vitepress-shopware-docs: 0.3.0-beta.17_byuo66m6fncky5ifs7vyqww6sq
       vue: 3.2.47
     devDependencies:
       '@originjs/vite-plugin-require-context': 1.0.9
@@ -888,7 +888,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0
+      '@react-types/shared': 3.17.0
     dev: false
 
   /@react-types/checkbox/3.4.2:
@@ -910,7 +910,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0
+      '@react-types/shared': 3.17.0
     dev: false
 
   /@react-types/shared/3.17.0:
@@ -940,7 +940,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.4.2
-      '@react-types/shared': 3.9.0
+      '@react-types/shared': 3.17.0
     dev: false
 
   /@react-types/textfield/3.3.0:
@@ -951,7 +951,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0
+      '@react-types/shared': 3.17.0
     dev: false
 
   /@rehooks/component-size/1.0.3:
@@ -7582,8 +7582,8 @@ packages:
       vitepress: 1.0.0-alpha.49_fmyp3kkbhzlhfkonroyoepdmjy
     dev: false
 
-  /vitepress-shopware-docs/0.3.0-beta.16_byuo66m6fncky5ifs7vyqww6sq:
-    resolution: {integrity: sha512-epe5k43FX3r54hNlH5+ThcaCghZd+PIu0koVAomP6fWMLMCu5csf84Opc30YEPZx3HfujtiHjqArkWphUtPbKg==}
+  /vitepress-shopware-docs/0.3.0-beta.17_byuo66m6fncky5ifs7vyqww6sq:
+    resolution: {integrity: sha512-7KhHWkOJCkgR70iSUkQEi60HHKvpS1ycicd9EoMBImWlSzpwrlCRpwcgIAZIJO2kIRIHceSlWNOrDy7xxNJoLw==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
