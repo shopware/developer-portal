@@ -221,11 +221,11 @@ jobs:
           curl -v \
             -F upload=@db-index.zip $COLLECTION_PARAM \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
-            $KNOWLEDGE_URL/upload-input
+            "${KNOWLEDGE_URL}/upload-input"
           
           curl \
             -X POST \
             --data '{"collection":"$COLLECTION"}' \
             -H "Content-Type: application/json" \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
-            $KNOWLEDGE_URL/ingest
+            "${KNOWLEDGE_URL}/ingest"
