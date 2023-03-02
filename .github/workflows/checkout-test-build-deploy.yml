@@ -207,7 +207,7 @@ jobs:
 
       - name: Send artifact
         env:
-          AI_INDEX_ENDPOINT: ${{ secrets.AI_INDEX_ENDPOINT }}
+          KNOWLEDGE_URL: ${{ secrets.KNOWLEDGE_URL }}
           KNOWLEDGE_API_KEY: ${{ secrets.KNOWLEDGE_API_KEY }}
         run: |
           COLLECTION_PARAM=""
