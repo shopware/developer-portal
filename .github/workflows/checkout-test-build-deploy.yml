@@ -63,7 +63,9 @@ jobs:
           ls -la ./src/resources
 
       - name: Zip folder
-        run: zip -r embed.zip ./src/
+        run: |
+          zip -r embed.zip ./src/
+          cd src && zip -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
 
       - name: Upload build
         uses: actions/upload-artifact@v3
@@ -71,6 +73,13 @@ jobs:
           if-no-files-found: error
           name: embed-${{ github.sha }}
           path: embed.zip
+
+      - name: Upload DB index
+        uses: actions/upload-artifact@v3
+        with:
+          if-no-files-found: error
+          name: db-index-${{ github.sha }}
+          path: db-index.zip
 
   test-dev:
     name: Test dev
@@ -194,7 +203,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: embed-${{ github.sha }}
+          name: db-index-${{ github.sha }}
 
       - name: Send artifact
         env:
@@ -205,4 +214,4 @@ jobs:
             BRANCH=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
             COLLECTION_PARAM="-F collection=shopware--developer-portal--$BRANCH"
           fo
-          curl -v -F upload=@embed.zip $COLLECTION_PARAM $AI_INDEX_ENDPOINT
+          curl -v -F upload=@db-index.zip $COLLECTION_PARAM $AI_INDEX_ENDPOINT
