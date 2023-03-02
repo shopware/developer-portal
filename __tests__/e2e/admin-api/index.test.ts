@@ -8,7 +8,7 @@ describe('render correct content', async () => {
         await embeddedPage.open('/resources/api/admin-api-reference.html')
     })
 
-    test('has stoplight element', async () => {
+    test.only('has stoplight element', async () => {
         await embeddedPage.hasStoplightElement();
     })
 
