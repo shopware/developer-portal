@@ -8,15 +8,15 @@ describe('render correct content', async () => {
         await embeddedPage.open('/resources/api/admin-api-reference.html')
     })
 
-    test.only('has stoplight element', async () => {
+    test('has stoplight element', async () => {
         await embeddedPage.hasStoplightElement();
     })
 
-    test('has heading', async () => {
+    test.skip('has heading', async () => {
         await embeddedPage.hasHeading('Quick Start Guide');
     })
 
-    test('has sidebar', async () => {
+    test.skip('has sidebar', async () => {
         await embeddedPage.hasSidebar();
     })
 })

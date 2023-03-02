@@ -197,8 +197,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs:
-    #  - deploy-vercel
       - embed-docs
+      - deploy-vercel
 
     steps:
       - uses: actions/download-artifact@v3
