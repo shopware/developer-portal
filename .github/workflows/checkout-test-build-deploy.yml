@@ -63,7 +63,9 @@ jobs:
           ls -la ./src/resources
 
       - name: Zip folder
-        run: zip -r embed.zip ./src/
+        run: |
+          zip -r embed.zip ./src/
+          cd src && zip -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
 
       - name: Upload build
         uses: actions/upload-artifact@v3
@@ -71,6 +73,13 @@ jobs:
           if-no-files-found: error
           name: embed-${{ github.sha }}
           path: embed.zip
+
+      - name: Upload DB index
+        uses: actions/upload-artifact@v3
+        with:
+          if-no-files-found: error
+          name: db-index-${{ github.sha }}
+          path: src/db-index.zip
 
   test-dev:
     name: Test dev
@@ -182,3 +191,41 @@ jobs:
           vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
           vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG
           vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
+  
+  rebuild-index:
+    name: Send documents
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - embed-docs
+      - deploy-vercel
+
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: db-index-${{ github.sha }}
+
+      - name: Send artifact
+        env:
+          KNOWLEDGE_URL: ${{ secrets.KNOWLEDGE_URL }}
+          KNOWLEDGE_API_KEY: ${{ secrets.KNOWLEDGE_API_KEY }}
+        run: |
+          COLLECTION_PARAM=""
+          COLLECTION=""
+          if [[ "${{github.ref}}" != "refs/heads/main" ]]; then
+            BRANCH=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
+            COLLECTION="shopware--developer-portal--$BRANCH"
+            COLLECTION_PARAM="-F collection=$COLLECTION"
+          fi
+          
+          curl -v \
+            -F upload=@db-index.zip $COLLECTION_PARAM \
+            -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
+            "${KNOWLEDGE_URL}/upload-input"
+          
+          curl \
+            -X POST \
+            --data '{"collection":"$COLLECTION"}' \
+            -H "Content-Type: application/json" \
+            -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
+            "${KNOWLEDGE_URL}/ingest"

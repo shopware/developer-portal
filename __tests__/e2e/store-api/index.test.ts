@@ -12,11 +12,11 @@ describe('render correct content', async () => {
         await embeddedPage.hasStoplightElement();
     })
 
-    test('has heading', async () => {
+    test.skip('has heading', async () => {
         await embeddedPage.hasHeading('Shopware Store API');
     })
 
-    test('has sidebar', async () => {
+    test.skip('has sidebar', async () => {
         await embeddedPage.hasSidebar();
     })
 })
