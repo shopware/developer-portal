@@ -219,7 +219,7 @@ jobs:
           fi
           
           curl -v \
-            -F upload=@db-index.zip $COLLECTION_PARAM \
+            -F content=@db-index.zip $COLLECTION_PARAM \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
             "${KNOWLEDGE_URL}/upload-input"
           
