@@ -211,8 +211,21 @@ jobs:
           KNOWLEDGE_API_KEY: ${{ secrets.KNOWLEDGE_API_KEY }}
         run: |
           COLLECTION_PARAM=""
+          COLLECTION=""
           if [[ "${{github.ref}}" != "refs/heads/main" ]]; then
             BRANCH=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
-            COLLECTION_PARAM="-F collection=shopware--developer-portal--$BRANCH"
-          fo
-          curl -v -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" -F upload=@db-index.zip $COLLECTION_PARAM $AI_INDEX_ENDPOINT
+            COLLECTION="shopware--developer-portal--$BRANCH"
+            COLLECTION_PARAM="-F collection=$COLLECTION"
+          fi
+          
+          curl -v \
+            -F upload=@db-index.zip $COLLECTION_PARAM \
+            -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
+            $KNOWLEDGE_URL/upload-input
+          
+          curl \
+            -X POST \
+            --data '{"collection":"$COLLECTION"}' \
+            -H "Content-Type: application/json" \
+            -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
+            $KNOWLEDGE_URL/ingest
