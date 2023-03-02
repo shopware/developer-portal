@@ -79,7 +79,7 @@ jobs:
         with:
           if-no-files-found: error
           name: db-index-${{ github.sha }}
-          path: db-index.zip
+          path: src/db-index.zip
 
   test-dev:
     name: Test dev
@@ -148,7 +148,7 @@ jobs:
         with:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
-          path: src/full-build.zip
+          path: full-build.zip
 
   deploy-vercel:
     name: Deploy to Vercel
