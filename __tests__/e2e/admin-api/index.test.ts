@@ -13,7 +13,7 @@ describe('render correct content', async () => {
     })
 
     test('has heading', async () => {
-        await embeddedPage.hasHeading('Shopware Admin API');
+        await embeddedPage.hasHeading('Quick Start Guide');
     })
 
     test('has sidebar', async () => {
