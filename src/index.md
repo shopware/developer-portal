@@ -8,8 +8,8 @@ footer: false
 <div class="w-full md:max-w-1376px 2xl:px-0 mx-auto px-10">
 
 <div class="flex items-end place-content-center gap-4 opacity-50 my-6">
-  <img src="/public/home/arrow.png" />
-  <img src="/public/home/search.png"/>
+  <img src="/home/arrow.png" class="max-h-[6rem]" />
+  <img src="/home/search.png" class="max-h-[2rem]"/>
 </div>
 
 <div class="my-12 md:my-24">
@@ -20,8 +20,8 @@ footer: false
 </div>
 
 <div class="flex items-start place-content-center gap-4 opacity-50 my-6">
-  <img src="/public/home/ask.png"/>
-  <img src="/public/home/arrow.png" class="rotate-180"/>
+  <img src="/home/ask.png" class="max-h-[2rem]"/>
+  <img src="/home/arrow.png" class="rotate-180 max-h-[6rem]" />
 </div>
 
 <div class="flex items-center place-content-center mb-12">
