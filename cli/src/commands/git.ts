@@ -41,7 +41,7 @@ export default {
             let newCheckout = false;
             if (!exists) {
                 output.notice(`Cloning to ${cloneDir}`);
-                execSync(`git clone --depth 1 -b ${repository.branch} ssh://${composeRepository(repository.name, {org: repository.org})} ${cloneDir}`);
+                execSync(`git clone --depth 1 -b ${repository.branch} ssh://${composeRepository(repository.name, {org: repository.org, separator: ':'})} ${cloneDir}`);
                 newCheckout = true;
             } else if (pull) {
                 output.notice(`Pulling to ${cloneDir}`);
