@@ -46,3 +46,4 @@ on how to embed and manage docs repos, and preview the dev and prod builds.
 | [Features (external)](./FEATURES.md) | In-depth description for all features provided by the `developer-documentation-vitepress` |
 | [Tests](./TESTS.md)                  | Walkthrough for tests                                                                     |
 | [FAQ](./FAQ.md)                      | Frequently asked questions                                                                |
+| [DevContainer](./DEV-CONTAINER.md)   | Using Shopware Docs with DevContainer                                                     |

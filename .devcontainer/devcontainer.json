@@ -2,5 +2,6 @@
   "name": "Shopware Developer Portal",
   "build": {
     "dockerfile": "Dockerfile"
-  }
+  },
+  "postCreateCommand": "bash ./.devcontainer/post-install.sh"
 }

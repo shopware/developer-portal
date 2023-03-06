@@ -9,6 +9,7 @@ import build from "./commands/build";
 import test from "./commands/test";
 import pull from "./commands/pull";
 import config from "./commands/config";
+import git from "./commands/git";
 import {MyCommand} from "./cli";
 
 export const commands: MyCommand[] = [
@@ -32,6 +33,8 @@ export const commands: MyCommand[] = [
     test,
     // @ts-ignore
     pull,
+    // @ts-ignore
+    git,
     // @ts-ignore
     config,
 ];

@@ -23,23 +23,32 @@ export default {
             name: 'cp --copy',
             description: 'Use copy command',
         },
+        {
+            name: 'wd --wd',
+            description: 'Use custom in-repo working directory (devcontainer)'
+        }
     ],
     handler: async ({
                         src,
                         dst,
                         symlink,
                         rsync,
-                        copy
-                    }: { src?: string, dst?: string, symlink?: boolean, rsync?: boolean, copy?: boolean }) => {
+                        copy,
+                        wd,
+                    }: { src?: string, dst?: string, symlink?: boolean, rsync?: boolean, copy?: boolean, wd?: string }) => {
         // validate strategy
         if (((symlink ? 1 : 0) + (rsync ? 1 : 0) + (copy ? 1 : 0)) > 1) {
             output.error('You can use only one link strategy - symlink, rsync or copy');
             return;
         }
 
+        const devcontainerWd = wd;
         const cwdDir = process.cwd();
-        const developerDir = await getDeveloperPortalPath();
-        if (cwdDir === developerDir) {
+        const developerDir = devcontainerWd
+            ? cwdDir 
+            : await getDeveloperPortalPath();
+        
+        if (!devcontainerWd && cwdDir === developerDir) {
             output.error('This command can\'t run in developer-portal');
             return;
         }
