@@ -10,6 +10,7 @@ echo "CLI"
 ./docs-cli || echo "1"
 
 echo "Set up SSH"
+mkdir ~/.ssh/
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 echo "Cloning repos to ./repos/"
