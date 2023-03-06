@@ -1,0 +1,6 @@
+{
+  "name": "Shopware Developer Portal",
+  "build": {
+    "dockerfile": "Dockerfile"
+  }
+}
