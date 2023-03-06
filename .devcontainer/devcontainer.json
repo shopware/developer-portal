@@ -3,5 +3,26 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "bash ./.devcontainer/post-install.sh"
+  "postCreateCommand": "bash ./.devcontainer/post-install.sh",
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "shopware/docs": {
+          "permissions": "write-all"
+        },
+        "shopware/frontends": {
+          "permissions": "write-all"
+        },
+        "shopware/meteor-icon-kit": {
+          "permissions": "write-all"
+        },
+        "shopware/meteor-component-library": {
+          "permissions": "write-all"
+        },
+        "shopware/admin-component-sdk": {
+          "permissions": "write-all"
+        }
+      }
+    }
+  }
 }
