@@ -8,19 +8,29 @@
     "codespaces": {
       "repositories": {
         "shopware/docs": {
-          "permissions": "write-all"
+          "permissions": {
+            "contents": "write"
+          }
         },
         "shopware/frontends": {
-          "permissions": "write-all"
+          "permissions": {
+            "contents": "write"
+          }
         },
         "shopware/meteor-icon-kit": {
-          "permissions": "write-all"
+          "permissions": {
+            "contents": "write"
+          }
         },
         "shopware/meteor-component-library": {
-          "permissions": "write-all"
+          "permissions": {
+            "contents": "write"
+          }
         },
         "shopware/admin-component-sdk": {
-          "permissions": "write-all"
+          "permissions": {
+            "contents": "write"
+          }
         }
       }
     }
