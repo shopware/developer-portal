@@ -4,35 +4,7 @@
     "dockerfile": "Dockerfile"
   },
   "postCreateCommand": "bash ./.devcontainer/post-install.sh",
-  "customizations": {
-    "codespaces": {
-      "repositories": {
-        "shopware/docs": {
-          "permissions": {
-            "contents": "write"
-          }
-        },
-        "shopware/frontends": {
-          "permissions": {
-            "contents": "write"
-          }
-        },
-        "shopware/meteor-icon-kit": {
-          "permissions": {
-            "contents": "write"
-          }
-        },
-        "shopware/meteor-component-library": {
-          "permissions": {
-            "contents": "write"
-          }
-        },
-        "shopware/admin-component-sdk": {
-          "permissions": {
-            "contents": "write"
-          }
-        }
-      }
-    }
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
   }
 }
