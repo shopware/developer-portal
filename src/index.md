@@ -20,7 +20,7 @@ footer: false
 </div>
 
 <div class="flex items-start place-content-center gap-4 opacity-50 my-6">
-  <img src="/home/ask.png" class="max-h-[2rem]"/>
+  <img src="/home/try.png" class="max-h-[2rem]"/>
   <img src="/home/arrow.png" class="rotate-180 max-h-[6rem]" />
 </div>
 
