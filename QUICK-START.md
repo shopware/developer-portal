@@ -37,6 +37,7 @@ $ pnpm cli:build
 Validate CLI:
 
 ```bash
+# from the /www/developer-portal/ dir
 $ ./docs-cli
 ```
 
@@ -63,6 +64,7 @@ You can use the following command to create a symlink that points from the `fron
 environment.
 
 ```bash
+# from the /www/frontends/ dir
 $ pnpm docs:link
 
 ```
@@ -78,6 +80,7 @@ development server from the `developer-portal` and allow you to view your docume
 [http://localhost:5173/frontends/](http://localhost:5173/frontends/).
 
 ```bash
+# from the /www/frontends/ dir
 $ pnpm docs:preview
 
 ```
@@ -88,6 +91,7 @@ When you are satisfied with the result, you can proceed by committing your chang
 pull request. This will allow you to preview your changes.
 
 ```bash
+# from the /www/frontends/ dir
 $ git checkout -b my-feature-branch
 $ git add app/docs/src
 $ git commit -m "Commit message"
