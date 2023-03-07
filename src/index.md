@@ -25,11 +25,13 @@ footer: false
 </div>
 
 <div class="flex items-center place-content-center mb-12">
-  <SwagQA />
+  <!--<SwagQA />-->
+  <SwagBazaar />
 </div>
 
 <script setup>
   import SwagQA from './components/SwagQA.vue'
+  import SwagBazaar from './components/SwagBazaar.vue'
 </script>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16 pt-5">
