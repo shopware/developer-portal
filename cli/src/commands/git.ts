@@ -36,12 +36,12 @@ export default {
                 output.notice(`Deleting ${cloneDir}`);
                 fs.rmSync(cloneDir)
             }
-            
+
             // clone or pull
             let newCheckout = false;
             if (!exists) {
                 output.notice(`Cloning to ${cloneDir}`);
-                execSync(`git clone --depth 1 -b ${repository.branch} ${composeRepository(repository.name, {org: repository.org, separator: ':'})} ${cloneDir}`);
+                execSync(`git clone --depth 1 -b ${repository.branch} ${composeRepository(repository.name, { org: repository.org, separator: ':' })} ${cloneDir}`);
                 newCheckout = true;
             } else if (pull) {
                 output.notice(`Pulling to ${cloneDir}`);
@@ -51,12 +51,12 @@ export default {
             }
 
             // symlink
-            if (true || newCheckout) {
+            if (newCheckout) {
                 output.notice(`Symlinking ${cloneDir}/${repository.src} to src/${repository.dst}`)
-                link.handler({
+                await link.handler({
                     src: repository.src,
                     dst: repository.dst,
-                    wd: cloneDir,
+                    wd: `${process.cwd()}/${cloneDir}`,
                     symlink: true
                 });
             }
