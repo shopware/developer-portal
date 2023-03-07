@@ -54,9 +54,9 @@ export default {
             if (newCheckout) {
                 output.notice(`Symlinking ${cloneDir}/${repository.src} to src/${repository.dst}`)
                 await link.handler({
-                    src: repository.src,
+                    src: `${cloneDir}/${repository.src}`,
                     dst: repository.dst,
-                    wd: `${process.cwd()}/${cloneDir}`,
+                    wd: process.cwd(),
                     symlink: true
                 });
             }
