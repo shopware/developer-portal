@@ -101,7 +101,7 @@ export const requireParam = async (param: string | undefined, option: { name: st
 
     return response.param;
 }
-export const composeRepository = (repo: string, {git, org, user, pass}: { [key: string]: string | undefined }) => {
+export const composeRepository = (repo: string, {git, org, user, pass, separator = '/'}: { [key: string]: string | undefined }) => {
     // append git
     if (!repo.endsWith('.git')) {
         repo = `${repo}.git`;
@@ -119,7 +119,7 @@ export const composeRepository = (repo: string, {git, org, user, pass}: { [key: 
 
     // append domain
     if (!repo.includes('gitlab.com') && !repo.includes('github.com') && !repo.includes('gitlab.shopware.com')) {
-        repo = `${git || 'github.com'}/${repo}`;
+        repo = `${git || 'github.com'}${separator}${repo}`;
     } else if (git) {
         // replace org
         repo = repo

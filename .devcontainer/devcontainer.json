@@ -1,0 +1,10 @@
+{
+  "name": "Shopware Developer Portal",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "bash ./.devcontainer/post-install.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  }
+}
