@@ -25,3 +25,6 @@ ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 echo "Cloning repos to ./repos/"
 ./docs-cli git
+
+echo "Running dev server"
+pnpm dev
