@@ -4,7 +4,11 @@ You can try dev env provided by [GitHub Codespaces](https://github.com/codespace
 
 ## Setup
 
-Because we need to clone multiple repositories, you need to generate a new SSH key or use your existing one. Head to GitHub > Settings > [Codespaces](https://github.com/settings/codespaces) and add a new Codespace secret named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository. This will allow you to clone all docs-content repos using SSH.
+Because we need to clone multiple repositories, you need to generate a new SSH key or use your existing one. Head to GitHub > Settings > [Codespaces](https://github.com/settings/codespaces) and add a new Codespace secret named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository. This will allow you to clone all docs-content repos using SSH. As a value, enter base64 single-line encoded key.
+
+```bash
+$ cat ~/.ssh/id_ed25519 | base64 -w 0
+```
 
 ## Post-install
 

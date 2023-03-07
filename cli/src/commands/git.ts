@@ -52,9 +52,9 @@ export default {
 
             // symlink
             if (true || newCheckout) {
-                output.notice(`Symlinking ${cloneDir}/${cloneDir} to ${repository.dst}`)
+                output.notice(`Symlinking ${cloneDir}/${repository.src} to src/${repository.dst}`)
                 link.handler({
-                    src: cloneDir,
+                    src: repository.src,
                     dst: repository.dst,
                     wd: cloneDir,
                     symlink: true
