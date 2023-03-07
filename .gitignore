@@ -8,3 +8,4 @@ __tests__/e2e/__image_snapshots__/
 bin/
 .vitepress/cache/
 .vitepress/dist/
+repos/
