@@ -1,5 +1,12 @@
 # Shopware Developer Portal
 
+[![Build and deploy](https://github.com/shopware/developer-portal/actions/workflows/checkout-test-build-deploy.yml/badge.svg)](https://github.com/shopware/developer-portal/actions/workflows/checkout-test-build-deploy.yml)
+[![Issues](https://img.shields.io/github/issues/shopware/developer-portal)](https://github.com/shopware/developer-portal/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/shopware/developer-portal)](https://github.com/shopware/developer-portal/pull-requests)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbeta-developer.shopware.com)](https://beta-developer.shopware.com)
+[![License](https://img.shields.io/github/license/shopware/developer-portal)](https://github.com/shopware/developer-portal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?machine=basicLinux32gb&repo=563429368&ref=main&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)
+
 _**Team DX is serving the teams to provide documentation to our customers.**_
 
 Shopware has its history of creating and maintaining self-build and self-hosted documentations, which went wild after

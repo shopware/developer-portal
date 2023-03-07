@@ -14,6 +14,7 @@
           <option value="">default (full)</option>
           <option value="docs">docs</option>
           <option value="frontends">frontends</option>
+          <option value="lorem">lorem ipsum</option>
         </select>
       </div>
 
@@ -39,6 +40,8 @@
           </option>
         </select>
       </div>
+
+      <div v-if="errorText" class="mt-5 bg-red-300 p-10 rounded leading-8 text-black">An error occured<br/>{{  errorText  }}</div>
 
       <div class="flex gap-5 items-center justify-center">
         <button
@@ -72,6 +75,8 @@ const collection = ref("");
 const pending = ref(false);
 const results = ref([]);
 
+const errorText = ref(null)
+
 const flatten = (items = [], flattened = []) =>
   items.reduce(
     (flattened, item) => flatten(item.items || [], [item, ...flattened]),
@@ -90,9 +95,11 @@ const sidebar = [
 ];
 
 const requestAnswer = async () => {
+  errorText.value = null;
   results.value = [];
 
   if (!(query.value.length + similar.value.length)) {
+    errorText.value = 'Please, enter search query or select a page to compare';
     return;
   }
 
@@ -109,20 +116,25 @@ const requestAnswer = async () => {
     body.collection = collection.value;
   }
 
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
-  const data = await response.json();
-  results.value = data.results.map((result) => ({
-    title: result.heading,
-    url: `/${result.id
-      .replace(/\.[^/.]+$/, ".html")
-      .replace("/index.html", "")}`,
-  }));
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    const data = await response.json();
+    results.value = data.results.map((result) => ({
+      title: result.heading,
+      url: `/${result.id
+        .replace(/\.[^/.]+$/, ".html")
+        .replace("/index.html", "")}`,
+    }));
+  } catch (e) {
+    errorText.value = 'Something went wrong, please try again';
+    console.error(e);
+  }
 
   pending.value = false;
 };
