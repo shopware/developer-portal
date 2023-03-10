@@ -215,7 +215,7 @@ jobs:
           if [[ "${{github.ref}}" != "refs/heads/main" ]]; then
             BRANCH=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
             COLLECTION="shopware--developer-portal--$BRANCH"
-            COLLECTION_PARAM="-F collection=$COLLECTION"
+            COLLECTION_PARAM="-F collection=\"${COLLECTION}\""
           fi
           
           echo "Uploading documents"
@@ -229,7 +229,7 @@ jobs:
           curl \
             --fail-with-body \
             -X POST \
-            --data '{"collection":"$COLLECTION"}' \
+            --data "{\"collection\":\"${COLLECTION}\"}" \
             -H "Content-Type: application/json" \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
             "${KNOWLEDGE_URL}/ingest"
