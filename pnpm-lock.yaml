@@ -32,15 +32,15 @@ importers:
       uuid: ^9.0.0
       vite: ^3.2.5
       vite-plugin-inspect: ^0.7.15
-      vitepress: ^1.0.0-alpha.45
-      vitepress-shopware-docs: ^0.3.0-beta.21
+      vitepress: ^1.0.0-alpha.51
+      vitepress-shopware-docs: ^0.3.0-beta.22
       vitest: ^0.28.4
       vue: ^3.2.47
     dependencies:
       terser: 5.16.5
       vite: 3.2.5_fmyp3kkbhzlhfkonroyoepdmjy
-      vitepress: 1.0.0-alpha.49_fmyp3kkbhzlhfkonroyoepdmjy
-      vitepress-shopware-docs: 0.3.0-beta.21_byuo66m6fncky5ifs7vyqww6sq
+      vitepress: 1.0.0-alpha.51_fmyp3kkbhzlhfkonroyoepdmjy
+      vitepress-shopware-docs: 0.3.0-beta.22_5rl4tmwkzctykkbn4hj35su5gm
       vue: 3.2.47
     devDependencies:
       '@originjs/vite-plugin-require-context': 1.0.9
@@ -605,8 +605,8 @@ packages:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: false
 
-  /@iconify/utils/2.1.4:
-    resolution: {integrity: sha512-7vzsYIvxv5Hng0MNEtSSnyMBD/+zqnORqmKiYsSgpMBGSz1r93URgBZHPYCZ1/gpoaVstYW4/SVLGCMJBNMCLQ==}
+  /@iconify/utils/2.1.5:
+    resolution: {integrity: sha512-6MvDI+I6QMvXn5rK9KQGdpEE4mmLTcuQdLZEiX5N+uZB+vc4Yw9K1OtnOgkl8mp4d9X0UrILREyZgF1NUwUt+Q==}
     dependencies:
       '@antfu/install-pkg': 0.1.1
       '@antfu/utils': 0.7.2
@@ -888,7 +888,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/checkbox/3.4.2:
@@ -910,7 +910,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/shared/3.17.0:
@@ -940,7 +940,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.4.2
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/textfield/3.3.0:
@@ -951,7 +951,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@rehooks/component-size/1.0.3:
@@ -1148,8 +1148,8 @@ packages:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
 
-  /@stoplight/elements-core/7.7.10:
-    resolution: {integrity: sha512-Z/cj6EtYxfT4bDC9DA9WyNUQdhahiPqJcNsWnC/+yPSAqAnqDfzlkVT0iyiRxOfF0OzVfw3rfzadbYlcx/PNAw==}
+  /@stoplight/elements-core/7.7.12:
+    resolution: {integrity: sha512-/9cbDQW4yhDqswPX9mASXyQcQpdk4eyZjiWyRrCtvCNs5PJXnN8Z9gI0RGB4JiMpFWB+eoB7t2zqZZlwTYRfng==}
     engines: {node: '>=14.13'}
     peerDependencies:
       react: '>=16.8'
@@ -1160,12 +1160,12 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/http-spec': 5.5.6
+      '@stoplight/http-spec': 5.5.7
       '@stoplight/json': 3.20.2
       '@stoplight/json-schema-ref-parser': 9.2.2
       '@stoplight/json-schema-sampler': 0.2.3
-      '@stoplight/json-schema-viewer': 4.9.0_lfdwxbzi7wvf36ktoe6bfd6gya
-      '@stoplight/markdown-viewer': 5.5.1_sadmrbsjila5slmzmh3kwtnjem
+      '@stoplight/json-schema-viewer': 4.9.0_l4dlkpaeysxzw64qewpdcbtcpq
+      '@stoplight/markdown-viewer': 5.6.0_sadmrbsjila5slmzmh3kwtnjem
       '@stoplight/mosaic': 1.40.0
       '@stoplight/mosaic-code-editor': 1.40.0
       '@stoplight/mosaic-code-viewer': 1.40.0
@@ -1211,8 +1211,8 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/elements-dev-portal/1.9.6:
-    resolution: {integrity: sha512-m4OVqdsU6EXDoydWo9nuzUHPCACA1//vgGvupqgYcCiuSlEkULo+j01TWfOKIS/Gs/jMQ7r68KssSaexoFvZsg==}
+  /@stoplight/elements-dev-portal/1.9.8:
+    resolution: {integrity: sha512-lKJ/S+lEhn6zG2a1cPw6m8WtbBDo0rzabXLzvmFCcVe/nznB21sytUmJnlUm1WwuoT5fqHwdDJthYHj/PlQH/w==}
     engines: {node: '>=14.13'}
     peerDependencies:
       react: '>=16.8'
@@ -1223,8 +1223,8 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/elements-core': 7.7.10
-      '@stoplight/markdown-viewer': 5.5.1_@stoplight+mosaic@1.40.0
+      '@stoplight/elements-core': 7.7.12
+      '@stoplight/markdown-viewer': 5.6.0_@stoplight+mosaic@1.40.0
       '@stoplight/mosaic': 1.40.0
       '@stoplight/path': 1.3.2
       '@stoplight/types': 13.9.1
@@ -1258,8 +1258,8 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/http-spec/5.5.6:
-    resolution: {integrity: sha512-/AKJJfA0vikjXOz/IZx06eD41uCh4l65N7HxNXYMigGeZQm0drPNhuYB+7iXqwLEqa2rruosJY3SrHO5wsYprQ==}
+  /@stoplight/http-spec/5.5.7:
+    resolution: {integrity: sha512-neAYnwPyWv09GW3FOWSjlt4I0B3Z4Fq7p/ulQk7cDGw1gQh19PmNd3nhbMiPD/9bd1vMzFhsnfyK5Hjqgk6RZQ==}
     engines: {node: '>=14.13'}
     dependencies:
       '@stoplight/json': 3.20.2
@@ -1329,7 +1329,7 @@ packages:
       magic-error: 0.0.1
     dev: false
 
-  /@stoplight/json-schema-viewer/4.9.0_lfdwxbzi7wvf36ktoe6bfd6gya:
+  /@stoplight/json-schema-viewer/4.9.0_l4dlkpaeysxzw64qewpdcbtcpq:
     resolution: {integrity: sha512-xuOt1FFeFxiy/bJrD0++9rjKY0NlaxH7y6jDZGCMGmH0y2vykpC2ZbHji+ol7/rB5TvVp7oE0NwlpK8TVizinw==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -1348,7 +1348,7 @@ packages:
     dependencies:
       '@stoplight/json': 3.20.2
       '@stoplight/json-schema-tree': 2.2.2
-      '@stoplight/markdown-viewer': 5.5.1_sadmrbsjila5slmzmh3kwtnjem
+      '@stoplight/markdown-viewer': 5.6.0_sadmrbsjila5slmzmh3kwtnjem
       '@stoplight/mosaic': 1.40.0
       '@stoplight/mosaic-code-viewer': 1.40.0
       '@stoplight/react-error-boundary': 2.0.0
@@ -1391,8 +1391,8 @@ packages:
       wolfy87-eventemitter: 5.2.9
     dev: false
 
-  /@stoplight/markdown-viewer/5.5.1_@stoplight+mosaic@1.40.0:
-    resolution: {integrity: sha512-/0DQk/hMFyAE/ozYai/mV2+bHzKsD4HLZhONc6FP4v/D3Ewo/432eroAO7d19GQOqhh8Jva/rX3lMTj20bIMtA==}
+  /@stoplight/markdown-viewer/5.6.0_@stoplight+mosaic@1.40.0:
+    resolution: {integrity: sha512-vKHn1Bv9nafBYQWtNLlrRZ1aKqFRTOdfWUAhCSV1ZH4iqxGa+O1OWWTBbeOF5du8vcrWu1tTrXoCXkZjmq1NlA==}
     engines: {node: '>=12'}
     peerDependencies:
       '@stoplight/mosaic': ^1.24.4
@@ -1426,8 +1426,8 @@ packages:
       - supports-color
     dev: false
 
-  /@stoplight/markdown-viewer/5.5.1_sadmrbsjila5slmzmh3kwtnjem:
-    resolution: {integrity: sha512-/0DQk/hMFyAE/ozYai/mV2+bHzKsD4HLZhONc6FP4v/D3Ewo/432eroAO7d19GQOqhh8Jva/rX3lMTj20bIMtA==}
+  /@stoplight/markdown-viewer/5.6.0_sadmrbsjila5slmzmh3kwtnjem:
+    resolution: {integrity: sha512-vKHn1Bv9nafBYQWtNLlrRZ1aKqFRTOdfWUAhCSV1ZH4iqxGa+O1OWWTBbeOF5du8vcrWu1tTrXoCXkZjmq1NlA==}
     engines: {node: '>=12'}
     peerDependencies:
       '@stoplight/mosaic': ^1.24.4
@@ -1904,7 +1904,7 @@ packages:
   /@unocss/preset-icons/0.49.8:
     resolution: {integrity: sha512-/6i1Lt4ewZq4YRtI1MHIeyRQNsFh/z5fWxplpVM8YTSP7b6ZENvjRdsr16QEgPJk7dFVO7pbNfF8Fsl753kODA==}
     dependencies:
-      '@iconify/utils': 2.1.4
+      '@iconify/utils': 2.1.5
       '@unocss/core': 0.49.8
       ofetch: 1.0.1
     transitivePeerDependencies:
@@ -4905,8 +4905,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /jiti/1.17.1:
-    resolution: {integrity: sha512-NZIITw8uZQFuzQimqjUxIrIcEdxYDFIe/0xYfIlVXTkiBjjyBEvgasj5bb0/cHtPRD/NziPbT312sFrkI5ALpw==}
+  /jiti/1.17.2:
+    resolution: {integrity: sha512-Xf0nU8+8wuiQpLcqdb2HRyHqYwGk2Pd+F7kstyp20ZuqTyCmB9dqpX2NxaxFc1kovraa2bG6c1RL3W7XfapiZg==}
     hasBin: true
     dev: false
 
@@ -7163,7 +7163,7 @@ packages:
     dependencies:
       '@antfu/utils': 0.5.2
       defu: 6.1.2
-      jiti: 1.17.1
+      jiti: 1.17.2
     dev: false
 
   /unified/9.2.2:
@@ -7572,24 +7572,24 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-plugin-mermaid/2.0.10_2nc3z7lwrvytclhm7cdy4po43e:
+  /vitepress-plugin-mermaid/2.0.10_epdmgrihfqj7i26dmsybabu4wy:
     resolution: {integrity: sha512-sujwlcuyK5vCyS9OfH3Fwq4V723nUFWlOsezDU+RcGtqO32Y8HHXpxejibIZSed5DsL9zdjTgScRmdZYG+PsSw==}
     peerDependencies:
       mermaid: ^8.0.0 || ^9.0.0
       vitepress: ^0.21.6 || ^1.0.0 || ^1.0.0-alpha
     dependencies:
       mermaid: 9.1.7
-      vitepress: 1.0.0-alpha.49_fmyp3kkbhzlhfkonroyoepdmjy
+      vitepress: 1.0.0-alpha.51_fmyp3kkbhzlhfkonroyoepdmjy
     dev: false
 
-  /vitepress-shopware-docs/0.3.0-beta.21_byuo66m6fncky5ifs7vyqww6sq:
-    resolution: {integrity: sha512-ZVtaN3ksDI75a6TPEGBdpdCAzeUyogPYx2ChIZBuss4q8byAqT/+8SmC0C6TXWvt0dsJx127yhhcdVHNtpsPdA==}
+  /vitepress-shopware-docs/0.3.0-beta.22_5rl4tmwkzctykkbn4hj35su5gm:
+    resolution: {integrity: sha512-s062CqH5CC6OoTtn5H9WUWfWVVq0cvy6Ef+4yvFpyUh/JhzN9D2/0B3SPUX9h7W693dRpOaQgdqWi+xuRj/5fA==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
       '@iconify-json/carbon': 1.1.16
       '@mermaid-js/mermaid-mindmap': 9.3.0
-      '@stoplight/elements-dev-portal': 1.9.6
+      '@stoplight/elements-dev-portal': 1.9.8
       '@vueuse/core': 9.13.0_vue@3.2.47
       axios: 0.27.2
       body-scroll-lock: 3.1.5
@@ -7599,7 +7599,7 @@ packages:
       normalize.css: 8.0.1
       shiki: 0.12.1
       unocss: 0.49.8_vite@3.2.5
-      vitepress-plugin-mermaid: 2.0.10_2nc3z7lwrvytclhm7cdy4po43e
+      vitepress-plugin-mermaid: 2.0.10_epdmgrihfqj7i26dmsybabu4wy
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@babel/core'
@@ -7636,8 +7636,8 @@ packages:
       - xstate
     dev: false
 
-  /vitepress/1.0.0-alpha.49_fmyp3kkbhzlhfkonroyoepdmjy:
-    resolution: {integrity: sha512-3nUZJow4qL8NHRWYatqqVj45AJDxWst/TuOj+IbQRhxesEswa+Fpwayj9/FxzRzBl665fuiG5y+QeVhOeUm0OA==}
+  /vitepress/1.0.0-alpha.51_fmyp3kkbhzlhfkonroyoepdmjy:
+    resolution: {integrity: sha512-euZpjXeIaNUadLAQtd7NYbKhJJoDyZ6z8YK77qlM2c6NvUB5wmLPU6moP4rfcKUqpBDrsrxjJS6fdPk6azS5qQ==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3

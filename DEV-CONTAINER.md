@@ -26,3 +26,4 @@ You can then edit contents from the `./src/` folder and commit from the `./repos
 - [Using source control in your codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/using-source-control-in-your-codespace)
 - [Using GitHub Codespaces in your JetBrains IDE](https://docs.github.com/en/codespaces/developing-in-codespaces/using-github-codespaces-in-your-jetbrains-ide)
 - [Using GitHub Codespaces in Visual Studio Code](https://docs.github.com/en/codespaces/developing-in-codespaces/using-github-codespaces-in-visual-studio-code)
+- [Dev Container metadata reference](https://containers.dev/implementors/json_reference/)
