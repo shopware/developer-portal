@@ -23,6 +23,7 @@ importers:
       mermaid: 9.1.7
       playwright-chromium: ^1.30.0
       prettier: ^2.8.3
+      remove-markdown: ^0.5.0
       sass: ^1.58.0
       shell-escape: ^0.2.0
       sitemap: ^7.1.1
@@ -62,6 +63,7 @@ importers:
       mermaid: 9.1.7
       playwright-chromium: 1.31.1
       prettier: 2.8.4
+      remove-markdown: 0.5.0
       sass: 1.58.3
       shell-escape: 0.2.0
       sitemap: 7.1.1
@@ -6385,6 +6387,10 @@ packages:
   /remove-accents/0.4.2:
     resolution: {integrity: sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==}
     dev: false
+
+  /remove-markdown/0.5.0:
+    resolution: {integrity: sha512-x917M80K97K5IN1L8lUvFehsfhR8cYjGQ/yAMRI9E7JIKivtl5Emo5iD13DhMr+VojzMCiYk8V2byNPwT/oapg==}
+    dev: true
 
   /repeat-string/1.6.1:
     resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
