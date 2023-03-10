@@ -218,14 +218,20 @@ jobs:
             COLLECTION_PARAM="-F collection=$COLLECTION"
           fi
           
+          echo "Uploading documents"
           curl -v \
+            --fail-with-body \
             -F content=@db-index.zip $COLLECTION_PARAM \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
             "${KNOWLEDGE_URL}/upload-input"
           
+          echo "Ingesting documents"
           curl \
+            --fail-with-body \
             -X POST \
             --data '{"collection":"$COLLECTION"}' \
             -H "Content-Type: application/json" \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
             "${KNOWLEDGE_URL}/ingest"
+          
+          echo "Documents ingested"
