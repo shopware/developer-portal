@@ -75,7 +75,7 @@ const navigation = buildSidebarNav('./src/', [
 ], [
     '/docs/',
     '/docs/v6.4/',
-    '/docs/v6.3/',
+    //'/docs/v6.3/',
     '/resources/admin-extension-sdk/',
     '/resources/meteor-component-library/',
 ]);
