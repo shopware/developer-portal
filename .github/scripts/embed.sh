@@ -39,15 +39,15 @@ fi
  --dst frontends \
  --org ${ORG_FRONTENDS:-shopware}
 
-./docs-cli clone \
- --ci \
- --repository gitlab.shopware.com/product/engineering/platform-group/pwa/frontends \
- --user ${GITLAB_FRONTENDS_USERNAME} \
- --pass ${GITLAB_FRONTENDS_ACCESS_KEY} \
- --branch ${BRANCH_FRONTENDS:-main} \
- --src apps/docs/src \
- --dst frontends-gl \
- --git gitlab.shopware.com
+#./docs-cli clone \
+# --ci \
+# --repository gitlab.shopware.com/product/engineering/platform-group/pwa/frontends \
+# --user ${GITLAB_FRONTENDS_USERNAME} \
+# --pass ${GITLAB_FRONTENDS_ACCESS_KEY} \
+# --branch ${BRANCH_FRONTENDS:-main} \
+# --src apps/docs/src \
+# --dst frontends-gl \
+# --git gitlab.shopware.com
 
 ./docs-cli clone \
  --ci \
