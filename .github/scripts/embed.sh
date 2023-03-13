@@ -3,6 +3,7 @@ set -e
 
 # custom config
 BRANCH_DOCS=next
+BRANCH_DOCS_64=next-6.4
 BRANCH_FRONTENDS=main
 BRANCH_ADMIN_EXTENSION_SDK=DX-223
 BRANCH_METEOR_ICON_KIT=DX-223
@@ -10,6 +11,7 @@ BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 
 # custom orgs
 ORG_DOCS=shopware
+ORG_DOCS_64=shopware
 ORG_FRONTENDS=shopware
 ORG_ADMIN_EXTENSION_SDK=shopware
 ORG_METEOR_ICON_KIT=bojanrajh
@@ -30,6 +32,15 @@ fi
  --src . \
  --dst docs \
  --org ${ORG_DOCS:-shopware}
+
+
+./docs-cli clone \
+ --ci \
+ --repository shopware/docs \
+ --branch ${BRANCH_DOCS_64:-main} \
+ --src . \
+ --dst docs/v6.4 \
+ --org ${ORG_DOCS_64:-shopware}
 
 ./docs-cli clone \
  --ci \
