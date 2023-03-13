@@ -105,7 +105,7 @@ jobs:
 
       - name: Test
         run: |
-          export NODE_OPTIONS="--max-old-space-size=4096"
+          export NODE_OPTIONS="--max-old-space-size=6144"
           pnpm run test
 
   test-build:
@@ -132,12 +132,12 @@ jobs:
 
       - name: Build project
         run: |
-          export NODE_OPTIONS="--max-old-space-size=4096"
+          export NODE_OPTIONS="--max-old-space-size=6144"
           pnpm run build
 
       - name: Test
         run: |
-          export NODE_OPTIONS="--max-old-space-size=4096"
+          export NODE_OPTIONS="--max-old-space-size=6144"
           pnpm run test:build
 
       - name: Zip folder
