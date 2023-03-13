@@ -53,6 +53,6 @@ let requestAnswer = function () {
 
 <style>
 a {
-    @apply text-slate-600 underline
+    @apply text-slate-600 underline;
 }
 </style>
