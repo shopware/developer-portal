@@ -43,13 +43,13 @@ fi
  --dst docs/v6.4 \
  --org ${ORG_DOCS_64:-shopware}
 
-./docs-cli clone \
- --ci \
- --repository shopware/docs \
- --branch ${BRANCH_DOCS_63:-main} \
- --src . \
- --dst docs/v6.3 \
- --org ${ORG_DOCS_63:-shopware}
+#./docs-cli clone \
+# --ci \
+# --repository shopware/docs \
+# --branch ${BRANCH_DOCS_63:-main} \
+# --src . \
+# --dst docs/v6.3 \
+# --org ${ORG_DOCS_63:-shopware}
 
 ./docs-cli clone \
  --ci \
