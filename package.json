@@ -10,7 +10,7 @@
     "test:cli": "vitest run -r __tests__/cli --sequence.shuffle",
     "test:cli:coverage": "vitest run -r __tests__/cli --coverage",
     "dev": "SHOPWARE_DEV=1 vitepress",
-    "build": "export NODE_OPTIONS=\"--max-old-space-size=6144\" && vitepress build",
+    "build": "export NODE_OPTIONS=\"--max-old-space-size=8096\" && vitepress build",
     "serve": "vitepress serve",
     "preview": "docker run -dit -p 8765:80 -v \"$PWD/.vitepress/dist\":/usr/local/apache2/htdocs/ httpd:2.4",
     "cli:dev": "pnpm --dir ./cli dev && chmod +x ./cli/dist/docs-cli.js",
