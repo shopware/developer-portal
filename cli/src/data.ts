@@ -9,6 +9,20 @@ export const repositories = [
         org: env.ORG_DOCS || 'shopware',
     },
     {
+        name: 'shopware/docs',
+        src: '.',
+        dst: 'docs/v6.4',
+        branch: env.BRANCH_DOCS_64 || 'next-6.4',
+        org: env.ORG_DOCS || 'shopware',
+    },
+    {
+        name: 'shopware/docs',
+        src: '.',
+        dst: 'docs/v6.3',
+        branch: env.BRANCH_DOCS_63 || 'next-6.3',
+        org: env.ORG_DOCS || 'shopware',
+    },
+    {
         name: 'shopware/frontends',
         src: 'apps/docs/src',
         dst: 'frontends',
