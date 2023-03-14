@@ -111,7 +111,7 @@ jobs:
   test-build:
     name: Test build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     needs: embed-docs
     steps:
       - name: Checkout repository

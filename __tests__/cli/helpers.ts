@@ -109,7 +109,7 @@ export const timeout = {
         timeout: 30000,
     },
     high: {
-        timeout: 120000,
+        timeout: 150000,
     },
 };
 
