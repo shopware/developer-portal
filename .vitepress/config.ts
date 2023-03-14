@@ -17,12 +17,15 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: "src",
   srcExclude: [
       "**/_source/**",
+      // {% api
       "docs/v6.3/guides/plugins/apps/app-base-guide.md",
-      "docs/v6.3/guides/plugins/plugins/administration/customizing-components.md",
-      "docs/v6.3/guides/plugins/plugins/framework/flow/add-flow-builder-trigger.md",
-      "docs/v6.3/guides/plugins/plugins/testing/end-to-end-testing.md",
-      "docs/v6.3/products/extensions/b2b-suite/concepts/basic-conventions.md",
       "docs/v6.3/resources/references/app-reference/payment-reference.md",
+      // Missed semicolon
+      'docs/v6.3/guides/plugins/plugins/plugin-fundamentals/add-custom-commands.md',
+      // path() is not a function in twig codeblock
+      'docs/v6.3/products/extensions/b2b-suite/guides/storefront/ajax-panel.md',
+      // {% block
+      'docs/v6.3/guides/plugins/plugins/administration/customizing-components.md',
   ],
 
   head: [
