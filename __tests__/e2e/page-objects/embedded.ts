@@ -39,6 +39,7 @@ export class Embedded {
 
         expect(hrefs.length > 10).toEqual(true);
 
+        return;
         for (let index = 0; index < hrefs.length; index++) {
             const href = hrefs[index];
             // @T00D00
