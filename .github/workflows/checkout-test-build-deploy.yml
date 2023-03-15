@@ -130,15 +130,37 @@ jobs:
         run: |
           unzip -o embed.zip
 
-      - name: Build project
-        run: |
-          export NODE_OPTIONS="--max-old-space-size=8096"
-          pnpm run build
-
       - name: Test
         run: |
           export NODE_OPTIONS="--max-old-space-size=8096"
           pnpm run test:build
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: embed-docs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
+        with:
+          apt: true
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: embed-${{ github.sha }}
+
+      - name: Unzip artifact
+        run: |
+          unzip -o embed.zip
+
+      - name: Build project
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8096"
+          pnpm run build
 
       - name: Zip folder
         run: zip -r full-build.zip .vitepress/dist/
@@ -158,6 +180,7 @@ jobs:
       - test-cli
       - test-dev
       - test-build
+      - build
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
