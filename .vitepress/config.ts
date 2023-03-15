@@ -61,6 +61,12 @@ export default defineConfigWithTheme<ThemeConfig>({
     swag: {
       similarArticlesHost: 'https://ai-ml.fly.dev',
       similarArticlesFilter: {
+        'default': {
+          exclude: [
+            'docs/v6.4/',
+            'docs/v6.3/',
+          ],
+        },
         '/docs/': {
           exclude: [
             'docs/v6.4/',

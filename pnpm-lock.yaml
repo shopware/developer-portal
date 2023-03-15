@@ -34,14 +34,14 @@ importers:
       vite: ^3.2.5
       vite-plugin-inspect: ^0.7.16
       vitepress: 1.0.0-alpha.56
-      vitepress-shopware-docs: 0.3.0-beta.29
+      vitepress-shopware-docs: 0.3.0-beta.30
       vitest: ^0.28.5
       vue: ^3.2.47
     dependencies:
       terser: 5.16.6
       vite: 3.2.5_f3fcmmzaptizqrm6etb3zi2jby
       vitepress: 1.0.0-alpha.56_f3fcmmzaptizqrm6etb3zi2jby
-      vitepress-shopware-docs: 0.3.0-beta.29_nbajbkeeesvzsjt3x5hlyknjpq
+      vitepress-shopware-docs: 0.3.0-beta.30_nbajbkeeesvzsjt3x5hlyknjpq
       vue: 3.2.47
     devDependencies:
       '@originjs/vite-plugin-require-context': 1.0.9
@@ -7611,8 +7611,8 @@ packages:
       vitepress: 1.0.0-alpha.56_f3fcmmzaptizqrm6etb3zi2jby
     dev: false
 
-  /vitepress-shopware-docs/0.3.0-beta.29_nbajbkeeesvzsjt3x5hlyknjpq:
-    resolution: {integrity: sha512-xtVzqwxFKZL0iXLPPGJL9vsWuKEYFvhJB4+rGoeXkGSXkBhm3RAmcNq2jXO+73fLoekl34NKfCPYRP9uv1Sz9Q==}
+  /vitepress-shopware-docs/0.3.0-beta.30_nbajbkeeesvzsjt3x5hlyknjpq:
+    resolution: {integrity: sha512-OKPJ+FrradKtMYtoii7KtWSi/ZeMBQkpIbjp+y9AiaY6P7btl1IJOfcqGubBvTMnXnNhXHQSUGy7qOSs7jSdvw==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
