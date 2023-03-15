@@ -57,8 +57,35 @@ export default defineConfigWithTheme<ThemeConfig>({
       apiKey: "711e1cadf66a3957aaf183a58aad12a7",
     },
 
+    // @ts-ignore
     swag: {
       similarArticlesHost: 'https://ai-ml.fly.dev',
+      similarArticlesFilter: {
+        '/docs/': {
+          exclude: [
+            'docs/v6.4/',
+            'docs/v6.3/',
+          ],
+        },
+        '/docs/v6.4/': {
+          exclude: [
+            'docs/',
+            'docs/v6.3/',
+          ],
+          include: [
+            'docs/v6.4/',
+          ]
+        },
+        '/docs/v6.3/': {
+          exclude: [
+            'docs/',
+            'docs/v6.4/',
+          ],
+          include: [
+            'docs/v6.3/',
+          ]
+        }
+      }
     }
   },
 
