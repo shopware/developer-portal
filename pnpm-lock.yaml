@@ -34,14 +34,14 @@ importers:
       vite: ^3.2.5
       vite-plugin-inspect: ^0.7.16
       vitepress: 1.0.0-alpha.56
-      vitepress-shopware-docs: 0.3.0-beta.30
+      vitepress-shopware-docs: 0.3.0-beta.31
       vitest: ^0.28.5
       vue: ^3.2.47
     dependencies:
       terser: 5.16.6
       vite: 3.2.5_f3fcmmzaptizqrm6etb3zi2jby
       vitepress: 1.0.0-alpha.56_f3fcmmzaptizqrm6etb3zi2jby
-      vitepress-shopware-docs: 0.3.0-beta.30_nbajbkeeesvzsjt3x5hlyknjpq
+      vitepress-shopware-docs: 0.3.0-beta.31_nbajbkeeesvzsjt3x5hlyknjpq
       vue: 3.2.47
     devDependencies:
       '@originjs/vite-plugin-require-context': 1.0.9
@@ -890,7 +890,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/checkbox/3.4.2:
@@ -912,7 +912,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/shared/3.17.0:
@@ -942,7 +942,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.4.2
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/textfield/3.3.0:
@@ -953,7 +953,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@rehooks/component-size/1.0.3:
@@ -1162,7 +1162,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/http-spec': 5.5.7
+      '@stoplight/http-spec': 5.6.0
       '@stoplight/json': 3.20.2
       '@stoplight/json-schema-ref-parser': 9.2.2
       '@stoplight/json-schema-sampler': 0.2.3
@@ -1260,8 +1260,8 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/http-spec/5.5.7:
-    resolution: {integrity: sha512-neAYnwPyWv09GW3FOWSjlt4I0B3Z4Fq7p/ulQk7cDGw1gQh19PmNd3nhbMiPD/9bd1vMzFhsnfyK5Hjqgk6RZQ==}
+  /@stoplight/http-spec/5.6.0:
+    resolution: {integrity: sha512-zbPnTWghxqHrqsbEMlphUCqdCocFIMjA4pQrXR10vML+eI6OtDGohAwQKz1kvqj8Pt/gH/r7HBY+xK0j+wsxJA==}
     engines: {node: '>=14.13'}
     dependencies:
       '@stoplight/json': 3.20.2
@@ -2021,8 +2021,8 @@ packages:
       vue: 3.2.47
     dev: true
 
-  /@vitejs/plugin-vue/4.0.0_vite@4.1.4+vue@3.2.47:
-    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
+  /@vitejs/plugin-vue/4.1.0_vite@4.1.4+vue@3.2.47:
+    resolution: {integrity: sha512-++9JOAFdcXI3lyer9UKUV4rfoQ3T1RN8yDqoCLar86s0xQct5yblxAE+yWgRnU5/0FOlVCpTZpYSBV/bGWrSrQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
@@ -4911,8 +4911,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /jiti/1.17.2:
-    resolution: {integrity: sha512-Xf0nU8+8wuiQpLcqdb2HRyHqYwGk2Pd+F7kstyp20ZuqTyCmB9dqpX2NxaxFc1kovraa2bG6c1RL3W7XfapiZg==}
+  /jiti/1.18.2:
+    resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
     hasBin: true
     dev: false
 
@@ -7192,7 +7192,7 @@ packages:
     dependencies:
       '@antfu/utils': 0.5.2
       defu: 6.1.2
-      jiti: 1.17.2
+      jiti: 1.18.2
     dev: false
 
   /unified/9.2.2:
@@ -7611,8 +7611,8 @@ packages:
       vitepress: 1.0.0-alpha.56_f3fcmmzaptizqrm6etb3zi2jby
     dev: false
 
-  /vitepress-shopware-docs/0.3.0-beta.30_nbajbkeeesvzsjt3x5hlyknjpq:
-    resolution: {integrity: sha512-OKPJ+FrradKtMYtoii7KtWSi/ZeMBQkpIbjp+y9AiaY6P7btl1IJOfcqGubBvTMnXnNhXHQSUGy7qOSs7jSdvw==}
+  /vitepress-shopware-docs/0.3.0-beta.31_nbajbkeeesvzsjt3x5hlyknjpq:
+    resolution: {integrity: sha512-FUWIeiuO0sx6MUsYX32yHyzVUo7XjSHk/px0H12hHek4iCoPW1924vpTkJQZRuUjzTuiylwCQXcxBHo2/cPdiw==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
@@ -7671,7 +7671,7 @@ packages:
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
-      '@vitejs/plugin-vue': 4.0.0_vite@4.1.4+vue@3.2.47
+      '@vitejs/plugin-vue': 4.1.0_vite@4.1.4+vue@3.2.47
       '@vue/devtools-api': 6.5.0
       '@vueuse/core': 9.13.0_vue@3.2.47
       body-scroll-lock: 4.0.0-beta.0
