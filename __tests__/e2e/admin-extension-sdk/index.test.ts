@@ -10,6 +10,6 @@ describe('render correct content', async () => {
 
     test('has heading', async () => {
         const headingLocator = await embeddedPage.page.locator('h1');
-        expect((await headingLocator.allTextContents()).map(text => text.trim())).toEqual(['Admin Extension SDK', 'Introduction']);
+        expect((await headingLocator.allInnerTexts()).map(text => text.replace(/[^\x20-\x7E]/g, ''))).toEqual(['Admin Extension SDK', 'Introduction']);
     })
 })
