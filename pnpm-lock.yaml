@@ -34,14 +34,14 @@ importers:
       vite: ^3.2.5
       vite-plugin-inspect: ^0.7.16
       vitepress: 1.0.0-alpha.60
-      vitepress-shopware-docs: 0.3.0-beta.32
+      vitepress-shopware-docs: 0.3.0-beta.33
       vitest: ^0.28.5
       vue: ^3.2.47
     dependencies:
       terser: 5.16.6
       vite: 3.2.5_f3fcmmzaptizqrm6etb3zi2jby
       vitepress: 1.0.0-alpha.60_f3fcmmzaptizqrm6etb3zi2jby
-      vitepress-shopware-docs: 0.3.0-beta.32_j7ulkcwekikqll4iuirttfl2su
+      vitepress-shopware-docs: 0.3.0-beta.33_j7ulkcwekikqll4iuirttfl2su
       vue: 3.2.47
     devDependencies:
       '@originjs/vite-plugin-require-context': 1.0.9
@@ -890,7 +890,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/checkbox/3.4.2:
@@ -912,7 +912,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/shared/3.17.0:
@@ -942,7 +942,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.4.2
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@react-types/textfield/3.3.0:
@@ -953,7 +953,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.17.0
+      '@react-types/shared': 3.9.0
     dev: false
 
   /@rehooks/component-size/1.0.3:
@@ -1173,7 +1173,7 @@ packages:
       '@stoplight/mosaic-code-viewer': 1.40.0
       '@stoplight/path': 1.3.2
       '@stoplight/react-error-boundary': 2.0.0
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       '@stoplight/yaml': 4.2.3
       classnames: 2.3.2
       httpsnippet: 2.0.0
@@ -1229,7 +1229,7 @@ packages:
       '@stoplight/markdown-viewer': 5.6.0_@stoplight+mosaic@1.40.0
       '@stoplight/mosaic': 1.40.0
       '@stoplight/path': 1.3.2
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       classnames: 2.3.2
       lodash: 4.17.21
       react-query: 3.39.3
@@ -1266,7 +1266,7 @@ packages:
     dependencies:
       '@stoplight/json': 3.20.2
       '@stoplight/json-schema-generator': 1.0.1
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       '@types/json-schema': 7.0.11
       '@types/swagger-schema-official': 2.0.22
       '@types/type-is': 1.6.3
@@ -1379,7 +1379,7 @@ packages:
     dependencies:
       '@stoplight/ordered-object-literal': 1.0.4
       '@stoplight/path': 1.3.2
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       jsonc-parser: 2.2.1
       lodash: 4.17.21
       safe-stable-stringify: 1.1.1
@@ -1503,7 +1503,7 @@ packages:
       '@react-types/switch': 3.1.2
       '@stoplight/mosaic': 1.40.0
       '@stoplight/mosaic-code-viewer': 1.40.0
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
       dom-helpers: 3.4.0
@@ -1538,7 +1538,7 @@ packages:
       '@react-types/shared': 3.9.0
       '@react-types/switch': 3.1.2
       '@stoplight/mosaic': 1.40.0
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
       dom-helpers: 3.4.0
@@ -1574,7 +1574,7 @@ packages:
       '@react-types/shared': 3.9.0
       '@react-types/switch': 3.1.2
       '@react-types/textfield': 3.3.0
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       '@types/react': 17.0.53
       '@types/react-dom': 17.0.19
       clsx: 1.2.1
@@ -1626,8 +1626,8 @@ packages:
       utility-types: 3.10.0
     dev: false
 
-  /@stoplight/types/13.9.2:
-    resolution: {integrity: sha512-uQaR+s7OCZmQNeGGbbsznO2wSYe1ZknhROmt+Nua7U/cNh/q7Smh8wKmfPjxXSylRepZOrG0vp0fBoggSReH7w==}
+  /@stoplight/types/13.9.3:
+    resolution: {integrity: sha512-8QTuEr/Qfotjh1QQj5grU0+tZUQfxX4j3Q0E2bpd4OEZehUsX41o3FiqiIi7EOIA8rH9rlarKLaHfWsrf9d/BQ==}
     engines: {node: ^12.20 || >=14.13}
     dependencies:
       '@types/json-schema': 7.0.11
@@ -1643,7 +1643,7 @@ packages:
     engines: {node: '>=10.8'}
     dependencies:
       '@stoplight/ordered-object-literal': 1.0.4
-      '@stoplight/types': 13.9.2
+      '@stoplight/types': 13.9.3
       '@stoplight/yaml-ast-parser': 0.0.48
       tslib: 2.5.0
     dev: false
@@ -7611,8 +7611,8 @@ packages:
       vitepress: 1.0.0-alpha.60_f3fcmmzaptizqrm6etb3zi2jby
     dev: false
 
-  /vitepress-shopware-docs/0.3.0-beta.32_j7ulkcwekikqll4iuirttfl2su:
-    resolution: {integrity: sha512-MhEKwgK63m77rPL8NzOGPi1SGFXtznI9YUEDSo6kqmcaQYGzJjrkSKvMgLuJ1sM7mp6qfwb3nfZH+FseRJFk9w==}
+  /vitepress-shopware-docs/0.3.0-beta.33_j7ulkcwekikqll4iuirttfl2su:
+    resolution: {integrity: sha512-i/CNNfm20ylxN8XMu+CLDK2WsOhsp4NeB3SzMyFd9nbfmyRcQHjz6U0N09v7/IqwGL7hUqnvs2Na2q57ClfpkQ==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
