@@ -34,14 +34,14 @@ importers:
       vite: ^3.2.5
       vite-plugin-inspect: ^0.7.16
       vitepress: 1.0.0-alpha.60
-      vitepress-shopware-docs: 0.3.0-beta.33
+      vitepress-shopware-docs: 0.3.0-beta.34
       vitest: ^0.28.5
       vue: ^3.2.47
     dependencies:
       terser: 5.16.6
       vite: 3.2.5_f3fcmmzaptizqrm6etb3zi2jby
       vitepress: 1.0.0-alpha.60_f3fcmmzaptizqrm6etb3zi2jby
-      vitepress-shopware-docs: 0.3.0-beta.33_j7ulkcwekikqll4iuirttfl2su
+      vitepress-shopware-docs: 0.3.0-beta.34_j7ulkcwekikqll4iuirttfl2su
       vue: 3.2.47
     devDependencies:
       '@originjs/vite-plugin-require-context': 1.0.9
@@ -1162,7 +1162,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/http-spec': 5.6.0
+      '@stoplight/http-spec': 5.6.1
       '@stoplight/json': 3.20.2
       '@stoplight/json-schema-ref-parser': 9.2.2
       '@stoplight/json-schema-sampler': 0.2.3
@@ -1260,8 +1260,8 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/http-spec/5.6.0:
-    resolution: {integrity: sha512-zbPnTWghxqHrqsbEMlphUCqdCocFIMjA4pQrXR10vML+eI6OtDGohAwQKz1kvqj8Pt/gH/r7HBY+xK0j+wsxJA==}
+  /@stoplight/http-spec/5.6.1:
+    resolution: {integrity: sha512-gSHqqkFCzH0/lGVa0dRH0FnfdlXE9iLu7pzFg7pfY8m5+TYbeuTTlpsYG7gCJkzK6ikstnzjIs/aCg1k2i3QCA==}
     engines: {node: '>=14.13'}
     dependencies:
       '@stoplight/json': 3.20.2
@@ -7611,8 +7611,8 @@ packages:
       vitepress: 1.0.0-alpha.60_f3fcmmzaptizqrm6etb3zi2jby
     dev: false
 
-  /vitepress-shopware-docs/0.3.0-beta.33_j7ulkcwekikqll4iuirttfl2su:
-    resolution: {integrity: sha512-i/CNNfm20ylxN8XMu+CLDK2WsOhsp4NeB3SzMyFd9nbfmyRcQHjz6U0N09v7/IqwGL7hUqnvs2Na2q57ClfpkQ==}
+  /vitepress-shopware-docs/0.3.0-beta.34_j7ulkcwekikqll4iuirttfl2su:
+    resolution: {integrity: sha512-2s/J2W+q267PtdqS/jraWj+cQmfKd7BrzC+bBphZnDmcR2mjyHj0K8md75bkv3d6wDapK3Pd/xWFByU+VPvxIg==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
