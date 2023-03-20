@@ -3,7 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "onCreateCommand": "",
+  "onCreateCommand": "bash ./.devcontainer/on-create.sh",
   "postCreateCommand": "bash ./.devcontainer/post-create.sh",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
