@@ -46,7 +46,7 @@ export const copyAdditionalAssets = async (customDirs = []) => {
 
 }
 
-export const createSitemap = async () => {
+export const createSitemap = async (urls: string[] = []) => {
     console.log('Discovering *.html');
     const files: string[] = await new Promise((resolve) => {
         glob("./.vitepress/dist/**/*.html", {}, (er, files) => {
@@ -66,11 +66,12 @@ export const createSitemap = async () => {
         5: 0.4,
         6: 0.2,
     };
-    const sourceData: SitemapItemLoose[] = files.map((url: string): SitemapItemLoose => ({
-        url,
-        changefreq: EnumChangefreq.MONTHLY,
-        priority: priorities[url.split('/').length] || 0.1
-    }));
+    const sourceData: SitemapItemLoose[] = [...files, ...urls]
+        .map((url: string): SitemapItemLoose => ({
+            url,
+            changefreq: EnumChangefreq.MONTHLY,
+            priority: priorities[url.split('/').length] || 0.1
+        }));
 
     console.log('Writing sitemap.xml');
     const destinationDir = './.vitepress/dist/';
@@ -100,4 +101,16 @@ export const createSitemap = async () => {
         fs.rename(`${destinationDir}sitemap-index.xml`, `${destinationDir}sitemap.xml`);
     }
 
+}
+
+export const getStoplightUrls = async ({source, prefix}) => {
+    const reduceUrls = (items, reduced = []) => items.reduce((reduced, item) => {
+        item.slug && reduced.push(item.slug);
+        item.items?.length && reduced.push(...reduceUrls(item.items))
+        return reduced;
+    }, reduced)
+
+    const response = await fetch(source);
+    const data = await response.json();
+    return reduceUrls(data.items).map(slug => `${prefix}${slug}`);
 }
