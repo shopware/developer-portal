@@ -6,7 +6,7 @@ const {resolve} = require('path');
 import { MarkdownTransform } from "./plugins/markdownTransform";
 import Inspect from "vite-plugin-inspect";
 
-import {copyAdditionalAssets, createSitemap} from "./helpers";
+import {copyAdditionalAssets, createSitemap, getStoplightUrls} from "./helpers";
 import navigation from "./navigation";
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -117,8 +117,22 @@ export default defineConfigWithTheme<ThemeConfig>({
     await copyAdditionalAssets();
 
     /**
+     * Fetch Stoplight URLs.
+     */
+    const stoplightUrls = [
+      ...await getStoplightUrls({
+        source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0NQ/table-of-contents',
+        prefix: '/resources/api/store-api-reference.html#/',
+      }),
+      ...await getStoplightUrls({
+        source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0Mw/table-of-contents',
+        prefix: '/resources/api/admin-api-reference.html#/',
+      }),
+    ];
+
+    /**
      * Create public sitemap.xml.
      */
-    await createSitemap();
+    await createSitemap(stoplightUrls);
   }
 });
