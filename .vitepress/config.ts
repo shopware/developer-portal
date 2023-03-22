@@ -6,7 +6,8 @@ const {resolve} = require('path');
 import { MarkdownTransform } from "./plugins/markdownTransform";
 import Inspect from "vite-plugin-inspect";
 
-import {copyAdditionalAssets, createSitemap, getStoplightUrls} from "./helpers";
+import {copyAdditionalAssets, createSitemap} from "./helpers";
+import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
 import navigation from "./navigation";
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -134,5 +135,25 @@ export default defineConfigWithTheme<ThemeConfig>({
      * Create public sitemap.xml.
      */
     await createSitemap(stoplightUrls);
+
+    /**
+     * Transform Store API JSON reference to Markdown for Knowledge base.
+     */
+    await generateMarkdownFromStoplight({
+      source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0NQ/table-of-contents',
+      nodes: 'https://shopware.stoplight.io/api/v1/workspaces/d2s6MzM5MTQ/nodes?project_ids[0]=cHJqOjEwNjA0NQ',
+      reference: 'https://raw.githubusercontent.com/shopware/store-api-reference/main/storeapi.json',
+      as: 'resources/api/admin-api-reference.html',
+    });
+
+    /**
+     * Transform Admin API JSON reference to Markdown for Knowledge base.
+     */
+    await generateMarkdownFromStoplight({
+      source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0Mw/table-of-contents',
+      nodes: 'https://shopware.stoplight.io/api/v1/workspaces/d2s6MzM5MTQ/nodes?project_ids[0]=cHJqOjEwNjA0Mw',
+      reference: 'https://raw.githubusercontent.com/shopware/admin-api-reference/main/storeapi.json',
+      as: 'resources/api/store-api-reference.html',
+    });
   }
 });
