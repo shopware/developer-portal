@@ -181,7 +181,7 @@ jobs:
         with:
           if-no-files-found: error
           name: db-external-${{ github.sha }}
-          path: src/db-external.zip
+          path: external/db-external.zip
 
   deploy-vercel:
     name: Deploy to Vercel
