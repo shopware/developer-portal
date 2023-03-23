@@ -154,6 +154,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       nodes: 'https://shopware.stoplight.io/api/v1/workspaces/d2s6MzM5MTQ/nodes?project_ids[0]=cHJqOjEwNjA0Mw',
       reference: 'https://raw.githubusercontent.com/shopware/admin-api-reference/main/storeapi.json',
       as: 'resources/api/store-api-reference.html',
-    });
+    }, false);
   }
 });
