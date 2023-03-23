@@ -17,7 +17,7 @@ export const generateMarkdownFromStoplight = async ({
                                                         nodes,
                                                         reference,
                                                         as
-                                                    }: { source: string, nodes: string, reference: string, as: string }) => {
+                                                    }: { source: string, nodes: string, reference: string, as: string }, cleanup = true) => {
     const jsonReference = await (await fetch(reference)).json();
     const tableOfContents = await (await fetch(source)).json();
 
@@ -338,7 +338,7 @@ export const generateMarkdownFromStoplight = async ({
     const dstDir = `./external/${lastDir}/`; // ./external/resources/api/
 
     // cleanup old build
-    if (fs.existsSync(dstDir)) {
+    if (cleanup && fs.existsSync(dstDir)) {
         fs.rmSync(dstDir, {recursive: true, force: true});
     }
 
