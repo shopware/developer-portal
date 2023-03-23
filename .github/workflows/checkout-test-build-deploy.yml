@@ -196,6 +196,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
+
       - name: Deploy Storybook to Chromatic
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
