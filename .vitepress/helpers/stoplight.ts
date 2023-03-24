@@ -31,7 +31,7 @@ export const generateMarkdownFromStoplight = async ({
     const contents = {};
 
     const getResponse = (response, offset = 0, lastDescription) => {
-        const prefix = '&nbsp;'.repeat(offset);
+        const prefix = '';//'&nbsp;'.repeat(offset);
         const props = [
             //    `<!-- getResponse: ${JSON.stringify(response, null, 2)} -->`
         ];
@@ -68,7 +68,7 @@ export const generateMarkdownFromStoplight = async ({
     }
 
     const getRef = (ref, offset = 0, lastDescription = null) => {
-        const prefix = '&nbsp;'.repeat(offset);
+        const prefix = '';//'&nbsp;'.repeat(offset);
         const props = [
             //    `<!-- getRef: ${JSON.stringify(ref, null, 2)} -->`
         ];
@@ -130,7 +130,7 @@ export const generateMarkdownFromStoplight = async ({
 
         schema = tryRef(schema);
 
-        const prefix = '&nbsp;'.repeat(offset);
+        const prefix = '';//'&nbsp;'.repeat(offset);
         const props = [
             //    `<!-- getSchema: ${JSON.stringify(schema, null, 2)} -->`
         ];
@@ -207,7 +207,7 @@ export const generateMarkdownFromStoplight = async ({
             ...transfer,
         };
 
-        const prefix = '&nbsp;'.repeat(offset);
+        const prefix = '';//'&nbsp;'.repeat(offset);
 
         const props = [
             //    `<!-- getParameter ${parameter.name}: ${JSON.stringify(parameter, null, 2)} -->`
