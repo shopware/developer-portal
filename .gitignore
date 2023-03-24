@@ -9,3 +9,4 @@ bin/
 .vitepress/cache/
 .vitepress/dist/
 repos/
+external/

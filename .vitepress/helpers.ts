@@ -102,15 +102,3 @@ export const createSitemap = async (urls: string[] = []) => {
     }
 
 }
-
-export const getStoplightUrls = async ({source, prefix}) => {
-    const reduceUrls = (items, reduced = []) => items.reduce((reduced, item) => {
-        item.slug && reduced.push(item.slug);
-        item.items?.length && reduced.push(...reduceUrls(item.items))
-        return reduced;
-    }, reduced)
-
-    const response = await fetch(source);
-    const data = await response.json();
-    return reduceUrls(data.items).map(slug => `${prefix}${slug}`);
-}

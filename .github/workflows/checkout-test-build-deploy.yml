@@ -64,7 +64,7 @@ jobs:
 
       - name: Zip folder
         run: |
-          zip -r embed.zip ./src/
+          zip -r embed.zip ./src/ -x \*/node_modules/\* -x \*/.vitepress/\*
           cd src && zip -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
 
       - name: Upload build
@@ -162,6 +162,10 @@ jobs:
           export NODE_OPTIONS="--max-old-space-size=8096"
           pnpm run build
 
+      - name: Zip externals
+        run: |
+          cd external && zip -r db-external.zip * -i '*.md'
+
       - name: Zip folder
         run: zip -r full-build.zip .vitepress/dist/
 
@@ -171,6 +175,13 @@ jobs:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
           path: full-build.zip
+
+      - name: Upload external
+        uses: actions/upload-artifact@v3
+        with:
+          if-no-files-found: error
+          name: db-external-${{ github.sha }}
+          path: external/db-external.zip
 
   deploy-vercel:
     name: Deploy to Vercel
@@ -228,6 +239,17 @@ jobs:
         with:
           name: db-index-${{ github.sha }}
 
+      - uses: actions/download-artifact@v3
+        with:
+          name: db-external-${{ github.sha }}
+
+      - name: Merge base and external sources
+        run: |
+          mkdir merged
+          unzip -o db-index.zip -d merged
+          unzip -o db-external.zip -d merged
+          zip -r db-merged.zip merged/ 
+
       - name: Send artifact
         env:
           KNOWLEDGE_URL: ${{ secrets.KNOWLEDGE_URL }}
@@ -235,16 +257,18 @@ jobs:
         run: |
           COLLECTION_PARAM=""
           COLLECTION=""
-          if [[ "${{github.ref}}" != "refs/heads/main" ]]; then
-            BRANCH=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
+          if [[ "${GITHUB_REF##*/}" != "refs/heads/main" ]]; then
+            BRANCH=$(echo "${GITHUB_REF##*/}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
             COLLECTION="shopware--developer-portal--$BRANCH"
             COLLECTION_PARAM="-F collection=\"${COLLECTION}\""
           fi
           
+          echo "Collection: ${COLLECTION}"
+          
           echo "Uploading documents"
           curl -v \
             --fail-with-body \
-            -F content=@db-index.zip $COLLECTION_PARAM \
+            -F content=@db-merged.zip $COLLECTION_PARAM \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
             "${KNOWLEDGE_URL}/upload-input"
           
