@@ -258,7 +258,7 @@ jobs:
           COLLECTION_PARAM=""
           COLLECTION=""
           if [[ "${GITHUB_REF##*/}" != "refs/heads/main" ]]; then
-            BRANCH=$(echo "$${GITHUB_REF##*/}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
+            BRANCH=$(echo "${GITHUB_REF##*/}" | sed 's/refs\/heads\///' | tr '[:upper:]' '[:lower:]' | tr '/' '_')
             COLLECTION="shopware--developer-portal--$BRANCH"
             COLLECTION_PARAM="-F collection=\"${COLLECTION}\""
           fi
