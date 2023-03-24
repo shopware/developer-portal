@@ -183,6 +183,29 @@ jobs:
           name: db-external-${{ github.sha }}
           path: external/db-external.zip
 
+  chromatic:
+    name: Deploy Storybook to Chromatic
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs:
+      - test-cli
+      - test-dev
+      - test-build
+      - build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
+
+      - name: Deploy Storybook to Chromatic
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: pnpm chromatic
+
   deploy-vercel:
     name: Deploy to Vercel
     runs-on: ubuntu-latest

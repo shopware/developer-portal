@@ -10,7 +10,7 @@
         <PageRef :sub="''" page="/docs/guides/plugins/themes/add-css-js-to-theme" />
         <PageRef :sub="''" page="/docs/guides/plugins/themes/theme-base-guide" />
         <div class="flex justify-center">
-            <img v-if="pending" class="animate-pulse mt-10 max-h-48" src="/home/jellyfish.png" alt="Loading...">
+            <img v-if="pending" class="animate-pulse mt-10 max-h-48" src="../public/home/jellyfish.png" alt="Loading...">
         </div>
     </div>
 </template>

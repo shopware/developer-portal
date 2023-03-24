@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
     "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "lib": ["ESNext", "DOM"],
     "types": [
       "jest",
       "@playwright/test"
