@@ -3,6 +3,7 @@ import {buildSidebarNav} from "../node_modules/vitepress-shopware-docs/src/core/
 const navigation = buildSidebarNav('./src/', [
     {
         link: '/apps/',
+        link: '/docs/guides/plugins/apps/',
         text: 'Apps',
     },
     {
@@ -78,6 +79,7 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/v6.3/',
     '/resources/admin-extension-sdk/',
     '/resources/meteor-component-library/',
+    '/apps/', // custom, tmp!
 ]);
 
 export default navigation;

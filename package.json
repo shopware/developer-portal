@@ -9,7 +9,7 @@
     "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "test:cli": "vitest run -r __tests__/cli --sequence.shuffle",
     "test:cli:coverage": "vitest run -r __tests__/cli --coverage",
-    "dev": "SHOPWARE_DEV=1 vitepress",
+    "dev": "SHOPWARE_DEV=1 vitepress dev",
     "build": "export NODE_OPTIONS=\"--max-old-space-size=8096\" && vitepress build",
     "serve": "vitepress serve",
     "preview": "docker run -dit -p 8765:80 -v \"$PWD/.vitepress/dist\":/usr/local/apache2/htdocs/ httpd:2.4",
@@ -26,8 +26,8 @@
   "license": "ISC",
   "dependencies": {
     "terser": "^5.16.6",
-    "vitepress": "1.0.0-alpha.61",
-    "vitepress-shopware-docs": "0.3.0-beta.34",
+    "vitepress": "1.0.0-alpha.63",
+    "vitepress-shopware-docs": "0.3.0-beta.35",
     "vue": "^3.2.47"
   },
   "devDependencies": {

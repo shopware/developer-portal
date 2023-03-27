@@ -29,6 +29,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       'docs/v6.3/guides/plugins/plugins/administration/customizing-components.md',
   ],
 
+  rewrites: {
+    'landing/apps.md': 'docs/guides/plugins/apps/index.md',
+  },
+
   head: [
     // favicon
     ['link', {rel: "icon", type: "image/png", href: "/favicon.webp"}],
@@ -92,6 +96,15 @@ export default defineConfigWithTheme<ThemeConfig>({
             'docs/v6.3/',
           ]
         }
+      },
+      versionSwitcher: {
+        paths: [
+          {
+            'docs': 'Latest (v6.5)',
+            'docs/v6.4/': 'v6.4',
+            'docs/v6.3/': 'v6.3',
+          }
+        ]
       }
     }
   },
