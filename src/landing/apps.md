@@ -10,7 +10,7 @@ import SwagLanding from "../components/SwagLanding.vue";
 const landing = {
     title: `Build the functionalities merchants need`,
     description: `Leverage Shopware's extension APIs to build unique extensions that boost merchants businesses. Use the powerful plugin system to build highly custom extensions or build apps using your platform of choice.`,
-    image: '/public/landing/apps.png',
+    image: '/landing/apps.png',
 };
 
 const ctas = [
@@ -26,19 +26,19 @@ const exposed = [
         title: `App Scripts`,
         page: '/docs/guides/plugins/apps/app-scripts/',
         sub: `Leverage App Scripts to customize the checkout or fetch additional data in your Storefront.`,
-        image: '../../../../public/landing/exposed_app.png',
+        image: '/landing/exposed_app.png',
     },
     {
         title: `Custom Templates`,
         page: '/docs/guides/plugins/apps/app-scripts/',
         sub: `Custom templates let you extend or modify the appearance of parts of your storefront.`,
-        image: '../../../../public/landing/exposed_templates.png',
+        image: '/landing/exposed_templates.png',
     },
     {
         title: `Admin Extensions`,
         page: '/docs/guides/plugins/apps/starter/starter-admin-extension.html',
         sub: `Build powerful modules for the admin panel using our new Admin Extension API.`,
-        image: '../../../../public/landing/exposed_admin.png',
+        image: '/landing/exposed_admin.png',
     },
 ];
 </script>
