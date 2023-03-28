@@ -16,6 +16,12 @@ export const prepareDeveloperPortalMounts = (sandbox) => {
         fs.mkdirSync(`${sandbox.developerPortal}/src/${repository.dst}`, {recursive: true});
     }
 
+    // fake nested mount-points
+    const faked = [
+        'docs/guides/plugins/apps/',
+    ];
+    faked.forEach(dir => fs.mkdirSync(`${sandbox.developerPortal}/src/${dir}`, {recursive: true}));
+
     // fake static resources
     const resourceDirs = [
         'resources/meteor-icon-kit/public/icons/regular',
