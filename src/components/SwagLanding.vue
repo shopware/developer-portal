@@ -4,7 +4,7 @@
     <div class="flex md:flex-row gap-10 content-center">
 
       <div class="md:basis-4/6 gap-10 flex flex-col">
-        <h1 class="accent font-black" style="font-weight: 900; font-family: 'Poppins';">{{ title }}</h1>
+        <h1 class="accent font-black">{{ title }}</h1>
         <div v-html="description"></div>
 
         <div>
@@ -18,18 +18,27 @@
 
     </div>
 
-    <div class="flex gap-10 relative SwagLandingCardList pt-10 pb-10">
-      <SwagLandingCard v-for="item in exposed" v-bind="item"/>
+    <div class="SwagLandingCardListWrapper relative">
+      <h3>Starter guides</h3>
+      <p>The amount of topics to start with can be overwhelming. For that reason we have prepared a handful of step-by-step tutorials to follow along that make you familiar with some of our concepts:</p>
+      <div class="flex gap-10 SwagLandingCardList pt-5 pb-10">
+        <SwagLandingCard v-for="item in exposed" v-bind="item"/>
+      </div>
     </div>
 
   </div>
 </template>
 
-<style lang="scss">
-.SwagLandingCardList {
-  isolation: isolate;
+<style lang="scss" scoped>
+h1 {
+  margin-bottom: 0;
+  font-weight: 900;
+  font-family: 'Poppins';
 }
-.SwagLandingCardList {
+
+.SwagLandingCardListWrapper {
+  isolation: isolate;
+
   &::before {
     z-index: -1;
     position: absolute;

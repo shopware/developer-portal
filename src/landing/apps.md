@@ -1,5 +1,7 @@
 ---
 editLink: false
+swag:
+  related: false
 ---
 
 <script setup>
