@@ -27,7 +27,7 @@
   "dependencies": {
     "terser": "^5.16.6",
     "vitepress": "1.0.0-alpha.63",
-    "vitepress-shopware-docs": "0.3.0-beta.35",
+    "vitepress-shopware-docs": "0.3.0-beta.36",
     "vue": "^3.2.47"
   },
   "devDependencies": {
