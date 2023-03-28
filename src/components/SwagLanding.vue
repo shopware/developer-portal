@@ -13,17 +13,36 @@
       </div>
 
       <div class="md:basis-2/6">
-        <img :src="image" />
+        <img :src="image"/>
       </div>
 
     </div>
 
-    <div class="bg-light-blue-400/10 flex gap-10">
+    <div class="flex gap-10 relative SwagLandingCardList pt-10 pb-10">
       <SwagLandingCard v-for="item in exposed" v-bind="item"/>
     </div>
 
   </div>
 </template>
+
+<style lang="scss">
+.SwagLandingCardList {
+  isolation: isolate;
+}
+.SwagLandingCardList {
+  &::before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: -100%;
+    content: '';
+    display: block;
+    background-color: var(--sw-sidebar-bg);
+  }
+}
+</style>
 
 <script setup lang="ts">
 import SwagLandingCard from "./SwagLandingCard.vue";
