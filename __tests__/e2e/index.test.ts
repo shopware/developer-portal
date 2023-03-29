@@ -6,7 +6,7 @@ describe('render correct content', async () => {
     test('navigation', async() => {
         const navBarLocator = page.locator('.VPNavBarMenu > .VPNavBarMenuLink');
         const links = await navBarLocator.allTextContents()
-        expect(links).toEqual(['Apps', 'Themes', 'Frontends', 'Integrations'])
+        expect(links).toEqual(['Docs', 'Apps', 'Themes', 'Plugins', 'Frontends', 'Integrations'])
 
         const subNavBarLocator = page.locator('.VPNavBarMenu > .VPNavBarMenuGroup .vt-flyout-button-text');
         const groupLinks = await subNavBarLocator.allTextContents()
