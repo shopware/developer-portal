@@ -19,6 +19,8 @@ export const prepareDeveloperPortalMounts = (sandbox) => {
     // fake nested mount-points
     const faked = [
         'docs/guides/plugins/apps/',
+        'docs/guides/plugins/themes/',
+        'docs/guides/plugins/plugins/',
     ];
     faked.forEach(dir => fs.mkdirSync(`${sandbox.developerPortal}/src/${dir}`, {recursive: true}));
 

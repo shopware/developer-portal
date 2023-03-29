@@ -30,7 +30,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   ],
 
   rewrites: {
+    'docs/SUMMARY.md': 'docs/index.md',
     'landing/apps.md': 'docs/guides/plugins/apps/index.md',
+    'landing/themes.md': 'docs/guides/plugins/themes/index.md',
+    'landing/plugins.md': 'docs/guides/plugins/plugins/index.md',
+    'landing/integrations.md': 'integrations/index.md',
   },
 
   head: [

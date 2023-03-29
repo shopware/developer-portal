@@ -91,7 +91,6 @@ const sidebar = [
   ...flatten(config.value.sidebar["/apps/"]),
   ...flatten(config.value.sidebar["/themes/"]),
   ...flatten(config.value.sidebar["/frontends/"]),
-  ...flatten(config.value.sidebar["/integrations/"]),
 ];
 
 const requestAnswer = async () => {

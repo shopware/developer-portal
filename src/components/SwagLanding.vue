@@ -5,7 +5,9 @@
 
       <div class="md:basis-4/6 gap-10 flex flex-col">
         <h1 class="accent font-black">{{ title }}</h1>
-        <div v-html="description"></div>
+
+        <slot name="description" v-if="!description"></slot>
+        <div v-html="description" v-else></div>
 
         <div>
           <PageRef v-for="cta in ctas" :page="cta.page" :title="cta.title" :sub="cta.sub"/>
@@ -63,7 +65,7 @@ const props = defineProps({
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
   image: {
     type: String,
