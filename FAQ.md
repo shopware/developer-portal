@@ -28,6 +28,38 @@ more info.
 Give it another try. Sometimes the process takes too long and reaches the timeout setting. You can also try running the
 pipeline locally using the [./.github/scripts/act.sh](./.github/scripts/act.sh).
 
+## Can I run the whole workflow locally?
+
+Yes, you can use [`nektos/act`](https://github.com/nektos/act) for that purpose. First, follow the install instructions
+for your OS.
+
+Then copy `./.act.env.sample` to `./.act.env` and edit env vars for Figma and GitHub.
+
+```bash
+$ cp ./.act.env.sample ./.act.env
+$ nano ./.act.env
+```
+
+To list all available jobs run the following command.
+
+```bash
+$ ./bin/act -l
+```
+
+For running a selected job run the command below and pass the `--secret-file` option.
+
+```bash
+# run embed-docs and test-cli steps
+$ ./bin/act -j embed-docs --secret-file ./.act.env
+$ ./bin/act -j test-cli --secret-file ./.act.env
+```
+
+To draw a workflow graph:
+
+```bash
+$ ./bin/act -g
+```
+
 ## What is the difference between the library and project?
 
 Library (`developer-documentation-vitepress`) holds Shopware-flavoured Vitepress theme that can be reused by different
