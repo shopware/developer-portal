@@ -19,7 +19,7 @@ runs:
       with:
         version: 7
 
-    - name: Install system
+    - name: Install system (Playwright requirements)
       shell: bash
       if: ${{ inputs.apt }}
       run: |
