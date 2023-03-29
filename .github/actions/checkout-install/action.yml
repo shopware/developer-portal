@@ -19,12 +19,6 @@ runs:
       with:
         version: 7
 
-    - name: Add backports
-      shell: bash
-      run: |
-        sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -cs)-backports main restricted universe multiverse "
-        sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -cs)-security main restricted universe multiverse "
-
     - name: Install system (Playwright requirements)
       shell: bash
       if: ${{ inputs.apt }}
