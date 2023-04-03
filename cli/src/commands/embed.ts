@@ -23,7 +23,7 @@ export default {
                 type: 'checkbox',
                 name: 'selectedRepositories',
                 message: 'Select repositories to embed',
-                choices: repositories.map(({name}) => ({name, value: name})),
+                choices: repositories.map(({name, branch}) => ({name: `${name} (${branch})`, value: name})),
                 when: !!configure,
             }
         ]);
