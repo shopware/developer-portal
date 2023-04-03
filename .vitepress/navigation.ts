@@ -20,7 +20,8 @@ const navigation = buildSidebarNav('./src/', [
         text: 'Plugins',
     },
     {
-        link: '/frontends/',
+        //link: '/frontends/',
+        link: 'https://shopware-frontends-docs.vercel.app/',
         text: 'Frontends',
         repo: 'shopware/frontends',
     },
