@@ -47,7 +47,8 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: "Admin Extension SDK",
-                        link: "/resources/admin-extension-sdk/",
+                        // link: "/resources/admin-extension-sdk/",
+                        link: 'https://shopware.github.io/admin-extension-sdk/',
                         repo: 'shopware/admin-extension-sdk',
                     },
                     {
@@ -58,7 +59,8 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: "Component Library",
-                        link: "/resources/meteor-component-library/",
+                        // link: "/resources/meteor-component-library/",
+                        link: 'https://shopware.github.io/meteor-component-library/',
                         repo: 'shopware/meteor-component-library',
                     }
                 ]

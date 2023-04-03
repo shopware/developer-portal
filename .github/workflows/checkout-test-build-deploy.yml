@@ -192,6 +192,7 @@ jobs:
       - test-dev
       - test-build
       - build
+    if: ${{ github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'chromatic') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -202,7 +203,6 @@ jobs:
         uses: ./.github/actions/checkout-install
 
       - name: Deploy Storybook to Chromatic
-        if: ${{ github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'chromatic') }}
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         run: pnpm chromatic
