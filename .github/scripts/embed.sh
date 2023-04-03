@@ -51,13 +51,13 @@ fi
  --dst docs/v6.3 \
  --org ${ORG_DOCS_63:-shopware}
 
-./docs-cli clone \
- --ci \
- --repository shopware/frontends \
- --branch ${BRANCH_FRONTENDS:-main} \
- --src apps/docs/src \
- --dst frontends \
- --org ${ORG_FRONTENDS:-shopware}
+#./docs-cli clone \
+# --ci \
+# --repository shopware/frontends \
+# --branch ${BRANCH_FRONTENDS:-main} \
+# --src apps/docs/src \
+# --dst frontends \
+# --org ${ORG_FRONTENDS:-shopware}
 
 #./docs-cli clone \
 # --ci \
@@ -69,26 +69,26 @@ fi
 # --dst frontends-gl \
 # --git gitlab.shopware.com
 
-./docs-cli clone \
- --ci \
- --repository shopware/admin-extension-sdk \
- --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
- --src docs/docs/guide \
- --dst resources/admin-extension-sdk \
- --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
+#./docs-cli clone \
+# --ci \
+# --repository shopware/admin-extension-sdk \
+# --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
+# --src docs/docs/guide \
+# --dst resources/admin-extension-sdk \
+# --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
-./docs-cli clone \
- --ci \
- --repository shopware/meteor-icon-kit \
- --branch ${BRANCH_METEOR_ICON_KIT:-main} \
- --src docs \
- --dst resources/meteor-icon-kit \
- --org ${ORG_METEOR_ICON_KIT:-shopware}
+#./docs-cli clone \
+# --ci \
+# --repository shopware/meteor-icon-kit \
+# --branch ${BRANCH_METEOR_ICON_KIT:-main} \
+# --src docs \
+# --dst resources/meteor-icon-kit \
+# --org ${ORG_METEOR_ICON_KIT:-shopware}
 
-./docs-cli clone \
- --ci \
- --repository shopware/meteor-component-library \
- --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
- --src docs \
- --dst resources/meteor-component-library \
- --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
+#./docs-cli clone \
+# --ci \
+# --repository shopware/meteor-component-library \
+# --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
+# --src docs \
+# --dst resources/meteor-component-library \
+# --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}

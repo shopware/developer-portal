@@ -2,10 +2,6 @@ import {buildSidebarNav} from "../node_modules/vitepress-shopware-docs/src/core/
 
 const navigation = buildSidebarNav('./src/', [
     {
-        link: '/docs/',
-        text: 'Docs',
-    },
-    {
         // link: '/apps/',
         link: '/docs/guides/plugins/apps/',
         text: 'Apps',
@@ -16,11 +12,8 @@ const navigation = buildSidebarNav('./src/', [
         text: 'Themes',
     },
     {
-        link: '/docs/guides/plugins/plugins/',
-        text: 'Plugins',
-    },
-    {
-        link: '/frontends/',
+        //link: '/frontends/',
+        link: 'https://shopware-frontends-docs.vercel.app/',
         text: 'Frontends',
         repo: 'shopware/frontends',
     },
@@ -37,12 +30,14 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: "Store API",
-                        link: "/resources/api/store-api-reference",
+                        // link: "/resources/api/store-api-reference",
+                        link: 'https://shopware.stoplight.io/docs/store-api/',
                         repo: 'shopware/store-api-reference',
                     },
                     {
                         text: "Admin API",
-                        link: "/resources/api/admin-api-reference",
+                        //link: "/resources/api/admin-api-reference",
+                        link: 'https://shopware.stoplight.io/docs/admin-api/',
                         repo: 'shopware/admin-api-reference',
                     }
                 ]
@@ -57,7 +52,8 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: "Meteor Icon Kit",
-                        link: "/resources/meteor-icon-kit/",
+                        //link: "/resources/meteor-icon-kit/",
+                        link: 'https://shopware.github.io/meteor-icon-kit/',
                         repo: 'shopware/meteor-icon-kit',
                     },
                     {
@@ -86,8 +82,8 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/',
     '/docs/v6.4/',
     '/docs/v6.3/',
-    '/resources/admin-extension-sdk/',
-    '/resources/meteor-component-library/',
+    //'/resources/admin-extension-sdk/',
+    //'/resources/meteor-component-library/',
     '/apps/', // custom, tmp!
 ]);
 

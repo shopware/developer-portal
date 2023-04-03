@@ -28,6 +28,7 @@ export const repositories = [
         dst: 'frontends',
         branch: env.BRANCH_FRONTENDS || 'main',
         org: env.ORG_FRONTENDS || 'shopware',
+        skip: true,
     },
     {
         name: 'gitlab.shopware.com/product/engineering/platform-group/pwa/frontends',
@@ -45,6 +46,7 @@ export const repositories = [
                 description: 'GitLab deploy key'
             },
         },
+        skip: true,
     },
     {
         name: 'shopware/admin-extension-sdk',
@@ -52,6 +54,7 @@ export const repositories = [
         dst: 'resources/admin-extension-sdk',
         branch: env.BRANCH_ADMIN_EXTENSION_SDK || 'DX-223' || 'main',
         org: env.ORG_ADMIN_EXTENSION_SDK || 'shopware',
+        skip: true,
     },
     {
         name: 'shopware/meteor-icon-kit',
@@ -67,6 +70,7 @@ export const repositories = [
                 description: 'Figma API key'
             },
         },
+        skip: true,
     },
     {
         name: 'shopware/meteor-component-library',
@@ -74,5 +78,6 @@ export const repositories = [
         dst: 'resources/meteor-component-library',
         branch: env.BRANCH_METEOR_COMPONENT_LIBRARY || 'DX-231' || 'main',
         org: env.ORG_METEOR_COMPONENT_LIBRARY || 'bojanrajh',
+        skip: true,
     }
 ];
