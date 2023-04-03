@@ -48,8 +48,7 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: "Admin Extension SDK",
-                        // link: "/resources/admin-extension-sdk/",
-                        link: 'https://shopware.github.io/admin-extension-sdk/',
+                        link: "/resources/admin-extension-sdk/",
                         repo: 'shopware/admin-extension-sdk',
                     },
                     {
@@ -85,7 +84,7 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/',
     '/docs/v6.4/',
     '/docs/v6.3/',
-    //'/resources/admin-extension-sdk/',
+    '/resources/admin-extension-sdk/',
     //'/resources/meteor-component-library/',
     '/', // always have root sidebar
 ]);

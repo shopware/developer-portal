@@ -54,7 +54,6 @@ export const repositories = [
         dst: 'resources/admin-extension-sdk',
         branch: env.BRANCH_ADMIN_EXTENSION_SDK || 'DX-223' || 'main',
         org: env.ORG_ADMIN_EXTENSION_SDK || 'shopware',
-        skip: true,
     },
     {
         name: 'shopware/meteor-icon-kit',
