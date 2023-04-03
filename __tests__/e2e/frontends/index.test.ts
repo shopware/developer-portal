@@ -1,6 +1,6 @@
 import {Embedded} from "../page-objects/embedded";
 
-describe.skip('render correct content', async () => {
+describe('render correct content', async () => {
     let embeddedPage: Embedded;
 
     beforeAll(async () => {
