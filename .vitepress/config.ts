@@ -137,7 +137,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     /**
      * Fetch Stoplight URLs.
      */
-    const stoplightUrls = [
+    /*const stoplightUrls = [
       ...await getStoplightUrls({
         source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0NQ/table-of-contents',
         prefix: '/resources/api/store-api-reference.html#/',
@@ -146,31 +146,31 @@ export default defineConfigWithTheme<ThemeConfig>({
         source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0Mw/table-of-contents',
         prefix: '/resources/api/admin-api-reference.html#/',
       }),
-    ];
+    ];*/
 
     /**
      * Create public sitemap.xml.
      */
-    await createSitemap(stoplightUrls);
+    await createSitemap(/*stoplightUrls*/);
 
     /**
      * Transform Store API JSON reference to Markdown for Knowledge base.
      */
-    await generateMarkdownFromStoplight({
+    /*await generateMarkdownFromStoplight({
       source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0NQ/table-of-contents',
       nodes: 'https://shopware.stoplight.io/api/v1/workspaces/d2s6MzM5MTQ/nodes?project_ids[0]=cHJqOjEwNjA0NQ',
       reference: 'https://raw.githubusercontent.com/shopware/store-api-reference/main/storeapi.json',
       as: 'resources/api/admin-api-reference.html',
-    });
+    });*/
 
     /**
      * Transform Admin API JSON reference to Markdown for Knowledge base.
      */
-    await generateMarkdownFromStoplight({
+    /*await generateMarkdownFromStoplight({
       source: 'https://shopware.stoplight.io/api/v1/projects/cHJqOjEwNjA0Mw/table-of-contents',
       nodes: 'https://shopware.stoplight.io/api/v1/workspaces/d2s6MzM5MTQ/nodes?project_ids[0]=cHJqOjEwNjA0Mw',
       reference: 'https://raw.githubusercontent.com/shopware/admin-api-reference/main/storeapi.json',
       as: 'resources/api/store-api-reference.html',
-    }, false);
+    }, false);*/
   }
 });
