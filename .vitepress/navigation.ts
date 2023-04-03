@@ -31,14 +31,12 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: "Store API",
-                        // link: "/resources/api/store-api-reference",
-                        link: 'https://shopware.stoplight.io/docs/store-api/',
+                        link: "/resources/api/store-api-reference",
                         repo: 'shopware/store-api-reference',
                     },
                     {
                         text: "Admin API",
-                        //link: "/resources/api/admin-api-reference",
-                        link: 'https://shopware.stoplight.io/docs/admin-api/',
+                        link: "/resources/api/admin-api-reference",
                         repo: 'shopware/admin-api-reference',
                     }
                 ]
