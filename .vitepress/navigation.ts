@@ -59,7 +59,8 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: "Meteor Icon Kit",
-                        link: "/resources/meteor-icon-kit/",
+                        //link: "/resources/meteor-icon-kit/",
+                        link: 'https://shopware.github.io/meteor-icon-kit/',
                         repo: 'shopware/meteor-icon-kit',
                     },
                     {
