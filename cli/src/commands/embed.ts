@@ -33,6 +33,10 @@ export default {
                 continue;
             }
 
+            if (!configure && repo.skip) {
+                continue;
+            }
+
             output.notice(`Processing ${repo.name}`);
             await cloneCustom(repo, configure, ci);
         }
