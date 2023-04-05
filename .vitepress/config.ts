@@ -27,6 +27,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       'docs/v6.3/products/extensions/b2b-suite/guides/storefront/ajax-panel.md',
       // {% block
       'docs/v6.3/guides/plugins/plugins/administration/customizing-components.md',
+      // unknown
+      'docs/v6.3/guides/plugins/plugins/content/cms/add-cms-block.md',
+      'docs/v6.3/guides/plugins/plugins/framework/data-handling/add-data-translations.md',
+      'docs/v6.3/guides/plugins/themes/add-css-js-to-theme.md',
   ],
 
   rewrites: {
