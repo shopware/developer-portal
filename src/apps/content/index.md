@@ -8,30 +8,25 @@ Gone are those days when you would need to write all the code from scratch for c
 
 What business operations does the CMS support?
 
-* Create and manage products, categories, and sales channel data.
-
-* [Customized layout styling](/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview) templates for your online store's homepage, landing pages, product detail pages, etc
+* [Customized layout styling](/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview) by extending blocks and sections for your online store's homepage, landing pages, product detail pages, etc
 
 * [Every entity and category has a CMS layout assigned to it that dictates how it is displayed](/docs/concepts/commerce/content/shopping-experiences-cms#hydration-of-dynamic-content)
 
 * [Custom shopping experiences for your customers](#custom-shopping-experiences)
 
-* [Dynamic SEO URLs for custom content](/docs/guides/plugins/plugins/content/seo/add-custom-seo-url#dynamic-seo-urls-for-custom-content)
+* [Custom Field Types and get appropriate layout assigned](/docs/guides/plugins/apps/custom-data/custom-fields)
 
-* [Custom Field Types to customize the interface according to your specific needs](/docs/guides/plugins/apps/custom-data/custom-fields)
-
-* Third-party service integrations, such as email marketing.
-
-* Multilingual landing pages for country-specific campaigns and decentralized content maintenance
+* [Multilingual landing pages that supports country-specific translations](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-translations)
 
 * [Static](/docs/concepts/framework/architecture/storefront-concept) and [Dynamic CMS website](/docs/concepts/commerce/core/shopping-experiences-cms) to facilitates you to create different frontend experiences for different use cases with media (text, images, and videos).
 
 ## Custom shopping experiences
 
-You can create custom shopping experiences for your customers in one of the following ways by simply using Shopware's headless CMS architecture.
+With Shopware's headless CMS architecture, you can easily tailor your customers' shopping by simply following one of the ways:
 
 * [Use an app](/docs/guides/plugins/apps/content/cms). For example, you can add a basic buy button to an existing website or blog, while other apps can help you create and sell in different sales channels.
+	Use an app. For example, you can add a basic buy button to an existing website or blog, while other apps can help you create and sell in different sales channels.
+  
+*	Build the experiences yourself using [Admin extension SDK](https://shopware.github.io/admin-extension-sdk/docs/guide/api-reference/cms/registerCmsElement).
 
-* Build the experiences yourself using [Admin extension SDK](https://shopware.github.io/admin-extension-sdk/docs/guide/api-reference/cms/registerCmsElement).
-
-* [Storefront API](https://shopware.stoplight.io/docs/store-api/70c7b54c9faf9-fetch-and-resolve-a-cms-page).
+*	[Storefront API](https://shopware.stoplight.io/docs/store-api/70c7b54c9faf9-fetch-and-resolve-a-cms-page) – Allows you to perform generic changes to your store’s look and feel via API calls.
