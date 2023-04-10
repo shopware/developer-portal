@@ -24,9 +24,8 @@ What business operations does the CMS support?
 
 With Shopware's headless CMS architecture, you can easily tailor your customers' shopping by simply following one of the ways:
 
-* [Use an app](/docs/guides/plugins/apps/content/cms). For example, you can add a basic buy button to an existing website or blog, while other apps can help you create and sell in different sales channels.
-	Use an app. For example, you can add a basic buy button to an existing website or blog, while other apps can help you create and sell in different sales channels.
+* [Extend your layout with custom blocks and elements via an app](/docs/guides/plugins/apps/content/cms)
   
-*	Build the experiences yourself using [Admin extension SDK](https://shopware.github.io/admin-extension-sdk/docs/guide/api-reference/cms/registerCmsElement).
+* Build the experiences yourself using [Admin extension SDK](https://shopware.github.io/admin-extension-sdk/docs/guide/api-reference/cms/registerCmsElement).
 
-*	[Storefront API](https://shopware.stoplight.io/docs/store-api/70c7b54c9faf9-fetch-and-resolve-a-cms-page) – Allows you to perform generic changes to your store’s look and feel via API calls.
+* [Storefront API](https://shopware.stoplight.io/docs/store-api/70c7b54c9faf9-fetch-and-resolve-a-cms-page) – Allows you to perform generic changes to your store’s look and feel via API calls.
