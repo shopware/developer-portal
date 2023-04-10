@@ -6,7 +6,7 @@ Shopware offers developers tools and flexibility to create highly customizable, 
 
 ## Storefront behavior
 
-Shopware's Storefront is well structured and predominantly consists of design templates that match your brand and store themes. So if you are looking at custom design templates, custom styling, etc., that can modify the whole appearance of your store, then take a look at our [Guide on Storefront](/docs/guides/plugins/apps/storefront).
+Shopware's Storefront is well structured and predominantly consists of [design templates](https://developer.shopware.com/docs/guides/plugins/apps/storefront#custom-template-priority) that match your brand and store themes. So if you are looking at custom design templates, custom styling, etc., that can modify the whole appearance of your store, then take a look at our [Guide on Storefront](/docs/guides/plugins/apps/storefront).
 
 ### Store API
 
