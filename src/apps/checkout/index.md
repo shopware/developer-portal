@@ -12,7 +12,7 @@ Using [App Scripts](/docs/guides/plugins/apps/app-scripts) you modify and extend
  * [Add errors and notifications](/docs/guides/plugins/apps/app-scripts/cart-manipulation)
  * [Rule-based scripts](/docs/guides/plugins/apps/app-scripts/cart-manipulation)
  * [Filter payment & shipping methods](/docs/guides/plugins/apps/custom-data)
- * [Modify appearance of payment & shipping methods]/docs/guides/plugins/apps/content)
+ * [Modify appearance of payment & shipping methods](/docs/guides/plugins/apps/content)
  * [Add custom prices](/docs/guides/plugins/apps/app-scripts/cart-manipulation)
  * [Tax providers](/docs/guides/plugins/apps/tax-provider#tax-provider-endpoint)
  * [Modify and extend the internal logic of the checkout](/docs/guides/plugins/apps/custom-data)
