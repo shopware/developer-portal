@@ -1,8 +1,10 @@
 # Storefront Overview
 
-Frontend (Storefront) is a crucial aspect of your e-commerce business that online customers see and interact with, making it possible for them to view products, place orders, and manage their purchases from their devices.
+Storefront (frontend) is a key component of every ecommerce business, serving as the primary interface for online customers to view products, place orders, manage their purchases, etc. A well-designed frontend can create an engaging user experience, ultimately leading to increased customer satisfaction and higher sales.
 
-## Capabilities
+Shopware offers developers tools and flexibility to create highly customizable, user-friendly storefronts that seamlessly integrate with their backend systems and cater to their ecommerce business's unique needs.
+
+## Storefront behavior
 
 Shopware's Storefront is well structured and predominantly consists of design templates that match your brand and store themes. So if you are looking at custom design templates, custom styling, etc., that can modify the whole appearance of your store, then take a look at our [Guide on Storefront](/docs/guides/plugins/apps/storefront).
 
