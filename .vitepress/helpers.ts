@@ -4,8 +4,9 @@ import yaml from "js-yaml";
 import path from "path";
 import {simpleSitemapAndIndex, SitemapItemLoose, EnumChangefreq} from "sitemap";
 
+const sourceRoot = 'src/';
+
 export const copyAdditionalAssets = async (customDirs = []) => {
-    const sourceRoot = 'src/';
     const publicDirs: string[] = await new Promise((resolve, reject) => {
         console.log('Discovering docs.yml');
         glob("**/docs.yml", {}, (er, files) => {
@@ -101,4 +102,100 @@ export const createSitemap = async (urls: string[] = []) => {
         fs.rename(`${destinationDir}sitemap-index.xml`, `${destinationDir}sitemap.xml`);
     }
 
+}
+
+export interface Redirect {
+    src: string
+    dst: string
+}
+
+// discover docs.yml, .gitbook.yaml and docusaurus.config.js
+// write new redirects to vercel.json
+export const storeRedirects = async () => {
+    const makeDestination = (url: string, prefix: string): string => {
+        if (url.startsWith('http://') || url.startsWith('https://')) {
+            return url;
+        }
+
+        return `/${prefix}${url}`.replace('/README.md', '/').replace('.md', '.html');
+    }
+
+    // transform from key-value to {src: string, dst: string}
+    const transformRedirects = (redirects: { [key: string]: string }, prefix: string) => Object
+        .keys(redirects ?? {})
+        .map(src => ({
+            src: `/${prefix}${src}`,
+            dst: makeDestination(redirects[src], prefix)
+        }));
+
+    // collect all redirects
+    const redirects: Redirect[] = await new Promise(async (resolve, reject) => {
+        const cwd = process.cwd();
+        console.log('cwd', cwd);
+
+        const docsYmlRedirects: Redirect[] = await new Promise((resolve, reject) => {
+            console.log('Discovering docs.yml for redirects');
+            glob("**/docs.yml", {}, (er, files) => {
+                const directories = files.reduce((reduced: Redirect[], file: string) => {
+                    console.log(`Collecting ${file}`);
+                    const content = yaml.load(fs.readFileSync(file))
+                    const prefix = file.substring(sourceRoot.length, file.length - '.docs.yml'.length);
+
+                    return [
+                        ...reduced,
+                        ...transformRedirects(content?.redirects ?? {}, prefix)
+                    ];
+                }, []);
+                resolve(directories)
+            });
+        });
+
+        const gitbookRedirects: Redirect[] = await new Promise((resolve, reject) => {
+            console.log('Discovering docs.yml for redirects');
+            glob("**/.gitbook.yaml", {}, (er, files) => {
+                const redirects = files.reduce((redirects: Redirect[], file: string) => {
+                    console.log(`Collecting ${file}`);
+                    const content = yaml.load(fs.readFileSync(file))
+                    const prefix = file.substring(sourceRoot.length, file.length - '.gitbook.yaml'.length);
+
+                    return [
+                        ...redirects,
+                        ...transformRedirects(content?.redirects ?? {}, prefix),
+                    ];
+                }, []);
+                resolve(redirects)
+            });
+        });
+
+        resolve([
+            ...docsYmlRedirects,
+            ...gitbookRedirects,
+        ]);
+    });
+
+    // early return
+    if (!redirects.length) {
+        return;
+    }
+
+    // read current vercel.json
+    const data = JSON.parse(fs.readFileSync('./vercel.json'));
+
+    // prepare redirects
+    if (!data.redirects) {
+        data.redirects = [];
+    }
+
+    // push redirects
+    redirects.forEach(redirect => data.redirects.push({
+        source: redirect.src,
+        destination: redirect.dst,
+        statusCode: 301
+    }))
+
+    // make unique
+    data.redirects = [...(new Set(data.redirects.map(JSON.stringify)))].map(JSON.parse);
+
+    // store new vercel.json
+    fs.writeFileSync('./vercel.json', JSON.stringify(data, null, 2));
 }

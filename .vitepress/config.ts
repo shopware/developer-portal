@@ -6,7 +6,7 @@ const {resolve} = require('path');
 import { MarkdownTransform } from "./plugins/markdownTransform";
 import Inspect from "vite-plugin-inspect";
 
-import {copyAdditionalAssets, createSitemap} from "./helpers";
+import {copyAdditionalAssets, createSitemap, storeRedirects} from "./helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
 import navigation from "./navigation";
 
@@ -162,6 +162,11 @@ export default defineConfigWithTheme<ThemeConfig>({
      * Copy additional assets not present in the assets or public dir.
      */
     await copyAdditionalAssets();
+
+    /**
+     * Copy redirects.
+     */
+    await storeRedirects();
 
     /**
      * Fetch Stoplight URLs.
