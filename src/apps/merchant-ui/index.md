@@ -1,6 +1,6 @@
-# Merchant UI
+# Administration
 
-The Merchant UI is the Shopware's administration that manages all aspects of your store. It outlines all internal processes like product inventory tracking, order processing, customer record management, etc.
+Shopware's administration manages all aspects of your store. It outlines all internal processes like product inventory tracking, order processing, customer record management, etc.
 
 One can extend or customize the Administration via the [Admin Extension SDK](https://shopware.github.io/admin-extension-sdk/docs/guide/), an NPM library for Shopware 6 apps and plugins. It contains helper functions to communicate with the Administration, execute actions, subscribe to data, and extend the UI.
 
