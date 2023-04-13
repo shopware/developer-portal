@@ -13,3 +13,7 @@ With Shopware's payment feature, developers can ensure secure, efficient, and re
  * [Validate credit/debit cards and capture payments with Prepared payments](/docs/guides/plugins/apps/payment#prepared-payments)
  * [Refund payment](/docs/guides/plugins/apps/payment#refund)
  * [Validation check for a correct signature and response on payment requests](/docs/guides/plugins/apps/payment#validation)
+ 
+ ## Change the look
+ 
+ Shopware allows for complete customization of the payment appearance using [template extensions](/docs/guides/plugins/plugins/storefront/customize-templates), which enable you to extend or override the default storefront checkout design. It's worth noting that these extensions will only apply to merchants who utilize the default storefront; those who have built their storefronts from scratch may not take advantage of these extensions.
