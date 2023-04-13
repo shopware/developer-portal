@@ -4,8 +4,6 @@ A product catalog classifies products as categories and helps buyers make purcha
 
 ## Capabilities
 
-Do you want to perform any of the following:
-
 * [Enrich a store's detail page](/docs/guides/plugins/apps/app-scripts/data-loading),
 * [Cache configurations to improve the end-user experience](/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching),
 * [Define search criteria](/docs/guides/plugins/apps/app-scripts/data-loading#search-criteria)
