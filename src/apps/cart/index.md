@@ -6,9 +6,7 @@ Want to enhance product experience, boost sales or streamline your checkout proc
 
 Get ready to take your online store to the next level with the reliable and feature-rich cart functionality of Shopware.
 
-## Customize cart behavior
-
-Using [App Scripts](/docs/guides/plugins/apps/app-scripts), you can [manipulate your cart](/docs/guides/plugins/apps/app-scripts/cart-manipulation#overview) details to:
+## Capabilities
 
 * [Calculate cart](/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart)
 * [Add line items](/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items)
@@ -17,7 +15,7 @@ Using [App Scripts](/docs/guides/plugins/apps/app-scripts), you can [manipulate 
 * [Add validations, errors and notifications](/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart)
 * [Run rule-based cart scripts](/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts)
 
-## Changing the look
+## Change the look
 
 You can transform the appearance of your cart with our [template extensions](/docs/guides/plugins/plugins/storefront/customize-templates). By extending or overriding the appearance of the default storefront cart, you can create a unique and visually stunning shopping experience for your customers. Please note that only our default storefront merchants can take benefit from this tool to enhance the presentation of their online store. 
 Try our template extensions and elevate your cart's appearance to the next level.
