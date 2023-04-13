@@ -11,8 +11,8 @@ importers:
         specifier: 1.0.0-alpha.65
         version: 1.0.0-alpha.65(@types/node@18.15.1)(react-dom@18.2.0)(react@18.2.0)(sass@1.59.2)(terser@5.16.6)
       vitepress-shopware-docs:
-        specifier: 0.3.0-beta.42
-        version: 0.3.0-beta.42(@babel/core@7.21.3)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
+        specifier: 0.3.0-beta.43
+        version: 0.3.0-beta.43(@babel/core@7.21.3)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -2454,7 +2454,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.18.0(react@18.2.0)
+      '@react-types/shared': 3.9.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -2478,7 +2478,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.18.0(react@18.2.0)
+      '@react-types/shared': 3.9.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -2513,7 +2513,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.4.3(react@18.2.0)
-      '@react-types/shared': 3.18.0(react@18.2.0)
+      '@react-types/shared': 3.9.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -2525,7 +2525,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.18.0(react@18.2.0)
+      '@react-types/shared': 3.9.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3176,7 +3176,7 @@ packages:
       '@react-types/switch': 3.1.2(react@18.2.0)
       '@react-types/textfield': 3.3.0(react@18.2.0)
       '@stoplight/types': 13.11.0
-      '@types/react': 17.0.57
+      '@types/react': 17.0.58
       '@types/react-dom': 17.0.19
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
@@ -4765,11 +4765,11 @@ packages:
   /@types/react-dom@17.0.19:
     resolution: {integrity: sha512-PiYG40pnQRdPHnlf7tZnp0aQ6q9tspYr72vD61saO6zFCybLfMqwUCN0va1/P+86DXn18ZWeW30Bk7xlC5eEAQ==}
     dependencies:
-      '@types/react': 17.0.57
+      '@types/react': 17.0.58
     dev: false
 
-  /@types/react@17.0.57:
-    resolution: {integrity: sha512-e4msYpu5QDxzNrXDHunU/VPyv2M1XemGG/p7kfCjUiPtlLDCWLGQfgAMng6YyisWYxZ09mYdQlmMnyS0NfZdEg==}
+  /@types/react@17.0.58:
+    resolution: {integrity: sha512-c1GzVY97P0fGxwGxhYq989j4XwlcHQoto6wQISOC2v6wm3h0PORRWJFHlkRjfGsiG3y1609WdQ+J+tKxvrEd6A==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -13387,8 +13387,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-shopware-docs@0.3.0-beta.42(@babel/core@7.21.3)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
-    resolution: {integrity: sha512-GWp2K5YTkASZ7KEEPcEbHtnRO2p99MUq4+LLdTIwayIioII7HJjhCAZgvIsEDKJ1wp2fX6rmVAV4pPJKgahJ8Q==}
+  /vitepress-shopware-docs@0.3.0-beta.43(@babel/core@7.21.3)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
+    resolution: {integrity: sha512-Jhdd9BKlJWkmP3RGY6aXRRssMAUyuUfzxKz5dmRAE3udTsL7yVdS0BWNE/Vscoo2slbYM/s9N/rIKdRC352PTQ==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3(react-dom@18.2.0)(react@18.2.0)
