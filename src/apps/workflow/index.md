@@ -2,9 +2,7 @@
 
 Workflow automates operations of your e-commerce business like checkout process, order transaction, email marketing, document generation, etc., which helps streamline operations, improve efficiency, and boost revenue. Overall, workflow automation is a powerful tool for your businesses.
 
-## Workflow capabilities
-
-What business operations does the workflow support?
+## Capabilities
 
 Shopware offers Flow Builder as an automation solution to automate business processes. One can:
 
