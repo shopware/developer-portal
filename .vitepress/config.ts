@@ -138,7 +138,68 @@ export default defineConfigWithTheme<ThemeConfig>({
             'docs/v6.3': 'v6.3',
           }
         ]
-      }
+      },
+      // config for the "Edit on GitHub" link and Algolia Search facets (area, version)
+      embeds: [
+        {
+          repository: 'docs',
+          points: {
+            '/docs/v6.4/': 'v6.4',
+            '/docs/v6.3/': 'v6.3',
+            '/docs/': 'main',
+          },
+          folder: '.',
+        },
+        {
+          repository: 'frontends',
+          points: {
+            '/frontends/': 'main',
+          },
+          folder: 'app/docs/docs'
+        },
+        {
+          repository: 'admin-extension-sdk',
+          points: {
+            '/resources/admin-extension-sdk/': 'main',
+          },
+          folder: 'docs',
+        },
+        {
+          repository: 'meteor-component-library',
+          points: {
+            '/resources/meteor-component-library/': 'main',
+          },
+          folder: 'docs',
+        },
+        {
+          repository: 'meteor-icon-kit',
+          points: {
+            '/resources/meteor-icon-kit/': 'main',
+          },
+          folder: 'docs',
+        },
+        {
+          repository: 'admin-api-reference',
+          points: {
+            '/resources/api/admin-api-reference/': 'main',
+          },
+          folder: 'docs',
+        },
+        {
+          repository: 'store-api-reference',
+          points: {
+            '/resources/api/store-api-reference/': 'main',
+          },
+          folder: 'docs',
+        },
+        {
+          repository: 'developer-portal',
+          points: {
+            '/': 'main',
+          },
+          folder: 'src',
+        }
+      ]
     }
   },
 
