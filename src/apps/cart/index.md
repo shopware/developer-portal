@@ -1,33 +1,21 @@
 # Cart
 
-The cart allows you to handle cart operations. [Shopware's cart](/docs/concepts/commerce/checkout-concept/cart) is a central part of the checkout process. The cart has a defined [cart process](/docs/resources/guidelines/code/cart-process).
+A well-designed cart can significantly impact the customer's shopping experience. The cart functionality in Shopware handles all cart operations with ease and efficiency while offering customers a smooth and hassle-free shopping journey. With Shopware's cart, you have the flexibility to customize pricing calculations, add discounts, split cart line items, and even implement custom cart collectors and processors to meet your unique business needs.
 
-Besides, the cart gives various options to change a price of an item in the cart using a cart collector and processor, adding cart items, discounts, customizing price calculations, splitting cart line items, etc.
+Want to enhance product experience, boost sales or streamline your checkout process? Our cart feature has got you covered. 
 
-## Changing the cart behavior
+Get ready to take your online store to the next level with the reliable and feature-rich cart functionality of Shopware.
 
-Using [App Scripts](/docs/guides/plugins/apps/app-scripts) (cart scripts), you can [manipulate your cart](/docs/guides/plugins/apps/app-scripts/cart-manipulation#overview) details to:
+## Capabilities
 
 * [Calculate cart](/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart)
 * [Add line items](/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items)
-* [Define prices](/docs/guides/plugins/apps/app-scripts/cart-manipulation#price-definitions)
+* [Modify prices](/docs/guides/plugins/apps/app-scripts/cart-manipulation#price-definitions)
 * [Add custom data](/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-custom-data-to-line-items)
-* [Add errors and notifications](/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart)
+* [Add validations, errors and notifications](/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart)
 * [Run rule-based cart scripts](/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts)
 
-Refer to [cart manipulation services](/docs/resources/references/app-reference/script-reference/cart-manipulation-script-services-reference) that allows you to make these changes.
+## Change the look
 
-Usings Plugins also, you can:
-
-* [Add cart collector/processor](/docs/guides/plugins/plugins/checkout/cart/add-cart-processor-collector)
-* [Add cart items](/docs/guides/plugins/plugins/checkout/cart/add-cart-items)
-* [Add cart discounts](/docs/guides/plugins/plugins/checkout/cart/add-cart-discounts)
-* [Add cart validator](/docs/guides/plugins/plugins/checkout/cart/add-cart-validator)
-* [Change price items](/docs/guides/plugins/plugins/checkout/cart/change-price-of-item)
-* [Customize price calculation](/docs/guides/plugins/plugins/checkout/cart/customize-price-calculation)
-
-## Changing the look
-
-The appearance of the cart can be changed in multiple ways.
-
-With [template extensions](/docs/guides/plugins/plugins/storefront/customize-templates), you can extend or override the cart look of our default storefront. However, remember that the template extension will only be available for merchants that use our default storefront. Some merchants who build their projects upon custom frontends will not be able to benefit from your extension.
+You can transform the appearance of your cart with our [template extensions](/docs/guides/plugins/plugins/storefront/customize-templates). By extending or overriding the appearance of the default storefront cart, you can create a unique and visually stunning shopping experience for your customers. Please note that only our default storefront merchants can take benefit from this tool to enhance the presentation of their online store. 
+Try our template extensions and elevate your cart's appearance to the next level.

@@ -1,24 +1,19 @@
 # Payment
 
-Shopware 6's [payment system](/docs/concepts/commerce/checkout-concept/payments) is an integral part of the checkout process that deals with payment transactions from customers to merchants and visa-versa.
+Shopware 6 offers a robust [payment system](/docs/concepts/commerce/checkout-concept/payments) that plays a vital role in the checkout process, managing all payment transactions between customers and merchants. 
+ 
+The payment handlers integrate seamlessly into the point of sale, allowing customers to pay for their orders using one or multiple payment methods during the checkout process. It also ensures a seamless and hassle-free payment experience, resulting in increased customer satisfaction and a higher likelihood of completed transactions. 
+ 
+With Shopware's payment feature, developers can ensure secure, efficient, and reliable payment processing for their ecommerce stores.
 
-When a customer buys a product using any payment method (debit card, credit card, PayPal, etc.), it follows a [payment transaction flow](/docs/concepts/commerce/checkout-concept/payments#payment-flow) that passes through the sequential steps of payment from start to approval to finish the payment.
+## Capabilities
 
-Payment handlers integrate seamlessly into the point of sale and let your customers pay for orders with one or more payment methods during the checkout process.
-
-Shopware supports different payment handlers for conducting payment transactions, such as:
-
- * [**Synchronous payment**](/docs/guides/plugins/apps/payment#synchronous-payments) - includes a single call to an external service. Here the final state of a transaction is returned immediately.
- * [**Asynchronous payment**](/docs/guides/plugins/apps/payment#asynchronous-payments) - that redirects the customer to a dedicated checkout page after placing an order. Here the transaction may first return a *Pending* status before returning a final status indicating the success or failure of the transaction request.
- * [**Prepared payment**](/docs/guides/plugins/apps/payment#prepared-payments) - an alternative method that first prepares and validates the payment before creating an order. Once successful, it later captures the payment.
- * [**Payment refund**](/docs/guides/plugins/apps/payment#refund) - where payment integrations return the funds to the customer.
-
-In Shopware, [Apps can provide integrations to payment providers](/docs/concepts/extensions/apps-concept#integrate-payment-providers). Also, Shopware 6 offers an easy platform on which you can [build payment](/docs/guides/plugins/plugins/checkout/payment/add-payment-plugin) and [customize payment providers](/docs/guides/plugins/plugins/checkout/payment/customize-payment-provider) via [plugins](/docs/guides/plugins/plugins/checkout/payment).
-
-When your customer is ready to pay, the [payment API handle](https://shopware.stoplight.io/docs/store-api/8218801e50fe5-handling-the-payment) provides a collection of APIs that enable you to:
-
-* [Fetch a list of the available payment methods](https://shopware.stoplight.io/docs/store-api/7d24156ae6242-loads-all-available-payment-methods)
-* [Set the payment method](https://shopware.stoplight.io/docs/store-api/8218801e50fe5-handling-the-payment#set-the-payment-method)
-* [Initiate a payment](https://shopware.stoplight.io/docs/store-api/8218801e50fe5-handling-the-payment#initiate-the-payment)
-* [Submit additional payment details](https://shopware.stoplight.io/docs/store-api/8218801e50fe5-handling-the-payment#transmit-additional-payment-details)
-* [Finalize and present the payment result](/docs/resources/references/app-reference/payment-reference)
+ * [COD and other easy payments with Synchronous payment](/docs/guides/plugins/apps/payment#synchronous-payments) - includes a single call to an external service. Here the final state of a transaction is returned immediately.
+ * [Payment integration of Third-paty PSP with Asynchronous payment](/docs/guides/plugins/apps/payment#asynchronous-payments)
+ * [Validate credit/debit cards and capture payments with Prepared payments](/docs/guides/plugins/apps/payment#prepared-payments)
+ * [Refund payment](/docs/guides/plugins/apps/payment#refund)
+ * [Validation check for a correct signature and response on payment requests](/docs/guides/plugins/apps/payment#validation)
+ 
+ ## Change the look
+ 
+ Shopware allows for complete customization of the payment appearance using [template extensions](/docs/guides/plugins/plugins/storefront/customize-templates), which enable you to extend or override the default storefront checkout design. It's worth noting that these extensions will only apply to merchants who utilize the default storefront; those who have built their storefronts from scratch may not take advantage of these extensions.
