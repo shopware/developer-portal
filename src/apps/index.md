@@ -1,5 +1,40 @@
 ---
 sidebar: true
+items:
+  - text: Getting started
+    link: /apps/
+  - text: Shopware CLI
+    link: /apps/shopware-cli
+  - text: Areas
+    items:
+      - text: Checkout
+        link: /apps/checkout
+      - text: Payment
+        link: /apps/payment
+      - text: Storefront
+        link: /apps/storefront
+      - text: Configuration
+        link: /apps/configuration
+      - text: Administration
+        link: /apps/administration
+  - text: Reference
+    items:
+      - text: Admin Extensions
+        link: "#"
+      - text: App Scripts
+        link: "#"
+      - text: Webhooks
+        link: "#"
+      - text: Admin API
+        link: "#"
+      - text: Store API
+        link: "#"
+  - text: App Store
+    items:
+      - text: Publish your App
+        link: "#"
+      - text: Guidelines
+        link: "#"
 ---
 
 <h1 class="accent font-black" style="font-weight: 900; font-family: 'Poppins';">Build the functionalities merchants need</h1>
