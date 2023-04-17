@@ -1,5 +1,4 @@
 ---
-editLink: false
 swag:
   related: false
 ---

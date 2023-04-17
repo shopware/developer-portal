@@ -1,6 +1,9 @@
 ---
 page: true
 footer: false
+sidebar: false
+aside: false
+layout: home
 ---
 
 <div class="p-3 bg-#f5f7f9 text-sm border-b-1px border-b-#ddd sticky top-80px z-10">

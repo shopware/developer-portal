@@ -8,9 +8,9 @@ describe('render correct content', async () => {
         const links = await navBarLocator.allTextContents()
         expect(links).toEqual(['Apps', 'Themes', 'Frontends', 'Integrations'])
 
-        const subNavBarLocator = page.locator('.VPNavBarMenu > .VPNavBarMenuGroup .vt-flyout-button-text');
+        const subNavBarLocator = page.locator('.VPNavBarMenu > .VPNavBarMenuGroup > button .text');
         const groupLinks = await subNavBarLocator.allTextContents()
-        expect(groupLinks).toEqual(['Resources '])
+        expect(groupLinks.map(text => text.trim())).toEqual(['Resources'])
     })
 
     test('main content', async () => {
