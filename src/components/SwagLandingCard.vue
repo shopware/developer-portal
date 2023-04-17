@@ -5,9 +5,15 @@
     </a>
     <div class="p-4">
       <a href="#">
-        <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">{{ title }}</h5>
+        <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+          <slot name="title"></slot>
+          {{ title }}
+        </h5>
       </a>
-      <p class="SwagLandingCard_sub font-normal text-gray-700 dark:text-gray-400 text-xs">{{ sub }}</p>
+      <p class="SwagLandingCard_sub font-normal text-gray-700 dark:text-gray-400 text-xs">
+        <slot name="sub"></slot>
+        {{ sub }}
+      </p>
     </div>
   </div>
 </template>
