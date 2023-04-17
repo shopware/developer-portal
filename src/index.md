@@ -5,7 +5,7 @@ page: true
 footer: false
 ---
 
-<div class="w-full md:max-w-1376px 2xl:px-0 mx-auto px-10">
+<div class="unstyled w-full md:max-w-1376px 2xl:px-0 mx-auto px-10">
 
 <!--<div class="flex items-end place-content-center gap-4 opacity-50 my-6">
   <img src="/home/arrow.png" class="max-h-[6rem]" />
@@ -14,7 +14,7 @@ footer: false
 
 <div class="my-12 md:my-24">
   <h1 class="text-center accent text-3xl md:text-5xl font-black mb-8" style="font-family: 'Poppins';">Shopware Developer Documentation</h1>
-  <p class="text-center text-gray-600 dark:text-slate-200 max-w-800px mx-auto text-lg leading-8" style="font-family: 'Inter';">
+  <p class="mx-auto text-center text-gray-600 dark:text-slate-200 max-w-800px mx-auto text-lg leading-8" style="font-family: 'Inter';">
       Shopware is an <b>open source eCommerce platform</b> that helps merchants build their online stores. You as a <b>developer</b> can contribute by <b>creating</b> extensions, themes or integrations and <b>sell these</b> in our store.
   </p>
 </div>

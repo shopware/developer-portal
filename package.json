@@ -27,7 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "terser": "^5.16.6",
-    "vitepress": "1.0.0-alpha.65",
+    "vitepress": "1.0.0-alpha.71",
     "vitepress-shopware-docs": "1.0.0-alpha.1",
     "vue": "^3.2.47"
   },

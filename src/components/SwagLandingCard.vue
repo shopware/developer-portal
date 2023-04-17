@@ -16,6 +16,7 @@
 .SwagLandingCard {
   &_sub {
     margin: 0;
+    line-height: 133%;
   }
 }
 </style>
