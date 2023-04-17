@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
 import { mergeConfig } from 'vite';
-import baseConfig from "../node_modules/vitepress-shopware-docs/src/vitepress/config/baseConfig";
+import baseConfig from "../node_modules/vitepress-shopware-docs/src/shopware/config/baseConfig";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
