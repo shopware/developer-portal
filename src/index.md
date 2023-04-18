@@ -3,6 +3,8 @@ sidebar: false
 aside: false
 page: true
 footer: false
+editLink: false
+stackOverflowLink: false
 ---
 
 <div class="unstyled w-full md:max-w-1376px 2xl:px-0 mx-auto px-10">
@@ -34,106 +36,86 @@ footer: false
   import SwagBazaar from './components/SwagBazaar.vue'
 </script>-->
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16 pt-5">
+<script setup lang="ts">
+  import SwagCard from './components/SwagCard.vue';
+</script>
 
-  <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
-    <div class="flex items-center">
-      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-        <div class="i-carbon-model-alt h-7 w-7 text-shopware" />
-        Apps
-      </span>
-    </div>
-    <p class="text-sm">
-      Apps are a way to enhance the functionality of or add features to your store
-    </p>
-    <p class="mt-4"><a class="text-sm" href="/apps/">→ learn more</a></p>
-  </div>
+<!-- import {VTIconSlack, VTIconTwitter, VTIconGitHub, VTIconStackoverflow} from 'vitepress-shopware-docs'; -->
 
-  <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
-    <div class="flex items-center">
-      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div class="i-carbon-cobb-angle h-7 w-7 text-shopware" />
-        Themes
-      </span>
-    </div>
-    <p class="text-sm">
-      Using themes, merchants are able to style their stores individually
-    </p>
-    <p class="mt-4"><a class="text-sm" href="/themes/">→ learn more</a></p>
-  </div>
+<h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
 
-  <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
-    <div class="flex items-center">
-      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div class="i-carbon-image h-7 w-7 text-shopware" />
-        Custom Frontends
-      </span>
-    </div>
-    <p class="text-sm">
-      Build custom storefronts from using our Store API and SDKs or start with reference implementations using technologies like Vue.js or React.
-    </p>
-    <p class="mt-4"><a class="text-sm" href="/frontends/">→ learn more</a></p>
-  </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
 
-  <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
-    <div class="flex items-center">
-      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div class="i-carbon-connect h-7 w-7 text-shopware" />
-        Integrations
-      </span>
-    </div>
-    <p class="text-sm">
-      Connect 3rd party systems with Shopware using our API to transfer products, orders or other types of data
-    </p>
-    <p class="mt-4"><a class="text-sm" href="/integrations/">→ learn more</a></p>
-  </div>
+  <SwagCard link="#">
+    <template #title>What is Shopware?</template>
+    <template #description>Learn about Shopware, what it is, how to contribute and who builds it.</template>
+  </SwagCard>
+
+  <SwagCard link="#">
+    <template #title>How to start with Shopware?</template>
+    <template #description>Get to know which ways you can get involved with Shopware as a developer.</template>
+  </SwagCard>
+
+  <SwagCard link="#">
+    <template #title>How to install Shopware?</template>
+    <template #description>Set up Shopware on your local machine or use a developer sandbox from the cloud.</template>
+  </SwagCard>
 
 </div>
 
-<div>
-  <h1 class="text-4xl tracking-wide mb-10 accent">Explore Resources</h1>
+<h2 class="text-4xl tracking-wide mb-10 accent isolated">Start building</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+
+  <SwagCard link="/apps/">
+    <template #title>Apps</template>
+    <template #description>Apps are an easy way to enhance the functionality of or add features to your store</template>
+  </SwagCard>
+
+  <SwagCard link="/themes/">
+    <template #title>Themes</template>
+    <template #description>Using custom-built or 3rd party themes, merchants are able to style their stores individually</template>
+  </SwagCard>
+
+  <SwagCard link="/storefronts/">
+    <template #title>Custom Storefronts</template>
+    <template #description>Build custom storefronts from using our Store API and SDKs or start with reference implementations using technologies like Vue.js or React.</template>
+  </SwagCard>
+
+  <SwagCard link="/integrations/">
+    <template #title>Integrations</template>
+    <template #description> Connect 3rd party systems with Shopware using our API to transfer products, orders or other types of data</template>
+  </SwagCard>
+
 </div>
 
-<div class="grid grid-cols-1 gap-5">
 
-  <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
-    <div class="flex items-center">
-      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div class="i-carbon-logo-github h-7 w-7 text-shopware" />
-        Shopware Core
-      </span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+    <div>
+        <h2 class="text-4xl tracking-wide mb-10 accent isolated">Looking for help</h2>
+        <div class="flex">
+            <a href="#">
+                <VTIconSlack />
+            </a>
+            <a href="#">
+                <VTIconTwitter />
+            </a>
+            <a href="#">
+                <VTIconGitHub />
+            </a>
+            <a href="#">
+                <VTIconStackoverflow />
+            </a>
+        </div>
     </div>
-    <p class="text-sm">
-      The entire headless Shopware Core source code is available on GitHub.
-    </p>
-  </div>
-
-  <a href="/docs/summary">
-  <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
-    <div class="flex items-center">
-      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div class="i-carbon-model-alt h-7 w-7 text-shopware" />
-        Shopware Developer Docs
-      </span>
+    <div>
+        <h2 class="text-4xl tracking-wide mb-10 accent isolated">Leave feedback</h2>
+        <ul>
+            <li><a href="#">Contribute to the documentation</a></li>
+            <li><a href="#">Make a pull request</a></li>
+            <li><a href="#">Share feedback on Slack</a></li>
+        </ul>
     </div>
-    <p class="text-sm">
-      Browse the old structure of our developer documentation.
-    </p>
-  </div>
-  </a>
-
-   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
-    <div class="flex items-center">
-      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-      <div class="i-carbon-terminal h-7 w-7 text-shopware" />
-        Shopware API Documentation
-      </span>
-    </div>
-    <p class="text-sm">
-      Explore our collection of HTTP API endpoints
-    </p>
-  </div>
-
 </div>
 
 </div>

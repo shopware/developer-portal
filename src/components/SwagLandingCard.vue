@@ -31,7 +31,7 @@
 const props = defineProps({
   page: {
     type: String,
-    requied: true,
+    required: true,
   },
   title: {
     type: String,

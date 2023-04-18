@@ -11,8 +11,8 @@ importers:
         specifier: 1.0.0-alpha.71
         version: 1.0.0-alpha.71(@types/node@18.15.1)(react-dom@18.2.0)(react@18.2.0)(sass@1.59.2)(terser@5.16.6)
       vitepress-shopware-docs:
-        specifier: 1.0.0-alpha.3
-        version: 1.0.0-alpha.3(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
+        specifier: 1.0.0-alpha.4
+        version: 1.0.0-alpha.4(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -13335,8 +13335,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-shopware-docs@1.0.0-alpha.3(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
-    resolution: {integrity: sha512-UYBM7J6R853JNSfnAjzJenUsmkT5KAxRQaY5tvthDvNIA51QwyAvngP73KVWjXMIdluyBFOPnvQT9jhjLnnGcg==}
+  /vitepress-shopware-docs@1.0.0-alpha.4(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
+    resolution: {integrity: sha512-t+d6ubakMNRIgp5fAWhfgOYTokVDQF52r+Sv7Eb69Nw6EdCQNTF//5CsKzdovxT2DDx/sjr4YBT46CuGNC3FoQ==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3(react-dom@18.2.0)(react@18.2.0)
