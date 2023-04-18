@@ -18,7 +18,7 @@ describe('render correct content', async () => {
 
         const h1Contents = await h1Locator.allTextContents()
 
-        expect(h1Contents).toEqual(['Shopware Developer Documentation', 'Explore Resources'])
+        expect(h1Contents).toEqual(['Shopware Developer Documentation'])
     })
 
     test('outline', async () => {
