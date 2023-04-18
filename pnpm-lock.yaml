@@ -11,8 +11,8 @@ importers:
         specifier: 1.0.0-alpha.71
         version: 1.0.0-alpha.71(@types/node@18.15.1)(react-dom@18.2.0)(react@18.2.0)(sass@1.59.2)(terser@5.16.6)
       vitepress-shopware-docs:
-        specifier: 1.0.0-alpha.2
-        version: 1.0.0-alpha.2(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
+        specifier: 1.0.0-alpha.3
+        version: 1.0.0-alpha.3(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -2841,8 +2841,8 @@ packages:
       lodash.values: 4.3.0
     dev: true
 
-  /@stoplight/elements-core@7.7.15(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-9ACyiXYMuH8rPMetrSPe1oLFoiHL6lIusSb6ILPBMuWL+d9uJRE5Y8oul0rxbDVYiTv2O7Wlbt40HAQWziiD8Q==}
+  /@stoplight/elements-core@7.7.16(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-P1DF+jyx9nQna+S30eAyr8J6gPIzAYTwKJEBnSCjdCkashPXu3X3nqi0Go9ykKnNDgrvlJyW9eFzEbY0bI5pHQ==}
     engines: {node: '>=14.13'}
     peerDependencies:
       react: '>=16.8'
@@ -2905,8 +2905,8 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/elements-dev-portal@1.9.10(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Yl23IlnmpArmugvAWrxmizQcykpXZjak+7WdNtN6Ny/Ubh9kgMvSS7MRfzPQCwsqiUfMTfhjgoObGCeUpD6YPA==}
+  /@stoplight/elements-dev-portal@1.9.11(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-W1ZWSgHJfOGvFmDFPHCav4BSOV/UAEVBzDytlZp3pgq1IiOQpzL0iU9sL9g6cHrJfxrJnBYdgCsBGcB5Frxw1w==}
     engines: {node: '>=14.13'}
     peerDependencies:
       react: '>=16.8'
@@ -2917,7 +2917,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/elements-core': 7.7.15(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/elements-core': 7.7.16(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.40.0)(@stoplight/mosaic@1.40.0)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/mosaic': 1.40.0(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/path': 1.3.2
@@ -13335,13 +13335,13 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-shopware-docs@1.0.0-alpha.2(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
-    resolution: {integrity: sha512-aze4HXLVZzdk7gPfC5RWvxDRroMo2qZV+SnalGmf6nJ4DYfpTT3uXDtjjefyeeYMehJcGb3NHCYhrKAQmFbQqg==}
+  /vitepress-shopware-docs@1.0.0-alpha.3(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
+    resolution: {integrity: sha512-UYBM7J6R853JNSfnAjzJenUsmkT5KAxRQaY5tvthDvNIA51QwyAvngP73KVWjXMIdluyBFOPnvQT9jhjLnnGcg==}
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3(react-dom@18.2.0)(react@18.2.0)
       '@iconify-json/carbon': 1.1.16
-      '@stoplight/elements-dev-portal': 1.9.10(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/elements-dev-portal': 1.9.11(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/json-schema-generator': 1.0.2
       '@vueuse/core': 9.13.0(vue@3.2.47)
       axios: 0.27.2

@@ -10,6 +10,12 @@ Because we need to clone multiple repositories, you need to generate a new SSH k
 $ base64 ~/.ssh/id_ed25519 -w 0
 ```
 
+If you don't have a `ed25519` key, you can generate it by running a comand below:
+
+```bash
+$ ssh-keygen -t ed25519 -C "your.name@shopware.com"
+```
+
 ## Post-install
 
 Post-install script is triggered during the `postCreateCommand` lifecycle hook and:
