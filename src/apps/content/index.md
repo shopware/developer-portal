@@ -1,23 +1,57 @@
-# Content
+<script setup>
+import SwagLanding from "../../components/SwagLanding.vue";
+import SwagLandingCard from "../../components/SwagLandingCard.vue";
+import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
+</script>
 
-An e-commerce website is the face of your business, enriched with content (products, categories, orders, etc.) reaching out to the masses. Hence the content representation must be appealing.
-
-Gone are those days when you would need to write all the code from scratch for creating or changing content on your ecommerce site. Shopware provides a full-featured ecommerce Content Management System (CMS) to easily create, manage, and modify content for your online store.
-
-## Capabilities
-
-* [Custom shopping experiences for your customers](/docs/guides/plugins/apps/custom-data).
-
-* [Customized layout styling](/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview) by extending blocks and sections for your online store's homepage, landing pages, product detail pages, etc.
-
-* [Static and Dynamic CMS website](/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots) to facilitates you to create different frontend experiences for different use cases with media (text, images, and videos).
-
-* [Assign any desired CMS layout to product entity and category](/docs/concepts/commerce/content/shopping-experiences-cms#hydration-of-dynamic-content).
-
-* [Custom field types and get appropriate layouts assigned](/docs/guides/plugins/apps/custom-data/custom-fields) .
-
-* [Multilingual landing pages that supports country-specific translations](/docs/guides/plugins/apps/app-scripts#translation).
-
-## Custom shopping experiences
-
-With Shopware's headless CMS architecture, you can easily tailor your [customers' shopping experience](/docs/guides/plugins/apps/content/cms).
+<SwagLanding>
+    <template #title>Content</template>
+    <template #description>
+        <p>An e-commerce website is the face of your business, enriched with content that showcases your products and services in an appealing way to attract potential customers. Gone are those days when you would need to write all the code from scratch for creating or changing content on your ecommerce site. Shopware provides a full-featured ecommerce Content Management System (CMS) to easily create, manage, and modify content for your online store.</p>
+        <h1>Capabilities</h1>
+    </template>
+    <template #exposed2>
+        <SwagLandingCardList>
+            <template #title>
+                Try our template extensions and elevate your Checkout experience:
+            </template>
+            <template #cards>
+                <SwagLandingCard link="/docs/guides/plugins/apps/custom-data">
+                    <template #title>Redefine shopping experiences</template>
+                    <template #sub>Customized shopping experiences for your customers</template>
+                </SwagLandingCard>
+                <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview">
+                    <template #title>Customized layout styling</template>
+                    <template #sub>Style layout by extending blocks and sections for your online store's homepage, landing pages, product detail pages</template>
+                </SwagLandingCard>
+                <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots">
+                    <template #title>Static and Dynamic CMS website</template>
+                    <template #sub>Facilitates you to create different frontend experiences for different use cases with media</template>
+                </SwagLandingCard>
+                <SwagLandingCard link="/docs/concepts/commerce/content/shopping-experiences-cms#hydration-of-dynamic-content">
+                    <template #title>Apply desired CMS layout</template>
+                    <template #sub>Assign any desired CMS layout to product entity and category</template>
+                </SwagLandingCard>
+                <SwagLandingCard link="/docs/guides/plugins/apps/custom-data/custom-fields">
+                    <template #title>Custom field</template>
+                    <template #sub>Custom field types and get appropriate layouts assigned</template>
+                </SwagLandingCard>
+                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts#translation">
+                    <template #title>Translations</template>
+                    <template #sub>Multilingual landing pages that supports country-specific translations</template>
+                </SwagLandingCard>
+            </template>
+        </SwagLandingCardList>
+    <h1>Custom shopping experiences</h1>
+        <p>YWith Shopware's headless CMS architecture, you can easily tailor your customers' shopping by simply following one of the ways:
+        <ul>
+        <li><p><a href="/docs/guides/plugins/apps/content/cms">Use an app</a>. For example, you can add a basic buy button to an existing website or blog, while other apps can help you create and sell in different sales channels.</p>
+        </li>
+        <li><p>Build the experiences yourself using <a href="https://shopware.github.io/admin-extension-sdk/docs/guide/api-reference/cms/registerCmsElement">Admin extension SDK</a>.</p>
+        </li>
+        <li><p><a href="https://shopware.stoplight.io/docs/store-api/70c7b54c9faf9-fetch-and-resolve-a-cms-page">Storefront API</a>.</p>
+        </li>
+        </ul>
+        </p>
+    </template>
+</SwagLanding>
