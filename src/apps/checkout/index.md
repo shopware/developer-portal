@@ -8,67 +8,58 @@ import * as HeroIcons from "@heroicons/vue/24/solid";
 <SwagLanding>
     <template #title>Checkout</template>
     <template #description>
-        <p><a href="/docs/concepts/commerce/checkout-concept">Checkout</a> system is a critical component of the Shopware platform, handling all <a href="/docs/concepts/commerce/checkout-concept/cart">Cart</a> <a href="/docs/concepts/commerce/checkout-concept/orders">Orders</a> and <a href="/docs/concepts/commerce/checkout-concept/payments">Payments</a>. With Shopware's checkout feature, developers have the flexibility to modify custom cart items, error handling, and custom data. Additionally, the checkout system can be fully customized to match the look and feel of your ecommerce store, allowing for a seamless and intuitive user experience.</p>
+        <p>The <a href="/docs/concepts/commerce/checkout-concept">checkout</a> system is a crucial component of the Shopware platform that manages every aspect of the order process, from adding products products to the <a href="/docs/concepts/commerce/checkout-concept/cart">cart</a> to placing an <a href="/docs/concepts/commerce/checkout-concept/orders">order</a> and making a <a href="/docs/concepts/commerce/checkout-concept/payments">payment</a>. Shopware's checkout feature is designed to offer developers the flexibility they need to modify the core processes and create a seamless and flawless user experience.</p>
         <h1>Capabilities</h1>
+    </template>
+    <template #im>
+        <img src="../../../public/landing/apps/checkout.png"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>
             <template #title>
-                Try our template extensions and elevate your Checkout experience:
+                Want to enhance product experience or streamline your checkout process? Our features has got you covered!
             </template>
             <template #cards>
                 <SwagLandingCard link="/docs/guides/plugins/apps/tax-provider#tax-provider-endpoint">
                     <template #title>Tax provider</template>
-                    <template #sub>Effortlessly calculates taxes based on customer location, cart details or country</template>
+                    <template #sub>Hassle-free tax calculations - Based on customer location, cart and country.</template>
                     <template #icon>
-                      <div>
                         <HeroIcons.CalculatorIcon class="h-10 w-10 text-blue-500" />
-                     </div>
                     </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#split-line-items">
                     <template #title>Split cart items</template>
-                    <template #sub>splits an existing line-item by a given quantity</template>
+                    <template #sub>Customize orders - Split line-items to desired quantity.</template>
                     <template #icon>
-                      <div>
                         <HeroIcons.ShoppingCartIcon class="h-10 w-10 text-blue-500" />
-                     </div>
                     </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/custom-data">
-                    <template #title>Filter payment and shipping methods </template>
-                    <template #sub>Do you want to evaluate taxes?</template>
+                    <template #title>Filter checkout options </template>
+                    <template #sub>Streamline checkout - Filter available payment and shipping methods.</template>
                     <template #icon>
-                      <div>
                         <HeroIcons.FunnelIcon class="h-10 w-10 text-blue-500" />
-                     </div>
                     </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
                     <template #title>Rule based scripts</template>
-                    <template #sub>Use the full power of the rule builder to manipulate checkout</template>
+                    <template #sub>Maximize control - Rule builder for ultimate checkout manipulation</template>
                     <template #icon>
-                      <div>
                         <HeroIcons.Bars4Icon class="h-10 w-10 text-blue-500" />
-                     </div>
                     </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
-                    <template #title>Add errors and notification</template>
-                    <template #sub>Block the cart's checkout by raising an error or add messages using warning and notice to inform the user</template>
+                    <template #title>Errors and notifications</template>
+                    <template #sub>Enhanced checkout - Errors, warnings, and notices keep you informed.</template>
                     <template #icon>
-                      <div>
                         <HeroIcons.FlagIcon class="h-10 w-10 text-blue-500" />
-                     </div>
                     </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
                     <template #title>Add custom prices</template>
-                    <template #sub>Change the price of a line item in the cart dynamically</template>
+                    <template #sub>Adjust pricing on the fly - Change line item costs dynamically.</template>
                     <template #icon>
-                      <div>
                         <HeroIcons.CurrencyEuroIcon class="h-10 w-10 text-blue-500" />
-                     </div>
                     </template>
                 </SwagLandingCard>
             </template>

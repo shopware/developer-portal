@@ -15,12 +15,14 @@ items:
         link: /apps/payment/
       - text: Storefront
         link: /apps/storefront/
-      - text: Configuration
-        link: /apps/configuration/
       - text: Administration
         link: /apps/administration/
       - text: Content
         link: /apps/content/
+      - text: Product & Catalog
+        link: /apps/products-and-catalog/
+      - text: Workflow
+        link: /apps/workflow/
   - text: Reference
     items:
       - text: Admin Extensions

@@ -2,27 +2,37 @@
 import SwagLanding from "../../components/SwagLanding.vue";
 import SwagLandingCard from "../../components/SwagLandingCard.vue";
 import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
+import * as HeroIcons from "@heroicons/vue/24/solid";
 </script>
 
 <SwagLanding>
     <template #title>Storefront</template>
     <template #description>
-        <p>Storefront (frontend) is a key component of every ecommerce business, serving as the primary interface for online customers to view products, place orders, manage their purchases, etc. A well-designed frontend can create an engaging user experience, ultimately leading to increased customer satisfaction and higher sales. Shopware offers developers tools and flexibility to create highly customizable, user-friendly storefronts that seamlessly integrate with their backend systems and cater to their ecommerce business's unique needs.</p>
+        <p>Storefront (frontend) is a key component of every ecommerce business, serving as the primary interface for online customers to view products, place orders, manage their purchases, etc. An engaging frontend can ultimately leading to increased customer satisfaction and higher sales. Shopware offers developers tools to create highly customizable, user-friendly storefronts that seamlessly integrate with its backend systems and cater to your business unique needs.</p>
         <h1>Capabilities</h1>
+    </template>
+    <template #im>
+        <img src="/landing/apps/storefront.PNG"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>
             <template #title>
-                Try our template extensions and elevate your Checkout experience:
+                Try our template extensions and elevate your customer experience:
             </template>
             <template #cards>
                 <SwagLandingCard link="/docs/guides/plugins/plugins/storefront/customize-templates">
                     <template #title>Templates</template>
-                    <template #sub>Custom design templates that can modify the whole appearance of your store</template>
+                    <template #sub>Custom design templates - Modify the whole appearance of your store.</template>
+                    <template #icon>
+                        <HeroIcons.WindowIcon class="h-10 w-10 text-blue-500" />
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching">
                     <template #title>Themes</template>
-                    <template #sub>Custom Styling that match your brand and store themes</template>
+                    <template #sub>Custom Styling - Match your brand and store themes.</template>
+                    <template #icon>
+                        <HeroIcons.SparklesIcon class="h-10 w-10 text-blue-500" />
+                    </template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>

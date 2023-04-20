@@ -20,8 +20,10 @@
         </div>
       </div>
 
-      <div class="md:basis-2/6">
-        <img :src="image"/>
+      <div>
+      <img class="md:basis-2/6" :src="image" alt="" />
+          <slot name="im"></slot>
+          {{ image }}
       </div>
 
     </div>
