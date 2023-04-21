@@ -4,8 +4,8 @@
         <p>Shopware 6 offers a robust <a href="/docs/concepts/commerce/checkout-concept/payments">payment system</a> managing all payment transactions between customers and merchants. The payment handlers integrate seamlessly into the point of sale, allowing customers to pay for their orders using one or multiple payment methods during the checkout process. It also ensures a seamless and hassle-free payment experience, resulting in increased customer satisfaction and a higher likelihood of completed transactions. </p>
         <h1>Capabilities</h1>
     </template>
-    <template #im>
-        <img src="../../../public/landing/apps/payment.PNG"/>
+    <template #image>
+        <img src="../../public/landing/apps/payment.png"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>
@@ -16,37 +16,22 @@
                 <SwagLandingCard link="/docs/guides/plugins/apps/payment#synchronous-payments">
                     <template #title>Synchronous payment</template>
                     <template #sub>Smooth transactions - COD and other payment options with synchronous processing.</template>
-                    <template #icon>
-                        <HeroIcons.BanknotesIcon class="h-10 w-10 text-blue-500" />
-                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/payment#asynchronous-payments">
                     <template #title>Asynchronous payment</template>
                     <template #sub>Seamless integration - Integrate third-party PSP for asynchronous payment with ease.</template>
-                    <template #icon>
-                        <HeroIcons.LinkIcon class="h-10 w-10 text-blue-500" />
-                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/payment#prepared-payments">
                     <template #title>Prepared payment</template>
                     <template #sub>Securely validate - Process credit/debit card payments with Prepared Payments.</template>
-                    <template #icon>
-                        <HeroIcons.DocumentCheckIcon class="h-10 w-10 text-blue-500" />
-                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/payment#refund">
                     <template #title>Refund</template>
                     <template #sub>Quick returns - Automatic refund processing for returned items is more easier</template>
-                    <template #icon>
-                        <HeroIcons.ReceiptRefundIcon class="h-10 w-10 text-blue-500" />
-                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/payment#validation">
                     <template #title>Payment validations</template>
                     <template #sub>Validation check - Ensure correct signature and response for payment requests.</template>
-                    <template #icon>
-                        <HeroIcons.ShieldCheckIcon class="h-10 w-10 text-blue-500" />
-                    </template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>

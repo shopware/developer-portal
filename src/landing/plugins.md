@@ -5,8 +5,6 @@ swag:
 ---
 
 <script setup>
-import SwagLanding from "../components/SwagLanding.vue";
-
 const landing = {
     title: `Craft beautiful themes that inspire`,
     image: 'https://store.shopware.com/media/image/themes-illustration.png',

@@ -6,8 +6,6 @@ sidebar: true
 ---
 
 <script setup>
-import SwagLanding from "../components/SwagLanding.vue";
-
 const landing = {
     title: `Automate, integrate & connect`,
     image: 'https://store.shopware.com/media/image/themes-illustration.png',
