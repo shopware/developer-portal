@@ -26,8 +26,10 @@ export const copyAdditionalAssets = async (customDirs = []) => {
 
     console.log(`Copying non-standard static assets from ${process.cwd()}/${sourceRoot} to ${process.cwd()}/.vitepress/dist/`);
     publicDirs.forEach(dir => {
-        const dirToCopy = `${process.cwd()}/${sourceRoot}${dir}`;
-        const distDir = `${process.cwd()}/.vitepress/dist/${dir}`;
+        const src = typeof dir === 'string' ? dir : dir.src;
+        const dst = typeof dir === 'string' ? dir : dir.dst;
+        const dirToCopy = `${process.cwd()}/${sourceRoot}${src}`;
+        const distDir = `${process.cwd()}/.vitepress/dist/${dst}`;
 
         // make sure dir exists
         try {
