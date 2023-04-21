@@ -2,6 +2,7 @@
 import SwagLanding from "../../components/SwagLanding.vue";
 import SwagLandingCard from "../../components/SwagLandingCard.vue";
 import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
+import * as HeroIcons from "@heroicons/vue/24/solid";
 </script>
 
 <SwagLanding>
@@ -18,30 +19,57 @@ import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
             <template #cards>
                 <SwagLandingCard link="/docs/guides/plugins/apps/tax-provider#tax-provider-endpoint">
                     <template #title>Tax provider</template>
-                    <template #sub>Calculate tax rate depending on the country, customer and cart details</template>
-                    <template #image>
-                        <img src="/workspaces/developer-portal/src/public/landing/black.PNG">
+                    <template #sub>Effortlessly calculates taxes based on customer location, cart details or country</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.CalculatorIcon class="h-10 w-10 text-blue-500" />
+                     </div>
                     </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#split-line-items">
                     <template #title>Split cart items</template>
                     <template #sub>splits an existing line-item by a given quantity</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.ShoppingCartIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/custom-data">
                     <template #title>Filter payment and shipping methods </template>
                     <template #sub>Do you want to evaluate taxes?</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.FunnelIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
                     <template #title>Rule based scripts</template>
                     <template #sub>Use the full power of the rule builder to manipulate checkout</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.Bars4Icon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
                     <template #title>Add errors and notification</template>
                     <template #sub>Block the cart's checkout by raising an error or add messages using warning and notice to inform the user</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.FlagIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
                     <template #title>Add custom prices</template>
                     <template #sub>Change the price of a line item in the cart dynamically</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.CurrencyEuroIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>

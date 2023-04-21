@@ -2,6 +2,7 @@
 import SwagLanding from "../../components/SwagLanding.vue";
 import SwagLandingCard from "../../components/SwagLandingCard.vue";
 import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
+import * as HeroIcons from "@heroicons/vue/24/solid";
 </script>
 
 <SwagLanding>
@@ -19,26 +20,56 @@ import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
                 <SwagLandingCard link="/docs/guides/plugins/apps/custom-data">
                     <template #title>Redefine shopping experiences</template>
                     <template #sub>Customized shopping experiences for your customers</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.ShoppingBagIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview">
                     <template #title>Customized layout styling</template>
                     <template #sub>Style layout by extending blocks and sections for your online store's homepage, landing pages, product detail pages</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.Squares2X2Icon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots">
                     <template #title>Static and Dynamic CMS website</template>
                     <template #sub>Facilitates you to create different frontend experiences for different use cases with media</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.ComputerDesktopIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/concepts/commerce/content/shopping-experiences-cms#hydration-of-dynamic-content">
                     <template #title>Apply desired CMS layout</template>
                     <template #sub>Assign any desired CMS layout to product entity and category</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.SquaresPlusIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/custom-data/custom-fields">
                     <template #title>Custom field</template>
                     <template #sub>Custom field types and get appropriate layouts assigned</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.BarsArrowUpIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts#translation">
                     <template #title>Translations</template>
                     <template #sub>Multilingual landing pages that supports country-specific translations</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.LanguageIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>

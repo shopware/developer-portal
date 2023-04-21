@@ -4,10 +4,6 @@ swag:
   related: false
 ---
 
-<script setup>
-import SwagLanding from "../../components/SwagLanding.vue";
-</script>
-
 <SwagLanding>
     <template #title>Cart</template>
     <template #description>
@@ -17,44 +13,89 @@ import SwagLanding from "../../components/SwagLanding.vue";
     <template #exposed>
         <SwagLandingCardList>
             <template #title>
-                Get ready to take your online store to the next level with the reliable and feature-rich cart functionality of Shopware.
+                Get ready to take your online store to the next level with feature-rich cart functionality of Shopware
             </template>
             <template #cards>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart">
                     <template #title>Calculate cart</template>
                     <template #sub>Calculate the whole cart and update the total prices</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.CalculatorIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items">
                     <template #title>Modify line items</template>
                     <template #sub>Add/remove line items.</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.EllipsisVerticalIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items">
                     <template #title>Calculate discounts</template>
                     <template #sub>Calculate absolute or relative discounts</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.ReceiptPercentIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#price-definitions">
                     <template #title>Define prices</template>
                     <template #sub>Configure net price, gross price and currency dependency</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.CurrencyEuroIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-custom-data-to-line-items">
                     <template #title>Add custom data</template>
                     <template #sub> Add custom data to line items</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.AdjustmentsHorizontalIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart">
                     <template #title>Display errors</template>
                     <template #sub>Block the cart's checkout by raising an error</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.BugAntIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart">
                     <template #title>Generate notifications</template>
                     <template #sub>Add messages using warning and notice to inform the user</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.FlagIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts">
                     <template #title>Run rule-based scripts</template>
                     <template #sub>Cse the full power of the rule builder to manipulate cart</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.Bars4Icon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
                 <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts">
                     <template #title>Cart state</template>
                     <template #sub>Add/fetch cart status whether it is empty or not</template>
+                    <template #icon>
+                      <div>
+                        <HeroIcons.ArrowPathIcon class="h-10 w-10 text-blue-500" />
+                     </div>
+                    </template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>
