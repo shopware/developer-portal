@@ -26,9 +26,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@shopware-ag/meteor-icon-kit": "^5.1.0",
     "terser": "^5.16.6",
     "vitepress": "1.0.0-alpha.73",
-    "vitepress-shopware-docs": "1.0.0-alpha.5",
+    "vitepress-shopware-docs": "1.0.0-alpha.9",
     "vue": "^3.2.47"
   },
   "devDependencies": {

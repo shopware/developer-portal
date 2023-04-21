@@ -7,16 +7,22 @@ items:
     link: /apps/shopware-cli
   - text: Areas
     items:
+      - text: Cart
+        link: /apps/cart/
       - text: Checkout
-        link: /apps/checkout
+        link: /apps/checkout/
       - text: Payment
-        link: /apps/payment
+        link: /apps/payment/
       - text: Storefront
-        link: /apps/storefront
-      - text: Configuration
-        link: /apps/configuration
+        link: /apps/storefront/
       - text: Administration
-        link: /apps/administration
+        link: /apps/administration/
+      - text: Content
+        link: /apps/content/
+      - text: Product & Catalog
+        link: /apps/products-and-catalog/
+      - text: Workflow
+        link: /apps/workflow/
   - text: Reference
     items:
       - text: Admin Extensions

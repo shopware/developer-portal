@@ -5,8 +5,6 @@ swag:
 ---
 
 <script setup>
-import SwagLanding from "../components/SwagLanding.vue";
-
 const landing = {
     title: `Build the functionalities merchants need`,
     description: `Leverage Shopware's extension APIs to build unique extensions that boost merchants businesses. Use the powerful plugin system to build highly custom extensions or build apps using your platform of choice.`,
