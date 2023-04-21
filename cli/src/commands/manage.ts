@@ -22,16 +22,16 @@ export default {
                 type: 'checkbox',
                 name: 'selectedRepositories',
                 message: 'Select repositories to manage',
-                choices: repositories.map(({name, branch}) => ({name: `${name} (${branch})`, value: name})),
+                choices: repositories.map(({name, branch}) => ({name: `${name} (${branch})`, value: `${name}@${branch}`})),
             }
         ]);
 
         for (const repo of repositories) {
-            if (!selectedRepositories.includes(repo.name)) {
+            if (!selectedRepositories.includes(`${repo.name}@${repo.branch}`)) {
                 continue;
             }
 
-            output.notice(`Processing ${repo.name}`);
+            output.notice(`Processing ${repo.name}@${repo.branch} in ${repo.dst}`);
             const fullPath = `${developerPortalPath}/src/${repo.dst}`;
             let exists = false;
             let type = null;
@@ -49,7 +49,7 @@ export default {
                 clean = await cleanup({type, fullPath});
             }
 
-            if (clean && await confirm({message: `Do you want to mount ${repo.name}?`})) {
+            if (clean && await confirm({message: `Do you want to mount ${repo.name} @ ${repo.branch} into ${repo.dst}?`})) {
                 await cloneCustom(repo, true, false);
             }
         }

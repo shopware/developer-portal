@@ -7,7 +7,7 @@ editLink: false
 stackOverflowLink: false
 ---
 
-<div class="unstyled w-full md:max-w-1376px 2xl:px-0 mx-auto px-10">
+<div class="unstyled w-full md:max-w-1376px 2xl:px-0 mx-auto">
 
 <!--<div class="flex items-end place-content-center gap-4 opacity-50 my-6">
   <img src="/home/arrow.png" class="max-h-[6rem]" />
@@ -36,27 +36,23 @@ stackOverflowLink: false
   import SwagBazaar from './components/SwagBazaar.vue'
 </script>-->
 
-<script setup lang="ts">
-  import SwagCard from './components/SwagCard.vue';
-</script>
-
 <!-- import {VTIconSlack, VTIconTwitter, VTIconGitHub, VTIconStackoverflow} from 'vitepress-shopware-docs'; -->
 
 <h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
 
-  <SwagCard link="#">
+  <SwagCard page="#">
     <template #title>What is Shopware?</template>
     <template #description>Learn about Shopware, what it is, how to contribute and who builds it.</template>
   </SwagCard>
 
-  <SwagCard link="#">
+  <SwagCard page="#">
     <template #title>How to start with Shopware?</template>
     <template #description>Get to know which ways you can get involved with Shopware as a developer.</template>
   </SwagCard>
 
-  <SwagCard link="#">
+  <SwagCard page="#">
     <template #title>How to install Shopware?</template>
     <template #description>Set up Shopware on your local machine or use a developer sandbox from the cloud.</template>
   </SwagCard>
@@ -67,22 +63,22 @@ stackOverflowLink: false
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
 
-  <SwagCard link="/apps/">
+  <SwagCard page="/apps/">
     <template #title>Apps</template>
     <template #description>Apps are an easy way to enhance the functionality of or add features to your store</template>
   </SwagCard>
 
-  <SwagCard link="/themes/">
+  <SwagCard page="/themes/">
     <template #title>Themes</template>
     <template #description>Using custom-built or 3rd party themes, merchants are able to style their stores individually</template>
   </SwagCard>
 
-  <SwagCard link="/storefronts/">
+  <SwagCard page="/storefronts/">
     <template #title>Custom Storefronts</template>
     <template #description>Build custom storefronts from using our Store API and SDKs or start with reference implementations using technologies like Vue.js or React.</template>
   </SwagCard>
 
-  <SwagCard link="/integrations/">
+  <SwagCard page="/integrations/">
     <template #title>Integrations</template>
     <template #description> Connect 3rd party systems with Shopware using our API to transfer products, orders or other types of data</template>
   </SwagCard>

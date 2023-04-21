@@ -49,9 +49,6 @@ h1 {
 </style>
 
 <script setup lang="ts">
-import SwagLandingCard from "./SwagLandingCardList.vue";
-import SwagLandingCardList from "./SwagLandingCardList.vue";
-
 const props = defineProps({
   title: {
     type: String,

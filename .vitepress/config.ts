@@ -204,6 +204,24 @@ export default defineConfigWithTheme<ThemeConfig>({
           }
         ]
       },
+      colorCoding: [
+        {
+          link: '/docs/guides/plugins/apps/',
+          color: 'from-blue-500 to-blue-700',
+        },
+        {
+          link: '/docs/concepts/extensions/apps-concept.html',
+          color: 'from-blue-500 to-blue-700',
+        },
+        {
+          link: '/docs/guides/plugins/plugins/',
+          color: 'from-indigo-500 to-indigo-700',
+        },
+        {
+          link: '/docs/concepts/extensions/plugins-concept.html',
+          color: 'from-indigo-500 to-indigo-700',
+        },
+      ]
     }
   },
 
