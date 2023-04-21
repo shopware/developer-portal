@@ -1,9 +1,3 @@
-<script setup>
-import SwagLanding from "../../components/SwagLanding.vue";
-import SwagLandingCard from "../../components/SwagLandingCard.vue";
-import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
-</script>
-
 <SwagLanding>
     <template #title>Administration</template>
     <template #description>
@@ -66,7 +60,7 @@ import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>
-    <h1>Change the look</h1>
-        <p>Shopware provides the capability to <a href="/docs/guides/plugins/apps/administration/add-custom-modules#admin-design-compatibility">modify the appearance</a> of the administration panel, allowing you to incorporate design customization and enhance the look and feel to improve user experience.</a></p>
+        <h1>Change the look</h1>
+        <p>Shopware provides the capability to <a href="/docs/guides/plugins/apps/administration/add-custom-modules#admin-design-compatibility">modify the appearance</a> of the administration panel, allowing you to incorporate design customization and enhance the look and feel to improve user experience.</p>
     </template>
 </SwagLanding>

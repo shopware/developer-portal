@@ -1,9 +1,3 @@
-<script setup>
-import SwagLanding from "../../components/SwagLanding.vue";
-import SwagLandingCard from "../../components/SwagLandingCard.vue";
-import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
-</script>
-
 <SwagLanding>
     <template #title>Workflow</template>
     <template #description>
