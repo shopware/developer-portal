@@ -2,7 +2,6 @@
 import SwagLanding from "../../components/SwagLanding.vue";
 import SwagLandingCard from "../../components/SwagLandingCard.vue";
 import SwagLandingCardList from "../../components/SwagLandingCardList.vue";
-import * as HeroIcons from "@heroicons/vue/24/solid";
 </script>
 
 <SwagLanding>
