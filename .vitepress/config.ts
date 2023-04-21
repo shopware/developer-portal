@@ -244,7 +244,16 @@ export default defineConfigWithTheme<ThemeConfig>({
     /**
      * Copy additional assets not present in the assets or public dir.
      */
-    await copyAdditionalAssets();
+    await copyAdditionalAssets([
+      {
+        src: '../node_modules/@shopware-ag/meteor-icon-kit/icons/regular',
+        dst: 'icons/regular',
+      },
+      {
+        src: '../node_modules/@shopware-ag/meteor-icon-kit/icons/solid',
+        dst: 'icons/solid',
+      }
+    ]);
 
     /**
      * Copy redirects.
