@@ -5,7 +5,7 @@
         <h1>Capabilities</h1>
     </template>
     <template #image>
-        <img src="../../public/landing/apps/prod_catalog.png"/>
+        <img src="../../public/landing/apps/content.jpg"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>

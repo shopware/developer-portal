@@ -13,7 +13,7 @@ import wallet from '@shopware-ag/meteor-icon-kit/icons/regular/wallet.svg';
         <h1>Capabilities</h1>
     </template>
     <template #image>
-        <img src="/landing/apps/admin.png"/>
+        <img src="/landing/apps/admin.jpg"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>

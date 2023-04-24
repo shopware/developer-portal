@@ -5,7 +5,7 @@
         <h1>Capabilities</h1>
     </template>
     <template #image>
-        <img src="/landing/apps/workflow.png"/>
+        <img src="/landing/apps/workflow.jpg"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>

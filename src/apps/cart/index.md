@@ -11,7 +11,7 @@ swag:
         <h1>Capabilities</h1>
     </template>
     <template #image>
-        <img src="../../public/landing/apps/cartstore.png"/>
+        <img src="../../public/landing/apps/cart.jpg"/>
     </template>
     <template #exposed>
         <SwagLandingCardList>
