@@ -5,6 +5,8 @@ page: true
 footer: false
 editLink: false
 stackOverflowLink: false
+prev: false
+next: false
 ---
 
 <div class="unstyled w-full md:max-w-1376px 2xl:px-0 mx-auto">
@@ -38,7 +40,7 @@ stackOverflowLink: false
 
 <!-- import {VTIconSlack, VTIconTwitter, VTIconGitHub, VTIconStackoverflow} from 'vitepress-shopware-docs'; -->
 
-<h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
+<!--<h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
 
@@ -57,7 +59,7 @@ stackOverflowLink: false
     <template #description>Set up Shopware on your local machine or use a developer sandbox from the cloud.</template>
   </SwagCard>
 
-</div>
+</div>-->
 
 <h2 class="text-4xl tracking-wide mb-10 accent isolated">Start building</h2>
 
@@ -73,8 +75,8 @@ stackOverflowLink: false
     <template #description>Using custom-built or 3rd party themes, merchants are able to style their stores individually</template>
   </SwagCard>
 
-  <SwagCard page="/storefronts/">
-    <template #title>Custom Storefronts</template>
+  <SwagCard page="https://frontends.shopware.com/">
+    <template #title>Frontends</template>
     <template #description>Build custom storefronts from using our Store API and SDKs or start with reference implementations using technologies like Vue.js or React.</template>
   </SwagCard>
 
@@ -86,7 +88,7 @@ stackOverflowLink: false
 </div>
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+<!--<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
     <div>
         <h2 class="text-4xl tracking-wide mb-10 accent isolated">Looking for help</h2>
         <div class="flex">
@@ -112,6 +114,6 @@ stackOverflowLink: false
             <li><a href="#">Share feedback on Slack</a></li>
         </ul>
     </div>
-</div>
+</div>-->
 
 </div>
