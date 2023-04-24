@@ -1,11 +1,3 @@
-<!--<script setup>
-import wallet from '@shopware-ag/meteor-icon-kit/icons/regular/wallet.svg';
-</script>
-
-{{ wallet }}
-
-<img :src="wallet" />-->
-
 <SwagLanding>
     <template #title>Administration</template>
     <template #description>
