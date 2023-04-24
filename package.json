@@ -28,8 +28,8 @@
   "dependencies": {
     "@shopware-ag/meteor-icon-kit": "^5.1.0",
     "terser": "^5.16.6",
-    "vitepress": "1.0.0-alpha.73",
-    "vitepress-shopware-docs": "1.0.0-alpha.9",
+    "vitepress": "1.0.0-alpha.74",
+    "vitepress-shopware-docs": "1.0.0-alpha.10",
     "vue": "^3.2.47"
   },
   "devDependencies": {
