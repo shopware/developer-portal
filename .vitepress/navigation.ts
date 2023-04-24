@@ -18,7 +18,7 @@ const navigation = buildSidebarNav('./src/', [
         repo: 'shopware/frontends',
     },
     {
-        link: '/integrations/',
+        link: '/docs/guides/integrations-api/',
         text: 'Integrations',
     },
     {
