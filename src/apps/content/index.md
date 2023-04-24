@@ -13,27 +13,27 @@
                 Unlock the Power of Your Content with Our CMS Features
             </template>
             <template #cards>
-                <SwagLandingCard link="/docs/guides/plugins/apps/custom-data">
+                <SwagLandingCard link="/docs/guides/plugins/apps/custom-data" icon="shopping-cart" icon-type="solid">
                     <template #title>Redefine shopping experiences</template>
                     <template #sub>Unique shopping - Create distinct experiences for your customers.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview">
+                <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview" icon="window" icon-type="solid">
                     <template #title>Customized layout styling</template>
                     <template #sub>Elevate design - Extend blocks and sections to style home, landing, product detail pages etc</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots">
+                <SwagLandingCard link="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots" icon="window-eye" icon-type="solid">
                     <template #title>Static and Dynamic CMS website</template>
                     <template #sub>Versatile media - Create multiple frontend experiences for varied use cases.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/concepts/commerce/content/shopping-experiences-cms#hydration-of-dynamic-content">
+                <SwagLandingCard link="/docs/concepts/commerce/content/shopping-experiences-cms#hydration-of-dynamic-content" icon="window-terminal" icon-type="solid">
                     <template #title>Apply desired CMS layout</template>
                     <template #sub>Manage CMS - Assign layouts to products and categories with ease.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/custom-data/custom-fields">
+                <SwagLandingCard link="/docs/guides/plugins/apps/custom-data/custom-fields" icon="plus-square" icon-type="solid">
                     <template #title>Custom field</template>
                     <template #sub>User-friendly layouts - Add custom entity designs within our CMS.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts#translation">
+                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts#translation" icon="language" icon-type="solid">
                     <template #title>Translations</template>
                     <template #sub>Global pages - Create multilingual landing pages with country-specific translations.</template>
                 </SwagLandingCard>
