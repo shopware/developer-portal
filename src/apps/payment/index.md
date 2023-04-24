@@ -13,23 +13,23 @@
                Efficient and reliable payments for your store with streamlined processes
             </template>
             <template #cards>
-                <SwagLandingCard link="/docs/guides/plugins/apps/payment#synchronous-payments">
+                <SwagLandingCard link="/docs/guides/plugins/apps/payment#synchronous-payments" icon="double-chevron-right-s" icon-type="solid">
                     <template #title>Synchronous payment</template>
                     <template #sub>Smooth transactions - COD and other payment options with synchronous processing.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/payment#asynchronous-payments">
+                <SwagLandingCard link="/docs/guides/plugins/apps/payment#asynchronous-payments" icon="double-chevron-right-s" icon-type="solid">
                     <template #title>Asynchronous payment</template>
                     <template #sub>Seamless integration - Integrate third-party PSP for asynchronous payment with ease.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/payment#prepared-payments">
+                <SwagLandingCard link="/docs/guides/plugins/apps/payment#prepared-payments" icon="double-chevron-right-s" icon-type="solid">
                     <template #title>Prepared payment</template>
                     <template #sub>Securely validate - Process credit/debit card payments with Prepared Payments.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/payment#refund">
+                <SwagLandingCard link="/docs/guides/plugins/apps/payment#refund" icon="double-chevron-right-s" icon-type="solid">
                     <template #title>Refund</template>
                     <template #sub>Quick returns - Automatic refund processing for returned items is more easier</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/payment#validation">
+                <SwagLandingCard link="/docs/guides/plugins/apps/payment#validation" icon="checkmark" icon-type="solid">
                     <template #title>Payment validations</template>
                     <template #sub>Validation check - Ensure correct signature and response for payment requests.</template>
                 </SwagLandingCard>
