@@ -19,39 +19,39 @@ swag:
                 Get Ready To Elevate Your Online Store with Shopware's Feature-Rich Cart Functionalities
             </template>
             <template #cards>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart" icon="shopping-cart" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart" icon="shopping-cart" icon-type="solid">
                     <template #title>Calculate cart</template>
                     <template #sub>Auto-calculate - Total cost update with new products and discounts.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items" icon="content" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items" icon="content" icon-type="solid">
                     <template #title>Modify line items</template>
                     <template #sub>Customize selection - add or remove products items with ease.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items" icon="discount" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items" icon="discount" icon-type="solid">
                     <template #title>Calculate discounts</template>
                     <template #sub>Flexible discount options - Absolute or relative calculations.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#price-definitions" icon="money-bill" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#price-definitions" icon="money-bill" icon-type="solid">
                     <template #title>Define prices</template>
                     <template #sub>Tailor prices to your needs - Set net, gross, currency and more.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-custom-data-to-line-items" icon="database" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-custom-data-to-line-items" icon="database" icon-type="solid">
                     <template #title>Add custom data</template>
                     <template #sub>Personalize orders - Add custom data to line items.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart" icon="bug" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart" icon="bug" icon-type="solid">
                     <template #title>Display errors</template>
                     <template #sub>Raise errors - Avoid accidental cart checkout to ensure efficiency.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart" icon="exclamation-triangle" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart" icon="exclamation-triangle" icon-type="solid">
                     <template #title>Generate notifications</template>
                     <template #sub>Enhance user experience - Notify with warnings and notices.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts" icon="crosshair-block" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts" icon="crosshair-block" icon-type="solid">
                     <template #title>Rule-based scripts</template>
                     <template #sub>Maximize control - Rule builder for ultimate cart manipulation.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts" icon="circle" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts" icon="circle" icon-type="solid">
                     <template #title>Cart state</template>
                     <template #sub>Stay informed - Easily check if your cart is empty or loaded.</template>
                 </SwagLandingCard>

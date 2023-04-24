@@ -13,11 +13,11 @@
                 Try our template extensions and elevate your customer experience:
             </template>
             <template #cards>
-                <SwagLandingCard link="/docs/guides/plugins/plugins/storefront/customize-templates" icon="dashboard" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/plugins/storefront/customize-templates" icon="dashboard" icon-type="solid">
                     <template #title>Templates</template>
                     <template #sub>Custom design templates - Modify the whole appearance of your store.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching" icon="view-grid" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching" icon="view-grid" icon-type="solid">
                     <template #title>Themes</template>
                     <template #sub>Custom Styling - Match your brand and store themes.</template>
                 </SwagLandingCard>
