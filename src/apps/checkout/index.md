@@ -5,7 +5,7 @@
         <h1>Capabilities</h1>
     </template>
     <template #image>
-        <img src="../../public/landing/apps/checkout.png"/>
+        <img src="../../public/landing/apps/checkout.jpg"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>
@@ -13,27 +13,27 @@
                 Want to enhance product experience or streamline your checkout process? Our features has got you covered!
             </template>
             <template #cards>
-                <SwagLandingCard link="/docs/guides/plugins/apps/tax-provider#tax-provider-endpoint">
+                <SwagLandingCard page="/docs/guides/plugins/apps/tax-provider#tax-provider-endpoint" icon="money-bill" icon-type="solid">
                     <template #title>Tax provider</template>
                     <template #sub>Hassle-free tax calculations - Based on customer location, cart and country.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation#split-line-items">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#split-line-items" icon="align-justify" icon-type="solid">
                     <template #title>Split cart items</template>
                     <template #sub>Customize orders - Split line-items to desired quantity.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/custom-data">
+                <SwagLandingCard page="/docs/guides/plugins/apps/custom-data" icon="filter" icon-type="solid">
                     <template #title>Filter checkout options </template>
                     <template #sub>Streamline checkout - Filter available payment and shipping methods.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="crosshair-block" icon-type="solid">
                     <template #title>Rule based scripts</template>
                     <template #sub>Maximize control - Rule builder for ultimate checkout manipulation</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="exclamation-triangle" icon-type="solid">
                     <template #title>Errors and notifications</template>
                     <template #sub>Enhanced checkout - Errors, warnings, and notices keep you informed.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="plus-square" icon-type="solid">
                     <template #title>Add custom prices</template>
                     <template #sub>Adjust pricing on the fly - Change line item costs dynamically.</template>
                 </SwagLandingCard>

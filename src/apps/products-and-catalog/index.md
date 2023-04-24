@@ -5,7 +5,7 @@
         <h1>Capabilities</h1>
     </template>
     <template #image>
-        <img src="../../public/landing/apps/prod_catalog.png"/>
+        <img src="../../public/landing/apps/content.jpg"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>
@@ -13,23 +13,23 @@
                 With Shopware, you can assure that your products to be presented in the most effective and attractive way possible
             </template>
             <template #cards>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/data-loading">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/data-loading" icon="storefront" icon-type="solid">
                     <template #title>Store details</template>
                     <template #sub>Enrich store - Populate store's detail page as required</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/data-loading#search-criteria">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/data-loading#search-criteria" icon="search" icon-type="solid">
                     <template #title>Search</template>
                     <template #sub>Find what you need - Customizable search criteria for easy search</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="balance-scale" icon-type="solid">
                     <template #title>Stock availability</template>
                     <template #sub>Never miss a sale - Real-time stock availability feature.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/cart-manipulation">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="bulk-edit" icon-type="solid">
                     <template #title>New products and categories</template>
                     <template #sub>Expand your store - Define new products and categories</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching" icon="cog" icon-type="solid">
                     <template #title>Cache configuration</template>
                     <template #sub>Cache configurations - Improve the end-user experience</template>
                 </SwagLandingCard>

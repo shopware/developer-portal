@@ -5,7 +5,7 @@
         <h1>Capabilities</h1>
     </template>
     <template #image>
-        <img src="/landing/apps/storefront.png"/>
+        <img src="/landing/apps/storefront.jpg"/>
     </template>
     <template #exposed2>
         <SwagLandingCardList>
@@ -13,11 +13,11 @@
                 Try our template extensions and elevate your customer experience:
             </template>
             <template #cards>
-                <SwagLandingCard link="/docs/guides/plugins/plugins/storefront/customize-templates">
+                <SwagLandingCard page="/docs/guides/plugins/plugins/storefront/customize-templates" icon="dashboard" icon-type="solid">
                     <template #title>Templates</template>
                     <template #sub>Custom design templates - Modify the whole appearance of your store.</template>
                 </SwagLandingCard>
-                <SwagLandingCard link="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching" icon="view-grid" icon-type="solid">
                     <template #title>Themes</template>
                     <template #sub>Custom Styling - Match your brand and store themes.</template>
                 </SwagLandingCard>
