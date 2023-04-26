@@ -2,6 +2,8 @@
 items:
   - text: Getting started
     link: /apps/
+  - text: Capabilities
+    link: /apps/capabilities
   - text: Areas
     items:
       - text: Cart
