@@ -2,13 +2,13 @@
 editLink: false
 swag:
   related: false
+aside: false
 ---
 
 <SwagLanding>
     <template #title>Cart</template>
     <template #description>
-        <p align='justify'>A well-designed cart can significantly impact customer's shopping experience. Shopware's cart functionality handles all cart operations with ease and efficiency while offering customers a smooth and hassle-free shopping journey. You have the flexibility to customize pricing calculations, discounts, cart line items, and even implement custom cart operations to meet your unique business needs.</p>
-        <h1>Capabilities</h1>
+        A well-designed cart can significantly impact customer's shopping experience. Shopware's cart functionality handles all cart operations with ease and efficiency while offering customers a smooth and hassle-free shopping journey. You have the flexibility to customize pricing calculations, discounts, cart line items, and even implement custom cart operations to meet your unique business needs.
     </template>
     <template #image>
         <img src="../../public/landing/apps/cart.jpg"/>
@@ -16,6 +16,9 @@ swag:
     <template #exposed>
         <SwagLandingCardList>
             <template #title>
+                Capabilities
+            </template>
+            <template #description>
                 Get Ready To Elevate Your Online Store with Shopware's Feature-Rich Cart Functionalities
             </template>
             <template #cards>

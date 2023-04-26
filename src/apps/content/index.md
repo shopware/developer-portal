@@ -1,8 +1,14 @@
+---
+editLink: false
+swag:
+  related: false
+aside: false
+---
+
 <SwagLanding>
     <template #title>Content</template>
     <template #description>
-        <p>An e-commerce website is the face of your business, enriched with content that showcases your products and services in an appealing way to attract potential customers. Gone are those days when you would need to write all the code from scratch for creating or changing content on your ecommerce site. Shopware provides a full-featured ecommerce Content Management System (CMS) to easily create, manage, and modify content for your online store.</p>
-        <h1>Capabilities</h1>
+        An e-commerce website is the face of your business, enriched with content that showcases your products and services in an appealing way to attract potential customers. Gone are those days when you would need to write all the code from scratch for creating or changing content on your ecommerce site. Shopware provides a full-featured ecommerce Content Management System (CMS) to easily create, manage, and modify content for your online store.
     </template>
     <template #image>
         <img src="../../public/landing/apps/cms.jpg"/>
@@ -10,6 +16,9 @@
     <template #exposed2>
         <SwagLandingCardList>
             <template #title>
+                Capabilities
+            </template>
+            <template #description>
                 Unlock the Power of Your Content with Our CMS Features
             </template>
             <template #cards>

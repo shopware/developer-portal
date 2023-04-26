@@ -216,11 +216,11 @@ export default defineConfigWithTheme<ThemeConfig>({
         },
         {
           link: '/docs/guides/plugins/plugins/',
-          color: 'from-indigo-500 to-indigo-700',
+          color: 'from-purple-500 to-purple-700',
         },
         {
           link: '/docs/concepts/extensions/plugins-concept.html',
-          color: 'from-indigo-500 to-indigo-700',
+          color: 'from-purple-500 to-purple-700',
         },
       ]
     }

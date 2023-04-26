@@ -1,8 +1,14 @@
+---
+editLink: false
+swag:
+  related: false
+aside: false
+---
+
 <SwagLanding>
     <template #title>Payment</template>
     <template #description>
-        <p>Shopware 6 offers a robust <a href="/docs/concepts/commerce/checkout-concept/payments">payment system</a> managing all payment transactions between customers and merchants. The payment handlers integrate seamlessly into the point of sale, allowing customers to pay for their orders using one or multiple payment methods during the checkout process. It also ensures a seamless and hassle-free payment experience, resulting in increased customer satisfaction and a higher likelihood of completed transactions. </p>
-        <h1>Capabilities</h1>
+        Shopware 6 offers a robust <a href="/docs/concepts/commerce/checkout-concept/payments">payment system</a> managing all payment transactions between customers and merchants. The payment handlers integrate seamlessly into the point of sale, allowing customers to pay for their orders using one or multiple payment methods during the checkout process. It also ensures a seamless and hassle-free payment experience, resulting in increased customer satisfaction and a higher likelihood of completed transactions.
     </template>
     <template #image>
         <img src="../../public/landing/apps/payment.jpg" />
@@ -10,6 +16,9 @@
     <template #exposed2>
         <SwagLandingCardList>
             <template #title>
+                Capabilities
+            </template>
+            <template #description>
                Efficient and reliable payments for your store with streamlined processes
             </template>
             <template #cards>

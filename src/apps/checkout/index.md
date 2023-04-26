@@ -1,8 +1,14 @@
+---
+editLink: false
+swag:
+  related: false
+aside: false
+---
+
 <SwagLanding>
     <template #title>Checkout</template>
     <template #description>
-        <p>The <a href="/docs/concepts/commerce/checkout-concept">checkout</a> system is a crucial component of the Shopware platform that manages every aspect of the order process, from adding products products to the <a href="/docs/concepts/commerce/checkout-concept/cart">cart</a> to placing an <a href="/docs/concepts/commerce/checkout-concept/orders">order</a> and making a <a href="/docs/concepts/commerce/checkout-concept/payments">payment</a>. Shopware's checkout feature is designed to offer developers the flexibility they need to modify the core processes and create a seamless and flawless user experience.</p>
-        <h1>Capabilities</h1>
+        The <a href="/docs/concepts/commerce/checkout-concept">checkout</a> system is a crucial component of the Shopware platform that manages every aspect of the order process, from adding products products to the <a href="/docs/concepts/commerce/checkout-concept/cart">cart</a> to placing an <a href="/docs/concepts/commerce/checkout-concept/orders">order</a> and making a <a href="/docs/concepts/commerce/checkout-concept/payments">payment</a>. Shopware's checkout feature is designed to offer developers the flexibility they need to modify the core processes and create a seamless and flawless user experience.
     </template>
     <template #image>
         <img src="../../public/landing/apps/checkout.jpg"/>
@@ -10,6 +16,9 @@
     <template #exposed2>
         <SwagLandingCardList>
             <template #title>
+                Capabilities
+            </template>
+            <template #description>
                 Want to enhance product experience or streamline your checkout process? Our features has got you covered!
             </template>
             <template #cards>

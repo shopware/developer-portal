@@ -1,8 +1,14 @@
+---
+editLink: false
+swag:
+  related: false
+aside: false
+---
+
 <SwagLanding>
     <template #title>Products and Catalog</template>
     <template #description>
-        <p>A product catalog is a powerful navigator of products. The organized structure helps customers make informed purchase decisions. Shopware's product catalog comes packed with a comprehensive range of technical features that are designed to meet the unique needs of businesses. From customizable search filters to detailed product descriptions, our product catalog is built to provide an exceptional user experience that drives conversions and boosts sales.</p>
-        <h1>Capabilities</h1>
+        A product catalog is a powerful navigator of products. The organized structure helps customers make informed purchase decisions. Shopware's product catalog comes packed with a comprehensive range of technical features that are designed to meet the unique needs of businesses. From customizable search filters to detailed product descriptions, our product catalog is built to provide an exceptional user experience that drives conversions and boosts sales.
     </template>
     <template #image>
         <img src="../../public/landing/apps/content.jpg"/>
@@ -10,6 +16,9 @@
     <template #exposed2>
         <SwagLandingCardList>
             <template #title>
+                Capabilities
+            </template>
+            <template #description>
                 With Shopware, you can assure that your products to be presented in the most effective and attractive way possible
             </template>
             <template #cards>

@@ -1,8 +1,14 @@
+---
+editLink: false
+swag:
+  related: false
+aside: false
+---
+
 <SwagLanding>
     <template #title>Administration</template>
     <template #description>
-        <p>Shopware's administration manages all aspects of your store. It outlines all internal processes like product inventory tracking, order processing, customer record management, etc. The Administration component is tightly coupled with Shopware's core, which helps to manage administrative activities.</p>
-        <h1>Capabilities</h1>
+        Shopware's administration manages all aspects of your store. It outlines all internal processes like product inventory tracking, order processing, customer record management, etc. The Administration component is tightly coupled with Shopware's core, which helps to manage administrative activities.
     </template>
     <template #image>
         <img src="/landing/apps/admin.jpg"/>
@@ -10,6 +16,9 @@
     <template #exposed2>
         <SwagLandingCardList>
             <template #title>
+                Capabilities
+            </template>
+            <template #description>
                 Explore the possibilities you can use to extens your Administration component
             </template>
             <template #cards>
