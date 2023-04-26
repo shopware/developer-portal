@@ -54,7 +54,7 @@ aside: false
                 The amount of topics to start with can be overwhelming. For that reason we have prepared a handful of step-by-step tutorials to follow along that make you familiar with some of our concepts:
             </template>
             <template #cards>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html" image="http://localhost:5173/docs/.gitbook/assets/extension-api-notification.png">
+                <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Admin Extension</template>
                     <template #sub>Create a simple module that triggers a notification in the admin panel.</template>
                 </SwagLandingCard>
@@ -76,6 +76,10 @@ aside: false
                 If you prefer to dig into a specific topic directly, choose from one of the product areas. You can also find them on the left all the time.
             </template>
             <template #cards>
+                <SwagLandingCard page="./cart/">
+                    <template #title>Cart</template>
+                    <template #sub>Modify the cart, add custom data or calculate taxes</template>
+                </SwagLandingCard>
                 <SwagLandingCard page="./checkout/">
                     <template #title>Checkout</template>
                     <template #sub>Apply discounts, price calculations or control shipping method availabilities</template>
@@ -88,21 +92,25 @@ aside: false
                     <template #title>Storefront</template>
                     <template #sub>Build extensions or themes for the customer storefront using templates or custom styles</template>
                 </SwagLandingCard>
+                <SwagLandingCard page="./administration/">
+                    <template #title>Administration</template>
+                    <template #sub>Explore the possibilities of custom admin modules or extensions</template>
+                </SwagLandingCard>
+                <SwagLandingCard page="./content/">
+                    <template #title>Content</template>
+                    <template #sub>Build custom content elements or add custom fields to existing entities</template>
+                </SwagLandingCard>
                 <SwagLandingCard page="./flow-builder/">
                     <template #title>Flow Builder</template>
                     <template #sub>Add custom actions that for third party integrations or automate processes</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="./custom-data/">
-                    <template #title>Custom Data</template>
-                    <template #sub>Store custom data, entites or relationships in your Shopware store</template>
+                <SwagLandingCard page="./products-and-catalog/">
+                    <template #title>Products & Catalog</template>
+                    <template #sub>Extend the product definition or add custom fields to the product</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="./configuration/">
-                    <template #title>Configuration</template>
-                    <template #sub>Add configuration options to allow users to control your App's behavior</template>
-                </SwagLandingCard>
-                <SwagLandingCard page="./administration/">
-                    <template #title>Administration</template>
-                    <template #sub>Explore the possibilities of custom admin modules or extensions</template>
+                <SwagLandingCard page="./workflow/">
+                    <template #title>Workflow</template>
+                    <template #sub>Build custom states and transitions for orders or add custom fields to existing entities</template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>
