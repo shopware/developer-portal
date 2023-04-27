@@ -1,4 +1,8 @@
 ---
+head:
+  - - meta
+    - property: 'og:image'
+      content: https://shopware-docs-og.vercel.app/api/og?title=Capabilities
 
 ---
 
