@@ -6,18 +6,23 @@ import {simpleSitemapAndIndex, SitemapItemLoose, EnumChangefreq} from "sitemap";
 
 const sourceRoot = 'src/';
 
-export const copyAdditionalAssets = async (customDirs = []) => {
-    const publicDirs: string[] = await new Promise((resolve, reject) => {
+interface AssetDir {
+    src: string;
+    dst: string;
+}
+
+export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = []) => {
+    const publicDirs: (string | AssetDir)[] = await new Promise((resolve, reject) => {
         console.log('Discovering docs.yml');
         glob("**/docs.yml", {}, (er, files) => {
-            const directories = files.reduce((reduced, file) => {
+            const directories: (string | AssetDir)[] = files.reduce((reduced, file) => {
                 const content = yaml.load(fs.readFileSync(file))
                 const filesToCopy = content?.['build-end']?.['copy-additional-assets'] ?? [];
                 const dirName = path.dirname(file);
 
                 return [
                     ...reduced,
-                    ...filesToCopy.map(fileToCopy => `${dirName.substring(sourceRoot.length)}/${fileToCopy}`)
+                    ...filesToCopy.map((fileToCopy: string) => `${dirName.substring(sourceRoot.length)}/${fileToCopy}`)
                 ];
             }, customDirs);
             resolve(directories)
@@ -41,7 +46,7 @@ export const copyAdditionalAssets = async (customDirs = []) => {
         }
 
         // copy files
-        fs.readdirSync(dirToCopy).forEach(file => {
+        fs.readdirSync(dirToCopy).forEach((file: string) => {
             console.log(`Copying ${dirToCopy}/${file} to ${distDir}/${file}`);
             fs.writeFileSync(`${distDir}/${file}`, fs.readFileSync(`${dirToCopy}/${file}`));
         });

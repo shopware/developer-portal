@@ -10,7 +10,14 @@ import {copyAdditionalAssets, createSitemap, storeRedirects} from "./helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
 import navigation from "./navigation";
 
-const embeds = [
+import {
+  SwagEmbedsConfig,
+  SwagSimilarArticlesConfig,
+  SwagVersionSwitcherConfig,
+  SwagColorCodingConfig
+} from "../../developer-documentation-vitepress/src/shopware/config";
+
+const embeds: SwagEmbedsConfig[] = [
   {
     repository: 'docs',
     points: {
@@ -157,45 +164,46 @@ export default defineConfigWithTheme<ThemeConfig>({
       apiKey: "711e1cadf66a3957aaf183a58aad12a7",
     },
 
-    // @ts-ignore
     swag: {
       // config for the "Edit on GitHub" link and Algolia Search facets (area, version)
       embeds,
 
       // knowledge index
-      similarArticlesHost: 'https://ai-ml.fly.dev',
-      similarArticlesFilter: {
-        'default': {
-          exclude: [
-            'docs/v6.4/',
-            'docs/v6.3/',
-          ],
+      similarArticles: {
+        host: 'https://ai-ml.fly.dev',
+        filter: {
+          'default': {
+            exclude: [
+              'docs/v6.4/',
+              'docs/v6.3/',
+            ],
+          },
+          '/docs/': {
+            exclude: [
+              'docs/v6.4/',
+              'docs/v6.3/',
+            ],
+          },
+          '/docs/v6.4/': {
+            exclude: [
+              'docs/',
+              'docs/v6.3/',
+            ],
+            include: [
+              'docs/v6.4/',
+            ]
+          },
+          '/docs/v6.3/': {
+            exclude: [
+              'docs/',
+              'docs/v6.4/',
+            ],
+            include: [
+              'docs/v6.3/',
+            ]
+          }
         },
-        '/docs/': {
-          exclude: [
-            'docs/v6.4/',
-            'docs/v6.3/',
-          ],
-        },
-        '/docs/v6.4/': {
-          exclude: [
-            'docs/',
-            'docs/v6.3/',
-          ],
-          include: [
-            'docs/v6.4/',
-          ]
-        },
-        '/docs/v6.3/': {
-          exclude: [
-            'docs/',
-            'docs/v6.4/',
-          ],
-          include: [
-            'docs/v6.3/',
-          ]
-        }
-      },
+      } as SwagSimilarArticlesConfig,
       versionSwitcher: {
         paths: [
           {
@@ -204,7 +212,7 @@ export default defineConfigWithTheme<ThemeConfig>({
             'docs/v6.3': 'v6.3',
           }
         ]
-      },
+      } as SwagVersionSwitcherConfig,
       colorCoding: [
         {
           link: '/docs/guides/plugins/apps/',
@@ -222,7 +230,7 @@ export default defineConfigWithTheme<ThemeConfig>({
           link: '/docs/concepts/extensions/plugins-concept.html',
           color: 'from-purple-500 to-purple-700',
         },
-      ]
+      ] as SwagColorCodingConfig[]
     }
   },
 

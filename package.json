@@ -28,8 +28,8 @@
   "dependencies": {
     "@shopware-ag/meteor-icon-kit": "^5.1.0",
     "terser": "^5.16.6",
-    "vitepress": "1.0.0-alpha.74",
-    "vitepress-shopware-docs": "1.0.0-alpha.12",
+    "vitepress": "1.0.0-alpha.75",
+    "vitepress-shopware-docs": "1.0.0-alpha.13",
     "vue": "^3.2.47"
   },
   "devDependencies": {
@@ -52,6 +52,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/coverage-c8": "^0.28.5",
     "@vue/test-utils": "^2.3.1",
+    "@vueuse/shared": "^10.1.0",
     "chromatic": "^6.17.2",
     "execa": "^6.1.0",
     "fuse.js": "^6.6.2",
