@@ -7,8 +7,8 @@ const navigation = buildSidebarNav('./src/', [
         text: 'Apps',
     },
     {
-        //link: '/themes/',
-        link: '/docs/guides/plugins/themes/',
+        link: '/themes/',
+        //link: '/docs/guides/plugins/themes/',
         text: 'Themes',
     },
     {
