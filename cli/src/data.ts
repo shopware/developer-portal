@@ -78,6 +78,5 @@ export const repositories = [
         dst: 'resources/meteor-component-library',
         branch: env.BRANCH_METEOR_COMPONENT_LIBRARY || 'DX-231' || 'main',
         org: env.ORG_METEOR_COMPONENT_LIBRARY || 'bojanrajh',
-        skip: true,
     }
 ];

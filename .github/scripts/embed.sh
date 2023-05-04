@@ -85,10 +85,10 @@ fi
 # --dst resources/meteor-icon-kit \
 # --org ${ORG_METEOR_ICON_KIT:-shopware}
 
-#./docs-cli clone \
-# --ci \
-# --repository shopware/meteor-component-library \
-# --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
-# --src docs \
-# --dst resources/meteor-component-library \
-# --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
+./docs-cli clone \
+ --ci \
+ --repository shopware/meteor-component-library \
+ --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
+ --src docs \
+ --dst resources/meteor-component-library \
+ --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
