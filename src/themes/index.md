@@ -38,12 +38,17 @@ head:
 <SwagLanding image="/landing/themes.png">
     <template #title>Craft beautiful themes that inspire</template>
     <template #description>
-        Themes allow merchants transport their brand and identity. They are the way they present their products and services. Explore all the possibilities and tools at hand.
+        <p>Themes allow merchants transport their brand and identity. They are the way they present their products and services. Create a theme and sell it on the store, so merchants can use it in their stores.</p>
+        <p>Shopware's theme system is based on [Twig.js](#) and an inheritance mechanism, so you can write individual themes without breaking Shopware's core functionalities.</p>
     </template>
     <template #ctas>
         <PageRef page="/docs/guides/plugins/themes/theme-base-guide.html" title="Start building a theme" />
     </template>
     <template #exposed>
+        <template #title>Starter guides</template>
+        <template #description>
+            The amount of topics to start with can be overwhelming. For that reason we have prepared a handful of step-by-step tutorials to follow along that make you familiar with some of our concepts:
+        </template>
         <SwagLandingCardList>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/themes/theme-configuration">
