@@ -45,11 +45,11 @@ head:
         <PageRef page="/docs/guides/plugins/themes/theme-base-guide.html" title="Start building a theme" />
     </template>
     <template #exposed>
-        <template #title>Starter guides</template>
-        <template #description>
-            The amount of topics to start with can be overwhelming. For that reason we have prepared a handful of step-by-step tutorials to follow along that make you familiar with some of our concepts:
-        </template>
         <SwagLandingCardList>
+            <template #title>Starter guides</template>
+            <template #description>
+                The amount of topics to start with can be overwhelming. For that reason we have prepared a handful of step-by-step tutorials to follow along that make you familiar with some of our concepts:
+            </template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/themes/theme-configuration">
                     <template #title>Theme configuration</template>
