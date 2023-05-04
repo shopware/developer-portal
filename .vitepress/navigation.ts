@@ -54,8 +54,7 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: "Meteor Icon Kit",
-                        //link: "/resources/meteor-icon-kit/",
-                        link: 'https://shopware.github.io/meteor-icon-kit/',
+                        link: "/resources/meteor-icon-kit/",
                         repo: 'shopware/meteor-icon-kit',
                     },
                     {
@@ -88,6 +87,7 @@ const navigation = buildSidebarNav('./src/', [
     //'/resources/admin-extension-sdk/',
     //'/resources/meteor-component-library/',
     '/', // always have root sidebar
+    '/resources/meteor-icon-kit/',
 ]);
 
 export default navigation;

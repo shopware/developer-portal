@@ -77,13 +77,13 @@ fi
 # --dst resources/admin-extension-sdk \
 # --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
-#./docs-cli clone \
-# --ci \
-# --repository shopware/meteor-icon-kit \
-# --branch ${BRANCH_METEOR_ICON_KIT:-main} \
-# --src docs \
-# --dst resources/meteor-icon-kit \
-# --org ${ORG_METEOR_ICON_KIT:-shopware}
+./docs-cli clone \
+ --ci \
+ --repository shopware/meteor-icon-kit \
+ --branch ${BRANCH_METEOR_ICON_KIT:-main} \
+ --src docs \
+ --dst resources/meteor-icon-kit \
+ --org ${ORG_METEOR_ICON_KIT:-shopware}
 
 #./docs-cli clone \
 # --ci \

@@ -60,8 +60,8 @@ describe('cli embed', async () => {
         //expect(result.stdout).toContain('Embedding shopware/admin-extension-sdk');
         //expect(result.stdout).toContain('Processed shopware/admin-extension-sdk');
 
-        //expect(result.stdout).toContain('Embedding shopware/meteor-icon-kit');
-        //expect(result.stdout).toContain('Processed shopware/meteor-icon-kit');
+        expect(result.stdout).toContain('Embedding shopware/meteor-icon-kit');
+        expect(result.stdout).toContain('Processed shopware/meteor-icon-kit');
 
         //expect(result.stdout).toContain('Embedding shopware/meteor-component-library');
         //expect(result.stdout).toContain('Processed shopware/meteor-component-library');
