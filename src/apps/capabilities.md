@@ -6,13 +6,11 @@ head:
 
 ---
 
-# Capabilities
+# App Capabilities
 
-Using apps, developers can write custom extensions for Shopware 6 that can be installed in any Shopware store from cloud to self-hosted.
+You can use apps to create custom extensions for Shopware 6 that are installable across all types of Shopware stores, from cloud-based to self-hosted. This enables merchants to enhance their Shopware store's functionality according to their unique needs.
 
 Apps bring various capabilities to Shopware that allow developers to create extensions with a wide range of use cases.
-
-## Overview
 
 | Capability | Description | Use cases |
 | :--- | :--- | :--- |

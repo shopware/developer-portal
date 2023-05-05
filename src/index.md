@@ -67,22 +67,22 @@ next: false
 
   <SwagCard page="/apps/">
     <template #title>Apps</template>
-    <template #description>Apps are an easy way to enhance the functionality of or add features to your store</template>
+    <template #description>Boost or expand your store's capabilities with the simplicity of apps, a must-have for developers seeking to elevate their digital marketplace.</template>
   </SwagCard>
 
   <SwagCard page="/themes/">
     <template #title>Themes</template>
-    <template #description>Using custom-built or 3rd party themes, merchants are able to style their stores individually</template>
+    <template #description>Style your store with unparalleled flexibility using custom-built or third-party themes, giving you a competitive advantage in this world of ecommerce.</template>
   </SwagCard>
 
   <SwagCard page="https://frontends.shopware.com/">
     <template #title>Frontends</template>
-    <template #description>Build custom storefronts from using our Store API and SDKs or start with reference implementations using technologies like Vue.js or React.</template>
+    <template #description>Build unique and captivating custom storefronts using Store APIs and SDKs, or start with reference implementations using technologies like Vue.js or React.</template>
   </SwagCard>
 
   <SwagCard page="/integrations/">
     <template #title>Integrations</template>
-    <template #description> Connect 3rd party systems with Shopware using our API to transfer products, orders or other types of data</template>
+    <template #description> Robust Shopware integrations with third-party systems using our powerful API enable the swift transfer of data like products, orders, and more. </template>
   </SwagCard>
 
 </div>
