@@ -33,6 +33,8 @@ head:
   - - meta
     - property: 'og:image'
       content: https://shopware-docs-og.vercel.app/api/og?title=Themes
+swag:
+  related: false
 ---
 
 <SwagLanding image="/landing/themes.png">
