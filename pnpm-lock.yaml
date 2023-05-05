@@ -98,6 +98,9 @@ importers:
       jest-image-snapshot:
         specifier: ^6.1.0
         version: 6.1.0(jest@29.5.0)
+      lorem-ipsum:
+        specifier: ^2.0.8
+        version: 2.0.8
       mermaid:
         specifier: 9.1.7
         version: 9.1.7
@@ -119,6 +122,9 @@ importers:
       sass:
         specifier: ^1.59.2
         version: 1.59.2
+      seedrandom:
+        specifier: ^3.0.5
+        version: 3.0.5
       shell-escape:
         specifier: ^0.2.0
         version: 0.2.0
@@ -9832,6 +9838,14 @@ packages:
     dependencies:
       js-tokens: 4.0.0
 
+  /lorem-ipsum@2.0.8:
+    resolution: {integrity: sha512-5RIwHuCb979RASgCJH0VKERn9cQo/+NcAi2BMe9ddj+gp7hujl6BI+qdOG4nVsLDpwWEJwTVYXNKP6BGgbcoGA==}
+    engines: {node: '>= 8.x', npm: '>= 5.x'}
+    hasBin: true
+    dependencies:
+      commander: 9.4.1
+    dev: true
+
   /loupe@2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
     dependencies:
@@ -12005,6 +12019,10 @@ packages:
       extend-shallow: 2.0.1
       kind-of: 6.0.3
     dev: false
+
+  /seedrandom@3.0.5:
+    resolution: {integrity: sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg==}
+    dev: true
 
   /semver@5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}

@@ -66,7 +66,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { useConfig } from "../node_modules/vitepress-shopware-docs/src/vitepress/composables/config.ts";
+import { useConfig } from "../../node_modules/vitepress-shopware-docs/src/shopware/composables/config.ts";
 
 const query = ref("");
 const similar = ref("");

@@ -1,11 +1,11 @@
 <template>
-    <div class="max-w-4xl w-full">
+    <div class="SwagQA max-w-4xl w-full">
         <div class="flex gap-5">
-            <input :disabled="pending" v-model="query" class="text-lg w-10/12 p-4 bg-slate-200 disabled:bg-slate-400 focus:outline-none rounded" type="text">
-            <button :disabled="pending" class="text-lg w-2/12 rounded bg-slate-100 disabled:bg-slate-400 text-slate-900" v-on:click="requestAnswer">Ask</button>
+            <input :disabled="pending" v-model="query" class="SwagQA_input text-lg w-10/12 p-4 focus:outline-none rounded" type="text">
+            <button :disabled="pending" class="SwagQA_button text-lg w-2/12 rounded" v-on:click="requestAnswer">Ask</button>
         </div>
         <div v-if="errorText" class="mt-5 bg-red-300 p-10 rounded leading-8 text-black">An error occured<br/>{{  errorText  }}</div>
-        <div class="mt-5 mb-5 bg-slate-300 p-10 rounded leading-8 text-lg text-slate-900"  v-if="response.answer && !pending" v-html="marked(response.answer)"></div>
+        <div class="SwagQA_answer mt-5 mb-5 p-10 rounded leading-8 text-lg"  v-if="response.answer && !pending" v-html="marked(response.answer)"></div>
         <PageRef :sub="''" page="/docs/guides/plugins/plugins/storefront/add-custom-styling" />
         <PageRef :sub="''" page="/docs/guides/plugins/themes/add-css-js-to-theme" />
         <PageRef :sub="''" page="/docs/guides/plugins/themes/theme-base-guide" />
@@ -51,8 +51,23 @@ let requestAnswer = function () {
     }
 </script>
 
-<style>
+<style scoped lang="scss">
 a {
     @apply text-slate-600 underline;
+}
+
+.SwagQA {
+    &_input {
+        @apply bg-slate-200 disabled:bg-slate-400;
+        @apply dark:bg-slate-800 dark:disabled:bg-slate-700;
+    }
+    &_button {
+        @apply bg-slate-100 disabled:bg-slate-400;
+        @apply dark:bg-slate-900 dark:disabled:bg-slate-600;
+    }
+    &_answer {
+        @apply bg-slate-300 text-slate-900;
+        @apply dark:bg-slate-700 dark:text-slate-100;
+    }
 }
 </style>
