@@ -29,7 +29,7 @@ export default {
             output.notice(`Cloning ${repository.name}`)
 
             const dir = repository.name.split('/').reverse()[0];
-            const cloneDir = `repos/${dir}`;
+            const cloneDir = `repos/${dir}-${repository.branch}`;
             const exists = fs.existsSync(cloneDir);
 
             if (exists && clean) {
