@@ -87,6 +87,15 @@ next: false
 
 </div>
 
+<h2 class="text-4xl tracking-wide mb-10 accent isolated">Looking for old documentation?</h2>
+
+<div>
+  <SwagCard page="/docs/">
+    <template #title>Documentation</template>
+    <template #description> Visit old documentation structure</template>
+  </SwagCard>
+</div>
+
 
 <!--<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
     <div>
