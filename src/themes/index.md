@@ -1,21 +1,40 @@
 ---
 items:
   - text: Themes
-    link: /themes/
-  - text: Concept
-    link: /themes/concept
-  - text: Quick start guide
-    link: /themes/quick-start-guide
-  - text: Guides
+    link: /themes/theme-base-guide
+  - text: Getting started
+    link: /themes/differences-plugins-and-apps-vs-themes
+  - text: Areas
     items:
+      - text: Build Theme
+        link: /docs/guides/plugins/themes/create-a-theme
       - text: Configuration
+        items:
+          - text: Theme configuration
+            link: /docs/guides/plugins/themes/theme-configuration    
+          - text: Inheritence
+            link: /docs/guides/plugins/themes/add-theme-inheritance
+          - text: Inheritence configuration
+            link: /docs/guides/plugins/themes/theme-inheritance-configuration
+      - text: Templates
         link: /docs/guides/plugins/themes/theme-configuration
       - text: Styling
-        link: /docs/guides/plugins/themes/add-theme-inheritance-without-resources
+        link: /docs/guides/plugins/themes/add-css-js-to-theme
+        items:
+          - text: CSS
+            link: /docs/guides/plugins/themes/add-css-js-to-theme
+          - text: Theme with bootstrap styling
+            link: /docs/guides/plugins/themes/add-theme-inheritance-without-resources
+          - text: Override bootstrap variables
+            link: /docs/guides/plugins/themes/override-bootstrap-variables-in-a-theme
+      - text: Javascript
+        link: /docs/guides/plugins/themes/add-css-js-to-theme
       - text: Assets
-        link: /docs/guides/plugins/themes/add-assets-to-theme
-      - text: Inheritance
-        link: /docs/guides/plugins/themes/theme-inheritance-configuration
+        items:
+          - text: Custom assets
+            link: /docs/guides/plugins/themes/add-assets-to-theme
+          - text: Icons
+            link: /docs/guides/plugins/themes/add-icons
   - text: Reference
     items:
       - text: Twig Functions

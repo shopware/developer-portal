@@ -82,7 +82,7 @@ next: false
 
   <SwagCard page="/integrations/">
     <template #title>Integrations</template>
-    <template #description> Robust Shopware integrations with third-party systems using our powerful API enable the swift transfer of data like products, orders, and more. </template>
+    <template #description>Integrate with third-party systems through Shopware's powerful APIs that enable swift transfer of products, orders, and other data. </template>
   </SwagCard>
 
 </div>
