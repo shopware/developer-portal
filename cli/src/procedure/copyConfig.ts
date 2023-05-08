@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import {output} from "../output";
 import {run} from "../helpers";
 
@@ -17,11 +18,12 @@ export const copyConfig = async (src: string, dst: string) => {
     ];
 
     for (const config of configs) {
-        if (!fs.existsSync(`${src}/${config.src}`) || !fs.lstatSync(`${src}/${config.src}`).isFile()) {
+        let finalSrc = path.join(src, config.src);
+        if (!fs.existsSync(finalSrc) || !fs.lstatSync(finalSrc).isFile()) {
             continue;
         }
 
         output.notice(config.message);
-        await run('cp', [`${src}/${config.src}`, `${dst}/${config.dst}`], {dir: src});
+        await run('cp', [finalSrc, `${dst}/${config.dst}`], {dir: src});
     }
 }
