@@ -134,7 +134,9 @@ export default {
         await strategy({src, dst});
 
         // copy additional config
-        await copyConfig(src, dst);
+        if (!symlink) {
+            await copyConfig(src, dst);
+        }
 
         output.success('Docs directory linked');
     }
