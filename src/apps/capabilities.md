@@ -10,7 +10,7 @@ head:
 
 You can use apps to create custom extensions for Shopware 6 that are installable across all types of Shopware stores, from cloud-based to self-hosted. This enables merchants to enhance their Shopware store's functionality according to their unique needs.
 
-Apps bring various capabilities to Shopware that allow developers to create extensions with a wide range of use cases.
+Apps bring various capabilities to Shopware allowing developers to create extensions with a wide range of use cases.
 
 | Capability | Description | Use cases |
 | :--- | :--- | :--- |

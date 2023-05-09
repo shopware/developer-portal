@@ -48,10 +48,10 @@ head:
 <SwagLanding image="/landing/apps.png">
     <template #title>Build the functionalities merchants need</template>
     <template #description>
-        Leverage Shopware's extension APIs to build unique extensions that boost merchants businesses. Use the powerful plugin system to build highly custom extensions or build apps using your platform of choice.
+        Leverage Shopware's extension APIs to build unique extensions that boost merchants' businesses. Use the powerful plugin system to build highly custom extensions or apps using the platform of your choice..
     </template>
     <template #ctas>
-        <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Build your first Shopware app" sub="Learn how to set up your development environment and start coding within a couple minutes." />
+        <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Build your first Shopware app" sub="Learn how to set up your development environment and start coding within a couple of minutes." />
     </template>
     <template #exposed>
         <SwagLandingCardList>
@@ -62,7 +62,7 @@ head:
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/apps/app-base-guide.html">
                     <template #title>App Base Guide</template>
-                    <template #sub>Learn how to add your own app to Shopware and configuring it.</template>
+                    <template #sub>Learn how to add your own app to Shopware and configure it.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/local-development.html">
                     <template #title>Local App development</template>
@@ -143,7 +143,7 @@ head:
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
                     <template  #title>Customize templates</template>
-                    <template #sub>Custom templates let you extend or modify the appearance of parts of your storefront.</template>
+                    <template #sub>Custom templates let you extend or modify the appearance of parts of your Storefront.</template>
                 </SwagLandingCard>
                 <!--<SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Admin Extensions</template>
@@ -151,7 +151,7 @@ head:
                 </SwagLandingCard>-->
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Shopware CLI</template>
-                    <template #sub>Your tool when it comes to app development, installation and deployments.</template>
+                    <template #sub>Your tool when it comes to app development, installation, and deployments.</template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>

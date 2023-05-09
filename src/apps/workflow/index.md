@@ -8,7 +8,7 @@ aside: false
 <SwagLanding>
     <template #title>Workflow</template>
     <template #description>
-        Workflow automates operations of your e-commerce business like checkout process, order transaction, email marketing, document generation, etc., which helps streamline operations, improve efficiency, and boost revenue. Overall, workflow automation is a powerful tool for your businesses.
+        Workflow automates operations of your e-commerce business like checkout process, order transaction, email marketing, document generation, etc., which helps streamline operations, improve efficiency, and boost revenue. Overall, workflow automation is a powerful tool for your business.
     </template>
     <template #image>
         <img src="/landing/apps/workflow.jpg"/>
@@ -36,7 +36,7 @@ aside: false
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/rule-builder" icon="crosshair-block" icon-type="solid">
                     <template #title>Rule builder</template>
-                    <template #sub>Take control of your store - Configure conditions and rules as per business agenda.</template>
+                    <template #sub>Take control of your store - Configure conditions and rules as per the business agenda.</template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>

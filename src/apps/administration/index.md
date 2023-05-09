@@ -19,12 +19,12 @@ aside: false
                 Capabilities
             </template>
             <template #description>
-                Explore the possibilities you can use to extens your Administration component
+                Explore the possibilities you can use to extend your Administration component.
             </template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/apps/administration/add-custom-modules" icon="rocket" icon-type="solid">
                     <template #title>Define features</template>
-                    <template #sub>Customize platform - Define catalog, order settings, etc. with modules.</template>
+                    <template #sub>Customize platform - Define catalog, order settings, etc., with modules.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/administration/add-custom-action-button" icon="plus-circle" icon-type="solid">
                     <template #title>Add action button</template>
