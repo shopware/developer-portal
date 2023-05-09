@@ -19,7 +19,7 @@ next: false
 <div class="my-12 md:my-24">
   <h1 class="text-center accent text-3xl md:text-5xl font-black mb-8" style="font-family: 'Poppins';">Shopware Developer Documentation</h1>
   <p class="mx-auto text-center text-gray-600 dark:text-slate-200 max-w-800px mx-auto text-lg leading-8" style="font-family: 'Inter';">
-      Shopware is an <b>open source eCommerce platform</b> that helps merchants build their online stores. You as a <b>developer</b> can contribute by <b>creating</b> extensions, themes or integrations and <b>sell these</b> in our store.
+      Shopware is an <b>open-source ecommerce platform</b> that helps merchants <b>build</b> their online stores. You, as a <b>developer</b>, can contribute by <b>creating</b> extensions, themes, or integrations and <b>selling</b> it in our store.
   </p>
 </div>
 
@@ -67,22 +67,22 @@ next: false
 
   <SwagCard page="/apps/">
     <template #title>Apps</template>
-    <template #description>Apps are an easy way to enhance the functionality of or add features to your store</template>
+    <template #description>Boost or expand your store's capabilities with the simplicity of apps, a must-have for developers seeking to elevate their digital marketplace.</template>
   </SwagCard>
 
   <SwagCard page="/themes/">
     <template #title>Themes</template>
-    <template #description>Using custom-built or 3rd party themes, merchants are able to style their stores individually</template>
+    <template #description>Style your store with unparalleled flexibility using custom-built or third-party themes, giving you a competitive advantage in this world of ecommerce.</template>
   </SwagCard>
 
   <SwagCard page="https://frontends.shopware.com/">
     <template #title>Frontends</template>
-    <template #description>Build custom storefronts from using our Store API and SDKs or start with reference implementations using technologies like Vue.js or React.</template>
+    <template #description>Build unique and captivating custom storefronts using Store APIs and SDKs, or start with reference implementations using technologies like Vue.js or React.</template>
   </SwagCard>
 
   <SwagCard page="/integrations/">
     <template #title>Integrations</template>
-    <template #description> Connect 3rd party systems with Shopware using our API to transfer products, orders or other types of data</template>
+    <template #description>Integrate with third-party systems through Shopware's powerful APIs that enable swift transfer of products, orders, and other data. </template>
   </SwagCard>
 
 </div>

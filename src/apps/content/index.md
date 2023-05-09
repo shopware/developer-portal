@@ -28,7 +28,7 @@ aside: false
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview" icon="window" icon-type="solid">
                     <template #title>Customized layout styling</template>
-                    <template #sub>Elevate design - Extend blocks and sections to style home, landing, product detail pages etc</template>
+                    <template #sub>Elevate design - Extend blocks and sections to style home, landing, product detail pages, etc.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots" icon="window-eye" icon-type="solid">
                     <template #title>Static and Dynamic CMS website</template>
@@ -49,9 +49,9 @@ aside: false
             </template>
         </SwagLandingCardList>
     <h1>Custom shopping experiences</h1>
-        <p>YWith Shopware's headless CMS architecture, you can easily tailor your customers' shopping by simply following one of the ways:
+        <p>With Shopware's headless CMS architecture, you can easily tailor your customers' shopping by simply following one of the ways:
         <ul>
-        <li><p><a href="/docs/guides/plugins/apps/content/cms">AppS</a></p>
+        <li><p><a href="/docs/guides/plugins/apps/content/cms">Apps</a></p>
         </li>
         <li><p><a href="https://shopware.github.io/admin-extension-sdk/docs/guide/api-reference/cms/registerCmsElement">Admin extension SDK</a>.</p>
         </li>

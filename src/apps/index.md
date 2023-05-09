@@ -1,6 +1,6 @@
 ---
 items:
-  - text: Getting started
+  - text: Getting Started
     link: /apps/
   - text: Capabilities
     link: /apps/capabilities
@@ -50,34 +50,46 @@ swag:
 <SwagLanding image="/landing/apps.png">
     <template #title>Build the functionalities merchants need</template>
     <template #description>
-        Leverage Shopware's extension APIs to build unique extensions that boost merchants businesses. Use the powerful plugin system to build highly custom extensions or build apps using your platform of choice.
+        Leverage Shopware's extension APIs to build unique extensions that boost merchants' businesses. Use the powerful plugin system to build highly custom extensions or apps using the platform of your choice..
     </template>
     <template #ctas>
-        <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Build your first Shopware app" sub="Learn how to set up your development environment and start coding within a couple minutes." />
+        <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Build your first Shopware app" sub="Learn how to set up your development environment and start coding within a couple of minutes." />
     </template>
     <template #exposed>
         <SwagLandingCardList>
             <template #title>Starter guides</template>
             <template #description>
-                The amount of topics to start with can be overwhelming. For that reason we have prepared a handful of step-by-step tutorials to follow along that make you familiar with some of our concepts:
+                The number of topics that are available for exploration can be overwhelming. To help you navigate this complexity, we have curated step-by-step tutorials that are designed to familiarize you with some of our core concepts.
             </template>
             <template #cards>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
-                    <template #title>Admin Extension</template>
-                    <template #sub>Create a simple module that triggers a notification in the admin panel.</template>
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-base-guide.html">
+                    <template #title>App Base Guide</template>
+                    <template #sub>Learn how to add your own app to Shopware and configure it.</template>
+                </SwagLandingCard>
+                <SwagLandingCard page="/docs/guides/plugins/apps/starter/local-development.html">
+                    <template #title>Local App development</template>
+                    <template #sub>Learn how to develop your app on Platform.sh or with Docker.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/product-translator.html">
                     <template #title>API Communication</template>
-                    <template #sub>Learn how to communicate with the Shopware API to fetch product data.</template>
+                    <template #sub>Learn how to communicate with the Shopware API to fetch required data.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
                     <template #title>Custom API Endpoint</template>
                     <template #sub>Learn how to add a custom API endpoint to the Shopware Store API.</template>
                 </SwagLandingCard>
+                <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
+                    <template #title>Admin Extension API</template>
+                    <template #sub>Learn how to build powerful modules for the admin panel using Admin Extension API.</template>
+                </SwagLandingCard>
+                <SwagLandingCard page="/docs/guides/plugins/apps/starter/hosting-guide.html">
+                    <template #title>Hosting Guide</template>
+                    <template #sub>Not all apps need hosting. Explore the server options.</template>
+                </SwagLandingCard>
             </template>
         </SwagLandingCardList>
     </template>
-    <template #exposed2>
+    <!--<template #exposed2>
         <SwagLandingCardList>
             <template #title>Product areas</template>
             <template #description>
@@ -122,7 +134,7 @@ swag:
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>
-    </template>
+    </template>-->
     <template #exposed3>
         <SwagLandingCardList>
             <template #title>Related topics</template>
@@ -133,15 +145,15 @@ swag:
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
                     <template  #title>Customize templates</template>
-                    <template #sub>Custom templates let you extend or modify the appearance of parts of your storefront.</template>
+                    <template #sub>Custom templates let you extend or modify the appearance of parts of your Storefront.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
+                <!--<SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Admin Extensions</template>
                     <template #sub>Build powerful modules for the admin panel using our new Admin Extension API.</template>
-                </SwagLandingCard>
+                </SwagLandingCard>-->
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Shopware CLI</template>
-                    <template #sub>Your tool when it comes to app development, installation and deployments.</template>
+                    <template #sub>Your tool when it comes to app development, installation, and deployments.</template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>
