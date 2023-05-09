@@ -43,7 +43,8 @@ _Note: This repository does not include layouts, templates and other components 
 See [QUICK START](./QUICK-START.md) for more info on how to start using Developer Portal, including some basic examples
 on how to embed and manage docs repos, and preview the dev and prod builds.
 
-For a ready-to-code example, see [DevContainer](./DEV-CONTAINER.md).
+For a ready-to-code example, see [DevContainer](./DEV-CONTAINER.md) powered by GitHub Codespaces, VSCode Dev Container 
+or similar solution.
 
 # Table of contents
 

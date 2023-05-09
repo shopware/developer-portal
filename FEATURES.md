@@ -11,7 +11,9 @@ by VitePress itself, such as Markdown formatting, frontmatter configuration and 
 On top of that, there are additional Shopware flavoured features globally available, provided by Developer Portal, as
 described in the following sections.
 
-## Copy additional static assets
+## Additional configuration with `docs.yml`
+
+### Copy additional static assets
 
 By default, VitePress copies and serves only assets used in Markdown files. Runtime assets need to be copied manually.
 You can provide custom directories in your `.github/scripts/docs.yml`.
@@ -24,6 +26,11 @@ build-end:
 ```
 
 Static assets are copied during the `buildEnd` hook using `copyAdditionalAssets()` helper.
+
+### Copy redirects
+
+Redirects from `.gitbook.yaml` and `docs.yml` in sub-repos are automatically copied and added to the `redirects` section
+in the `vercel.json` configuration.
 
 ## Provide additional build context
 

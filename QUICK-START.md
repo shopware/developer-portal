@@ -71,7 +71,8 @@ $ pnpm docs:link
 
 _Note: The `docs:link` command has been added to feature branches in all repositories and may not have been merged yet.
 It is advisable to check out the correct branch before proceeding. Alternatively, you can directly call the CLI by using
-the command `../developer-portal/docs-cli link`._
+the command `../developer-portal/docs-cli link` and pass the `src` and `dst` options such as
+`--src apps/docs/src --dst frontends`._
 
 ## 4. Preview your changes
 
@@ -171,5 +172,6 @@ There are a few more commands available that you can explore by yourself:
 - `./docs-cli test` - run e2e test suite
 - `./docs-cli build` - make a production build (requires all repositories to be mounted)
 - `./docs-cli config` - configure CLI paths and variables
+- `./docs-cli git` - checkout all repos directly in the `repos` folder of the `developer-portal` project
 
 You can find more detailed information on the CLI in the [./CLI.md](./CLI.md) file.
