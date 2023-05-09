@@ -1,13 +1,14 @@
 ---
 items:
   - text: Getting Started
-    link: /themes
+    link: /themes/
   - text: Themes Overview
     link: /themes/intro
     items:
       - text: Build Theme
         link: /docs/guides/plugins/themes/create-a-theme
       - text: Configuration
+        collapsed: true
         items:
           - text: Theme configuration
             link: /docs/guides/plugins/themes/theme-configuration    
