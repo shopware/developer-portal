@@ -14,8 +14,8 @@ importers:
         specifier: 1.0.0-alpha.75
         version: 1.0.0-alpha.75(@types/node@18.15.1)(react-dom@18.2.0)(react@18.2.0)(sass@1.59.2)(terser@5.16.6)
       vitepress-shopware-docs:
-        specifier: 1.0.0-alpha.20
-        version: 1.0.0-alpha.20(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
+        specifier: 1.0.0-alpha.21
+        version: 1.0.0-alpha.21(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -2534,7 +2534,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -2558,7 +2558,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -2593,7 +2593,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.4.3(react@18.2.0)
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -2605,7 +2605,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -13396,8 +13396,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-shopware-docs@1.0.0-alpha.20(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
-    resolution: {integrity: sha512-7tZtYkSjZWqGbKGU1SIe6bp9umQlDt/RHA9VQ11R9RDDcmkm1NUZmdlvGDxp4CnuoSctWVbKNnEBkyPNeBTJLw==}
+  /vitepress-shopware-docs@1.0.0-alpha.21(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
+    resolution: {integrity: sha512-IkwNO3qU8F4MsaybztTuNWB2NI6oq95Y+/1VsAfvtnM0UhiGZRYI/pHkO2218RvRUzuFfLuHPegC6RufQ94nZg==}
     dependencies:
       '@docsearch/css': 3.3.4
       '@docsearch/js': 3.3.4(react-dom@18.2.0)(react@18.2.0)
