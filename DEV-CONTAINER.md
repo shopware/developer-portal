@@ -4,16 +4,22 @@ You can try dev env provided by [GitHub Codespaces](https://github.com/codespace
 
 ## Setup
 
-Because we need to clone multiple repositories, you need to generate a new SSH key or use your existing one. Head to GitHub > Settings > [Codespaces](https://github.com/settings/codespaces) and add a new Codespace secret named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository. This will allow you to clone all docs-content repos using SSH. As a value, enter base64 single-line encoded key.
+Because we need to clone multiple repositories, you need to generate a new SSH key or use your existing one. If you don't have a `ed25519` key, you can generate it by running a command below:
+
+```bash
+$ ssh-keygen -t ed25519 -C "your.name@shopware.com"
+```
+
+Head to GitHub > Settings > [Codespaces](https://github.com/settings/codespaces) and add a new Codespace secret named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository. This will allow you to clone all docs-content repos using SSH, and later commit changes to them. As a value, enter base64 single-line encoded key.
 
 ```bash
 $ base64 ~/.ssh/id_ed25519 -w 0
 ```
 
-If you don't have a `ed25519` key, you can generate it by running a comand below:
+Make sure to also add the key to the GitHub > Settings > [SSH and GPG keys](https://github.com/settings/keys).
 
 ```bash
-$ ssh-keygen -t ed25519 -C "your.name@shopware.com"
+$ cat ~/.ssh/id_ed25519
 ```
 
 ## Post-install
@@ -25,7 +31,7 @@ Post-install script is triggered during the `postCreateCommand` lifecycle hook a
  - clones and symlinks all docs-content repos
  - starts dev server
 
-You can then edit contents from the `./src/` folder and commit from the `./repos/<repo>` folders.
+You can then edit contents from the `./src/` folder and commit from the `./repos/<repo>-<branch>` folders.
 
 # More resources
 
