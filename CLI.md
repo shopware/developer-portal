@@ -22,9 +22,9 @@ Commands:
   manage            Add or remove mountpoints in developer-portal
   preview           Preview docs
   build             Build docs in developer-portal
-  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) 
-  to run test on the build instead of dev server.
+  test [options]    Run vitest end-to-end suite in your local developer-portal repository. Use build flag (-b / --build) to run test on the build instead of dev server.
   pull              Pull docs and install new dependencies in developer-portal
+  git [options]     Checkout all repos to the ./repos/
   config [options]  Reconfigure .docs-cli
   help [command]    display help for command
 ```
@@ -340,12 +340,39 @@ This command will pull changes in `developer-portal` on your current branch and 
 
 ![Pull developer-portal](./cli/demo/pull.gif)
 
+## Checkout and symlink all repositories inside the project
+
+If you don't want to check out all project separately, you can check out them directly into the `repos` folder in your
+`developer-portal` repository and create symlinks in the `src/<mount-point>` folder by running the `git` command.
+
+```sh
+$ ./docs-cli git
+```
+
+Instead of having a flat structure like this ...
+```text
+/www/developer-portal/
+/www/docs/
+/www/frontends/
+/www/.../
+```
+
+... you will end up with a deep structure like this:
+```text
+/www/developer-portal/
+/www/developer-portal/repos/docs-next/
+/www/developer-portal/repos/docs-6.4/
+/www/developer-portal/repos/docs-6.3/
+/www/developer-portal/repos/frontends-main/
+/www/developer-portal/repos/.../
+```
+
 ## More
 
 ```bash
 # aliased
-pnpm docs:COMMAND
+pnpm docs:<COMMAND>
 # equals
-../developer-portal/docs-cli COMMAND
+../developer-portal/docs-cli <COMMAND>
 
 ```
