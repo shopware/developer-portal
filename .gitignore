@@ -12,3 +12,10 @@ bin/
 .vitepress/dist/
 repos/
 external/
+
+# embeddings
+src/frontends/
+src/docs/
+src/resources/admin-extension-sdk/
+src/resources/meteor-icon-kit/
+src/resources/meteor-component-library/
