@@ -62,27 +62,27 @@ swag:
                 The number of topics that are available for exploration can be overwhelming. To help you navigate this complexity, we have curated step-by-step tutorials that are designed to familiarize you with some of our core concepts.
             </template>
             <template #cards>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-base-guide.html">
-                    <template #title>App Base Guide</template>
-                    <template #sub>Learn how to add your own app to Shopware and configure it.</template>
+                <SwagLandingCard page="https://github.com/shopware/app-php-sdk/blob/main/docs/01-getting_started.md">
+                    <template #title>App SDK</template>
+                    <template #sub>Tools and libraries that simplify the custom app development process for the Shopware platform.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/local-development.html">
+                <SwagLandingCard page="/docs/guides/plugins/apps/local-development/app-development-with-platform-sh.html">
                     <template #title>Local App development</template>
                     <template #sub>Learn how to develop your app on Platform.sh or with Docker.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/product-translator.html">
-                    <template #title>API Communication</template>
-                    <template #sub>Learn how to communicate with the Shopware API to fetch required data.</template>
+                    <template #title>Setup App Server with API Integration</template>
+                    <template #sub>Learn how to set up an app server and read/write data to the Shopware APIs.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
                     <template #title>Custom API Endpoint</template>
-                    <template #sub>Learn how to add a custom API endpoint to the Shopware Store API.</template>
+                    <template #sub>Learn how to add different custom API endpoints that delivers dynamic data.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Admin Extension API</template>
                     <template #sub>Learn how to build powerful modules for the admin panel using Admin Extension API.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/hosting-guide.html">
+                <SwagLandingCard page="/docs/guides/plugins/apps/hosting-guide/">
                     <template #title>Hosting Guide</template>
                     <template #sub>Not all apps need hosting. Explore the server options.</template>
                 </SwagLandingCard>

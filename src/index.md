@@ -91,8 +91,8 @@ next: false
 
 <div>
   <SwagCard page="/docs/">
-    <template #title>Documentation</template>
-    <template #description> Visit old documentation structure</template>
+    <template #title>Developer Docs</template>
+    <template #description> Visit our old documentation here for references</template>
   </SwagCard>
 </div>
 

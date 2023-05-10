@@ -30,11 +30,11 @@ aside: false
                     <template #title>Search</template>
                     <template #sub>Find what you need - Customizable search criteria for easy search</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="balance-scale" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/data-loading.html#loading-data" icon="balance-scale" icon-type="solid">
                     <template #title>Stock availability</template>
                     <template #sub>Never miss a sale - Real-time stock availability feature.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="bulk-edit" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/data-loading.html#adding-data-to-the-page-object" icon="bulk-edit" icon-type="solid">
                     <template #title>New products and categories</template>
                     <template #sub>Expand your store - Define new products and categories</template>
                 </SwagLandingCard>

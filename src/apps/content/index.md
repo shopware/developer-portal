@@ -22,7 +22,7 @@ aside: false
                 Unlock the Power of Your Content with Our CMS Features
             </template>
             <template #cards>
-                <SwagLandingCard page="/docs/guides/plugins/apps/custom-data" icon="shopping-cart" icon-type="solid">
+                <SwagLandingCard page="/docs/concepts/commerce/content/shopping-experiences-cms" icon="shopping-cart" icon-type="solid">
                     <template #title>Redefine shopping experiences</template>
                     <template #sub>Unique shopping - Create distinct experiences for your customers.</template>
                 </SwagLandingCard>
@@ -30,11 +30,11 @@ aside: false
                     <template #title>Customized layout styling</template>
                     <template #sub>Elevate design - Extend blocks and sections to style home, landing, product detail pages, etc.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots" icon="window-eye" icon-type="solid">
+                <SwagLandingCard page="/docs/concepts/commerce/content/shopping-experiences-cms.html#hydration-of-dynamic-content" icon="window-eye" icon-type="solid">
                     <template #title>Static and Dynamic CMS website</template>
                     <template #sub>Versatile media - Create multiple frontend experiences for varied use cases.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/concepts/commerce/content/shopping-experiences-cms#hydration-of-dynamic-content" icon="window-terminal" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots" icon="window-terminal" icon-type="solid">
                     <template #title>Apply desired CMS layout</template>
                     <template #sub>Manage CMS - Assign layouts to products and categories with ease.</template>
                 </SwagLandingCard>

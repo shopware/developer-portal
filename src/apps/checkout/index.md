@@ -30,19 +30,19 @@ aside: false
                     <template #title>Split cart items</template>
                     <template #sub>Customize orders - Split line items to the desired quantity.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/custom-data" icon="filter" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/custom-data/" icon="filter" icon-type="solid">
                     <template #title>Filter checkout options </template>
                     <template #sub>Streamline checkout - Filter available payment and shipping methods.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="crosshair-block" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#rule-based-cart-scripts" icon="crosshair-block" icon-type="solid">
                     <template #title>Rule-based scripts</template>
                     <template #sub>Maximize control - Rule builder for ultimate checkout manipulation</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="exclamation-triangle" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#add-errors-and-notifications-to-the-cart" icon="exclamation-triangle" icon-type="solid">
                     <template #title>Errors and notifications</template>
                     <template #sub>Enhanced checkout - Errors, warnings, and notices keep you informed.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation" icon="plus-square" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#price-fields-inside-custom-fields" icon="plus-square" icon-type="solid">
                     <template #title>Add custom prices</template>
                     <template #sub>Adjust pricing on the fly - Change line item costs dynamically.</template>
                 </SwagLandingCard>

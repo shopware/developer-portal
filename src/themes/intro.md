@@ -6,7 +6,7 @@ Shopware has a default theme to make things easier. It is built on top of Bootst
 
 Another handy capability is the theme configuration. As a theme developer, you can define variables the shop owner in the Administration can configure. Those variables are accessible in your theme and let you implement powerful features.
 
-## Apps vs Plugins VS Themes
+## Apps vs Plugins vs Themes
 
 A theme is a special type of plugin or app aimed at easily changing the visual appearance of your Storefront. If you want to get more information about this, check out the Plugin Base Guide and App Base Guide.
 

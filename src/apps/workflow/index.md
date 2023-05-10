@@ -26,7 +26,7 @@ aside: false
                     <template #title>Build Workflow</template>
                     <template #sub>Automate processes - Create workflows with easy-to-use trigger, rule, and action components.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-base-guide#webhooks" icon="link" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-base-guide.html#webhooks" icon="link" icon-type="solid">
                     <template #title>Create Webhooks</template>
                     <template #sub>Stay in the loop - Webhooks delivers real-time event updates.</template>
                 </SwagLandingCard>
@@ -34,7 +34,7 @@ aside: false
                     <template #title>Generate documents</template>
                     <template #sub>Effortlessly create and personalize - Business documents generation feature.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/rule-builder" icon="crosshair-block" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/rule-builder/add-custom-rule-conditions" icon="crosshair-block" icon-type="solid">
                     <template #title>Rule builder</template>
                     <template #sub>Take control of your store - Configure conditions and rules as per the business agenda.</template>
                 </SwagLandingCard>

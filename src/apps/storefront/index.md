@@ -26,7 +26,7 @@ aside: false
                     <template #title>Templates</template>
                     <template #sub>Custom design templates - Modify the whole appearance of your store.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching" icon="view-grid" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/themes/add-css-js-to-theme" icon="view-grid" icon-type="solid">
                     <template #title>Themes</template>
                     <template #sub>Custom Styling - Match your brand and store themes.</template>
                 </SwagLandingCard>
