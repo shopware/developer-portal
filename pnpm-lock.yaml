@@ -14,8 +14,8 @@ importers:
         specifier: 1.0.0-alpha.75
         version: 1.0.0-alpha.75(@types/node@18.15.1)(react-dom@18.2.0)(react@18.2.0)(sass@1.59.2)(terser@5.16.6)
       vitepress-shopware-docs:
-        specifier: 1.0.0-alpha.22
-        version: 1.0.0-alpha.22(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
+        specifier: 1.0.0-alpha.23
+        version: 1.0.0-alpha.23(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47)
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -2872,7 +2872,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/http-spec': 5.9.1
+      '@stoplight/http-spec': 5.9.2
       '@stoplight/json': 3.20.2
       '@stoplight/json-schema-ref-parser': 9.2.4
       '@stoplight/json-schema-sampler': 0.2.3
@@ -2883,7 +2883,7 @@ packages:
       '@stoplight/mosaic-code-viewer': 1.40.0(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/path': 1.3.2
       '@stoplight/react-error-boundary': 2.0.0(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       '@stoplight/yaml': 4.2.3
       classnames: 2.3.2
       httpsnippet-lite: 3.0.5
@@ -2940,7 +2940,7 @@ packages:
       '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.40.0)(@stoplight/mosaic@1.40.0)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/mosaic': 1.40.0(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/path': 1.3.2
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       classnames: 2.3.2
       lodash: 4.17.21
       react: 18.2.0
@@ -2972,13 +2972,13 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/http-spec@5.9.1:
-    resolution: {integrity: sha512-4HgUUzyZFDgZBtKMLpnQMtD2GRV3Hxd+GT1EZpUljRc8ytd1ABF4O1o4x/YwgIwJ9BVTv61m8Nh6LdoNlpJwcA==}
+  /@stoplight/http-spec@5.9.2:
+    resolution: {integrity: sha512-tt3zT68yQ1IkcYmSnZyXegOHmdJB3BUyJWJGu94CIMYkUMALoMa0ntHvBu6GsVU4giNSjKFdCM8BZR1ynzYFww==}
     engines: {node: '>=14.13'}
     dependencies:
       '@stoplight/json': 3.20.2
       '@stoplight/json-schema-generator': 1.0.2
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       '@types/json-schema': 7.0.11
       '@types/swagger-schema-official': 2.0.22
       '@types/type-is': 1.6.3
@@ -3097,7 +3097,7 @@ packages:
     dependencies:
       '@stoplight/ordered-object-literal': 1.0.4
       '@stoplight/path': 1.3.2
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       jsonc-parser: 2.2.1
       lodash: 4.17.21
       safe-stable-stringify: 1.1.1
@@ -3188,7 +3188,7 @@ packages:
       '@react-types/switch': 3.1.2(react@18.2.0)
       '@stoplight/mosaic': 1.40.0(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/mosaic-code-viewer': 1.40.0(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
       dom-helpers: 3.4.0
@@ -3224,7 +3224,7 @@ packages:
       '@react-types/shared': 3.9.0(react@18.2.0)
       '@react-types/switch': 3.1.2(react@18.2.0)
       '@stoplight/mosaic': 1.40.0(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
       dom-helpers: 3.4.0
@@ -3261,7 +3261,7 @@ packages:
       '@react-types/shared': 3.9.0(react@18.2.0)
       '@react-types/switch': 3.1.2(react@18.2.0)
       '@react-types/textfield': 3.3.0(react@18.2.0)
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       '@types/react': 17.0.59
       '@types/react-dom': 17.0.20
       clsx: 1.2.1
@@ -3316,8 +3316,8 @@ packages:
       utility-types: 3.10.0
     dev: false
 
-  /@stoplight/types@13.14.0:
-    resolution: {integrity: sha512-RqF5Cyl5227fRPIaWa5ptMvAtNUIM4yCzSUoERUXAarxpTcOrjMJ52p9lV9XrQtpLhLNMrWn08+h0ap10R22ig==}
+  /@stoplight/types@13.15.0:
+    resolution: {integrity: sha512-pBLjVRrWGVd+KzTbL3qrmufSKIEp0UfziDBdt/nrTHPKrlrtVwaHdrrQMcpM23yJDU1Wcg4cHvhIuGtKCT5OmA==}
     engines: {node: ^12.20 || >=14.13}
     dependencies:
       '@types/json-schema': 7.0.11
@@ -3333,7 +3333,7 @@ packages:
     engines: {node: '>=10.8'}
     dependencies:
       '@stoplight/ordered-object-literal': 1.0.4
-      '@stoplight/types': 13.14.0
+      '@stoplight/types': 13.15.0
       '@stoplight/yaml-ast-parser': 0.0.48
       tslib: 2.4.1
     dev: false
@@ -3909,7 +3909,7 @@ packages:
     dependencies:
       '@storybook/node-logger': 7.0.0
       '@storybook/types': 7.0.0
-      '@types/node': 16.18.27
+      '@types/node': 16.18.28
       '@types/pretty-hrtime': 1.0.1
       chalk: 4.1.2
       esbuild: 0.17.18
@@ -3956,7 +3956,7 @@ packages:
       '@storybook/telemetry': 7.0.0
       '@storybook/types': 7.0.0
       '@types/detect-port': 1.3.2
-      '@types/node': 16.18.27
+      '@types/node': 16.18.28
       '@types/node-fetch': 2.6.3
       '@types/pretty-hrtime': 1.0.1
       '@types/semver': 7.5.0
@@ -4602,8 +4602,8 @@ packages:
     resolution: {integrity: sha512-s3nugnZumCC//n4moGGe6tkNMyYEdaDBitVjwPxXmR5lnMG5dHePinH2EdxkG3Rh1ghFHHixAG4NJhpJW1rthQ==}
     dev: true
 
-  /@types/node@16.18.27:
-    resolution: {integrity: sha512-GFfndd/RINWD19W+xNJ9Qh/sOZ5ieTiOSagA86ER/12i/l+MEnQxsbldGRF23azWjRfe7zUlAldyrwN84a1E5w==}
+  /@types/node@16.18.28:
+    resolution: {integrity: sha512-SNMfiPqsiPoYfmyi+2qnDO4nZyMIOCab/CW+Slcml0lhIzkOizYzWtt/A7tgB3TSitd+YJKi8fSC2Cpm/VCp7A==}
     dev: true
 
   /@types/node@17.0.45:
@@ -5844,7 +5844,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001486
-      electron-to-chromium: 1.4.387
+      electron-to-chromium: 1.4.388
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
 
@@ -7235,8 +7235,8 @@ packages:
       jake: 10.8.5
     dev: true
 
-  /electron-to-chromium@1.4.387:
-    resolution: {integrity: sha512-tutLf+alr1/0YqJwKPdstVvDLmxmLb5xNyDLNS0RZmenHcEYk9qKfpKDCVZEKJ00JVbnayJm1MZAbYhYDFpcOw==}
+  /electron-to-chromium@1.4.388:
+    resolution: {integrity: sha512-xZ0y4zjWZgp65okzwwt00f2rYibkFPHUv9qBz+Vzn8cB9UXIo9Zc6Dw81LJYhhNt0G/vR1OJEfStZ49NKl0YxQ==}
 
   /emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -11931,8 +11931,8 @@ packages:
       estree-walker: 0.6.1
     dev: true
 
-  /rollup@3.21.5:
-    resolution: {integrity: sha512-a4NTKS4u9PusbUJcfF4IMxuqjFzjm6ifj76P54a7cKnvVzJaG12BLVR+hgU2YDGHzyMMQNxLAZWuALsn8q2oQg==}
+  /rollup@3.21.6:
+    resolution: {integrity: sha512-SXIICxvxQxR3D4dp/3LDHZIJPC8a4anKMHd4E3Jiz2/JnY+2bEjqrOokAauc5ShGVNFHlEFjBXAXlaxkJqIqSg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -13390,14 +13390,14 @@ packages:
       '@types/node': 18.15.1
       esbuild: 0.17.18
       postcss: 8.4.23
-      rollup: 3.21.5
+      rollup: 3.21.6
       sass: 1.59.2
       terser: 5.16.6
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-shopware-docs@1.0.0-alpha.22(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
-    resolution: {integrity: sha512-3j+w7rfHuEDqFY2sqrG/+gnnvA/8O9AMqU28oIsMeN+prq6bhfwc4YqV1357Bbf0Q9M93bbjnu/8EoKlXrA6zA==}
+  /vitepress-shopware-docs@1.0.0-alpha.23(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)(vue@3.2.47):
+    resolution: {integrity: sha512-oad1aM8EabkL3t7w4wA/qdWIy0n6jbPayyIhHBEKVH04SOggYLG6d+d1BqIy9usOJcCpZFZdFi+HEddW/uDAjQ==}
     dependencies:
       '@docsearch/css': 3.3.4
       '@docsearch/js': 3.3.4(react-dom@18.2.0)(react@18.2.0)
