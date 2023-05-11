@@ -1,12 +1,12 @@
 ---
 items:
-  - text: Getting Started
+  - text: Getting started
     link: /themes/
-  - text: Themes Overview
+  - text: Themes overview
     link: /themes/intro
   - text: Areas
     items:
-      - text: Build Theme
+      - text: Build theme
         link: /docs/guides/plugins/themes/create-a-theme
       - text: Configuration
         collapsed: true
@@ -39,13 +39,13 @@ items:
             link: /docs/guides/plugins/themes/add-icons
   - text: Reference
     items:
-      - text: Twig Functions
+      - text: Twig functions
         link: /docs/resources/references/storefront-reference/twig-function-reference
       - text: Data Loading
         link: /docs/guides/plugins/apps/app-scripts/data-loading
   - text: Themes Store
     items:
-      - text: Publish Your Theme
+      - text: Publish your theme
         link: /themes/store/publish-yourtheme
       - text: Guidelines
         link: /docs/resources/guidelines/testing/store

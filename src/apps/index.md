@@ -1,6 +1,6 @@
 ---
 items:
-  - text: Getting Started
+  - text: Getting started
     link: /apps/
   - text: Capabilities
     link: /apps/capabilities
@@ -18,7 +18,7 @@ items:
         link: /apps/administration/
       - text: Content
         link: /apps/content/
-      - text: Product & Catalog
+      - text: Product & catalog
         link: /apps/products-and-catalog/
       - text: Workflow
         link: /apps/workflow/
@@ -67,15 +67,15 @@ swag:
                     <template #sub>Tools and libraries that simplify the custom app development process for the Shopware platform.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/local-development/app-development-with-platform-sh.html">
-                    <template #title>Local App development</template>
+                    <template #title>Local app development</template>
                     <template #sub>Learn how to develop your app on Platform.sh or with Docker.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/product-translator.html">
-                    <template #title>Setup App Server with API Integration</template>
+                    <template #title>Setup app server with API integration</template>
                     <template #sub>Learn how to set up an app server and read/write data to the Shopware APIs.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
-                    <template #title>Custom API Endpoint</template>
+                    <template #title>Custom API endpoint</template>
                     <template #sub>Learn how to add different custom API endpoints that delivers dynamic data.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
@@ -83,7 +83,7 @@ swag:
                     <template #sub>Learn how to build powerful modules for the admin panel using Admin Extension API.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/hosting-guide/">
-                    <template #title>Hosting Guide</template>
+                    <template #title>Hosting guide</template>
                     <template #sub>Not all apps need hosting. Explore the server options.</template>
                 </SwagLandingCard>
             </template>
@@ -140,8 +140,8 @@ swag:
             <template #title>Related topics</template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
-                    <template #title>App Scripts</template>
-                    <template #sub>Leverage App Scripts to customize the checkout or fetch additional data in your Storefront.</template>
+                    <template #title>App scripts</template>
+                    <template #sub>Leverage app scripts to customize the checkout or fetch additional data in your Storefront.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
                     <template  #title>Customize templates</template>

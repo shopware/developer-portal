@@ -19,7 +19,7 @@ aside: false
                 Capabilities
             </template>
             <template #description>
-               Efficient and reliable payments for your store with streamlined processes
+               Efficient and reliable payments for your store with streamlined processes.
             </template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/apps/payment#synchronous-payments" icon="double-chevron-right-s" icon-type="solid">

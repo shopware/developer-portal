@@ -19,7 +19,7 @@ aside: false
                 Capabilities
             </template>
             <template #description>
-                Try our template extensions and elevate your customer experience:
+                Try our template extensions and elevate your customer experience.
             </template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/plugins/storefront/customize-templates" icon="dashboard" icon-type="solid">

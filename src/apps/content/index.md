@@ -19,7 +19,7 @@ aside: false
                 Capabilities
             </template>
             <template #description>
-                Unlock the Power of Your Content with Our CMS Features
+                Unlock the power of your content with our CMS features.
             </template>
             <template #cards>
                 <SwagLandingCard page="/docs/concepts/commerce/content/shopping-experiences-cms" icon="shopping-cart" icon-type="solid">
@@ -31,7 +31,7 @@ aside: false
                     <template #sub>Elevate design - Extend blocks and sections to style home, landing, product detail pages, etc.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/concepts/commerce/content/shopping-experiences-cms.html#hydration-of-dynamic-content" icon="window-eye" icon-type="solid">
-                    <template #title>Static and Dynamic CMS website</template>
+                    <template #title>Static and dynamic CMS website</template>
                     <template #sub>Versatile media - Create multiple frontend experiences for varied use cases.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots" icon="window-terminal" icon-type="solid">

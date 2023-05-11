@@ -19,7 +19,7 @@ aside: false
                 Capabilities
             </template>
             <template #description>
-                Get Ready To Elevate Your Online Store with Shopware's Feature-Rich Cart Functionalities
+                Get ready to elevate your online Store with Shopware's feature-rich cart functionalities.
             </template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart" icon="shopping-cart" icon-type="solid">

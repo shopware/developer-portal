@@ -19,15 +19,15 @@ aside: false
                 Capabilities
             </template>
             <template #description>
-                Shopware offers Flow Builder as an automation solution to automate business processes.
+                Shopware offers flow builder as an automation solution to automate business processes.
             </template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/plugins/apps/flow-builder/add-custom-flow-actions-from-app-system" icon="activity" icon-type="solid">
-                    <template #title>Build Workflow</template>
+                    <template #title>Build workflow</template>
                     <template #sub>Automate processes - Create workflows with easy-to-use trigger, rule, and action components.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/apps/app-base-guide.html#webhooks" icon="link" icon-type="solid">
-                    <template #title>Create Webhooks</template>
+                    <template #title>Create webhooks</template>
                     <template #sub>Stay in the loop - Webhooks delivers real-time event updates.</template>
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/plugins/checkout/document/add-custom-document-type#adding-a-generator" icon="receipt" icon-type="solid">
