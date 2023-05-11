@@ -1,11 +1,12 @@
 ---
 items:
-  - text: Getting Started
+  - text: Getting started
     link: /themes/
-  - text: Themes Overview
+  - text: Themes overview
     link: /themes/intro
+  - text: Areas
     items:
-      - text: Build Theme
+      - text: Build theme
         link: /docs/guides/plugins/themes/create-a-theme
       - text: Configuration
         collapsed: true
@@ -19,17 +20,18 @@ items:
       - text: Templates
         link: /docs/guides/plugins/themes/theme-configuration
       - text: Styling
-        link: /docs/guides/plugins/themes/add-css-js-to-theme
+        collapsed: true
         items:
-          - text: CSS
+          - text: SCSS/CSS
             link: /docs/guides/plugins/themes/add-css-js-to-theme
           - text: Theme with bootstrap styling
             link: /docs/guides/plugins/themes/add-theme-inheritance-without-resources
           - text: Override bootstrap variables
             link: /docs/guides/plugins/themes/override-bootstrap-variables-in-a-theme
       - text: Javascript
-        link: /docs/guides/plugins/themes/add-css-js-to-theme
+        link: /docs/guides/plugins/themes/add-css-js-to-theme.html#adding-custom-scss
       - text: Assets
+        collapsed: true
         items:
           - text: Custom assets
             link: /docs/guides/plugins/themes/add-assets-to-theme
@@ -37,13 +39,13 @@ items:
             link: /docs/guides/plugins/themes/add-icons
   - text: Reference
     items:
-      - text: Twig Functions
+      - text: Twig functions
         link: /docs/resources/references/storefront-reference/twig-function-reference
       - text: Data Loading
         link: /docs/guides/plugins/apps/app-scripts/data-loading
   - text: Themes Store
     items:
-      - text: Publish your Theme
+      - text: Publish your theme
         link: /themes/store/publish-yourtheme
       - text: Guidelines
         link: /docs/resources/guidelines/testing/store
