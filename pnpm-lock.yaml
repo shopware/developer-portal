@@ -14,8 +14,8 @@ importers:
         specifier: 1.0.0-alpha.75
         version: 1.0.0-alpha.75(@types/node@18.16.7)(react-dom@18.2.0)(react@18.2.0)(sass@1.62.1)(terser@5.17.3)
       vitepress-shopware-docs:
-        specifier: 1.0.0-beta.1
-        version: 1.0.0-beta.1(@babel/core@7.21.8)(postcss@8.4.23)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1)
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(@babel/core@7.21.8)(postcss@8.4.23)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1)
       vue:
         specifier: ^3.3.1
         version: 3.3.1
@@ -13206,8 +13206,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-shopware-docs@1.0.0-beta.1(@babel/core@7.21.8)(postcss@8.4.23)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1):
-    resolution: {integrity: sha512-Cu3B3HKWYiwWRm4tXCakadrxrLZ+vDlVPm9dGkXE8LYJuhAG5SQultgiVO1hZ5oVzIdF/A1BQNRakmrb83KXxw==}
+  /vitepress-shopware-docs@1.0.0-beta.2(@babel/core@7.21.8)(postcss@8.4.23)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1):
+    resolution: {integrity: sha512-O/p/0BbS4OS3N5XzSdx9C1OxXUdMmFH51PlWAOf1m0L2PvWfZ/efyMVgKVFQQ3wM7Mr+Rkx6aXx5xlIuC0PDIw==}
     dependencies:
       '@docsearch/css': 3.3.4
       '@docsearch/js': 3.3.4(react-dom@18.2.0)(react@18.2.0)
@@ -13518,7 +13518,7 @@ packages:
   /wide-align@1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: true
 
   /widest-line@3.1.0:
