@@ -23,7 +23,7 @@ const embeds: SwagEmbedsConfig[] = [
     points: {
       '/docs/v6.4/': 'next-6.4',
       '/docs/v6.3/': 'next-6.3',
-      '/docs/': 'next',
+      '/docs/': 'main', // next
     },
     folder: '.',
   },
