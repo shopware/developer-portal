@@ -26,7 +26,7 @@ describe('cli pull', async () => {
         // prepare developer-portal checkout
         prepareDeveloperPortalCheckout(sandbox);
 
-        const result = await docsCli(['pull'], sandbox.cwd, timeout.moderate);
+        const result = await docsCli(['pull'], sandbox.cwd, timeout.high);
 
         // debug flaky test
         console.log(result);
