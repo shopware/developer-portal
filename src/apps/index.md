@@ -24,10 +24,12 @@ items:
         link: /apps/workflow/
   - text: Reference
     items:
-      - text: Admin Extensions
+      - text: Admin extensions
         link: "https://shopware.github.io/admin-extension-sdk/"
-      - text: App Scripts
+      - text: App scripts
         link: "/docs/guides/plugins/apps/app-scripts/"
+      - text: App SDK
+        link: "https://github.com/shopware/app-php-sdk/blob/main/docs/01-getting_started.md"
       - text: Webhooks
         link: "/docs/resources/references/app-reference/webhook-events-reference"
       - text: Admin API
@@ -62,30 +64,30 @@ swag:
                 The number of topics that are available for exploration can be overwhelming. To help you navigate this complexity, we have curated step-by-step tutorials that are designed to familiarize you with some of our core concepts.
             </template>
             <template #cards>
-                <SwagLandingCard page="https://github.com/shopware/app-php-sdk/blob/main/docs/01-getting_started.md">
+            <!--<SwagLandingCard page="https://github.com/shopware/app-php-sdk/blob/main/docs/01-getting_started.md">
                     <template #title>App SDK</template>
                     <template #sub>Tools and libraries that simplify the custom app development process for the Shopware platform.</template>
-                </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/local-development/app-development-with-platform-sh.html">
+                </SwagLandingCard>-->
+            <!--<SwagLandingCard page="/docs/guides/plugins/apps/local-development/app-development-with-platform-sh.html">
                     <template #title>Local app development</template>
                     <template #sub>Learn how to develop your app on Platform.sh or with Docker.</template>
-                </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/product-translator.html">
-                    <template #title>Setup app server with API integration</template>
+                </SwagLandingCard>-->
+               <SwagLandingCard page="/docs/guides/plugins/apps/starter/product-translator.html">
+                    <template #title>Setup app templates</template>
                     <template #sub>Learn how to set up an app server and read/write data to the Shopware APIs.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
-                    <template #title>Custom API endpoint</template>
+            <SwagLandingCard page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
+                    <template #title>Add custom API</template>
                     <template #sub>Learn how to add different custom API endpoints that delivers dynamic data.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
-                    <template #title>Admin Extension API</template>
-                    <template #sub>Learn how to build powerful modules for the admin panel using Admin Extension API.</template>
+            <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
+                    <template #title>Extend Admin UI</template>
+                    <template #sub>Learn how to extend modules for the admin panel using Admin Extension API.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/hosting-guide/">
+            <!--<SwagLandingCard page="/docs/guides/plugins/apps/hosting-guide/">
                     <template #title>Hosting guide</template>
                     <template #sub>Not all apps need hosting. Explore the server options.</template>
-                </SwagLandingCard>
+                </SwagLandingCard>-->
             </template>
         </SwagLandingCardList>
     </template>
@@ -139,22 +141,30 @@ swag:
         <SwagLandingCardList>
             <template #title>Related topics</template>
             <template #cards>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
-                    <template #title>App scripts</template>
-                    <template #sub>Leverage app scripts to customize the checkout or fetch additional data in your Storefront.</template>
+                <SwagLandingCard page="/docs/guides/plugins/apps/local-development/app-development-with-platform-sh.html">
+                    <template #title>Add apps locally</template>
+                    <template #sub>Learn how to add app server to your local development setup on Platform.sh or with Docker.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
-                    <template  #title>Customize templates</template>
-                    <template #sub>Custom templates let you extend or modify the appearance of parts of your Storefront.</template>
-                </SwagLandingCard>
-                <!--<SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
-                    <template #title>Admin Extensions</template>
-                    <template #sub>Build powerful modules for the admin panel using our new Admin Extension API.</template>
-                </SwagLandingCard>-->
                 <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Shopware CLI</template>
                     <template #sub>Your tool when it comes to app development, installation, and deployments.</template>
                 </SwagLandingCard>
+            <SwagLandingCard page="/docs/guides/plugins/apps/hosting-guide/">
+                    <template #title>Hosting guide</template>
+                    <template #sub>Not all apps need hosting. Explore the server options.</template>
+                </SwagLandingCard>
+            <!--<SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
+                    <template #title>App scripts</template>
+                    <template #sub>Leverage app scripts to customize the checkout or fetch additional data in your Storefront.</template>
+                </SwagLandingCard>-->
+            <!--<SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
+                    <template  #title>Customize templates</template>
+                    <template #sub>Custom templates let you extend or modify the appearance of parts of your Storefront.</template>
+                </SwagLandingCard>-->
+                <!--<SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
+                    <template #title>Admin Extensions</template>
+                    <template #sub>Build powerful modules for the admin panel using our new Admin Extension API.</template>
+                </SwagLandingCard>-->
             </template>
         </SwagLandingCardList>
     </template>
