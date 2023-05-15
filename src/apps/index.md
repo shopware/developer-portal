@@ -29,7 +29,7 @@ items:
       - text: App scripts
         link: "/docs/guides/plugins/apps/app-scripts/"
       - text: App SDK
-        link: "https://github.com/shopware/app-php-sdk/blob/main/docs/01-getting_started.md"
+        link: "/docs/guides/plugins/apps/app-sdks/"
       - text: Webhooks
         link: "/docs/resources/references/app-reference/webhook-events-reference"
       - text: Admin API
@@ -61,7 +61,7 @@ swag:
         <SwagLandingCardList>
             <template #title>Starter guides</template>
             <template #description>
-                The number of topics that are available for exploration can be overwhelming. To help you navigate this complexity, we have curated step-by-step tutorials that are designed to familiarize you with some of our core concepts.
+                The number of topics that are available for exploration can be overwhelming. To help you navigate this complexity, we have curated tutorials that are designed to familiarize you with some of our core concepts.
             </template>
             <template #cards>
             <!--<SwagLandingCard page="https://github.com/shopware/app-php-sdk/blob/main/docs/01-getting_started.md">
@@ -137,7 +137,7 @@ swag:
             </template>
         </SwagLandingCardList>
     </template>-->
-    <template #exposed3>
+    <!--<template #exposed3>
         <SwagLandingCardList>
             <template #title>Related topics</template>
             <template #cards>
@@ -153,19 +153,19 @@ swag:
                     <template #title>Hosting guide</template>
                     <template #sub>Not all apps need hosting. Explore the server options.</template>
                 </SwagLandingCard>
-            <!--<SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
+            <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
                     <template #title>App scripts</template>
                     <template #sub>Leverage app scripts to customize the checkout or fetch additional data in your Storefront.</template>
-                </SwagLandingCard>-->
-            <!--<SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
+                </SwagLandingCard>
+            <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/">
                     <template  #title>Customize templates</template>
                     <template #sub>Custom templates let you extend or modify the appearance of parts of your Storefront.</template>
-                </SwagLandingCard>-->
-                <!--<SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
+                </SwagLandingCard>
+                <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
                     <template #title>Admin Extensions</template>
                     <template #sub>Build powerful modules for the admin panel using our new Admin Extension API.</template>
-                </SwagLandingCard>-->
+                </SwagLandingCard>
             </template>
         </SwagLandingCardList>
-    </template>
+    </template>-->
 </SwagLanding>

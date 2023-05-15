@@ -6,32 +6,45 @@ head:
 items:
   - text: Integrations
     link: /integrations/
+  - text: API concepts
+    items:
+      - text: Authentication & Authorization
+        collapsed: true
+        items:
+          - text: Store API    
+            link: https://shopware.stoplight.io/docs/store-api/8e1d78252fa6f-authentication-and-authorisation
+          - text: Admin API   
+            link: https://shopware.stoplight.io/docs/admin-api/ZG9jOjEwODA3NjQx-authentication
+      - text: General search concept
+        link: https://shopware.stoplight.io/docs/store-api/cf710bf73d0cd-search-queries
+      - text: Error handling
+        link: https://shopware.stoplight.io/docs/store-api/e1c4d4ff82cc4-error-handling
+      - text: Security
+        link: https://shopware.stoplight.io/docs/store-api/6b4f9a2acb576-security
+  - text: Store API
+    items:
+      - text: Quick Start
+        link: https://shopware.stoplight.io/docs/store-api/38777d33d92dc-quick-start-guide
+      - text: Libraries & SDKs
+        link: https://shopware.stoplight.io/docs/store-api/ZG9jOjEwODEwMjI1-javascript-sd-ks
+      - text: Endpoints
+        link: /docs/guides/integrations-api/general-concepts
   - text: Admin API
     items:
-      - text: Authentication
-        link: /docs/guides/integrations-api/general-concepts
-      - text: General concepts
-        link: /docs/guides/integrations-api/general-concepts
-      - text: Reading data
-        link: /docs/guides/integrations-api/general-concepts
-      - text: Writing data
-        link: /docs/guides/integrations-api/general-concepts
-      - text: Processes
-        link: /docs/guides/integrations-api/general-concepts
-  - text: Guides
-    items:
-      - text: Product data
-        link: /docs/guides/integrations-api/general-concepts
-      - text: Media Uploads
-        link: /docs/guides/integrations-api/general-concepts
-      - text: Customers
-        link: /docs/guides/integrations-api/general-concepts
-      - text: Order automation
-        link: /docs/guides/integrations-api/general-concepts
+      - text: Quick start
+        link: https://shopware.stoplight.io/docs/admin-api/twpxvnspkg3yu-quick-start-guide
+      - text: Request & response
+        link: https://shopware.stoplight.io/docs/admin-api/ZG9jOjEyMzAzNDU1-request-and-response-structure
+      - text: Endpoint structure
+        link: https://shopware.stoplight.io/docs/admin-api/ZG9jOjEyMzAzNDU1-request-and-response-structure
+      - text: Endpoints
+        link: https://shopware.stoplight.io/docs/admin-api/8d53c59b2e6bc-shopware-admin-api      
   - text: Reference
     items:
       - text: Admin API
         link: https://shopware.stoplight.io/docs/admin-api/
+      - text: Store API
+        link: https://shopware.stoplight.io/docs/store-api/
 aside: false
 swag:
   related: false
@@ -52,13 +65,13 @@ swag:
                     <template #title>Criteria concept</template>
                     <template #sub>Understand the search criteria, a powerful concept to read, filter and aggregate data through the Admin API.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/themes/add-assets-to-theme">
+                <SwagLandingCard page="https://shopware.stoplight.io/docs/admin-api/fdd24cc76f22d-order-overview">
                     <template #title>Automate processes</template>
                     <template #sub>Transition order or payment states, send out emails, clear caches - automation can make life a lot easier - and more efficient.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/themes/add-theme-inheritance">
-                    <template #title>Working with media</template>
-                    <template #sub>When working with products, you're also working with images. Learn best practices to implement media imports.</template>
+                <SwagLandingCard page="https://shopware.stoplight.io/docs/admin-api/faf8f8e4e13a0-bulk-payloads">
+                    <template #title>Bulk operations</template>
+                    <template #sub>Perform multiple write operations like creating, updating and deleting simultaneously.</template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>
