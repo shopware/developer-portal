@@ -87,6 +87,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: "src",
   srcExclude: [
       "**/_source/**",
+      // template
+      "docs/resources/references/adr/YYYY-MM-DD-template.md",
       // {% api
       "docs/v6.3/guides/plugins/apps/app-base-guide.md",
       "docs/v6.3/resources/references/app-reference/payment-reference.md",
@@ -256,7 +258,19 @@ export default defineConfigWithTheme<ThemeConfig>({
   async transformHead(context: TransformContext): Promise<HeadConfig[]> {
     const head: HeadConfig[] = [];
 
-    const title = context.pageData.frontmatter?.title || context.pageData.title;
+    let title = context.pageData.frontmatter?.title || context.pageData.frontmatter?.nav?.title || context.pageData.title;
+
+    // fallback to the file name
+    if (!title) {
+      let filename = context.pageData.filePath
+          .replace('/index.md', '')
+          .replace('.md', '')
+          .split('/')
+          .reverse()[0]
+          .replace('-', ' ');
+      title = `${filename[0].toUpperCase()}${filename.substring(1)}`
+    }
+
     head.push([
       'meta',
       {
