@@ -42,7 +42,7 @@ aside: false
                     <template #title>Custom field</template>
                     <template #sub>User-friendly layouts - Add custom entity designs within our CMS.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts#translation" icon="language" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/#translation" icon="language" icon-type="solid">
                     <template #title>Translations</template>
                     <template #sub>Global pages - Create multilingual landing pages with country-specific translations.</template>
                 </SwagLandingCard>

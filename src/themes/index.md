@@ -8,7 +8,7 @@ items:
     items:
       - text: Build theme
         link: /docs/guides/plugins/themes/create-a-theme
-      - text: Configuration
+      - text: Configure theme
         collapsed: true
         items:
           - text: Theme configuration
@@ -17,9 +17,7 @@ items:
             link: /docs/guides/plugins/themes/add-theme-inheritance
           - text: Inheritence configuration
             link: /docs/guides/plugins/themes/theme-inheritance-configuration
-      - text: Templates
-        link: /docs/guides/plugins/themes/theme-configuration
-      - text: Styling
+      - text: Style theme
         collapsed: true
         items:
           - text: SCSS/CSS
@@ -28,15 +26,17 @@ items:
             link: /docs/guides/plugins/themes/add-theme-inheritance-without-resources
           - text: Override bootstrap variables
             link: /docs/guides/plugins/themes/override-bootstrap-variables-in-a-theme
-      - text: Javascript
-        link: /docs/guides/plugins/themes/add-css-js-to-theme.html#adding-custom-scss
-      - text: Assets
+      - text: Embed JS styling
+        link: /docs/guides/plugins/themes/add-css-js-to-theme.html#adding-custom-js
+      - text: Add assets
         collapsed: true
         items:
           - text: Custom assets
             link: /docs/guides/plugins/themes/add-assets-to-theme
           - text: Icons
             link: /docs/guides/plugins/themes/add-icons
+      - text: Cutomize templates
+        link: /docs/guides/plugins/plugins/storefront/customize-templates
   - text: Reference
     items:
       - text: Twig functions
@@ -45,10 +45,8 @@ items:
         link: /docs/guides/plugins/apps/app-scripts/data-loading
   - text: Themes Store
     items:
-      - text: Publish your theme
-        link: /themes/store/publish-yourtheme
       - text: Guidelines
-        link: /docs/resources/guidelines/testing/store
+        link: /docs/resources/guidelines/testing/store/quality-guidelines-apps/
 aside: false
 head:
   - - meta
@@ -84,7 +82,7 @@ swag:
                 </SwagLandingCard>
                 <SwagLandingCard page="/docs/guides/plugins/themes/add-theme-inheritance">
                     <template #title>Theme inheritance</template>
-                    <template #sub>Build a family of themes that inherit from each other, so you can focus on building a solid foundation for all your custom projects.</template>
+                    <template #sub>Build a family of themes that inherit from each other for all your custom projects.</template>
                 </SwagLandingCard>
             </template>
         </SwagLandingCardList>

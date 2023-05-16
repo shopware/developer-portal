@@ -29,7 +29,7 @@ items:
       - text: App scripts
         link: "/docs/guides/plugins/apps/app-scripts/"
       - text: App SDK
-        link: "/docs/guides/plugins/apps/app-sdks/"
+        link: "/docs/guides/plugins/apps/app-sdks"
       - text: Webhooks
         link: "/docs/resources/references/app-reference/webhook-events-reference"
       - text: Admin API

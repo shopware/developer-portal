@@ -28,7 +28,7 @@ items:
       - text: Libraries & SDKs
         link: https://shopware.stoplight.io/docs/store-api/ZG9jOjEwODEwMjI1-javascript-sd-ks
       - text: Endpoints
-        link: /docs/guides/integrations-api/general-concepts
+        link: https://shopware.stoplight.io/docs/store-api/7b972a75a8d8d-shopware-store-api
   - text: Admin API
     items:
       - text: Quick start
@@ -56,7 +56,7 @@ swag:
         Shopware offers an extensive Admin API that allows for way more than just reading and writing data. Learn how to make the most of it and build integrations, connectors or imports.
     </template>
     <template #ctas>
-        <PageRef page="/docs/concepts/api/admin-api" title="Admin API Quick Start" sub="Dive into the basics of authentication, privileges, reading and writing data, working with errors." />
+        <PageRef page="/docs/concepts/api/" title="Kick start here and explore" sub="Dive into the basics of authentication, privileges, reading and writing data, working with errors." />
     </template>
     <template #exposed>
         <SwagLandingCardList>
