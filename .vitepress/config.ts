@@ -1,4 +1,5 @@
 import { defineConfigWithTheme } from "vitepress";
+import type { HeadConfig, TransformContext } from 'vitepress'
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
@@ -86,6 +87,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: "src",
   srcExclude: [
       "**/_source/**",
+      // template
+      "docs/resources/references/adr/YYYY-MM-DD-template.md",
       // {% api
       "docs/v6.3/guides/plugins/apps/app-base-guide.md",
       "docs/v6.3/resources/references/app-reference/payment-reference.md",
@@ -250,6 +253,33 @@ export default defineConfigWithTheme<ThemeConfig>({
   vue: {
     // https://github.com/vitejs/vite/issues/7854
     reactivityTransform: resolve(__dirname, 'src'), // true
+  },
+
+  async transformHead(context: TransformContext): Promise<HeadConfig[]> {
+    const head: HeadConfig[] = [];
+
+    let title = context.pageData.frontmatter?.title || context.pageData.frontmatter?.nav?.title || context.pageData.title;
+
+    // fallback to the file name
+    if (!title) {
+      let filename = context.pageData.filePath
+          .replace('/index.md', '')
+          .replace('.md', '')
+          .split('/')
+          .reverse()[0]
+          .replace('-', ' ');
+      title = `${filename[0].toUpperCase()}${filename.substring(1)}`
+    }
+
+    head.push([
+      'meta',
+      {
+        property: 'og:image',
+        content: `https://shopware-docs-og.vercel.app/api/og?title=${encodeURIComponent(title)}`,
+      }
+    ]);
+
+    return head;
   },
 
   async buildEnd() {

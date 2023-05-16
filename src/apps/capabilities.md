@@ -1,11 +1,3 @@
----
-head:
-  - - meta
-    - property: 'og:image'
-      content: https://shopware-docs-og.vercel.app/api/og?title=Capabilities
-
----
-
 # App Capabilities
 
 You can use apps to create custom extensions for Shopware 6 that are installable across all types of Shopware stores, from cloud-based to self-hosted. This enables merchants to enhance their Shopware store's functionality according to their unique needs.

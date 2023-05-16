@@ -48,10 +48,6 @@ items:
       - text: Guidelines
         link: /docs/resources/guidelines/testing/store/quality-guidelines-apps/
 aside: false
-head:
-  - - meta
-    - property: 'og:image'
-      content: https://shopware-docs-og.vercel.app/api/og?title=Themes
 swag:
   related: false
 ---
