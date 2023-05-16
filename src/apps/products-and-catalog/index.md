@@ -45,6 +45,6 @@ aside: false
             </template>
         </SwagLandingCardList>
     <h1>Change the look</h1>
-        <p>You can manipulate the look and feel of your online store's homepage, landing page, product detail page, product listing page, etc., by assigning respective categories and entities to a defined <a href="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks">CMS</a> layout. On the other hand, you can customize the style of the layout with <a href="/docs/guides/plugins/apps/storefront/apps-as-themes">Themes</a> </p>
+        <p>You can manipulate the look and feel of your online store's homepage, landing page, product detail page, product listing page, etc., by assigning respective categories and entities to a defined <a href="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks">CMS</a> layout. On the other hand, you can customize the style of the layout with <a href="/docs/guides/plugins/themes/theme-base-guide">Themes</a> </p>
     </template>
 </SwagLanding>

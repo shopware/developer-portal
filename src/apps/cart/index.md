@@ -30,7 +30,7 @@ aside: false
                     <template #title>Modify line items</template>
                     <template #sub>Customize selection - add or remove product items with ease.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items" icon="discount" icon-type="solid">
+                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-a-relative-discount" icon="discount" icon-type="solid">
                     <template #title>Calculate discounts</template>
                     <template #sub>Flexible discount options - Absolute or relative calculations.</template>
                 </SwagLandingCard>
@@ -54,10 +54,10 @@ aside: false
                     <template #title>Rule-based scripts</template>
                     <template #sub>Maximize control - Rule builder for ultimate cart manipulation.</template>
                 </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts" icon="circle" icon-type="solid">
+                <!--<SwagLandingCard page="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts" icon="circle" icon-type="solid">
                     <template #title>Cart state</template>
                     <template #sub>Stay informed - Easily check if your cart is empty or loaded.</template>
-                </SwagLandingCard>
+                </SwagLandingCard>-->
             </template>
         </SwagLandingCardList>
         <h1>Change the look</h1>
