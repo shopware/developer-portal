@@ -1,4 +1,5 @@
 import { defineConfigWithTheme } from "vitepress";
+import type { HeadConfig, TransformContext } from 'vitepress'
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
@@ -250,6 +251,21 @@ export default defineConfigWithTheme<ThemeConfig>({
   vue: {
     // https://github.com/vitejs/vite/issues/7854
     reactivityTransform: resolve(__dirname, 'src'), // true
+  },
+
+  async transformHead(context: TransformContext): Promise<HeadConfig[]> {
+    const head: HeadConfig[] = [];
+
+    const title = context.pageData.frontmatter?.title || context.pageData.title;
+    head.push([
+      'meta',
+      {
+        property: 'og:image',
+        content: `https://shopware-docs-og.vercel.app/api/og?title=${encodeURIComponent(title)}`,
+      }
+    ]);
+
+    return head;
   },
 
   async buildEnd() {
