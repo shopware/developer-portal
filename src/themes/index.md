@@ -13,9 +13,9 @@ items:
         items:
           - text: Theme configuration
             link: /docs/guides/plugins/themes/theme-configuration    
-          - text: Inheritence
+          - text: Inheritance
             link: /docs/guides/plugins/themes/add-theme-inheritance
-          - text: Inheritence configuration
+          - text: Inheritance configuration
             link: /docs/guides/plugins/themes/theme-inheritance-configuration
       - text: Style theme
         collapsed: true
