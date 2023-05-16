@@ -13,12 +13,12 @@ items:
         items:
           - text: Theme configuration
             link: /docs/guides/plugins/themes/theme-configuration    
-          - text: Inheritence
+          - text: Inheritance
             link: /docs/guides/plugins/themes/add-theme-inheritance
-          - text: Inheritence configuration
+          - text: Inheritance configuration
             link: /docs/guides/plugins/themes/theme-inheritance-configuration
       - text: Templates
-        link: /docs/guides/plugins/themes/theme-configuration
+        link: /docs/guides/plugins/plugins/storefront/customize-templates.html
       - text: Styling
         collapsed: true
         items:
@@ -28,27 +28,21 @@ items:
             link: /docs/guides/plugins/themes/add-theme-inheritance-without-resources
           - text: Override bootstrap variables
             link: /docs/guides/plugins/themes/override-bootstrap-variables-in-a-theme
-      - text: Javascript
-        link: /docs/guides/plugins/themes/add-css-js-to-theme.html#adding-custom-scss
       - text: Assets
         collapsed: true
         items:
-          - text: Custom assets
-            link: /docs/guides/plugins/themes/add-assets-to-theme
+          - text: Javascript
+            link: /docs/guides/plugins/themes/add-css-js-to-theme.html#adding-custom-js
           - text: Icons
             link: /docs/guides/plugins/themes/add-icons
+          - text: Images
+            link: /docs/guides/plugins/themes/add-assets-to-theme
   - text: Reference
     items:
       - text: Twig functions
         link: /docs/resources/references/storefront-reference/twig-function-reference
       - text: Data Loading
         link: /docs/guides/plugins/apps/app-scripts/data-loading
-  - text: Themes Store
-    items:
-      - text: Publish your theme
-        link: /themes/store/publish-yourtheme
-      - text: Guidelines
-        link: /docs/resources/guidelines/testing/store
 aside: false
 head:
   - - meta
