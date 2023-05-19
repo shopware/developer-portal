@@ -13,10 +13,91 @@ import navigation from "./navigation";
 
 import {
   SwagEmbedsConfig,
+  SwagSectionsConfig,
   SwagSimilarArticlesConfig,
   SwagVersionSwitcherConfig,
   SwagColorCodingConfig
 } from "../../developer-documentation-vitepress/src/shopware/config";
+
+const sections: SwagSectionsConfig[] = [
+  {
+    title: 'Frontends',
+    matches: [
+      '/frontends/',
+    ],
+  },
+  {
+    title: 'Apps',
+    matches: [
+      '/apps/',
+      '/docs/guides/apps/',
+      '/docs/v6.4/guides/apps/',
+      '/docs/v6.3/guides/apps/',
+    ],
+  },
+  {
+    title: 'Themes',
+    matches: [
+      '/themes/',
+      '/docs/guides/themes/',
+      '/docs/v6.4/guides/themes/',
+      '/docs/v6.3/guides/themes/',
+    ],
+  },
+  {
+    title: 'Plugins',
+    matches: [
+      '/plugins/',
+      '/docs/guides/plugins/',
+      '/docs/v6.4/guides/plugins/',
+      '/docs/v6.3/guides/plugins/',
+    ],
+  },
+  {
+    title: 'Integrations',
+    matches: [
+      '/integrations/',
+    ],
+  },
+  {
+    title: 'Concepts',
+    matches: [
+      '/docs/concepts/',
+      '/docs/v6.4/concepts/',
+      '/docs/v6.3/concepts/',
+    ],
+  },
+  {
+    title: 'Guides',
+    matches: [
+      '/docs/guides/',
+      '/docs/v6.4/guides/',
+      '/docs/v6.3/guides/',
+    ],
+  },
+  {
+    title: 'Products',
+    matches: [
+      '/docs/products/',
+      '/docs/v6.4/products/',
+      '/docs/v6.3/products/',
+    ],
+  },
+  {
+    title: 'Resources',
+    matches: [
+      '/docs/resources/',
+      '/docs/v6.4/resources/',
+      '/docs/v6.3/resources/',
+    ],
+  },
+  {
+    title: 'General',
+    matches: [
+      '/',
+    ],
+  },
+];
 
 const embeds: SwagEmbedsConfig[] = [
   {
@@ -173,6 +254,9 @@ export default defineConfigWithTheme<ThemeConfig>({
     swag: {
       // config for the "Edit on GitHub" link and Algolia Search facets (area, version)
       embeds,
+
+      // config for the Algolia Search Modal lvl1
+      sections,
 
       // knowledge index
       similarArticles: {
