@@ -95,7 +95,8 @@ export const createSitemap = async (urls: string[] = []) => {
     // create robots.txt
     const robots = [
         'User-agent: *',
-        'Disallow: /',
+        //'Disallow: /',
+        'Allow: *',
         'Sitemap: https://beta-developer.shopware.com/sitemap.xml'
     ].join("\n");
     fs.writeFileSync(`${destinationDir}robots.txt`, robots);

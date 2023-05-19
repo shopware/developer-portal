@@ -200,7 +200,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ['link', {rel: "shortcut icon", href: "/favicon.webp"}],
 
     // disallow indexing
-    ['meta', {name: 'robots', content: 'noindex'}],
+    // ['meta', {name: 'robots', content: 'noindex'}],
 
     // rollbar error reporting
     [
