@@ -24,6 +24,6 @@ export const copyConfig = async (src: string, dst: string) => {
         }
 
         output.notice(config.message);
-        await run('cp', [finalSrc, `${dst}/${config.dst}`], {dir: src});
+        await run('cp', [finalSrc, path.join(dst, config.dst)], {dir: src});
     }
 }

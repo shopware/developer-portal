@@ -4,6 +4,7 @@ import {output} from "../output";
 import fs from "fs";
 import {execSync} from "child_process";
 import {copyConfig} from "../procedure/copyConfig";
+import path from "path";
 
 export default {
     name: 'link',
@@ -112,8 +113,8 @@ export default {
 
         const toDelete = dst !== '.';
 
-        src = `${cwdDir}/${src}`
-        dst = `${developerDir}/src/${dst}`;
+        src = path.join(cwdDir, src);
+        dst = path.join(developerDir, 'src', dst);
 
         output.notice(`Linking to ${dst} from ${src}`);
 

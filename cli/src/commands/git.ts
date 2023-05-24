@@ -4,6 +4,7 @@ import { composeRepository } from "../helpers";
 import { execSync } from "child_process";
 import fs from "fs";
 import link from "./link";
+import path from "path";
 
 export default {
     name: 'git',
@@ -29,7 +30,7 @@ export default {
             output.notice(`Cloning ${repository.name}`)
 
             const dir = repository.name.split('/').reverse()[0];
-            const cloneDir = `repos/${dir}-${repository.branch}`;
+            const cloneDir = path.join('repos', `${dir}-${repository.branch}`);
             const exists = fs.existsSync(cloneDir);
 
             if (exists && clean) {
@@ -54,7 +55,7 @@ export default {
             if (newCheckout) {
                 output.notice(`Symlinking ${cloneDir}/${repository.src} to src/${repository.dst}`)
                 await link.handler({
-                    src: `${cloneDir}/${repository.src}`,
+                    src: path.join(cloneDir, repository.src),
                     dst: repository.dst,
                     wd: process.cwd(),
                     symlink: true

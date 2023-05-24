@@ -2,6 +2,7 @@ import process from "process";
 import {execa, ExecaChildProcess} from "execa";
 import inquirer from "inquirer";
 import {storage} from "./storage";
+import path from "path";
 
 /*
 import inquirerFuzzyPath from "inquirer-fuzzy-path";
@@ -56,7 +57,7 @@ export const sh = async (run: string, args: string[], options: { dir?: string, [
     const cwd = options.dir || await getDeveloperPortalPath();
 
     return pipe(execa(`sh`, [
-        `${cwd}/${run}`,
+        path.join(cwd, run),
         ...args
     ], {
         cwd,
@@ -178,7 +179,7 @@ export const getPath = async (key: string, message: string) => {
             message,
             default: key === 'root'
                 ? root
-                : `${root}/${key}`,
+                : path.join(root, key),
         }
     ]);
 

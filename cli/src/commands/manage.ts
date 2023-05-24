@@ -7,6 +7,7 @@ import {getDeveloperPortalPath} from "../helpers";
 import fs from "fs";
 import {cleanup} from "../procedure/cleanup";
 import {cloneCustom} from "../procedure/clone";
+import path from "path";
 
 export default {
     name: 'manage',
@@ -32,7 +33,7 @@ export default {
             }
 
             output.notice(`Processing ${repo.name}@${repo.branch} in ${repo.dst}`);
-            const fullPath = `${developerPortalPath}/src/${repo.dst}`;
+            const fullPath = path.join(developerPortalPath, 'src', repo.dst);
             let exists = false;
             let type = null;
             try {
