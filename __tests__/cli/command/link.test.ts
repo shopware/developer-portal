@@ -1,18 +1,19 @@
-import {createSandbox, destroySandbox, docsCli, terminates, timeout, withDirConfig} from "../helpers";
+import {createSandbox, destroySandbox, docsCli, Result, Sandbox, terminates, timeout, withDirConfig} from "../helpers";
 import {prepareDeveloperPortalCheckout, prepareDummySource} from "../prepare";
 import fs from "fs-extra";
 
 describe('cli link', async () => {
-    let sandbox;
+    let sandbox: Sandbox;
     beforeEach(() => {
         sandbox = createSandbox();
     })
 
     afterEach(() => {
+        // @ts-ignore
         sandbox = destroySandbox(sandbox);
     })
 
-    const expectSuccess = (result) => {
+    const expectSuccess = (result: Result) => {
         expect(result.stdout).toContain('Linking docs directory');
         expect(result.stdout).toContain('Docs directory linked');
     }

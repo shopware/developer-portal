@@ -44,6 +44,7 @@
     "@storybook/testing-library": "^0.1.0",
     "@storybook/vue3": "^7.0.10",
     "@storybook/vue3-vite": "^7.0.10",
+    "@types/fs-extra": "^11.0.1",
     "@types/jest": "^29.5.1",
     "@types/markdown-it": "^12.2.3",
     "@types/mocha": "^10.0.1",
