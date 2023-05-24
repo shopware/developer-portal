@@ -1,4 +1,5 @@
 import {env} from "process";
+import path from "path";
 
 export const repositories = [
     {
@@ -11,20 +12,20 @@ export const repositories = [
     {
         name: 'shopware/docs',
         src: '.',
-        dst: 'docs/v6.4',
+        dst: path.join('docs', 'v6.4'),
         branch: env.BRANCH_DOCS_64 || 'next-6.4',
         org: env.ORG_DOCS || 'shopware',
     },
     {
         name: 'shopware/docs',
         src: '.',
-        dst: 'docs/v6.3',
+        dst: path.join('docs', 'v6.3'),
         branch: env.BRANCH_DOCS_63 || 'next-6.3',
         org: env.ORG_DOCS || 'shopware',
     },
     {
         name: 'shopware/frontends',
-        src: 'apps/docs/src',
+        src: path.join('apps', 'docs', 'src'),
         dst: 'frontends',
         branch: env.BRANCH_FRONTENDS || 'main',
         org: env.ORG_FRONTENDS || 'shopware',
@@ -32,7 +33,7 @@ export const repositories = [
     },
     {
         name: 'gitlab.shopware.com/product/engineering/platform-group/pwa/frontends',
-        src: 'apps/docs/src',
+        src: path.join('apps', 'docs', 'src'),
         dst: 'frontends-gl',
         branch: env.BRANCH_FRONTENDS || 'main',
         org: env.ORG_FRONTENDS || 'shopware',
@@ -50,7 +51,7 @@ export const repositories = [
     },
     {
         name: 'shopware/admin-extension-sdk',
-        src: 'docs/docs/guide',
+        src: path.join('docs', 'docs', 'guide'),
         dst: 'resources/admin-extension-sdk',
         branch: env.BRANCH_ADMIN_EXTENSION_SDK || 'DX-223' || 'main',
         org: env.ORG_ADMIN_EXTENSION_SDK || 'shopware',
