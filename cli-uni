@@ -1,19 +1,16 @@
 #!/usr/bin/env node
 
 const os = require('os');
-const { spawn } = require('child_process');
+const {spawn} = require('child_process');
 const path = require('path');
 
-let command = 'docs-cli.js';
-if (os.platform() === 'win32') {
-  command = 'docs-cli-win.exe';
-}
-
-const cliPath = path.join(__dirname, 'cli', 'dist', command);
+const cliPath = path.join(__dirname, 'cli', 'dist', 'docs-cli.js');
 const args = process.argv.slice(2);
 
-const child = spawn('node', [cliPath, ...args], { stdio: 'inherit' });
+const child = os.platform() === 'win32'
+    ? spawn('node', [cliPath, ...args], {stdio: 'inherit'})
+    : spawn(cliPath, [...args], {stdio: 'inherit'});
 
 child.on('exit', (code) => {
-  process.exit(code);
+    process.exit(code);
 });
