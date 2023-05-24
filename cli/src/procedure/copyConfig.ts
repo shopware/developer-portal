@@ -6,7 +6,7 @@ import {run} from "../helpers";
 export const copyConfig = async (src: string, dst: string) => {
     const configs = [
         {
-            src: '.github/scripts/docs.yml',
+            src: path.join('.github', 'scripts', 'docs.yml'),
             dst: 'docs.yml',
             message: 'Copying external config',
         },

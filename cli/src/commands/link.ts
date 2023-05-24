@@ -81,7 +81,7 @@ export default {
                     output.notice(`Creating deep dir ${dst}`);
                     fs.mkdirSync(dst, {recursive: true});
 
-                    const response = execSync(`rsync -a ${src}/ ${dst} ${excludes.join(' ')}`);
+                    const response = execSync(`rsync -a ${src}${path.sep} ${dst} ${excludes.join(' ')}`);
                     output.log(`${response}`);
                 } catch (e) {
                     throw `Error rsyncing ${src}`;
