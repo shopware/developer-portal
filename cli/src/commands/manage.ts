@@ -1,6 +1,6 @@
 import {output} from "../output";
 import clone from "./clone";
-import {repositories} from "../data";
+import {docsSrcDir, repositories} from "../data";
 import inquirer from "inquirer";
 import confirm from '@inquirer/confirm';
 import {getDeveloperPortalPath} from "../helpers";
@@ -33,7 +33,7 @@ export default {
             }
 
             output.notice(`Processing ${repo.name}@${repo.branch} in ${repo.dst}`);
-            const fullPath = path.join(developerPortalPath, 'src', repo.dst);
+            const fullPath = path.join(developerPortalPath, docsSrcDir, repo.dst);
             let exists = false;
             let type = null;
             try {

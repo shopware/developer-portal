@@ -59,6 +59,12 @@ export default {
         src = await requireParam(src, optionSrc);
         dst = await requireParam(dst, optionDst);
 
+        // tmp disabled
+        if (dst === '.') {
+            output.error('Destination cannot be .');
+            return;
+        }
+
         if (symlink && dst === '.') {
             output.error('Destination cannot be . when using --symlink - use --copy or --rsync');
             return;

@@ -1,12 +1,13 @@
-import {createProgram, terminates, docsCli, createSandbox, destroySandbox} from "./helpers";
+import {createProgram, docsCli, createSandbox, destroySandbox, Sandbox} from "./helpers";
 
 describe('CLI', async () => {
-    let sandbox;
+    let sandbox: Sandbox;
     beforeEach(() => {
         sandbox = createSandbox();
     })
 
     afterEach(() => {
+        // @ts-ignore
         sandbox = destroySandbox(sandbox);
     })
 

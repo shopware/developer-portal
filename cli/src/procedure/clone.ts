@@ -8,6 +8,7 @@ import inquirer from "inquirer";
 import cloneCommand from "../commands/clone";
 import {copyConfig} from "./copyConfig";
 import path from "path";
+import {docsSrcDir} from "../data";
 
 export const clone = async ({
                                 repository, // 1
@@ -23,7 +24,7 @@ export const clone = async ({
         ? process.cwd()
         : await getDeveloperPortalPath();
     src = path.join(tmpDir, src);
-    dst = path.join(developerDir, 'src', dst);
+    dst = path.join(developerDir, docsSrcDir, dst);
 
     const cleanupTmpDir = () => {
         if (!fs.existsSync(tmpDir)) {

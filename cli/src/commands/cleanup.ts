@@ -1,5 +1,5 @@
 import {output} from "../output";
-import {repositories} from "../data";
+import {repositories, docsSrcDir} from "../data";
 import inquirer from "inquirer";
 import {getDeveloperPortalPath} from "../helpers";
 import fs from "fs";
@@ -16,7 +16,7 @@ export default {
 
         const mountPoints = repositories
             .map(repository => repository.dst)
-            .filter(dst => fs.existsSync(path.join(developerPortalPath, 'src', dst)));
+            .filter(dst => fs.existsSync(path.join(developerPortalPath, docsSrcDir, dst)));
 
         if (!mountPoints.length) {
             output.notice('No mountpoints found. Please, manually cleanup mountpoints');
@@ -33,7 +33,7 @@ export default {
         ]);
 
         for (const dst of dsts) {
-            const fullPath = path.join(developerPortalPath, 'src', dst);
+            const fullPath = path.join(developerPortalPath, docsSrcDir, dst);
             const stat = fs.statSync(fullPath);
             const type = stat.isDirectory()
                 ? 'dir'

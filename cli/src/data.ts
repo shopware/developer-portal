@@ -1,6 +1,8 @@
 import {env} from "process";
 import path from "path";
 
+export const docsSrcDir = 'src';
+
 export const repositories = [
     {
         name: 'shopware/docs',
