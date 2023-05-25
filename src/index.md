@@ -44,7 +44,7 @@ next: false
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
 
-  <SwagCard page="developer-portal/src/whats-shopware.md">
+  <SwagCard page="/what-is-shopware.html">
     <template #title>What is Shopware?</template>
     <template #description>Learn about Shopware, its features, benefits.</template>
   </SwagCard>
@@ -54,14 +54,14 @@ next: false
     <template #description>Get to know which ways you can get involved with Shopware as a developer.</template>
   </SwagCard>
 
-  <SwagCard page="developer-portal/src/migrate-to-shopware.md">
-    <template #title>Want to migrate to Shopware?</template>
-    <template #description>Lean how easy it is to migrate to Shopware irrespective of your old instance.</template>
-  </SwagCard>
-
-  <SwagCard page="/docs/guides/installation">
+  <SwagCard page="/docs/guides/installation/">
     <template #title>How to install Shopware?</template>
     <template #description>Set up Shopware on your local machine or use a developer sandbox from the cloud.</template>
+  </SwagCard>
+
+  <SwagCard page="/migrate-to-shopware.html">
+    <template #title>Want to migrate to Shopware?</template>
+    <template #description>Lean how easy it is to migrate to Shopware irrespective of your old instance.</template>
   </SwagCard>
 
 </div>
