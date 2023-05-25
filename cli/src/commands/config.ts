@@ -4,6 +4,7 @@ import {repositories} from "../data";
 import inquirer from "inquirer";
 import {choices} from "../helpers";
 import {storage} from "../storage";
+import path from "path";
 
 export default {
     name: 'config',
@@ -36,7 +37,7 @@ export default {
         if (view) {
             const files = fs.readdirSync(docsCLI);
             for (const file of files) {
-                const content = await fs.readFileSync(`${docsCLI}/${file}`);
+                const content = await fs.readFileSync(path.join(docsCLI, file));
                 output.log(`${file}: ${content}`);
             }
             return;

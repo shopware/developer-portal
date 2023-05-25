@@ -4,6 +4,19 @@ import * as path from "path";
 import {v4 as uuid} from 'uuid';
 import fs from "fs-extra";
 
+export interface Sandbox {
+    projectsPath: string;
+    cwd: string;
+    developerPortal: string;
+}
+
+export interface Result {
+    code: number;
+    error: any;
+    stdout: string;
+    stderr: string;
+}
+
 export const createProgram = (data?: string[]) => {
     const program = cli.program();
 
@@ -18,7 +31,7 @@ export const createProgram = (data?: string[]) => {
     return program;
 }
 
-export const docsCli = (args, cwd = '.', options: ExecOptions = {}): Promise<{ code, error, stdout, stderr }> => new Promise(resolve => {
+export const docsCli = (args: string[], cwd = '.', options: ExecOptions = {}): Promise<Result> => new Promise(resolve => {
     // avoid referencing
     const finalOptions = {...options};
 
@@ -46,7 +59,7 @@ export const docsCli = (args, cwd = '.', options: ExecOptions = {}): Promise<{ c
     );
 })
 
-export const createSandbox = () => {
+export const createSandbox = (): Sandbox => {
     // double sandbox for sandboxed .docs-cli
     const projectsPath = path.resolve(path.join("./sandbox/", uuid()));
     const cwd = path.join(projectsPath, uuid());
@@ -62,7 +75,7 @@ export const createSandbox = () => {
     }
 }
 
-export const destroySandbox = (sandbox) => {
+export const destroySandbox = (sandbox: Sandbox) => {
     //console.log(`Removing sandbox: ${sandbox.projectsPath}`);
     fs.rmSync(sandbox.projectsPath, {recursive: true, force: true});
     //console.log(`Sandbox removed: ${sandbox.projectsPath}`);
@@ -75,19 +88,19 @@ export const destroySandbox = (sandbox) => {
  *     // https://fireflysemantics.medium.com/unit-testing-commander-scripts-with-jest-bc32465709d6
  *     // https://vitest.dev/guide/ui.html
  */
-export const sandbox = async (task) => {
-    const {cwd, projectsPath} = createSandbox();
+export const sandbox = async (task: Function) => {
+    const sandbox = createSandbox();
 
     try {
-        return await task(cwd);
+        return await task(sandbox.cwd);
     } catch (e) {
         // console.error(e);
     } finally {
-        destroySandbox(projectsPath);
+        destroySandbox(sandbox);
     }
 }
 
-export const terminates = async (promise) => {
+export const terminates = async (promise: Promise<any>) => {
     const result = await promise;
 
     expect(result.error.signal).toEqual('SIGTERM');
@@ -113,7 +126,7 @@ export const timeout = {
     },
 };
 
-export const createConfig = (projectsDir, contents: object) => {
+export const createConfig = (projectsDir: string, contents: { [key: string]: any }) => {
     const dirCLI = `${projectsDir}/.docs-cli`;
     fs.mkdirSync(dirCLI);
     Object.keys(contents).forEach(file => {
@@ -121,7 +134,7 @@ export const createConfig = (projectsDir, contents: object) => {
     })
 }
 
-export const withDirConfig = (sandbox, secrets = {}) => {
+export const withDirConfig = (sandbox: Sandbox, secrets = {}) => {
     createConfig(sandbox.projectsPath, {
         'dir.root': sandbox.projectsPath,
         'dir.developer-portal': `${sandbox.projectsPath}/developer-portal`,
@@ -130,7 +143,7 @@ export const withDirConfig = (sandbox, secrets = {}) => {
 }
 
 export const fetchSecrets = () => {
-    const secrets = {
+    const secrets: { [key: string]: string | undefined } = {
         GITLAB_FRONTENDS_USERNAME: process.env.GITLAB_FRONTENDS_USERNAME,
         GITLAB_FRONTENDS_ACCESS_KEY: process.env.GITLAB_FRONTENDS_ACCESS_KEY,
         FIGMA_TOKEN: process.env.FIGMA_TOKEN,
@@ -147,7 +160,7 @@ export const fetchSecrets = () => {
         }
 
         // parse from parent (local) env config
-        secrets[secret] = JSON.parse(fs.readFileSync(`../.docs-cli/${secret}`));
+        secrets[secret] = JSON.parse(`${fs.readFileSync(`../.docs-cli/${secret}`)}`);
     });
 
     return secrets;

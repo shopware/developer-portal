@@ -2,6 +2,7 @@ import process from "process";
 import {execa, ExecaChildProcess} from "execa";
 import inquirer from "inquirer";
 import {storage} from "./storage";
+import path from "path";
 
 /*
 import inquirerFuzzyPath from "inquirer-fuzzy-path";
@@ -13,6 +14,18 @@ const options = {
     excludePath: nodePath => nodePath.startsWith('node_modules'),
     excludeFilter: nodePath => nodePath == '.',
 };*/
+
+export interface RepositoryConfig {
+    user?: string;
+    pass?: string;
+    git?: string;
+    org?: string;
+    separator?: string;
+}
+
+export interface RepositoryConfigCollection {
+    [key: string]: RepositoryConfig;
+}
 
 const pipe = (subprocess: ExecaChildProcess) => {
     subprocess.stdout?.pipe(process.stdout);
@@ -56,14 +69,18 @@ export const sh = async (run: string, args: string[], options: { dir?: string, [
     const cwd = options.dir || await getDeveloperPortalPath();
 
     return pipe(execa(`sh`, [
-        `${cwd}/${run}`,
+        path.join(cwd, run),
         ...args
     ], {
         cwd,
         ...options,
     }));
 }
-export const run = async (run: string, args: string[], options: { dir?: string, env?: object, [key: string]: any } = {}) => {
+export const run = async (run: string, args: string[], options: {
+    dir?: string,
+    env?: object,
+    [key: string]: any
+} = {}) => {
     const cwd = options.dir || await getDeveloperPortalPath();
 
     // no cwd!
@@ -85,7 +102,10 @@ export const choices = (choices: { [key: string]: string }) => {
     }, <{ value: string, name: string }[]>[])
 }
 
-export const requireParam = async (param: string | undefined, option: { name: string, description?: string }, defaultValue?: string | null | undefined): Promise<string> => {
+export const requireParam = async (param: string | undefined, option: {
+    name: string,
+    description?: string
+}, defaultValue?: string | null | undefined): Promise<string> => {
     if (param) {
         return param;
     }
@@ -101,7 +121,7 @@ export const requireParam = async (param: string | undefined, option: { name: st
 
     return response.param;
 }
-export const composeRepository = (repo: string, {git, org, user, pass, separator = '/'}: { [key: string]: string | undefined }) => {
+export const composeRepository = (repo: string, {git, org, user, pass, separator = '/'}: RepositoryConfig) => {
     // append git
     if (!repo.endsWith('.git')) {
         repo = `${repo}.git`;
@@ -178,7 +198,7 @@ export const getPath = async (key: string, message: string) => {
             message,
             default: key === 'root'
                 ? root
-                : `${root}/${key}`,
+                : path.join(root, key),
         }
     ]);
 

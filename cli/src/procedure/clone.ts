@@ -1,11 +1,14 @@
 import {output} from "../output";
 import fs from "fs";
+import os from "os";
 import {getDeveloperPortalPath, run} from "../helpers";
 import {execSync} from 'child_process';
 import {v4 as uuid} from 'uuid';
 import inquirer from "inquirer";
 import cloneCommand from "../commands/clone";
 import {copyConfig} from "./copyConfig";
+import path from "path";
+import {docsSrcDir} from "../data";
 
 export const clone = async ({
                                 repository, // 1
@@ -16,12 +19,12 @@ export const clone = async ({
                                 options
                             }: { repository: string, branch: string, src: string, dst: string, ci: boolean | undefined, options: { env?: object } }) => {
     // prepare variables
-    const tmpDir = `/tmp/${uuid()}`;
+    const tmpDir = path.join(os.tmpdir(), uuid());
     const developerDir = ci
         ? process.cwd()
         : await getDeveloperPortalPath();
-    src = `${tmpDir}/${src}`
-    dst = `${developerDir}/src/${dst}`;
+    src = path.join(tmpDir, src);
+    dst = path.join(developerDir, docsSrcDir, dst);
 
     const cleanupTmpDir = () => {
         if (!fs.existsSync(tmpDir)) {
@@ -57,13 +60,14 @@ export const clone = async ({
 
         // special flows
         const docsAfterClone = '.github/scripts/docs-after-clone.sh';
-        if (fs.existsSync(`${tmpDir}/${docsAfterClone}`) && fs.lstatSync(`${tmpDir}/${docsAfterClone}`).isFile()) {
+        const fullDocsAfterClone = path.join(tmpDir, docsAfterClone);
+        if (fs.existsSync(fullDocsAfterClone) && fs.lstatSync(fullDocsAfterClone).isFile()) {
             output.notice('Running additional steps');
             // make executable
-            fs.chmodSync(`${tmpDir}/${docsAfterClone}`, 0o777);
+            fs.chmodSync(fullDocsAfterClone, 0o777);
 
             // run after-clone script
-            await run(`${tmpDir}/${docsAfterClone}`, [tmpDir], {
+            await run(fullDocsAfterClone, [tmpDir], {
                 dir: tmpDir,
                 env: options.env
             });

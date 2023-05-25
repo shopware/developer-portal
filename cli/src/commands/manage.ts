@@ -1,12 +1,13 @@
 import {output} from "../output";
 import clone from "./clone";
-import {repositories} from "../data";
+import {docsSrcDir, repositories} from "../data";
 import inquirer from "inquirer";
 import confirm from '@inquirer/confirm';
 import {getDeveloperPortalPath} from "../helpers";
 import fs from "fs";
 import {cleanup} from "../procedure/cleanup";
 import {cloneCustom} from "../procedure/clone";
+import path from "path";
 
 export default {
     name: 'manage',
@@ -32,7 +33,7 @@ export default {
             }
 
             output.notice(`Processing ${repo.name}@${repo.branch} in ${repo.dst}`);
-            const fullPath = `${developerPortalPath}/src/${repo.dst}`;
+            const fullPath = path.join(developerPortalPath, docsSrcDir, repo.dst);
             let exists = false;
             let type = null;
             try {

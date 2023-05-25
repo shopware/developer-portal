@@ -4,6 +4,7 @@ import {output} from "../output";
 import fs from "fs";
 import {execSync} from "child_process";
 import {copyConfig} from "../procedure/copyConfig";
+import path from "path";
 
 export default {
     name: 'link',
@@ -58,6 +59,12 @@ export default {
         src = await requireParam(src, optionSrc);
         dst = await requireParam(dst, optionDst);
 
+        // tmp disabled
+        if (dst === '.') {
+            output.error('Destination cannot be .');
+            return;
+        }
+
         if (symlink && dst === '.') {
             output.error('Destination cannot be . when using --symlink - use --copy or --rsync');
             return;
@@ -80,7 +87,7 @@ export default {
                     output.notice(`Creating deep dir ${dst}`);
                     fs.mkdirSync(dst, {recursive: true});
 
-                    const response = execSync(`rsync -a ${src}/ ${dst} ${excludes.join(' ')}`);
+                    const response = execSync(`rsync -a ${src}${path.sep} ${dst} ${excludes.join(' ')}`);
                     output.log(`${response}`);
                 } catch (e) {
                     throw `Error rsyncing ${src}`;
@@ -112,8 +119,8 @@ export default {
 
         const toDelete = dst !== '.';
 
-        src = `${cwdDir}/${src}`
-        dst = `${developerDir}/src/${dst}`;
+        src = path.join(cwdDir, src);
+        dst = path.join(developerDir, 'src', dst);
 
         output.notice(`Linking to ${dst} from ${src}`);
 

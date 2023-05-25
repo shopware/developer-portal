@@ -1,4 +1,4 @@
-import {composeRepository} from "../../cli/src/helpers";
+import {composeRepository, RepositoryConfigCollection} from "../../cli/src/helpers";
 
 describe('composeRepository', async () => {
 
@@ -13,7 +13,7 @@ describe('composeRepository', async () => {
             'https://github.com/shopware/frontends',
             'https://git@github.com/shopware/frontends',
         ];
-        const outputs = {
+        const outputs: RepositoryConfigCollection = {
             'git@github.com/shopware/frontends.git': {},
             'custom@github.com/shopware/frontends.git': {
                 user: 'custom',
@@ -46,7 +46,7 @@ describe('composeRepository', async () => {
         const repositories = [
             'gitlab.shopware.com/product/engineering/platform-group/pwa/frontends',
         ];
-        const outputs = {
+        const outputs: RepositoryConfigCollection = {
             'git@gitlab.shopware.com/product/engineering/platform-group/pwa/frontends.git': {},
             'user:pass@gitlab.shopware.com/product/engineering/platform-group/pwa/frontends.git': {
                 user: 'user',
