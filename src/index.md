@@ -13,7 +13,7 @@ next: false
 
 <div class="my-12 md:my-24">
   <h1 class="text-center accent text-3xl md:text-5xl font-black mb-8 grid font-poppins">Shopware Developer Documentation</h1>
-  <p class="mx-auto text-center text-gray-600 dark:text-slate-200 max-w-800px mx-auto text-lg leading-8">
+  <p class="mx-auto text-center max-w-800px mx-auto text-lg leading-8">
       Shopware is an <b>open-source ecommerce platform</b> that helps merchants <b>build</b> their online stores. You, as a <b>developer</b>, can contribute by <b>creating</b> extensions, themes, or integrations and <b>selling</b> it in our store.
   </p>
 </div>
@@ -60,7 +60,7 @@ next: false
 <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-purple-500 to-purple-700 text-white text-center">Plugins</div>
 <div class="m-2 text-sm leading-6"> Deep core modifications written in <b>PHP</b>. Apply patterns like <b>dependency injection</b> and <b>event listeners</b>. Can modify Shopware's internal <b>database schema</b> using Migrations. Deployed on the Shopware server. </div>
 <div class="m-2 text-sm mt-4 leading-6"> Plugins can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
-<p><a href="/plugins/plugin-base-guide" class="btn --secondary m-2 mt-4 inline-block">Learn more about Plugins</a></p>
+<p><a href="/plugins/plugin-base-guide" class="btn --subtle m-2 mt-4 inline-block">Learn more about Plugins</a></p>
 </div>
 
 <div>
