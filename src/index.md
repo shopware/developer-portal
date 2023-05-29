@@ -40,26 +40,31 @@ next: false
 
 <!-- import {VTIconSlack, VTIconTwitter, VTIconGitHub, VTIconStackoverflow} from 'vitepress-shopware-docs'; -->
 
-<!--<h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
+<h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
 
-  <SwagCard page="#">
+  <SwagCard page="/what-is-shopware.html">
     <template #title>What is Shopware?</template>
-    <template #description>Learn about Shopware, what it is, how to contribute and who builds it.</template>
+    <template #description>Learn about Shopware, its features, benefits.</template>
   </SwagCard>
 
-  <SwagCard page="#">
+  <SwagCard page="https://docs.shopware.com/en/shopware-6-en/getting-started">
     <template #title>How to start with Shopware?</template>
     <template #description>Get to know which ways you can get involved with Shopware as a developer.</template>
   </SwagCard>
 
-  <SwagCard page="#">
+  <SwagCard page="/docs/guides/installation/">
     <template #title>How to install Shopware?</template>
     <template #description>Set up Shopware on your local machine or use a developer sandbox from the cloud.</template>
   </SwagCard>
 
-</div>-->
+  <SwagCard page="/migrate-to-shopware.html">
+    <template #title>Want to migrate to Shopware?</template>
+    <template #description>Lean how easy it is to migrate to Shopware irrespective of your old instance.</template>
+  </SwagCard>
+
+</div>
 
 <h2 class="text-4xl tracking-wide mb-10 accent isolated">Start building</h2>
 
@@ -95,7 +100,6 @@ next: false
     <template #description> Visit our old documentation here for references</template>
   </SwagCard>
 </div>
-
 
 <!--<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
     <div>
