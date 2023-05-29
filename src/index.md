@@ -7,6 +7,15 @@ editLink: false
 stackOverflowLink: false
 prev: false
 next: false
+items:
+  - text: What is Shopware
+    link: /what-is-shopware.html
+  - text: How to start with Shopware
+    link: https://docs.shopware.com/en/shopware-6-en/getting-started
+  - text: How to install Shopware
+    link: /docs/guides/installation/
+  - text: Migrating to Shopware
+    link: /migrate-to-shopware.html
 ---
 
 <div class="unstyled w-full md:max-w-1376px 2xl:px-0 mx-auto">
@@ -67,7 +76,7 @@ next: false
 <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-orange-500 to-orange-700 text-white text-center">Themes</div>
 <div class="m-2 text-sm leading-6"> A theme gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide <b>JavaScript</b> with your theme to change how the storefront behaves in the browser.</div>
 <div class="m-2 text-sm mt-4 leading-6"> Themes can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
-<p><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary m-2 mt-4 inline-block">Learn more about Plugins</a></p>
+<p><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary m-2 mt-4 inline-block">Learn more about Themes</a></p>
 </div>
 
 </div>
