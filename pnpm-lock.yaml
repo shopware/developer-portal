@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 importers:
 
@@ -17,8 +21,8 @@ importers:
         specifier: 1.0.0-beta.1
         version: 1.0.0-beta.1(@types/node@18.16.7)(fuse.js@6.6.2)(react-dom@18.2.0)(react@18.2.0)(sass@1.62.1)(terser@5.17.3)
       vitepress-shopware-docs:
-        specifier: 1.0.0-beta.6
-        version: 1.0.0-beta.6(@babel/core@7.22.1)(@vue/server-renderer@3.3.4)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1)
+        specifier: 1.0.0-beta.7
+        version: 1.0.0-beta.7(@babel/core@7.22.1)(@vue/server-renderer@3.3.4)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1)
       vue:
         specifier: ^3.3.1
         version: 3.3.1
@@ -3531,7 +3535,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3555,7 +3559,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3590,7 +3594,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.4.4(react@18.2.0)
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3602,7 +3606,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -14692,8 +14696,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-shopware-docs@1.0.0-beta.6(@babel/core@7.22.1)(@vue/server-renderer@3.3.4)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1):
-    resolution: {integrity: sha512-FzGtRw3HXGlgNC/AakAQbang+mwGyq2oxhXIZhP+gfiQ41cvCCIGJSWMM376bSVcY6JgU/2syqE/1zeQPsQyOQ==}
+  /vitepress-shopware-docs@1.0.0-beta.7(@babel/core@7.22.1)(@vue/server-renderer@3.3.4)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(vue@3.3.1):
+    resolution: {integrity: sha512-jieNhkMe7ZS3LNuZ7ErclYlAVmZ+iaMQ+p2iSKvKWzvf7n4m95Iq4ggaMvTu3lb+t1ROseY2bnIrwHjRpv66qQ==}
     dependencies:
       '@docsearch/css': 3.4.0
       '@docsearch/js': 3.4.0(react-dom@18.2.0)(react@18.2.0)
