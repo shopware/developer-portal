@@ -2,43 +2,30 @@
 sidebar: false
 aside: false
 page: true
-footer: false
+#footer: false
 editLink: false
 stackOverflowLink: false
 prev: false
 next: false
+items:
+  - text: What is Shopware
+    link: /what-is-shopware.html
+  - text: How to start with Shopware
+    link: https://docs.shopware.com/en/shopware-6-en/getting-started
+  - text: How to install Shopware
+    link: /docs/guides/installation/
+  - text: Migrating to Shopware
+    link: /migrate-to-shopware.html
 ---
 
 <div class="unstyled w-full md:max-w-1376px 2xl:px-0 mx-auto">
 
-<!--<div class="flex items-end place-content-center gap-4 opacity-50 my-6">
-  <img src="/home/arrow.png" class="max-h-[6rem]" />
-  <img src="/home/search.png" class="max-h-[2rem]"/>
-</div>-->
-
 <div class="my-12 md:my-24">
-  <h1 class="text-center accent text-3xl md:text-5xl font-black mb-8" style="font-family: 'Poppins';">Shopware Developer Documentation</h1>
-  <p class="mx-auto text-center text-gray-600 dark:text-slate-200 max-w-800px mx-auto text-lg leading-8" style="font-family: 'Inter';">
+  <h1 class="text-center accent text-3xl md:text-5xl font-black mb-8 grid font-poppins">Shopware Developer Documentation</h1>
+  <p class="mx-auto text-center max-w-800px mx-auto text-lg leading-8">
       Shopware is an <b>open-source ecommerce platform</b> that helps merchants <b>build</b> their online stores. You, as a <b>developer</b>, can contribute by <b>creating</b> extensions, themes, or integrations and <b>selling</b> it in our store.
   </p>
 </div>
-
-<!--<div class="flex items-start place-content-center gap-4 opacity-50 my-6">
-  <img src="/home/try.png" class="max-h-[2rem]"/>
-  <img src="/home/arrow.png" class="rotate-180 max-h-[6rem]" />
-</div>
-
-<div class="flex items-center place-content-center mb-12">
-  <SwagQA />
-  <SwagBazaar />
-</div>
-
-<script setup>
-  import SwagQA from './components/SwagQA.vue'
-  import SwagBazaar from './components/SwagBazaar.vue'
-</script>-->
-
-<!-- import {VTIconSlack, VTIconTwitter, VTIconGitHub, VTIconStackoverflow} from 'vitepress-shopware-docs'; -->
 
 <h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
 
@@ -63,6 +50,34 @@ next: false
     <template #title>Want to migrate to Shopware?</template>
     <template #description>Lean how easy it is to migrate to Shopware irrespective of your old instance.</template>
   </SwagCard>
+
+</div>
+
+<h2 class="text-4xl tracking-wide mb-10 accent isolated">Extend Shopware</h2>
+
+<div class="grid gap-10 md:grid-cols-3 my-14 divide-x divide-gray-300">
+
+<div>
+<div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center">Apps</div>
+<div class="m-2 text-sm leading-6">
+<b>Shallow</b> core modifications and extension via <b>app scripts</b>, <b>configurations</b> or <b>APIs</b> (REST, webhooks). Deployed with the Shopware server, more complex apps require an additional separate server. </div>
+<div class="m-2 text-sm mt-4 leading-6"> Apps can be installed in <b>self-hosted</b>, <b>PaaS</b> and <b>cloud</b> environments. </div>
+<p><a href="/apps/capabilities" class="btn m-2 mt-4 inline-block">Learn more about Apps</a></p>
+</div>
+
+<div>
+<div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-purple-500 to-purple-700 text-white text-center">Plugins</div>
+<div class="m-2 text-sm leading-6"> Deep core modifications written in <b>PHP</b>. Apply patterns like <b>dependency injection</b> and <b>event listeners</b>. Can modify Shopware's internal <b>database schema</b> using Migrations. Deployed on the Shopware server. </div>
+<div class="m-2 text-sm mt-4 leading-6"> Plugins can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
+<p><a href="/plugins/plugin-base-guide" class="btn --subtle m-2 mt-4 inline-block">Learn more about Plugins</a></p>
+</div>
+
+<div>
+<div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-orange-500 to-orange-700 text-white text-center">Themes</div>
+<div class="m-2 text-sm leading-6"> A theme gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide <b>JavaScript</b> with your theme to change how the storefront behaves in the browser.</div>
+<div class="m-2 text-sm mt-4 leading-6"> Themes can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
+<p><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary m-2 mt-4 inline-block">Learn more about Themes</a></p>
+</div>
 
 </div>
 

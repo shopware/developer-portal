@@ -1,13 +1,4 @@
 ---
-items:
-  - text: What is Shopware
-    link: /what-is-shopware.html
-  - text: How to start with Shopware
-    link: /how-to-start-with-shopware.html
-  - text: How to install Shopware
-    link: /how-to-install-shopware.html
-  - text: Migrating to Shopware
-    link: /migrating-to-shopware.html
 aside: false
 swag:
  related: false

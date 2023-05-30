@@ -320,6 +320,10 @@ export default defineConfigWithTheme<ThemeConfig>({
           link: '/docs/concepts/extensions/plugins-concept.html',
           color: 'from-purple-500 to-purple-700',
         },
+        {
+          link: '/docs/guides/plugins/themes/',
+          color: 'from-orange-500 to-orange-700',
+        },
       ] as SwagColorCodingConfig[]
     }
   },
