@@ -116,6 +116,17 @@ items:
   </SwagCard>
 </div>
 
+<script setup>
+import SwagChangelog from "./components/SwagChangelog.vue";
+</script>
+
+<div class="grid grid-cols-3">
+    <div>
+        <h2 class="flex justify-between items-center">Changelog <a href="#" class="text-xs">View on GitHub</a></h2>
+        <SwagChangelog />
+    </div>
+</div>
+
 <!--<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
     <div>
         <h2 class="text-4xl tracking-wide mb-10 accent isolated">Looking for help</h2>
