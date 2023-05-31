@@ -53,6 +53,32 @@ items:
 
 </div>
 
+<h2 class="text-4xl tracking-wide mb-10 accent isolated">Start building</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+
+  <SwagCard page="/apps/">
+    <template #title>Apps</template>
+    <template #description>Boost or expand your store's capabilities with the simplicity of apps, a must-have for developers seeking to elevate their digital marketplace.</template>
+  </SwagCard>
+
+  <SwagCard page="/themes/">
+    <template #title>Themes</template>
+    <template #description>Style your store with unparalleled flexibility using custom-built or third-party themes, giving you a competitive advantage in this world of ecommerce.</template>
+  </SwagCard>
+
+  <SwagCard page="https://frontends.shopware.com/">
+    <template #title>Frontends</template>
+    <template #description>Build unique and captivating custom storefronts using Store APIs and SDKs, or start with reference implementations using technologies like Vue.js or React.</template>
+  </SwagCard>
+
+  <SwagCard page="/integrations/">
+    <template #title>Integrations</template>
+    <template #description>Integrate with third-party systems through Shopware's powerful APIs that enable swift transfer of products, orders, and other data. </template>
+  </SwagCard>
+
+</div>
+
 <h2 class="text-4xl tracking-wide mb-10 accent isolated">Extend Shopware</h2>
 
 <div class="grid gap-10 md:grid-cols-3 my-14 divide-x divide-gray-300">
@@ -81,38 +107,20 @@ items:
 
 </div>
 
-<h2 class="text-4xl tracking-wide mb-10 accent isolated">Start building</h2>
+<h2 class="text-4xl tracking-wide mb-10 accent isolated">All docs</h2>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
-
-  <SwagCard page="/apps/">
-    <template #title>Apps</template>
-    <template #description>Boost or expand your store's capabilities with the simplicity of apps, a must-have for developers seeking to elevate their digital marketplace.</template>
-  </SwagCard>
-
-  <SwagCard page="/themes/">
-    <template #title>Themes</template>
-    <template #description>Style your store with unparalleled flexibility using custom-built or third-party themes, giving you a competitive advantage in this world of ecommerce.</template>
-  </SwagCard>
-
-  <SwagCard page="https://frontends.shopware.com/">
-    <template #title>Frontends</template>
-    <template #description>Build unique and captivating custom storefronts using Store APIs and SDKs, or start with reference implementations using technologies like Vue.js or React.</template>
-  </SwagCard>
-
-  <SwagCard page="/integrations/">
-    <template #title>Integrations</template>
-    <template #description>Integrate with third-party systems through Shopware's powerful APIs that enable swift transfer of products, orders, and other data. </template>
-  </SwagCard>
-
-</div>
-
-<h2 class="text-4xl tracking-wide mb-10 accent isolated">Looking for old documentation?</h2>
-
-<div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
   <SwagCard page="/docs/">
     <template #title>Developer docs</template>
     <template #description> Visit our old documentation here for references</template>
+  </SwagCard>
+  <SwagCard page="https://docs.shopware.com/">
+    <template #title>Shopware for users</template>
+    <template #description> Successfully launch your online business – Learn how to use Shopware 6 in the documentation.</template>
+  </SwagCard>
+  <SwagCard page="https://brand.shopware.com/">
+    <template #title>shopware.design</template>
+    <template #description> Everything you need to know about our corporate identity and how we express our values.</template>
   </SwagCard>
 </div>
 
