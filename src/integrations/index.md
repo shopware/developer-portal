@@ -56,6 +56,10 @@ swag:
     </template>
     <template #exposed>
         <SwagLandingCardList>
+            <template #title>Starter guides</template>
+            <template #description>
+                Here is a handful of tutorials to follow along that make you familiar with some of our concepts:
+            </template>
             <template #cards>
                 <SwagLandingCard page="/docs/guides/integrations-api/general-concepts/search-criteria">
                     <template #title>Criteria concept</template>
