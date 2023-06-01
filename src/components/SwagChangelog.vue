@@ -2,7 +2,7 @@
   <div class="SwagChangelog divide-y-1 divide-x-1 divide-gray-400">
     <div class="SwagChangelog_item divide-y-1 divide-x-1 divide-gray-400"
          v-for="log in changelog">
-      <span class="SwagChangelog_version">{{ log.version }}</span>
+      <span class="SwagChangelog_version">v{{ log.version }}</span>
       <span class="SwagChangelog_date">{{ log.date }}</span>
       <span class="SwagChangelog_label"
            :class="`--type-${log.type}`"
