@@ -63,9 +63,9 @@ import {
   AisHitsPerPage,
   AisBreadcrumb,
   AisPagination
-} from 'vue-instantsearch/vue3/es';
+} from 'vue-instantsearch/vue3/es/index.js';
 import algoliasearch from 'algoliasearch';
-import 'instantsearch.css/themes/algolia-min.css';
+//import 'instantsearch.css/themes/algolia-min.css';
 import {useData} from "vitepress";
 
 const {theme} = useData()

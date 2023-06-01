@@ -336,6 +336,26 @@ export default defineConfigWithTheme<ThemeConfig>({
       }),
       MarkdownTransform(),
     ],
+    /*optimizeDeps: {
+      //disabled: true,
+      include: [
+        'algoliasearch',
+        'algoliasearch-helper',
+        'qs',
+        '@algolia',
+      ],
+      exclude: [
+        'instantsearch.js',
+      ]
+    }*/
+    build: {
+      rollupOptions: {
+        external: [
+            'vue-instantsearch/vue3/es',
+            'instantsearch.css/themes/algolia-min.css',
+        ]
+      }
+    }
   },
 
   vue: {
