@@ -20,7 +20,7 @@ This will allow you to clone all docs-content repos using SSH, and later commit 
 
 __GitHub:__ head to GitHub > Settings > [Codespaces](https://github.com/settings/codespaces) and add a new Codespace secret named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository.
 
-__GitPod:__ Head to User Settings > [Variables](https://gitpod.io/user/variables) and add a new variable named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository.__*
+__GitPod:__ Head to User Settings > [Variables](https://gitpod.io/user/variables) and add a new variable named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository.
 
 Make sure to also add the key to the GitHub > Settings > [SSH and GPG keys](https://github.com/settings/keys).
 
