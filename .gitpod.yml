@@ -9,6 +9,6 @@ image:
 
 tasks:
   #- before: pnpm i && pnpm cli:build && ./docs-cli
-  - before: sh ./.devcontainer/on-create.sh
+  - before: npm i -g pnpm && sh ./.devcontainer/on-create.sh
     init: sh ./.devcontainer/post-create.sh
     command: pnpm dev
