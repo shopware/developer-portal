@@ -1,6 +1,6 @@
 # Shopware Docs, CLI and DevContainer
 
-You can try dev env provided by [GitHub Codespaces](https://github.com/codespaces).
+You can try dev env provided by [GitHub Codespaces](https://github.com/codespaces) or [GitPod](https://gitpod.io).
 
 ## Setup
 
@@ -10,11 +10,17 @@ Because we need to clone multiple repositories, you need to generate a new SSH k
 $ ssh-keygen -t ed25519 -C "your.name@shopware.com"
 ```
 
-Head to GitHub > Settings > [Codespaces](https://github.com/settings/codespaces) and add a new Codespace secret named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository. This will allow you to clone all docs-content repos using SSH, and later commit changes to them. As a value, enter base64 single-line encoded key.
+Generate single-line base64 encoded value of your private key:
 
 ```bash
 $ base64 ~/.ssh/id_ed25519 -w 0
 ```
+
+This will allow you to clone all docs-content repos using SSH, and later commit changes to them.
+
+__GitHub:__ head to GitHub > Settings > [Codespaces](https://github.com/settings/codespaces) and add a new Codespace secret named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository.
+
+__GitPod:__ Head to User Settings > [Variables](https://gitpod.io/user/variables) and add a new variable named `GH_SWAG_SSH_PRIVATE_KEY` and assign it to `shopware/developer-portal` repository.__*
 
 Make sure to also add the key to the GitHub > Settings > [SSH and GPG keys](https://github.com/settings/keys).
 
