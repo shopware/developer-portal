@@ -8,5 +8,6 @@ image:
   file: .gitpod/Dockerfile
 
 tasks:
-  - init: pnpm i && pnpm cli:build && ./docs-cli
-    command: ./docs-cli git && pnpm dev
+  - before: pnpm i && pnpm cli:build && ./docs-cli
+    init: ./docs-cli git
+    command: pnpm dev
