@@ -8,6 +8,7 @@ image:
   file: .gitpod/Dockerfile
 
 tasks:
-  - before: pnpm i && pnpm cli:build && ./docs-cli
-    init: ./docs-cli git
+  #- before: pnpm i && pnpm cli:build && ./docs-cli
+  - before: sh ./.devcontainer/on-create.sh
+    init: sh ./.devcontainer/post-create.sh
     command: pnpm dev

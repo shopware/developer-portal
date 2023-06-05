@@ -3,4 +3,4 @@ FROM gitpod/workspace-node:${VARIANT}
 
 WORKDIR /workspaces/developer-portal
 
-RUN mkdir /workspaces/.docs-cli 
+RUN mkdir /workspaces/.docs-cli
