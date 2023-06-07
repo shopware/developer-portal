@@ -19,6 +19,9 @@
   }
   &_version {
     @apply font-normal text-lg text-black;
+    .dark & {
+      @apply text-white;
+    }
   }
   &_date {
     @apply rounded-sm text-xs px-2 py-1;

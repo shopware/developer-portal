@@ -84,7 +84,7 @@ items:
 </div>
 
 <h2 class="text-4xl tracking-wide mb-10 accent isolated">Extend Shopware</h2>
-<div class="grid my-10 p-10 bg-#f5fcff dark:bg-gray-900 my-10 rounded-xl">
+<div class="grid my-10 p-10 my-10 c-exposed">
     <div class="grid gap-10 md:grid-cols-3 divide-x divide-gray-300">
         <div>
         <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center">Apps</div>
@@ -125,13 +125,12 @@ items:
 
 <script setup>
 import SwagChangelog from "./components/SwagChangelog.vue";
-import SwagInput from "./components/SwagInput.vue";
-import SwagCheckbox from "./components/SwagCheckbox.vue";
+import SwagNewsletter from "./components/SwagNewsletter.vue";
 </script>
 
 <div class="py-10 my-10 grid lg:grid-cols-2 xl:grid-cols-3 gap-10 items-start">
     <div class="c-border-gradient rounded-md">
-        <div class="grid gap-4 rounded-md bg-white dark:bg-gray-900 p-5">
+        <div class="grid gap-4 rounded-md p-5 --apply-bg">
             <h3 class="flex justify-between items-center">Changelog <a href="#" class="text-xs">View on GitHub</a></h3>
             <SwagChangelog />
         </div>
@@ -143,16 +142,7 @@ import SwagCheckbox from "./components/SwagCheckbox.vue";
     </div>
 </div>
 
-<div class="py-10 flex flex-col gap-6 text-center items-center justify-center max-w-800px mx-auto c-outflow --gradient">
-    <h3>Newsletter</h3>
-    <p class="text-subtle font-normal">Stay up to date with the latest and greatest in AI technology and ecommerce.</p>
-    <div class="max-w-360px flex flex-col gap-6 text-subtle text-left items-center justify-center text-sm">
-        <SwagInput type="email" />
-        <SwagCheckbox class="self-start">Agree to data protection *</SwagCheckbox>
-        <p class="text-sm">You can find information on how we process your personal data in our <a href="#">privacy notice</a>. Insofar as my consent is required for the use of this data, I consent to the use of my data in accordance with the declaration of consent contained in our privacy notice.</p>
-        <button type="button" class="btn --primary">Subscribe now</button>
-    </div>
-</div>
+<SwagNewsletter />
 
 <!--<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
     <div>
