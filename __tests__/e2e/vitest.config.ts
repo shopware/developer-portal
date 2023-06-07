@@ -1,15 +1,3 @@
-import { defineConfig } from 'vitest/config'
+import config from "../../node_modules/@shopware-docs/vitest/src/config/vitest.config";
 
-const timeout = 60_000
-
-export default defineConfig({
-    test: {
-        //root: '../../src/',
-        setupFiles: ['vitestSetup.ts'],
-        globalSetup: ['__tests__/e2e/vitestGlobalSetup.ts'],
-        testTimeout: timeout,
-        hookTimeout: timeout,
-        teardownTimeout: timeout,
-        globals: true,
-    },
-})
+export default config({__dirname, __dirnamePrefix: '../../'});

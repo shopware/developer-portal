@@ -1,9 +1,1 @@
-export const withBase = () => {
-}
-
-export const useData = () => {
-}
-
-export const useRoute = () => ({
-    path: ''
-})
+export * from "@shopware-docs/vitest/mocks";
