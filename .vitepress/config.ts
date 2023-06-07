@@ -227,15 +227,16 @@ export default defineConfigWithTheme<ThemeConfig>({
       "// End Rollbar Snippet"
     ],
 
-    // Google Analytics - UA-64631238-1
+    // GA4 - G-9JLJ6GGB76
     [
       'script',
-      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=UA-64631238-1' }
+      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-9JLJ6GGB76' }
     ],
+
     [
       'script',
       {},
-      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'UA-64631238-1');"
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-9JLJ6GGB76');"
     ]
   ],
 
