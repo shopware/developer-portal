@@ -48,12 +48,12 @@ or similar solution.
 
 # Table of contents
 
-| Section                              | Description                                                                               |
-|--------------------------------------|-------------------------------------------------------------------------------------------|
-| [Quick start](./QUICK-START.md)      | Set up your local Developer portal instance and start using CLI                           |
-| [CLI](./CLI.md)                      | In-depth description for all features provided by the Shopware Docs CLI                   |
-| [Features](./FEATURES.md)            | In-depth description for all features provided by the`developer-portal`                   |
-| [Features (external)](./FEATURES.md) | In-depth description for all features provided by the `developer-documentation-vitepress` |
-| [Tests](./TESTS.md)                  | Walkthrough for tests                                                                     |
-| [FAQ](./FAQ.md)                      | Frequently asked questions                                                                |
-| [DevContainer](./DEV-CONTAINER.md)   | Using Shopware Docs with DevContainer                                                     |
+| Section                                                                                                    | Description                                                                               |
+|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| [Quick start](./QUICK-START.md)                                                                            | Set up your local Developer portal instance and start using CLI                           |
+| [CLI](https://github.com/shopware/developer-documentation-vitepress/blob/main/CLI.md)                      | In-depth description for all features provided by the Shopware Docs CLI                   |
+| [Features](./FEATURES.md)                                                                                  | In-depth description for all features provided by the`developer-documentation-vitepres`   |
+| [Features (external)](https://github.com/shopware/developer-documentation-vitepress/blob/main/FEATURES.md) | In-depth description for all features provided by the `developer-documentation-vitepress` |
+| [Tests](./TESTS.md)                                                                                        | Walkthrough for tests                                                                     |
+| [FAQ](./FAQ.md)                                                                                            | Frequently asked questions                                                                |
+| [DevContainer](./DEV-CONTAINER.md)                                                                         | Using Shopware Docs with DevContainer                                                     |

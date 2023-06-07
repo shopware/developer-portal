@@ -41,8 +41,4 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: pnpm i && cd cli && pnpm i
-
-    - name: Build CLI
-      shell: bash
-      run: pnpm cli:build
+      run: pnpm i
