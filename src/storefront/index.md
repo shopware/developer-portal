@@ -85,7 +85,7 @@ swag:
 <SwagLanding image="/landing/apps.png">
     <template #title>Shopware Frontends</template>
     <template #description>
-        **Shopware Composable Frontends** is Shopware's toolkit for creating **platform agnostic** custom storefronts. The demo store implementation is based on **Vue.js** and **Nuxt3**.
+        Shopware Composable Frontends is Shopware's toolkit for creating <b>platform agnostic</b> custom storefronts. The demo store implementation is based on <b>Vue.js</b> and <b>Nuxt3</b>.
     </template>
     <template #ctas>
         <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Start building your first Shopware Frontends project" sub="Learn how to set up your development environment and start coding within a couple of minutes." />
