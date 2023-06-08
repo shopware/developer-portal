@@ -1,1 +1,3 @@
-export * from "@shopware-docs/vitest/mocks";
+import {mocks} from "@shopware-docs/vitest";
+
+export default mocks;

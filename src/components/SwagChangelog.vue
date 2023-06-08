@@ -27,16 +27,28 @@
     @apply rounded-sm text-xs px-2 py-1;
     background-color: var(--sw-c-gray-100);
     color: var(--sw-c-gray-dark-100);
+    .dark & {
+      background-color: var(--sw-c-gray-dark-600);
+      color: var(--sw-c-gray-600);
+    }
   }
   &_label {
     @apply text-xs px-2 py-1;
     &.--type-rc {
       background-color: var(--sw-c-blue-vivacious-100);
       color: var(--sw-c-blue-vivacious-900);
+      .dark & {
+        background-color: var(--sw-c-blue-vivacious-900);
+        color: var(--sw-c-blue-vivacious-50);
+      }
     }
     &.--type-security {
       background-color: var(--sw-c-pink-100);
       color: var(--sw-c-pink-900);
+      .dark & {
+        background-color: var(--sw-c-pink-900);
+        color: var(--sw-c-pink-50);
+      }
     }
   }
 }

@@ -3,12 +3,12 @@
     <h3>Stay up to date</h3>
     <p class="text-subtle font-normal">Subscribe to our Developer Newsletter and be the first to be informed about product releases, updates, security notices, the Shopware Academy, and other important developer topics.</p>
 
-    <div class="max-w-360px flex flex-col gap-6 text-subtle text-left items-center justify-center text-sm">
+    <!--<div class="max-w-360px flex flex-col gap-6 text-subtle text-left items-center justify-center text-sm">
       <SwagInput type="email" />
       <SwagCheckbox class="self-start">Agree to data protection *</SwagCheckbox>
       <p class="text-sm">You can find information on how we process your personal data in our <a href="#">privacy notice</a>. Insofar as my consent is required for the use of this data, I consent to the use of my data in accordance with the declaration of consent contained in our privacy notice.</p>
       <button type="button" class="btn --primary">Subscribe now</button>
-    </div>
+    </div>-->
 
     <div id="SwagNewsletter_Form" class="text-subtle"></div>
 
@@ -51,7 +51,6 @@ const loadScript = (src: string, umdName: string) => {
 const identifier = 'SwagNewsletter_Form';
 
 onMounted(async () => {
-  console.log('loading');
   const hbspt = await loadScript('https://js.hsforms.net/forms/embed/v2.js', 'hbspt');
 
   console.log('loaded', hbspt);
