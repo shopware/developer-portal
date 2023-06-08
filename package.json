@@ -8,15 +8,10 @@
     "test:regression": "VITE_TEST_BUILD=1 REGRESSION=1 vitest run regression -r __tests__/e2e",
     "test:crawl": "export NODE_OPTIONS=\"--max-old-space-size=9216\" && VITE_TEST_BUILD=0 CRAWL=1 vitest run crawl -r __tests__/e2e",
     "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
-    "test:cli": "vitest run -r __tests__/cli --sequence.shuffle",
-    "test:cli:coverage": "vitest run -r __tests__/cli --coverage",
     "dev": "cross-env SHOPWARE_DEV=1 vitepress dev",
     "build": "export NODE_OPTIONS=\"--max-old-space-size=9216\" && vitepress build",
     "serve": "vitepress serve",
     "preview": "docker run -dit -p 8765:80 -v \"$PWD/.vitepress/dist\":/usr/local/apache2/htdocs/ httpd:2.4",
-    "cli:dev": "pnpm --dir ./cli dev && chmod +x ./cli/dist/docs-cli.js",
-    "cli:build": "pnpm --dir ./cli build && chmod +x ./cli/dist/docs-cli.js",
-    "cli:pkg": "pnpm --dir ./cli pkg",
     "docs:embed": "./docs-cli embed",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -30,7 +25,7 @@
     "cross-env": "^7.0.3",
     "terser": "^5.17.3",
     "vitepress": "1.0.0-beta.1",
-    "vitepress-shopware-docs": "1.0.0-beta.10",
+    "vitepress-shopware-docs": "1.0.0-beta.23",
     "vue": "^3.3.1"
   },
   "devDependencies": {
@@ -44,6 +39,10 @@
     "@storybook/testing-library": "^0.1.0",
     "@storybook/vue3": "^7.0.10",
     "@storybook/vue3-vite": "^7.0.10",
+    "@shopware-docs/cli": "^1.0.0-beta.23",
+    "@shopware-docs/storybook": "^1.0.0-beta.23",
+    "@shopware-docs/vitepress": "^1.0.0-beta.23",
+    "@shopware-docs/vitest": "^1.0.0-beta.23",
     "@types/fs-extra": "^11.0.1",
     "@types/jest": "^29.5.1",
     "@types/markdown-it": "^12.2.3",
@@ -73,7 +72,6 @@
     "shell-escape": "^0.2.0",
     "sitemap": "^7.1.1",
     "slugify": "^1.6.6",
-    "storybook": "^7.0.10",
     "typedoc": "^0.24.7",
     "typescript": "^5.0.4",
     "uuid": "^9.0.0",
@@ -84,7 +82,10 @@
     "algoliasearch": "^4.17.0",
     "instantsearch.css": "^8.0.0",
     "instantsearch.js": "^4.56.0",
-    "vue-instantsearch": "^4.10.0"
+    "vue-instantsearch": "^4.10.0",
+    "storybook": "^7.0.10",
+    "storybook-addon-fetch-mock": "^1.0.1",
+    "storybook-addon-pseudo-states": "^2.0.1"
   },
   "pnpm": {
     "peerDependencyRules": {

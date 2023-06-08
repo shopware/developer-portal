@@ -16,24 +16,6 @@ on:
       - main
 
 jobs:
-  test-cli:
-    name: Test CLI
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Prepare
-        uses: ./.github/actions/checkout-install
-
-      - name: Test CLI
-        env:
-          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
-          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
-        run: pnpm test:cli
 
   embed-docs:
     name: Embed docs
@@ -212,7 +194,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs:
-      - test-cli
       - test-dev
       - test-build
       - build

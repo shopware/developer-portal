@@ -1,18 +1,14 @@
 <template>
   <div class="SwagCheckbox">
-    <input id="cb" type="checkbox" />
+    <input id="cb" type="checkbox" class="form-checkbox"/>
     <label for="cb" class="flex flex-row gap-2 items-center">
-      <span class="form-checkbox"></span>
-      <slot /></label>
+      <slot/>
+    </label>
   </div>
 </template>
 
 <style lang="scss">
 .SwagCheckbox {
-  input {
-    @apply hidden;
-  }
+  @apply flex gap-2 items-center;
 }
 </style>
-<script setup>
-</script>

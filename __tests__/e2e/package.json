@@ -1,6 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "vitepress": "workspace:*"
+    "vitepress": "workspace:*",
+    "@shopware-docs/vitest": "*"
   }
 }
