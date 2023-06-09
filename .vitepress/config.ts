@@ -346,23 +346,23 @@ export default defineConfigWithTheme<ThemeConfig>({
       colorCoding: [
         {
           link: '/docs/guides/plugins/apps/',
-          color: 'from-blue-500 to-blue-700',
+          color: 'from-sw-blue to-sw-blue',
         },
         {
           link: '/docs/concepts/extensions/apps-concept.html',
-          color: 'from-blue-500 to-blue-700',
+          color: 'from-sw-blue to-sw-blue',
         },
         {
           link: '/docs/guides/plugins/plugins/',
-          color: 'from-purple-500 to-purple-700',
+          color: 'from-sw-purple to-sw-purple',
         },
         {
           link: '/docs/concepts/extensions/plugins-concept.html',
-          color: 'from-purple-500 to-purple-700',
+          color: 'from-sw-purple to-sw-purple',
         },
         {
           link: '/docs/guides/plugins/themes/',
-          color: 'from-orange-500 to-orange-700',
+          color: 'from-sw-green to-sw-green',
         },
       ] as SwagColorCodingConfig[]
     }

@@ -59,7 +59,7 @@ onMounted(async () => {
     portalId: "6506294",
     formId: "1fff50e7-f278-42aa-a61c-1d784872bee2",
     target: '#SwagNewsletter_Form',
-    //cssRequired: '',
+    cssRequired: '',
     submitButtonClass: 'btn --primary',
   });
 })

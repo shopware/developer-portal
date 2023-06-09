@@ -87,20 +87,20 @@ items:
 <div class="grid my-10 p-10 my-10 c-exposed">
     <div class="grid gap-10 md:grid-cols-3 divide-x divide-gray-300">
         <div>
-        <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-[--sw-c-blue-vivacious-400] to-[--sw-c-blue-vivacious-900] text-white text-center">Apps</div>
+        <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-sw-blue to-sw-blue text-white text-center">Apps</div>
         <div class="m-2 text-sm leading-6">
         <b>Shallow</b> core modifications and extension via <b>app scripts</b>, <b>configurations</b> or <b>APIs</b> (REST, webhooks). Deployed with the Shopware server, more complex apps require an additional separate server. </div>
         <div class="m-2 text-sm mt-4 leading-6"> Apps can be installed in <b>self-hosted</b>, <b>PaaS</b> and <b>cloud</b> environments. </div>
         <p><a href="/apps/capabilities" class="btn m-2 mt-4 inline-block">Learn more about Apps</a></p>
         </div>
         <div>
-        <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-[--sw-c-purple-500] to-[--sw-c-purple-900] text-white text-center">Plugins</div>
+        <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-sw-purple to-sw-purple text-white text-center">Plugins</div>
         <div class="m-2 text-sm leading-6"> Deep core modifications written in <b>PHP</b>. Apply patterns like <b>dependency injection</b> and <b>event listeners</b>. Can modify Shopware's internal <b>database schema</b> using Migrations. Deployed on the Shopware server. </div>
         <div class="m-2 text-sm mt-4 leading-6"> Plugins can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
         <p><a href="/plugins/plugin-base-guide" class="btn --subtle m-2 mt-4 inline-block">Learn more about Plugins</a></p>
         </div>
         <div>
-        <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-[--sw-c-green-500] to-[--sw-c-green-900] text-white text-center">Themes</div>
+        <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-sw-green to-sw-green text-white text-center">Themes</div>
         <div class="m-2 text-sm leading-6"> A theme gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide <b>JavaScript</b> with your theme to change how the storefront behaves in the browser.</div>
         <div class="m-2 text-sm mt-4 leading-6"> Themes can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
         <p><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary m-2 mt-4 inline-block">Learn more about Themes</a></p>
