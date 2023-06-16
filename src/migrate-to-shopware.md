@@ -14,7 +14,7 @@ swag:
                 Here is a handful of tutorials to follow along that make you familiar with some of our concepts:
             </template>
             <template #cards>
-                  <SwagLandingCard page="/docs/products/extensions/migration-assistant/guides/creating-a-new-migration-profile/extending-a-shopware-migration-profile.md">
+                  <SwagLandingCard page="/docs/products/extensions/migration-assistant/guides/creating-a-new-migration-profile/extending-a-shopware-migration-profile">
                     <template #title>Shopware 5 to Shopware 6</template>
                     <template #description>Learn how to migrate from old version to new version of Shopware.</template>
                   </SwagLandingCard>
@@ -28,7 +28,7 @@ swag:
                   </SwagLandingCard>
                   <SwagLandingCard page="/docs/products/extensions/migration-assistant/guides/creating-a-new-migration-profile">
                     <template #title>Magento or other platforms to Shopware</template>
-                    <template #description>Prepare yourself for your growth and the e-commerce of tomorrow with Migration Assistent</template>
+                    <template #description>Prepare yourself for your growth and the e-commerce of tomorrow with Migration Assistant</template>
                   </SwagLandingCard>
             </template>
         </SwagLandingCardList>
