@@ -1,7 +1,7 @@
 import {Embedded} from "../page-objects/embedded";
 import {eachLocator} from "../utils/locator";
 
-describe.skip('render correct content', async () => {
+describe('render correct content', async () => {
     let embeddedPage: Embedded;
     const fourOhFour = [];
 
