@@ -12,8 +12,7 @@ const navigation = buildSidebarNav('./src/', [
         text: 'Themes',
     },
     {
-        //link: '/frontends/',
-        link: 'https://shopware-frontends-docs.vercel.app/',
+        link: '/frontends/',
         text: 'Frontends',
         repo: 'shopware/frontends',
     },
