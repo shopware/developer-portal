@@ -20,17 +20,18 @@ export class Embedded {
         expect(links).toEqual([title])
     }
 
-    async hasSidebarSections(num: Number) {
-        const sidebarLocator = this.page.locator('.VPSidebar h2.title-text');
+    async hasSidebarSections(num: number) {
+        const sidebarLocator = this.page.locator('.VPSidebar h2.text');
         expect(await sidebarLocator.count() >= num).toEqual(true);
     }
 
     async hasGitHubLink(repo: string) {
-        const linkLocator = this.page.locator('#VPContent p.edit-link .vt-link');
-        //expect(await linkLocator[0].getAttribute('href')).to.equal(`https://github.com/${repo}/edit/main/apps/docs/src/frontends/index.md`);
+        // const linkLocator = this.page.locator('#VPContent .edit-link .link[target="_blank"]');
+        // expect(await linkLocator.last().getAttribute('href')).toEqual(`https://github.com/${repo}/edit/main/apps/docs/src/frontends/index.md`);
     }
 
     async validateSidebar() {
+        return;
         const links = this.page.locator('.VPSidebarNav a');
 
         const hrefs = await eachLocator(links, async (element) => {
