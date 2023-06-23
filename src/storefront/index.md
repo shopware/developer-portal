@@ -2,81 +2,79 @@
 items:
   - text: Getting started
     link: /frontends/
-  - text: Overview
-    link: https://frontends.shopware.com/
   - text: Capabilities & Limitations
-    link: https://frontends.shopware.com/why-shopware-frontends.html
+    link: /frontends/why-shopware-frontends.html
   - text: Areas
     items:
       - text: Framework
         collapsed: true
         items:
           - text: Requirements
-            link: https://frontends.shopware.com/framework/requirements.html   
+            link: /frontends/framework/requirements.html   
           - text: Internal Structure
-            link: https://frontends.shopware.com/framework/internal-structure.html
+            link: /frontends/framework/internal-structure.html
           - text: Shopping Experiences
-            link: https://frontends.shopware.com/framework/shopping-experiences.html
+            link: /frontends/framework/shopping-experiences.html
           - text: Styling
-            link: https://frontends.shopware.com/framework/styling.html   
+            link: /frontends/framework/styling.html   
           - text: Context Composables
-            link: https://frontends.shopware.com/framework/context-composables.html
+            link: /frontends/framework/context-composables.html
           - text: Shared Composables
-            link: https://frontends.shopware.com/framework/shared-composables.html
+            link: /frontends/framework/shared-composables.html
           - text: Images
-            link: https://frontends.shopware.com/framework/images.html  
+            link: /frontends/framework/images.html  
           - text: Associations
-            link: https://frontends.shopware.com/framework/associations.html
+            link: /frontends/framework/associations.html
           - text: Storefront url
-            link: https://frontends.shopware.com/framework/storefront-url.html
+            link: /frontends/framework/storefront-url.html
       - text: Building
         collapsed: true
         items:
           - text: Setup Templates
-            link: https://frontends.shopware.com/getting-started/templates.html 
+            link: /frontends/getting-started/templates.html 
           - text: Routing
-            link: https://frontends.shopware.com/getting-started/routing.html
+            link: /frontends/getting-started/routing.html
           - text: CMS
-            link: https://frontends.shopware.com/getting-started/cms/
+            link: /frontends/getting-started/cms/
           - text: E-commerce
-            link: https://frontends.shopware.com/getting-started/e-commerce/ 
+            link: /frontends/getting-started/e-commerce/ 
           - text: Page elements
-            link: https://frontends.shopware.com/getting-started/page-elements/
+            link: /frontends/getting-started/page-elements/
           - text: Overwriting and estensing Composables
-            link: https://frontends.shopware.com/getting-started/overwriting-composables.html
+            link: /frontends/getting-started/overwriting-composables.html
           - text: Sitemap
-            link: https://frontends.shopware.com/getting-started/sitemap.html
+            link: /frontends/getting-started/sitemap.html
           - text: Wishlist
-            link: https://frontends.shopware.com/getting-started/wishlist.html
+            link: /frontends/getting-started/wishlist.html
       - text: Best Practices
         collapsed: true
         items:
           - text: Deployment
-            link: https://frontends.shopware.com/best-practices/deployment.html 
+            link: /frontends/best-practices/deployment.html 
           - text: Error-handling
-            link: https://frontends.shopware.com/best-practices/error-handling.html
+            link: /frontends/best-practices/error-handling.html
           - text: Images
-            link: https://frontends.shopware.com/best-practices/images.html
+            link: /frontends/best-practices/images.html
           - text: Performance
-            link: https://frontends.shopware.com/best-practices/performance.html
+            link: /frontends/best-practices/performance.html
           - text: Testing
-            link: https://frontends.shopware.com/best-practices/testing.html
+            link: /frontends/best-practices/testing.html
   - text: Package Reference
     items:
       - text: Composables
-        link: https://frontends.shopware.com/packages/composables.html
+        link: /frontends/packages/composables.html
       - text: API client
-        link: https://frontends.shopware.com/packages/api-client.html
+        link: /frontends/packages/api-client.html
       - text: Types
-        link: https://frontends.shopware.com/packages/types.html
+        link: /frontends/packages/types.html
       - text: Helpers
-        link: https://frontends.shopware.com/packages/helpers.html
+        link: /frontends/packages/helpers.html
   - text: Resources
     items:
       - text: Examples
-        link: https://frontends.shopware.com/resources/examples/
+        link: /frontends/resources/examples/
       - text: Community modules
-        link: https://frontends.shopware.com/resources/community-modules/
+        link: /frontends/resources/community-modules/
 aside: false
 swag:
   related: false
@@ -105,19 +103,19 @@ swag:
                     <template #title>Local app development</template>
                     <template #sub>Learn how to develop your app on Platform.sh or with Docker.</template>
                 </SwagLandingCard>-->
-               <SwagLandingCard page="https://frontends.shopware.com/getting-started/templates.html">
+               <SwagLandingCard page="/frontends/getting-started/templates.html">
                     <template #title>Setup templates</template>
                     <template #sub>Learn how to get started with custom frontend with pre-existing templates.</template>
                 </SwagLandingCard>
-            <SwagLandingCard page="https://frontends.shopware.com/resources/examples/">
+            <SwagLandingCard page="/frontends/resources/examples/">
                     <template #title>Cookbook recepies</template>
                     <template #sub>Kickstart your frontends project with provided example codes.</template>
                 </SwagLandingCard>
-           <!--<SwagLandingCard page="https://frontends.shopware.com/framework/internal-structure.html">
+           <!--<SwagLandingCard page="/frontends/framework/internal-structure.html">
                     <template #title>Framework</template>
                     <template #sub>The internal structure of Shopware Frontends is designed to provide flexibility, reusability and abstraction.</template>
                 </SwagLandingCard>-->
-            <SwagLandingCard page="https://frontends.shopware.com/getting-started/templates/demo-store-template.html">
+            <SwagLandingCard page="/frontends/getting-started/templates/demo-store-template.html">
                     <template #title>Vue Demo Store on StackBlitz</template>
                     <template #sub>The demo store template is a reference implementation of an online store UI.</template>
                 </SwagLandingCard>

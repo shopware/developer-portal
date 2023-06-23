@@ -70,7 +70,7 @@ items:
     <template #description>Style your store with unparalleled flexibility using custom-built or third-party themes, giving you a competitive advantage in this world of ecommerce.</template>
   </SwagCard>
 
-  <SwagCard page="https://frontends.shopware.com/">
+  <SwagCard page="/frontends/">
     <template #title>Frontends</template>
     <template #description>Build unique and captivating custom storefronts using Store APIs and SDKs, or start with reference implementations using technologies like Vue.js or React.</template>
   </SwagCard>
