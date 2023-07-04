@@ -13,6 +13,7 @@ Apps bring various capabilities to Shopware allowing developers to create extens
 | [Custom Storefront Assets](/docs/guides/plugins/apps/storefront/#custom-assets-in-apps) | Add custom assets to the storefront | <ul style="margin-bottom: 0;"><li>Custom CSS</li><li>Javascript plugins</li></ul> |
 | [Cookie Consent](/docs/guides/plugins/apps/storefront/cookies-with-apps.md) | Add cookies to the storefront consent manager | Custom cookies |
 | [Flow Actions](/docs/guides/plugins/apps/flow-builder/add-custom-flow-actions-from-app-system.md) | Add custom flow actions | Integrations, notifications, document generation |
+| [Flow Actions](/docs/guides/plugins/apps/flow-builder/add-custom-flow-triggers-from-app-system.md) | Add custom triggers | Trigger flows with custom endpoints |
 | [Custom Entities](/docs/guides/plugins/apps/custom-data/custom-entities.md) | Add custom entities to the database | Store custom data like blogs, recipes, etc. |
 | [Configuration](/docs/guides/plugins/apps/configuration.md) | Add and store user configuration | App settings (behavior, snippets, API keys, etc.) |
 | [Rule Conditions](/docs/guides/plugins/apps/rule-builder/add-custom-rule-conditions.md) | Add custom rule conditions | User & cart validation |
