@@ -24,7 +24,7 @@ import SwagGetToKnow from "./components/SwagGetToKnow.vue";
 import SwagStartBuilding from "./components/SwagStartBuilding.vue";
 import SwagExtendShopware from "./components/SwagExtendShopware.vue";
 import SwagContribute from "./components/SwagContribute.vue";
-import SwagChangelog from "./components/SwagChangelog.vue";
+import SwagChangelogWrapper from "./components/SwagChangelogWrapper.vue";
 import SwagNewsletter from "./components/SwagNewsletter.vue";
 </script>
 
@@ -55,19 +55,7 @@ import SwagNewsletter from "./components/SwagNewsletter.vue";
 <SwagContribute />
 
 <!-- CHANGELOG --->
-<div class="py-10 my-10 grid lg:grid-cols-2 xl:grid-cols-3 gap-10 items-start">
-    <div class="c-border-gradient rounded-md">
-        <div class="grid gap-4 rounded-md p-5 --apply-bg">
-            <h3 class="flex justify-between items-center">Changelog <a href="#" class="text-xs">View on GitHub</a></h3>
-            <SwagChangelog />
-        </div>
-    </div>
-    <div class="lg:col-span-2 grid gap-5">
-      <PageRef page="/docs/" title="Developer docs" sub="Know the technology behind Shopware, its features and how it can be extended." />
-      <PageRef page="https://docs.shopware.com/" title="User docs" sub="Know how to setup and configure your shop." />
-      <PageRef page="https://brand.shopware.com/" title="Design docs" sub="Know the design principles of Shopware and get access to icons, components, tokens." />
-    </div>
-</div>
+<SwagChangelogWrapper />
 
 <!-- NEWSLETTER -->
 <SwagNewsletter />

@@ -21,7 +21,7 @@
 <style lang="scss">
 .SwagContribute {
   @media (min-width: 768px) {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 2fr 3fr;
   }
 }
 </style>
