@@ -12,6 +12,7 @@ Apps bring various capabilities to Shopware allowing developers to create extens
 | [Twig Storefront Extensions](/docs/guides/plugins/apps/storefront/) | Override Twig templates in the storefront | Customize product pages, checkout, etc. |
 | [Custom Storefront Assets](/docs/guides/plugins/apps/storefront/#custom-assets-in-apps) | Add custom assets to the storefront | <ul style="margin-bottom: 0;"><li>Custom CSS</li><li>Javascript plugins</li></ul> |
 | [Cookie Consent](/docs/guides/plugins/apps/storefront/cookies-with-apps.md) | Add cookies to the storefront consent manager | Custom cookies |
+| [Flow Triggers](/docs/guides/plugins/apps/flow-builder/add-custom-flow-triggers-from-app-system.md) | Add custom flow triggers | Trigger flows with custom API endpoints |
 | [Flow Actions](/docs/guides/plugins/apps/flow-builder/add-custom-flow-actions-from-app-system.md) | Add custom flow actions | Integrations, notifications, document generation |
 | [Custom Entities](/docs/guides/plugins/apps/custom-data/custom-entities.md) | Add custom entities to the database | Store custom data like blogs, recipes, etc. |
 | [Configuration](/docs/guides/plugins/apps/configuration.md) | Add and store user configuration | App settings (behavior, snippets, API keys, etc.) |
