@@ -30,7 +30,6 @@ $ cd /www/
 $ git clone ssh://git@github.com/shopware/developer-portal.git
 $ cd developer-portal
 $ pnpm i
-$ pnpm cli:build
 
 ```
 
