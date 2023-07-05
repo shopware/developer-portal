@@ -66,7 +66,12 @@
 
   &_item {
     @apply rounded-md p-8 border border-solid border-[var(--sw-c-blue-vivacious-100)] bg-[var(--sw-c-blue-vivacious-50)];
-    @apply hover:border-[var(--sw-c-blue-vivacious-200)] hover:bg-[var(--sw-c-blue-vivacious-100)]
+    @apply hover:border-[var(--sw-c-blue-vivacious-200)] hover:bg-[var(--sw-c-blue-vivacious-100)];
+
+    .dark & {
+      @apply border-[var(--sw-c-gray-dark-700)] bg-[var(--sw-c-gray-dark-600)];
+      @apply hover:border-[var(--sw-c-gray-dark-600)] hover:bg-[var(--sw-c-gray-dark-500)];
+    }
   }
 
   &_icon {
@@ -91,6 +96,10 @@
     font-style: normal;
     font-weight: 500;
     line-height: 2.625rem;
+
+    .dark & {
+      color: var(--sw-c-gray-200);
+    }
 
     .SwagIcon {
       width: 1rem;

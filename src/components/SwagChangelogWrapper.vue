@@ -1,5 +1,5 @@
 <template>
-  <div class="SwagChangelogWrapper my-10 p-10 c-flat-card bg-[var(--sw-c-gray-50)]">
+  <div class="SwagChangelogWrapper my-10 p-10 c-flat-card">
     <span class="h-label">What's new?</span>
     <h2 class="text-4xl tracking-wide mb-10 isolated">Stay in sync with Shopware</h2>
 
