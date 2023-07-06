@@ -30,7 +30,6 @@ $ cd /www/
 $ git clone ssh://git@github.com/shopware/developer-portal.git
 $ cd developer-portal
 $ pnpm i
-$ pnpm cli:build
 
 ```
 
@@ -48,7 +47,7 @@ Typically, you will already have your repository checked out on your computer. F
 
 ```bash
 $ cd /www/
-$ git clone ssh://git@github.com:shopware/frontends.git
+$ git clone ssh://git@github.com/shopware/frontends.git
 $ cd frontends
 
 ```
