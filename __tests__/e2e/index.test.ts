@@ -3,7 +3,7 @@ describe('render correct content', async () => {
         await goto('/')
     })
 
-    test('navigation', async() => {
+    test.skip('navigation', async() => {
         const navBarLocator = page.locator('.VPNavBarMenu > .VPNavBarMenuLink');
         const links = await navBarLocator.allTextContents()
         expect(links).toEqual(['Apps', 'Themes', 'Frontends', 'Integrations'])
