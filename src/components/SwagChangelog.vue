@@ -3,10 +3,12 @@
     <div class="SwagChangelog_item divide-y-1 divide-x-1 divide-gray-400"
          v-for="log in changelog">
       <span class="SwagChangelog_version">v{{ log.version }}</span>
-      <span class="SwagChangelog_date">{{ log.date }}</span>
-      <span class="SwagChangelog_label"
-           :class="`--type-${log.type}`"
-           v-if="log.label">{{ log.label }}</span>
+      <div>
+        <span class="SwagChangelog_label"
+              :class="`--type-${log.type}`"
+              v-if="log.label">{{ log.label }}</span>
+        <span class="SwagChangelog_date">{{ log.date }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -15,7 +17,7 @@
 .SwagChangelog {
   @apply grid gap-2;
   &_item {
-    @apply flex justify-start items-center gap-2;
+    @apply flex justify-between items-center gap-2;
   }
   &_version {
     @apply font-normal text-lg text-black;

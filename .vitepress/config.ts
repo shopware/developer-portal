@@ -5,6 +5,7 @@ import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
 const {resolve} = require('path');
 import { MarkdownTransform } from "./plugins/markdownTransform";
+import { CssCleanup } from "./plugins/cssCleanup";
 import Inspect from "vite-plugin-inspect";
 
 import {copyAdditionalAssets, createSitemap, storeRedirects} from "./helpers";
@@ -389,6 +390,12 @@ export default defineConfigWithTheme<ThemeConfig>({
         projectBasePath: `${process.cwd()}/src`
       }),
       MarkdownTransform(),
+      CssCleanup({
+        cleanup: [
+          '.vp-doc h2',
+          '.vp-doc hr',
+        ]
+      }),
     ],
     /*optimizeDeps: {
       //disabled: true,

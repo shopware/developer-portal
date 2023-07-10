@@ -1,7 +1,7 @@
 <template>
-  <div class="SwagExtendShopware my-10 py-10">
+  <div class="SwagExtendShopware">
     <span class="h-label">Extend Shopware</span>
-    <h2 class="text-4xl tracking-wide mb-10 isolated">Adoption made easy</h2>
+    <h2 class="h-homepage">Adoption made easy</h2>
 
     <div class="grid gap-10 md:grid-cols-3">
 
@@ -15,6 +15,16 @@
       </SwagCardExtend>
 
       <SwagCardExtend :availabilities="['PaaS', 'Self-hosted']">
+        <template #title>Themes</template>
+        <template #description>
+          A theme gives you the ability to change a storefront's visual appearance via <b>SCSS/CSS</b> styling and
+          adjusting <b>twig</b> templates. You can also provide <b>JavaScript</b> with your theme to change how the
+          storefront behaves.
+        </template>
+        <template #link><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary mt-4 inline-block">Learn more about Themes</a></template>
+      </SwagCardExtend>
+
+      <SwagCardExtend :availabilities="['PaaS', 'Self-hosted']">
         <template #title>Plugins</template>
         <template #description>
           Deep core modifications written in <b>PHP</b>. Apply patterns like <b>dependency injection</b> and
@@ -24,16 +34,6 @@
         <template #link><a href="/plugins/plugin-base-guide" class="btn --secondary mt-4 inline-block">Learn more about Plugins</a></template>
       </SwagCardExtend>
 
-      <SwagCardExtend :availabilities="['PaaS', 'Self-hosted']">
-        <template #title>Themes</template>
-        <template #description>
-          A theme gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and
-          adjusting <b>twig</b> templates. You can also provide <b>JavaScript</b> with your theme to change how the
-          storefront behaves in the browser.
-        </template>
-        <template #link><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary mt-4 inline-block">Learn more about Themes</a></template>
-      </SwagCardExtend>
-
     </div>
   </div>
 </template>
@@ -41,20 +41,3 @@
 <script setup lang="ts">
 import SwagCardExtend from "./SwagCardExtend.vue";
 </script>
-
-<style lang="scss">
-.SwagExtendShopware {
-  &_card {
-    @apply p-8;
-  }
-  &_heading {
-    @apply font-bold text-xl;
-  }
-  &_availabilities {
-    @apply flex gap-2;
-  }
-  &_availability {
-    @apply rounded-md border border-solid border-[var(--sw-c-gray-600)] text-xs font-bold p-2;
-  }
-}
-</style>

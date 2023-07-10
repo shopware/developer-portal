@@ -1,27 +1,28 @@
 <template>
-  <div class="SwagContribute c-flat-card my-10 grid">
-    <div class="p-10">
+  <div class="SwagContribute c-flat-card grid">
+    <div class="p-20">
       <span class="h-label">Contribute to Shopware</span>
-      <h2 class="text-4xl tracking-wide mb-10 isolated">Our philosophy, your opportunity.</h2>
+      <h2 class="h-homepage">Our philosophy, your opportunity.</h2>
       <p>Open source is the most honest, transparent, and secure way to develop software. Together with our global
         community we’re creating the heart and soul of our ecommerce software.</p>
-      <div class="flex gap-4">
-        <a href="#" class="btn">Contribute on GitHub</a>
-        <a href="#" class="btn --subtle">Download</a>
+      <div class="mt-6 flex gap-4 items-center">
+        <SwagBtn href="#" class="--primary --compact --sm" icon="long-arrow-right">Contribute on GitHub</SwagBtn>
+        <a href="#" class="btn --subtle --compact --with-border --transparent --sm">Download</a>
       </div>
     </div>
 
-    <img src="/home/build-contribute.svg"/>
+    <img src="/home/build-contribute.svg" class="self-end" />
   </div>
 </template>
 
 <script setup lang="ts">
+import SwagBtn from "./SwagBtn.vue";
 </script>
 
 <style lang="scss">
 .SwagContribute {
   @media (min-width: 768px) {
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 3fr 4fr;
   }
 }
 </style>

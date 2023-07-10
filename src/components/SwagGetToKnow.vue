@@ -1,6 +1,7 @@
 <template>
-  <div class="c-outflow py-20">
-    <h2 class="text-4xl tracking-wide mb-10 accent isolated">Get to know Shopware</h2>
+  <div class="SwagGetToKnow">
+    <span class="h-label">Getting started in minutes</span>
+    <h2 class="h-homepage">Get to know Shopware</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
