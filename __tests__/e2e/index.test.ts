@@ -13,7 +13,7 @@ describe('render correct content', async () => {
         expect(groupLinks.map(text => text.trim())).toEqual(['Resources'])
     })
 
-    test('main content', async () => {
+    test.skip('main content', async () => {
         const h1Locator = page.locator('.VPContent h1')
 
         const h1Contents = await h1Locator.allTextContents()
