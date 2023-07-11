@@ -13,6 +13,12 @@ describe('render correct content', async () => {
         expect(groupLinks.map(text => text.trim())).toEqual(['Resources'])
     })
 
+    test('content count', async () => {
+        const contentLocator = page.locator('.VPContent')
+
+        expect(await contentLocator.count()).toEqual(1)
+    })
+
     test.skip('main content', async () => {
         const h1Locator = page.locator('.VPContent h1')
 
