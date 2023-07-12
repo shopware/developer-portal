@@ -4,7 +4,7 @@ import SwagRadialBg from "../../src/components/SwagRadialBg.vue";
 export default {
     ...SWAGTheme({
         slots: {
-            'layout-top': [
+            'layout-bottom': [
                 SwagRadialBg,
             ]
         }
