@@ -1,6 +1,6 @@
 <template>
   <div class="SwagContribute c-flat-card grid">
-    <div class="p-20">
+    <div class="p-8 md:p-20">
       <span class="h-label">Contribute to Shopware</span>
       <h2 class="h-homepage">Our philosophy, your opportunity.</h2>
       <p>Open source is the most honest, transparent, and secure way to develop software. Together with our global

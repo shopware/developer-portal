@@ -34,7 +34,9 @@ import SwagChangelog from "./SwagChangelog.vue";
   @apply bg-[var(--sw-c-gray-50)];
   &_grid {
     @apply grid;
-    grid-template-columns: 2fr 3fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 3fr;
+    }
   }
   &_title {
     @apply flex justify-between items-center;
