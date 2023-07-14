@@ -8,7 +8,7 @@
         <div class="grid gap-4 rounded-md p-5 --apply-bg">
           <h3 class="SwagChangelogWrapper_title">
             Changelog
-            <a href="#" class="SwagChangelogWrapper_link">
+            <a href="https://github.com/shopware" class="SwagChangelogWrapper_link">
               View on GitHub
               <SwagIcon icon="external-link-s" />
             </a>
