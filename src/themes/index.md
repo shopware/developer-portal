@@ -59,7 +59,7 @@ swag:
         <p>Shopware's theme system is based on twig and an inheritance mechanism, so you can write individual themes without breaking Shopware's core functionalities.</p>
     </template>
     <template #ctas>
-        <PageRef page="/docs/guides/plugins/themes/theme-base-guide.html" title="Start building a theme" />
+        <PageRef page="/docs/guides/plugins/themes/theme-base-guide.html" title="Start building a theme" sub="Learn how to set up a theme for your storefront from scratch." />
     </template>
     <template #exposed>
         <SwagLandingCardList>
