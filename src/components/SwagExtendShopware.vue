@@ -31,7 +31,7 @@
           <b>event listeners</b>. Can modify Shopware's internal <b>database schema</b> using Migrations. Deployed on
           the Shopware server.
         </template>
-        <template #link><a href="/plugins/plugin-base-guide" class="btn --secondary mt-4 inline-block">Learn more about Plugins</a></template>
+        <template #link><a href="/docs/guides/plugins/plugins/plugin-base-guide" class="btn --secondary mt-4 inline-block">Learn more about Plugins</a></template>
       </SwagCardExtend>
 
     </div>

@@ -36,14 +36,14 @@ import SwagBtn from "./components/SwagBtn.vue";
       <template #title>Open commerce platform, made easy.</template>
       <template #content><p>Shopware is the leading open commerce platform powered by Symfony and Vue that drives thousands of exeptional online stores and supported by a huge worldwide community of developers, agencies and merchants. Our software is developed for the people who use it.</p></template>
       <template #links>
-        <SwagBtn href="#" class="--primary --sm" icon="long-arrow-right" icon-at="end">Get started</SwagBtn>
-        <SwagBtn href="#" class="--primary --subtle --with-border --sm --transparent">See what's new</SwagBtn>
+        <SwagBtn href="#GetToKnow" class="--primary --sm" icon="long-arrow-right" icon-at="end">Get started</SwagBtn>
+        <SwagBtn href="#Changelog" class="--primary --subtle --with-border --sm --transparent">See what's new</SwagBtn>
       </template>
       <template #image><img src="/home/developers.svg" /></template>
 </SwagHero>
 
 <!-- GET TO KNOW SHOPWARE -->
-<SwagGetToKnow class="my-20" />
+<SwagGetToKnow id="GetToKnow" class="my-20" />
 
 <!-- START BUILDING -->
 <SwagStartBuilding class="my-20" />
@@ -57,7 +57,7 @@ import SwagBtn from "./components/SwagBtn.vue";
 <SwagContribute class="my-20" />
 
 <!-- CHANGELOG --->
-<SwagChangelogWrapper class="my-20" />
+<SwagChangelogWrapper id="Changelog" class="my-20" />
 
 <!-- NEWSLETTER -->
 <SwagNewsletter />

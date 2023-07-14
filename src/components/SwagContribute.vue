@@ -6,8 +6,8 @@
       <p>Open source is the most honest, transparent, and secure way to develop software. Together with our global
         community we’re creating the heart and soul of our ecommerce software.</p>
       <div class="mt-6 flex gap-4 items-center">
-        <SwagBtn href="#" class="--primary --compact --sm" icon="long-arrow-right">Contribute on GitHub</SwagBtn>
-        <a href="#" class="btn --subtle --compact --with-border --transparent --sm">Download</a>
+        <SwagBtn href="https://github.com/shopware" class="--primary --compact --sm" icon="long-arrow-right">Contribute on GitHub</SwagBtn>
+        <a href="https://www.shopware.com/en/download/" class="btn --subtle --compact --with-border --transparent --sm">Download</a>
       </div>
     </div>
 
