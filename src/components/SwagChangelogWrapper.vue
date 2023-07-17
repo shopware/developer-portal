@@ -8,7 +8,7 @@
         <div class="grid gap-4 rounded-md p-5 --apply-bg">
           <h3 class="SwagChangelogWrapper_title">
             Changelog
-            <a href="https://github.com/shopware/platform/tree/trunk/changelog"
+            <a href="https://github.com/shopware/platform/blob/trunk/CHANGELOG.md"
                target="_blank"
                class="SwagChangelogWrapper_link">
               View on GitHub

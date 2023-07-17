@@ -89,19 +89,19 @@ items:
         <div>
         <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-sw-blue to-sw-blue text-white text-center">Apps</div>
         <div class="m-2 text-sm leading-6">
-        <b>Apps</b> are most recommented extensions built via <b>app scripts</b>, <b>configurations</b> or <b>APIs</b> (REST, webhooks). Deployed with the Shopware server, more complex apps require an additional separate server. </div>
+        <b>Apps</b> are most recommended extensions built via <b>app scripts</b>, <b>app system</b> or <b>app SDKs</b> have access to modify the Shopware's internal database schema and may or maynot be deployed on the Shopware server based on the complexity of apps.</div>
         <div class="m-2 text-sm mt-4 leading-6"> Apps can be installed in <b>self-hosted</b>, <b>PaaS</b> and <b>cloud</b> environments. </div>
-        <p><a href="/apps/capabilities" class="btn m-2 mt-4 inline-block">Learn more about Apps</a></p>
+        <p><a href="/plugins/apps/app-base-guide" class="btn m-2 mt-4 inline-block">Learn more about Apps</a></p>
         </div>
         <div>
         <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-sw-purple to-sw-purple text-white text-center">Plugins</div>
-        <div class="m-2 text-sm leading-6"> Deep core modifications written in <b>PHP</b>. Apply patterns like <b>dependency injection</b> and <b>event listeners</b>. Can modify Shopware's internal <b>database schema</b> using Migrations. Deployed on the Shopware server. </div>
+        <div class="m-2 text-sm leading-6"> Plugins are deep core modifications written in <b>PHP</b>. Plugins are extended via <b>plugin system</b> or <b>SDKs</b>. Plugins modify Shopware's internal database schema and are deployed on the Shopware server.  </div>
         <div class="m-2 text-sm mt-4 leading-6"> Plugins can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
         <p><a href="/plugins/plugin-base-guide" class="btn --subtle m-2 mt-4 inline-block">Learn more about Plugins</a></p>
         </div>
         <div>
         <div class="font-bold p-2 mb-4 rounded-md bg-gradient-to-r from-sw-green to-sw-green text-white text-center">Themes</div>
-        <div class="m-2 text-sm leading-6"> A theme gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide <b>JavaScript</b> with your theme to change how the storefront behaves in the browser.</div>
+        <div class="m-2 text-sm leading-6"> Themes can be extended as apps or plugins. They gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide JavaScript with your theme to change how the storefront behaves in the browser.</div>
         <div class="m-2 text-sm mt-4 leading-6"> Themes can be installed in <b>self-hosted</b> and <b>PaaS</b> environments only. </div>
         <p><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary m-2 mt-4 inline-block">Learn more about Themes</a></p>
         </div>
