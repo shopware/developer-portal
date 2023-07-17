@@ -6,8 +6,8 @@ swag:
 <SwagLanding>
     <template #title>What is Shopware?</template>
     <template #description>Shopware is an API-first, open-source E-commerce platform   that provides a wide range of features to help businesses build and manage online stores. It utilizes the modern technology stack  , comprising Symfony PHP and VueJS framework. Shopware offers both cloud-hosted and self-hosted plans for small, medium, and large enterprise businesses.</template>
-    <h2 id="what-are-key-features-of-product-">What are key features of product?</h2>
     <template #exposed>
+        <h2 id="what-are-key-features-of-product-">What are key features of product?</h2>
         <div>
         <ul>
         <li><strong>Dynamic catalog and product management</strong>: Enhance your product catalog using Shopware&#39;s dynamic product group which automatically updates based upon flexible filter criteria. Benefit from customizable properties suitable for any business  , allowing you to generate variants easily.</li>
