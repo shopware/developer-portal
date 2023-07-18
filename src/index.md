@@ -51,7 +51,7 @@ import SwagBtn from "./components/SwagBtn.vue";
 <hr class="my-20" />
 
 <!-- EXTEND SHOPWARE -->
-<SwagExtendShopware class="my-20" />
+<SwagExtendShopware id="Extend" class="my-20" />
 
 <!-- CONTRIBUTE TO SHOPWARE -->
 <SwagContribute class="my-20" />

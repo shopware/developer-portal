@@ -5,12 +5,12 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-      <SwagCard page="/what-is-shopware.html">
+      <SwagCard page="/docs/concepts/framework/">
         <template #title>What is Shopware?</template>
         <template #description>Learn about Shopware, its features, benefits.</template>
       </SwagCard>
 
-      <SwagCard page="https://docs.shopware.com/en/shopware-6-en/getting-started">
+      <SwagCard page="#Extend">
         <template #title>How to start with Shopware?</template>
         <template #description>Get to know which ways you can get involved with Shopware as a developer.</template>
       </SwagCard>
@@ -20,7 +20,7 @@
         <template #description>Set up Shopware on your local machine or use a developer sandbox from the cloud.</template>
       </SwagCard>
 
-      <SwagCard page="/migrate-to-shopware.html">
+      <SwagCard page="/docs/products/extensions/migration-assistant/">
         <template #title>How to migrate to Shopware?</template>
         <template #description>Learn easy ways to migrate to Shopware irrespective of your old instance.</template>
       </SwagCard>
