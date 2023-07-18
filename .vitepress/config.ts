@@ -167,7 +167,7 @@ const usercentrics = (name: string) => (usercentricsActive ? {
   type: 'text/plain',
 } : {});
 
-export default defineConfigWithTheme<ThemeConfig>(({
+export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   title: "Shopware Documentation",
