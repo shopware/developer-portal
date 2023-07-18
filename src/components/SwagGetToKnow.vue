@@ -10,7 +10,7 @@
         <template #description>Learn about Shopware, its features, benefits.</template>
       </SwagCard>
 
-      <SwagCard page="/developer-portal/src/components/SwagExtendShopware.vue">
+      <SwagCard page="#Extend">
         <template #title>How to start with Shopware?</template>
         <template #description>Get to know which ways you can get involved with Shopware as a developer.</template>
       </SwagCard>
