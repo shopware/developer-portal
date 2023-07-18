@@ -175,6 +175,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: "src",
   srcExclude: [
       "**/_source/**",
+    "docs/index.md",
+    "docs/SUMMARY.md",
       // template
       "docs/resources/references/adr/YYYY-MM-DD-template.md",
       // {% api
