@@ -83,7 +83,13 @@ const fullProcess = async () => {
 
         // start container
         console.log(`Starting container`);
-        execSync(`docker run -dit --name ${containerName} -v $PWD:/www/ my-pnpm /bin/sh`);
+        try {
+            execSync(`docker run -dit --name ${containerName} -v $PWD:/www/ my-pnpm /bin/sh`);
+        } catch (e) {
+            console.log('Deleting container');
+            execSync(`docker container rm --force ${containerName}`);
+            execSync(`docker run -dit --name ${containerName} -v $PWD:/www/ my-pnpm /bin/sh`);
+        }
 
         // run build script
         console.log(`Building with ${file}`);

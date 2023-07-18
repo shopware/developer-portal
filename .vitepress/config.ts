@@ -167,16 +167,17 @@ const usercentrics = (name: string) => (usercentricsActive ? {
   type: 'text/plain',
 } : {});
 
-export default defineConfigWithTheme<ThemeConfig>({
+export default defineConfigWithTheme<ThemeConfig>(({
   extends: baseConfig,
 
   title: "Shopware Documentation",
   description: "Documentation for Shopware developers",
   srcDir: "src",
   srcExclude: [
+      // git sources
       "**/_source/**",
-    "docs/index.md",
-    "docs/SUMMARY.md",
+      // table of contents
+      "docs/SUMMARY.md",
       // template
       "docs/resources/references/adr/YYYY-MM-DD-template.md",
       // {% api
@@ -195,7 +196,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   ],
 
   rewrites: {
-    'docs/SUMMARY.md': 'docs/index.md',
+    'storefront/index.md': 'frontends/index.md',
+    'frontends/index.md': 'frontends/overview.md',
     //'landing/apps.md': 'docs/guides/plugins/apps/index.md',
     //'landing/apps.md': 'apps/index.md',
     //'landing/themes.md': 'docs/guides/plugins/themes/index.md',
