@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="grid gap-5">
-        <PageRef page="/docs/" title="Developer docs" sub="Know the technology behind Shopware, its features and how it can be extended." />
+        <PageRef page="/docs/" target="_blank" title="Developer docs" sub="Know the technology behind Shopware, its features and how it can be extended." />
         <PageRef page="https://docs.shopware.com/" target="_blank" title="User docs" sub="Know how to setup and configure your shop." />
         <PageRef page="https://brand.shopware.com/" target="_blank" title="Design docs" sub="Know the design principles of Shopware and get access to icons, components, tokens." />
       </div>
