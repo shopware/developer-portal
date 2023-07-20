@@ -16,7 +16,7 @@
       <SwagCardExtend :availabilities="['PaaS', 'Self-hosted']">
         <template #title>Themes</template>
         <template #description>
-          Themes can be extended as apps or plugins. They gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide JavaScript with your theme to change how the storefront behaves in the browser.
+          Themes can be extended as apps or plugins. They gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide JavaScript to change how the storefront behaves in the browser.
         </template>
         <template #link><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary mt-4 inline-block">Learn more about Themes</a></template>
       </SwagCardExtend>
@@ -24,7 +24,7 @@
       <SwagCardExtend :availabilities="['PaaS', 'Self-hosted']">
         <template #title>Plugins</template>
         <template #description>
-          Plugins are deep core modifications written in <b>PHP</b>. Plugins are extended via <b>plugin system</b> or <b>SDKs</b>. Plugins modify Shopware's internal database schema and are deployed on the Shopware server.
+          Plugins are <b>PHP</b> based core modifications that offer full power of Symfony Bundles. Plugins are extended via <b>plugin system</b> or <b>SDKs</b>. Plugins modify Shopware's internal database schema and are deployed on the Shopware server.
         </template>
         <template #link><a href="/docs/guides/plugins/plugins/plugin-base-guide" class="btn --secondary mt-4 inline-block">Learn more about Plugins</a></template>
       </SwagCardExtend>
