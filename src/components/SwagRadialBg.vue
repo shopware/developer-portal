@@ -1,5 +1,5 @@
 <template>
-  <div class="SwagRadialBg" v-if="route.path === '/'">
+  <div class="SwagRadialBg" v-show="route.path === '/'">
     <div class="SwagRadialBg_left"></div>
     <div class="SwagRadialBg_middle"></div>
     <div class="SwagRadialBg_right"></div>
@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import {useRoute} from "vitepress";
+import { useRoute } from "vitepress";
 
 const route = useRoute();
 </script>

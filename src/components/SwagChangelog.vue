@@ -57,6 +57,13 @@
 </style>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
+
+const isMounted = ref(false);
+onMounted(() => {
+  isMounted.value = true;
+});
+
 const changelog = [
   {
     version: '6.5.1.1',
@@ -89,6 +96,10 @@ const changelog = [
     type: 'rc',
   }
 ].map(log => {
+  // Dates should be formatted only on client side as locale time is most likely different
+  if(!isMounted.value) {
+    return log;
+  }
   const date = new Date(log.date);
   log.date = `${date.toLocaleDateString()} ${date.toLocaleTimeString(undefined, {
     hour: '2-digit',
