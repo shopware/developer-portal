@@ -34,7 +34,7 @@ import SwagBtn from "./components/SwagBtn.vue";
 <SwagHero class="py-24">
       <template #label>Shopware for developers</template>
       <template #title>Open commerce platform, made easy.</template>
-      <template #content><p>Shopware is the leading open commerce platform powered by Symfony and Vue that drives thousands of exceptional online stores and supported by a huge worldwide community of developers, agencies and merchants. Our software is developed for the people who use it.</p></template>
+      <template #content><p>Shopware, the leading open commerce platform powered by Symfony and Vue, drives exceptional online stores and thrives with a global community of developers, agencies, and merchants. Our comprehensive documentation empowers your journey with step-by-step guidance, making everything smoother. Documentation at your service!</p></template>
       <template #links>
         <SwagBtn href="#GetToKnow" class="--primary --sm" icon="long-arrow-right" icon-at="end">Get started</SwagBtn>
         <SwagBtn href="#Changelog" class="--primary --subtle --with-border --sm --transparent">See what's new</SwagBtn>
