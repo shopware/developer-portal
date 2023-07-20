@@ -57,14 +57,14 @@
 </style>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
 const isMounted = ref(false);
 onMounted(() => {
   isMounted.value = true;
 });
 
-const changelog = [
+const changelog = computed(() => [
   {
     version: '6.5.1.1',
     date: '2023-05-31 09:53',
@@ -106,6 +106,6 @@ const changelog = [
     minute:'2-digit'
   })}`;
   return log;
-});
+}));
 // const changelog = await (await fetch('https://www.shopware.com/en/changelog/?rss=1', {mode: 'no-cors'})).json();
 </script>
