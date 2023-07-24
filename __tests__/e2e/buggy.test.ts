@@ -11,7 +11,7 @@ describe('catch some bugs', async () => {
         const expectSwitcher = async (num: number, type: string) => expect(await page.locator('.SwagSidebarVersionSwitcher').count(), type).toEqual(num, type);
         const expectFooter = async (type) => expect(await page.locator('.SwagFooter').count(), type).toEqual(1, type);
 
-        const fromTheHomepage = async(type: string) => {
+        const onTheArticle = async(type: string) => {
             await page.locator('.SwagGetToKnow .SwagCard:first-child').click();
             await expectSwitcher(1, type);
             await expectFooter(type);
@@ -22,7 +22,7 @@ describe('catch some bugs', async () => {
         await expectSwitcher(0, 'first');
 
         // navigate from the homepage
-        await fromTheHomepage('initial');
+        await onTheArticle('initial');
 
         // navigate to the homepage
         await page.locator('a.VPNavBarTitle').click();
@@ -30,7 +30,7 @@ describe('catch some bugs', async () => {
         await expectFooter('second');
 
         // navigate from the homepage
-        await fromTheHomepage('last');
+        await onTheArticle('last');
     });
 
     test('content count', async () => {
