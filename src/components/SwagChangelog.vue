@@ -57,7 +57,14 @@
 </style>
 
 <script setup lang="ts">
-const changelog = [
+import { computed, onMounted, ref } from 'vue';
+
+const isMounted = ref(false);
+onMounted(() => {
+  isMounted.value = true;
+});
+
+const changelog = computed(() => [
   {
     version: '6.5.1.1',
     date: '2023-05-31 09:53',
@@ -89,12 +96,16 @@ const changelog = [
     type: 'rc',
   }
 ].map(log => {
+  // Dates should be formatted only on client side as locale time is most likely different
+  if(!isMounted.value) {
+    return log;
+  }
   const date = new Date(log.date);
   log.date = `${date.toLocaleDateString()} ${date.toLocaleTimeString(undefined, {
     hour: '2-digit',
     minute:'2-digit'
   })}`;
   return log;
-});
+}));
 // const changelog = await (await fetch('https://www.shopware.com/en/changelog/?rss=1', {mode: 'no-cors'})).json();
 </script>
