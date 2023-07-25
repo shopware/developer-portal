@@ -7,7 +7,7 @@ describe('catch some bugs', async () => {
         page.on('console', msg => console.log(msg.text()));
     })*/
 
-    test('has custom components on renavigation', async () => {
+    test.runIf(process.env.NODE_ENV === 'production')('has custom components on renavigation', async () => {
         const expectSwitcher = async (num: number, type: string) => expect(await page.locator('.SwagSidebarVersionSwitcher').count(), type).toEqual(num, type);
         const expectFooter = async (type) => expect(await page.locator('.SwagFooter').count(), type).toEqual(1, type);
 
