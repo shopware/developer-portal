@@ -24,7 +24,7 @@
     "@shopware-ag/meteor-icon-kit": "^5.1.0",
     "cross-env": "^7.0.3",
     "terser": "^5.17.3",
-    "vitepress": "1.0.0-beta.5",
+    "vitepress": "1.0.0-beta.6",
     "vitepress-shopware-docs": "1.0.0-beta.34",
     "vue": "^3.3.1"
   },
@@ -88,8 +88,8 @@
     "storybook-addon-pseudo-states": "^2.0.1",
     "openapi-types": "^12.1.3",
     "oas-normalize": "^8.4.1",
-    "vitepress-plugin-mermaid": "^2.0.10",
-    "mermaid": "^10.2.3",
+    "vitepress-plugin-mermaid": "^2.0.13",
+    "mermaid": "^10.3.0",
     "@mermaid-js/mermaid-mindmap": "^9.3.0"
   },
   "pnpm": {
