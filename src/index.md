@@ -39,7 +39,7 @@ import SwagBtn from "./components/SwagBtn.vue";
         <SwagBtn href="#GetToKnow" class="--primary --sm" icon="long-arrow-right" icon-at="end">Get started</SwagBtn>
         <SwagBtn href="/docs/" class="--primary --subtle --with-border --sm --transparent">View developer docs</SwagBtn>
       </template>
-      <template #image><img src="/home/developers.svg" /></template>
+      <template #image><img src="/home/hub-hero-min.png" /></template>
 </SwagHero>
 
 <!-- GET TO KNOW SHOPWARE -->
