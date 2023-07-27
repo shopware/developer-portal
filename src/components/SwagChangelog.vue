@@ -66,6 +66,30 @@ onMounted(() => {
 
 const changelog = computed(() => [
   {
+    version: '6.5.3.3',
+    date: '2023-07-16 13:26',
+  },
+  {
+    version: '6.5.3.2',
+    date: '2023-07-13 09:22',
+  },
+  {
+    version: '6.5.3.1',
+    date: '2023-06-06 13:58',
+  },
+  {
+    version: '6.5.3.0',
+    date: '2023-06-12 14:37',
+  },
+  {
+    version: '6.5.2.1',
+    date: '2023-06-12 14:37',
+  },
+  {
+    version: '6.5.2.0',
+    date: '2023-06-12 09:43',
+  },
+  {
     version: '6.5.1.1',
     date: '2023-05-31 09:53',
   },
@@ -95,7 +119,7 @@ const changelog = computed(() => [
     label: 'Release candidate',
     type: 'rc',
   }
-].map(log => {
+].slice(0, 5).map(log => {
   // Dates should be formatted only on client side as locale time is most likely different
   if(!isMounted.value) {
     return log;

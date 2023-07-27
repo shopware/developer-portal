@@ -7,6 +7,7 @@ const {resolve} = require('path');
 import { MarkdownTransform } from "./plugins/markdownTransform";
 import { CssCleanup } from "./plugins/cssCleanup";
 import Inspect from "vite-plugin-inspect";
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 import {copyAdditionalAssets, createSitemap, storeRedirects} from "./helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
@@ -167,7 +168,7 @@ const usercentrics = (name: string) => (usercentricsActive ? {
   type: 'text/plain',
 } : {});
 
-export default defineConfigWithTheme<ThemeConfig>({
+export default withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   title: "Shopware Documentation",
@@ -514,4 +515,4 @@ export default defineConfigWithTheme<ThemeConfig>({
       as: 'resources/api/store-api-reference.html',
     }, false);*/
   }
-});
+}));
