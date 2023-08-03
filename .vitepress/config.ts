@@ -20,6 +20,8 @@ import {
   SwagColorCodingConfig
 } from "../../developer-documentation-vitepress/src/shopware/config";
 
+import {navigation as apisNavigation} from "./navigation/apis";
+
 const sections: SwagSectionsConfig[] = [
   {
     title: 'Frontends',
@@ -298,7 +300,12 @@ export default defineConfigWithTheme<ThemeConfig>({
   ignoreDeadLinks: true,
 
   themeConfig: {
-    ...navigation, // add sidebar and nav config
+    sidebar: {
+      ...navigation.sidebar,
+      ...apisNavigation,
+    },
+    nav: navigation.nav,
+    // ...navigation, // add sidebar and nav config
 
     algolia: {
       indexName: "beta-developer-shopware",
