@@ -68,6 +68,11 @@
       @apply bg-red;
     }
   }
+
+  p {
+    margin: 0;
+    line-height: 125%;
+  }
 }
 </style>
 
@@ -76,50 +81,18 @@
     <div class="flex">
 
       <div class="OpenAPIViewer_sidebar basis-300px shrink-0 text-sm">
-        <div v-for="(endpoints, path) in groupedPaths">
-          <ul class="no-list">
-            {{ endpoints[0].tags[0] }} ({{ endpoints.length }})
-            <li v-for="endpoint in endpoints">
-              <a href="#" class="OpenAPIViewer_link" @click.prevent="select(endpoint.method, endpoint.path)">
-                <span class="OpenAPIViewer_method" :class="`--${endpoint.method}`">{{ endpoint.method }}</span>
-                {{ endpoint.summary }}
-              </a>
-            </li>
-          </ul>
-        </div>
+        <select v-model="documentModel" class="form-control">
+          <option v-for="(title, key) in documentOptions" :value="key">{{ key }}</option>
+        </select>
+
+        <OpenApiViewerSidebarResponses @select-response="selectResponse" />
+        <OpenApiViewerSidebarEndpoints @select-endpoint="select" />
+        <OpenApiViewerSidebarSchemas @select-schema="selectSchema" />
       </div>
 
-      <div class="OpenAPIViewer_content grid gap-12" v-if="endpoint">
-        <!--<template v-for="(methods, path) in documentObject.paths">
-          <div class="grid gap-8">-->
-        <div data-v-for="(endpoint, method) in methods"
-             class="flex gap-8 relative items-start">
-          <div class="OpenAPIViewer_doc">
-            <h1>{{ endpoint.summary }}</h1>
-            <div>
-              <div class="c-any-card">
-                <span class="OpenAPIViewer_method" :class="`--${selectedMethod}`">{{ selectedMethod }}</span>
-                http://localhost:8000/api{{ selectedPath }}
-              </div>
-            </div>
-            <p data-endpoint-description>{{ endpoint.description }}</p>
-            <!--<div>Tags: {{ endpoint.tags }}</div>-->
-            <p data-endpoint-operationId>{{ endpoint.operationId }}</p>
-
-            <h2>Request</h2>
-            <OpenApiViewerEndpointParameters :endpoint="endpoint"/>
-
-            <h2>Response</h2>
-            <OpenApiViewerEndpointResponses :endpoint="endpoint" :document="documentObject"/>
-          </div>
-          <div class="OpenAPIViewer_playground basis-2/5 flex shrink-0 grow-0"
-               style="position: sticky; top: 100px;">
-            <OpenApiViewerEndpointPlayground :endpoint="endpoint" :document="documentObject"/>
-          </div>
-        </div>
-        <!--</div>
-      </template>-->
-      </div>
+      <OpenApiViewerPageSchema v-if="schema" :schema="schema" />
+      <OpenApiViewerPageResponse v-else-if="response" :response="response" />
+      <OpenApiViewerPageEndpoint v-else-if="endpoint" :endpoint="endpoint" :path="selectedPath" :method="selectedMethod" />
 
     </div>
   </div>
@@ -128,57 +101,102 @@
 <script setup lang="ts">
 import {OpenAPIV3} from "openapi-types";
 //import OASNormalize from 'oas-normalize';
-import jsonApi from './storeapi.json'
-import {ref, computed} from "vue";
+import storeApi from './storeapi.json'
+import adminApi from './adminapi.json'
+import {ref, computed, watch, provide} from "vue";
+import {Document} from "./openApi/openApi";
 
-import OpenApiViewerEndpointParameters from "./OpenApiViewerEndpointParameters.vue";
-import OpenApiViewerEndpointResponses from "./OpenApiViewerEndpointResponses.vue";
-import OpenApiViewerEndpointPlayground from "./OpenApiViewerEndpointPlayground.vue";
+const documentModel = ref('storeApi');
+const documentOptions = {
+  storeApi,
+  adminApi,
+};
+
+import OpenApiViewerPageEndpoint from "./page/OpenApiViewerPageEndpoint.vue";
+import OpenApiViewerPageSchema from "./page/OpenApiViewerPageSchema.vue";
+import OpenApiViewerPageResponse from "./page/OpenApiViewerPageResponse.vue";
+
+import OpenApiViewerSidebarEndpoints from "./sidebar/OpenApiViewerSidebarEndpoints.vue";
+import OpenApiViewerSidebarSchemas from "./sidebar/OpenApiViewerSidebarSchemas.vue";
+import OpenApiViewerSidebarResponses from "./sidebar/OpenApiViewerSidebarResponses.vue";
+
+import {documentObjectSymbol} from "./openApi/symbol";
 
 //const oas = new OASNormalize(jsonApi);
 
-const documentObject = jsonApi;//await oas.deref() as OpenAPIV3.Document;
+const documentObject = ref(null);//await oas.deref() as OpenAPIV3.Document;
 
 const selectedPath = ref(null);
 const selectedMethod = ref(null);
+const selectedSchema = ref(null);
+const selectedResponse = ref(null);
 
-const select = (method, path) => {
+const selectedMode = ref(null);
+
+const deselect = () => {
+  selectedMode.value = null;
+  selectedPath.value = null;
+  selectedMethod.value = null;
+  selectedSchema.value = null;
+  selectedResponse.value = null;
+}
+
+const select = ({method, path}) => {
+  deselect();
+  selectedMode.value = 'path';
   selectedPath.value = path;
   selectedMethod.value = method;
 }
 
+const selectSchema = (key) => {
+  deselect();
+  selectedMode.value = 'schema';
+  selectedSchema.value = key;
+}
+
+const selectResponse = ({code}) => {
+  deselect();
+  selectedMode.value = 'response';
+  selectedResponse.value = code;
+}
+
+watch(
+    documentModel,
+    () => {
+      deselect();
+      documentObject.value = Document.make(documentOptions[documentModel.value]);
+    },
+    {
+      immediate: true,
+    }
+);
+
+provide(
+    documentObjectSymbol,
+    documentObject
+);
+
 const endpoint = computed(() => {
-  if (!selectedPath.value || !selectedMethod.value) {
+  if (!documentObject.value || !selectedPath.value || !selectedMethod.value) {
     return null;
   }
 
-  return documentObject.paths[selectedPath.value][selectedMethod.value];
+  return documentObject.value.paths[selectedPath.value][selectedMethod.value];
 })
 
-const groupedPaths = computed(() => {
-  return Object.entries(documentObject.paths)
-      .reduce((reduced, [path, endpoints]) => {
-        const partialPath = path.split('/')
-            .map(part => part.startsWith('{') ? '{}' : part)
-            .filter(part => part !== '{}')
-            .join('/');
+const schema = computed(() => {
+  if (!documentObject.value || !selectedSchema.value) {
+    return null;
+  }
 
-        // add the method
-        const mappedEndpoints = Object.entries(endpoints)
-            .map(([httpMethod, method]) => {
-              method.path = path;
-              method.method = httpMethod;
-              return method;
-            })
+  return documentObject.value.components.schemas[selectedSchema.value];
+})
 
-        console.log(partialPath);
-        if (!reduced[partialPath]) {
-          reduced[partialPath] = [];
-        }
+const response = computed(() => {
+  if (!documentObject.value || !selectedResponse.value) {
+    return null;
+  }
 
-        reduced[partialPath].push(...mappedEndpoints);
-
-        return reduced;
-      }, {})
+  return documentObject.value.components.responses[selectedResponse.value];
 })
 </script>

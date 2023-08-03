@@ -2,7 +2,7 @@
   <div data-endpoint-parameters class="grid gap-2">
     <!-- group parameters by "in" -->
     <div v-for="(parameters, group) in getGroupedParameters(endpoint)">
-      <h2>{{ group }} parameters</h2>
+      <h2>{{ niceGroupName(group) }}</h2>
       <div class="grid gap-2">
         <div v-for="parameter in parameters" class="grid gap-2">
           <div class="flex gap-2">
@@ -28,7 +28,6 @@ const props = defineProps({
 })
 
 const getGroupedParameters = (endpoint: OpenAPIV3.PathItemObject) => {
-  console.log(endpoint);
   const groups = {
     header: [],
     query: [],
@@ -54,5 +53,12 @@ const getGroupedParameters = (endpoint: OpenAPIV3.PathItemObject) => {
   })
 
   return groups;
+}
+
+const niceGroupName = group => {
+  return {
+    query: 'Query Parameters',
+    path: 'Path Parameters',
+  }[group] || `${group} Parameters`;
 }
 </script>
