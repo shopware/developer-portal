@@ -10,7 +10,9 @@ export function CssCleanup(options = {cleanup: []}): Plugin {
             if (!id.includes('/node_modules/vitepress/dist/client/theme-default/')) return null;
             if (!id.endsWith('/vp-doc.css')) return null;
 
-            const {root} = await postcss().process(code);
+            const {root} = await postcss().process(code, {
+                from: undefined,
+            });
 
             // Remove selectors
             options.cleanup.forEach((selector) => {
