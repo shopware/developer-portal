@@ -4,7 +4,7 @@
  *
  * Flow:
  *  - embed troublesome repository
- *    $ ./docs-cli clone --repository docs
+ *    $ ./docs-cli.cjs clone --repository docs
  *
  *  - copy embedded files
  *    $ rsync -a ./src/docs/ ./src/docs-raw

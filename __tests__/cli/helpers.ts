@@ -43,8 +43,8 @@ export const docsCli = (args: string[], cwd = '.', options: ExecOptions = {}): P
         finalOptions.timeout = 3000; // 3s
     }
 
-    //const command = `node ${path.resolve("./docs-cli")} ${args.join(" ")}`;
-    const command = `${path.resolve("./docs-cli")} ${args.join(" ")}`;
+    //const command = `node ${path.resolve("./docs-cli.cjs")} ${args.join(" ")}`;
+    const command = `${path.resolve("./docs-cli.cjs")} ${args.join(" ")}`;
     return exec(
         command,
         finalOptions,

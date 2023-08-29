@@ -7,7 +7,7 @@ chmod 600 ~/.ssh/id_ed25519
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 echo "POST-CREATE: Cloning repos to ./repos/"
-./docs-cli git
+./docs-cli.cjs git
 
 echo "POST-CREATE: Running dev server"
 pnpm dev

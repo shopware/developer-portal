@@ -37,7 +37,7 @@ Validate CLI:
 
 ```bash
 # from the /www/developer-portal/ dir
-$ ./docs-cli
+$ ./docs-cli.cjs
 ```
 
 ## 2. Checkout the repository you want to work on
@@ -120,7 +120,7 @@ repository.
 You can clone other repositories, choose a different branch, or organisation when mounting a forked repository.
 
 ```bash
-$ ./docs-cli clone
+$ ./docs-cli.cjs clone
 # or
 $ pnpm docs:clone
 
@@ -134,7 +134,7 @@ requires `FIGMA_FILE` and `FIGMA_TOKEN`, and Frontends on GitLab require `GITLAB
 `GITLAB_FRONTENDS_ACCESS_KEY`.
 
 ```bash
-$ ./docs-cli embed
+$ ./docs-cli.cjs embed
 # or
 $ pnpm docs:embed
 
@@ -145,7 +145,7 @@ $ pnpm docs:embed
 You can run this command to add and/or remove multiple mount points in a single run.
 
 ```bash
-$ ./docs-cli manage
+$ ./docs-cli.cjs manage
 # or
 $ pnpm docs:manage
 
@@ -156,7 +156,7 @@ $ pnpm docs:manage
 This command is just an alias for pulling changes from remote, installing NPM dependencies and rebuilding the CLI.
 
 ```bash
-$ ./docs-cli pull
+$ ./docs-cli.cjs pull
 # or
 $ pnpm docs:pull
 
@@ -166,11 +166,11 @@ $ pnpm docs:pull
 
 There are a few more commands available that you can explore by yourself:
 
-- `./docs-cli install` - add aliases to your package.json
-- `./docs-cli cleanup` - remove added mount points
-- `./docs-cli test` - run e2e test suite
-- `./docs-cli build` - make a production build (requires all repositories to be mounted)
-- `./docs-cli config` - configure CLI paths and variables
-- `./docs-cli git` - checkout all repos directly in the `repos` folder of the `developer-portal` project
+- `./docs-cli.cjs install` - add aliases to your package.json
+- `./docs-cli.cjs cleanup` - remove added mount points
+- `./docs-cli.cjs test` - run e2e test suite
+- `./docs-cli.cjs build` - make a production build (requires all repositories to be mounted)
+- `./docs-cli.cjs config` - configure CLI paths and variables
+- `./docs-cli.cjs git` - checkout all repos directly in the `repos` folder of the `developer-portal` project
 
 You can find more detailed information on the CLI in the [./CLI.md](./CLI.md) file.

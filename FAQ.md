@@ -5,7 +5,7 @@
 There are a few known issues:
 
 - you are missing some static assets - you will get an error `Error resolving an import`
-- the docs are partially embedded - you can use `./docs-cli embed` method to locally embed all repos
+- the docs are partially embedded - you can use `./docs-cli.cjs embed` method to locally embed all repos
 - `Duplicate attribute`
 - My build breaks
 

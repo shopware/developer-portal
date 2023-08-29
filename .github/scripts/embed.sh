@@ -27,7 +27,7 @@ fi
 
 #alias docs-cli="./cli/dist/docs-cli-linux"
 
-./docs-cli clone \
+./docs-cli.cjs clone \
  --ci \
  --repository shopware/docs \
  --branch ${BRANCH_DOCS:-main} \
@@ -35,7 +35,7 @@ fi
  --dst docs \
  --org ${ORG_DOCS:-shopware}
 
-./docs-cli clone \
+./docs-cli.cjs clone \
  --ci \
  --repository shopware/docs \
  --branch ${BRANCH_DOCS_64:-main} \
@@ -43,7 +43,7 @@ fi
  --dst docs/v6.4 \
  --org ${ORG_DOCS_64:-shopware}
 
-./docs-cli clone \
+./docs-cli.cjs clone \
  --ci \
  --repository shopware/docs \
  --branch ${BRANCH_DOCS_63:-main} \
@@ -51,7 +51,7 @@ fi
  --dst docs/v6.3 \
  --org ${ORG_DOCS_63:-shopware}
 
-./docs-cli clone \
+./docs-cli.cjs clone \
  --ci \
  --repository shopware/frontends \
  --branch ${BRANCH_FRONTENDS:-main} \
@@ -59,7 +59,7 @@ fi
  --dst frontends \
  --org ${ORG_FRONTENDS:-shopware}
 
-#./docs-cli clone \
+#./docs-cli.cjs clone \
 # --ci \
 # --repository gitlab.shopware.com/product/engineering/platform-group/pwa/frontends \
 # --user ${GITLAB_FRONTENDS_USERNAME} \
@@ -69,7 +69,7 @@ fi
 # --dst frontends-gl \
 # --git gitlab.shopware.com
 
-#./docs-cli clone \
+#./docs-cli.cjs clone \
 # --ci \
 # --repository shopware/admin-extension-sdk \
 # --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
@@ -77,7 +77,7 @@ fi
 # --dst resources/admin-extension-sdk \
 # --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
-./docs-cli clone \
+./docs-cli.cjs clone \
  --ci \
  --repository shopware/meteor-icon-kit \
  --branch ${BRANCH_METEOR_ICON_KIT:-main} \
@@ -85,7 +85,7 @@ fi
  --dst resources/meteor-icon-kit \
  --org ${ORG_METEOR_ICON_KIT:-shopware}
 
-#./docs-cli clone \
+#./docs-cli.cjs clone \
 # --ci \
 # --repository shopware/meteor-component-library \
 # --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \

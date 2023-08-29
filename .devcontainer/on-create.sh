@@ -7,4 +7,4 @@ echo "ON-CREATE: Building CLI"
 pnpm cli:build
 
 echo "ON-CREATE: Showing CLI"
-./docs-cli || echo ""
+./docs-cli.cjs || echo ""

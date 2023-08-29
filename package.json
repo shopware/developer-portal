@@ -13,7 +13,7 @@
     "build": "export NODE_OPTIONS=\"--max-old-space-size=9216\" && vitepress build",
     "serve": "vitepress serve",
     "preview": "docker run -dit -p 8765:80 -v \"$PWD/.vitepress/dist\":/usr/local/apache2/htdocs/ httpd:2.4",
-    "docs:embed": "./docs-cli embed",
+    "docs:embed": "./docs-cli.cjs embed",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --exit-zero-on-changes"

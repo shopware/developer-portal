@@ -18,7 +18,7 @@ approach, not being force into. :slightly_smiling_face:
 
 This repository:
 
-- **provides Shopware Docs CLI** (`./docs-cli`) for embedding, previewing and managing embedded resources
+- **provides Shopware Docs CLI** (`./docs-cli.cjs`) for embedding, previewing and managing embedded resources
 - **reuses our official Vitepress-based
   template**
   [`shopware/developer-documentation-vitepress`](https://github.com/shopware/developer-documentation-vitepress)
