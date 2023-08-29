@@ -462,11 +462,13 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
      */
     await copyAdditionalAssets([
       {
-        src: '../node_modules/@shopware-ag/meteor-icon-kit/icons/regular',
+        // src: '../node_modules/@shopware-ag/meteor-icon-kit/icons/regular',
+        src: './resources/meteor-icon-kit/public/icons/regular',
         dst: 'icons/regular',
       },
       {
-        src: '../node_modules/@shopware-ag/meteor-icon-kit/icons/solid',
+        //src: '../node_modules/@shopware-ag/meteor-icon-kit/icons/solid',
+        src: './resources/meteor-icon-kit/public/icons/solid',
         dst: 'icons/solid',
       }
     ]);

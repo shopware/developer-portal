@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       '@shopware-ag/meteor-icon-kit':
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^5.2.0
+        version: 5.2.0
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -4620,8 +4620,8 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@shopware-ag/meteor-icon-kit@5.1.0:
-    resolution: {integrity: sha512-dcgKOGZUqBW2ZeLAmkv3mEDzEK9efOtcdcMDpv/imCAWloDe7DJLhmNSZLqK5hS+3OXInYhWB8iyjrBp0Ipu8g==}
+  /@shopware-ag/meteor-icon-kit@5.2.0:
+    resolution: {integrity: sha512-N1DYSOazMfzgK+vVOTQgvzx80enWbJqXhswQ4OA7kJzPvu9HbjygIbpirSc9i30hzbdXlba51cOL5v3xg8gQdw==}
     dependencies:
       js-md5: 0.7.3
     dev: false
@@ -16224,7 +16224,7 @@ packages:
       '@docsearch/css': 3.3.4
       '@docsearch/js': 3.3.4(react-dom@18.2.0)(react@18.2.0)
       '@iconify-json/carbon': 1.1.20
-      '@shopware-ag/meteor-icon-kit': 5.1.0
+      '@shopware-ag/meteor-icon-kit': 5.2.0
       '@stoplight/elements-dev-portal': 1.12.0(@babel/core@7.22.11)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/json-schema-generator': 1.0.2
       '@vueuse/core': 10.4.1(vue@3.3.1)
