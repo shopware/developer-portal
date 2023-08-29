@@ -3,7 +3,7 @@ import type { HeadConfig, TransformContext } from 'vitepress'
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
-const {resolve} = require('path');
+import {resolve} from "path";
 import { MarkdownTransform } from "./plugins/markdownTransform";
 import { CssCleanup } from "./plugins/cssCleanup";
 import Inspect from "vite-plugin-inspect";
