@@ -391,7 +391,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
   vite: {
     plugins: [
       Inspect(),
-      ViteRequireContext({
+      ViteRequireContext.default({
         projectBasePath: `${process.cwd()}/src`
       }),
       MarkdownTransform(),

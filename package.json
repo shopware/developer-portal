@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "vitest run -r __tests__/e2e",
     "test:regression": "VITE_TEST_BUILD=1 REGRESSION=1 vitest run regression -r __tests__/e2e",
@@ -24,7 +25,7 @@
     "@shopware-ag/meteor-icon-kit": "^5.2.0",
     "cross-env": "^7.0.3",
     "terser": "^5.17.3",
-    "vitepress": "1.0.0-beta.7",
+    "vitepress": "1.0.0-rc.1",
     "vitepress-shopware-docs": "1.0.0-beta.34",
     "vue": "^3.3.1"
   },
