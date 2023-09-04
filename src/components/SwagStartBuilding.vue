@@ -5,7 +5,7 @@
 
     <div class="SwagStartBuilding_grid">
 
-      <a href="/apps/" class="SwagStartBuilding_item row-span-2">
+      <a href="/apps.html" class="SwagStartBuilding_item row-span-2">
         <img src="/home/build-apps.svg" class="w-full SwagStartBuilding_image-ratio" />
         <span class="SwagStartBuilding_icon -mt-2">
           <SwagIcon icon="plug" type="solid" />
@@ -31,7 +31,7 @@
         <p>Build unique and captivating custom storefronts using Store APIs and SDKs, or start with reference implementations using technologies like Vue.js or React.</p>
       </a>
 
-      <a href="/themes/" class="SwagStartBuilding_item">
+      <a href="/themes.html" class="SwagStartBuilding_item">
         <span class="SwagStartBuilding_icon">
           <SwagIcon icon="image" type="solid" />
         </span>
@@ -42,7 +42,7 @@
         <p>Style your store with unparalleled flexibility using custom-built or third-party themes.</p>
       </a>
 
-      <a href="/integrations/" class="SwagStartBuilding_item">
+      <a href="/integrations.html" class="SwagStartBuilding_item">
         <span class="SwagStartBuilding_icon">
           <SwagIcon icon="puzzle-piece" type="solid" />
         </span>

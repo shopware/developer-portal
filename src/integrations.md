@@ -1,5 +1,5 @@
 ---
-items:
+_items:
   - text: Integrations
     link: /integrations/
   - text: API concepts
@@ -42,6 +42,7 @@ items:
       - text: Store API
         link: https://shopware.stoplight.io/docs/store-api/
 aside: false
+sidebar: false
 swag:
   related: false
 ---

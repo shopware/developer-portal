@@ -1,5 +1,5 @@
 ---
-items:
+_items:
   - text: Getting started
     link: /apps/
   - text: Capabilities
@@ -41,11 +41,12 @@ items:
       - text: Guidelines
         link: "/docs/resources/guidelines/testing/store/quality-guidelines-apps/"
 aside: false
+sidebar: false
 swag:
   related: false
 ---
 
-<SwagLanding image="/landing/apps.png">
+<SwagLanding image="/landing/binary.png">
     <template #title>Build the functionalities merchants need</template>
     <template #description>
         Leverage Shopware's extension APIs to build unique extensions that boost merchants' businesses. Use the powerful plugin system to build highly custom extensions or apps using the platform of your choice..
@@ -68,23 +69,72 @@ swag:
                     <template #title>Local app development</template>
                     <template #sub>Learn how to develop your app on Platform.sh or with Docker.</template>
                 </SwagLandingCard>-->
-               <SwagLandingCard page="/docs/guides/plugins/apps/starter/product-translator.html">
-                    <template #title>Setup app templates</template>
-                    <template #sub>Learn how to set up an app server and read/write data to the Shopware APIs.</template>
-                </SwagLandingCard>
-            <SwagLandingCard page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
-                    <template #title>Add custom API</template>
-                    <template #sub>Learn how to add different custom API endpoints that delivers dynamic data.</template>
-                </SwagLandingCard>
-            <SwagLandingCard page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
-                    <template #title>Extend Admin UI</template>
-                    <template #sub>Learn how to extend modules for the admin panel using Admin Extension API.</template>
-                </SwagLandingCard>
+            <PageRef page="/docs/guides/plugins/apps/starter/product-translator.html">
+                <template #title></template>
+                <template #sub>Learn how to set up an app server and read/write data to the Shopware APIs.</template>
+            </PageRef>
+            <PageRef page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
+                <template #title>Add custom API</template>
+                <template #sub>Learn how to add different custom API endpoints that delivers dynamic data.</template>
+            </PageRef>
+            <PageRef page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
+                <template #title>Extend Admin UI</template>
+                <template #sub>Learn how to extend modules for the admin panel using Admin Extension API.</template>
+            </PageRef>
             <!--<SwagLandingCard page="/docs/guides/plugins/apps/hosting-guide/">
                     <template #title>Hosting guide</template>
                     <template #sub>Not all apps need hosting. Explore the server options.</template>
                 </SwagLandingCard>-->
             </template>
+        </SwagLandingCardList>
+        <SwagLandingCardList>
+            <template #title>Highlights</template>
+            <template #description>
+                The number of topics that are available for exploration can be overwhelming. To help you navigate this complexity, we have curated tutorials that are designed to familiarize you with some of our core concepts.
+            </template>
+            <div class="grid gap-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <SwagCardSummary icon="shopping-cart">
+                        <template #title>Checkout</template>
+                        <ul>
+                            <li><a href="#">Test</a></li>
+                            <li><a href="#">Test2</a></li>
+                            <li><a href="#">Test2</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="chart-bar">
+                        <template #title>Checkout</template>
+                        <ul>
+                            <li><a href="#">Test</a></li>
+                            <li><a href="#">Test2</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <SwagCardSummary icon="shopping-cart">
+                        <template #title>Checkout</template>
+                        <ul>
+                            <li><a href="#">Test</a></li>
+                            <li><a href="#">Test2</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="chart-bar">
+                        <template #title>Checkout</template>
+                        <ul>
+                            <li><a href="#">Test</a></li>
+                            <li><a href="#">Test2</a></li>
+                            <li><a href="#">Test2</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="chart-bar">
+                        <template #title>Checkout</template>
+                        <ul>
+                            <li><a href="#">Test</a></li>
+                            <li><a href="#">Test2</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                </div>
+            </div>
         </SwagLandingCardList>
     </template>
     <!--<template #exposed2>

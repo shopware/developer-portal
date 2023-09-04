@@ -10,7 +10,7 @@
         <template #description>
           <b>Apps</b> are most recommended extensions built via <b>app scripts</b>, <b>app system</b> or <b>app SDKs</b> have access to modify the Shopware's internal database schema and may or may not be deployed on the Shopware server based on the complexity of apps.
         </template>
-        <template #link><a href="/docs/guides/plugins/apps/app-base-guide.html" class="btn --secondary mt-4 inline-block">Learn more about Apps</a></template>
+        <template #link><a href="/apps.html" class="btn --secondary mt-4 inline-block">Learn more about Apps</a></template>
       </SwagCardExtend>
 
       <SwagCardExtend :availabilities="['PaaS', 'Self-hosted']">
@@ -18,7 +18,7 @@
         <template #description>
           Themes can be extended as apps or plugins. They gives you the ability to change your storefront's visual appearance via <b>SCSS/CSS</b> styling and adjusting <b>twig</b> templates. You can also provide JavaScript to change how the storefront behaves in the browser.
         </template>
-        <template #link><a href="/docs/guides/plugins/themes/theme-base-guide.html" class="btn --secondary mt-4 inline-block">Learn more about Themes</a></template>
+        <template #link><a href="/themes.html" class="btn --secondary mt-4 inline-block">Learn more about Themes</a></template>
       </SwagCardExtend>
 
       <SwagCardExtend :availabilities="['PaaS', 'Self-hosted']">
