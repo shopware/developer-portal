@@ -1,5 +1,5 @@
 ---
-items:
+_items:
   - text: Getting started
     link: /themes/
   - text: Themes overview
@@ -48,6 +48,7 @@ items:
       - text: Guidelines
         link: /docs/resources/guidelines/testing/store/quality-guidelines-apps/
 aside: false
+sidebar: false
 swag:
   related: false
 ---
