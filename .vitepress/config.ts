@@ -242,7 +242,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       {
         async: true,
         src: "https://app.usercentrics.eu/browser-ui/latest/loader.js",
-        'data-settings-id': "65ynhGFvE",
+        'data-settings-id': process.env.USERCENTRICS || '',
         id: 'usercentrics-cmp'
       }
     ],

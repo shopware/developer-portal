@@ -142,6 +142,7 @@ jobs:
       - name: Build project
         run: |
           export NODE_OPTIONS="--max-old-space-size=8096"
+          export USERCENTRICS="65ynhGFvE"
           pnpm run build
 
       #- name: Zip externals
