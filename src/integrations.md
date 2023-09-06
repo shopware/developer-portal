@@ -73,7 +73,7 @@ swag:
                 <PageRef page="https://shopware.stoplight.io/docs/admin-api/faf8f8e4e13a0-bulk-payloads">
                     <template #title>Bulk operations</template>
                     <template #sub>Perform multiple write operations like creating, updating and deleting simultaneously.</template>
-                </SwagLandingCard>
+                </PageRef>
             </template>
         </SwagLandingCardList>
     </template>
