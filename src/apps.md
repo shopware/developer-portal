@@ -97,40 +97,87 @@ swag:
                     <SwagCardSummary icon="shopping-cart">
                         <template #title>Checkout</template>
                         <ul>
-                            <li><a href="#">Test</a></li>
-                            <li><a href="#">Test2</a></li>
-                            <li><a href="#">Test2</a></li>
+                            <li><a href="/docs/guides/plugins/apps/tax-provider#tax-provider-endpoint">Tax provider</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#split-line-items">Split cart items</a></li>
+                            <li><a href="/docs/guides/plugins/apps/custom-data/">Filter checkout options</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#rule-based-cart-scripts">Rule-based scripts</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#add-errors-and-notifications-to-the-cart">Errors and notifications</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#price-fields-inside-custom-fields">Add custom prices</a></li>
                         </ul>
                     </SwagCardSummary>
                     <SwagCardSummary icon="chart-bar">
-                        <template #title>Checkout</template>
+                        <template #title>Administration</template>
                         <ul>
-                            <li><a href="#">Test</a></li>
-                            <li><a href="#">Test2</a></li>
+                            <li><a href="/docs/guides/plugins/apps/administration/add-custom-modules">Define features</a></li>
+                            <li><a href="/docs/guides/plugins/apps/administration/add-custom-action-button">Add action button</a></li>
+                            <li><a href="/docs/guides/plugins/apps/custom-data/custom-fields">Add custom fields</a></li>
+                            <li><a href="/docs/guides/plugins/apps/custom-data/custom-entities">Create custom entities</a></li>
+                            <li><a href="/docs/guides/plugins/apps/administration/add-custom-action-button#providing-feedback-in-the-administration">Send notification</a></li>
                         </ul>
                     </SwagCardSummary>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <SwagCardSummary icon="shopping-cart">
-                        <template #title>Checkout</template>
+                        <template #title>Cart</template>
                         <ul>
-                            <li><a href="#">Test</a></li>
-                            <li><a href="#">Test2</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart">Calculate cart</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items">Modify line items</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-a-relative-discount">Calculate discounts</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#price-definitions">Define prices</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-custom-data-to-line-items">Add custom data</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart">Display errors</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart">Generate notifications</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts">Rule-based scripts</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts">Cart state</a></li>
                         </ul>
                     </SwagCardSummary>
                     <SwagCardSummary icon="chart-bar">
-                        <template #title>Checkout</template>
+                        <template #title>Content</template>
                         <ul>
-                            <li><a href="#">Test</a></li>
-                            <li><a href="#">Test2</a></li>
-                            <li><a href="#">Test2</a></li>
+                            <li><a href="/docs/concepts/commerce/content/shopping-experiences-cms">Redefine shopping experiences</a></li>
+                            <li><a href="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#overview">Customized layout styling</a></li>
+                            <li><a href="/docs/concepts/commerce/content/shopping-experiences-cms.html#hydration-of-dynamic-content">Static and dynamic CMS website</a></li>
+                            <li><a href="/docs/guides/plugins/apps/content/cms/add-custom-cms-blocks#defining-slots">Apply desired CMS layout</a></li>
+                            <li><a href="/docs/guides/plugins/apps/custom-data/custom-fields">Custom fields</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/#translation">Translations</a></li>
                         </ul>
                     </SwagCardSummary>
                     <SwagCardSummary icon="chart-bar">
-                        <template #title>Checkout</template>
+                        <template #title>Payment</template>
                         <ul>
-                            <li><a href="#">Test</a></li>
-                            <li><a href="#">Test2</a></li>
+                            <li><a href="/docs/guides/plugins/apps/payment#synchronous-payments">Synchronous payment</a></li>
+                            <li><a href="/docs/guides/plugins/apps/payment#asynchronous-payments">Asynchronous payment</a></li>
+                            <li><a href="/docs/guides/plugins/apps/payment#prepared-payments">Prepared payment</a></li>
+                            <li><a href="/docs/guides/plugins/apps/payment#refund">Refunds</a></li>
+                            <li><a href="/docs/guides/plugins/apps/payment#validation">Payment validations</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <SwagCardSummary icon="shopping-cart">
+                        <template #title>Products and Catalog</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/data-loading">Store details</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/data-loading#search-criteria">Search</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/data-loading.html#loading-data">Stock availability</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/data-loading.html#adding-data-to-the-page-object">New products and categories</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-scripts/custom-endpoints#caching">Cache configuration</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="chart-bar">
+                        <template #title>Storefront</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/plugins/storefront/customize-templates">Templates</a></li>
+                            <li><a href="/docs/guides/plugins/apps/storefront/apps-as-themes">Themes</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="chart-bar">
+                        <template #title>Workflow</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/apps/flow-builder/add-custom-flow-actions-from-app-system">Build workflow</a></li>
+                            <li><a href="/docs/guides/plugins/apps/app-base-guide.html#webhooks">Create webhooks</a></li>
+                            <li><a href="/docs/guides/plugins/plugins/checkout/document/add-custom-document-type#adding-a-generator">Generate documents</a></li>
+                            <li><a href="/docs/guides/plugins/apps/rule-builder/add-custom-rule-conditions">Rule builder</a></li>
                         </ul>
                     </SwagCardSummary>
                 </div>

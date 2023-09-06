@@ -62,15 +62,15 @@ swag:
                 Here is a handful of tutorials to follow along that make you familiar with some of our concepts:
             </template>
             <template #cards>
-                <SwagLandingCard page="/docs/guides/integrations-api/general-concepts/search-criteria">
+                <PageRef page="/docs/guides/integrations-api/general-concepts/search-criteria">
                     <template #title>Criteria concept</template>
                     <template #sub>Understand the search criteria, a powerful concept to read, filter and aggregate data through the Admin API.</template>
-                </SwagLandingCard>
-                <SwagLandingCard page="https://shopware.stoplight.io/docs/admin-api/fdd24cc76f22d-order-overview">
+                </PageRef>
+                <PageRef page="https://shopware.stoplight.io/docs/admin-api/fdd24cc76f22d-order-overview">
                     <template #title>Automate processes</template>
                     <template #sub>Transition order or payment states, send out emails, clear caches - automation can make life a lot easier - and more efficient.</template>
-                </SwagLandingCard>
-                <SwagLandingCard page="https://shopware.stoplight.io/docs/admin-api/faf8f8e4e13a0-bulk-payloads">
+                </PageRef>
+                <PageRef page="https://shopware.stoplight.io/docs/admin-api/faf8f8e4e13a0-bulk-payloads">
                     <template #title>Bulk operations</template>
                     <template #sub>Perform multiple write operations like creating, updating and deleting simultaneously.</template>
                 </SwagLandingCard>

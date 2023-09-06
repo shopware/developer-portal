@@ -69,18 +69,18 @@ swag:
                 Here is a handful of tutorials to follow along that make you familiar with some of our concepts:
             </template>
             <template #cards>
-                <SwagLandingCard page="/docs/guides/plugins/themes/theme-configuration">
+                <PageRef page="/docs/guides/plugins/themes/theme-configuration">
                     <template #title>Theme configuration</template>
                     <template #sub>Add options to your theme, so merchants can customize it to their needs.</template>
-                </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/themes/add-assets-to-theme">
+                </PageRef>
+                <PageRef page="/docs/guides/plugins/themes/add-assets-to-theme">
                     <template #title>Add custom assets</template>
                     <template #sub>Learn how to add custom styles, scripts, and assets to your theme.</template>
-                </SwagLandingCard>
-                <SwagLandingCard page="/docs/guides/plugins/themes/add-theme-inheritance">
+                </PageRef>
+                <PageRef page="/docs/guides/plugins/themes/add-theme-inheritance">
                     <template #title>Theme inheritance</template>
                     <template #sub>Build a family of themes that inherit from each other for all your custom projects.</template>
-                </SwagLandingCard>
+                </PageRef>
             </template>
         </SwagLandingCardList>
     </template>
