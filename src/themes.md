@@ -53,7 +53,7 @@ swag:
   related: false
 ---
 
-<SwagLanding image="/landing/themes.png">
+<SwagLanding>
     <template #title>Craft beautiful themes that inspire</template>
     <template #description>
         <p>Themes allow merchants to transport their brand and identity. They are the way they present their products and services. Create a theme and sell it in the store so that merchants can use it in their stores.</p>

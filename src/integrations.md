@@ -47,7 +47,7 @@ swag:
   related: false
 ---
 
-<SwagLanding image="/landing/themes.png">
+<SwagLanding>
     <template #title>Automate, integrate & connect</template>
     <template #description>
         Shopware offers an extensive Admin API that allows for way more than just reading and writing data. Learn how to make the most of it and build integrations, connectors or imports.

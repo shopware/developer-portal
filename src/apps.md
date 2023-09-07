@@ -46,7 +46,7 @@ swag:
   related: false
 ---
 
-<SwagLanding image="/landing/binary.png">
+<SwagLanding>
     <template #title>Build the functionalities merchants need</template>
     <template #description>
         Leverage Shopware's extension APIs to build unique extensions that boost merchants' businesses. Use the powerful plugin system to build highly custom extensions or apps using the platform of your choice..
