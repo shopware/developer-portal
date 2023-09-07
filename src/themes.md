@@ -83,5 +83,52 @@ swag:
                 </PageRef>
             </template>
         </SwagLandingCardList>
+        <SwagLandingCardList>
+            <template #title>Highlights</template>
+            <template #description>
+                Themes in Shopware serve a crucial role in defining the visual and structural appearance of your online store. They determine how your e-commerce website looks to your customers and how it presents your products and content. Here are the primary functions and aspects of themes in Shopware:
+            </template>
+            <div class="grid gap-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <SwagCardSummary icon="boxes">
+                        <template #title>Build and configure theme</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/themes/create-a-theme">Create plugin based theme</a></li>
+                            <li><a href="/docs/guides/plugins/themes/theme-configuration">Theme configuration</a></li>
+                            <li><a href="/docs/guides/plugins/themes/theme-inheritance-configuration">Inherit theme configurations</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="figma">
+                        <template #title>Style theme</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/themes/add-css-js-to-theme">SCSS/CSS</a></li>
+                            <li><a href="/docs/guides/plugins/themes/add-theme-inheritance-without-resources">Theme with bootstrap styling</a></li>
+                            <li><a href="/docs/guides/plugins/themes/override-bootstrap-variables-in-a-theme">Override bootstrap variables</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <SwagCardSummary icon="dashboard">
+                        <template #title>Embed JS styling</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/themes/add-css-js-to-theme.html#adding-custom-js">Add custom JS</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="flow">
+                        <template #title>Add assets</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/themes/add-assets-to-theme">Custom Assets</a></li>
+                            <li><a href="/docs/guides/plugins/apps/payment#asynchronous-payments">Icons</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                    <SwagCardSummary icon="image-text">
+                        <template #title>Templates</template>
+                        <ul>
+                            <li><a href="/docs/guides/plugins/plugins/storefront/customize-templates">Add custom templates</a></li>
+                        </ul>
+                    </SwagCardSummary>
+                </div>
+            </div>
+        </SwagLandingCardList>
     </template>
 </SwagLanding>
