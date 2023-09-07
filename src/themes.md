@@ -83,9 +83,7 @@ swag:
                 </PageRef>
             </template>
         </SwagLandingCardList>
-    </template>
-</SwagLanding>
-<SwagLandingCardList>
+        <SwagLandingCardList>
             <template #title>Highlights</template>
             <template #description>
                 Themes in Shopware serve a crucial role in defining the visual and structural appearance of your online store. They determine how your e-commerce website looks to your customers and how it presents your products and content. Here are the primary functions and aspects of themes in Shopware:
@@ -123,7 +121,6 @@ swag:
                             <li><a href="/docs/guides/plugins/apps/payment#asynchronous-payments">Icons</a></li>
                         </ul>
                     </SwagCardSummary>
-                <div class="grid md:grid-cols-3 gap-8">
                     <SwagCardSummary icon="image-text">
                         <template #title>Templates</template>
                         <ul>

@@ -76,9 +76,7 @@ swag:
                 </PageRef>
             </template>
         </SwagLandingCardList>
-    </template>
-</SwagLanding>
-<SwagLandingCardList>
+        <SwagLandingCardList>
             <template #title>Highlights</template>
             <template #description>
                 APIs in Shopware serve several important functions that enhance the functionality and integration capabilities of the e-commerce platform. Here are the primary functions of APIs in Shopware:
