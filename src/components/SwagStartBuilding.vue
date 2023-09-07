@@ -17,7 +17,7 @@
         <p>Boost or expand your store's capabilities with the simplicity of apps, a must-have for developers seeking to elevate their digital marketplace.</p>
       </a>
 
-      <a href="/frontends/" class="SwagStartBuilding_item row-span-2">
+      <a href="https://frontends.shopware.com/" target="_blank" class="SwagStartBuilding_item row-span-2">
         <div class="SwagStartBuilding_image-wrapper">
           <img src="/home/build-frontends.svg" class="w-full SwagStartBuilding_image-ratio u-gradient-image" />
         </div>
