@@ -52,13 +52,23 @@
     <hr/>
 
     <div>
-      <textarea class="form-control"></textarea>
-      <button type="button" class="btn --primary --sm">Ask</button>
+      <textarea class="form-control" v-model="query"></textarea>
+      <button type="button" class="btn --primary --sm" @click.prevent="requestAnswer">Ask</button>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import {qa} from "../ai/ml";
+
+const {
+  query,
+  pending,
+  response,
+  errorText,
+  requestAnswer,
+  marked
+} = qa();
 </script>
 
 <style lang="scss">
