@@ -57,7 +57,7 @@ import SwagBtn from "./components/SwagBtn.vue";
 <SwagContribute class="my-20" />
 
 <!-- CHANGELOG --->
-<SwagChangelogWrapper id="Changelog" class="my-20" />
+<!--<SwagChangelogWrapper id="Changelog" class="my-20" />-->
 
 <!-- NEWSLETTER -->
 <SwagNewsletter />
