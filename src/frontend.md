@@ -20,7 +20,7 @@
                         <li><a href="https://frontends.shopware.com/getting-started/e-commerce/product-listing.html">Create a Product Listing</a></li>
                         <li><a href="https://frontends.shopware.com/getting-started/e-commerce/product-detail-page.html">Fetch Product detail page</a></li>
                         <li><a href="https://frontends.shopware.com/getting-started/e-commerce/prices.html">Work with Prices</a></li>
-                        <li><a href="https://frontends.shopware.com/getting-started/languages.html">Wishlist</a></li>
+                        <li><a href="https://frontends.shopware.com/getting-started/languages.html">Wishlist Management</a></li>
                         <li><a href="https://frontends.shopware.com/getting-started/page-elements/">Composables functions</a></li>
                     </ul>
                 </SwagCardSummary>
