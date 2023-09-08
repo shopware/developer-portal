@@ -61,7 +61,7 @@ swag:
                             <li><a href="https://shopware.stoplight.io/docs/admin-api/3be386a26c0f9-document-management">Document Management</a></li>
                             <li><a href="https://shopware.stoplight.io/docs/admin-api/fdd24cc76f22d-order-management">Order Management</a></li>
                             <li><a href="https://shopware.stoplight.io/docs/admin-api/s92t5mvj387wz-cms-management">CMS Management</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/admin-api/8d53c59b2e6bc-shopware-admin-api">Admin-API endpoints Reference</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/admin-api/8d53c59b2e6bc-shopware-admin-api">Admin-API Endpoints Reference</a></li>
                         </ul>
                     </SwagCardSummary>
                 </div>
