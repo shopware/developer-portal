@@ -403,6 +403,11 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
           '.vp-doc h2',
           '.vp-doc hr',
           '.vp-doc a',
+          '.vp-doc h1 .header-anchor',
+          '.vp-doc h2 .header-anchor',
+          '.vp-doc h3 .header-anchor',
+          '.vp-doc h4 .header-anchor',
+          '.vp-doc h5 .header-anchor',
         ]
       }),
     ],
