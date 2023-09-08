@@ -37,7 +37,7 @@ swag:
         <SwagLandingCardList>
             <template #title>Highlights</template>
             <template #description>
-                APIs in Shopware serve several important functions that enhance the functionality and integration capabilities of the e-commerce platform. Here are the primary functions of APIs in Shopware:
+                APIs in Shopware serve essential functions that enhance the functionality and integration capabilities of the e-commerce platform. Here are the primary functions of APIs in Shopware:
             </template>
             <div class="grid gap-8">
                 <div class="grid md:grid-cols-2 gap-8">
@@ -45,11 +45,11 @@ swag:
                         <template #title>Store-API</template>
                         <ul>
                             <li><a href="https://shopware.stoplight.io/docs/store-api/8e1d78252fa6f-authentication-and-authorisation">Authentication</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/store-api/aa7ea5e14dea6-registering-a-customer">Registering customers</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/store-api/b56ebe18277c6-searching-for-products">Search products</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/store-api/22b27f0c6cff7-working-with-the-cart">Work with cart</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/store-api/8218801e50fe5-handling-the-payment">Handling payments</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/store-api/7b972a75a8d8d-shopware-store-api">Store-API enpoints</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/store-api/aa7ea5e14dea6-registering-a-customer">Customer Registration</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/store-api/b56ebe18277c6-searching-for-products">Products Search</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/store-api/22b27f0c6cff7-working-with-the-cart">Cart Management</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/store-api/8218801e50fe5-handling-the-payment">Payment Handling</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/store-api/7b972a75a8d8d-shopware-store-api">Store-API enpoints reference</a></li>
                         </ul>
                     </SwagCardSummary>
                     <SwagCardSummary icon="warehouse">
@@ -61,7 +61,7 @@ swag:
                             <li><a href="https://shopware.stoplight.io/docs/admin-api/3be386a26c0f9-document-management">Document Management</a></li>
                             <li><a href="https://shopware.stoplight.io/docs/admin-api/fdd24cc76f22d-order-management">Order Management</a></li>
                             <li><a href="https://shopware.stoplight.io/docs/admin-api/s92t5mvj387wz-cms-management">CMS Management</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/admin-api/8d53c59b2e6bc-shopware-admin-api">Admin-API endpoints</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/admin-api/8d53c59b2e6bc-shopware-admin-api">Admin-API endpoints Reference</a></li>
                         </ul>
                     </SwagCardSummary>
                 </div>

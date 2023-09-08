@@ -1,57 +1,39 @@
 <SwagLandingCardList>
     <template #title>Highlights</template>
         <template #description>
-                Shopware, frontends serve as the visible and interactive part of your online store that customers see and interact with. Frontends play a crucial role in presenting your products, content, and overall shopping experience to website visitors. Here are the primary functions of frontends in Shopware:
+                Shopware frontends stand as the user-facing interface that customers see and interact with. Frontends play a crucial role in presenting products, content, and overall shopping experience to website visitors. Here, we outline the core functions specific to frontend development in Shopware:
         </template>
         <div class="grid gap-8">
             <div class="grid md:grid-cols-2 gap-8">
                 <SwagCardSummary icon="shopping-cart">
-                    <template #title>Framework</template>
+                    <template #title>Checkout</template>
                     <ul>
-                        <li><a href="https://frontends.shopware.com/framework/internal-structure.html">Internal structure</a></li>
-                        <li><a href="https://frontends.shopware.com/framework/composables.html">coposables</a></li>
-                        <li><a href="https://frontends.shopware.com/framework/shopping-experiences.html">Shopping experience</a></li>
-                        <li><a href="https://frontends.shopware.com/framework/styling.html">Styling</a></li>
+                        <li><a href="https://frontends.shopware.com/getting-started/e-commerce/cart.html">Create a cart</a></li>
+                        <li><a href="https://frontends.shopware.com/framework/composables.html">Create a checkout</a></li>
+                        <li><a href="https://frontends.shopware.com/framework/shopping-experiences.html">Payment and Custom Payments</a></li>
+                        <li><a href="https://frontends.shopware.com/packages/composables.html#cart-checkout">Composables functions</a></li>
                     </ul>
                 </SwagCardSummary>
                 <SwagCardSummary icon="storefront">
-                    <template #title>Build and configure</template>
+                    <template #title>Products</template>
                     <ul>
-                        <li><a href="https://frontends.shopware.com/framework/requirements.html">Requirements</a></li>
-                        <li><a href="https://frontends.shopware.com/getting-started/templates.html">Setup templates</a></li>
-                        <li><a href="https://frontends.shopware.com/getting-started/routing.html">Routing</a></li>
-                        <li><a href="https://frontends.shopware.com/getting-started/languages.html">language</a></li>
-                        <li><a href="https://frontends.shopware.com/getting-started/page-elements/">Page elements</a></li>
+                        <li><a href="https://frontends.shopware.com/getting-started/e-commerce/product-listing.html">Create a Product Listing</a></li>
+                        <li><a href="https://frontends.shopware.com/getting-started/e-commerce/product-detail-page.html">Fetch Product detail page</a></li>
+                        <li><a href="https://frontends.shopware.com/getting-started/e-commerce/prices.html">Work with Prices</a></li>
+                        <li><a href="https://frontends.shopware.com/getting-started/languages.html">Wishlist</a></li>
+                        <li><a href="https://frontends.shopware.com/getting-started/page-elements/">Composables functions</a></li>
                     </ul>
                 </SwagCardSummary>
             </div>
         <div class="grid md:grid-cols-3 gap-8">
             <SwagCardSummary icon="Style">
-                <template #title>Styling</template>
+                <template #title>CMS</template>
                 <ul>
-                    <li><a href="https://frontends.shopware.com/framework/styling.html">Styling</a></li>
-                    <li><a href="https://frontends.shopware.com/getting-started/cms/">Create blocks</a></li>
-                    <li><a href="https://frontends.shopware.com/getting-started/cms/">Create elements</a></li>
-                    <li><a href="https://frontends.shopware.com/getting-started/cms/">Create components</a></li>
-                    <li><a href="https://frontends.shopware.com/getting-started/cms/">Content pages</a></li>
-                </ul>
-            </SwagCardSummary>
-            <SwagCardSummary icon="inventory">
-                <template #title>E-commerce</template>
-                <ul>
-                    <li><a href="https://frontends.shopware.com/getting-started/e-commerce/product-listing.html">Product</a></li>
-                    <li><a href="https://frontends.shopware.com/getting-started/e-commerce/prices.html">Price</a></li>
-                    <li><a href="https://frontends.shopware.com/getting-started/e-commerce/checkout.html">Checkout</a></li>
-                    <li><a href="https://frontends.shopware.com/getting-started/e-commerce/payments.html">Payment</a></li>
-                </ul>
-            </SwagCardSummary>
-            <SwagCardSummary icon="crossselling">
-                <template #title>Operations</template>
-                <ul>
-                    <li><a href="https://frontends.shopware.com/best-practices/deployment.html">Deployment</a></li>
-                    <li><a href="https://frontends.shopware.com/best-practices/error-handling.html">Error Handlig</a></li>
-                    <li><a href="https://frontends.shopware.com/best-practices/performance.html">Performance</a></li>
-                    <li><a href="https://frontends.shopware.com/best-practices/testing.html">Testing</a></li>
+                    <li><a href="https://frontends.shopware.com/getting-started/cms/content-pages.html">Content Pages</a></li>
+                    <li><a href="https://frontends.shopware.com/getting-started/cms/create-blocks.html">Create blocks</a></li>
+                    <li><a href="https://frontends.shopware.com/getting-started/cms/create-elements.html">Create elements</a></li>
+                    <li><a href="https://frontends.shopware.com/getting-started/cms/overwriting-cms.html">Overwriting CMS</a></li>
+                    <li><a href="https://frontends.shopware.com/getting-started/cms/customize-components.html">Custamize components</a></li>
                 </ul>
             </SwagCardSummary>
         </div>
