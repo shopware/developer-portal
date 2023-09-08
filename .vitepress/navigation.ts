@@ -9,14 +9,14 @@ const navigation = buildSidebarNav('./src/', [
         link: '/themes.html',
         text: 'Themes',
     },
-    /*{
-        link: '/frontends/',
-        text: 'Frontends',
-        repo: 'shopware/frontends',
-    },*/
     {
         link: '/integrations.html',
         text: 'Integrations',
+    },
+    {
+        link: 'https://frontends.shopware.com/',
+        text: 'Frontends',
+        repo: 'shopware/frontends',
     },
     {
         text: "Resources",
@@ -59,15 +59,6 @@ const navigation = buildSidebarNav('./src/', [
                         link: 'https://shopware.github.io/meteor-component-library/',
                         repo: 'shopware/meteor-component-library',
                     }
-                ]
-            },
-            {
-                text: "Headless",
-                items: [
-                    {
-                        text: "Frontends",
-                        link: "https://frontends.shopware.com/",
-                    },
                 ]
             },
             {
