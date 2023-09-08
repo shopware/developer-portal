@@ -49,7 +49,7 @@ swag:
                             <li><a href="https://shopware.stoplight.io/docs/store-api/b56ebe18277c6-searching-for-products">Products Search</a></li>
                             <li><a href="https://shopware.stoplight.io/docs/store-api/22b27f0c6cff7-working-with-the-cart">Cart Management</a></li>
                             <li><a href="https://shopware.stoplight.io/docs/store-api/8218801e50fe5-handling-the-payment">Payment Handling</a></li>
-                            <li><a href="https://shopware.stoplight.io/docs/store-api/7b972a75a8d8d-shopware-store-api">Store-API enpoints reference</a></li>
+                            <li><a href="https://shopware.stoplight.io/docs/store-api/7b972a75a8d8d-shopware-store-api">Store-API Endpoints References</a></li>
                         </ul>
                     </SwagCardSummary>
                     <SwagCardSummary icon="warehouse">
