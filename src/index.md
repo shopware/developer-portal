@@ -46,7 +46,7 @@ import SwagBtn from "./components/SwagBtn.vue";
 <SwagGetToKnow id="GetToKnow" class="my-20" />
 
 <!-- START BUILDING -->
-<SwagStartBuilding class="my-20" />
+<SwagStartBuilding class="my-20" id="Start" />
 
 <hr class="my-20" />
 

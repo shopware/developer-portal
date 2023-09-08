@@ -10,7 +10,7 @@
         <template #description>Learn about Shopware capabilities, framework, architecture and more.</template>
       </SwagCard>
 
-      <SwagCard page="#Extend">
+      <SwagCard page="#Start">
         <template #title>How to start with Shopware?</template>
         <template #description>Ways you can get involved with Shopware as a developer.</template>
       </SwagCard>
