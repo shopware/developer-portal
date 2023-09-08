@@ -118,7 +118,7 @@ swag:
                 Shopware frontends stand as the user-facing interface that customers see and interact with. Frontends play a crucial role in presenting products, content, and overall shopping experience to website visitors. Here, we outline the core functions specific to frontend development in Shopware:
         </template>
         <div class="grid gap-8">
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <SwagCardSummary icon="shopping-cart">
                     <template #title>Checkout</template>
                     <ul>
@@ -138,8 +138,6 @@ swag:
                         <li><a href="https://frontends.shopware.com/getting-started/page-elements/">Composables functions</a></li>
                     </ul>
                 </SwagCardSummary>
-            </div>
-        <div class="grid md:grid-cols-3 gap-8">
             <SwagCardSummary icon="Style">
                 <template #title>CMS</template>
                 <ul>
