@@ -53,7 +53,7 @@ swag:
                     <SwagCardSummary icon="figma">
                         <template #title>Style themes</template>
                         <ul>
-                            <li><a href="/docs/guides/plugins/themes/add-css-js-to-theme">SCSS/CSS</a></li>
+                            <li><a href="/docs/guides/plugins/themes/add-css-js-to-theme">Style by SCSS/CSS</a></li>
                             <li><a href="/docs/guides/plugins/themes/add-theme-inheritance-without-resources">Theme with bootstrap styling</a></li>
                             <li><a href="/docs/guides/plugins/themes/override-bootstrap-variables-in-a-theme">Override bootstrap variables</a></li>
                         </ul>
@@ -70,7 +70,7 @@ swag:
                         <template #title>Add assets</template>
                         <ul>
                             <li><a href="/docs/guides/plugins/themes/add-assets-to-theme">Custom Assets</a></li>
-                            <li><a href="/docs/guides/plugins/apps/payment#asynchronous-payments">Icons</a></li>
+                            <li><a href="/docs/guides/plugins/apps/payment#asynchronous-payments">Add Icons</a></li>
                         </ul>
                     </SwagCardSummary>
                     <SwagCardSummary icon="image-text">
