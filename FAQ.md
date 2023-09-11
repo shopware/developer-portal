@@ -75,7 +75,7 @@ projects. Our project (Developer portal) reuses the library.
 - **Dependencies:** - dependencies are kept in `developer-portal` and `developer-documentation-vitepress` repos. Other
   repos only provide .md files and custom VueJS components.
 - **Algolia search:** - index is updated whenever the main
-  website [beta-developer.shopware.com](https://beta-developer.shopware.com) is updated, through
+  website [developer.shopware.com](https://developer.shopware.com) is updated, through
   the [algolia-crawl.yml](./.github/workflows/algolia-crawl.yml) GitHub workflow
 - **Sitemap:** - sitemap is generated during the build process of the `developer-portal`.
 - **Updates:** - Feature branch PRs are created in `developer-portal`

@@ -3,7 +3,7 @@
 [![Build and deploy](https://github.com/shopware/developer-portal/actions/workflows/checkout-test-build-deploy.yml/badge.svg)](https://github.com/shopware/developer-portal/actions/workflows/checkout-test-build-deploy.yml)
 [![Issues](https://img.shields.io/github/issues/shopware/developer-portal)](https://github.com/shopware/developer-portal/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/shopware/developer-portal)](https://github.com/shopware/developer-portal/pull-requests)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbeta-developer.shopware.com)](https://beta-developer.shopware.com)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdeveloper.shopware.com)](https://developer.shopware.com)
 [![License](https://img.shields.io/github/license/shopware/developer-portal)](https://github.com/shopware/developer-portal)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?machine=basicLinux32gb&repo=563429368&ref=main&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)
 
@@ -33,7 +33,7 @@ This repository:
     - [shopware/store-api-reference](https://github.com/shopware/store-api-reference)
     - [shopware/admin-api-reference](https://github.com/shopware/admin-api-reference)
 - **has a single deployment workflow** with the build being served from a single
-  domain - [Developer Portal](https://beta-developer.shopware.com)
+  domain - [Developer Portal](https://developer.shopware.com)
 
 _Note: This repository does not include layouts, templates and other components - these are provided by the
 `developer-documentation-vitepress`._

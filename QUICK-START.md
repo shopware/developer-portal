@@ -18,7 +18,7 @@ In this introduction, you will learn how to:
 ## 1. Checkout the developer-portal repository
 
 The `developer-portal` repository allows you to set up a local environment for
-the [docs](https://beta-developer.shopware.com).
+the [docs](https://developer.shopware.com).
 To get started, follow these steps:
 
 - clone the repository to your local machine,
