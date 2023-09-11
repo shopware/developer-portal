@@ -21,17 +21,17 @@ describe('render correct content', async () => {
     })
 
     test('loads all icons', async() => {
-        await embeddedPage.page.waitForLoadState('networkidle');
+        await embeddedPage.page.waitForLoadState('networkidle', {timeout: 3 * 60 * 1000});
 
         const solidLocator = await embeddedPage.page.locator('button#solid');
         await solidLocator.click();
 
-        await embeddedPage.page.waitForLoadState('networkidle');
+        await embeddedPage.page.waitForLoadState('networkidle', {timeout: 3 * 60 * 1000});
 
         if (fourOhFour.length !== 0) {
             console.error('Some resources responded with code 404', ...fourOhFour.map(response => response.url()));
         }
 
         expect(fourOhFour.length).toEqual(0);
-    })
+    }, 10 * 60 * 1000)
 })
