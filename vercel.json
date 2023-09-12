@@ -23,6 +23,11 @@
       "source": ":url(^(?!.*\\.).*[^/]$)",
       "destination": ":url.html",
       "statusCode": 301
+    },
+    {
+      "source": "/docs/resources/guidelines/core:url(^(?!.*\\.).*[^/]$)",
+      "destination": "/docs/resources/guidelines/code/core:url.html",
+      "statusCode": 301
     }
   ]
 }
