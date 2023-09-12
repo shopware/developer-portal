@@ -21,7 +21,7 @@
       </SwagCard>
 
       <SwagCard page="/docs/products/extensions/migration-assistant/">
-        <template #title>How to migrate to Shopware?</template>
+        <template #title>Migrate to Shopware</template>
         <template #description>Ways to migrate to Shopware irrespective of your old instance.</template>
       </SwagCard>
 
