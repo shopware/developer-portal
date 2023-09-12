@@ -9,6 +9,7 @@ const sourceRoot = 'src/';
 interface AssetDir {
     src: string;
     dst: string;
+    filter?: string[];
 }
 
 export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = []) => {
@@ -33,6 +34,7 @@ export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = [
     publicDirs.forEach(dir => {
         const src = typeof dir === 'string' ? dir : dir.src;
         const dst = typeof dir === 'string' ? dir : dir.dst;
+        const extensions = typeof dir === 'string' ? undefined : dir.ext;
         const dirToCopy = `${process.cwd()}/${sourceRoot}${src}`;
         const distDir = `${process.cwd()}/.vitepress/dist/${dst}`;
 
@@ -47,6 +49,19 @@ export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = [
 
         // copy files
         fs.readdirSync(dirToCopy).forEach((file: string) => {
+            if (extensions) {
+                let skip = true;
+                for (const extension of extensions) {
+                    if (file.endsWith(extension)) {
+                        skip = false;
+                        continue;
+                    }
+                }
+                if (skip) {
+                    return;
+                }
+            }
+
             console.log(`Copying ${dirToCopy}/${file} to ${distDir}/${file}`);
             fs.writeFileSync(`${distDir}/${file}`, fs.readFileSync(`${dirToCopy}/${file}`));
         });
