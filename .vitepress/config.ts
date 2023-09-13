@@ -287,6 +287,15 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-9JLJ6GGB76');"
     ],
 
+    // search console
+    [
+        'meta',
+        {
+          name: 'google-site-verification',
+          content: '_EHK9hrAzAK9f_GbNmnBO8U1U8-KBID0oD-icZLH-nY',
+        }
+    ],
+
     // hotjar
     [
         'script',
