@@ -25,22 +25,22 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/resources/guidelines/core:url(^(?!.*\\.).*[^/]$)",
-      "destination": "/docs/resources/guidelines/code/core:url.html",
+      "source": "/docs/resources/guidelines/core:url*",
+      "destination": "/docs/resources/guidelines/code/core:url",
       "statusCode": 301
     },
     {
-      "source": "/docs/resources/guidelines/core:url(^(?!.*\\.).*[^/]$)",
-      "destination": "/docs/resources/guidelines/code/core:url.html",
+      "source": "/docs/resources/guidelines/core:url*",
+      "destination": "/docs/resources/guidelines/code/core:url",
       "statusCode": 301
     },
     {
-      "source": "/docs/v/6.4/:url(^(?!.*\\.).*[^/]$)",
+      "source": "/docs/v/6.4/:url*",
       "destination": "/docs/v6.4/:url",
       "statusCode": 301
     },
     {
-      "source": "/docs/v/6.3/:url(^(?!.*\\.).*[^/]$)",
+      "source": "/docs/v/6.3/:url*",
       "destination": "/docs/v6.3/:url",
       "statusCode": 301
     }
