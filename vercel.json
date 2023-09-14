@@ -40,6 +40,16 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/v/v6.4/:url*",
+      "destination": "/docs/v6.4/:url",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/v/v6.3/:url*",
+      "destination": "/docs/v6.3/:url",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/guides/integrations-api.html",
       "destination": "/docs/guides/integrations-api/",
       "statusCode": 301
