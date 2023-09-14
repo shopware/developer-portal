@@ -55,7 +55,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/guides/installation/legacy/*",
+      "source": "/docs/guides/installation/legacy/:url*",
       "destination": "/docs/guides/installation/",
       "statusCode": 301
     },
