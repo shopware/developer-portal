@@ -43,8 +43,8 @@ importers:
         specifier: ^1.0.9
         version: 1.0.9
       '@playwright/test':
-        specifier: ^1.38.0
-        version: 1.38.0
+        specifier: 1.35.1
+        version: 1.35.1
       '@shopware-docs/cli':
         specifier: ^1.0.2
         version: 1.0.2
@@ -56,7 +56,7 @@ importers:
         version: 1.0.2(postcss@8.4.30)(vitepress@1.0.0-rc.14)
       '@shopware-docs/vitest':
         specifier: ^1.0.2
-        version: 1.0.2(@playwright/test@1.38.0)(@vitest/coverage-c8@0.31.4)(get-port@6.1.2)(playwright-chromium@1.38.0)(postcss@8.4.30)(slugify@1.6.6)(vite-plugin-inspect@0.7.38)(vitepress@1.0.0-rc.14)(vitest@0.31.4)
+        version: 1.0.2(@playwright/test@1.35.1)(@vitest/coverage-c8@0.31.4)(get-port@6.1.2)(playwright-chromium@1.38.0)(postcss@8.4.30)(slugify@1.6.6)(vite-plugin-inspect@0.7.38)(vitepress@1.0.0-rc.14)(vitest@0.31.4)
       '@storybook/addon-essentials':
         specifier: ^7.4.2
         version: 7.4.2(react-dom@18.2.0)(react@18.2.0)
@@ -2199,12 +2199,15 @@ packages:
     dev: true
     optional: true
 
-  /@playwright/test@1.38.0:
-    resolution: {integrity: sha512-xis/RXXsLxwThKnlIXouxmIvvT3zvQj1JE39GsNieMUrMpb3/GySHDh2j8itCG22qKVD4MYLBp7xB73cUW/UUw==}
+  /@playwright/test@1.35.1:
+    resolution: {integrity: sha512-b5YoFe6J9exsMYg0pQAobNDR85T1nLumUYgUTtKm4d21iX2L7WqKq9dW8NGJ+2vX0etZd+Y7UeuqsxDXm9+5ZA==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright: 1.38.0
+      '@types/node': 18.17.17
+      playwright-core: 1.35.1
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /@polka/url@1.0.0-next.23:
@@ -3228,7 +3231,7 @@ packages:
       - vite
     dev: true
 
-  /@shopware-docs/vitest@1.0.2(@playwright/test@1.38.0)(@vitest/coverage-c8@0.31.4)(get-port@6.1.2)(playwright-chromium@1.38.0)(postcss@8.4.30)(slugify@1.6.6)(vite-plugin-inspect@0.7.38)(vitepress@1.0.0-rc.14)(vitest@0.31.4):
+  /@shopware-docs/vitest@1.0.2(@playwright/test@1.35.1)(@vitest/coverage-c8@0.31.4)(get-port@6.1.2)(playwright-chromium@1.38.0)(postcss@8.4.30)(slugify@1.6.6)(vite-plugin-inspect@0.7.38)(vitepress@1.0.0-rc.14)(vitest@0.31.4):
     resolution: {integrity: sha512-Ou/R1APPqKHLr86cIBsaOzQSawWPe756MfH5RjPX0Uorh4v9RXgJx/4NzhzVBFy+NJnEyYwgWTtIy5rw56XYrw==}
     peerDependencies:
       '@playwright/test': ^1.33.0
@@ -3240,7 +3243,7 @@ packages:
       vitepress: ^1.0.0-beta.1
       vitest: ^0.31.0
     dependencies:
-      '@playwright/test': 1.38.0
+      '@playwright/test': 1.35.1
       '@vitest/coverage-c8': 0.31.4(vitest@0.31.4)
       axios: 1.5.0
       get-port: 6.1.2
@@ -10802,20 +10805,16 @@ packages:
       playwright-core: 1.38.0
     dev: true
 
-  /playwright-core@1.38.0:
-    resolution: {integrity: sha512-f8z1y8J9zvmHoEhKgspmCvOExF2XdcxMW8jNRuX4vkQFrzV4MlZ55iwb5QeyiFQgOFCUolXiRHgpjSEnqvO48g==}
+  /playwright-core@1.35.1:
+    resolution: {integrity: sha512-pNXb6CQ7OqmGDRspEjlxE49w+4YtR6a3X6mT1hZXeJHWmsEz7SunmvZeiG/+y1yyMZdHnnn73WKYdtV1er0Xyg==}
     engines: {node: '>=16'}
     hasBin: true
     dev: true
 
-  /playwright@1.38.0:
-    resolution: {integrity: sha512-fJGw+HO0YY+fU/F1N57DMO+TmXHTrmr905J05zwAQE9xkuwP/QLDk63rVhmyxh03dYnEhnRbsdbH9B0UVVRB3A==}
+  /playwright-core@1.38.0:
+    resolution: {integrity: sha512-f8z1y8J9zvmHoEhKgspmCvOExF2XdcxMW8jNRuX4vkQFrzV4MlZ55iwb5QeyiFQgOFCUolXiRHgpjSEnqvO48g==}
     engines: {node: '>=16'}
     hasBin: true
-    dependencies:
-      playwright-core: 1.38.0
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /pngjs@3.4.0:

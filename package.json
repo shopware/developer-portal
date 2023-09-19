@@ -34,7 +34,7 @@
     "@docsearch/js": "^3.5.2",
     "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "@originjs/vite-plugin-require-context": "^1.0.9",
-    "@playwright/test": "^1.38.0",
+    "@playwright/test": "1.35.1",
     "@shopware-docs/cli": "^1.0.2",
     "@shopware-docs/storybook": "^1.0.2",
     "@shopware-docs/vitepress": "^1.0.2",
