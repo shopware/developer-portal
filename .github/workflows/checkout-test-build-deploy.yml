@@ -1,5 +1,7 @@
 name: Build and deploy
-concurrency: single
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 on:
   workflow_dispatch:
