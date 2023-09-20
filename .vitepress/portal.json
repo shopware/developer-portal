@@ -35,11 +35,11 @@
       "src": ".",
       "dst": [
         "docs",
-        "v6.3.0"
+        "v6.3"
       ],
       "branch": [
         "env.BRANCH_DOCS_63",
-        "next-6.3"
+        "v6.3.0"
       ],
       "org": [
         "env.ORG_DOCS",
