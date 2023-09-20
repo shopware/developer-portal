@@ -105,9 +105,9 @@ const embeds: SwagEmbedsConfig[] = [
   {
     repository: 'docs',
     points: {
-      '/docs/v6.4/': 'next-6.4',
-      '/docs/v6.3/': 'next-6.3',
-      '/docs/': 'main', // next
+      '/docs/v6.4/': 'v6.4',
+      '/docs/v6.3/': 'v6.3.0',
+      '/docs/': 'master',
     },
     folder: '.',
   },

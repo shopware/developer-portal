@@ -7,8 +7,7 @@
       "dst": "docs",
       "branch": [
         "env.BRANCH_DOCS",
-        "next",
-        "main"
+        "master"
       ],
       "org": [
         "env.ORG_DOCS",
@@ -24,7 +23,7 @@
       ],
       "branch": [
         "env.BRANCH_DOCS_64",
-        "next-6.4"
+        "v6.4"
       ],
       "org": [
         "env.ORG_DOCS",
@@ -36,7 +35,7 @@
       "src": ".",
       "dst": [
         "docs",
-        "v6.3"
+        "v6.3.0"
       ],
       "branch": [
         "env.BRANCH_DOCS_63",
