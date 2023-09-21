@@ -16,7 +16,12 @@ cli/docs-cli*
 
 # embeddings
 src/frontends/
+src/frontends
 src/docs/
+src/docs
 src/resources/admin-extension-sdk/
+src/resources/admin-extension-sdk
 src/resources/meteor-icon-kit/
+src/resources/meteor-icon-kit
 src/resources/meteor-component-library/
+src/resources/meteor-component-library
