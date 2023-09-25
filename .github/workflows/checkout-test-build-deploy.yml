@@ -152,7 +152,7 @@ jobs:
       #    cd external && zip -r db-external.zip * -i '*.md'
 
       - name: Zip folder
-        run: zip -r full-build.zip .vitepress/dist/
+        run: zip -r full-build.zip .vitepress/dist/ vercel.json
 
       - name: Upload build
         uses: actions/upload-artifact@v3

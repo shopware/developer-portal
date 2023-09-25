@@ -173,7 +173,7 @@ export const storeRedirects = async () => {
         });
 
         const gitbookRedirects: Redirect[] = await new Promise((resolve, reject) => {
-            console.log('Discovering docs.yml for redirects');
+            console.log('Discovering gitbook.yaml for redirects');
             glob("**/.gitbook.yaml", {}, (er, files) => {
                 const redirects = files.reduce((redirects: Redirect[], file: string) => {
                     console.log(`Collecting ${file}`);
