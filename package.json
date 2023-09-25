@@ -24,7 +24,6 @@
   "dependencies": {
     "@shopware-ag/meteor-icon-kit": "^5.2.0",
     "cross-env": "^7.0.3",
-    "medium-zoom": "^1.0.8",
     "terser": "^5.19.4",
     "vitepress": "1.0.0-rc.20",
     "vitepress-shopware-docs": "^1.0.5",
