@@ -215,7 +215,7 @@ jobs:
       - name: Unzip artifact
         run: |
           mkdir -p .vitepress/dist
-          unzip full-build.zip
+          unzip -o full-build.zip
           ls -la .vitepress/dist
 
       - name: Install Vercel CLI
