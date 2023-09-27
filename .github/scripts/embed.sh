@@ -2,7 +2,7 @@
 set -e
 
 # custom config
-BRANCH_DOCS=master
+BRANCH_DOCS=main
 BRANCH_DOCS_64=v6.4
 BRANCH_DOCS_63=v6.3.0
 BRANCH_FRONTENDS=main
