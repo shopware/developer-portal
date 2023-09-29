@@ -7,7 +7,7 @@
       "dst": "docs",
       "branch": [
         "env.BRANCH_DOCS",
-        "master"
+        "main"
       ],
       "org": [
         "env.ORG_DOCS",

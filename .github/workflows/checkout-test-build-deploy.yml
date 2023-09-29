@@ -92,33 +92,6 @@ jobs:
           export NODE_OPTIONS="--max-old-space-size=8096"
           pnpm run test
 
-  test-build:
-    name: Test build
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    needs: embed-docs
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Prepare
-        uses: ./.github/actions/checkout-install
-        with:
-          apt: true
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: embed-${{ github.sha }}
-
-      - name: Unzip artifact
-        run: |
-          unzip -o embed.zip
-
-      - name: Test
-        run: |
-          export NODE_OPTIONS="--max-old-space-size=8096"
-          pnpm run test:build
-
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -167,6 +140,32 @@ jobs:
       #    if-no-files-found: error
       #    name: db-external-${{ github.sha }}
       #    path: external/db-external.zip
+
+  test-build:
+    name: Test build
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs:
+      - embed-docs
+      - build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: full-build-${{ github.sha }}
+
+      - name: Unzip artifact
+        run: |
+          mkdir -p .vitepress/dist
+          unzip -o full-build.zip
+          ls -la .vitepress/dist
+
+      - name: Test
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8096"
+          pnpm run test:build
 
 #  chromatic:
 #    name: Deploy Storybook to Chromatic

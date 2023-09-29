@@ -4,12 +4,12 @@ import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
 import {resolve} from "path";
-import { MarkdownTransform } from "./plugins/markdownTransform";
-import { CssCleanup } from "./plugins/cssCleanup";
+import { MarkdownTransform } from "../node_modules/@shopware-docs/vitepress/src/plugins/markdownTransform";
+import { CssCleanup } from "../node_modules/@shopware-docs/vitepress/src/plugins/cssCleanup";
 import Inspect from "vite-plugin-inspect";
 import { withMermaid } from "vitepress-plugin-mermaid";
 
-import {copyAdditionalAssets, createSitemap, storeRedirects} from "./helpers";
+import {copyAdditionalAssets, createSitemap, storeRedirects} from "../node_modules/@shopware-docs/vitepress/src/helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
 import navigation from "./navigation";
 
