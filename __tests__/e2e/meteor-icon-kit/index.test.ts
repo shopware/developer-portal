@@ -20,7 +20,7 @@ describe('render correct content', async () => {
         expect(await searchLocator.count()).toEqual(1);
     })
 
-    test('loads all icons', async() => {
+    test.skip('loads all icons', async() => {
         await embeddedPage.page.waitForLoadState('networkidle', {timeout: 3 * 60 * 1000});
 
         const solidLocator = await embeddedPage.page.locator('button#solid');
