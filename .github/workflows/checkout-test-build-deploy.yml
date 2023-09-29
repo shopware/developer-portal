@@ -159,10 +159,18 @@ jobs:
         uses: ./.github/actions/checkout-install
         with:
           apt: true
-          
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: embed-${{ github.sha }}
+
       - uses: actions/download-artifact@v3
         with:
           name: full-build-${{ github.sha }}
+
+      - name: Unzip artifact
+        run: |
+          unzip -o embed.zip
 
       - name: Unzip artifact
         run: |
