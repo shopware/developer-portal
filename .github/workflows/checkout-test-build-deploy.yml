@@ -114,6 +114,9 @@ jobs:
         run: |
           unzip -o embed.zip
 
+      - name: Collect Workflow Telemetry
+        uses: runforesight/workflow-telemetry-action@v1
+
       - name: Build project
         run: |
           export NODE_OPTIONS="--max-old-space-size=8096"
@@ -152,6 +155,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
+        with:
+          apt: true
+          
       - uses: actions/download-artifact@v3
         with:
           name: full-build-${{ github.sha }}
