@@ -146,6 +146,20 @@
         "bojanrajh"
       ],
       "skip": true
+    },
+    {
+      "name": "shopware/release-notes",
+      "src": "src",
+      "dst": "release-notes",
+      "branch": [
+        "env.BRANCH_RELEASE_NOTES",
+        "main"
+      ],
+      "org": [
+        "env.ORG_RELEASE_NOTES",
+        "bojanrajh"
+      ],
+      "skip": true
     }
   ]
 }
