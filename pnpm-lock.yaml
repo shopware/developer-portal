@@ -17,6 +17,9 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
+      medium-zoom:
+        specifier: ^1.0.8
+        version: 1.0.8
       terser:
         specifier: ^5.19.4
         version: 5.19.4
