@@ -333,6 +333,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       // knowledge index
       similarArticles: {
         host: 'https://ai-ml.fly.dev',
+        collection: 'shopware--developer-portal--main',
         filter: {
           'default': {
             exclude: [
