@@ -271,7 +271,7 @@ jobs:
           mkdir merged
           unzip -o db-index.zip -d merged
           true || unzip -o db-external.zip -d merged
-          zip -r db-merged.zip merged/ 
+          cd merged; zip -r ../db-merged.zip * 
 
       - name: Send artifact
         env:
