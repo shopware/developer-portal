@@ -19,15 +19,12 @@ items:
 ---
 
 <script setup>
-import SwagHero from "./components/SwagHero.vue";
 import SwagGetToKnow from "./components/SwagGetToKnow.vue";
 import SwagStartBuilding from "./components/SwagStartBuilding.vue";
 import SwagExtendShopware from "./components/SwagExtendShopware.vue";
 import SwagContribute from "./components/SwagContribute.vue";
 import SwagChangelogWrapper from "./components/SwagChangelogWrapper.vue";
 import SwagNewsletter from "./components/SwagNewsletter.vue";
-
-import SwagBtn from "./components/SwagBtn.vue";
 </script>
 
 <!-- HERO -->

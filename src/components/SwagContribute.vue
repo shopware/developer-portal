@@ -15,10 +15,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import SwagBtn from "./SwagBtn.vue";
-</script>
-
 <style lang="scss">
 .SwagContribute {
   @media (min-width: 768px) {
