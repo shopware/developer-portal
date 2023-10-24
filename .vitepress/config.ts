@@ -199,6 +199,9 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       // merging content
       '_apps/**',
       '_themes/**',
+      // tmp
+      'docs/**',
+      'frontends/**',
   ],
 
   rewrites: {
