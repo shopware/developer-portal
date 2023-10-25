@@ -1,0 +1,38 @@
+name: External healthcheck
+
+on:
+  workflow_run:
+    workflows:
+      - "Healthcheck"
+    types:
+      - completed
+
+jobs:
+  vars:
+    runs-on: ubuntu-latest
+    outputs:
+      DEV_HUB_REPO: ${{ secrets.DEV_HUB_REPO }}
+      DEV_HUB_BRANCH: ${{ secrets.DEV_HUB_BRANCH }}
+    steps:
+      - run: echo "Exposing env vars"
+
+  update-status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check outcome
+        id: outcome
+        run: echo "::set-output name=outcome::${{ toJson(needs.workflow_run.conclusion == 'success') }}"
+
+      - name: Update Workflow Status
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/:owner/:repo/check-runs/:check_run_id
+          owner: shopware
+          repo: docs
+          check_run_id: ${{ github.event.workflow_run.id }}
+          name: Your Check Name
+          status: ${{ steps.outcome.outputs.outcome == 'true' && 'completed' || 'completed' }}
+          conclusion: ${{ steps.outcome.outputs.outcome == 'true' && 'success' || 'failure' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
