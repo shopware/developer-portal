@@ -199,6 +199,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       // merging content
       '_apps/**',
       '_themes/**',
+      // snippets
+      'docs/snippets/**',
   ],
 
   rewrites: {
