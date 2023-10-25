@@ -21,6 +21,7 @@ jobs:
         run: |
           curl \
             -X POST \
+            --fail-with-body \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.access_token }}"\
             -H "X-GitHub-Api-Version: 2022-11-28" \
