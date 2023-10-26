@@ -1,39 +1,138 @@
 name: External healthcheck
 
 on:
-  #workflow_run:
-  #  workflows:
-  #   - "Healthcheck"
-  #  types:
-  #    - completed
   workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to checkout"
+        required: true
+        type: string
+      repo:
+        description: "Repo to checkout"
+        required: true
+        type: string
+      sha:
+        description: "Commit to checkout"
+        required: true
+        type: string
+      check:
+        description: "Check ID"
+        required: true
+        type: string
 
 jobs:
-  vars:
-    runs-on: ubuntu-latest
-    outputs:
-      DEV_HUB_REPO: ${{ secrets.DEV_HUB_REPO }}
-      DEV_HUB_BRANCH: ${{ secrets.DEV_HUB_BRANCH }}
-    steps:
-      - run: echo "Exposing env vars"
 
-  update-status:
+  trigger-build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check outcome
-        id: outcome
-        run: echo "::set-output name=outcome::${{ toJson(needs.workflow_run.conclusion == 'success') }}"
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Update Workflow Status
-        uses: octokit/request-action@v2.x
+      - name: Print inputs
+        run: |
+          echo "branch" ${{ inputs.branch }}
+          echo "repo" ${{ inputs.repo }}
+          echo "sha" ${{ inputs.sha }}
+          
+          ORG=$(dirname ${{ inputs.repo }})
+          BRANCH=${{ inputs.branch }}
+          
+          if [[ "${{ inputs.repo }}" == *"/frontends" ]]; then
+            echo "Embedding frontends"
+            sed -i "0,/ORG_FRONTENDS.*/s/.*ORG_FRONTENDS.*/ORG_FRONTENDS=$ORG/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_FRONTENDS.*/s/.*BRANCH_FRONTENDS.*/BRANCH_FRONTENDS=$BRANCH/" ./.github/scripts/embed.sh
+          
+          elif [[ "${{ inputs.repo }}" == *"/admin-extension-sdk" ]]; then
+            echo "Embedding admin-extension-sdk"
+            sed -i "0,/ORG_ADMIN_EXTENSION_SDK.*/s/.*ORG_ADMIN_EXTENSION_SDK.*/ORG_ADMIN_EXTENSION_SDK=$ORG/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_ADMIN_EXTENSION_SDK.*/s/.*BRANCH_ADMIN_EXTENSION_SDK.*/BRANCH_ADMIN_EXTENSION_SDK=$BRANCH/" ./.github/scripts/embed.sh
+          
+          elif [[ "${{ inputs.repo }}" == *"/meteor-icon-kit" ]]; then
+            echo "Embedding meteor-icon-kit"
+            sed -i "0,/ORG_METEOR_ICON_KIT.*/s/.*ORG_METEOR_ICON_KIT.*/ORG_METEOR_ICON_KIT=$ORG/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_METEOR_ICON_KIT.*/s/.*BRANCH_METEOR_ICON_KIT.*/BRANCH_METEOR_ICON_KIT=$BRANCH/" ./.github/scripts/embed.sh
+          
+          elif [[ "${{ inputs.repo }}" == *"/meteor-component-library" ]]; then
+            echo "Embedding meteor-component-library"
+            sed -i "0,/ORG_METEOR_COMPONENT_LIBRARY.*/s/.*ORG_METEOR_COMPONENT_LIBRARY.*/ORG_METEOR_COMPONENT_LIBRARY=$ORG/" ./.github/scripts/embed.sh
+           sed -i "0,/BRANCH_METEOR_COMPONENT_LIBRARY.*/s/.*BRANCH_METEOR_COMPONENT_LIBRARY.*/BRANCH_METEOR_COMPONENT_LIBRARY=$BRANCH/" ./.github/scripts/embed.sh
+          
+          elif [[ "${{ inputs.repo }}" == *"/docs" ]]; then
+            echo "Embedding docs"
+            sed -i "0,/ORG_DOCS.*/s/.*ORG_DOCS.*/ORG_DOCS=$ORG/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_DOCS.*/s/.*BRANCH_DOCS.*/BRANCH_DOCS=$BRANCH/" ./.github/scripts/embed.sh
+          
+          else
+            echo "Unknown repository ${{inputs.repo}}"
+           echo "Branch ${{inputs.branch}}"
+            exit 1
+          fi
+          
+          cat ./.github/scripts/embed.sh
+
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
         with:
-          route: POST /repos/:owner/:repo/check-runs/:check_run_id
-          owner: shopware
-          repo: docs
-          check_run_id: ${{ github.event.workflow_run.id }}
-          name: Your Check Name
-          status: ${{ steps.outcome.outputs.outcome == 'true' && 'completed' || 'completed' }}
-          conclusion: ${{ steps.outcome.outputs.outcome == 'true' && 'success' || 'failure' }}
+          apt: true
+
+      - name: Embed repos
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
+          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
+        run: |
+          chmod +x ./.github/scripts/embed.sh
+          .github/scripts/embed.sh
+
+      - name: Test dev
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8096"
+          pnpm run test
+
+      - name: Build
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8096"
+          export USERCENTRICS="65ynhGFvE"
+          pnpm run build
+
+      - name: Test build
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8096"
+          pnpm run test:build
+
+      - name: Mark as successful
+        id: status
+        run: |
+          echo "::set-output name=success::${{ toJson(needs.workflow_run.conclusion == 'success') }}"
+
+  update-healthcheck-success:
+    name: Test build
+    runs-on: ubuntu-latest
+    needs:
+      - trigger-build
+    if: ${{ always() }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
+        with:
+          apt: true
+
+      - name: Install dependencies
+        run: |
+          pnpm i @octokit/rest
+
+      - name: Update Check
+        run: |
+          node .github/scripts/trigger-workflow.cjs
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.DEV_HUB_PERSONAL_ACCESS_TOKEN }}
+          DEV_HUB_BRANCH: ${{ inputs.branch }}
+          DEV_HUB_REPO: ${{ inputs.repo }}
+          DEV_HUB_SHA: ${{ inputs.sha }}
+          DEV_HUB_CHECK: ${{ inputs.check }}
+          DEV_HUB_CONCLUSION: ${{ steps.status.outputs.success == 'true' && 'success' || 'failure' }}
