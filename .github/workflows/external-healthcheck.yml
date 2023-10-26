@@ -1,11 +1,12 @@
 name: External healthcheck
 
 on:
-  workflow_run:
-    workflows:
-      - "Healthcheck"
-    types:
-      - completed
+  #workflow_run:
+  #  workflows:
+  #   - "Healthcheck"
+  #  types:
+  #    - completed
+  workflow_dispatch:
 
 jobs:
   vars:
