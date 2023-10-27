@@ -490,8 +490,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         dst: 'icons/solid',
       },
       {
-        src: './docs/products/extensions/b2b/b2b-suite/guides/example-plugins',
-        dst: 'docs/products/extensions/b2b/b2b-suite/guides/example-plugins',
+        src: './docs/products/extensions/b2b-suite/guides/example-plugins',
+        dst: 'docs/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
             '.zip'
         ]
