@@ -1,4 +1,5 @@
 name: External healthcheck
+run-name: External healthcheck (${{ inputs.branch }} @ @${{ inputs.repo }})
 
 on:
   workflow_dispatch:
