@@ -37,6 +37,7 @@ jobs:
           
           ORG=$(dirname ${{ inputs.repo }})
           BRANCH=${{ inputs.branch }}
+          BRANCH=$(printf '%s' "$BRANCH" | sed 's/[.[\*^$]/\\&/g')
           
           if [[ "${{ inputs.repo }}" == *"/frontends" ]]; then
             echo "Embedding frontends"
