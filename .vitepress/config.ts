@@ -34,27 +34,27 @@ const sections: SwagSectionsConfig[] = [
     title: 'Apps',
     matches: [
       '/apps/',
-      '/docs/guides/apps/',
-      '/docs/v6.4/guides/apps/',
-      '/docs/v6.3/guides/apps/',
+      '/docs/guides/plugins/apps/',
+      '/docs/v6.4/guides/plugins/apps/',
+      '/docs/v6.3/guides/plugins/apps/',
     ],
   },
   {
     title: 'Themes',
     matches: [
       '/themes/',
-      '/docs/guides/themes/',
-      '/docs/v6.4/guides/themes/',
-      '/docs/v6.3/guides/themes/',
+      '/docs/guides/plugins/themes/',
+      '/docs/v6.4/guides/plugins/themes/',
+      '/docs/v6.3/guides/plugins/themes/',
     ],
   },
   {
     title: 'Plugins',
     matches: [
       '/plugins/',
-      '/docs/guides/plugins/',
-      '/docs/v6.4/guides/plugins/',
-      '/docs/v6.3/guides/plugins/',
+      '/docs/guides/plugins/plugins/',
+      '/docs/v6.4/guides/plugins/plugins/',
+      '/docs/v6.3/guides/plugins/plugins/',
     ],
   },
   {
