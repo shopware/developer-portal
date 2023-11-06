@@ -28,6 +28,8 @@ jobs:
 
   trigger-build:
     runs-on: ubuntu-latest
+    outputs:
+      success: "false"
 
     steps:
       - name: Checkout repository
@@ -110,7 +112,7 @@ jobs:
       - name: Mark as successful
         id: status
         run: |
-          echo "::set-output name=success::${{ toJson('true') }}"
+          echo "success=true"
 
   update-healthcheck-success:
     name: Test build
