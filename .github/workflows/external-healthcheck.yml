@@ -1,5 +1,8 @@
 name: External healthcheck
 run-name: External healthcheck - ${{ inputs.branch }} @ ${{ inputs.repo }}
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.branch }}-${{ inputs.repo }}
+  cancel-in-progress: true
 
 on:
   workflow_dispatch:
