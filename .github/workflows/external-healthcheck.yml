@@ -116,7 +116,7 @@ jobs:
       - name: Mark as successful
         id: status
         run: |
-          echo "success=true"
+          echo "success=true" >> "$GITHUB_OUTPUT"
 
   update-healthcheck-success:
     name: Test build
