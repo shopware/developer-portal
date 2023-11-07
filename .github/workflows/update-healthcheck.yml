@@ -1,0 +1,45 @@
+# this action is used by sub-repos
+on:
+  workflow_call:
+    inputs:
+      owner:
+        description: "Owner to checkout"
+        required: true
+        type: string
+      repo:
+        description: "Repo to checkout"
+        required: true
+        type: string
+      check:
+        description: "Check ID"
+        required: true
+        type: string
+      conclusion:
+        description: "Healthcheck conclusion"
+        required: true
+        type: string
+    secrets:
+      TOKEN:
+        required: true
+
+jobs:
+
+  trigger-healthckeck:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: octokit/request-action@v2.x
+        name: Update check run
+        with:
+          route: PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}
+          owner: ${{ inputs.owner }}
+          repo: ${{ inputs.repo }}
+          check_run_id: ${{ inputs.check }}
+          name: DevHub
+          status: completed
+          conclusion: ${{ inputs.conclusion }}
+          output: |
+            title: Developer Portal healthcheck
+            summary: Building the project in DevHub (Developer Portal)
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}

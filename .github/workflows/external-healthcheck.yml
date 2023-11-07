@@ -125,25 +125,19 @@ jobs:
       - trigger-build
     if: ${{ always() }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
 
-      - name: Prepare
-        uses: ./.github/actions/checkout-install
+      - uses: octokit/request-action@v2.x
+        name: Update check
         with:
-          apt: true
-
-      - name: Install dependencies
-        run: |
-          pnpm i @octokit/rest
-
-      - name: Update Check
-        run: |
-          node .github/scripts/trigger-workflow.cjs
+          route: POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
+          owner: ${{ inputs.owner }}
+          repo: ${{ inputs.repo }}
+          ref: main
+          workflow_id: update-healthcheck.yml
+          inputs: |
+            owner: ${{ inputs.owner }}
+            repo: ${{ inputs.repo }}
+            check: "${{ fromJson(steps.create_check_run.outputs.data).id }}"
+            conclusion: ${{ steps.status.outputs.success == 'true' && 'success' || 'failure' }}
         env:
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.DEV_HUB_PERSONAL_ACCESS_TOKEN }}
-          DEV_HUB_BRANCH: ${{ inputs.branch }}
-          DEV_HUB_REPO: ${{ inputs.repo }}
-          DEV_HUB_SHA: ${{ inputs.sha }}
-          DEV_HUB_CHECK: ${{ inputs.check }}
-          DEV_HUB_CONCLUSION: ${{ steps.status.outputs.success == 'true' && 'success' || 'failure' }}
+          GITHUB_TOKEN: ${{ secrets.DEV_HUB_PERSONAL_ACCESS_TOKEN }}
