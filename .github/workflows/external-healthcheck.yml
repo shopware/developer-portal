@@ -33,7 +33,7 @@ jobs:
   trigger-build:
     runs-on: ubuntu-latest
     outputs:
-      success: "false"
+      success: ${{ steps.status.outputs.success }}
 
     steps:
       - name: Checkout repository
@@ -116,7 +116,7 @@ jobs:
       - name: Mark as successful
         id: status
         run: |
-          echo "success=true" >> "$GITHUB_OUTPUT"
+          echo "success=yes" >> "$GITHUB_OUTPUT"
 
   update-healthcheck-success:
     name: Test build
@@ -138,6 +138,6 @@ jobs:
             owner: ${{ inputs.owner }}
             repo: ${{ inputs.repo }}
             check: "${{ fromJson(steps.create_check_run.outputs.data).id }}"
-            conclusion: ${{ needs.trigger-build.outputs.success == 'true' && 'success' || 'failure' }}
+            conclusion: ${{ needs.trigger-build.outputs.success && needs.trigger-build.outputs.success == 'yes' && 'success' || 'failure' }}
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_HUB_PERSONAL_ACCESS_TOKEN }}
