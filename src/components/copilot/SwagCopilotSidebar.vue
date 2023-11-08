@@ -76,5 +76,8 @@ const {
   @apply fixed right-0 bottom-0;
   top: var(--vp-nav-height);
   width: 480px;
+  &.--inline {
+    @apply static mx-auto;
+  }
 }
 </style>
