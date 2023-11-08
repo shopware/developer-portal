@@ -9,28 +9,32 @@ export const qa = () => {
         answer: 'To customize the styles, create a `base.scss` file in the directory mentioned in the `theme.json` file and add the desired styles. Then, execute the compiling and building of the `.scss` files using the command `./psh.phar storefront:build` (for development template) or `./bin/build-storefront.sh` (for production template). To see the style changes live, use the `./psh.phar storefront:hot-proxy` (for development template) or `./bin/watch-storefront.sh` (for production template) command.',
     });
     let errorText = ref(false);
+    let state = ref(null);
 
     let requestAnswer = function () {
         pending.value = true;
         errorText.value = false;
-        fetch('https://ai-ml.fly.dev/', {
+        state.value = 'pending';
+        fetch('https://ai-ml.fly.dev/question', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                query: query.value
+                q: query.value
             })
         })
             .then(response => response.json())
             .then(data => {
                 response.value = data;
                 pending.value = false;
+                state.value = 'done';
             })
             .catch(error => {
                 console.log(error)
                 errorText.value = error;
                 pending.value = false;
+                state.value = 'error';
             });
     }
 
@@ -41,5 +45,6 @@ export const qa = () => {
         query,
         errorText,
         marked,
+        state,
     };
 }
