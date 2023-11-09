@@ -16,39 +16,16 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
-import { marked } from 'marked';
-let query = ref('How do I customize the styles?');
-let pending = ref(false);
-//let response = ref('');
-let response = ref({
-    answer: 'To customize the styles, create a `base.scss` file in the directory mentioned in the `theme.json` file and add the desired styles. Then, execute the compiling and building of the `.scss` files using the command `./psh.phar storefront:build` (for development template) or `./bin/build-storefront.sh` (for production template). To see the style changes live, use the `./psh.phar storefront:hot-proxy` (for development template) or `./bin/watch-storefront.sh` (for production template) command.',
-});
-let errorText = ref(false);
-// When the user clicks the button, send a AJAX request to http://127.0.0.1:8000/ and get the response
-let requestAnswer = function () {
-    pending.value = true;
-    errorText.value = false;
-    fetch('http://127.0.0.1:8000/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            query: query.value
-        })
-    })
-        .then(response => response.json())
-        .then(data => {
-            response.value = data;
-            pending.value = false;
-        })
-        .catch(error => {
-            console.log(error)
-            errorText.value = error;
-            pending.value = false;
-        });
-    }
+import {qa} from "./ai/ml";
+
+const {
+  query,
+  pending,
+  response,
+  errorText,
+  requestAnswer,
+  marked
+} = qa();
 </script>
 
 <style scoped lang="scss">
