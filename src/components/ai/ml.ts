@@ -10,8 +10,9 @@ export const qa = () => {
     });
     let errorText = ref(false);
     let state = ref(null);
+    let stopping = ref(false);
 
-    let requestAnswer = function () {
+    let requestAnswer = () => {
         pending.value = true;
         errorText.value = false;
         state.value = 'pending';
@@ -26,16 +27,28 @@ export const qa = () => {
         })
             .then(response => response.json())
             .then(data => {
+                if (stopping.value) {
+                    return;
+                }
                 response.value = data;
                 pending.value = false;
                 state.value = 'done';
             })
             .catch(error => {
+                if (stopping.value) {
+                    return;
+                }
                 console.log(error)
                 errorText.value = error;
                 pending.value = false;
                 state.value = 'error';
             });
+    }
+
+    let stop = () => {
+        stopping.value = true;
+        state.value = null;
+        pending.value = false;
     }
 
     return {
@@ -46,5 +59,6 @@ export const qa = () => {
         errorText,
         marked,
         state,
+        stop,
     };
 }
