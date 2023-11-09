@@ -74,7 +74,7 @@ const {
   requestAnswer,
   marked,
   stop,
-} = qa();
+} = qa('shopware--developer-portal--main');
 
 const examples = [
   'What is the code for adding a primary button?',

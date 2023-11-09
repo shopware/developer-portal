@@ -1,7 +1,7 @@
 import {ref} from "vue";
 import { marked } from 'marked';
 
-export const qa = () => {
+export const qa = (collection) => {
     let query = ref(null);
     let pending = ref(false);
     //let response = ref('');
@@ -22,7 +22,8 @@ export const qa = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                q: query.value
+                q: query.value,
+                collection: collection,
             })
         })
             .then(response => response.json())
