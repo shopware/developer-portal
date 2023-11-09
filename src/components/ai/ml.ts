@@ -6,7 +6,7 @@ export const qa = () => {
     let pending = ref(false);
     //let response = ref('');
     let response = ref({
-        answer: 'To customize the styles, create a `base.scss` file in the directory mentioned in the `theme.json` file and add the desired styles. Then, execute the compiling and building of the `.scss` files using the command `./psh.phar storefront:build` (for development template) or `./bin/build-storefront.sh` (for production template). To see the style changes live, use the `./psh.phar storefront:hot-proxy` (for development template) or `./bin/watch-storefront.sh` (for production template) command.',
+        answer: '',
     });
     let errorText = ref(false);
     let state = ref(null);

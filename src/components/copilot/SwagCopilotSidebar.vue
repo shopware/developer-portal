@@ -35,14 +35,9 @@
     </div>
 
     <div class="SwagCopilot_container c-any-card p-6 --animation-down" v-if="state === 'done'">
-      <!--{{ response }}-->
-      <!--<p>"What's the admin source code for a normal primary button?"</p>-->
       <p>"{{ query }}"</p>
 
-      {{ response.answer }}
-      <!--<p>This VueJS component can be used for a normal sized primary button.</p>
-      <div class="c-any-card">
-      </div>-->
+      <div>{{ response.answer }}</div>
 
       <p>Sources</p>
       <ul>
@@ -129,7 +124,6 @@ watch(
 
       &_example {
         @apply p-4 font-medium cursor-pointer font-italic;
-        /*color: var(--sw-c-gray-dark-750);*/
       }
     }
   }
