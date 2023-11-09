@@ -41,7 +41,7 @@
 
       <p>Sources</p>
       <ul>
-        <li v-for="source in response.sources.split(',')">
+        <li v-for="source in response.sources.split(', ')">
           <PageRef :page="`${source.substring('/data/docs'.length).slice(0, -2)}html`"/>
         </li>
       </ul>
