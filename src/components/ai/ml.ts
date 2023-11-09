@@ -2,7 +2,7 @@ import {ref} from "vue";
 import { marked } from 'marked';
 
 export const qa = () => {
-    let query = ref('How do I customize the styles?');
+    let query = ref(null);
     let pending = ref(false);
     //let response = ref('');
     let response = ref({

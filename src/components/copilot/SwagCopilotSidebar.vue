@@ -51,7 +51,10 @@
          :class="`--animation-delay-${state === 'done' ? '1' : '3'}`"
          v-if="state !== 'pending'"
          :key="`searchbox-${step}`">
-      <textarea class="form-control" v-model="query" :ref="el => queryRef = el"
+      <textarea class="form-control"
+                v-model="query"
+                :ref="el => queryRef = el"
+                @keydown.enter="requestAnswer"
                 placeholder="Enter the question"></textarea>
       <button type="button" class="btn --primary --xs" @click.prevent="requestAnswer">Ask</button>
     </div>
