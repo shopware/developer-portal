@@ -88,6 +88,9 @@ const searchExample = example => {
 }
 
 const resize = (element, minHeight = 46) => {
+  if (!element) {
+    return;
+  }
   element.style.height = `${minHeight}px`;
   element.style.height = (element.scrollHeight > minHeight ? element.scrollHeight : minHeight) + "px";
 }
