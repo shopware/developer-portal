@@ -39,9 +39,9 @@
 
       <div>{{ response.answer }}</div>
 
-      <p v-if="sources.length">Sources</p>
-      <ul v-if="sources.length">
-        <li v-for="source in sources">
+      <p v-if="response.sources.length">Sources</p>
+      <ul v-if="response.sources.length">
+        <li v-for="source in response.sources">
           <PageRef :page="`${source.substring('/data/docs'.length).slice(0, -2)}html`"/>
         </li>
       </ul>
@@ -94,8 +94,6 @@ const resize = (element, minHeight = 46) => {
   element.style.height = `${minHeight}px`;
   element.style.height = (element.scrollHeight > minHeight ? element.scrollHeight : minHeight) + "px";
 }
-
-const sources = computed(() => response.value?.sources?.split(', ')?.filter(source => source.length) || []);
 
 const queryRef = ref(null);
 watch(
