@@ -74,7 +74,7 @@ swag:
                             <li><a href="/docs/guides/plugins/apps/custom-data/custom-fields">Add custom fields</a></li>
                             <li><a href="/docs/guides/plugins/apps/custom-data/custom-entities">Create custom entities</a></li>
                             <li><a href="/docs/guides/plugins/apps/administration/add-custom-action-button#providing-feedback-in-the-administration">Send notifications</a></li>
-                            <li><a href="/docs/guides/plugins/plugins/storefront/customize-templates">Customize Templates</a></li>
+                            <li><a href="/docs/guides/plugins/apps/storefront/customize-templates">Customize Templates</a></li>
                             <li><a href="/docs/guides/plugins/apps/storefront/apps-as-themes">Configure Themes</a></li>
                         </ul>
                     </SwagCardSummary>
