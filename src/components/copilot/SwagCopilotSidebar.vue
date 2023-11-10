@@ -42,7 +42,7 @@
       <p v-if="response.sources.length">Sources</p>
       <ul v-if="response.sources.length">
         <li v-for="source in response.sources">
-          <PageRef :page="`${source.substring('/data/docs'.length).slice(0, -2)}html`"/>
+          <PageRef :page="`${source.slice(0, -2)}html`"/>
         </li>
       </ul>
     </div>
