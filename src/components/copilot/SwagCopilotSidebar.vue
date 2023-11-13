@@ -10,8 +10,8 @@
       <p class="--animation-down --animation-delay-1">Instead of searching, you can ask AI Copilot to find what you are
         looking for.</p>
 
-      <p class="--animation-down --animation-delay-1">Example prompts:</p>
-      <div class="SwagCopilot_examples --animation-down --animation-delay-1">
+      <p class="--animation-down --animation-delay-2">Example prompts:</p>
+      <div class="SwagCopilot_examples --animation-down --animation-delay-2">
         <div class="SwagCopilot_example c-any-card"
              v-for="example in examples"
              @click.prevent="searchExample(example)"
@@ -19,8 +19,10 @@
         </div>
       </div>
 
-      <p class="--animation-up --animation-delay-2">Give it a try!</p>
-      <SwagIcon icon="long-arrow-down" class="SwagCopilot_icon-down --animation-up --animation-delay-2"/>
+      <div class="items-center flex flex-col gap-3">
+        <p class="--animation-up --animation-delay-3">Give it a try!</p>
+        <SwagIcon icon="long-arrow-down" class="SwagCopilot_icon-down --animation-up --with-bounce --animation-delay-3"/>
+      </div>
     </div>
 
     <div v-if="state === 'pending'" class="SwagCopilot_container --animation-down">
@@ -48,7 +50,7 @@
     </div>
 
     <div class="SwagCopilot_searchbox-wrapper --animation-down"
-         :class="`--animation-delay-${state === 'done' ? '1' : '3'}`"
+         :class="`--animation-delay-${state === 'done' ? '1' : '4'}`"
          v-if="state !== 'pending'"
          :key="`searchbox-${step}`">
       <textarea class="form-control"
@@ -169,28 +171,38 @@ watch(
 }
 
 .--animation-delay-0 {
-  --animation-delay: 0s;
+  --animation-delay: .125s;
 }
 
 .--animation-delay-1 {
-  --animation-delay: 1s;
+  --animation-delay: .25s;
 }
 
 .--animation-delay-2 {
-  --animation-delay: 2s;
+  --animation-delay: .75s;
 }
 
 .--animation-delay-3 {
-  --animation-delay: 3s;
+  --animation-delay: 1s;
+}
+
+.--animation-delay-4 {
+  --animation-delay: 1.25s;
 }
 
 // delay is used as a duration in first animation and delay for the second animation
 .--animation-up {
-  animation: var(--animation-delay, 0s) ease-out 0s 1 disappear, 1s ease-out var(--animation-delay, 0s) 1 slideInFromBottom;
+  animation: var(--animation-delay, 0s) ease 0s 1 disappear, .5s ease-out var(--animation-delay, 0s) 1 slideInFromBottom;
+  animation: var(--animation-delay, 0s) ease 0s 1 disappear, .5s ease-out var(--animation-delay, 0s) 1 slideInFromTop;
+  &.--with-bounce {
+    animation: var(--animation-delay, 0s) ease 0s 1 disappear,
+    .5s ease-out var(--animation-delay, 0s) 1 slideInFromTop,
+    2s ease-out var(--animation-delay, 0s) 3 bounce;
+  }
 }
 
 .--animation-down {
-  animation: var(--animation-delay, 0s) ease-out 0s 1 disappear, 1s ease-out var(--animation-delay, 0s) 1 slideInFromTop;
+  animation: var(--animation-delay, 0s) ease 0s 1 disappear, .5s ease-out var(--animation-delay, 0s) 1 slideInFromTop;
 }
 
 .--animation-spin {
@@ -218,13 +230,13 @@ watch(
   }
   100% {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-2rem);
   }
 }
 
 @keyframes slideInFromBottom {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-2rem);
     opacity: 0;
   }
   100% {
@@ -235,7 +247,7 @@ watch(
 
 @keyframes slideInFromTop {
   0% {
-    transform: translateY(100%);
+    transform: translateY(2rem);
     opacity: 0;
   }
   100% {
@@ -251,5 +263,15 @@ watch(
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes bounce {
+  70% { transform:translateY(0%); }
+  80% { transform:translateY(25%); }
+  90% { transform:translateY(0%); }
+  95% { transform:translateY(10%); }
+  97% { transform:translateY(0%); }
+  99% { transform:translateY(5%); }
+  100% { transform:translateY(0); }
 }
 </style>
