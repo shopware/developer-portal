@@ -110,8 +110,8 @@ devDependencies:
     specifier: ^2.4.1
     version: 2.4.1(vue@3.3.8)
   '@vueuse/shared':
-    specifier: ^10.5.0
-    version: 10.5.0(vue@3.3.8)
+    specifier: ^10.6.1
+    version: 10.6.1(vue@3.3.8)
   algoliasearch:
     specifier: ^4.20.0
     version: 4.20.0
@@ -5847,6 +5847,15 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  /@vueuse/shared@10.6.1(vue@3.3.8):
+    resolution: {integrity: sha512-TECVDTIedFlL0NUfHWncf3zF9Gc4VfdxfQc8JFwoVZQmxpONhLxFrlm0eHQeidHj4rdTPL3KXJa0TZCk1wnc5Q==}
+    dependencies:
+      vue-demi: 0.14.6(vue@3.3.8)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
