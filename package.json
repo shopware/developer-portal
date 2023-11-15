@@ -60,7 +60,7 @@
     "@vue/test-utils": "^2.4.1",
     "@vueuse/shared": "^10.5.0",
     "algoliasearch": "^4.20.0",
-    "chromatic": "^7.5.0",
+    "chromatic": "^9.0.0",
     "execa": "^8.0.0",
     "fuse.js": "^6.6.2",
     "get-port": "^7.0.0",
