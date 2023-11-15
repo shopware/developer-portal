@@ -7,11 +7,11 @@
     <h3 class="SwagCopilot_heading --animation-up">AI Copilot</h3>
 
     <div v-if="!state" class="SwagCopilot_container">
-      <p class="--animation-down --animation-delay-1">Instead of searching, you can ask AI Copilot to find what you are
+      <p class="--animation-top --animation-delay-1">Instead of searching, you can ask AI Copilot to find what you are
         looking for.</p>
 
-      <p class="--animation-down --animation-delay-2">Example prompts:</p>
-      <div class="SwagCopilot_examples --animation-down --animation-delay-2">
+      <p class="--animation-top --animation-delay-2">Example prompts:</p>
+      <div class="SwagCopilot_examples --animation-top --animation-delay-2">
         <div class="SwagCopilot_example c-any-card"
              v-for="example in examples"
              @click.prevent="searchExample(example)"
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div v-if="state === 'pending'" class="SwagCopilot_container --animation-down">
+    <div v-if="state === 'pending'" class="SwagCopilot_container --animation-top">
       <span class="--custom-spinner --animation-spin"/>
       <!--<SwagIcon icon="spinner-star" type="solid" class="--animation-spin"/>-->
       <p>Working ...</p>
@@ -36,23 +36,22 @@
       </button>
     </div>
 
-    <div class="SwagCopilot_container c-any-card p-6 --animation-down" v-if="state === 'done'">
+    <div class="SwagCopilot_container c-any-card p-6 --animation-top" v-if="state === 'done'">
       <p>"{{ query }}"</p>
 
       <div>{{ response.answer }}</div>
 
-      <p v-if="response.sources.length">Sources</p>
-      <ul v-if="response.sources.length">
+      <ul v-if="response.sources.length" class="grid gap-2">
         <li v-for="source in response.sources">
           <PageRef :page="`${source.slice(0, -2)}html`.replace('/index.html', '/')"/>
         </li>
       </ul>
     </div>
 
-    <div class="SwagCopilot_searchbox-wrapper --animation-down"
+    <div class="SwagCopilot_searchbox-wrapper --animation-top"
          :class="`--animation-delay-${state === 'done' ? '1' : '4'}`"
          v-if="state !== 'pending'"
-         :key="`searchbox-${step}`">
+         :key="`searchbox-${state}`">
       <textarea class="form-control"
                 v-model="query"
                 :ref="el => queryRef = el"
@@ -192,17 +191,12 @@ watch(
 
 // delay is used as a duration in first animation and delay for the second animation
 .--animation-up {
-  animation: var(--animation-delay, 0s) ease 0s 1 disappear, .5s ease-out var(--animation-delay, 0s) 1 slideInFromBottom;
   animation: var(--animation-delay, 0s) ease 0s 1 disappear, .5s ease-out var(--animation-delay, 0s) 1 slideInFromTop;
   &.--with-bounce {
     animation: var(--animation-delay, 0s) ease 0s 1 disappear,
     .5s ease-out var(--animation-delay, 0s) 1 slideInFromTop,
     2s ease-out var(--animation-delay, 0s) 3 bounce;
   }
-}
-
-.--animation-down {
-  animation: var(--animation-delay, 0s) ease 0s 1 disappear, .5s ease-out var(--animation-delay, 0s) 1 slideInFromTop;
 }
 
 .--animation-spin {
