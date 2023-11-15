@@ -16,7 +16,7 @@ dependencies:
     version: 5.24.0
   vitepress:
     specifier: 1.0.0-rc.25
-    version: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
+    version: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
   vitepress-shopware-docs:
     specifier: ^1.0.17
     version: 1.0.17(@babel/core@7.23.3)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.20.0)(instantsearch.css@8.1.0)(instantsearch.js@4.60.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.12.1)(vue@3.3.8)
@@ -122,8 +122,8 @@ devDependencies:
     specifier: ^8.0.0
     version: 8.0.1
   fuse.js:
-    specifier: ^6.6.2
-    version: 6.6.2
+    specifier: ^7.0.0
+    version: 7.0.0
   get-port:
     specifier: ^7.0.0
     version: 7.0.0
@@ -3205,7 +3205,7 @@ packages:
       storybook-addon-fetch-mock: 1.0.1
       storybook-addon-pseudo-states: 2.1.2(@storybook/components@7.5.3)(@storybook/core-events@7.5.3)(@storybook/manager-api@7.5.3)(@storybook/preview-api@7.5.3)(@storybook/theming@7.5.3)(react-dom@18.2.0)(react@18.2.0)
       unocss: 0.51.13(postcss@8.4.31)
-      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
+      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
       vitepress-shopware-docs: link:../..
     transitivePeerDependencies:
       - '@unocss/webpack'
@@ -3225,7 +3225,7 @@ packages:
       prettier: 2.8.8
       sitemap: 7.1.1
       unocss: 0.51.13(postcss@8.4.31)
-      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
+      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
       vitepress-shopware-docs: link:../..
     transitivePeerDependencies:
       - '@unocss/webpack'
@@ -3256,7 +3256,7 @@ packages:
       slugify: 1.6.6
       unocss: 0.51.13(postcss@8.4.31)
       vite-plugin-inspect: 0.7.42
-      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
+      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
       vitepress-shopware-docs: link:../..
       vitest: 0.34.6(@vitest/ui@0.34.6)(less@4.2.0)(sass@1.69.5)(terser@5.24.0)
     transitivePeerDependencies:
@@ -5787,7 +5787,7 @@ packages:
       - '@vue/composition-api'
       - vue
 
-  /@vueuse/integrations@10.5.0(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.3.8):
+  /@vueuse/integrations@10.5.0(focus-trap@7.5.4)(fuse.js@7.0.0)(vue@3.3.8):
     resolution: {integrity: sha512-fm5sXLCK0Ww3rRnzqnCQRmfjDURaI4xMsx+T+cec0ngQqHx/JgUtm8G0vRjwtonIeTBsH1Q8L3SucE+7K7upJQ==}
     peerDependencies:
       async-validator: '*'
@@ -5831,7 +5831,7 @@ packages:
       '@vueuse/core': 10.5.0(vue@3.3.8)
       '@vueuse/shared': 10.5.0(vue@3.3.8)
       focus-trap: 7.5.4
-      fuse.js: 6.6.2
+      fuse.js: 7.0.0
       vue-demi: 0.14.6(vue@3.3.8)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -8241,8 +8241,8 @@ packages:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
 
-  /fuse.js@6.6.2:
-    resolution: {integrity: sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==}
+  /fuse.js@7.0.0:
+    resolution: {integrity: sha512-14F4hBIxqKvD4Zz/XjDc3y94mNZN6pRv3U13Udo0lNLCWRBUsrMv2xwcF/y/Z5sV6+FQW+/ow68cHpm4sunt8Q==}
     engines: {node: '>=10'}
 
   /gensync@1.0.0-beta.2:
@@ -13490,7 +13490,7 @@ packages:
       vitepress: ^1.0.0 || ^1.0.0-alpha
     dependencies:
       mermaid: 10.6.1
-      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
+      vitepress: 1.0.0-rc.25(@types/node@20.9.0)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2)
     optionalDependencies:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
@@ -13558,7 +13558,7 @@ packages:
       - xstate
     dev: false
 
-  /vitepress@1.0.0-rc.25(@types/node@20.9.0)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2):
+  /vitepress@1.0.0-rc.25(@types/node@20.9.0)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.10.0)(terser@5.24.0)(typescript@5.2.2):
     resolution: {integrity: sha512-1dqWiHNThNrVZ08ixmfEDBEH+764KOgnev9oXga/x6cN++Vb9pnuu8p3K6DQP+KZrYcG+WiX7jxal0iSNpAWuQ==}
     hasBin: true
     peerDependencies:
@@ -13576,7 +13576,7 @@ packages:
       '@vitejs/plugin-vue': 4.3.1(vite@4.5.0)(vue@3.3.8)
       '@vue/devtools-api': 6.5.1
       '@vueuse/core': 10.5.0(vue@3.3.8)
-      '@vueuse/integrations': 10.5.0(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.3.8)
+      '@vueuse/integrations': 10.5.0(focus-trap@7.5.4)(fuse.js@7.0.0)(vue@3.3.8)
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.2.0
