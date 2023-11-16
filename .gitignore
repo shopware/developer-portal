@@ -13,6 +13,9 @@ bin/
 repos/
 external/
 
+# shiki
+src/public/shiki
+
 # embeddings
 src/frontends/
 src/frontends

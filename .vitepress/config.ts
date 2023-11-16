@@ -10,6 +10,7 @@ import { CssCleanup, baseCleanup } from "../node_modules/@shopware-docs/vitepres
 import Inspect from "vite-plugin-inspect";
 import liveReload from 'vite-plugin-live-reload'
 import { withMermaid } from "vitepress-plugin-mermaid";
+import topLevelAwait from "vite-plugin-top-level-await";
 
 import {copyAdditionalAssets, createSitemap, storeRedirects} from "../node_modules/@shopware-docs/vitepress/src/helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
@@ -421,7 +422,13 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         '../node_modules/@shopware-docs/**/*.*',
         '../node_modules/vitepress-shopware-docs/**/*.*',
       ]),
+      topLevelAwait(),
     ],
+    worker: {
+      plugins: [
+        topLevelAwait()
+      ]
+    },
     /*optimizeDeps: {
       //disabled: true,
       include: [
@@ -432,8 +439,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       ],
       exclude: [
         'instantsearch.js',
-      ]
-    }*/
+      ],
+    },*/
     build: {
       rollupOptions: {
         external: [
@@ -482,6 +489,21 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
      */
     await copyAdditionalAssets([
       {
+        src: '../node_modules/shiki/languages',
+        dst: 'shiki/languages',
+      },
+      {
+        src: '../node_modules/shiki/themes',
+        dst: 'shiki/themes',
+      },
+      {
+        src: '../node_modules/shiki/dist',
+        dst: 'shiki/dist',
+        ext: [
+          '.wasm'
+        ],
+      },
+      {
         src: './resources/meteor-icon-kit/public/icons/regular',
         dst: 'icons/regular',
       },
@@ -494,7 +516,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         dst: 'docs/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
             '.zip'
-        ]
+        ],
       }
     ]);
 
