@@ -12,7 +12,6 @@ bin/
 .vitepress/dist/
 repos/
 external/
-cli/docs-cli*
 
 # embeddings
 src/frontends/
