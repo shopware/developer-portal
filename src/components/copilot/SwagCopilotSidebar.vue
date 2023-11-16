@@ -29,17 +29,17 @@
       <span class="--custom-spinner --animation-spin"/>
       <!--<SwagIcon icon="spinner-star" type="solid" class="--animation-spin"/>-->
       <p>Working ...</p>
-      <p class="SwagCopilot_example">"{{ query }}"</p>
+      <p class="SwagCopilot_example">"{{ question }}"</p>
       <button type="button" class="btn --subtle --sm" @click.prevent="stop">
         <SwagIcon icon="square" type="solid"/>
         Stop
       </button>
     </div>
 
-    <div class="SwagCopilot_container c-any-card p-6 --animation-top" v-if="state === 'done'">
-      <p>"{{ query }}"</p>
+    <div class="SwagCopilot_container c-flat-card p-6 --animation-top" v-if="state === 'done'">
+      <p class="SwagCopilot_example">"{{ question }}"</p>
 
-      <div>{{ response.answer }}</div>
+      <div v-html="markdown" class="SwagCopilot_markdown"></div>
 
       <ul v-if="response.sources.length" class="grid gap-2">
         <li v-for="source in response.sources">
@@ -63,7 +63,7 @@
 </template>
 
 <script lang="ts" setup>
-import {watch, ref, computed} from "vue";
+import {watch, ref} from "vue";
 import {qa} from "../ai/ml";
 
 const {
@@ -83,8 +83,10 @@ const examples = [
   'List me the slots of the SW-Card',
 ];
 
+const question = ref(null);
+
 const searchExample = example => {
-  query.value = example;
+  query.value = question.value = example;
   requestAnswer();
 }
 
@@ -104,21 +106,48 @@ watch(
 watch(
     query,
     () => resize(queryRef.value),
+    {
+      deep: true,
+    }
 );
+
+import md from "./markdown";
+const renderer = md();
+
+const markdown = ref(null);
+watch(
+    () => response.value?.answer,
+    () => {
+      try {
+        console.log('rendering')
+        markdown.value = renderer.render(response.value?.answer || '');
+        console.log('rendered')
+      } catch (e) {
+        console.error(e);
+        markdown.value = (response.value?.answer || '')
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+      }
+    }
+)
 </script>
 
 <style lang="scss">
 .SwagCopilot {
   @apply fixed right-0 bottom-0;
   top: var(--vp-nav-height);
-  width: 480px;
 
   &_container {
     @apply flex gap-8 flex-col content-center text-center items-center;
   }
 
   &.--inline {
-    @apply static mx-auto py-4 max-w-[22rem];
+    @apply static mx-auto py-4;
+    width: 100%;
+    max-width: min(22rem, 80vw);
 
     .SwagCopilot {
       &_icon-close {
@@ -165,6 +194,16 @@ watch(
 
     .btn {
       @apply absolute right-[.5rem] bottom-[.5rem];
+    }
+  }
+
+  &_markdown {
+    max-width: 20rem;
+    code {
+      max-width: 100%;
+      overflow: auto;
+      display: block;
+      @apply p-4;
     }
   }
 }
