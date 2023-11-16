@@ -29,7 +29,7 @@ shiki.setCDN('/shiki/');
 const highlighter = await shiki.getHighlighter({
     theme: 'github-dark',
     themes: ['github-dark', 'github-light'],
-    langs: ['xml', 'html'],
+    langs: shiki.BUNDLED_LANGUAGES,
 });
 
 export default () => {
