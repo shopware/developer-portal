@@ -197,9 +197,6 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       'docs/v6.3/guides/plugins/plugins/content/cms/add-cms-block.md',
       'docs/v6.3/guides/plugins/plugins/framework/data-handling/add-data-translations.md',
       'docs/v6.3/guides/plugins/themes/add-css-js-to-theme.md',
-      // merging content
-      '_apps/**',
-      '_themes/**',
       // snippets
       'docs/snippets/**',
   ],
