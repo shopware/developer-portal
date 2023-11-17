@@ -111,20 +111,18 @@ watch(
     }
 );
 
-import md from "./markdown";
-const renderer = md();
+import render from "./markdown";
 
 const markdown = ref(null);
 watch(
     () => response.value?.answer,
-    () => {
+    async () => {
+      const myMarkdown = response.value?.answer || '';
       try {
-        console.log('rendering')
-        markdown.value = renderer.render(response.value?.answer || '');
-        console.log('rendered')
+        markdown.value = await render(myMarkdown);
       } catch (e) {
         console.error(e);
-        markdown.value = (response.value?.answer || '')
+        markdown.value = myMarkdown
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")

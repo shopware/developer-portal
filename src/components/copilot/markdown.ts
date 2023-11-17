@@ -21,18 +21,40 @@ import * as shiki from 'shiki';
 //import {getHighlighter} from 'shiki-processor';
 //import onigasm from 'shiki/dist/onig.wasm'
 
-// https://github.com/shikijs/shiki/blob/main/packages/shiki/src/__tests__/__fixtures__/index_browser_custom_wasm.html
-// https://vitejs.dev/guide/features.html#webassembly
-// https://www.npmjs.com/package/vite-plugin-wasm
-// shiki.setWasm(onigasm)
-shiki.setCDN('/shiki/');
-const highlighter = await shiki.getHighlighter({
-    theme: 'github-dark',
-    themes: ['github-dark', 'github-light'],
-    langs: shiki.BUNDLED_LANGUAGES,
-});
+function extractLanguages(markdown) {
+    const pattern = /```(\w+)/g;
+    const matches = [];
+    let match;
 
-export default () => {
+    while ((match = pattern.exec(markdown)) !== null) {
+        matches.push(match[1].toLowerCase());
+    }
+
+    return matches;
+}
+
+const arrayIntersection = (arr1, arr2) => arr1.filter(value => arr2.includes(value));
+const bundledLangs = shiki.BUNDLED_LANGUAGES.map(({id}) => id);
+
+export default async (markdown: string) => {
+    if (markdown === '') {
+        return '';
+    }
+
+    // we need to extract used languages to optimize performance and load only used languages
+    const langs = arrayIntersection(bundledLangs, extractLanguages(markdown));
+
+    // https://github.com/shikijs/shiki/blob/main/packages/shiki/src/__tests__/__fixtures__/index_browser_custom_wasm.html
+    // https://vitejs.dev/guide/features.html#webassembly
+    // https://www.npmjs.com/package/vite-plugin-wasm
+    // shiki.setWasm(onigasm)
+    shiki.setCDN('/shiki/');
+    const highlighter = await shiki.getHighlighter({
+        theme: 'github-dark',
+        themes: ['github-dark', 'github-light'],
+        langs,
+    });
+
     const md = MarkdownIt({
         html: true,
         linkify: true,
@@ -79,5 +101,5 @@ export default () => {
         slugify,
     } as HeadersPluginOptions)
 
-    return md
+    return md.render(markdown);
 };
