@@ -55,7 +55,7 @@
     "@types/jest": "^29.5.6",
     "@types/markdown-it": "^13.0.5",
     "@types/mocha": "^10.0.3",
-    "@types/node": "^20.8.8",
+    "@types/node": "^20.9.1",
     "@types/shell-escape": "^0.2.2",
     "@types/uuid": "^9.0.6",
     "@vitejs/plugin-vue": "^4.4.0",
