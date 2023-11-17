@@ -38,7 +38,7 @@
     "@mdit-vue/shared": "^1.0.0",
     "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "@originjs/vite-plugin-require-context": "^1.0.9",
-    "@playwright/test": "1.39.0",
+    "@playwright/test": "1.40.0",
     "@shopware-docs/cli": "^1.0.17",
     "@shopware-docs/storybook": "^1.0.17",
     "@shopware-docs/vitepress": "^1.0.17",
