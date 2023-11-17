@@ -84,7 +84,6 @@ const examples = [
 ];
 
 const question = ref(null);
-
 const searchExample = example => {
   query.value = question.value = example;
   requestAnswer();
@@ -98,21 +97,15 @@ const resize = (element, minHeight = 46) => {
   element.style.height = (element.scrollHeight > minHeight ? element.scrollHeight : minHeight) + "px";
 }
 
+// textarea watcher
 const queryRef = ref(null);
-watch(
-    queryRef,
-    () => resize(queryRef.value),
-);
-watch(
-    query,
-    () => resize(queryRef.value),
-    {
-      deep: true,
-    }
-);
+const resizeQueryRef = () => resize(queryRef.value);
+watch(queryRef, resizeQueryRef);
+watch(query, resizeQueryRef, {deep: true});
+watch(state, resizeQueryRef,)
 
+// markdown answer rendering
 import render from "./markdown";
-
 const markdown = ref(null);
 watch(
     () => response.value?.answer,
