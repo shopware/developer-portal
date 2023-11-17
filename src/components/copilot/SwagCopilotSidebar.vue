@@ -189,7 +189,7 @@ watch(
   }
 
   &_markdown {
-    max-width: 20rem;
+    max-width: 19rem;
     code {
       max-width: 100%;
       overflow: auto;
