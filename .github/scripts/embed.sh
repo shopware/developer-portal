@@ -51,13 +51,13 @@ fi
  --dst docs/v6.3 \
  --org ${ORG_DOCS_63:-shopware}
 
-./docs-cli.cjs clone \
- --ci \
- --repository shopware/frontends \
- --branch ${BRANCH_FRONTENDS:-main} \
- --src apps/docs/src \
- --dst frontends \
- --org ${ORG_FRONTENDS:-shopware}
+#./docs-cli.cjs clone \
+# --ci \
+# --repository shopware/frontends \
+# --branch ${BRANCH_FRONTENDS:-main} \
+# --src apps/docs/src \
+# --dst frontends \
+# --org ${ORG_FRONTENDS:-shopware}
 
 #./docs-cli.cjs clone \
 # --ci \
