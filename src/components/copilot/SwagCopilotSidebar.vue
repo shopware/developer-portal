@@ -41,7 +41,7 @@
 
       <div v-html="markdown" class="SwagCopilot_markdown"></div>
 
-      <ul v-if="response.sources.length" class="grid gap-2">
+      <ul v-if="response.sources.length" class="grid gap-2 text-left">
         <li v-for="source in response.sources">
           <PageRef :page="`${source.slice(0, -2)}html`.replace('/index.html', '/')"/>
         </li>
