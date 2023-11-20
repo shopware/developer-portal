@@ -157,7 +157,7 @@
       ],
       "org": [
         "env.ORG_RELEASE_NOTES",
-        "bojanrajh"
+        "shopware"
       ],
       "skip": true
     }
