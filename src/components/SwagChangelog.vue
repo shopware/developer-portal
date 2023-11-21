@@ -1,8 +1,8 @@
 <template>
   <div class="SwagChangelog divide-y-1 divide-x-1 divide-gray-400">
     <div class="SwagChangelog_item divide-y-1 divide-x-1 divide-gray-400"
-         v-for="log in changelog">
-      <span class="SwagChangelog_version">v{{ log.version }}</span>
+         v-for="log in releases">
+      <span class="SwagChangelog_version">{{ log.text }}</span>
       <div>
         <span class="SwagChangelog_label"
               :class="`--type-${log.type}`"
@@ -57,79 +57,9 @@
 </style>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
-
-const isMounted = ref(false);
-onMounted(() => {
-  isMounted.value = true;
-});
-
-const changelog = computed(() => [
-  {
-    version: '6.5.3.3',
-    date: '2023-07-16 13:26',
-  },
-  {
-    version: '6.5.3.2',
-    date: '2023-07-13 09:22',
-  },
-  {
-    version: '6.5.3.1',
-    date: '2023-06-06 13:58',
-  },
-  {
-    version: '6.5.3.0',
-    date: '2023-06-12 14:37',
-  },
-  {
-    version: '6.5.2.1',
-    date: '2023-06-12 14:37',
-  },
-  {
-    version: '6.5.2.0',
-    date: '2023-06-12 09:43',
-  },
-  {
-    version: '6.5.1.1',
-    date: '2023-05-31 09:53',
-  },
-  {
-    version: '6.5.1.0',
-    date: '2023-05-24 15:51',
-  },
-  {
-    version: '6.4.20.2',
-    date: '2023-05-05 07:55',
-    label: 'Security update',
-    type: 'security',
-  },
-  {
-    version: '6.5.0.0',
-    date: '2023-05-03 10:28',
-  },
-  {
-    version: '6.4.20.1',
-    date: '2023-04-17 19:20',
-    label: 'Security update',
-    type: 'security',
-  },
-  {
-    version: '6.5.0.0-rc4',
-    date: '2023-04-11 15:13',
-    label: 'Release candidate',
-    type: 'rc',
+const props = defineProps({
+  releases: {
+    type: Array,
   }
-].slice(0, 5).map(log => {
-  // Dates should be formatted only on client side as locale time is most likely different
-  if(!isMounted.value) {
-    return log;
-  }
-  const date = new Date(log.date);
-  log.date = `${date.toLocaleDateString()} ${date.toLocaleTimeString(undefined, {
-    hour: '2-digit',
-    minute:'2-digit'
-  })}`;
-  return log;
-}));
-// const changelog = await (await fetch('https://www.shopware.com/en/changelog/?rss=1', {mode: 'no-cors'})).json();
+})
 </script>
