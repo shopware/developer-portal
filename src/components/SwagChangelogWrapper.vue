@@ -5,9 +5,8 @@
 
     <div class="SwagChangelogWrapper_grid gap-10 items-start">
       <div class="c-flat-card p-6">
-        <h3 class="SwagChangelogWrapper_title">Shopware version 6.5.1.1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem dui. Etiam suscipit, eros sit amet
-          elementum accumsan, lorem nulla tincidunt sem, in ullamcorper libero nibh non sapien....</p>
+        <h3 class="SwagChangelogWrapper_title">{{ latestData.__pageData.title }}</h3>
+        <p v-html="intro"></p>
         <ul>
           <li v-for="link in links"><a :href="`${latestRelease.link}#${link.slug}`">{{ link.title }}</a></li>
         </ul>
@@ -55,6 +54,12 @@ const latestData = await latestSource();
 const headers = latestData.__pageData.headers;
 const improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
 const links = improvements.map(({title, slug}) => ({title, slug}));
+
+const md = `..${latestRelease.link.replace('.html', '.md')}`;
+
+const module = await import(/* @vite-ignore */md);
+const content = module.default.render().children[0].children;
+const intro = new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
 </script>
 
 <style lang="scss">
