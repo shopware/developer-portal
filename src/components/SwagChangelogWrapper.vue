@@ -5,23 +5,33 @@
 
     <div class="SwagChangelogWrapper_grid gap-10 items-start">
       <div class="c-flat-card p-6">
-        <h3 class="SwagChangelogWrapper_title">{{ latestData.__pageData.title }}</h3>
-        <p v-html="intro"></p>
-        <ul>
-          <li v-for="link in links"><a :href="`${latestRelease.link}#${link.slug}`">{{ link.title }}</a></li>
-        </ul>
-        <a :href="latestRelease.link">View details</a>
+        <div class="relative">
+          <h3 class="SwagChangelogWrapper_title">
+            {{ latestSource.__pageData.title }}
+            <SwagLabel>{{ latestRelease.date }}</SwagLabel>
+          </h3>
+          <p v-html="intro"></p>
+          <ul class="SwagChangelogWrapper_links">
+            <li v-for="link in links.slice(0, 5)">
+              <a :href="`${latestRelease.link}#${link.slug}`" class="as-link --with-icon">
+                {{ link.title }}
+                <SwagIcon icon="long-arrow-right" type="solid" />
+              </a>
+            </li>
+          </ul>
+          <a :href="latestRelease.link" class="SwagChangelogWrapper_details as-link">View details</a>
+        </div>
       </div>
       <div class="grid gap-5">
-        <h3 class="SwagChangelogWrapper_title">
+        <h4 class="SwagChangelogWrapper_title">
           Changelog
           <a href="https://github.com/shopware/platform/blob/trunk/CHANGELOG.md"
              target="_blank"
-             class="SwagChangelogWrapper_link">
+             class="SwagChangelogWrapper_link as-link">
             View on GitHub
             <SwagIcon icon="external-link-s"/>
           </a>
-        </h3>
+        </h4>
         <SwagChangelog :releases="releases"/>
       </div>
     </div>
@@ -29,6 +39,7 @@
 </template>
 
 <script setup lang="ts" async>
+import SwagLabel from "./SwagLabel.vue";
 import {useData} from "vitepress";
 import {getSidebar, flattenSidebar} from '../../node_modules/vitepress-shopware-docs/src/shopware/support/sidebar'
 import SwagChangelog from "./SwagChangelog.vue";
@@ -44,21 +55,23 @@ const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/
         hour: '2-digit',
         minute: '2-digit'
       })}`;
+      release.date = date.toLocaleDateString();
+      release.text = release.text.startsWith('v') ? release.text.substring(1) : release.text;
       return release;
     });
 
 const latestRelease = releases[0];
-const sources = import.meta.glob(`../release-notes/*/*.*.*.*.md`);
-const latestSource = sources[`..${latestRelease.link.replace('.html', '.md')}`];
-const latestData = await latestSource();
-const headers = latestData.__pageData.headers;
+const md = `..${latestRelease.link.replace('.html', '.md')}`;
+const latestSource = await import(/* @vite-ignore */md);
+
+//const sources = import.meta.glob(`../release-notes/*/*.*.*.*.md`);
+//const latestSource = sources[`..${latestRelease.link.replace('.html', '.md')}`];
+const headers = latestSource.__pageData.headers;
 const improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
 const links = improvements.map(({title, slug}) => ({title, slug}));
 
-const md = `..${latestRelease.link.replace('.html', '.md')}`;
 
-const module = await import(/* @vite-ignore */md);
-const content = module.default.render().children[0].children;
+const content = latestSource.default.render().children[0].children;
 const intro = new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
 </script>
 
@@ -93,6 +106,19 @@ const intro = new DOMParser().parseFromString(content, "text/html").querySelecto
     .SwagIcon {
       height: .625rem;
     }
+  }
+
+  .SwagChangelogWrapper_links {
+    @apply m-0 p-0;
+    line-height: 150%;
+    list-style: none;
+    font-size: 0.875rem;
+  }
+
+  &_details {
+    @apply absolute right-0 bottom-0;
+    font-size: 0.875rem;
+    text-decoration: underline;
   }
 }
 </style>
