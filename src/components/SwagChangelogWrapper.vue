@@ -25,7 +25,7 @@
       <div class="grid gap-5">
         <h4 class="SwagChangelogWrapper_title">
           Changelog
-          <a href="https://github.com/shopware/platform/blob/trunk/CHANGELOG.md"
+          <a href="https://github.com/shopware/shopware/releases"
              target="_blank"
              class="SwagChangelogWrapper_link as-link">
             View on GitHub
@@ -80,7 +80,7 @@ const intro = new DOMParser().parseFromString(content, "text/html").querySelecto
   @apply bg-[var(--sw-c-gray-50)];
   &_grid {
     @apply grid;
-    @media (min-width: 768px) {
+    @media (min-width: 960px) {
       grid-template-columns: 2fr 1fr;
     }
   }
