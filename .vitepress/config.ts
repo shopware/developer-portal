@@ -110,7 +110,7 @@ const embeds: SwagEmbedsConfig[] = [
     points: {
       '/docs/v6.4/': 'v6.4',
       '/docs/v6.3/': 'v6.3.0',
-      '/docs/': 'main',
+      '/docs/': 'v6.5',
     },
     folder: '.',
   },
