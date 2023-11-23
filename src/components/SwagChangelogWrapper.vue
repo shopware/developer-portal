@@ -56,15 +56,13 @@ const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/
     });
 
 const latestRelease = releases[0];
-const md = `..${latestRelease.link.replace('.html', '.md')}`;
-const latestSource = await import(/* @vite-ignore */md);
+const md = `${latestRelease.link.replace('.html', '')}`;
+const [rn, major, patch] = md.split('/');
+const latestSource = await import(`../${rn}/${major}/${patch}.md`);
 
-//const sources = import.meta.glob(`../release-notes/*/*.*.*.*.md`);
-//const latestSource = sources[`..${latestRelease.link.replace('.html', '.md')}`];
 const headers = latestSource.__pageData.headers;
 const improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
 const links = improvements.map(({title, slug}) => ({title, slug}));
-
 
 const content = latestSource.default.render().children[0].children;
 const intro = new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
