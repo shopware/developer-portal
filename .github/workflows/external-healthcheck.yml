@@ -67,12 +67,17 @@ jobs:
           elif [[ "${{ inputs.repo }}" == "meteor-component-library" ]]; then
             echo "Embedding meteor-component-library"
             sed -i "0,/ORG_METEOR_COMPONENT_LIBRARY.*/s/.*ORG_METEOR_COMPONENT_LIBRARY.*/ORG_METEOR_COMPONENT_LIBRARY=$ORG/" ./.github/scripts/embed.sh
-           sed -i "0,/BRANCH_METEOR_COMPONENT_LIBRARY.*/s/.*BRANCH_METEOR_COMPONENT_LIBRARY.*/BRANCH_METEOR_COMPONENT_LIBRARY=$BRANCH/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_METEOR_COMPONENT_LIBRARY.*/s/.*BRANCH_METEOR_COMPONENT_LIBRARY.*/BRANCH_METEOR_COMPONENT_LIBRARY=$BRANCH/" ./.github/scripts/embed.sh
           
           elif [[ "${{ inputs.repo }}" == "docs" ]]; then
             echo "Embedding docs"
             sed -i "0,/ORG_DOCS.*/s/.*ORG_DOCS.*/ORG_DOCS=$ORG/" ./.github/scripts/embed.sh
             sed -i "0,/BRANCH_DOCS.*/s/.*BRANCH_DOCS.*/BRANCH_DOCS=$BRANCH/" ./.github/scripts/embed.sh
+          
+          elif [[ "${{ inputs.repo }}" == "release-notes" ]]; then
+            echo "Embedding release-notes"
+            sed -i "0,/ORG_RELEASE_NOTES.*/s/.*ORG_RELEASE_NOTES.*/ORG_RELEASE_NOTES=$ORG/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_RELEASE_NOTES.*/s/.*BRANCH_RELEASE_NOTES.*/BRANCH_RELEASE_NOTES=$BRANCH/" ./.github/scripts/embed.sh
           
           else
             echo "Unknown repository ${{inputs.repo}}"
