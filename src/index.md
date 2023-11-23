@@ -54,7 +54,10 @@ import SwagNewsletter from "./components/SwagNewsletter.vue";
 <SwagContribute class="my-20" />
 
 <!-- CHANGELOG --->
-<!--<SwagChangelogWrapper id="Changelog" class="my-20" />-->
+
+<Suspense>
+    <SwagChangelogWrapper id="Changelog" class="my-20" />
+</Suspense>
 
 <!-- NEWSLETTER -->
 <SwagNewsletter />
