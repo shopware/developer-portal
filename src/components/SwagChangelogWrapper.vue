@@ -39,7 +39,6 @@
 </template>
 
 <script setup lang="ts" async>
-import SwagLabel from "./SwagLabel.vue";
 import {useData} from "vitepress";
 import {getSidebar, flattenSidebar} from '../../node_modules/vitepress-shopware-docs/src/shopware/support/sidebar'
 import SwagChangelog from "./SwagChangelog.vue";
@@ -51,11 +50,7 @@ const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .map(release => {
       const date = new Date(release.date);
-      release.date = `${date.toLocaleDateString()} ${date.toLocaleTimeString(undefined, {
-        hour: '2-digit',
-        minute: '2-digit'
-      })}`;
-      release.date = date.toLocaleDateString();
+      release.date = date.getDate()  + "." + (date.getMonth()+1) + "." + date.getFullYear();
       release.text = release.text.startsWith('v') ? release.text.substring(1) : release.text;
       return release;
     });

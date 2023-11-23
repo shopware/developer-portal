@@ -3,10 +3,8 @@
     <a :href="release.link" class="SwagChangelog_item divide-y-1 divide-x-1 divide-gray-400"
        v-for="release in releases">
       <span class="SwagChangelog_version">{{ release.text }}</span>
-      <span>
-        <span class="SwagChangelog_label"
-              :class="`--type-${release.type}`"
-              v-if="release.label">{{ release.label }}</span>
+      <span class="flex gap-1">
+        <SwagLabel :label="release.label" v-if="release.label"></SwagLabel>
         <SwagLabel>{{ release.date }}</SwagLabel>
       </span>
     </a>
@@ -39,8 +37,6 @@
 </style>
 
 <script setup lang="ts">
-import SwagLabel from "./SwagLabel.vue";
-
 const props = defineProps({
   releases: {
     type: Array,
