@@ -57,7 +57,7 @@ const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/
 
 const latestRelease = releases[0];
 const md = `${latestRelease.link.replace('.html', '')}`;
-const [rn, major, patch] = md.split('/');
+const [empty, rn, major, patch] = md.split('/');
 
 // https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
 const latestSource = await import(`../${rn}/${major}/${patch}.md`);
