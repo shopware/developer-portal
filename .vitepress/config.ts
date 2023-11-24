@@ -298,8 +298,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
     ]
   ],
 
-  // tmp?
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
 
   themeConfig: {
     ...navigation, // add sidebar and nav config
