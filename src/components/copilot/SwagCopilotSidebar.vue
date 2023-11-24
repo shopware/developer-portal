@@ -189,12 +189,23 @@ watch(
   }
 
   &_markdown {
+    @apply text-left;
     max-width: 19rem;
-    code {
+    :not(pre) > code {
+      font-weight: bold;
+    }
+    pre code {
       max-width: 100%;
       overflow: auto;
       display: block;
       @apply p-4;
+    }
+    ul {
+      list-style: disc;
+      list-style-position: inside;
+    }
+    > * {
+      margin-block-end: .5rem;
     }
   }
 }
