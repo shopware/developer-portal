@@ -63,7 +63,10 @@ const [empty, rn, major, patch] = md.split('/');
 const latestSource = await import(`../${rn}/${major}/${patch}.md`);
 
 const headers = latestSource.__pageData.headers;
-const improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
+let improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
+if (!improvements.length) {
+  improvements = headers;
+}
 const links = improvements.map(({title, slug}) => ({title, slug}));
 
 const content = latestSource.default.render().children[0].children;
