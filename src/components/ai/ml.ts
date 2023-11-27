@@ -4,7 +4,7 @@ import { marked } from 'marked';
 export const qa = (collection) => {
     let query = ref(null);
     let pending = ref(false);
-    //let response = ref('');
+    let question = ref(null);
     let response = ref({
         answer: '',
     });
@@ -16,6 +16,7 @@ export const qa = (collection) => {
         pending.value = true;
         errorText.value = false;
         state.value = 'pending';
+        question.value = query.value;
         fetch('https://ai-ml.fly.dev/question', {
             method: 'POST',
             headers: {

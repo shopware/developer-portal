@@ -68,6 +68,7 @@ import {qa} from "../ai/ml";
 
 const {
   query,
+  question,
   state,
   pending,
   response,
@@ -83,7 +84,6 @@ const examples = [
   'List me the slots of the SW-Card',
 ];
 
-const question = ref(null);
 const searchExample = example => {
   query.value = question.value = example;
   requestAnswer();
@@ -102,7 +102,7 @@ const queryRef = ref(null);
 const resizeQueryRef = () => resize(queryRef.value);
 watch(queryRef, resizeQueryRef);
 watch(query, resizeQueryRef, {deep: true});
-watch(state, resizeQueryRef,)
+watch(state, resizeQueryRef)
 
 // markdown answer rendering
 import render from "./markdown";
