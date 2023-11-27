@@ -239,8 +239,8 @@ devDependencies:
     specifier: ^3.2.2
     version: 3.2.2
   vitepress-plugin-mermaid:
-    specifier: ^2.0.15
-    version: 2.0.15(mermaid@10.6.1)(vitepress@1.0.0-rc.25)
+    specifier: ^2.0.16
+    version: 2.0.16(mermaid@10.6.1)(vitepress@1.0.0-rc.25)
   vitest:
     specifier: ^0.34.6
     version: 0.34.6(@vitest/ui@0.34.6)(less@4.2.0)(sass@1.69.5)(terser@5.24.0)
@@ -14153,8 +14153,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress-plugin-mermaid@2.0.15(mermaid@10.6.1)(vitepress@1.0.0-rc.25):
-    resolution: {integrity: sha512-63tTqK4WvYXSnT1jY+Ex0htUCb4XGQmHeIexvqZHkVOBruFiDFG0f+ishLnS1F+1IYkVkyYHacv7PDX3wUP9hQ==}
+  /vitepress-plugin-mermaid@2.0.16(mermaid@10.6.1)(vitepress@1.0.0-rc.25):
+    resolution: {integrity: sha512-sW0Eu4+1EzRdwZBMGjzwKDsbQiuJIxCy8BlMw7Ur88p9fXalrFYKqZ3wYWLxsFTBipeooFIeanef/xw1P+v7vQ==}
     peerDependencies:
       mermaid: '10'
       vitepress: ^1.0.0 || ^1.0.0-alpha
