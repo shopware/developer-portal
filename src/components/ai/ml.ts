@@ -58,6 +58,7 @@ export const qa = (collection) => {
         response,
         pending,
         query,
+        question,
         errorText,
         marked,
         state,

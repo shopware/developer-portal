@@ -34,7 +34,11 @@ function extractLanguages(markdown) {
 }
 
 const arrayIntersection = (arr1, arr2) => arr1.filter(value => arr2.includes(value));
-const bundledLangs = shiki.BUNDLED_LANGUAGES.map(({id}) => id);
+const bundledLangs = Object.keys(shiki.BUNDLED_LANGUAGES.reduce((reduced, lang) => {
+    reduced[lang.id] = lang.id;
+    Object.values(lang.aliases || []).forEach(lang => reduced[lang] = lang);
+    return reduced;
+}, []));
 
 export default async (markdown: string) => {
     if (markdown === '') {
