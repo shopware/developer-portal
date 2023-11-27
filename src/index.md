@@ -60,4 +60,4 @@ import SwagNewsletter from "./components/SwagNewsletter.vue";
 </Suspense>
 
 <!-- NEWSLETTER -->
-<SwagNewsletter />
+<!--<SwagNewsletter />-->
