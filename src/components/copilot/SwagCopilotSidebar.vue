@@ -202,7 +202,7 @@ watch(
     }
     ul {
       list-style: disc;
-      list-style-position: inside;
+      margin-left: 1rem;
     }
     > * {
       margin-block-end: .5rem;
