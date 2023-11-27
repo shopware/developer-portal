@@ -94,7 +94,7 @@
     "storybook": "^7.5.1",
     "storybook-addon-fetch-mock": "^1.0.1",
     "storybook-addon-pseudo-states": "^2.1.2",
-    "typedoc": "^0.25.2",
+    "typedoc": "^0.25.4",
     "typescript": "^5.2.2",
     "uuid": "^9.0.1",
     "vite-plugin-inspect": "^0.7.40",
