@@ -24,7 +24,6 @@ import SwagStartBuilding from "./components/SwagStartBuilding.vue";
 import SwagExtendShopware from "./components/SwagExtendShopware.vue";
 import SwagContribute from "./components/SwagContribute.vue";
 import SwagChangelogWrapper from "./components/SwagChangelogWrapper.vue";
-import SwagNewsletter from "./components/SwagNewsletter.vue";
 </script>
 
 <!-- HERO -->
@@ -58,6 +57,3 @@ import SwagNewsletter from "./components/SwagNewsletter.vue";
 <Suspense>
     <SwagChangelogWrapper id="Changelog" class="my-20" />
 </Suspense>
-
-<!-- NEWSLETTER -->
-<!--<SwagNewsletter />-->
