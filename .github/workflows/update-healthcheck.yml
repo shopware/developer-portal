@@ -18,6 +18,10 @@ on:
         description: "Healthcheck conclusion"
         required: true
         type: string
+      run_id:
+        description: "Workflow run ID"
+        required: true
+        type: string
     secrets:
       TOKEN:
         required: true
@@ -38,6 +42,7 @@ jobs:
           name: DevHub
           status: completed
           conclusion: ${{ inputs.conclusion }}
+          details_url: https://github.com/shopware/developer-portal/actions/runs/${{ inputs.run_id }}
           output: |
             title: Developer Portal healthcheck
             summary: Building the project in DevHub (Developer Portal)

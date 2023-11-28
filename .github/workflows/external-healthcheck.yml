@@ -191,5 +191,6 @@ jobs:
             repo: ${{ inputs.repo }}
             check: "${{ inputs.check }}"
             conclusion: ${{ needs.trigger-build.outputs.success && needs.trigger-build.outputs.success == 'yes' && 'success' || 'failure' }}
+            run_id: "${{ github.run_id }}"
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_HUB_PERSONAL_ACCESS_TOKEN }}
