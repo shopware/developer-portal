@@ -45,7 +45,7 @@
     "@shopware-docs/vitest": "^1.0.23",
     "@storybook/addon-essentials": "^7.5.1",
     "@storybook/addon-interactions": "^7.5.1",
-    "@storybook/addon-links": "^7.5.1",
+    "@storybook/addon-links": "^7.6.0",
     "@storybook/blocks": "^7.5.1",
     "@storybook/builder-vite": "^7.5.1",
     "@storybook/testing-library": "^0.2.2",
