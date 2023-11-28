@@ -230,8 +230,8 @@ devDependencies:
     specifier: ^0.7.40
     version: 0.7.42
   vite-plugin-live-reload:
-    specifier: ^3.0.2
-    version: 3.0.2
+    specifier: ^3.0.3
+    version: 3.0.3
   vite-plugin-top-level-await:
     specifier: ^1.3.1
     version: 1.3.1
@@ -14044,8 +14044,13 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-live-reload@3.0.2:
-    resolution: {integrity: sha512-7QprEPLN9f4J9ljnovzoe2xmkTKTEn/QpxpwSmvbb2MtRQyWi0c0Zg3+s3cBhxHaKe9eMYHUG4OQGpCYwFwdaw==}
+  /vite-plugin-live-reload@3.0.3:
+    resolution: {integrity: sha512-ce1ygNPmfVdiO6SyjpephroZiK+X5+BFetkceD/FFOYZEPoVSydJRfKT2JPaL4/D3C3NwqJvtPjnla1GSa264A==}
+    peerDependencies:
+      vite: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
     dependencies:
       chokidar: 3.5.3
       picocolors: 1.0.0
