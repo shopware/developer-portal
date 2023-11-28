@@ -138,7 +138,7 @@ watch(
   &.--inline {
     @apply static mx-auto py-4;
     width: 100%;
-    max-width: min(22rem, 80vw);
+    max-width: min(48rem, 80vw);
 
     .SwagCopilot {
       &_icon-close {
@@ -190,7 +190,7 @@ watch(
 
   &_markdown {
     @apply text-left;
-    max-width: 19rem;
+    max-width: 46rem;
     :not(pre) > code {
       font-weight: bold;
     }
