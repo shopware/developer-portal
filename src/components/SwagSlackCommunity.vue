@@ -31,10 +31,6 @@
   &_intro {
     @apply font-medium text-xl max-w[420px] mt-4;
   }
-
-  &:last-of-type {
-    @apply hidden;
-  }
 }
 </style>
 
