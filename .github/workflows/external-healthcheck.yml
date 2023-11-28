@@ -113,6 +113,16 @@ jobs:
           export USERCENTRICS="65ynhGFvE"
           pnpm run build
 
+      - name: Zip folder
+        run: zip -r full-build.zip .vitepress/dist/ vercel.json
+
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          if-no-files-found: error
+          name: full-build-${{ github.sha }}
+          path: full-build.zip
+
       - name: Test build
         run: |
           export NODE_OPTIONS="--max-old-space-size=8096"
@@ -123,11 +133,48 @@ jobs:
         run: |
           echo "success=yes" >> "$GITHUB_OUTPUT"
 
+  deploy-vercel:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs:
+      - trigger-build
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: full-build-${{ github.sha }}
+
+      - name: Unzip artifact
+        run: |
+          mkdir -p .vitepress/dist
+          unzip -o full-build.zip
+          ls -la .vitepress/dist
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel Environment Information
+        run: |
+          VERCEL_ENV="preview"
+          VERCEL_ENV_FLAG=""
+          
+          vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
+          vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG
+          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
+
   update-healthcheck-success:
     name: Test build
     runs-on: ubuntu-latest
     needs:
       - trigger-build
+      - deploy-vercel
     if: ${{ always() }}
     steps:
 
