@@ -91,7 +91,7 @@
     "shiki-processor": "^0.1.3",
     "sitemap": "^7.1.1",
     "slugify": "^1.6.6",
-    "storybook": "^7.5.1",
+    "storybook": "^7.6.0",
     "storybook-addon-fetch-mock": "^1.0.1",
     "storybook-addon-pseudo-states": "^2.1.2",
     "typedoc": "^0.25.2",
