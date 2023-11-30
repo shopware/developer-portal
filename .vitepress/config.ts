@@ -12,7 +12,7 @@ import liveReload from 'vite-plugin-live-reload'
 import { withMermaid } from "vitepress-plugin-mermaid";
 import topLevelAwait from "vite-plugin-top-level-await";
 //import { TsFunctionDescription, TsFunctionsList } from "@shopware-pwa/typer";
-import { TsFunctionDescription, TsFunctionsList } from "../node_modules/@shopware-docs/typer/src";
+import { TsFunctionDescription, TsFunctionsList } from "@shopware-docs/typer";
 
 import {copyAdditionalAssets, createSitemap, storeRedirects} from "../node_modules/@shopware-docs/vitepress/src/helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
