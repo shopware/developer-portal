@@ -55,6 +55,7 @@ fi
 
 ./docs-cli.cjs clone \
  --ci \
+ --keep \
  --repository shopware/frontends \
  --branch ${BRANCH_FRONTENDS:-main} \
  --src apps/docs/src \
