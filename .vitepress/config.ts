@@ -28,7 +28,7 @@ import {
 
 const sections: SwagSectionsConfig[] = [
   {
-    title: 'Frontends',
+    title: 'Composable Frontends',
     matches: [
       '/frontends/',
     ],
