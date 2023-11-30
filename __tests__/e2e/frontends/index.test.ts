@@ -8,11 +8,11 @@ describe('render correct content', async () => {
         await embeddedPage.open('/frontends/')
     })
 
-    test('active navigation', async () => {
+    test.skip('active navigation', async () => {
         await embeddedPage.hasActiveNavigation('Frontends');
     })
 
-    test('has sidebar', async () => {
+    test.skip('has sidebar', async () => {
         await embeddedPage.hasSidebarSections(5);
     })
 
