@@ -173,7 +173,7 @@ const usercentrics = (name: string) => (usercentricsActive ? {
   type: 'text/plain',
 } : {});
 
-const frontendsPath = "../src/frontends/_source/";
+const frontendsPath = "../src/frontends/_source";
 
 export default withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -426,7 +426,10 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         '../node_modules/vitepress-shopware-docs/**/*.*',
       ]),
       topLevelAwait(),
-      TsFunctionsList(resolve(__dirname, frontendsPath)),
+      TsFunctionsList({
+        rootDir: resolve(__dirname, frontendsPath),
+        prefix: 'frontends/',
+      }),
       TsFunctionDescription({
         rootDir: resolve(__dirname, frontendsPath),
         dirs: [
@@ -434,25 +437,25 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
             autogenExampleAlias: "api-client",
             functions: resolve(
                 __dirname,
-                `${frontendsPath}packages/api-client/src/services/`,
+                `${frontendsPath}/packages/api-client/src/services/`,
             ),
             types: resolve(
                 __dirname,
-                `${frontendsPath}packages/types/shopware-6-client/`,
-            ),
-          },
-          {
-            functions: resolve(__dirname, `${frontendsPath}packages/composables/src/`),
-            types: resolve(
-                __dirname,
-                `${frontendsPath}packages/types/shopware-6-client/`,
+                `${frontendsPath}/packages/types/shopware-6-client/`,
             ),
           },
           {
-            functions: resolve(__dirname, `${frontendsPath}packages/helpers/src/`),
+            functions: resolve(__dirname, `${frontendsPath}/packages/composables/src/`),
             types: resolve(
                 __dirname,
-                `${frontendsPath}packages/types/shopware-6-client/`,
+                `${frontendsPath}/packages/types/shopware-6-client/`,
+            ),
+          },
+          {
+            functions: resolve(__dirname, `${frontendsPath}/packages/helpers/src/`),
+            types: resolve(
+                __dirname,
+                `${frontendsPath}/packages/types/shopware-6-client/`,
             ),
           },
         ],
