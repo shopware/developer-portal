@@ -48,8 +48,8 @@ jobs:
 
       - name: Zip folder
         run: |
-          zip -r embed.zip ./src/ -x \*/node_modules/\* -x \*/.vitepress/\*
-          cd src && zip -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
+          zip -q -r embed.zip ./src/ -x \*/node_modules/\* -x \*/.vitepress/\*
+          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
 
       - name: Upload build
         uses: actions/upload-artifact@v3
@@ -85,7 +85,7 @@ jobs:
 
       - name: Unzip artifact
         run: |
-          unzip -o embed.zip
+          unzip -q -o embed.zip
 
       - name: Test
         run: |
@@ -112,7 +112,7 @@ jobs:
 
       - name: Unzip artifact
         run: |
-          unzip -o embed.zip
+          unzip -q -o embed.zip
 
       - name: Collect Workflow Telemetry
         uses: runforesight/workflow-telemetry-action@v1
@@ -129,7 +129,7 @@ jobs:
       #    cd external && zip -r db-external.zip * -i '*.md'
 
       - name: Zip folder
-        run: zip -r full-build.zip .vitepress/dist/ vercel.json
+        run: zip -q -r full-build.zip .vitepress/dist/ vercel.json
 
       - name: Upload build
         uses: actions/upload-artifact@v3
@@ -171,12 +171,12 @@ jobs:
 
       - name: Unzip artifact
         run: |
-          unzip -o embed.zip
+          unzip -q -o embed.zip
 
       - name: Unzip artifact
         run: |
           mkdir -p .vitepress/dist
-          unzip -o full-build.zip
+          unzip -q -o full-build.zip
           ls -la .vitepress/dist
 
       - name: Test
@@ -231,7 +231,7 @@ jobs:
       - name: Unzip artifact
         run: |
           mkdir -p .vitepress/dist
-          unzip -o full-build.zip
+          unzip -q -o full-build.zip
           ls -la .vitepress/dist
 
       - name: Install Vercel CLI
@@ -270,9 +270,9 @@ jobs:
       - name: Merge base and external sources
         run: |
           mkdir merged
-          unzip -o db-index.zip -d merged
-          true || unzip -o db-external.zip -d merged
-          cd merged; zip -r ../db-merged.zip * 
+          unzip -q -o db-index.zip -d merged
+          true || unzip .q -o db-external.zip -d merged
+          cd merged; zip -q -r ../db-merged.zip * 
 
       - name: Send artifact
         env:
