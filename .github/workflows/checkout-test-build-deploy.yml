@@ -49,7 +49,8 @@ jobs:
       - name: Zip folder
         run: |
           zip -r embed.zip ./src/ -x \*/node_modules/\* -x \*/.vitepress/\*
-          zip -r embed.zip ./src/frontends/_source/
+          du -h -d 1 ./src/frontends/_source/
+          zip -1 -q -r embed.zip ./src/frontends/_source/
           cd src && zip -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
 
       - name: Upload build
