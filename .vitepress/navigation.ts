@@ -94,6 +94,9 @@ const navigation = buildSidebarNav('./src/', [
     '/', // always have root sidebar
     '/resources/meteor-icon-kit/',
     '/release-notes/',
+], [
+    '/docs/assets/',
+    '/docs/snippets/',
 ]);
 
 export default navigation;
