@@ -298,7 +298,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
     ]
   ],
 
-  ignoreDeadLinks: false,
+  ignoreDeadLinks: 'localhostLinks',
 
   themeConfig: {
     ...navigation, // add sidebar and nav config
