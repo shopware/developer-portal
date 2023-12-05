@@ -5,7 +5,7 @@
         <img src="/components/slack-logo.png" />
         <p class="SwagSlackCommunity_intro">Join the Shopware Slack Community and connect with more than <span class="font-black">8,000</span> Developers!</p>
         <p>We've got an incredible community waiting for you! Join our Shopware Slack workspace, where developers from
-          around the world came together to share knowledge, insights, and experiences.</p>
+          around the world come together to share knowledge, insights, and experiences.</p>
         <a href="https://shopwarecommunity.slack.com/" target="_blank" class="btn --primary mt-4">Join the community channel</a>
       </div>
     </div>
