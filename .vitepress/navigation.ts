@@ -66,7 +66,7 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: "Release notes",
-                        link: "/release-notes/6.5/",
+                        link: "/release-notes/",
                     },
                 ]
             },

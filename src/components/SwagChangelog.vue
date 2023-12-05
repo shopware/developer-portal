@@ -8,7 +8,7 @@
         <SwagLabel>{{ release.date }}</SwagLabel>
       </span>
     </a>
-    <a href="/release-notes/6.5/"
+    <a href="/release-notes/"
        class="mt-3 as-link --with-icon SwagChangelog_older">
       Older versions
       <SwagIcon icon="long-arrow-right" type="solid"/>

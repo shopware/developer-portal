@@ -18,8 +18,8 @@ dependencies:
     specifier: 1.0.0-rc.25
     version: 1.0.0-rc.25(@types/node@20.10.3)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.11.0)(terser@5.25.0)(typescript@5.3.2)
   vitepress-shopware-docs:
-    specifier: ^1.0.27
-    version: 1.0.27(@babel/core@7.23.5)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.20.0)(instantsearch.css@8.1.0)(instantsearch.js@4.60.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.12.1)(vue@3.3.10)
+    specifier: ^1.0.28
+    version: 1.0.28(@babel/core@7.23.5)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.20.0)(instantsearch.css@8.1.0)(instantsearch.js@4.60.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.12.1)(vue@3.3.10)
   vue:
     specifier: ^3.3.6
     version: 3.3.10(typescript@5.3.2)
@@ -53,17 +53,17 @@ devDependencies:
     specifier: 1.39.0
     version: 1.39.0
   '@shopware-docs/cli':
-    specifier: ^1.0.27
-    version: 1.0.27
+    specifier: ^1.0.28
+    version: 1.0.28
   '@shopware-docs/storybook':
-    specifier: ^1.0.27
-    version: 1.0.27(@storybook/addon-essentials@7.6.3)(@storybook/addon-interactions@7.6.3)(@storybook/addon-links@7.6.3)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.3)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.3)(@storybook/vue3@7.6.3)(chromatic@7.6.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.3)(vitepress@1.0.0-rc.25)
+    specifier: ^1.0.28
+    version: 1.0.28(@storybook/addon-essentials@7.6.3)(@storybook/addon-interactions@7.6.3)(@storybook/addon-links@7.6.3)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.3)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.3)(@storybook/vue3@7.6.3)(chromatic@7.6.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.3)(vitepress@1.0.0-rc.25)
   '@shopware-docs/vitepress':
-    specifier: ^1.0.27
-    version: 1.0.27(postcss@8.4.32)(vitepress@1.0.0-rc.25)
+    specifier: ^1.0.28
+    version: 1.0.28(postcss@8.4.32)(vitepress@1.0.0-rc.25)
   '@shopware-docs/vitest':
-    specifier: ^1.0.27
-    version: 1.0.27(@playwright/test@1.39.0)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.7.42)(vitepress@1.0.0-rc.25)(vitest@0.34.6)
+    specifier: ^1.0.28
+    version: 1.0.28(@playwright/test@1.39.0)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.7.42)(vitepress@1.0.0-rc.25)(vitest@0.34.6)
   '@storybook/addon-essentials':
     specifier: ^7.5.1
     version: 7.6.3(react-dom@18.2.0)(react@18.2.0)
@@ -117,13 +117,13 @@ devDependencies:
     version: 0.33.0(vitest@0.34.6)
   '@vitest/ui':
     specifier: ^0.34.6
-    version: 0.34.6(vitest@0.34.6)
+    version: 0.34.7(vitest@0.34.6)
   '@vue/test-utils':
     specifier: ^2.4.1
     version: 2.4.3(vue@3.3.10)
   '@vueuse/shared':
     specifier: ^10.5.0
-    version: 10.6.1(vue@3.3.10)
+    version: 10.7.0(vue@3.3.10)
   algoliasearch:
     specifier: ^4.20.0
     version: 4.20.0
@@ -243,7 +243,7 @@ devDependencies:
     version: 2.0.16(mermaid@10.6.1)(vitepress@1.0.0-rc.25)
   vitest:
     specifier: ^0.34.6
-    version: 0.34.6(@vitest/ui@0.34.6)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
+    version: 0.34.6(@vitest/ui@0.34.7)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
   vue-instantsearch:
     specifier: ^4.11.0
     version: 4.12.1(algoliasearch@4.20.0)(vue@3.3.10)
@@ -2367,7 +2367,7 @@ packages:
         optional: true
     dependencies:
       '@types/mdx': 2.0.10
-      '@types/react': 18.2.41
+      '@types/react': 18.2.42
       react: 18.2.0
     dev: true
 
@@ -2435,8 +2435,8 @@ packages:
       playwright: 1.39.0
     dev: true
 
-  /@polka/url@1.0.0-next.23:
-    resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
+  /@polka/url@1.0.0-next.24:
+    resolution: {integrity: sha512-2LuNTFBIO0m7kKIQvvPHN6UE63VjpmL9rnEEaOOaiSPbZK+zUOYIzBAWcED+3XYzhYsd/0mD57VdxAEqqV52CQ==}
 
   /@radix-ui/number@1.0.1:
     resolution: {integrity: sha512-T5gIdVO2mmPW3NNhjNgEP3cqMXjXL9UbO0BzWcXfvdBs+BohbQxvd/K5hSVKmn9/lbTdsQVKbUcP5WLCwvUbBg==}
@@ -3484,13 +3484,13 @@ packages:
       js-md5: 0.7.3
     dev: false
 
-  /@shopware-docs/cli@1.0.27:
-    resolution: {integrity: sha512-lCLRpJMnVlhoa7LPGieeMDyKVSVeF07bwwfiFq+DjGFpOoWUt3CJHJEjTrFH5oQo+AcepVpbKq3EYicJMumqZQ==}
+  /@shopware-docs/cli@1.0.28:
+    resolution: {integrity: sha512-T4pU5WKmyl/DkSawE0ZqM8QO7VGRHwLlO/OKWqhn9zv8rI0cElgGONdos3WIztjIGHw1CX4sYOKnGkXpO30Yug==}
     hasBin: true
     dev: true
 
-  /@shopware-docs/storybook@1.0.27(@storybook/addon-essentials@7.6.3)(@storybook/addon-interactions@7.6.3)(@storybook/addon-links@7.6.3)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.3)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.3)(@storybook/vue3@7.6.3)(chromatic@7.6.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.3)(vitepress@1.0.0-rc.25):
-    resolution: {integrity: sha512-0PkpC2GaUi5Wt6eCpWTosR5ddTSnzKKX8yD1rVRbEw3X85F4bJ3kHmHWgiHMZ5qDK2DRD2nNe+U+OWBgvv9Kdg==}
+  /@shopware-docs/storybook@1.0.28(@storybook/addon-essentials@7.6.3)(@storybook/addon-interactions@7.6.3)(@storybook/addon-links@7.6.3)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.3)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.3)(@storybook/vue3@7.6.3)(chromatic@7.6.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.3)(vitepress@1.0.0-rc.25):
+    resolution: {integrity: sha512-YsBm0k3uUog9z0h4toEBYLYHbEIrGzTh0fuvB2KA8K1HZKbN1oj6E/aDRXy64wLwy0+d2+7wSxv1Whu+pB6Uww==}
     peerDependencies:
       '@storybook/addon-essentials': ^7.0.10
       '@storybook/addon-interactions': ^7.0.10
@@ -3544,8 +3544,8 @@ packages:
       - vite
     dev: true
 
-  /@shopware-docs/vitepress@1.0.27(postcss@8.4.32)(vitepress@1.0.0-rc.25):
-    resolution: {integrity: sha512-X4sRFUmLbMoT+ce6pwH7Q0Rye9LDXmCPFQFIroQbE7FlSnFegc0wmLloUiLN8BYjDhC6qLB4VJKXVXpzrtHIjQ==}
+  /@shopware-docs/vitepress@1.0.28(postcss@8.4.32)(vitepress@1.0.0-rc.25):
+    resolution: {integrity: sha512-vmOL8QJwcv1a6tqZJXiLTj+cS0yfuTcaR88eAG5384lLcns6U+8Bs8f8vDE67bKYiWTJRf8eNY5H86hVmDgRag==}
     peerDependencies:
       vitepress: ^1.0.0-beta.1
     dependencies:
@@ -3564,8 +3564,8 @@ packages:
       - vite
     dev: true
 
-  /@shopware-docs/vitest@1.0.27(@playwright/test@1.39.0)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.7.42)(vitepress@1.0.0-rc.25)(vitest@0.34.6):
-    resolution: {integrity: sha512-DIW9rNf2SAlw5WN3OpbmhkTLBWklDtht3NnJRbmfqnh/WBcEeVYSe/8Kmswx+xz3+5z8+f7xkeC0T326JM5Xrw==}
+  /@shopware-docs/vitest@1.0.28(@playwright/test@1.39.0)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.7.42)(vitepress@1.0.0-rc.25)(vitest@0.34.6):
+    resolution: {integrity: sha512-foK1+dgYuM2wH3eHCiHoykJMEF9tcTVWIROYkwQ6jD1IIxgsDELfC2bD5RU4d1diKBOHc103ASANwmLPykGU9Q==}
     peerDependencies:
       '@playwright/test': ^1.33.0
       '@vitest/coverage-c8': ^0.31.0
@@ -3586,7 +3586,7 @@ packages:
       vite-plugin-inspect: 0.7.42
       vitepress: 1.0.0-rc.25(@types/node@20.10.3)(fuse.js@6.6.2)(less@4.2.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.11.0)(terser@5.25.0)(typescript@5.3.2)
       vitepress-shopware-docs: link:../..
-      vitest: 0.34.6(@vitest/ui@0.34.6)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
+      vitest: 0.34.6(@vitest/ui@0.34.7)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
     transitivePeerDependencies:
       - '@unocss/webpack'
       - debug
@@ -3617,11 +3617,11 @@ packages:
       '@stoplight/json-schema-ref-parser': 9.2.7
       '@stoplight/json-schema-sampler': 0.2.3
       '@stoplight/json-schema-tree': 2.3.1
-      '@stoplight/json-schema-viewer': 4.14.0(@babel/core@7.23.5)(@stoplight/markdown-viewer@5.6.0)(@stoplight/mosaic-code-viewer@1.46.1)(@stoplight/mosaic@1.46.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.46.1)(@stoplight/mosaic@1.46.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic-code-editor': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic-code-viewer': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/json-schema-viewer': 4.14.0(@babel/core@7.23.5)(@stoplight/markdown-viewer@5.6.0)(@stoplight/mosaic-code-viewer@1.48.0)(@stoplight/mosaic@1.48.0)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.48.0)(@stoplight/mosaic@1.48.0)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic-code-editor': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic-code-viewer': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/path': 1.3.2
       '@stoplight/react-error-boundary': 2.0.0(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/types': 14.0.0
@@ -3678,8 +3678,8 @@ packages:
         optional: true
     dependencies:
       '@stoplight/elements-core': 7.15.1(@babel/core@7.23.5)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.46.1)(@stoplight/mosaic@1.46.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.48.0)(@stoplight/mosaic@1.48.0)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/path': 1.3.2
       '@stoplight/types': 14.0.0
       classnames: 2.3.2
@@ -3789,7 +3789,7 @@ packages:
       magic-error: 0.0.1
     dev: false
 
-  /@stoplight/json-schema-viewer@4.14.0(@babel/core@7.23.5)(@stoplight/markdown-viewer@5.6.0)(@stoplight/mosaic-code-viewer@1.46.1)(@stoplight/mosaic@1.46.1)(react-dom@18.2.0)(react@18.2.0):
+  /@stoplight/json-schema-viewer@4.14.0(@babel/core@7.23.5)(@stoplight/markdown-viewer@5.6.0)(@stoplight/mosaic-code-viewer@1.48.0)(@stoplight/mosaic@1.48.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-cI7HmlsCFAXcKKYDsLJsA7g5PyF1xgM0pe4qOxH6p63UKxnFuhS1mDANURAzWiNTECVz+DfFmWqcLdfpCJoEQw==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -3808,9 +3808,9 @@ packages:
     dependencies:
       '@stoplight/json': 3.21.0
       '@stoplight/json-schema-tree': 2.3.1
-      '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.46.1)(@stoplight/mosaic@1.46.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic-code-viewer': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/markdown-viewer': 5.6.0(@stoplight/mosaic-code-viewer@1.48.0)(@stoplight/mosaic@1.48.0)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic-code-viewer': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/react-error-boundary': 2.0.0(react-dom@18.2.0)(react@18.2.0)
       '@types/json-schema': 7.0.15
       classnames: 2.3.2
@@ -3853,7 +3853,7 @@ packages:
       wolfy87-eventemitter: 5.2.9
     dev: false
 
-  /@stoplight/markdown-viewer@5.6.0(@stoplight/mosaic-code-viewer@1.46.1)(@stoplight/mosaic@1.46.1)(react-dom@18.2.0)(react@18.2.0):
+  /@stoplight/markdown-viewer@5.6.0(@stoplight/mosaic-code-viewer@1.48.0)(@stoplight/mosaic@1.48.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-vKHn1Bv9nafBYQWtNLlrRZ1aKqFRTOdfWUAhCSV1ZH4iqxGa+O1OWWTBbeOF5du8vcrWu1tTrXoCXkZjmq1NlA==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -3871,8 +3871,8 @@ packages:
     dependencies:
       '@rehooks/component-size': 1.0.3(react@18.2.0)
       '@stoplight/markdown': 3.2.0
-      '@stoplight/mosaic': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic-code-viewer': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic-code-viewer': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/react-error-boundary': 2.0.0(react-dom@18.2.0)(react@18.2.0)
       deepmerge: 4.3.1
       hast-to-hyperscript: 10.0.3
@@ -3913,8 +3913,8 @@ packages:
       - supports-color
     dev: false
 
-  /@stoplight/mosaic-code-editor@1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-rG2Zhwe0P9KJ8Lv/s7u4zsXQwX6znYz0DSs+Cq1cVJCgztOpAs1x6ISmOWdVLFJLiPioElrY+sCAwjxJcWnUuQ==}
+  /@stoplight/mosaic-code-editor@1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-gPcSgRrz1tgk7Bj87rnZC1Q5JylrIwTFdzhNed+7KWi2mBg2IWneTm59YWwk9iCHWygEUT2gVzukLNhmixC0OQ==}
     peerDependencies:
       react: '>= 16.14'
     peerDependenciesMeta:
@@ -3928,8 +3928,8 @@ packages:
       '@react-types/radio': 3.1.2(react@18.2.0)
       '@react-types/shared': 3.9.0(react@18.2.0)
       '@react-types/switch': 3.1.2(react@18.2.0)
-      '@stoplight/mosaic': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
-      '@stoplight/mosaic-code-viewer': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic-code-viewer': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/types': 13.20.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
@@ -3952,8 +3952,8 @@ packages:
       - react-dom
     dev: false
 
-  /@stoplight/mosaic-code-viewer@1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-upz74Tq4p6/heg9fWYvFzlcmaajzgXybw9I4/Y8oFTxAkkOlVkHLiUKdUlZUWxWUZQNJXFSK0EMMIf+qcWZv2A==}
+  /@stoplight/mosaic-code-viewer@1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-8SPrSc350QeRs+FyB812ibURL3vLwQpsliYA29qYlpw1gbTSe54xwaoQTFwnAtc6FTJ0GmLU3+C4AaPSdDmazQ==}
     peerDependencies:
       react: '>= 16.14'
     peerDependenciesMeta:
@@ -3967,7 +3967,7 @@ packages:
       '@react-types/radio': 3.1.2(react@18.2.0)
       '@react-types/shared': 3.9.0(react@18.2.0)
       '@react-types/switch': 3.1.2(react@18.2.0)
-      '@stoplight/mosaic': 1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@stoplight/mosaic': 1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/types': 13.20.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
@@ -3990,8 +3990,8 @@ packages:
       - react-dom
     dev: false
 
-  /@stoplight/mosaic@1.46.1(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-ziMwdgbB77jvOoQEHr/IyqheaCzVGSkfTeBv0t6RJGADDkp+Oj8ItwDECXP7CA12VfxCgbKrGb33iyHCE/tVYA==}
+  /@stoplight/mosaic@1.48.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-8/y6+HXieKDMYDS35GHFJrHbmJvWYn/HYplrXJiWLpgjUGN7Dt+aBIH/Wjqn+PQAtj/zCIBLGvXqjq6fmgSFAA==}
     peerDependencies:
       react: '>= 16.14'
     peerDependenciesMeta:
@@ -5340,8 +5340,8 @@ packages:
       csstype: 3.1.2
     dev: false
 
-  /@types/react@18.2.41:
-    resolution: {integrity: sha512-CwOGr/PiLiNBxEBqpJ7fO3kocP/2SSuC9fpH5K7tusrg4xPSRT/193rzolYwQnTN02We/ATXKnb6GqA5w4fRxw==}
+  /@types/react@18.2.42:
+    resolution: {integrity: sha512-c1zEr96MjakLYus/wPnuWDo1/zErfdU9rNsIGmE+NV71nx88FG9Ttgo5dqorXTu/LImX2f63WBP986gJkMPNbA==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -5869,7 +5869,7 @@ packages:
       magic-string: 0.30.5
       picocolors: 1.0.0
       std-env: 3.6.0
-      vitest: 0.34.6(@vitest/ui@0.34.6)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
+      vitest: 0.34.6(@vitest/ui@0.34.7)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
     dev: true
 
   /@vitest/expect@0.34.6:
@@ -5902,23 +5902,31 @@ packages:
       tinyspy: 2.2.0
     dev: true
 
-  /@vitest/ui@0.34.6(vitest@0.34.6):
-    resolution: {integrity: sha512-/fxnCwGC0Txmr3tF3BwAbo3v6U2SkBTGR9UB8zo0Ztlx0BTOXHucE0gDHY7SjwEktCOHatiGmli9kZD6gYSoWQ==}
+  /@vitest/ui@0.34.7(vitest@0.34.6):
+    resolution: {integrity: sha512-iizUu9R5Rsvsq8FtdJ0suMqEfIsIIzziqnasMHe4VH8vG+FnZSA3UAtCHx6rLeRupIFVAVg7bptMmuvMcsn8WQ==}
     peerDependencies:
       vitest: '>=0.30.1 <1'
     dependencies:
-      '@vitest/utils': 0.34.6
+      '@vitest/utils': 0.34.7
       fast-glob: 3.3.2
       fflate: 0.8.1
       flatted: 3.2.9
       pathe: 1.1.1
       picocolors: 1.0.0
       sirv: 2.0.3
-      vitest: 0.34.6(@vitest/ui@0.34.6)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
+      vitest: 0.34.6(@vitest/ui@0.34.7)(less@4.2.0)(sass@1.69.5)(terser@5.25.0)
     dev: true
 
   /@vitest/utils@0.34.6:
     resolution: {integrity: sha512-IG5aDD8S6zlvloDsnzHw0Ut5xczlF+kv2BOTo+iXfPr54Yhi5qbVOgGB1hZaVq4iJ4C/MZ2J0y15IlsV/ZcI0A==}
+    dependencies:
+      diff-sequences: 29.6.3
+      loupe: 2.3.7
+      pretty-format: 29.7.0
+    dev: true
+
+  /@vitest/utils@0.34.7:
+    resolution: {integrity: sha512-ziAavQLpCYS9sLOorGrFFKmy2gnfiNU0ZJ15TsMz/K92NAPS/rp9K4z6AJQQk5Y8adCy4Iwpxy7pQumQ/psnRg==}
     dependencies:
       diff-sequences: 29.6.3
       loupe: 2.3.7
@@ -6015,19 +6023,19 @@ packages:
       vue-component-type-helpers: 1.8.24
     dev: true
 
-  /@vueuse/core@10.6.1(vue@3.3.10):
-    resolution: {integrity: sha512-Pc26IJbqgC9VG1u6VY/xrXXfxD33hnvxBnKrLlA2LJlyHII+BSrRoTPJgGYq7qZOu61itITFUnm6QbacwZ4H8Q==}
+  /@vueuse/core@10.7.0(vue@3.3.10):
+    resolution: {integrity: sha512-4EUDESCHtwu44ZWK3Gc/hZUVhVo/ysvdtwocB5vcauSV4B7NiGY5972WnsojB3vRNdxvAt7kzJWE2h9h7C9d5w==}
     dependencies:
       '@types/web-bluetooth': 0.0.20
-      '@vueuse/metadata': 10.6.1
-      '@vueuse/shared': 10.6.1(vue@3.3.10)
+      '@vueuse/metadata': 10.7.0
+      '@vueuse/shared': 10.7.0(vue@3.3.10)
       vue-demi: 0.14.6(vue@3.3.10)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
 
-  /@vueuse/integrations@10.6.1(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.3.10):
-    resolution: {integrity: sha512-mPDupuofMJ4DPmtX/FfP1MajmWRzYDv8WSaTCo8LQ5kFznjWgmUQ16ApjYqgMquqffNY6+IRMdMgosLDRZOSZA==}
+  /@vueuse/integrations@10.7.0(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.3.10):
+    resolution: {integrity: sha512-rxiMYgS+91n93qXpHZF9NbHhppWY6IJyVTDxt4acyChL0zZVx7P8FAAfpF1qVK8e4wfjerhpEiMJ0IZ1GWUZ2A==}
     peerDependencies:
       async-validator: '*'
       axios: '*'
@@ -6067,8 +6075,8 @@ packages:
       universal-cookie:
         optional: true
     dependencies:
-      '@vueuse/core': 10.6.1(vue@3.3.10)
-      '@vueuse/shared': 10.6.1(vue@3.3.10)
+      '@vueuse/core': 10.7.0(vue@3.3.10)
+      '@vueuse/shared': 10.7.0(vue@3.3.10)
       focus-trap: 7.5.4
       fuse.js: 6.6.2
       vue-demi: 0.14.6(vue@3.3.10)
@@ -6076,11 +6084,11 @@ packages:
       - '@vue/composition-api'
       - vue
 
-  /@vueuse/metadata@10.6.1:
-    resolution: {integrity: sha512-qhdwPI65Bgcj23e5lpGfQsxcy0bMjCAsUGoXkJ7DsoeDUdasbZ2DBa4dinFCOER3lF4gwUv+UD2AlA11zdzMFw==}
+  /@vueuse/metadata@10.7.0:
+    resolution: {integrity: sha512-GlaH7tKP2iBCZ3bHNZ6b0cl9g0CJK8lttkBNUX156gWvNYhTKEtbweWLm9rxCPIiwzYcr/5xML6T8ZUEt+DkvA==}
 
-  /@vueuse/shared@10.6.1(vue@3.3.10):
-    resolution: {integrity: sha512-TECVDTIedFlL0NUfHWncf3zF9Gc4VfdxfQc8JFwoVZQmxpONhLxFrlm0eHQeidHj4rdTPL3KXJa0TZCk1wnc5Q==}
+  /@vueuse/shared@10.7.0(vue@3.3.10):
+    resolution: {integrity: sha512-kc00uV6CiaTdc3i1CDC4a3lBxzaBE9AgYNtFN87B5OOscqeWElj/uza8qVDmk7/U8JbqoONLbtqiLJ5LGRuqlw==}
     dependencies:
       vue-demi: 0.14.6(vue@3.3.10)
     transitivePeerDependencies:
@@ -6699,7 +6707,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001566
-      electron-to-chromium: 1.4.601
+      electron-to-chromium: 1.4.603
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
 
@@ -7858,8 +7866,8 @@ packages:
       jake: 10.8.7
     dev: true
 
-  /electron-to-chromium@1.4.601:
-    resolution: {integrity: sha512-SpwUMDWe9tQu8JX5QCO1+p/hChAi9AE9UpoC3rcHVc+gdCGlbT3SGb5I1klgb952HRIyvt9wZhSz9bNBYz9swA==}
+  /electron-to-chromium@1.4.603:
+    resolution: {integrity: sha512-Dvo5OGjnl7AZTU632dFJtWj0uJK835eeOVQIuRcmBmsFsTNn3cL05FqOyHAfGQDIoHfLhyJ1Tya3PJ0ceMz54g==}
 
   /elkjs@0.8.2:
     resolution: {integrity: sha512-L6uRgvZTH+4OF5NE/MBbzQx/WYpru1xCBE9respNj6qznEewGUIfhzmm7horWWxbNO2M0WckQypGctR8lH79xQ==}
@@ -8391,8 +8399,8 @@ packages:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
     dev: true
 
-  /flow-parser@0.223.2:
-    resolution: {integrity: sha512-K68f4BNDmz+fC2aPi/DnckpNQbJvlN10srj2dUDrmUpyVCg48MPOyPMIrxwYPBRO+DtwSTYMF4wXaK3lRrDTfQ==}
+  /flow-parser@0.223.3:
+    resolution: {integrity: sha512-9KxxDKSB22ovMpSULbOL/QAQGPN6M0YMS3PubQvB0jVc4W7QP6VhasIVic7MzKcJSh0BAVs4J6SZjoH0lDDNlg==}
     engines: {node: '>=0.4.0'}
     dev: true
 
@@ -9766,7 +9774,7 @@ packages:
       '@babel/register': 7.22.15(@babel/core@7.23.5)
       babel-core: 7.0.0-bridge.0(@babel/core@7.23.5)
       chalk: 4.1.2
-      flow-parser: 0.223.2
+      flow-parser: 0.223.3
       graceful-fs: 4.2.11
       micromatch: 4.0.5
       neo-async: 2.6.2
@@ -12642,7 +12650,7 @@ packages:
     resolution: {integrity: sha512-O9jm9BsID1P+0HOi81VpXPoDxYP374pkOLzACAoyUQ/3OUVndNpsz6wMnY2z+yOxzbllCKZrM+9QrWsv4THnyA==}
     engines: {node: '>= 10'}
     dependencies:
-      '@polka/url': 1.0.0-next.23
+      '@polka/url': 1.0.0-next.24
       mrmime: 1.0.1
       totalist: 3.0.1
 
@@ -13905,8 +13913,8 @@ packages:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
 
-  /vitepress-shopware-docs@1.0.27(@babel/core@7.23.5)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.20.0)(instantsearch.css@8.1.0)(instantsearch.js@4.60.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.12.1)(vue@3.3.10):
-    resolution: {integrity: sha512-4jL6yACri8GRMBnCmMtYVfqfDfSFQ8DA/4ahvevbZ42BHd5fpI5HDclaeLWt2yaAiAZ6OwHyfM3W2R7jE3Av1Q==}
+  /vitepress-shopware-docs@1.0.28(@babel/core@7.23.5)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.20.0)(instantsearch.css@8.1.0)(instantsearch.js@4.60.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.12.1)(vue@3.3.10):
+    resolution: {integrity: sha512-lfVJ7aBhwgpZFywJTs0AwrAaTbdtOCa3F1I3yB3NXT+0GZGeXatNjTZjBlNC8rTc/MJ+8WuLF6tgDYaeAfr3Sg==}
     peerDependencies:
       '@docsearch/css': ^3.5.2
       '@docsearch/js': ^3.5.2
@@ -13921,7 +13929,7 @@ packages:
       '@shopware-ag/meteor-icon-kit': 5.2.0
       '@stoplight/elements-dev-portal': 1.18.1(@babel/core@7.23.5)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/json-schema-generator': 1.0.2
-      '@vueuse/core': 10.6.1(vue@3.3.10)
+      '@vueuse/core': 10.7.0(vue@3.3.10)
       algoliasearch: 4.20.0
       axios: 1.6.2
       body-scroll-lock: 3.1.5
@@ -13986,8 +13994,8 @@ packages:
       '@types/markdown-it': 13.0.7
       '@vitejs/plugin-vue': 4.3.1(vite@4.5.1)(vue@3.3.10)
       '@vue/devtools-api': 6.5.1
-      '@vueuse/core': 10.6.1(vue@3.3.10)
-      '@vueuse/integrations': 10.6.1(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.3.10)
+      '@vueuse/core': 10.7.0(vue@3.3.10)
+      '@vueuse/integrations': 10.7.0(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.3.10)
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
@@ -14022,7 +14030,7 @@ packages:
       - typescript
       - universal-cookie
 
-  /vitest@0.34.6(@vitest/ui@0.34.6)(less@4.2.0)(sass@1.69.5)(terser@5.25.0):
+  /vitest@0.34.6(@vitest/ui@0.34.7)(less@4.2.0)(sass@1.69.5)(terser@5.25.0):
     resolution: {integrity: sha512-+5CALsOvbNKnS+ZHMXtuUC7nL8/7F1F2DnHGjSsszX8zCjWSSviphCb/NuS9Nzf4Q03KyyDRBAXhF/8lffME4Q==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -14060,7 +14068,7 @@ packages:
       '@vitest/runner': 0.34.6
       '@vitest/snapshot': 0.34.6
       '@vitest/spy': 0.34.6
-      '@vitest/ui': 0.34.6(vitest@0.34.6)
+      '@vitest/ui': 0.34.7(vitest@0.34.6)
       '@vitest/utils': 0.34.6
       acorn: 8.11.2
       acorn-walk: 8.3.0
