@@ -180,20 +180,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
   srcExclude: [
       // git sources
       "**/_source/**",
-      // table of contents
-      "docs/SUMMARY.md",
       // template
       "docs/resources/references/adr/YYYY-MM-DD-template.md",
-      // {% api
-      "docs/v6.3/guides/plugins/apps/app-base-guide.md",
-      "docs/v6.3/resources/references/app-reference/payment-reference.md",
-      // Missed semicolon
-      'docs/v6.3/guides/plugins/plugins/plugin-fundamentals/add-custom-commands.md',
-      // path() is not a function in twig codeblock
-      'docs/v6.3/products/extensions/b2b-suite/guides/storefront/ajax-panel.md',
-      // {% block
-      'docs/v6.3/guides/plugins/plugins/administration/customizing-components.md',
-      // unknown
       'docs/v6.3/guides/plugins/plugins/content/cms/add-cms-block.md',
       'docs/v6.3/guides/plugins/plugins/framework/data-handling/add-data-translations.md',
       'docs/v6.3/guides/plugins/themes/add-css-js-to-theme.md',
