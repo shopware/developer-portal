@@ -404,7 +404,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       topLevelAwait(),
     ],
     worker: {
-      plugins: [
+      plugins: () => [
         topLevelAwait()
       ]
     },
