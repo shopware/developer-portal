@@ -96,4 +96,6 @@ const navigation = buildSidebarNav('./src/', [
     '/release-notes/',
 ]);
 
+navigation.sidebar['/frontends/'] = (await import("../src/frontends/_source/apps/docs/.vitepress/sidebar")).sidebar;
+
 export default navigation;
