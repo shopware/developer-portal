@@ -5,7 +5,7 @@ set -e
 BRANCH_DOCS=main
 BRANCH_DOCS_64=v6.4
 BRANCH_DOCS_63=v6.3.0
-BRANCH_FRONTENDS=main
+BRANCH_FRONTENDS=DX-devhub
 BRANCH_ADMIN_EXTENSION_SDK=DX-223
 BRANCH_METEOR_ICON_KIT=DX-223
 BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
@@ -53,13 +53,14 @@ fi
  --dst docs/v6.3 \
  --org ${ORG_DOCS_63:-shopware}
 
-#./docs-cli.cjs clone \
-# --ci \
-# --repository shopware/frontends \
-# --branch ${BRANCH_FRONTENDS:-main} \
-# --src apps/docs/src \
-# --dst frontends \
-# --org ${ORG_FRONTENDS:-shopware}
+./docs-cli.cjs clone \
+ --ci \
+ --keep \
+ --repository shopware/frontends \
+ --branch ${BRANCH_FRONTENDS:-main} \
+ --src apps/docs/src \
+ --dst frontends \
+ --org ${ORG_FRONTENDS:-shopware}
 
 #./docs-cli.cjs clone \
 # --ci \

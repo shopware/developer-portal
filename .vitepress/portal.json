@@ -56,7 +56,7 @@
       "dst": "frontends",
       "branch": [
         "env.BRANCH_FRONTENDS",
-        "main"
+        "DX-devhub"
       ],
       "org": [
         "env.ORG_FRONTENDS",

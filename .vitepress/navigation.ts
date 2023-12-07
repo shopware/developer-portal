@@ -14,7 +14,7 @@ const navigation = buildSidebarNav('./src/', [
         text: 'Integrations',
     },
     {
-        link: 'https://frontends.shopware.com/',
+        link: 'https://frontends.shopware.com',
         text: 'Frontends',
         repo: 'shopware/frontends',
     },
@@ -98,5 +98,7 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/assets/',
     '/docs/snippets/',
 ]);
+
+navigation.sidebar['/frontends/'] = (await import("../src/frontends/_source/apps/docs/.vitepress/sidebar")).sidebar;
 
 export default navigation;

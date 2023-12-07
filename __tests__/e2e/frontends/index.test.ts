@@ -1,6 +1,6 @@
 import {Embedded} from "../page-objects/embedded";
 
-describe.skip('render correct content', async () => {
+describe('render correct content', async () => {
     let embeddedPage: Embedded;
 
     beforeAll(async () => {
@@ -8,11 +8,11 @@ describe.skip('render correct content', async () => {
         await embeddedPage.open('/frontends/')
     })
 
-    test('active navigation', async () => {
+    test.skip('active navigation', async () => {
         await embeddedPage.hasActiveNavigation('Frontends');
     })
 
-    test('has sidebar', async () => {
+    test.skip('has sidebar', async () => {
         await embeddedPage.hasSidebarSections(5);
     })
 
@@ -20,7 +20,7 @@ describe.skip('render correct content', async () => {
         await embeddedPage.hasGitHubLink('shopware/frontends');
     })
 
-    test('all sub-pages work', async () => {
+    test.skip('all sub-pages work', async () => {
         await embeddedPage.validateSidebar();
     })
 })

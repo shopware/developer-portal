@@ -11,6 +11,8 @@ import Inspect from "vite-plugin-inspect";
 import liveReload from 'vite-plugin-live-reload'
 import { withMermaid } from "vitepress-plugin-mermaid";
 import topLevelAwait from "vite-plugin-top-level-await";
+//import { TsFunctionDescription, TsFunctionsList } from "@shopware-pwa/typer";
+import { TsFunctionDescription, TsFunctionsList } from "@shopware-docs/typer";
 
 import {copyAdditionalAssets, createSitemap, storeRedirects} from "../node_modules/@shopware-docs/vitepress/src/helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
@@ -26,7 +28,7 @@ import {
 
 const sections: SwagSectionsConfig[] = [
   {
-    title: 'Frontends',
+    title: 'Composable Frontends',
     matches: [
       '/frontends/',
     ],
@@ -171,6 +173,8 @@ const usercentrics = (name: string) => (usercentricsActive ? {
   type: 'text/plain',
 } : {});
 
+const frontendsPath = "../src/frontends/_source";
+
 export default withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -301,6 +305,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     ...navigation, // add sidebar and nav config
 
+    outline: [2, 3],
+
     algolia: {
       indexName: "beta-developer-shopware",
       appId: "J1Y01X9HGM",
@@ -391,7 +397,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       ViteRequireContext.default({
         projectBasePath: `${process.cwd()}/src`
       }),
-      MarkdownTransform(),
+      //MarkdownTransform(),
       CssCleanup({
         cleanup: [
             ...baseCleanup,
@@ -402,6 +408,40 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         '../node_modules/vitepress-shopware-docs/**/*.*',
       ]),
       topLevelAwait(),
+      TsFunctionsList({
+        rootDir: resolve(__dirname, frontendsPath),
+        prefix: 'frontends/',
+      }),
+      TsFunctionDescription({
+        rootDir: resolve(__dirname, frontendsPath),
+        dirs: [
+          {
+            autogenExampleAlias: "api-client",
+            functions: resolve(
+                __dirname,
+                `${frontendsPath}/packages/api-client/src/services/`,
+            ),
+            types: resolve(
+                __dirname,
+                `${frontendsPath}/packages/types/shopware-6-client/`,
+            ),
+          },
+          {
+            functions: resolve(__dirname, `${frontendsPath}/packages/composables/src/`),
+            types: resolve(
+                __dirname,
+                `${frontendsPath}/packages/types/shopware-6-client/`,
+            ),
+          },
+          {
+            functions: resolve(__dirname, `${frontendsPath}/packages/helpers/src/`),
+            types: resolve(
+                __dirname,
+                `${frontendsPath}/packages/types/shopware-6-client/`,
+            ),
+          },
+        ],
+      }),
     ],
     worker: {
       plugins: () => [
