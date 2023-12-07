@@ -2,6 +2,10 @@ import {buildSidebarNav} from "../node_modules/vitepress-shopware-docs/src/shopw
 
 const navigation = buildSidebarNav('./src/', [
     {
+        link: '/docs/',
+        text: 'Docs',
+    },
+    {
         link: '/apps.html',
         text: 'Apps',
     },
@@ -11,7 +15,7 @@ const navigation = buildSidebarNav('./src/', [
     },
     {
         link: '/integrations.html',
-        text: 'Integrations',
+        text: 'APIs',
     },
     {
         link: 'https://frontends.shopware.com',
@@ -86,7 +90,7 @@ const navigation = buildSidebarNav('./src/', [
         ]
     },
 ], [
-    '/docs/',
+    //'/docs/',
     '/docs/v6.4/',
     '/docs/v6.3/',
     //'/resources/admin-extension-sdk/',
