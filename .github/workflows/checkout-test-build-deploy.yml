@@ -182,6 +182,7 @@ jobs:
       - name: Test
         run: |
           export NODE_OPTIONS="--max-old-space-size=8096"
+          pnpm -C ./src/frontends/_source/ i
           pnpm run test:build
 
 #  chromatic:
