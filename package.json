@@ -26,7 +26,7 @@
     "cross-env": "^7.0.3",
     "terser": "^5.25.0",
     "vitepress": "1.0.0-rc.25",
-    "vitepress-shopware-docs": "1.1.0-alpha.5",
+    "vitepress-shopware-docs": "1.1.0-alpha.6",
     "vue": "^3.3.10"
   },
   "devDependencies": {
@@ -40,10 +40,10 @@
     "@originjs/vite-plugin-require-context": "^1.0.9",
     "@playwright/test": "1.39.0",
     "@shopware-docs/cli": "1.1.0-alpha.5",
-    "@shopware-docs/storybook": "1.1.0-alpha.5",
-    "@shopware-docs/typer": "1.1.0-alpha.5",
-    "@shopware-docs/vitepress": "1.1.0-alpha.5",
-    "@shopware-docs/vitest": "1.1.0-alpha.5",
+    "@shopware-docs/storybook": "1.1.0-alpha.6",
+    "@shopware-docs/typer": "1.1.0-alpha.6",
+    "@shopware-docs/vitepress": "1.1.0-alpha.6",
+    "@shopware-docs/vitest": "1.1.0-alpha.6",
     "@storybook/addon-essentials": "^7.6.3",
     "@storybook/addon-interactions": "^7.6.3",
     "@storybook/addon-links": "^7.6.3",

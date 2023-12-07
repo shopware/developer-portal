@@ -11,29 +11,42 @@ In this introduction, you will learn how to:
 - [Preview your changes](#4-preview-your-changes)
 - [Commit, merge and deploy your changes](#5-commit-merge-and-deploy-your-changes)
 
+## TL;DR>
+
+Try running the following commands in any repo that is embedded in DevHub:
+
+```
+$ pnpm docs:env
+$ pnpm docs:link
+$ pnpm docs:preview
+```
+
 ## 0. Prerequisites
 
- - Node v18
+- Node v18
+
+_Note: These commands has been added to feature branches in all repositories and may not have been merged yet.
+It is advisable to check out the correct branch before proceeding. Alternatively, you can directly call the CLI by using
+the command `../developer-portal/docs-cli.cjs manage`._
 
 ## 1. Checkout the developer-portal repository
 
 The `developer-portal` repository allows you to set up a local environment for
-the [docs](https://developer.shopware.com).
-To get started, follow these steps:
-
-- clone the repository to your local machine,
-- install all necessary dependencies,
-- and build the CLI.
+the [DevHub](https://developer.shopware.com). Embedded repositories have a `docs:env` npm script available for setting
+up the environment in your local `../developer-portal` repository - it serves as a shortcut for cloning or pulling the
+`developer-portal` repository to your local machine and installing npm dependencies.
 
 ```bash
+# from an embedded repository
+$ pnpm docs:env
+# or manually
 $ cd /www/
 $ git clone ssh://git@github.com/shopware/developer-portal.git
 $ cd developer-portal
 $ pnpm i
-
 ```
 
-Validate CLI:
+Check the CLI:
 
 ```bash
 # from the /www/developer-portal/ dir
@@ -49,7 +62,6 @@ Typically, you will already have your repository checked out on your computer. F
 $ cd /www/
 $ git clone ssh://git@github.com/shopware/frontends.git
 $ cd frontends
-
 ```
 
 ## 3. Link your local docs into the developer-portal
@@ -67,11 +79,6 @@ environment.
 $ pnpm docs:link
 
 ```
-
-_Note: The `docs:link` command has been added to feature branches in all repositories and may not have been merged yet.
-It is advisable to check out the correct branch before proceeding. Alternatively, you can directly call the CLI by using
-the command `../developer-portal/docs-cli link` and pass the `src` and `dst` options such as
-`--src apps/docs/src --dst frontends`._
 
 ## 4. Preview your changes
 
@@ -153,12 +160,12 @@ $ pnpm docs:manage
 
 **Pull the latest version**
 
-This command is just an alias for pulling changes from remote, installing NPM dependencies and rebuilding the CLI.
+This command is just an alias for pulling changes from remote and installing NPM dependencies.
 
 ```bash
 $ ./docs-cli.cjs pull
 # or
-$ pnpm docs:pull
+$ pnpm docs:env
 
 ```
 
