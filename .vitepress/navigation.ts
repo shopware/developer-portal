@@ -99,6 +99,17 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/snippets/',
 ]);
 
-navigation.sidebar['/frontends/'] = (await import("../src/frontends/_source/apps/docs/.vitepress/sidebar")).sidebar;
+const prefixItems = (items, prefix) => items.map(item => {
+    if (item.link?.startsWith('/')) {
+        item.link = `${prefix}${item.link}`;
+    }
+    item.items = prefixItems(item.items || [], prefix);
+    return item;
+})
+
+navigation.sidebar['/frontends/'] = prefixItems(
+    (await import("../src/frontends/_source/apps/docs/.vitepress/sidebar")).sidebar,
+    '/frontends'
+);
 
 export default navigation;
