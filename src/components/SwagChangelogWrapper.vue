@@ -75,7 +75,13 @@ const intro = new DOMParser().parseFromString(content, "text/html").querySelecto
 
 <style lang="scss">
 .SwagChangelogWrapper {
-  @apply bg-[var(--sw-c-gray-50)];
+  &.SwagChangelogWrapper {
+    @apply bg-[var(--sw-c-gray-50)];
+    .dark & {
+      @apply bg-[var(--sw-c-gray-dark-700)];
+    }
+  }
+
   &_grid {
     @apply grid;
     @media (min-width: 960px) {
