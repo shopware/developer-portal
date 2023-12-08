@@ -15,7 +15,7 @@ import {slugify} from '@mdit-vue/shared'
 
 import anchorPlugin from 'markdown-it-anchor'
 import attrsPlugin from 'markdown-it-attrs'
-import emojiPlugin from 'markdown-it-emoji'
+import * as emojiPlugin from 'markdown-it-emoji'
 
 import * as shiki from 'shiki';
 //import {getHighlighter} from 'shiki-processor';

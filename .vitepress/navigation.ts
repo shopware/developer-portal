@@ -1,4 +1,5 @@
 import {buildSidebarNav} from "../node_modules/vitepress-shopware-docs/src/shopware/composables/Sidebar";
+import fs from "fs";
 
 const navigation = buildSidebarNav('./src/', [
     {
@@ -111,9 +112,11 @@ const prefixItems = (items, prefix) => items.map(item => {
     return item;
 })
 
-navigation.sidebar['/frontends/'] = prefixItems(
-    (await import("../src/frontends/_source/apps/docs/.vitepress/sidebar")).sidebar,
-    '/frontends'
-);
+if (fs.existsSync("../src/frontends/_source/apps/docs/.vitepress/sidebar.ts")) {
+    navigation.sidebar['/frontends/'] = prefixItems(
+        (await import("../src/frontends/_source/apps/docs/.vitepress/sidebar")).sidebar,
+        '/frontends'
+    );
+}
 
 export default navigation;
