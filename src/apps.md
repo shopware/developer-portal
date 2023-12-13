@@ -5,6 +5,10 @@ swag:
   related: false
 ---
 
+<script setup>
+import SwagLinkLine from "./components/SwagLinkLine.vue";
+</script>
+
 <SwagLanding>
     <template #title>Build the functionalities merchants need</template>
     <template #description>
@@ -14,6 +18,12 @@ swag:
         <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Build your first Shopware app" sub="Learn how to set up your development environment and start coding within a couple of minutes." />
     </template>
     <template #exposed>
+        <SwagLinkLine file="src/apps.md">
+            <a href="#">
+              <SwagIcon icon="github"/>
+              Start discussion on GitHub
+            </a>
+        </SwagLinkLine>
         <SwagLandingCardList>
             <template #title>Starter guides</template>
             <template #description>

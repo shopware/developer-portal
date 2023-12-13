@@ -18,8 +18,8 @@ dependencies:
     specifier: 1.0.0-rc.31
     version: 1.0.0-rc.31(@types/node@20.10.4)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(search-insights@2.13.0)(terser@5.26.0)(typescript@5.3.3)
   vitepress-shopware-docs:
-    specifier: 1.1.3
-    version: 1.1.3(@babel/core@7.23.6)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.21.1)(instantsearch.css@8.1.0)(instantsearch.js@4.62.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.1)(vue@3.3.11)
+    specifier: 1.1.4
+    version: 1.1.4(@babel/core@7.23.6)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.21.1)(instantsearch.css@8.1.0)(instantsearch.js@4.62.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.1)(vue@3.3.11)
   vue:
     specifier: ^3.3.10
     version: 3.3.11(typescript@5.3.3)
@@ -53,20 +53,20 @@ devDependencies:
     specifier: 1.40.1
     version: 1.40.1
   '@shopware-docs/cli':
-    specifier: 1.1.3
-    version: 1.1.3
+    specifier: 1.1.4
+    version: 1.1.4
   '@shopware-docs/storybook':
-    specifier: 1.1.3
-    version: 1.1.3(@storybook/addon-essentials@7.6.4)(@storybook/addon-interactions@7.6.4)(@storybook/addon-links@7.6.4)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.4)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.4)(@storybook/vue3@7.6.4)(chromatic@10.1.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.4)(vitepress@1.0.0-rc.31)
+    specifier: 1.1.4
+    version: 1.1.4(@storybook/addon-essentials@7.6.4)(@storybook/addon-interactions@7.6.4)(@storybook/addon-links@7.6.4)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.4)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.4)(@storybook/vue3@7.6.4)(chromatic@10.1.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.4)(vitepress@1.0.0-rc.31)
   '@shopware-docs/typer':
-    specifier: 1.1.3
-    version: 1.1.3(@types/node@20.10.4)(less@4.2.0)(sass@1.69.5)(terser@5.26.0)(typescript@5.3.3)
+    specifier: 1.1.4
+    version: 1.1.4(@types/node@20.10.4)(less@4.2.0)(sass@1.69.5)(terser@5.26.0)(typescript@5.3.3)
   '@shopware-docs/vitepress':
-    specifier: 1.1.3
-    version: 1.1.3(postcss@8.4.32)(vitepress@1.0.0-rc.31)
+    specifier: 1.1.4
+    version: 1.1.4(postcss@8.4.32)(vitepress@1.0.0-rc.31)
   '@shopware-docs/vitest':
-    specifier: 1.1.3
-    version: 1.1.3(@playwright/test@1.40.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.8.1)(vitepress@1.0.0-rc.31)(vitest@1.0.4)
+    specifier: 1.1.4
+    version: 1.1.4(@playwright/test@1.40.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.8.1)(vitepress@1.0.0-rc.31)(vitest@1.0.4)
   '@storybook/addon-essentials':
     specifier: ^7.6.4
     version: 7.6.4(react-dom@18.2.0)(react@18.2.0)
@@ -249,10 +249,10 @@ devDependencies:
     version: 3.0.3
   vite-plugin-top-level-await:
     specifier: ^1.3.1
-    version: 1.4.0
+    version: 1.4.1
   vite-plugin-wasm:
     specifier: ^3.2.2
-    version: 3.2.2
+    version: 3.3.0
   vitepress-plugin-mermaid:
     specifier: ^2.0.16
     version: 2.0.16(mermaid@10.6.1)(vitepress@1.0.0-rc.31)
@@ -3328,92 +3328,92 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
 
-  /@rollup/rollup-android-arm-eabi@4.8.0:
-    resolution: {integrity: sha512-zdTObFRoNENrdPpnTNnhOljYIcOX7aI7+7wyrSpPFFIOf/nRdedE6IYsjaBE7tjukphh1tMTojgJ7p3lKY8x6Q==}
+  /@rollup/rollup-android-arm-eabi@4.9.0:
+    resolution: {integrity: sha512-+1ge/xmaJpm1KVBuIH38Z94zj9fBD+hp+/5WLaHgyY8XLq1ibxk/zj6dTXaqM2cAbYKq8jYlhHd6k05If1W5xA==}
     cpu: [arm]
     os: [android]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-android-arm64@4.8.0:
-    resolution: {integrity: sha512-aiItwP48BiGpMFS9Znjo/xCNQVwTQVcRKkFKsO81m8exrGjHkCBDvm9PHay2kpa8RPnZzzKcD1iQ9KaLY4fPQQ==}
+  /@rollup/rollup-android-arm64@4.9.0:
+    resolution: {integrity: sha512-im6hUEyQ7ZfoZdNvtwgEJvBWZYauC9KVKq1w58LG2Zfz6zMd8gRrbN+xCVoqA2hv/v6fm9lp5LFGJ3za8EQH3A==}
     cpu: [arm64]
     os: [android]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-darwin-arm64@4.8.0:
-    resolution: {integrity: sha512-zhNIS+L4ZYkYQUjIQUR6Zl0RXhbbA0huvNIWjmPc2SL0cB1h5Djkcy+RZ3/Bwszfb6vgwUvcVJYD6e6Zkpsi8g==}
+  /@rollup/rollup-darwin-arm64@4.9.0:
+    resolution: {integrity: sha512-u7aTMskN6Dmg1lCT0QJ+tINRt+ntUrvVkhbPfFz4bCwRZvjItx2nJtwJnJRlKMMaQCHRjrNqHRDYvE4mBm3DlQ==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-darwin-x64@4.8.0:
-    resolution: {integrity: sha512-A/FAHFRNQYrELrb/JHncRWzTTXB2ticiRFztP4ggIUAfa9Up1qfW8aG2w/mN9jNiZ+HB0t0u0jpJgFXG6BfRTA==}
+  /@rollup/rollup-darwin-x64@4.9.0:
+    resolution: {integrity: sha512-8FvEl3w2ExmpcOmX5RJD0yqXcVSOqAJJUJ29Lca29Ik+3zPS1yFimr2fr5JSZ4Z5gt8/d7WqycpgkX9nocijSw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-arm-gnueabihf@4.8.0:
-    resolution: {integrity: sha512-JsidBnh3p2IJJA4/2xOF2puAYqbaczB3elZDT0qHxn362EIoIkq7hrR43Xa8RisgI6/WPfvb2umbGsuvf7E37A==}
+  /@rollup/rollup-linux-arm-gnueabihf@4.9.0:
+    resolution: {integrity: sha512-lHoKYaRwd4gge+IpqJHCY+8Vc3hhdJfU6ukFnnrJasEBUvVlydP8PuwndbWfGkdgSvZhHfSEw6urrlBj0TSSfg==}
     cpu: [arm]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-arm64-gnu@4.8.0:
-    resolution: {integrity: sha512-hBNCnqw3EVCkaPB0Oqd24bv8SklETptQWcJz06kb9OtiShn9jK1VuTgi7o4zPSt6rNGWQOTDEAccbk0OqJmS+g==}
+  /@rollup/rollup-linux-arm64-gnu@4.9.0:
+    resolution: {integrity: sha512-JbEPfhndYeWHfOSeh4DOFvNXrj7ls9S/2omijVsao+LBPTPayT1uKcK3dHW3MwDJ7KO11t9m2cVTqXnTKpeaiw==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-arm64-musl@4.8.0:
-    resolution: {integrity: sha512-Fw9ChYfJPdltvi9ALJ9wzdCdxGw4wtq4t1qY028b2O7GwB5qLNSGtqMsAel1lfWTZvf4b6/+4HKp0GlSYg0ahA==}
+  /@rollup/rollup-linux-arm64-musl@4.9.0:
+    resolution: {integrity: sha512-ahqcSXLlcV2XUBM3/f/C6cRoh7NxYA/W7Yzuv4bDU1YscTFw7ay4LmD7l6OS8EMhTNvcrWGkEettL1Bhjf+B+w==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-riscv64-gnu@4.8.0:
-    resolution: {integrity: sha512-BH5xIh7tOzS9yBi8dFrCTG8Z6iNIGWGltd3IpTSKp6+pNWWO6qy8eKoRxOtwFbMrid5NZaidLYN6rHh9aB8bEw==}
+  /@rollup/rollup-linux-riscv64-gnu@4.9.0:
+    resolution: {integrity: sha512-uwvOYNtLw8gVtrExKhdFsYHA/kotURUmZYlinH2VcQxNCQJeJXnkmWgw2hI9Xgzhgu7J9QvWiq9TtTVwWMDa+w==}
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-x64-gnu@4.8.0:
-    resolution: {integrity: sha512-PmvAj8k6EuWiyLbkNpd6BLv5XeYFpqWuRvRNRl80xVfpGXK/z6KYXmAgbI4ogz7uFiJxCnYcqyvZVD0dgFog7Q==}
+  /@rollup/rollup-linux-x64-gnu@4.9.0:
+    resolution: {integrity: sha512-m6pkSwcZZD2LCFHZX/zW2aLIISyzWLU3hrLLzQKMI12+OLEzgruTovAxY5sCZJkipklaZqPy/2bEEBNjp+Y7xg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-x64-musl@4.8.0:
-    resolution: {integrity: sha512-mdxnlW2QUzXwY+95TuxZ+CurrhgrPAMveDWI97EQlA9bfhR8tw3Pt7SUlc/eSlCNxlWktpmT//EAA8UfCHOyXg==}
+  /@rollup/rollup-linux-x64-musl@4.9.0:
+    resolution: {integrity: sha512-VFAC1RDRSbU3iOF98X42KaVicAfKf0m0OvIu8dbnqhTe26Kh6Ym9JrDulz7Hbk7/9zGc41JkV02g+p3BivOdAg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-arm64-msvc@4.8.0:
-    resolution: {integrity: sha512-ge7saUz38aesM4MA7Cad8CHo0Fyd1+qTaqoIo+Jtk+ipBi4ATSrHWov9/S4u5pbEQmLjgUjB7BJt+MiKG2kzmA==}
+  /@rollup/rollup-win32-arm64-msvc@4.9.0:
+    resolution: {integrity: sha512-9jPgMvTKXARz4inw6jezMLA2ihDBvgIU9Ml01hjdVpOcMKyxFBJrn83KVQINnbeqDv0+HdO1c09hgZ8N0s820Q==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-ia32-msvc@4.8.0:
-    resolution: {integrity: sha512-p9E3PZlzurhlsN5h9g7zIP1DnqKXJe8ZUkFwAazqSvHuWfihlIISPxG9hCHCoA+dOOspL/c7ty1eeEVFTE0UTw==}
+  /@rollup/rollup-win32-ia32-msvc@4.9.0:
+    resolution: {integrity: sha512-WE4pT2kTXQN2bAv40Uog0AsV7/s9nT9HBWXAou8+++MBCnY51QS02KYtm6dQxxosKi1VIz/wZIrTQO5UP2EW+Q==}
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-x64-msvc@4.8.0:
-    resolution: {integrity: sha512-kb4/auKXkYKqlUYTE8s40FcJIj5soOyRLHKd4ugR0dCq0G2EfcF54eYcfQiGkHzjidZ40daB4ulsFdtqNKZtBg==}
+  /@rollup/rollup-win32-x64-msvc@4.9.0:
+    resolution: {integrity: sha512-aPP5Q5AqNGuT0tnuEkK/g4mnt3ZhheiXrDIiSVIHN9mcN21OyXDVbEMqmXPE7e2OplNLDkcvV+ZoGJa2ZImFgw==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
@@ -3495,13 +3495,13 @@ packages:
       js-md5: 0.7.3
     dev: false
 
-  /@shopware-docs/cli@1.1.3:
-    resolution: {integrity: sha512-iHr7O09UMaWdDv2CLuiYIWm3SEKRaUZAGpdzIxkaHwvbFxmVgi5Q3Q5sU6916JBhKrJEF0qOyTnOUUfpyOGxqA==}
+  /@shopware-docs/cli@1.1.4:
+    resolution: {integrity: sha512-El89jptBycXYjCv41sO3o9raj5HD48lFfZeUykUgAdbX2KBvh47HAd3gZi3oS+M+3P/D2vaTAWXkuAggsxVUMQ==}
     hasBin: true
     dev: true
 
-  /@shopware-docs/storybook@1.1.3(@storybook/addon-essentials@7.6.4)(@storybook/addon-interactions@7.6.4)(@storybook/addon-links@7.6.4)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.4)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.4)(@storybook/vue3@7.6.4)(chromatic@10.1.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.4)(vitepress@1.0.0-rc.31):
-    resolution: {integrity: sha512-o1DU6R9K5AdAF+oXr/08A81EQh14DgiAl7ZUhwkXUamtsYGjDZkItXrmJojnTOEKh/t3Uws0Wap6Zj1++CohQQ==}
+  /@shopware-docs/storybook@1.1.4(@storybook/addon-essentials@7.6.4)(@storybook/addon-interactions@7.6.4)(@storybook/addon-links@7.6.4)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.4)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.4)(@storybook/vue3@7.6.4)(chromatic@10.1.0)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.4)(vitepress@1.0.0-rc.31):
+    resolution: {integrity: sha512-iv8MzOSosBPl5LVoU/1rutpeUMKB+cQMPHCtrt8hlAOYO0x3Gxr5zexBjI+5QiJxx+bxtIcWYvh5N80nos+Pyg==}
     peerDependencies:
       '@storybook/addon-essentials': ^7.6.3
       '@storybook/addon-interactions': ^7.6.3
@@ -3555,8 +3555,8 @@ packages:
       - vite
     dev: true
 
-  /@shopware-docs/typer@1.1.3(@types/node@20.10.4)(less@4.2.0)(sass@1.69.5)(terser@5.26.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-4OvYGm81/sPnV61bxS2hP1eankLB0k1LijlXk2+7Q0aaMMDWDAvsJ5GwzJe+iAVocCKKXAtsej7Sw9BtRs5vGA==}
+  /@shopware-docs/typer@1.1.4(@types/node@20.10.4)(less@4.2.0)(sass@1.69.5)(terser@5.26.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-yfAJ4GpEkK+2rNmZnHqOry8cxeOmm+UV05SaKHhsv9IBqzj+RWn3TOdAvr0tDoqVSvTmNhASRZYIGixVLBcYuw==}
     dependencies:
       find-in-files: 0.5.0
       fs-extra: 11.2.0
@@ -3575,8 +3575,8 @@ packages:
       - typescript
     dev: true
 
-  /@shopware-docs/vitepress@1.1.3(postcss@8.4.32)(vitepress@1.0.0-rc.31):
-    resolution: {integrity: sha512-bw1r20KXEW58JHvaa+YziG0ecz3zLGl6qGAazqx3qentMzYBoY8i+1L/MrUPYE7/0twVjXFohRHwMonMItk8Hg==}
+  /@shopware-docs/vitepress@1.1.4(postcss@8.4.32)(vitepress@1.0.0-rc.31):
+    resolution: {integrity: sha512-PXEfHSQobsjFTUai4rV0XUwfBMB0vscd+4bCKOXFWDasRlXJpA1Tu/uItL7L0EK1VO3qcPh8vL85xD/m3GmpJg==}
     peerDependencies:
       vitepress: ^1.0.0-rc.31
     dependencies:
@@ -3595,8 +3595,8 @@ packages:
       - vite
     dev: true
 
-  /@shopware-docs/vitest@1.1.3(@playwright/test@1.40.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.8.1)(vitepress@1.0.0-rc.31)(vitest@1.0.4):
-    resolution: {integrity: sha512-xH272byqXO3ZEu8XV2kAUE2vtgW/v4lDlZ4+R6aDpTZoYUwOkm6OCoFY72NTnUpP/+aZOLh3XmaUPO+AgPvMgA==}
+  /@shopware-docs/vitest@1.1.4(@playwright/test@1.40.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.40.1)(postcss@8.4.32)(slugify@1.6.6)(vite-plugin-inspect@0.8.1)(vitepress@1.0.0-rc.31)(vitest@1.0.4):
+    resolution: {integrity: sha512-dUbbExODNHFkDL1p72F+8KhCVTiWAqlxbZJWKMUbA2ORscGisRbhv21tBf5N/Dwen8ish/OGi3EuJ8PwFsm4bw==}
     peerDependencies:
       '@playwright/test': ^1.40.1
       '@vitest/coverage-c8': ^0.33.0
@@ -12308,24 +12308,24 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /rollup@4.8.0:
-    resolution: {integrity: sha512-NpsklK2fach5CdI+PScmlE5R4Ao/FSWtF7LkoIrHDxPACY/xshNasPsbpG0VVHxUTbf74tJbVT4PrP8JsJ6ZDA==}
+  /rollup@4.9.0:
+    resolution: {integrity: sha512-bUHW/9N21z64gw8s6tP4c88P382Bq/L5uZDowHlHx6s/QWpjJXivIAbEw6LZthgSvlEizZBfLC4OAvWe7aoF7A==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      '@rollup/rollup-android-arm-eabi': 4.8.0
-      '@rollup/rollup-android-arm64': 4.8.0
-      '@rollup/rollup-darwin-arm64': 4.8.0
-      '@rollup/rollup-darwin-x64': 4.8.0
-      '@rollup/rollup-linux-arm-gnueabihf': 4.8.0
-      '@rollup/rollup-linux-arm64-gnu': 4.8.0
-      '@rollup/rollup-linux-arm64-musl': 4.8.0
-      '@rollup/rollup-linux-riscv64-gnu': 4.8.0
-      '@rollup/rollup-linux-x64-gnu': 4.8.0
-      '@rollup/rollup-linux-x64-musl': 4.8.0
-      '@rollup/rollup-win32-arm64-msvc': 4.8.0
-      '@rollup/rollup-win32-ia32-msvc': 4.8.0
-      '@rollup/rollup-win32-x64-msvc': 4.8.0
+      '@rollup/rollup-android-arm-eabi': 4.9.0
+      '@rollup/rollup-android-arm64': 4.9.0
+      '@rollup/rollup-darwin-arm64': 4.9.0
+      '@rollup/rollup-darwin-x64': 4.9.0
+      '@rollup/rollup-linux-arm-gnueabihf': 4.9.0
+      '@rollup/rollup-linux-arm64-gnu': 4.9.0
+      '@rollup/rollup-linux-arm64-musl': 4.9.0
+      '@rollup/rollup-linux-riscv64-gnu': 4.9.0
+      '@rollup/rollup-linux-x64-gnu': 4.9.0
+      '@rollup/rollup-linux-x64-musl': 4.9.0
+      '@rollup/rollup-win32-arm64-msvc': 4.9.0
+      '@rollup/rollup-win32-ia32-msvc': 4.9.0
+      '@rollup/rollup-win32-x64-msvc': 4.9.0
       fsevents: 2.3.3
 
   /rtl-css-js@1.16.1:
@@ -13836,8 +13836,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite-plugin-top-level-await@1.4.0:
-    resolution: {integrity: sha512-t2hMdZDBuPpcHpqVrTElGv8NqlePrk6z2uok1alPu6ndT5JmMM/kFeMGkwtspYwblJMfzwzdDMmBSMvpLLgmSA==}
+  /vite-plugin-top-level-await@1.4.1:
+    resolution: {integrity: sha512-hogbZ6yT7+AqBaV6lK9JRNvJDn4/IJvHLu6ET06arNfo0t2IsyCaon7el9Xa8OumH+ESuq//SDf8xscZFE0rWw==}
     peerDependencies:
       vite: '>=2.8'
     peerDependenciesMeta:
@@ -13852,10 +13852,10 @@ packages:
       - rollup
     dev: true
 
-  /vite-plugin-wasm@3.2.2:
-    resolution: {integrity: sha512-cdbBUNR850AEoMd5nvLmnyeq63CSfoP1ctD/L2vLk/5+wsgAPlAVAzUK5nGKWO/jtehNlrSSHLteN+gFQw7VOA==}
+  /vite-plugin-wasm@3.3.0:
+    resolution: {integrity: sha512-tVhz6w+W9MVsOCHzxo6SSMSswCeIw4HTrXEi6qL3IRzATl83jl09JVO1djBqPSwfjgnpVHNLYcaMbaDX5WB/pg==}
     peerDependencies:
-      vite: ^2 || ^3 || ^4
+      vite: ^2 || ^3 || ^4 || ^5
     peerDependenciesMeta:
       vite:
         optional: true
@@ -13893,7 +13893,7 @@ packages:
       esbuild: 0.19.9
       less: 4.2.0
       postcss: 8.4.32
-      rollup: 4.8.0
+      rollup: 4.9.0
       sass: 1.69.5
       terser: 5.26.0
     optionalDependencies:
@@ -13911,8 +13911,8 @@ packages:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
 
-  /vitepress-shopware-docs@1.1.3(@babel/core@7.23.6)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.21.1)(instantsearch.css@8.1.0)(instantsearch.js@4.62.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.1)(vue@3.3.11):
-    resolution: {integrity: sha512-lA+a/h8OhHaMHoZ0FzgqoQo95rovSqJ/Z5GPyOjKfJ8OD+o3mKBa+vCBVmPaxDaACxpW2e3RE5KPCXW5cu6ycw==}
+  /vitepress-shopware-docs@1.1.4(@babel/core@7.23.6)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.21.1)(instantsearch.css@8.1.0)(instantsearch.js@4.62.0)(postcss@8.4.32)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.1)(vue@3.3.11):
+    resolution: {integrity: sha512-44m5G7qo/TOZRNHJi1+T4nBSdYi4Fk7gbOgpO3uDECG5Spdk2mLdfGDjXy6Dd9H2EvcPwS+skbWpaMhf6Kwxqw==}
     peerDependencies:
       '@docsearch/css': ^3.5.2
       '@docsearch/js': ^3.5.2

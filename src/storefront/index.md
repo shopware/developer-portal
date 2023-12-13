@@ -1,84 +1,12 @@
 ---
-items:
-  - text: Getting started
-    link: /frontends/
-  - text: Capabilities & Limitations
-    link: /frontends/why-shopware-frontends.html
-  - text: Areas
-    items:
-      - text: Framework
-        collapsed: true
-        items:
-          - text: Requirements
-            link: /frontends/framework/requirements.html   
-          - text: Internal Structure
-            link: /frontends/framework/internal-structure.html
-          - text: Shopping Experiences
-            link: /frontends/framework/shopping-experiences.html
-          - text: Styling
-            link: /frontends/framework/styling.html   
-          - text: Context Composables
-            link: /frontends/framework/context-composables.html
-          - text: Shared Composables
-            link: /frontends/framework/shared-composables.html
-          - text: Images
-            link: /frontends/framework/images.html  
-          - text: Associations
-            link: /frontends/framework/associations.html
-          - text: Storefront url
-            link: /frontends/framework/storefront-url.html
-      - text: Building
-        collapsed: true
-        items:
-          - text: Setup Templates
-            link: /frontends/getting-started/templates.html 
-          - text: Routing
-            link: /frontends/getting-started/routing.html
-          - text: CMS
-            link: /frontends/getting-started/cms/
-          - text: E-commerce
-            link: /frontends/getting-started/e-commerce/ 
-          - text: Page elements
-            link: /frontends/getting-started/page-elements/
-          - text: Overwriting and estensing Composables
-            link: /frontends/getting-started/overwriting-composables.html
-          - text: Sitemap
-            link: /frontends/getting-started/sitemap.html
-          - text: Wishlist
-            link: /frontends/getting-started/wishlist.html
-      - text: Best Practices
-        collapsed: true
-        items:
-          - text: Deployment
-            link: /frontends/best-practices/deployment.html 
-          - text: Error-handling
-            link: /frontends/best-practices/error-handling.html
-          - text: Images
-            link: /frontends/best-practices/images.html
-          - text: Performance
-            link: /frontends/best-practices/performance.html
-          - text: Testing
-            link: /frontends/best-practices/testing.html
-  - text: Package Reference
-    items:
-      - text: Composables
-        link: /frontends/packages/composables.html
-      - text: API client
-        link: /frontends/packages/api-client.html
-      - text: Types
-        link: /frontends/packages/types.html
-      - text: Helpers
-        link: /frontends/packages/helpers.html
-  - text: Resources
-    items:
-      - text: Examples
-        link: /frontends/resources/examples/
-      - text: Community modules
-        link: /frontends/resources/community-modules/
 aside: false
 swag:
   related: false
 ---
+
+<script setup>
+import SwagLinkLine from "../components/SwagLinkLine.vue";
+</script>
 
 <SwagLanding image="/landing/apps.png">
     <template #title>Shopware Frontends</template>
@@ -89,6 +17,7 @@ swag:
         <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Start building your first Shopware Frontends project" sub="Learn how to set up your development environment and start coding within a couple of minutes." />
     </template>
     <template #exposed>
+        <SwagLinkLine file="src/storefront/index.md" />
         <SwagLandingCardList>
             <template #title>Starter guides</template>
             <template #description>

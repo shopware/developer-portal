@@ -5,6 +5,10 @@ swag:
   related: false
 ---
 
+<script setup>
+import SwagLinkLine from "./components/SwagLinkLine.vue";
+</script>
+
 <SwagLanding>
     <template #title>Craft beautiful themes that inspire</template>
     <template #description>
@@ -15,6 +19,7 @@ swag:
         <PageRef page="/docs/guides/plugins/themes/theme-base-guide.html" title="Start building a theme" sub="Learn how to set up a theme for your storefront from scratch." />
     </template>
     <template #exposed>
+        <SwagLinkLine file="src/themes.md" />
         <SwagLandingCardList>
             <template #title>Starter guides</template>
             <template #description>

@@ -1,0 +1,42 @@
+.c-link-line {
+    @apply flex gap-x-8 gap-y-6 items-center justify-center py-3 relative flex-col md:flex-row;
+
+    &::before {
+        @apply absolute;
+        content: '';
+        display: block;
+        top: 0;
+        bottom: 0;
+        width: 100lvw;
+        z-index: -1;
+        left: -24px;
+        background: var(--sw-c-gray-100);
+        .dark & {
+            background: var(--sw-c-gray-dark-700);
+        }
+    }
+
+    a {
+        @apply flex gap-2 items-center text-xs font-semibold;
+        --icon-size: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .SwagLandingCardListWrapper,
+    .c-link-line {
+        &::before {
+            left: -32px;
+        }
+    }
+}
+
+/* 1024 + 32 + 32 */
+@media (min-width: 1088px) {
+    .SwagLandingCardListWrapper,
+    .c-link-line {
+        &::before {
+            left: calc((100lvw - 1024px) / -2);
+        }
+    }
+}

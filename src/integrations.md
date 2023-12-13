@@ -5,6 +5,10 @@ swag:
   related: false
 ---
 
+<script setup>
+import SwagLinkLine from "./components/SwagLinkLine.vue";
+</script>
+
 <SwagLanding>
     <template #title>Automate, integrate & connect</template>
     <template #description>
@@ -14,6 +18,7 @@ swag:
         <PageRef page="/docs/concepts/api/" title="Kick start here and explore" sub="Dive into the basics of authentication, privileges, reading and writing data, working with errors." />
     </template>
     <template #exposed>
+        <SwagLinkLine file="src/integrations.md" />
         <SwagLandingCardList>
             <template #title>Starter guides</template>
             <template #description>
