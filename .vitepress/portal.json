@@ -116,12 +116,11 @@
       "dst": "resources/meteor-icon-kit",
       "branch": [
         "env.BRANCH_METEOR_ICON_KIT",
-        "DX-223",
         "main"
       ],
       "org": [
         "env.ORG_METEOR_ICON_KIT",
-        "bojanrajh"
+        "shopware"
       ],
       "env": {
         "FIGMA_FILE": {
