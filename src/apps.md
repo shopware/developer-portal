@@ -19,7 +19,7 @@ import SwagLinkLine from "./components/SwagLinkLine.vue";
     </template>
     <template #exposed>
         <SwagLinkLine file="src/apps.md">
-            <a href="#">
+            <a href="https://github.com/shopware/shopware/discussions/categories/app-faq">
               <SwagIcon icon="github"/>
               Start discussion on GitHub
             </a>
