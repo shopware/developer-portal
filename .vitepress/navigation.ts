@@ -112,11 +112,13 @@ const prefixItems = (items, prefix) => items.map(item => {
     return item;
 })
 
-if (fs.existsSync("../src/frontends/_source/apps/docs/.vitepress/sidebar.ts")) {
+try {
     navigation.sidebar['/frontends/'] = prefixItems(
         (await import("../src/frontends/_source/apps/docs/.vitepress/sidebar")).sidebar,
         '/frontends'
     );
+} catch (e) {
+    console.log(e);
 }
 
 export default navigation;
