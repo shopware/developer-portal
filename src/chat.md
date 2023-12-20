@@ -7,7 +7,8 @@ layout: page
 ---
 
 <script setup>
-import SwagCopilotSidebar from "./components/copilot/SwagCopilotSidebar.vue";
+import SwagCopilot from "@node_modules/vitepress-shopware-docs/src/shopware/components/copilot/SwagCopilot.vue";
+import render from "./components/markdown";
 </script>
 
-<SwagCopilotSidebar class="--inline" />
+<SwagCopilot class="--inline" :render="render" collection="shopware--developer-portal--main" />

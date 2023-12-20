@@ -76,7 +76,7 @@ export default async (markdown: string) => {
 
     md.use(attrsPlugin, {})
 
-    md.use(emojiPlugin)
+    //md.use(emojiPlugin)
 
     md.use(anchorPlugin, {
         slugify,
