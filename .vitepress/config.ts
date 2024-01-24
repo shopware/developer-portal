@@ -196,6 +196,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       "docs/resources/references/adr/YYYY-MM-DD-template.md",
       // snippets
       'docs/snippets/**',
+      'docs/v6.6rc/snippets/**',
   ],
 
   rewrites: {
