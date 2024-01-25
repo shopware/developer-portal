@@ -45,13 +45,13 @@ const navigation = buildSidebarNav('./src/', [
                 ]
             },
             {
-                text: "Administration",
+                text: "Meteor",
                 items: [
                     {
-                        text: "Admin Extension SDK",
+                        text: "Meteor Admin SDK",
                         // link: "/resources/admin-extension-sdk/",
-                        link: 'https://shopware.github.io/admin-extension-sdk/',
-                        repo: 'shopware/admin-extension-sdk',
+                        link: 'https://shopware.github.io/meteor-admin-sdk/',
+                        repo: 'shopware/meteor-admin-sdk',
                     },
                     {
                         text: "Meteor Icon Kit",
@@ -59,7 +59,7 @@ const navigation = buildSidebarNav('./src/', [
                         repo: 'shopware/meteor-icon-kit',
                     },
                     {
-                        text: "Component Library",
+                        text: "Meteor Component Library",
                         // link: "/resources/meteor-component-library/",
                         link: 'https://shopware.github.io/meteor-component-library/',
                         repo: 'shopware/meteor-component-library',
