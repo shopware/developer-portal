@@ -197,7 +197,6 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       // snippets
       'docs/snippets/**',
       'docs/v6.6rc/snippets/**',
-      'docs/README.md',
   ],
 
   rewrites: {
