@@ -15,7 +15,7 @@ import topLevelAwait from "vite-plugin-top-level-await";
 //import { TsFunctionDescription, TsFunctionsList } from "@shopware-pwa/typer";
 import { TsFunctionDescription, TsFunctionsList } from "@shopware-docs/typer";
 
-import {copyAdditionalAssets, createSitemap, storeRedirects} from "../node_modules/@shopware-docs/vitepress/src/helpers";
+import {copyAdditionalAssets, createSitemap, storeRedirects, addOGImage} from "../node_modules/@shopware-docs/vitepress/src/helpers";
 import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
 import navigation from "./navigation";
 
@@ -511,30 +511,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
   },
 
   async transformHead(context: TransformContext): Promise<HeadConfig[]> {
-    const head: HeadConfig[] = [];
-
-    let title = context.pageData.frontmatter?.title || context.pageData.frontmatter?.nav?.title || context.pageData.title;
-
-    // fallback to the file name
-    if (!title) {
-      let filename = context.pageData.filePath
-          .replace('/index.md', '')
-          .replace('.md', '')
-          .split('/')
-          .reverse()[0]
-          .replace('-', ' ');
-      title = `${filename[0].toUpperCase()}${filename.substring(1)}`
-    }
-
-    head.push([
-      'meta',
-      {
-        property: 'og:image',
-        content: `https://shopware-docs-og.vercel.app/api/og?title=${encodeURIComponent(title)}`,
-      }
-    ]);
-
-    return head;
+    return addOGImage([], context);
   },
 
   async buildEnd() {
