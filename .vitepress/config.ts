@@ -573,7 +573,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
     /**
      * Create public sitemap.xml.
      */
-    await createSitemap(/*stoplightUrls*/);
+    await createSitemap(/*stoplightUrls*/[], 'developer.shopware.com');
 
     /**
      * Transform Store API JSON reference to Markdown for Knowledge base.
