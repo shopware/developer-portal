@@ -467,6 +467,13 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         ],
       }),
     ],
+    server: {
+      watch: {
+        ignored: (p) => {
+          return p.includes('_source') || p.includes('node_modules');
+        }
+      }
+    },
     worker: {
       plugins: () => [
         topLevelAwait()
