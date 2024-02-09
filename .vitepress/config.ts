@@ -4,6 +4,7 @@ import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import baseConfig from "vitepress-shopware-docs/config";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
 import {resolve} from "path";
+import fs from 'fs';
 
 import { MarkdownTransform } from "../node_modules/@shopware-docs/vitepress/src/plugins/markdownTransform";
 import { CssCleanup, baseCleanup } from "../node_modules/@shopware-docs/vitepress/src/plugins/cssCleanup";
@@ -438,7 +439,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       }),
       TsFunctionDescription({
         rootDir: resolve(__dirname, frontendsPath),
-        dirs: [
+        dirs: !fs.existsSync(resolve(__dirname, frontendsPath)) ? [] : [
           {
             autogenExampleAlias: "api-client",
             functions: resolve(
