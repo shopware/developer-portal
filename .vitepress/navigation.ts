@@ -105,6 +105,8 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/v6.6rc/assets/',
     '/docs/snippets/',
     '/docs/v6.6rc/snippets/',
+    '/docs/README.md',
+    '/docs/v6.6rc/README.md',
 ]);
 
 const prefixItems = (items, prefix) => items.map(item => {
