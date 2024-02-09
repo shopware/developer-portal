@@ -123,7 +123,7 @@ try {
         '/frontends'
     );
 } catch (e) {
-    console.log(e);
+    console.log('Frontends sidebar not found');
 }
 
 export default navigation;
