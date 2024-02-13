@@ -201,7 +201,10 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       // readmes
       'docs/README.md',
       'docs/v6.6rc/README.md',
+      '**/README.md',
   ],
+
+  ignoreDeadLinks: true,
 
   rewrites: {
     'storefront/index.md': 'frontends/index.md',
@@ -519,6 +522,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
      * Copy additional assets not present in the assets or public dir.
      */
     await copyAdditionalAssets([
+      // shiki
       {
         src: '../node_modules/shiki/languages',
         dst: 'shiki/languages',
@@ -534,6 +538,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
           '.wasm'
         ],
       },
+      // meteor-icon-kit
       {
         src: './resources/meteor-icon-kit/public/icons/regular',
         dst: 'icons/regular',
@@ -542,6 +547,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         src: './resources/meteor-icon-kit/public/icons/solid',
         dst: 'icons/solid',
       },
+      // custom static files
       {
         src: './docs/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/products/extensions/b2b-suite/guides/example-plugins',
