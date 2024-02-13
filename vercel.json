@@ -20,7 +20,7 @@
   ],
   "redirects": [
     {
-      "source": ":url(^(?!.*\\.).*[^/]$)",
+      "source": ":url(^((.*]?)(\\/))?(?!.*\\.).*[^/]$)",
       "destination": ":url.html",
       "statusCode": 301
     },
