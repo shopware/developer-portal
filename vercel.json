@@ -20,8 +20,23 @@
   ],
   "redirects": [
     {
-      "source": ":url(^(.*?\\/)?(?!.*\\.).*[^/]$)",
+      "source": ":url(^(?!.*\\.).*[^/]$)",
       "destination": ":url.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/v6.6rc/:url(^(?!.*\\.).*[^/]$)",
+      "destination": "/docs/v6.4/:url.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/v6.4/:url(^(?!.*\\.).*[^/]$)",
+      "destination": "/docs/v6.4/:url.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/v6.3/:url(^(?!.*\\.).*[^/]$)",
+      "destination": "/docs/v6.4/:url.html",
       "statusCode": 301
     },
     {
