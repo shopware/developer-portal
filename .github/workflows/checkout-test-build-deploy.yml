@@ -112,7 +112,7 @@ jobs:
           unzip -q -o embed.zip
 
       - name: Collect Workflow Telemetry
-        uses: runforesight/workflow-telemetry-action@v1
+        uses: catchpoint/workflow-telemetry-action@v2
 
       - name: Build project
         run: |
