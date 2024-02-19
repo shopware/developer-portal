@@ -148,8 +148,8 @@
       }
     },
     {
-      "name": "shopware/meteor-component-library",
-      "src": "docs",
+      "name": "shopware/meteor",
+      "src": "packages/component-library/docs",
       "dst": "resources/meteor-component-library",
       "branch": [
         "env.BRANCH_METEOR_COMPONENT_LIBRARY",

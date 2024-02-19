@@ -98,13 +98,13 @@ fi
  --dst resources/meteor-icon-kit \
  --org ${ORG_METEOR_ICON_KIT:-shopware}
 
-#./docs-cli.cjs clone \
-# --ci \
-# --repository shopware/meteor-component-library \
-# --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
-# --src docs \
-# --dst resources/meteor-component-library \
-# --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
+./docs-cli.cjs clone \
+ --ci \
+ --repository shopware/meteor \
+ --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
+ --src packages/component-library/docs \
+ --dst resources/meteor-component-library \
+ --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \
