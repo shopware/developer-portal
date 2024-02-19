@@ -147,11 +147,11 @@ const embeds: SwagEmbedsConfig[] = [
     folder: 'docs',
   },
   {
-    repository: 'meteor-icon-kit',
+    repository: 'meteor',
     points: {
       '/resources/meteor-icon-kit/': 'main',
     },
-    folder: 'docs',
+    folder: 'packages/icon-kit/docs',
   },
   {
     repository: 'admin-api-reference',

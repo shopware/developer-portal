@@ -127,8 +127,8 @@
       "skip": true
     },
     {
-      "name": "shopware/meteor-icon-kit",
-      "src": "docs",
+      "name": "shopware/meteor",
+      "src": "packages/icon-kit/docs",
       "dst": "resources/meteor-icon-kit",
       "branch": [
         "env.BRANCH_METEOR_ICON_KIT",

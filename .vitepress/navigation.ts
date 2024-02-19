@@ -56,7 +56,7 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: "Meteor Icon Kit",
                         link: "/resources/meteor-icon-kit/",
-                        repo: 'shopware/meteor-icon-kit',
+                        repo: 'shopware/meteor',
                     },
                     {
                         text: "Meteor Component Library",
