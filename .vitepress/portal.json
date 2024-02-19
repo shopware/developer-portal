@@ -108,8 +108,10 @@
       "skip": true
     },
     {
-      "name": "shopware/admin-extension-sdk",
+      "name": "shopware/meteor",
       "src": [
+        "packages",
+        "admin-sdk",
         "docs",
         "docs",
         "guide"
@@ -123,8 +125,7 @@
       "org": [
         "env.ORG_ADMIN_EXTENSION_SDK",
         "shopware"
-      ],
-      "skip": true
+      ]
     },
     {
       "name": "shopware/meteor-icon-kit",

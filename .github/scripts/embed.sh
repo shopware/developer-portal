@@ -82,13 +82,13 @@ fi
 # --dst frontends-gl \
 # --git gitlab.shopware.com
 
-#./docs-cli.cjs clone \
-# --ci \
-# --repository shopware/admin-extension-sdk \
-# --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
-# --src docs/docs/guide \
-# --dst resources/admin-extension-sdk \
-# --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
+./docs-cli.cjs clone \
+ --ci \
+ --repository shopware/meteor \
+ --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
+ --src packages/admin-sdk/docs/docs/guide \
+ --dst resources/admin-extension-sdk \
+ --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \
