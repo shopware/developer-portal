@@ -119,7 +119,6 @@
       "dst": "resources/admin-extension-sdk",
       "branch": [
         "env.BRANCH_ADMIN_EXTENSION_SDK",
-        "DX-223",
         "main"
       ],
       "org": [
