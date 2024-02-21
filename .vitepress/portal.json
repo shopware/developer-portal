@@ -113,8 +113,6 @@
         "packages",
         "admin-sdk",
         "docs",
-        "docs",
-        "guide"
       ],
       "dst": "resources/admin-extension-sdk",
       "branch": [
