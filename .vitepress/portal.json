@@ -112,7 +112,7 @@
       "src": [
         "packages",
         "admin-sdk",
-        "docs",
+        "docs"
       ],
       "dst": "resources/admin-extension-sdk",
       "branch": [
