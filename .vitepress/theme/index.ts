@@ -4,6 +4,23 @@ import SwagRadialBg from "../../src/components/SwagRadialBg.vue";
 import SwagCopilotMenu from "../../node_modules/vitepress-shopware-docs/src/shopware/components/copilot/SwagCopilotMenu.vue";
 import "./style.scss";
 
+const autoDiscoverComponents = (app) => {
+    const requireComponent = require.context('../../src/resources/meteor-component-library/components/', true, /[A-Z]\w+\.(vue)$/);
+
+    requireComponent.keys().forEach(fileName => {
+        const componentConfig = requireComponent(fileName);
+        const componentName = fileName
+            .split('/')
+            .pop()!
+            .replace(/\.\w+$/, '');
+
+        app.component(
+            componentName,
+            componentConfig.default || componentConfig
+        );
+    });
+}
+
 export default {
     ...SWAGTheme({
         slots: {
@@ -15,5 +32,8 @@ export default {
                 SwagCopilotMenu,
             ]
         },
+        enhanceApp({ app }) {
+            autoDiscoverComponents(app);
+        }
     }),
 }
