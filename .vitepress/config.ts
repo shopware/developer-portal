@@ -176,7 +176,7 @@ const embeds: SwagEmbedsConfig[] = [
   }
 ];
 
-const userCentricsHead = (options: { usercentrics: string, hotjar?: string, gtm?: string, rollbar?: string } = {}) => {
+const userCentricsHead = (consent, options: { usercentrics: string, hotjar?: string, gtm?: string, rollbar?: string } = {}) => {
   const head = [];
   const transformToEventListener = (data) => {
     // no cookie-wall, return original script or link
@@ -186,7 +186,7 @@ const userCentricsHead = (options: { usercentrics: string, hotjar?: string, gtm?
 
     const [type, props, body] = data;
     let content = "window.addEventListener(\"ucEvent\", function (e) {    \n" +
-        "    if( e.detail && e.detail.event == \"consent_status\") {\n" +
+        `    if( e.detail && e.detail.event == \"consent_status\" && e.detail[${JSON.stringify(consent)}]) {\n` +
         `        const element = document.createElement(${JSON.stringify(type)});\n` +
         "        " + Object.keys(props).map((key) => `element[${JSON.stringify(key)}] = ${JSON.stringify(props[key])};`).join('') + "\n" +
         (body ? `        element.innerHTML = ${JSON.stringify(body)};\n` : '') +
@@ -217,11 +217,11 @@ const userCentricsHead = (options: { usercentrics: string, hotjar?: string, gtm?
         {},
         `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${options.gtm}');`
       ],
-    ].map(transformToEventListener))
+    ].map(data => transformToEventListener('Google Tag Manager', data)))
   }
 
   if (options.hotjar) {
-    head.push(transformToEventListener([
+    head.push(transformToEventListener('Google Tag Manager', [
       'script',
       {},
       `(function(h,o,t,j,a,r){
@@ -236,7 +236,7 @@ const userCentricsHead = (options: { usercentrics: string, hotjar?: string, gtm?
   }
 
   if (options.rollbar) {
-    head.push(transformToEventListener([
+    head.push(transformToEventListener('Rollbar', [
       'script',
       {},
       "var _rollbarConfig = {\n" +
