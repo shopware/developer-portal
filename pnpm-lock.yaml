@@ -18,8 +18,8 @@ dependencies:
     specifier: 1.0.0-rc.40
     version: 1.0.0-rc.40(@types/node@20.11.19)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(sass@1.71.1)(search-insights@2.13.0)(terser@5.27.2)(typescript@5.3.3)
   vitepress-shopware-docs:
-    specifier: 1.1.23
-    version: 1.1.23(@babel/core@7.23.9)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.65.0)(postcss@8.4.35)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.8)(vue@3.4.19)
+    specifier: 1.1.24
+    version: 1.1.24(@babel/core@7.23.9)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.65.0)(postcss@8.4.35)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.8)(vue@3.4.19)
   vue:
     specifier: ^3.4.15
     version: 3.4.19(typescript@5.3.3)
@@ -53,20 +53,20 @@ devDependencies:
     specifier: 1.41.1
     version: 1.41.1
   '@shopware-docs/cli':
-    specifier: 1.1.23
-    version: 1.1.23
+    specifier: 1.1.24
+    version: 1.1.24
   '@shopware-docs/storybook':
-    specifier: 1.1.23
-    version: 1.1.23(@storybook/addon-essentials@7.6.17)(@storybook/addon-interactions@7.6.17)(@storybook/addon-links@7.6.17)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.17)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.17)(@storybook/vue3@7.6.17)(chromatic@10.9.6)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(sass@1.71.1)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.17)(vitepress@1.0.0-rc.40)
+    specifier: 1.1.24
+    version: 1.1.24(@storybook/addon-essentials@7.6.17)(@storybook/addon-interactions@7.6.17)(@storybook/addon-links@7.6.17)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.17)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.17)(@storybook/vue3@7.6.17)(chromatic@10.9.6)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(sass@1.71.1)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.17)(vitepress@1.0.0-rc.40)
   '@shopware-docs/typer':
-    specifier: 1.1.23
-    version: 1.1.23(@types/node@20.11.19)(less@4.2.0)(sass@1.71.1)(terser@5.27.2)(typescript@5.3.3)
+    specifier: 1.1.24
+    version: 1.1.24(@types/node@20.11.19)(less@4.2.0)(sass@1.71.1)(terser@5.27.2)(typescript@5.3.3)
   '@shopware-docs/vitepress':
-    specifier: 1.1.23
-    version: 1.1.23(postcss@8.4.35)(vitepress@1.0.0-rc.40)
+    specifier: 1.1.24
+    version: 1.1.24(postcss@8.4.35)(vitepress@1.0.0-rc.40)
   '@shopware-docs/vitest':
-    specifier: 1.1.23
-    version: 1.1.23(@playwright/test@1.41.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.41.2)(postcss@8.4.35)(slugify@1.6.6)(vite-plugin-inspect@0.8.3)(vitepress@1.0.0-rc.40)(vitest@1.3.1)
+    specifier: 1.1.24
+    version: 1.1.24(@playwright/test@1.41.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.41.2)(postcss@8.4.35)(slugify@1.6.6)(vite-plugin-inspect@0.8.3)(vitepress@1.0.0-rc.40)(vitest@1.3.1)
   '@storybook/addon-essentials':
     specifier: ^7.6.10
     version: 7.6.17(react-dom@18.2.0)(react@18.2.0)
@@ -3160,7 +3160,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3184,7 +3184,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3219,7 +3219,7 @@ packages:
         optional: true
     dependencies:
       '@react-types/checkbox': 3.7.1(react@18.2.0)
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3231,7 +3231,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -3498,13 +3498,13 @@ packages:
       js-md5: 0.7.3
     dev: false
 
-  /@shopware-docs/cli@1.1.23:
-    resolution: {integrity: sha512-zBeTqxy9Qkj/uP3DExzdxZtusB1ctFpBU/oj58N2N0IIWlCSNxEvj8maCNC3MFN6fZnjG6RK31dBva7Eusdyyw==}
+  /@shopware-docs/cli@1.1.24:
+    resolution: {integrity: sha512-mnTr2M/4gjXzhf8wPzjU9sWVED+CeTTD1WZcK8DHE8xckrZrFWBekgEb90CgIshAN8ywZiF/XRb1StvOLZDgFw==}
     hasBin: true
     dev: true
 
-  /@shopware-docs/storybook@1.1.23(@storybook/addon-essentials@7.6.17)(@storybook/addon-interactions@7.6.17)(@storybook/addon-links@7.6.17)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.17)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.17)(@storybook/vue3@7.6.17)(chromatic@10.9.6)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(sass@1.71.1)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.17)(vitepress@1.0.0-rc.40):
-    resolution: {integrity: sha512-1yBF7TMgNwG2GS3ptVpGwvNUjbvGUI5iejjsOO7XEUhd59cWRysStcw6OaV8QoSwQFJqoORIXpAcyHQc+cmrLA==}
+  /@shopware-docs/storybook@1.1.24(@storybook/addon-essentials@7.6.17)(@storybook/addon-interactions@7.6.17)(@storybook/addon-links@7.6.17)(@storybook/addon-styling@1.3.7)(@storybook/blocks@7.6.17)(@storybook/testing-library@0.2.2)(@storybook/vue3-vite@7.6.17)(@storybook/vue3@7.6.17)(chromatic@10.9.6)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(sass@1.71.1)(seedrandom@3.0.5)(storybook-addon-fetch-mock@1.0.1)(storybook-addon-pseudo-states@2.1.2)(storybook@7.6.17)(vitepress@1.0.0-rc.40):
+    resolution: {integrity: sha512-weURbGC1VgezD7YjIrFqTduBcN5U7Yl9FFZ//YDbfSJh+S6XgLXg3WQHD7jLO/67YIdxpGU2NWJEfkQqIbjx4A==}
     peerDependencies:
       '@storybook/addon-essentials': ^7.6.3
       '@storybook/addon-interactions': ^7.6.3
@@ -3558,8 +3558,8 @@ packages:
       - vite
     dev: true
 
-  /@shopware-docs/typer@1.1.23(@types/node@20.11.19)(less@4.2.0)(sass@1.71.1)(terser@5.27.2)(typescript@5.3.3):
-    resolution: {integrity: sha512-e6ZlU+EMwSb0ISxJzRu0ehrx8UyB4ojuLRFis9LrNrwL6XGZ/gnOLJR0zEjj1BZXQb0QVGLxWNBru7/Dd79M2A==}
+  /@shopware-docs/typer@1.1.24(@types/node@20.11.19)(less@4.2.0)(sass@1.71.1)(terser@5.27.2)(typescript@5.3.3):
+    resolution: {integrity: sha512-iLCqq40n+22TkYLM3v4jotVpXTof64UZcM+RzlwQr6EusyoyPL0fNpL/asQ98S+ly8MESZ9Q8etyvrpoa1eEsw==}
     dependencies:
       find-in-files: 0.5.0
       fs-extra: 11.2.0
@@ -3578,8 +3578,8 @@ packages:
       - typescript
     dev: true
 
-  /@shopware-docs/vitepress@1.1.23(postcss@8.4.35)(vitepress@1.0.0-rc.40):
-    resolution: {integrity: sha512-rIMufOCnM/2Lu0jbAqoWrZZH0Fsn14m2QVr5QUdsk7Ux7Td3whS0vKdKG8EgiPQBdglZq32ugmJz450zW/5spA==}
+  /@shopware-docs/vitepress@1.1.24(postcss@8.4.35)(vitepress@1.0.0-rc.40):
+    resolution: {integrity: sha512-wHSW20x+rljySkXhcshJM4l9Xv2IzJ2aYUq2E7kqi0j3xYCd5A+qnV/1rShjYGpjO2WGJCyBO30P+4TU1avF3A==}
     peerDependencies:
       vitepress: ^1.0.0-rc.31
     dependencies:
@@ -3598,8 +3598,8 @@ packages:
       - vite
     dev: true
 
-  /@shopware-docs/vitest@1.1.23(@playwright/test@1.41.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.41.2)(postcss@8.4.35)(slugify@1.6.6)(vite-plugin-inspect@0.8.3)(vitepress@1.0.0-rc.40)(vitest@1.3.1):
-    resolution: {integrity: sha512-83kfKbU4Jv4Jxvj4P4/D7QLvoUz4SNlobYUN0KGie0jpCw6C/4rF/57LwaPqo7tde82TZgHQB80H/UWVGU5vJA==}
+  /@shopware-docs/vitest@1.1.24(@playwright/test@1.41.1)(@vitest/coverage-c8@0.33.0)(get-port@7.0.0)(playwright-chromium@1.41.2)(postcss@8.4.35)(slugify@1.6.6)(vite-plugin-inspect@0.8.3)(vitepress@1.0.0-rc.40)(vitest@1.3.1):
+    resolution: {integrity: sha512-4EXPHpKtG436Kv3UfbnWgeJE34X6r0nuvdfuI4V5WJECYkwji2N+2iNecGys40qdcnsUlr1iF01VjXrEVct+GQ==}
     peerDependencies:
       '@playwright/test': ^1.40.1
       '@vitest/coverage-c8': ^0.33.0
@@ -4120,7 +4120,7 @@ packages:
     resolution: {integrity: sha512-fL8Nzw03+diALw91xHEHA5Q0WCGeW9WpPgZQjodNUWogAgJ56aJs03P9YzsQ1J6fT7/XjDqHMgn7/RlsBzB/SQ==}
     engines: {node: ^12.20 || >=14.13}
     dependencies:
-      '@types/json-schema': 7.0.11
+      '@types/json-schema': 7.0.15
       utility-types: 3.11.0
     dev: false
 
@@ -13805,8 +13805,8 @@ packages:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
 
-  /vitepress-shopware-docs@1.1.23(@babel/core@7.23.9)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.65.0)(postcss@8.4.35)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.8)(vue@3.4.19):
-    resolution: {integrity: sha512-mlXMUh2xTrY/c03DGPKh4nAPGcH7OC05QL5x6Ee2eMHUIjP+a7hb2acJ68NAQR82xmFPJhIDV2Lb0wB+Ax2vxQ==}
+  /vitepress-shopware-docs@1.1.24(@babel/core@7.23.9)(@docsearch/css@3.5.2)(@docsearch/js@3.5.2)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.65.0)(postcss@8.4.35)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.13.8)(vue@3.4.19):
+    resolution: {integrity: sha512-KMrMQYFcUzGHKNaYkerWe6oGA1Xlr63/+79VnTnN8sKHJcMG4jagEACYEG2z/a0Ka7d6A1gmvigJ8aD3lccjqQ==}
     peerDependencies:
       '@docsearch/css': ^3.5.2
       '@docsearch/js': ^3.5.2
