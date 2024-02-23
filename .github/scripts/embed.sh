@@ -96,7 +96,8 @@ fi
  --branch ${BRANCH_METEOR_ICON_KIT:-main} \
  --src packages/icon-kit/docs \
  --dst resources/meteor-icon-kit \
- --org ${ORG_METEOR_ICON_KIT:-shopware}
+ --org ${ORG_METEOR_ICON_KIT:-shopware} \
+ --root ../..
 
 #./docs-cli.cjs clone \
 # --ci \
