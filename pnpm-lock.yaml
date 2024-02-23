@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@shopware-ag/meteor-icon-kit':
-    specifier: ^5.2.0
-    version: 5.2.0
+    specifier: ^5.2.1
+    version: 5.2.1
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -3492,9 +3492,10 @@ packages:
     resolution: {integrity: sha512-kt9hhvrWTm0EPtRDIsoAZnSsFlIDBVBBI5CQewpA/NZCPin+MOKRXg+JiWc4y+8fZ/v0HzfDhu/UC+OTZGMt7A==}
     dev: false
 
-  /@shopware-ag/meteor-icon-kit@5.2.0:
-    resolution: {integrity: sha512-N1DYSOazMfzgK+vVOTQgvzx80enWbJqXhswQ4OA7kJzPvu9HbjygIbpirSc9i30hzbdXlba51cOL5v3xg8gQdw==}
+  /@shopware-ag/meteor-icon-kit@5.2.1:
+    resolution: {integrity: sha512-L6YHOmGD2/gd2b9zS+SSWcZ/YMS1i1V9yOjT4AbhSfxWnUaNQE3OjbZfyDfD4Eo4DRbdcBzLzTEHuWjmRq1W+Q==}
     dependencies:
+      dotenv: 16.4.5
       js-md5: 0.7.3
     dev: false
 
@@ -7667,7 +7668,6 @@ packages:
   /dotenv@16.4.5:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
-    dev: true
 
   /duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -13818,7 +13818,7 @@ packages:
       '@docsearch/css': 3.5.2
       '@docsearch/js': 3.5.2(react-dom@18.2.0)(react@18.2.0)(search-insights@2.13.0)
       '@iconify-json/carbon': 1.1.30
-      '@shopware-ag/meteor-icon-kit': 5.2.0
+      '@shopware-ag/meteor-icon-kit': 5.2.1
       '@stoplight/elements-dev-portal': 2.0.4(@babel/core@7.23.9)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@stoplight/json-schema-generator': 1.0.2
       '@vueuse/core': 10.8.0(vue@3.4.19)
