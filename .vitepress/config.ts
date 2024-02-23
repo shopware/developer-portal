@@ -176,11 +176,11 @@ const embeds: SwagEmbedsConfig[] = [
   }
 ];
 
-const userCentricsHead = (consent, options: { usercentrics: string, hotjar?: string, gtm?: string, rollbar?: string } = {}) => {
+const userCentricsHead = (options: { usercentrics: string, hotjar?: string, gtm?: string, rollbar?: string } = {}) => {
   const head = [];
-  const transformToEventListener = (data) => {
+  const transformToEventListener = (consent: string, data: ['script' | 'link', object, string | undefined]) => {
     // no cookie-wall, return original script or link
-    if (!options.usercentrics)  {
+    if (!options.usercentrics) {
       return data;
     }
 
