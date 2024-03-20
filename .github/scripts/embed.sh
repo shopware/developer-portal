@@ -7,7 +7,7 @@ BRANCH_DOCS_66=next-6.6
 BRANCH_DOCS_64=v6.4
 BRANCH_DOCS_63=v6.3.0
 BRANCH_FRONTENDS=DX-devhub
-BRANCH_ADMIN_EXTENSION_SDK=DX-223
+BRANCH_ADMIN_EXTENSION_SDK=dx-devhub-admin-sdk
 BRANCH_METEOR_ICON_KIT=main
 BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 BRANCH_RELEASE_NOTES=main
@@ -82,13 +82,13 @@ fi
 # --dst frontends-gl \
 # --git gitlab.shopware.com
 
-#./docs-cli.cjs clone \
-# --ci \
-# --repository shopware/admin-extension-sdk \
-# --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
-# --src docs/docs/guide \
-# --dst resources/admin-extension-sdk \
-# --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
+./docs-cli.cjs clone \
+ --ci \
+ --repository shopware/meteor \
+ --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
+ --src packages/admin-sdk/docs \
+ --dst resources/admin-extension-sdk \
+ --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \
