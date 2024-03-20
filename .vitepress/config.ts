@@ -218,7 +218,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       usercentrics: process.env.USERCENTRICS,
       rollbar: '9ce3bcf057214c7499eefa8865b981e1',
       hotjar: '3527584',
-      gtm: 'G-9JLJ6GGB76',
+      gtm: 'WJKMNPS',
     }),
 
     // search console
