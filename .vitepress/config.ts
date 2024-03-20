@@ -6,17 +6,13 @@ import ViteRequireContext from '@originjs/vite-plugin-require-context'
 import {resolve} from "path";
 import fs from 'fs';
 
-import { MarkdownTransform } from "../node_modules/@shopware-docs/vitepress/src/plugins/markdownTransform";
-import { CssCleanup, baseCleanup } from "../node_modules/@shopware-docs/vitepress/src/plugins/cssCleanup";
+import { CssCleanup, baseCleanup, MarkdownTransform, copyAdditionalAssets, createSitemap, storeRedirects, addOGImage, userCentricsHead, generateMarkdownFromStoplight, getStoplightUrls } from "@shopware-docs/vitepress";
 import Inspect from "vite-plugin-inspect";
 import liveReload from 'vite-plugin-live-reload'
 import { withMermaid } from "vitepress-plugin-mermaid";
 import topLevelAwait from "vite-plugin-top-level-await";
 //import { TsFunctionDescription, TsFunctionsList } from "@shopware-pwa/typer";
 import { TsFunctionDescription, TsFunctionsList } from "@shopware-docs/typer";
-
-import {copyAdditionalAssets, createSitemap, storeRedirects, addOGImage, userCentricsHead} from "../node_modules/@shopware-docs/vitepress/src/helpers";
-import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
 import navigation from "./navigation";
 
 import {
