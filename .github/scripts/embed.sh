@@ -9,7 +9,7 @@ BRANCH_DOCS_63=v6.3.0
 BRANCH_FRONTENDS=DX-devhub
 BRANCH_ADMIN_EXTENSION_SDK=DX-223
 BRANCH_METEOR_ICON_KIT=main
-BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
+BRANCH_METEOR_COMPONENT_LIBRARY=dx/devhub-component-library
 BRANCH_RELEASE_NOTES=main
 
 # custom orgs
@@ -20,7 +20,7 @@ ORG_DOCS_63=shopware
 ORG_FRONTENDS=shopware
 ORG_ADMIN_EXTENSION_SDK=shopware
 ORG_METEOR_ICON_KIT=shopware
-ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
+ORG_METEOR_COMPONENT_LIBRARY=shopware
 ORG_RELEASE_NOTES=shopware
 
 if [[ "$PWD" != *"/developer-portal" ]]; then
@@ -98,13 +98,13 @@ fi
  --dst resources/meteor-icon-kit \
  --org ${ORG_METEOR_ICON_KIT:-shopware}
 
-#./docs-cli.cjs clone \
-# --ci \
-# --repository shopware/meteor-component-library \
-# --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
-# --src docs \
-# --dst resources/meteor-component-library \
-# --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
+./docs-cli.cjs clone \
+ --ci \
+ --repository shopware/meteor \
+ --branch ${BRANCH_METEOR_COMPONENT_LIBRARY:-main} \
+ --src packages/component-library/docs \
+ --dst resources/meteor-component-library \
+ --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \

@@ -60,9 +60,8 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: "Meteor Component Library",
-                        // link: "/resources/meteor-component-library/",
-                        link: 'https://shopware.github.io/meteor-component-library/',
-                        repo: 'shopware/meteor-component-library',
+                        link: "/resources/meteor-component-library/",
+                        repo: 'shopware/meteor',
                     }
                 ]
             },
@@ -96,7 +95,7 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/v6.4/',
     '/docs/v6.3/',
     //'/resources/admin-extension-sdk/',
-    //'/resources/meteor-component-library/',
+    '/resources/meteor-component-library/',
     '/', // always have root sidebar
     '/resources/meteor-icon-kit/',
     '/release-notes/',
