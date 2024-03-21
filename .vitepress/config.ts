@@ -103,6 +103,24 @@ const sections: SwagSectionsConfig[] = [
     ],
   },
   {
+    title: 'Meteor Admin SDK',
+    matches: [
+      '/resources/admin-extension-sdk/',
+    ],
+  },
+  {
+    title: 'Meteor Icon Kit',
+    matches: [
+      '/resources/meteor-icon-kit/',
+    ],
+  },
+  {
+    title: 'Release notes',
+    matches: [
+      '/release-notes/',
+    ],
+  },
+  {
     title: 'General',
     matches: [
       '/',
@@ -129,11 +147,11 @@ const embeds: SwagEmbedsConfig[] = [
     folder: 'app/docs/docs'
   },
   {
-    repository: 'admin-extension-sdk',
+    repository: 'meteor',
     points: {
       '/resources/admin-extension-sdk/': 'main',
     },
-    folder: 'docs',
+    folder: 'packages/admin-sdk/docs',
   },
   {
     repository: 'meteor-component-library',
