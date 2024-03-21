@@ -3,18 +3,18 @@ set -e
 
 # custom config
 BRANCH_DOCS=main
-BRANCH_DOCS_66=next-6.6
+BRANCH_DOCS_65=v6.5
 BRANCH_DOCS_64=v6.4
 BRANCH_DOCS_63=v6.3.0
 BRANCH_FRONTENDS=DX-devhub
-BRANCH_ADMIN_EXTENSION_SDK=DX-223
+BRANCH_ADMIN_EXTENSION_SDK=dx-devhub-admin-sdk
 BRANCH_METEOR_ICON_KIT=dx/devhub-icon-kit
 BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 BRANCH_RELEASE_NOTES=main
 
 # custom orgs
 ORG_DOCS=shopware
-ORG_DOCS_66=shopware
+ORG_DOCS_65=shopware
 ORG_DOCS_64=shopware
 ORG_DOCS_63=shopware
 ORG_FRONTENDS=shopware
@@ -42,10 +42,10 @@ fi
 ./docs-cli.cjs clone \
  --ci \
  --repository shopware/docs \
- --branch ${BRANCH_DOCS_66:-main} \
+ --branch ${BRANCH_DOCS_65:-main} \
  --src . \
- --dst docs/v6.6rc \
- --org ${ORG_DOCS_66:-shopware}
+ --dst docs/v6.5 \
+ --org ${ORG_DOCS_65:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \
@@ -82,13 +82,13 @@ fi
 # --dst frontends-gl \
 # --git gitlab.shopware.com
 
-#./docs-cli.cjs clone \
-# --ci \
-# --repository shopware/admin-extension-sdk \
-# --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
-# --src docs/docs/guide \
-# --dst resources/admin-extension-sdk \
-# --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
+./docs-cli.cjs clone \
+ --ci \
+ --repository shopware/meteor \
+ --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
+ --src packages/admin-sdk/docs \
+ --dst resources/admin-extension-sdk \
+ --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \

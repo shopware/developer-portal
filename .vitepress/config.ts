@@ -6,17 +6,13 @@ import ViteRequireContext from '@originjs/vite-plugin-require-context'
 import {resolve} from "path";
 import fs from 'fs';
 
-import { MarkdownTransform } from "../node_modules/@shopware-docs/vitepress/src/plugins/markdownTransform";
-import { CssCleanup, baseCleanup } from "../node_modules/@shopware-docs/vitepress/src/plugins/cssCleanup";
+import { CssCleanup, baseCleanup, MarkdownTransform, copyAdditionalAssets, createSitemap, storeRedirects, addOGImage, userCentricsHead, generateMarkdownFromStoplight, getStoplightUrls } from "@shopware-docs/vitepress";
 import Inspect from "vite-plugin-inspect";
 import liveReload from 'vite-plugin-live-reload'
 import { withMermaid } from "vitepress-plugin-mermaid";
 import topLevelAwait from "vite-plugin-top-level-await";
 //import { TsFunctionDescription, TsFunctionsList } from "@shopware-pwa/typer";
 import { TsFunctionDescription, TsFunctionsList } from "@shopware-docs/typer";
-
-import {copyAdditionalAssets, createSitemap, storeRedirects, addOGImage, userCentricsHead} from "../node_modules/@shopware-docs/vitepress/src/helpers";
-import {generateMarkdownFromStoplight, getStoplightUrls} from "./helpers/stoplight";
 import navigation from "./navigation";
 
 import {
@@ -39,7 +35,7 @@ const sections: SwagSectionsConfig[] = [
     matches: [
       '/apps/',
       '/docs/guides/plugins/apps/',
-      '/docs/v6.6rc/guides/plugins/apps/',
+      '/docs/v6.5/guides/plugins/apps/',
       '/docs/v6.4/guides/plugins/apps/',
       '/docs/v6.3/guides/plugins/apps/',
     ],
@@ -49,7 +45,7 @@ const sections: SwagSectionsConfig[] = [
     matches: [
       '/themes/',
       '/docs/guides/plugins/themes/',
-      '/docs/v6.6rc/guides/plugins/themes/',
+      '/docs/v6.5/guides/plugins/themes/',
       '/docs/v6.4/guides/plugins/themes/',
       '/docs/v6.3/guides/plugins/themes/',
     ],
@@ -59,7 +55,7 @@ const sections: SwagSectionsConfig[] = [
     matches: [
       '/plugins/',
       '/docs/guides/plugins/plugins/',
-      '/docs/v6.6rc/guides/plugins/plugins/',
+      '/docs/v6.5/guides/plugins/plugins/',
       '/docs/v6.4/guides/plugins/plugins/',
       '/docs/v6.3/guides/plugins/plugins/',
     ],
@@ -74,7 +70,7 @@ const sections: SwagSectionsConfig[] = [
     title: 'Concepts',
     matches: [
       '/docs/concepts/',
-      '/docs/v6.6rc/concepts/',
+      '/docs/v6.5/concepts/',
       '/docs/v6.4/concepts/',
       '/docs/v6.3/concepts/',
     ],
@@ -83,7 +79,7 @@ const sections: SwagSectionsConfig[] = [
     title: 'Guides',
     matches: [
       '/docs/guides/',
-      '/docs/v6.6rc/guides/',
+      '/docs/v6.5/guides/',
       '/docs/v6.4/guides/',
       '/docs/v6.3/guides/',
     ],
@@ -92,7 +88,7 @@ const sections: SwagSectionsConfig[] = [
     title: 'Products',
     matches: [
       '/docs/products/',
-      '/docs/v6.6rc/products/',
+      '/docs/v6.5/products/',
       '/docs/v6.4/products/',
       '/docs/v6.3/products/',
     ],
@@ -101,9 +97,27 @@ const sections: SwagSectionsConfig[] = [
     title: 'Resources',
     matches: [
       '/docs/resources/',
-      '/docs/v6.6rc/resources/',
+      '/docs/v6.5/resources/',
       '/docs/v6.4/resources/',
       '/docs/v6.3/resources/',
+    ],
+  },
+  {
+    title: 'Meteor Admin SDK',
+    matches: [
+      '/resources/admin-extension-sdk/',
+    ],
+  },
+  {
+    title: 'Meteor Icon Kit',
+    matches: [
+      '/resources/meteor-icon-kit/',
+    ],
+  },
+  {
+    title: 'Release notes',
+    matches: [
+      '/release-notes/',
     ],
   },
   {
@@ -118,7 +132,7 @@ const embeds: SwagEmbedsConfig[] = [
   {
     repository: 'docs',
     points: {
-      '/docs/v6.6rc/': 'next-6.6',
+      '/docs/v6.5/': 'v6.5',
       '/docs/v6.4/': 'v6.4',
       '/docs/v6.3/': 'v6.3.0',
       '/docs/': 'main',
@@ -133,11 +147,11 @@ const embeds: SwagEmbedsConfig[] = [
     folder: 'app/docs/docs'
   },
   {
-    repository: 'admin-extension-sdk',
+    repository: 'meteor',
     points: {
       '/resources/admin-extension-sdk/': 'main',
     },
-    folder: 'docs',
+    folder: 'packages/admin-sdk/docs',
   },
   {
     repository: 'meteor-component-library',
@@ -191,10 +205,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       "docs/resources/references/adr/YYYY-MM-DD-template.md",
       // snippets
       'docs/snippets/**',
-      'docs/v6.6rc/snippets/**',
+      'docs/v6.5/snippets/**',
       // readmes
-      'docs/README.md',
-      'docs/v6.6rc/README.md',
       '**/README.md',
   ],
 
@@ -222,7 +234,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       usercentrics: process.env.USERCENTRICS,
       rollbar: '9ce3bcf057214c7499eefa8865b981e1',
       hotjar: '3527584',
-      gtm: 'G-9JLJ6GGB76',
+      gtm: 'WJKMNPS',
     }),
 
     // search console
@@ -260,31 +272,31 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         filter: {
           'default': {
             exclude: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
               'docs/v6.4/',
               'docs/v6.3/',
             ],
           },
-          '/docs/v6.6rc/': {
+          '/docs/': {
+            exclude: [
+              'docs/v6.5/',
+              'docs/v6.4/',
+              'docs/v6.3/',
+            ],
+          },
+          '/docs/v6.5/': {
             exclude: [
               'docs/',
               'docs/v6.4/',
               'docs/v6.3/',
             ],
             include: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
             ]
-          },
-          '/docs/': {
-            exclude: [
-              'docs/v6.6rc/',
-              'docs/v6.4/',
-              'docs/v6.3/',
-            ],
           },
           '/docs/v6.4/': {
             exclude: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
               'docs/',
               'docs/v6.3/',
             ],
@@ -294,7 +306,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
           },
           '/docs/v6.3/': {
             exclude: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
               'docs/',
               'docs/v6.4/',
             ],
@@ -307,8 +319,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       versionSwitcher: {
         paths: [
           {
-            'docs/v6.6rc': 'v6.6 (RC)',
-            'docs': 'v6.5 (stable)',
+            'docs': 'v6.6 (stable)',
+            'docs/v6.5': 'v6.5',
             'docs/v6.4': 'v6.4',
             'docs/v6.3': 'v6.3',
           }
@@ -473,8 +485,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         ],
       },
       {
-        src: './docs/v6.6rc/products/extensions/b2b-suite/guides/example-plugins',
-        dst: 'docs/v6.6rc/products/extensions/b2b-suite/guides/example-plugins',
+        src: './docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
+        dst: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
         ],

@@ -19,14 +19,14 @@
       "src": ".",
       "dst": [
         "docs",
-        "v6.6rc"
+        "v6.5"
       ],
       "branch": [
-        "env.BRANCH_DOCS_66",
-        "next-6.6"
+        "env.BRANCH_DOCS_65",
+        "v6.5"
       ],
       "org": [
-        "env.ORG_DOCS_66",
+        "env.ORG_DOCS_65",
         "shopware"
       ]
     },
@@ -42,7 +42,7 @@
         "v6.4"
       ],
       "org": [
-        "env.ORG_DOCS",
+        "env.ORG_DOCS_64",
         "shopware"
       ]
     },
@@ -58,7 +58,7 @@
         "v6.3.0"
       ],
       "org": [
-        "env.ORG_DOCS",
+        "env.ORG_DOCS_63",
         "shopware"
       ]
     },
@@ -108,23 +108,21 @@
       "skip": true
     },
     {
-      "name": "shopware/admin-extension-sdk",
+      "name": "shopware/meteor",
       "src": [
-        "docs",
-        "docs",
-        "guide"
+        "packages",
+        "admin-sdk",
+        "docs"
       ],
       "dst": "resources/admin-extension-sdk",
       "branch": [
         "env.BRANCH_ADMIN_EXTENSION_SDK",
-        "DX-223",
         "main"
       ],
       "org": [
         "env.ORG_ADMIN_EXTENSION_SDK",
         "shopware"
-      ],
-      "skip": true
+      ]
     },
     {
       "name": "shopware/meteor",

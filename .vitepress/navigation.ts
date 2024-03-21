@@ -49,8 +49,7 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: "Meteor Admin SDK",
-                        // link: "/resources/admin-extension-sdk/",
-                        link: 'https://shopware.github.io/meteor-admin-sdk/',
+                        link: "/resources/admin-extension-sdk/",
                         repo: 'shopware/meteor-admin-sdk',
                     },
                     {
@@ -92,21 +91,21 @@ const navigation = buildSidebarNav('./src/', [
     },
 ], [
     //'/docs/',
-    '/docs/v6.6rc/',
+    '/docs/v6.5/',
     '/docs/v6.4/',
     '/docs/v6.3/',
-    //'/resources/admin-extension-sdk/',
+    '/resources/admin-extension-sdk/',
     //'/resources/meteor-component-library/',
     '/', // always have root sidebar
     '/resources/meteor-icon-kit/',
     '/release-notes/',
 ], [
     '/docs/assets/',
-    '/docs/v6.6rc/assets/',
+    '/docs/v6.5/assets/',
     '/docs/snippets/',
-    '/docs/v6.6rc/snippets/',
+    '/docs/v6.5/snippets/',
     '/docs/README.md',
-    '/docs/v6.6rc/README.md',
+    '/docs/v6.5/README.md',
 ]);
 
 const prefixItems = (items, prefix) => items.map(item => {

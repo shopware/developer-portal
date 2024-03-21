@@ -1,7 +1,7 @@
 <template>
   <div class="SwagChangelog">
     <a :href="release.link" class="SwagChangelog_item divide-y-1 divide-x-1 divide-gray-400"
-       v-for="release in releases">
+       v-for="release in releases?.slice(0, 6)">
       <span class="SwagChangelog_version">{{ release.text }}</span>
       <span class="flex gap-1">
         <SwagLabel :label="release.label" v-if="release.label"></SwagLabel>
