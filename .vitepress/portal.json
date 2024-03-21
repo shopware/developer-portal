@@ -19,14 +19,14 @@
       "src": ".",
       "dst": [
         "docs",
-        "v6.6rc"
+        "v6.5"
       ],
       "branch": [
-        "env.BRANCH_DOCS_66",
-        "next-6.6"
+        "env.BRANCH_DOCS_65",
+        "v6.5"
       ],
       "org": [
-        "env.ORG_DOCS_66",
+        "env.ORG_DOCS_65",
         "shopware"
       ]
     },
@@ -42,7 +42,7 @@
         "v6.4"
       ],
       "org": [
-        "env.ORG_DOCS",
+        "env.ORG_DOCS_64",
         "shopware"
       ]
     },
@@ -58,7 +58,7 @@
         "v6.3.0"
       ],
       "org": [
-        "env.ORG_DOCS",
+        "env.ORG_DOCS_63",
         "shopware"
       ]
     },

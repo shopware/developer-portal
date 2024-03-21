@@ -35,7 +35,7 @@ const sections: SwagSectionsConfig[] = [
     matches: [
       '/apps/',
       '/docs/guides/plugins/apps/',
-      '/docs/v6.6rc/guides/plugins/apps/',
+      '/docs/v6.5/guides/plugins/apps/',
       '/docs/v6.4/guides/plugins/apps/',
       '/docs/v6.3/guides/plugins/apps/',
     ],
@@ -45,7 +45,7 @@ const sections: SwagSectionsConfig[] = [
     matches: [
       '/themes/',
       '/docs/guides/plugins/themes/',
-      '/docs/v6.6rc/guides/plugins/themes/',
+      '/docs/v6.5/guides/plugins/themes/',
       '/docs/v6.4/guides/plugins/themes/',
       '/docs/v6.3/guides/plugins/themes/',
     ],
@@ -55,7 +55,7 @@ const sections: SwagSectionsConfig[] = [
     matches: [
       '/plugins/',
       '/docs/guides/plugins/plugins/',
-      '/docs/v6.6rc/guides/plugins/plugins/',
+      '/docs/v6.5/guides/plugins/plugins/',
       '/docs/v6.4/guides/plugins/plugins/',
       '/docs/v6.3/guides/plugins/plugins/',
     ],
@@ -70,7 +70,7 @@ const sections: SwagSectionsConfig[] = [
     title: 'Concepts',
     matches: [
       '/docs/concepts/',
-      '/docs/v6.6rc/concepts/',
+      '/docs/v6.5/concepts/',
       '/docs/v6.4/concepts/',
       '/docs/v6.3/concepts/',
     ],
@@ -79,7 +79,7 @@ const sections: SwagSectionsConfig[] = [
     title: 'Guides',
     matches: [
       '/docs/guides/',
-      '/docs/v6.6rc/guides/',
+      '/docs/v6.5/guides/',
       '/docs/v6.4/guides/',
       '/docs/v6.3/guides/',
     ],
@@ -88,7 +88,7 @@ const sections: SwagSectionsConfig[] = [
     title: 'Products',
     matches: [
       '/docs/products/',
-      '/docs/v6.6rc/products/',
+      '/docs/v6.5/products/',
       '/docs/v6.4/products/',
       '/docs/v6.3/products/',
     ],
@@ -97,7 +97,7 @@ const sections: SwagSectionsConfig[] = [
     title: 'Resources',
     matches: [
       '/docs/resources/',
-      '/docs/v6.6rc/resources/',
+      '/docs/v6.5/resources/',
       '/docs/v6.4/resources/',
       '/docs/v6.3/resources/',
     ],
@@ -132,7 +132,7 @@ const embeds: SwagEmbedsConfig[] = [
   {
     repository: 'docs',
     points: {
-      '/docs/v6.6rc/': 'next-6.6',
+      '/docs/v6.5/': 'v6.5',
       '/docs/v6.4/': 'v6.4',
       '/docs/v6.3/': 'v6.3.0',
       '/docs/': 'main',
@@ -205,10 +205,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       "docs/resources/references/adr/YYYY-MM-DD-template.md",
       // snippets
       'docs/snippets/**',
-      'docs/v6.6rc/snippets/**',
+      'docs/v6.5/snippets/**',
       // readmes
-      'docs/README.md',
-      'docs/v6.6rc/README.md',
       '**/README.md',
   ],
 
@@ -274,31 +272,31 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         filter: {
           'default': {
             exclude: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
               'docs/v6.4/',
               'docs/v6.3/',
             ],
           },
-          '/docs/v6.6rc/': {
+          '/docs/': {
+            exclude: [
+              'docs/v6.5/',
+              'docs/v6.4/',
+              'docs/v6.3/',
+            ],
+          },
+          '/docs/v6.5/': {
             exclude: [
               'docs/',
               'docs/v6.4/',
               'docs/v6.3/',
             ],
             include: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
             ]
-          },
-          '/docs/': {
-            exclude: [
-              'docs/v6.6rc/',
-              'docs/v6.4/',
-              'docs/v6.3/',
-            ],
           },
           '/docs/v6.4/': {
             exclude: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
               'docs/',
               'docs/v6.3/',
             ],
@@ -308,7 +306,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
           },
           '/docs/v6.3/': {
             exclude: [
-              'docs/v6.6rc/',
+              'docs/v6.5/',
               'docs/',
               'docs/v6.4/',
             ],
@@ -321,8 +319,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       versionSwitcher: {
         paths: [
           {
-            'docs/v6.6rc': 'v6.6 (RC)',
-            'docs': 'v6.5 (stable)',
+            'docs': 'v6.6 (stable)',
+            'docs/v6.5': 'v6.5',
             'docs/v6.4': 'v6.4',
             'docs/v6.3': 'v6.3',
           }
@@ -487,8 +485,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         ],
       },
       {
-        src: './docs/v6.6rc/products/extensions/b2b-suite/guides/example-plugins',
-        dst: 'docs/v6.6rc/products/extensions/b2b-suite/guides/example-plugins',
+        src: './docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
+        dst: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
         ],

@@ -3,7 +3,7 @@ set -e
 
 # custom config
 BRANCH_DOCS=main
-BRANCH_DOCS_66=next-6.6
+BRANCH_DOCS_65=v6.5
 BRANCH_DOCS_64=v6.4
 BRANCH_DOCS_63=v6.3.0
 BRANCH_FRONTENDS=DX-devhub
@@ -14,7 +14,7 @@ BRANCH_RELEASE_NOTES=main
 
 # custom orgs
 ORG_DOCS=shopware
-ORG_DOCS_66=shopware
+ORG_DOCS_65=shopware
 ORG_DOCS_64=shopware
 ORG_DOCS_63=shopware
 ORG_FRONTENDS=shopware
@@ -42,10 +42,10 @@ fi
 ./docs-cli.cjs clone \
  --ci \
  --repository shopware/docs \
- --branch ${BRANCH_DOCS_66:-main} \
+ --branch ${BRANCH_DOCS_65:-main} \
  --src . \
- --dst docs/v6.6rc \
- --org ${ORG_DOCS_66:-shopware}
+ --dst docs/v6.5 \
+ --org ${ORG_DOCS_65:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \

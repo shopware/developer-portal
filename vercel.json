@@ -20,8 +20,13 @@
   ],
   "redirects": [
     {
-      "source": "/docs/v6.6rc/:url(^(?!.*\\.).*[^/]$)",
-      "destination": "/docs/v6.6rc/:url.html",
+      "source": "/docs/v6.6rc/:url*",
+      "destination": "/docs/:url",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/v6.5/:url(^(?!.*\\.).*[^/]$)",
+      "destination": "/docs/v6.5/:url.html",
       "statusCode": 301
     },
     {
@@ -45,6 +50,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/v/6.5/:url*",
+      "destination": "/docs/v6.5/:url",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/v/6.4/:url*",
       "destination": "/docs/v6.4/:url",
       "statusCode": 301
@@ -57,6 +67,11 @@
     {
       "source": "/docs/v/v6.4/:url*",
       "destination": "/docs/v6.4/:url",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/v/v6.5/:url*",
+      "destination": "/docs/v6.5/:url",
       "statusCode": 301
     },
     {
