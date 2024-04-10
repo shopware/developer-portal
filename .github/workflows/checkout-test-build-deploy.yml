@@ -271,6 +271,14 @@ jobs:
           true || unzip .q -o db-external.zip -d merged
           cd merged; zip -q -r ../db-merged.zip * 
 
+      - name: Cleanup zip
+        run: |
+          zip -d all.zip \
+            '**/_source/**' \
+            'docs/**/YYYY-MM-DD-template.md' \
+            'docs/**/snippets/**' \
+            '**/README.md'
+
       - name: Send artifact
         env:
           KNOWLEDGE_URL: ${{ secrets.KNOWLEDGE_URL }}
