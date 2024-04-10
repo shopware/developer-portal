@@ -273,7 +273,7 @@ jobs:
 
       - name: Cleanup zip
         run: |
-          zip -d db-index.zip \
+          zip -d db-merged.zip \
             '**/_source/**' \
             'docs/**/YYYY-MM-DD-template.md' \
             'docs/**/snippets/**' \
