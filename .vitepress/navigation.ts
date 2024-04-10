@@ -60,7 +60,7 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: "Meteor Component Library",
                         // link: "/resources/meteor-component-library/",
-                        link: 'https://shopware.github.io/meteor-component-library/',
+                        link: 'https://meteor-component-library.vercel.app/',
                         repo: 'shopware/meteor-component-library',
                     }
                 ]
