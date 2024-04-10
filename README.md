@@ -27,9 +27,8 @@ This repository:
   folder (destination) in this repository:
     - [shopware/docs](https://github.com/shopware/docs)
     - [shopware/frontends](https://github.com/shopware/frontends)
-    - [shopware/admin-extension-sdk](https://github.com/shopware/admin-extension-sdk)
-    - [shopware/meteor-icon-kit](https://github.com/shopware/meteor-icon-kit)
-    - [shopware/meteor-component-library](https://github.com/shopware/meteor-component-library)
+    - [shopware/meteor](https://github.com/shopware/meteor)
+    - [shopware/release-notes](https://github.com/shopware/release-notes)
     - [shopware/store-api-reference](https://github.com/shopware/store-api-reference)
     - [shopware/admin-api-reference](https://github.com/shopware/admin-api-reference)
 - **has a single deployment workflow** with the build being served from a single
