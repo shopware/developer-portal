@@ -273,7 +273,7 @@ jobs:
 
       - name: Cleanup zip
         run: |
-          zip -d all.zip \
+          zip -d db-index.zip \
             '**/_source/**' \
             'docs/**/YYYY-MM-DD-template.md' \
             'docs/**/snippets/**' \
