@@ -106,6 +106,8 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/v6.5/snippets/',
     '/docs/README.md',
     '/docs/v6.5/README.md',
+    "/docs/resources/references/adr/YYYY-MM-DD-template.md",
+    "/docs/v6.5/resources/references/adr/YYYY-MM-DD-template.md",
 ]);
 
 const prefixItems = (items, prefix) => items.map(item => {

@@ -202,7 +202,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       // git sources
       "**/_source/**",
       // template
-      "docs/resources/references/adr/YYYY-MM-DD-template.md",
+      "**/YYYY-MM-DD-template.md",
       // snippets
       'docs/snippets/**',
       'docs/v6.5/snippets/**',
