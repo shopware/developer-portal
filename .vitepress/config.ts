@@ -182,6 +182,13 @@ const embeds: SwagEmbedsConfig[] = [
     folder: 'docs',
   },
   {
+    repository: 'release-notes',
+    points: {
+      '/release-notes/': 'main',
+    },
+    folder: 'src',
+  },
+  {
     repository: 'developer-portal',
     points: {
       '/': 'main',
