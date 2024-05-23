@@ -25,7 +25,7 @@
     "@shopware-ag/meteor-icon-kit": "^5.2.1",
     "cross-env": "^7.0.3",
     "terser": "^5.27.0",
-    "vitepress": "1.0.0-rc.40",
+    "vitepress": "^1.2.2",
     "vitepress-shopware-docs": "1.1.40",
     "vue": "^3.4.15"
   },
