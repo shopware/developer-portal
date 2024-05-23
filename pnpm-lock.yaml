@@ -18,8 +18,8 @@ dependencies:
     specifier: 1.0.0-rc.40
     version: 1.0.0-rc.40(@types/node@20.11.30)(fuse.js@7.0.0)(less@4.2.0)(postcss@8.4.37)(react-dom@18.2.0)(react@18.2.0)(sass@1.72.0)(search-insights@2.13.0)(terser@5.29.2)(typescript@5.4.2)
   vitepress-shopware-docs:
-    specifier: 1.1.35
-    version: 1.1.35(@babel/core@7.24.3)(@docsearch/css@3.6.0)(@docsearch/js@3.6.0)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.66.0)(postcss@8.4.37)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.14.0)(vue@3.4.21)
+    specifier: 1.1.40
+    version: 1.1.40(@babel/core@7.24.3)(@docsearch/css@3.6.0)(@docsearch/js@3.6.0)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.66.0)(postcss@8.4.37)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.14.0)(vue@3.4.21)
   vue:
     specifier: ^3.4.15
     version: 3.4.21(typescript@5.4.2)
@@ -5126,7 +5126,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.21(typescript@5.4.2)
-      vue-component-type-helpers: 2.0.17
+      vue-component-type-helpers: 2.0.19
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -12644,7 +12644,6 @@ packages:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
     engines: {node: '>=10'}
     hasBin: true
-    dev: true
 
   /send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
@@ -14057,8 +14056,8 @@ packages:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
 
-  /vitepress-shopware-docs@1.1.35(@babel/core@7.24.3)(@docsearch/css@3.6.0)(@docsearch/js@3.6.0)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.66.0)(postcss@8.4.37)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.14.0)(vue@3.4.21):
-    resolution: {integrity: sha512-qI8TpWJjK3IN1slIU8EukZQ1F0LQzb3EtSmotsZZ8qxsDmLCFjygKiSHiQusY1vF4Xyvo/j3CS632tmIlrveag==}
+  /vitepress-shopware-docs@1.1.40(@babel/core@7.24.3)(@docsearch/css@3.6.0)(@docsearch/js@3.6.0)(algoliasearch@4.22.1)(instantsearch.css@8.1.0)(instantsearch.js@4.66.0)(postcss@8.4.37)(react-dom@18.2.0)(react@18.2.0)(vue-instantsearch@4.14.0)(vue@3.4.21):
+    resolution: {integrity: sha512-N79VxdIlc6DN9E0fogPyipHR6LB12rwW/94q416uWHGtD0LuZmu+g/+m83nEoaAlnhOGUBTOjPQRalx0YFyfQw==}
     peerDependencies:
       '@docsearch/css': ^3.5.2
       '@docsearch/js': ^3.5.2
@@ -14084,6 +14083,7 @@ packages:
       instantsearch.js: 4.66.0(algoliasearch@4.22.1)
       medium-zoom: 1.1.0
       normalize.css: 8.0.1
+      semver: 7.6.2
       shiki: 1.2.0
       unocss: 0.58.9(postcss@8.4.37)
       vue-instantsearch: 4.14.0(algoliasearch@4.22.1)(vue@3.4.21)
@@ -14245,8 +14245,8 @@ packages:
     resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
     dev: true
 
-  /vue-component-type-helpers@2.0.17:
-    resolution: {integrity: sha512-2car49m8ciqg/JjgMBkx7o/Fd2A7fHESxNqL/2vJYFLXm4VwYO4yH0rexOi4a35vwNgDyvt17B07Vj126l9rAQ==}
+  /vue-component-type-helpers@2.0.19:
+    resolution: {integrity: sha512-cN3f1aTxxKo4lzNeQAkVopswuImUrb5Iurll9Gaw5cqpnbTAxtEMM1mgi6ou4X79OCyqYv1U1mzBHJkzmiK82w==}
     dev: true
 
   /vue-component-type-helpers@2.0.7:
