@@ -5,6 +5,25 @@ updates:
     schedule:
       interval: "daily"
     groups:
+      shopware:
+        patterns:
+          - "*shopware*"
+      vitepress:
+        patterns:
+          - "*vitepress*"
+      storybook:
+        patterns:
+          - "*storybook*"
+      vite:
+        patterns:
+          - "*vite*"
+      search:
+        patterns:
+          - "*instantsearch*"
+          - "*algolia*"
+      test:
+        patterns:
+          - "*test*"
       all-dependencies:
         patterns:
           - "*"
