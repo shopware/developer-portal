@@ -45,7 +45,7 @@ import SwagChangelog from "./SwagChangelog.vue";
 
 const {theme} = useData()
 const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/'))
-    .filter(item => item.link?.match(/^\/release-notes\/(\d).(\d)\/(\d).(\d).(\d).(\d).html/g))
+    .filter(item => item.link?.match(/^\/release-notes\/(\d).(\d)\/(\d).(\d).(\d){1,2}.(\d){1,2}.html/g))
     .map(({text, link, meta}) => ({text, link, ...meta}))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .map(release => {
