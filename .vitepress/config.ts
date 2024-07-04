@@ -381,12 +381,12 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       }),
       TsFunctionDescription({
         rootDir: resolve(__dirname, frontendsPath),
-        dirs: true || !fs.existsSync(resolve(__dirname, frontendsPath)) ? [] : [
+        dirs: !fs.existsSync(resolve(__dirname, frontendsPath)) ? [] : [
           {
             autogenExampleAlias: "api-client",
             functions: resolve(
                 __dirname,
-                `${frontendsPath}/packages/api-client/src/services/`,
+                `${frontendsPath}/packages/api-client-old/src/services/`,
             ),
             types: resolve(
                 __dirname,
