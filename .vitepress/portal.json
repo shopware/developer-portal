@@ -35,6 +35,22 @@
       "src": ".",
       "dst": [
         "docs",
+        "v6.7"
+      ],
+      "branch": [
+        "env.BRANCH_DOCS_67",
+        "next-6.7"
+      ],
+      "org": [
+        "env.ORG_DOCS_67",
+        "shopware"
+      ]
+    },
+    {
+      "name": "shopware/docs",
+      "src": ".",
+      "dst": [
+        "docs",
         "v6.4"
       ],
       "branch": [
