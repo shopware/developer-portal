@@ -91,6 +91,7 @@ const navigation = buildSidebarNav('./src/', [
     },
 ], [
     //'/docs/',
+    '/docs/v6.7/',
     '/docs/v6.5/',
     '/docs/v6.4/',
     '/docs/v6.3/',
@@ -101,13 +102,17 @@ const navigation = buildSidebarNav('./src/', [
     '/release-notes/',
 ], [
     '/docs/assets/',
+    '/docs/v6.7/assets/',
     '/docs/v6.5/assets/',
     '/docs/snippets/',
+    '/docs/v6.7/snippets/',
     '/docs/v6.5/snippets/',
     '/docs/README.md',
+    '/docs/v6.7/README.md',
     '/docs/v6.5/README.md',
     "/docs/resources/references/adr/YYYY-MM-DD-template.md",
     "/docs/v6.5/resources/references/adr/YYYY-MM-DD-template.md",
+    "/docs/v6.7/resources/references/adr/YYYY-MM-DD-template.md",
 ]);
 
 const prefixItems = (items, prefix) => items.map(item => {
