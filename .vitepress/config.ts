@@ -350,7 +350,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       versionSwitcher: {
         paths: [
           {
-            'docs': 'v6.7 (next, unstable)',
+            'docs/v6.7': 'v6.7 (next, unstable)',
             'docs': 'v6.6 (stable)',
             'docs/v6.5': 'v6.5',
             'docs/v6.4': 'v6.4',
