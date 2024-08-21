@@ -225,7 +225,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       // readmes
       '**/README.md',
       // tmp
-      'chat.md',
+      // 'chat.md',
   ],
 
   ignoreDeadLinks: true,
