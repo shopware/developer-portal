@@ -1,7 +1,7 @@
 import { defineConfigWithTheme } from "vitepress";
 import type { HeadConfig, TransformContext } from 'vitepress'
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
-import baseConfig from "vitepress-shopware-docs/config";
+import { baseConfig } from "@shopware-docs/vitepress";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
 import {resolve} from "path";
 import fs from 'fs';
@@ -208,7 +208,7 @@ const embeds: SwagEmbedsConfig[] = [
 const frontendsPath = "../src/frontends/_source";
 
 export default withMermaid(defineConfigWithTheme<ThemeConfig>({
-  extends: baseConfig,
+  extends: baseConfig.default,
 
   title: "Shopware Documentation",
   description: "Documentation for Shopware developers",
@@ -224,6 +224,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       'docs/v6.5/snippets/**',
       // readmes
       '**/README.md',
+      // tmp
+      'chat.md',
   ],
 
   ignoreDeadLinks: true,
@@ -465,6 +467,16 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
             'vue-instantsearch/vue3/es',
             'instantsearch.css/themes/algolia-min.css',
         ]
+      }
+    },
+    resolve: {
+      alias: {
+        '@node_modules': resolve(process.cwd(), 'node_modules'),
+        '../composables/edit-link': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/composables/edit-link.ts'),
+        './VPNavBarTitle.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/VPNavBarTitle.vue'),
+        './VPAlgoliaSearchBox.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/VPAlgoliaSearchBox.vue'),
+        '../NotFound.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/NotFound.vue'),
+        '../SwagRelatedArticles.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/SwagRelatedArticles.vue'),
       }
     }
   },
