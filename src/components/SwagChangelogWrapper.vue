@@ -43,6 +43,12 @@ import {useData} from "vitepress";
 import {getSidebar, flattenSidebar} from '../../node_modules/vitepress-shopware-docs/src/shopware/support/sidebar'
 import SwagChangelog from "./SwagChangelog.vue";
 
+//import { h } from 'vue';
+//import { renderToString } from 'vue/server-renderer';
+//import jsdom from "jsdom"
+//const { JSDOM } = jsdom
+//global.DOMParser = new JSDOM().window.DOMParser
+
 const {theme} = useData()
 const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/'))
     .filter(item => item.link?.match(/^\/release-notes\/(\d).(\d)\/(\d).(\d).(\d){1,2}.(\d){1,2}.html/g))
@@ -69,8 +75,11 @@ if (!improvements.length) {
 }
 const links = improvements.map(({title, slug}) => ({title, slug}));
 
-const content = latestSource.default.render().children[0].children;
-const intro = new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
+//const app = h(latestSource.default);
+//const rendered = await renderToString(app);
+
+const content = ''//latestSource.default.ssrRender().children[0].children;
+const intro = ''//new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
 </script>
 
 <style lang="scss">
