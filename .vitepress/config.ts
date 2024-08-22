@@ -511,6 +511,13 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
     },*/
     build: {
       rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('mermaid')) {
+              return 'mermaid';
+            }
+          }
+        },
         external: [
             'vue-instantsearch/vue3/es',
             'instantsearch.css/themes/algolia-min.css',
