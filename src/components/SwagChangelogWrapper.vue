@@ -43,11 +43,8 @@ import {useData} from "vitepress";
 import {getSidebar, flattenSidebar} from '../../node_modules/vitepress-shopware-docs/src/shopware/support/sidebar'
 import SwagChangelog from "./SwagChangelog.vue";
 
-//import { h } from 'vue';
-//import { renderToString } from 'vue/server-renderer';
-//import jsdom from "jsdom"
-//const { JSDOM } = jsdom
-//global.DOMParser = new JSDOM().window.DOMParser
+import { createSSRApp } from 'vue';
+import { renderToString } from '@vue/server-renderer';
 
 const {theme} = useData()
 const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/'))
@@ -66,7 +63,8 @@ const md = `${latestRelease.link.replace('.html', '')}`;
 const [empty, rn, major, patch] = md.split('/');
 
 // https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
-const latestSource = await import(`../${rn}/${major}/${patch}.md`);
+//const latestSource = await import(`../release-notes/${major}/${patch}.md`);
+const latestSource = await import(`../release-notes/latest.md`);
 
 const headers = latestSource.__pageData.headers;
 let improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
@@ -75,11 +73,13 @@ if (!improvements.length) {
 }
 const links = improvements.map(({title, slug}) => ({title, slug}));
 
-//const app = h(latestSource.default);
-//const rendered = await renderToString(app);
+const app = createSSRApp(latestSource.default);
+const renderedHtml = await renderToString(app);
 
-const content = ''//latestSource.default.ssrRender().children[0].children;
-const intro = ''//new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
+const intro = ((renderedHtml || '').split('<p>')[1] || '').split('</p>')[0];
+
+// const content = latestSource.default.render().children[0].children;
+// const intro = new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
 </script>
 
 <style lang="scss">

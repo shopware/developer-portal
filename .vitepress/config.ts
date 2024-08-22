@@ -3,7 +3,7 @@ import type { HeadConfig, TransformContext } from 'vitepress'
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import { baseConfig } from "@shopware-docs/vitepress";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
-import {resolve} from "path";
+import { resolve, join, basename } from "path";
 import fs from 'fs';
 
 import { CssCleanup, baseCleanup, MarkdownTransform, copyAdditionalAssets, createSitemap, storeRedirects, addOGImage, userCentricsHead, generateMarkdownFromStoplight, getStoplightUrls } from "@shopware-docs/vitepress";
@@ -224,6 +224,8 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       'docs/v6.5/snippets/**',
       // readmes
       '**/README.md',
+      // release notes optimization
+      'release-notes/latest.md',
       // tmp
       // 'chat.md',
   ],
@@ -436,6 +438,47 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
           },
         ],
       }),
+      {
+        name: 'create-release-notes-symlink-before-build',
+        apply: 'build',
+        buildStart() {
+          const releaseNotesDir = resolve(__dirname, '../src/release-notes');
+          const symlinkPath = resolve(__dirname, '../src/release-notes/latest.md');
+
+          function compareVersions(a, b) {
+            const [versionA, versionB] = [a, b].map(v => v.split('.').map(Number));
+            return versionA.find((v, i) => v !== versionB[i]) - versionB.find((v, i) => v !== versionA[i]);
+          }
+
+          let latestReleaseNote = null;
+          fs.readdirSync(releaseNotesDir).forEach(versionDir => {
+            const versionPath = join(releaseNotesDir, versionDir);
+            if (!fs.statSync(versionPath).isDirectory()) return;
+
+            fs.readdirSync(versionPath)
+                .filter(file => /^\d+\.\d+\.\d+\.\d+\.md$/.test(file))
+                .forEach(file => {
+                  const version = file.match(/^(\d+\.\d+\.\d+\.\d+)\.md$/)[1];
+                  if (!latestReleaseNote || compareVersions(version, basename(latestReleaseNote, '.md')) > 0) {
+                    latestReleaseNote = join(versionPath, file);
+                  }
+                });
+          });
+
+          if (!latestReleaseNote) {
+            console.error('No release notes found.');
+            return;
+          }
+
+          if (fs.existsSync(symlinkPath)) {
+            fs.unlinkSync(symlinkPath); // Remove the existing symlink if it exists
+          }
+
+          fs.symlinkSync(latestReleaseNote, symlinkPath); // Create a new symlink
+
+          console.log(`Symlink created from ${symlinkPath} to ${latestReleaseNote}`);
+        }
+      }
     ],
     server: {
       watch: {
@@ -447,6 +490,11 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
     worker: {
       plugins: () => [
         topLevelAwait()
+      ]
+    },
+    optimizeDeps: {
+      include: [
+          'mermaid',
       ]
     },
     /*optimizeDeps: {
