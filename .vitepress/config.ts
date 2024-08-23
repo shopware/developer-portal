@@ -552,11 +552,11 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
     await copyAdditionalAssets([
       // shiki
       {
-        src: '../node_modules/shiki/languages',
-        dst: 'shiki/languages',
+        src: '../node_modules/shiki/dist/langs',
+        dst: 'shiki/langs',
       },
       {
-        src: '../node_modules/shiki/themes',
+        src: '../node_modules/shiki/dist/themes',
         dst: 'shiki/themes',
       },
       {
