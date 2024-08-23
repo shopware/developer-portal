@@ -34,11 +34,11 @@ function extractLanguages(markdown) {
 }
 
 const arrayIntersection = (arr1, arr2) => arr1.filter(value => arr2.includes(value));
-const bundledLangs = Object.keys(shiki.BUNDLED_LANGUAGES.reduce((reduced, lang) => {
+const bundledLangs = Object.keys(Object.values(shiki.bundledLanguagesInfo).reduce((reduced, lang) => {
     reduced[lang.id] = lang.id;
     Object.values(lang.aliases || []).forEach(lang => reduced[lang] = lang);
     return reduced;
-}, []));
+}, {}));
 
 export default async (markdown: string) => {
     if (markdown === '') {
@@ -52,7 +52,7 @@ export default async (markdown: string) => {
     // https://vitejs.dev/guide/features.html#webassembly
     // https://www.npmjs.com/package/vite-plugin-wasm
     // shiki.setWasm(onigasm)
-    shiki.setCDN('/shiki/');
+    // shiki.setCDN('/shiki/');
     const highlighter = await shiki.getHighlighter({
         theme: 'github-dark',
         themes: ['github-dark', 'github-light'],
