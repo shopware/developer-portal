@@ -85,7 +85,7 @@ jobs:
 
       - name: Test
         run: |
-          export NODE_OPTIONS="--max-old-space-size=10120"
+          export NODE_OPTIONS="--max-old-space-size=12288"
           pnpm -C ./src/frontends/_source/ i
           pnpm run test
 
@@ -116,7 +116,7 @@ jobs:
 
       - name: Build project
         run: |
-          export NODE_OPTIONS="--max-old-space-size=10120"
+          export NODE_OPTIONS="--max-old-space-size=12288"
           export USERCENTRICS="65ynhGFvE"
           pnpm -C ./src/frontends/_source/ i
           pnpm run build
@@ -178,7 +178,7 @@ jobs:
 
       - name: Test
         run: |
-          export NODE_OPTIONS="--max-old-space-size=10120"
+          export NODE_OPTIONS="--max-old-space-size=12288"
           pnpm -C ./src/frontends/_source/ i
           pnpm run test:build
 
