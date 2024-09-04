@@ -1,0 +1,212 @@
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+index 0000000000000000000000000000000000000000..13566b81b018ad684f3a35fee301741b2734c8f4
+--- /dev/null
++++ b/.idea/.gitignore
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+diff --git a/.idea/33015ae5db14fdc88128d5600d70ad49.iml b/.idea/33015ae5db14fdc88128d5600d70ad49.iml
+new file mode 100644
+index 0000000000000000000000000000000000000000..c956989b29ad0767edc6cf3a202545927c3d1e76
+--- /dev/null
++++ b/.idea/33015ae5db14fdc88128d5600d70ad49.iml
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="WEB_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+index 0000000000000000000000000000000000000000..04a8296ee1dbbf25fdfcb0da4326df1c30c08933
+--- /dev/null
++++ b/.idea/modules.xml
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/33015ae5db14fdc88128d5600d70ad49.iml" filepath="$PROJECT_DIR$/.idea/33015ae5db14fdc88128d5600d70ad49.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/.idea/php.xml b/.idea/php.xml
+new file mode 100644
+index 0000000000000000000000000000000000000000..f324872a8ba94b4ec07a8aad82965487b3b15d57
+--- /dev/null
++++ b/.idea/php.xml
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="MessDetectorOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PHPCSFixerOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PHPCodeSnifferOptionsConfiguration">
++    <option name="highlightLevel" value="WARNING" />
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PhpStanOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PsalmOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+index 0000000000000000000000000000000000000000..852c6fd18b2f7f3d0eef624c717db7562ba637e9
+--- /dev/null
++++ b/.idea/workspace.xml
+@@ -0,0 +1,52 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ChangeListManager">
++    <list default="true" id="4cac6a84-6f0a-49a7-a480-5df385e82da7" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ComposerSettings">
++    <execution />
++  </component>
++  <component name="ProjectColorInfo"><![CDATA[{
++  "associatedIndex": 7
++}]]></component>
++  <component name="ProjectId" id="2lbfOaA8D85GuISkE4ULiliqbj8" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "last_opened_file_path": "/tmp/33015ae5db14fdc88128d5600d70ad49",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
++        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
++      </set>
++    </attachedChunks>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="4cac6a84-6f0a-49a7-a480-5df385e82da7" name="Changes" comment="" />
++      <created>1725453666454</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1725453666454</updated>
++      <workItem from="1725453667531" duration="18000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/dist/node/chunks/dep-BzOvws4Y.js b/dist/node/chunks/dep-BzOvws4Y.js
+index 184597a2d7b1acc23556e16264e6677457023e81..31f00cdec76a634c2a988334b9ffc6c37e968491 100644
+--- a/dist/node/chunks/dep-BzOvws4Y.js
++++ b/dist/node/chunks/dep-BzOvws4Y.js
+@@ -64967,21 +64967,64 @@ function ssrManifestPlugin(config) {
+ }
+ 
+ function loadFallbackPlugin() {
+-  return {
+-    name: "vite:load-fallback",
+-    async load(id) {
+-      try {
+-        const cleanedId = cleanUrl(id);
+-        const content = await fsp.readFile(cleanedId, "utf-8");
+-        this.addWatchFile(cleanedId);
+-        return content;
+-      } catch (e) {
+-        const content = await fsp.readFile(id, "utf-8");
+-        this.addWatchFile(id);
+-        return content;
+-      }
++
++    console.warn('CACHING')
++    function readFilesRecursively(dir, fileExtensions = ['.md', '.vue', '.js', '.ts', '.mjs', '.css'], fileContents = {}) {
++        // Read the directory
++        const files = fs.readdirSync(dir);
++
++        // Iterate over each file/directory in the directory
++        for (const file of files) {
++            const fullPath = path.join(dir, file);
++
++            // Check if the path is a directory
++            if (fs.statSync(fullPath).isDirectory()) {
++                // Recursively read the contents of the directory
++                readFilesRecursively(fullPath, fileExtensions, fileContents);
++            } else {
++                // Check if the file extension matches the desired extensions
++                if (fileExtensions.includes(path.extname(fullPath))) {
++                    // Read the file content and store it in the object
++                    const content = fs.readFileSync(fullPath, 'utf8');
++                    fileContents[fullPath] = content;
++                }
++            }
++        }
++
++        return fileContents;
+     }
+-  };
++
++    const directoryPath = '/www/shopware/developer-portal/src/';  // replace with your directory path
++    const start = performance.now();
++    const cachedFiles = {}//readFilesRecursively(directoryPath);
++    const end = performance.now();
++    console.warn('ENDED CACHING', `${end - start}ms`, Object.keys(cachedFiles))
++
++    return {
++        name: "vite:load-fallback",
++        async load(id) {
++
++            const start = performance.now();
++
++            const result = await (async () => {
++                try {
++                    const cleanedId = cleanUrl(id);
++                    const content = cachedFiles[cleanedId] || await fsp.readFile(cleanedId, "utf-8");
++                    //this.addWatchFile(cleanedId);
++                    return content;
++                } catch (e) {
++                    console.error('fallback', e, cleanUrl(id), id)
++                    const content = cachedFiles[id] || await fsp.readFile(id, "utf-8");
++                    //this.addWatchFile(id);
++                    return content;
++                }
++            })()
++
++            const end = performance.now();
++            console.log(`${end - start}ms ${id}`);
++            return result;
++        }
++    };
+ }
+ 
+ function completeSystemWrapPlugin() {

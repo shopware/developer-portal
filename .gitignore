@@ -8,6 +8,7 @@ node_modules
 __tests__/e2e/__image_snapshots__/
 .act.env
 bin/
+src/.vite-inspect/
 .vitepress/cache/
 .vitepress/dist/
 repos/
