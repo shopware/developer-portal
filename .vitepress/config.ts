@@ -38,7 +38,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/v6.7/guides/plugins/apps/',
       '/docs/v6.5/guides/plugins/apps/',
       '/docs/v6.4/guides/plugins/apps/',
-      '/docs/v6.3/guides/plugins/apps/',
     ],
   },
   {
@@ -49,7 +48,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/v6.7/guides/plugins/themes/',
       '/docs/v6.5/guides/plugins/themes/',
       '/docs/v6.4/guides/plugins/themes/',
-      '/docs/v6.3/guides/plugins/themes/',
     ],
   },
   {
@@ -60,7 +58,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/v6.7/guides/plugins/plugins/',
       '/docs/v6.5/guides/plugins/plugins/',
       '/docs/v6.4/guides/plugins/plugins/',
-      '/docs/v6.3/guides/plugins/plugins/',
     ],
   },
   {
@@ -76,7 +73,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/v6.7/concepts/',
       '/docs/v6.5/concepts/',
       '/docs/v6.4/concepts/',
-      '/docs/v6.3/concepts/',
     ],
   },
   {
@@ -86,7 +82,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/v6.7/guides/',
       '/docs/v6.5/guides/',
       '/docs/v6.4/guides/',
-      '/docs/v6.3/guides/',
     ],
   },
   {
@@ -96,7 +91,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/v6.7/products/',
       '/docs/v6.5/products/',
       '/docs/v6.4/products/',
-      '/docs/v6.3/products/',
     ],
   },
   {
@@ -106,7 +100,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/v6.7/resources/',
       '/docs/v6.5/resources/',
       '/docs/v6.4/resources/',
-      '/docs/v6.3/resources/',
     ],
   },
   {
@@ -142,7 +135,6 @@ const embeds: SwagEmbedsConfig[] = [
       '/docs/v6.7/': 'next-6.7',
       '/docs/v6.5/': 'v6.5',
       '/docs/v6.4/': 'v6.4',
-      '/docs/v6.3/': 'v6.3.0',
       '/docs/': 'main',
     },
     folder: '.',
@@ -295,7 +287,6 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
               'docs/v6.7/',
               'docs/v6.5/',
               'docs/v6.4/',
-              'docs/v6.3/',
             ],
           },
           '/docs/': {
@@ -303,14 +294,12 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
               'docs/v6.7/',
               'docs/v6.5/',
               'docs/v6.4/',
-              'docs/v6.3/',
             ],
           },
           '/docs/v6.7/': {
             exclude: [
               'docs/',
               'docs/v6.4/',
-              'docs/v6.3/',
             ],
             include: [
               'docs/v6.7/',
@@ -321,7 +310,6 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
               'docs/',
               'docs/v6.7/',
               'docs/v6.4/',
-              'docs/v6.3/',
             ],
             include: [
               'docs/v6.5/',
@@ -332,21 +320,9 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
               'docs/v6.7/',
               'docs/v6.5/',
               'docs/',
-              'docs/v6.3/',
             ],
             include: [
               'docs/v6.4/',
-            ]
-          },
-          '/docs/v6.3/': {
-            exclude: [
-              'docs/v6.7/',
-              'docs/v6.5/',
-              'docs/',
-              'docs/v6.4/',
-            ],
-            include: [
-              'docs/v6.3/',
             ]
           },
         },
@@ -358,7 +334,6 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
             'docs': 'v6.6 (stable)',
             'docs/v6.5': 'v6.5',
             'docs/v6.4': 'v6.4',
-            'docs/v6.3': 'v6.3',
           }
         ]
       } as SwagVersionSwitcherConfig,

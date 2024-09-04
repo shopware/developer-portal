@@ -63,22 +63,6 @@
       ]
     },
     {
-      "name": "shopware/docs",
-      "src": ".",
-      "dst": [
-        "docs",
-        "v6.3"
-      ],
-      "branch": [
-        "env.BRANCH_DOCS_63",
-        "v6.3.0"
-      ],
-      "org": [
-        "env.ORG_DOCS_63",
-        "shopware"
-      ]
-    },
-    {
       "name": "shopware/frontends",
       "src": [
         "apps",

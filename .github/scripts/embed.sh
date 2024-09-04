@@ -6,7 +6,6 @@ BRANCH_DOCS=main
 BRANCH_DOCS_67=next-6.7
 BRANCH_DOCS_65=v6.5
 BRANCH_DOCS_64=v6.4
-BRANCH_DOCS_63=v6.3.0
 BRANCH_FRONTENDS=DX-devhub
 BRANCH_ADMIN_EXTENSION_SDK=dx-devhub-admin-sdk
 BRANCH_METEOR_ICON_KIT=dx/devhub-icon-kit
@@ -18,7 +17,6 @@ ORG_DOCS=shopware
 ORG_DOCS_67=shopware
 ORG_DOCS_65=shopware
 ORG_DOCS_64=shopware
-ORG_DOCS_63=shopware
 ORG_FRONTENDS=shopware
 ORG_ADMIN_EXTENSION_SDK=shopware
 ORG_METEOR_ICON_KIT=shopware
@@ -64,14 +62,6 @@ fi
  --src . \
  --dst docs/v6.4 \
  --org ${ORG_DOCS_64:-shopware}
-
-./docs-cli.cjs clone \
- --ci \
- --repository shopware/docs \
- --branch ${BRANCH_DOCS_63:-main} \
- --src . \
- --dst docs/v6.3 \
- --org ${ORG_DOCS_63:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \
