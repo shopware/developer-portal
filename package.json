@@ -7,10 +7,10 @@
   "scripts": {
     "test": "vitest run -r __tests__/e2e",
     "test:regression": "VITE_TEST_BUILD=1 REGRESSION=1 vitest run regression -r __tests__/e2e",
-    "test:crawl": "export NODE_OPTIONS=\"--max-old-space-size=9216\" && VITE_TEST_BUILD=0 CRAWL=1 vitest run crawl -r __tests__/e2e",
+    "test:crawl": "export NODE_OPTIONS=\"--max-old-space-size=10120\" && VITE_TEST_BUILD=0 CRAWL=1 vitest run crawl -r __tests__/e2e",
     "test:build": "VITE_TEST_BUILD=1 vitest run -r __tests__/e2e",
     "dev": "cross-env SHOPWARE_DEV=1 vitepress dev",
-    "build": "export NODE_OPTIONS=\"--max-old-space-size=9216\" && vitepress build",
+    "build": "export NODE_OPTIONS=\"--max-old-space-size=10120\" && vitepress build",
     "serve": "vitepress serve",
     "preview": "docker run -dit -p 8765:80 -v \"$PWD/.vitepress/dist\":/usr/local/apache2/htdocs/ httpd:2.4",
     "docs:embed": "./docs-cli.cjs embed",
