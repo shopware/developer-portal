@@ -597,6 +597,14 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
           '.zip'
         ],
       },
+      // custom pdf
+      {
+        src: './docs/assets',
+        dst: 'assets',
+        ext: [
+          '.pdf'
+        ],
+      },
     ]);
 
     /**
@@ -621,7 +629,16 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
     /**
      * Create public sitemap.xml.
      */
-    await createSitemap(/*stoplightUrls*/[], 'developer.shopware.com');
+    await createSitemap(/*stoplightUrls*/[], 'developer.shopware.com', {
+      priority: {
+        '/docs/': 1,
+        '/frontends/': 1,
+        '/resources/admin-extension-sdk/': 1,
+        '/resources/meteor-icon-kit/': 1,
+        '/resources/meteor-component-library/': 1,
+        '/release-notes/': 1,
+      }
+    });
 
     /**
      * Transform Store API JSON reference to Markdown for Knowledge base.
