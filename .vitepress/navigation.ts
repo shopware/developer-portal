@@ -94,7 +94,6 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/v6.7/',
     '/docs/v6.5/',
     '/docs/v6.4/',
-    '/docs/v6.3/',
     '/resources/admin-extension-sdk/',
     //'/resources/meteor-component-library/',
     '/', // always have root sidebar
