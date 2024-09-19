@@ -1,5 +1,5 @@
 <template>
-  <div class="SwagChangelogWrapper my-10 p-10 c-flat-card">
+  <div class="SwagChangelogWrapper my-10 p-10 c-flat-card" v-if="latestRelease">
     <span class="h-label">What's new?</span>
     <h2 class="h-homepage">Stay in sync with Shopware</h2>
 
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts" async>
-import {useData} from "vitepress";
+import {useData, ref} from "vitepress";
 import {getSidebar, flattenSidebar} from '../../node_modules/vitepress-shopware-docs/src/shopware/support/sidebar'
 import SwagChangelog from "./SwagChangelog.vue";
 
@@ -59,27 +59,27 @@ const releases = flattenSidebar(getSidebar(theme.value.sidebar, '/release-notes/
     });
 
 const latestRelease = releases[0];
-const md = `${latestRelease.link.replace('.html', '')}`;
-const [empty, rn, major, patch] = md.split('/');
+let latestSource = ref(null);
+let intro = ref(null);
+let links = ref([])
 
-// https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
-//const latestSource = await import(`../release-notes/${major}/${patch}.md`);
-const latestSource = await import(`../release-notes/latest.md`);
+if (latestRelease) {
+  latestSource.value = await import(`../release-notes/latest.md`);
 
-const headers = latestSource.__pageData.headers;
-let improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
-if (!improvements.length) {
-  improvements = headers;
+  const headers = latestSource.__pageData.headers;
+  let improvements = headers.find(({title}) => title === 'Improvements')?.children || [];
+  if (!improvements.length) {
+    improvements = headers;
+  }
+  links.value = improvements.map(({title, slug}) => ({title, slug}));
+
+  if (latestSource.default) {
+    const app = createSSRApp(latestSource.default);
+    const renderedHtml = await renderToString(app);
+
+    intro.value = ((renderedHtml || '').split('<p>')[1] || '').split('</p>')[0];
+  }
 }
-const links = improvements.map(({title, slug}) => ({title, slug}));
-
-const app = createSSRApp(latestSource.default);
-const renderedHtml = await renderToString(app);
-
-const intro = ((renderedHtml || '').split('<p>')[1] || '').split('</p>')[0];
-
-// const content = latestSource.default.render().children[0].children;
-// const intro = new DOMParser().parseFromString(content, "text/html").querySelector('p').innerText;
 </script>
 
 <style lang="scss">
