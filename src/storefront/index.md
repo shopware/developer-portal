@@ -11,25 +11,25 @@ import SwagLinkLine from "../components/SwagLinkLine.vue";
 <SwagLanding image="/landing/apps.png">
     <template #title>Shopware Frontends</template>
     <template #description>
-        Shopware Composable Frontends is Shopware's toolkit for creating <b>platform agnostic</b> custom storefronts. The demo store implementation is based on <b>Vue.js</b> and <b>Nuxt3</b>.
+        Shopware Composable Frontends is Shopware's toolkit for creating <b>platform agnostic</b> custom storefronts. The <a href="https://frontends-demo.vercel.app/" target="_blank" rel="noopener noreferrer">demo store</a> implementation is based on <b>Vue.js</b> and <b>Nuxt3</b>.
     </template>
     <template #ctas>
-        <PageRef page="/docs/guides/plugins/apps/app-base-guide.html" title="Start building your first Shopware Frontends project" sub="Learn how to set up your development environment and start coding within a couple of minutes." />
+        <PageRef page="/frontends/getting-started/templates.html" title="Start building your first Shopware Frontends project" sub="Take a look at the types of templates we have and how you can set them up in just a few minutes. Choose between blank, demo store, vue, react or astro templates." />
     </template>
     <template #exposed>
-        <SwagLinkLine file="src/storefront/index.md" />
+        <SwagLinkLine file="src/storefront/index.md" tags="?tags=shopware&tags=composable-frontends" />
         <SwagLandingCardList>
             <template #title>Starter guides</template>
             <template #description>
                 The number of topics that are available for exploration can be overwhelming. To help you navigate this complexity, we have curated tutorials that are designed to familiarize you with some of our core concepts.
             </template>
             <template #cards>
-                <PageRef page="/frontends/getting-started/templates.html">
-                    <template #title>Setup templates</template>
-                    <template #sub>Learn how to get started with custom frontend with pre-existing templates.</template>
+                <PageRef page="/frontends/framework/internal-structure.html">
+                    <template #title>Internal Structure (Packages)</template>
+                    <template #sub>Learn how to use the abstract packages you need for your Project.</template>
                 </PageRef>
-                <PageRef page="/frontends/resources/examples/">
-                    <template #title>Cookbook recepies</template>
+                <PageRef page="/frontends/getting-started/page-elements/examples/">
+                    <template #title>Cookbook recipes</template>
                     <template #sub>Kickstart your frontends project with provided example codes.</template>
                 </PageRef>
                 <PageRef page="/frontends/getting-started/templates/demo-store-template.html">
