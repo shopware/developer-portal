@@ -4,7 +4,7 @@
        :href="`https://github.com/${repo}/edit/${branch}/${file}`">
       <SwagIcon icon="github"/>
       Edit this page on GitHub</a>
-    <a href="https://stackoverflow.com/questions/ask?tags=shopware">
+    <a :href="`https://stackoverflow.com/questions/ask${tags}`">
       <SwagIcon icon="stackoverflow"/>
       Ask question on Stackoverflow</a>
     <slot />
@@ -23,6 +23,10 @@ defineProps({
   branch: {
     required: false,
     default: 'main',
+  },
+  tags: {
+    required: false,
+    default: '?tags=shopware',
   },
 });
 </script>
