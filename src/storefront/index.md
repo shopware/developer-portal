@@ -67,7 +67,7 @@ import SwagLinkLine from "../components/SwagLinkLine.vue";
                         <li><a href="https://frontends.shopware.com/packages/composables/#product">Composables</a></li>
                     </ul>
                 </SwagCardSummary>
-                <SwagCardSummary icon="Style">
+                <SwagCardSummary icon="layout">
                     <template #title>CMS</template>
                     <ul>
                         <li><a href="https://frontends.shopware.com/getting-started/cms/content-pages.html">Content Pages</a></li>
