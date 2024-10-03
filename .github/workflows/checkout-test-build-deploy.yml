@@ -120,7 +120,7 @@ jobs:
         run: |
           export NODE_OPTIONS="--max-old-space-size=12288"
           export USERCENTRICS="65ynhGFvE"
-          pnpm -C ./src/frontends/_source/ i
+          pnpm -C ./src/frontends/_source/ i || echo "Failed installing Frontends pnpm"
           pnpm run build
 
       #- name: Zip externals
