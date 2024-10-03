@@ -521,30 +521,30 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       },
       // meteor-icon-kit
       {
-        src: './resources/meteor-icon-kit/public/icons/regular',
+        src: 'resources/meteor-icon-kit/public/icons/regular',
         dst: 'icons/regular',
       },
       {
-        src: './resources/meteor-icon-kit/public/icons/solid',
+        src: 'resources/meteor-icon-kit/public/icons/solid',
         dst: 'icons/solid',
       },
       // custom static files
       {
-        src: './docs/products/extensions/b2b-suite/guides/example-plugins',
+        src: 'docs/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
         ],
       },
       {
-        src: './docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
+        src: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
         ],
       },
       {
-        src: './docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
+        src: 'docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
@@ -552,7 +552,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       },
       // custom pdf
       {
-        src: './docs/assets',
+        src: 'docs/assets',
         dst: 'assets',
         ext: [
           '.pdf'

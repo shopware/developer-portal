@@ -119,9 +119,6 @@
         "mkdirp",
         "vite"
       ]
-    },
-    "patchedDependencies": {
-      "vite@5.4.2": "patches/vite@5.4.2.patch"
     }
   },
   "engines": {
