@@ -128,7 +128,7 @@ try {
         '/frontends'
     );
 } catch (e) {
-    console.log('Frontends sidebar not found', e);
+    console.log('Frontends sidebar not found');
 }
 
 export default navigation;

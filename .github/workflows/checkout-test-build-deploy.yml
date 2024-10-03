@@ -43,7 +43,7 @@ jobs:
 
       - name: Zip folder
         run: |
-          echo "Creating full dump; including sources; excluding node_modules and hidden paths"
+          echo "Creating full dump; including sources; excluding node_modules"
           zip -q -r embed.zip ./src/ -x \*/node_modules/\* -y
 
           echo "Creating DB index"
@@ -120,7 +120,7 @@ jobs:
         run: |
           export NODE_OPTIONS="--max-old-space-size=12288"
           export USERCENTRICS="65ynhGFvE"
-          pnpm -C ./src/frontends/_source/ i || echo "Failed installing Frontends pnpm"
+          pnpm -C ./src/frontends/_source/ i
           pnpm run build
 
       #- name: Zip externals

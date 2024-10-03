@@ -419,7 +419,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
           });
 
           if (!latestReleaseNote) {
-            console.error('No release notes found.');
+            console.error('No release notes found. Homepage will throw an error, but other mounted directories (/docs/, /frontends/, ...) should work.');
             return;
           }
 
