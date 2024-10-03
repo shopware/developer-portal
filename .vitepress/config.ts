@@ -144,7 +144,7 @@ const embeds: SwagEmbedsConfig[] = [
     points: {
       '/frontends/': 'main',
     },
-    folder: 'app/docs/docs'
+    folder: 'apps/docs/src'
   },
   {
     repository: 'meteor',
@@ -199,7 +199,20 @@ const embeds: SwagEmbedsConfig[] = [
 
 const frontendsPath = "../src/frontends/_source";
 
-export default withMermaid(defineConfigWithTheme<ThemeConfig>({
+const withExternals = async (config) => {
+  console.log('Loading external config')
+
+  try {
+    const customConfig = await import(`../src/frontends/_source/apps/docs/.vitepress/config.hub`)
+    config = customConfig.default(config)
+  } catch (e) {
+    console.error('WARNING: Custom Frontends config not found')
+  }
+
+  return config
+}
+
+export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig.default,
 
   title: "Shopware Documentation",
@@ -635,4 +648,4 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       as: 'resources/api/store-api-reference.html',
     }, false);*/
   }
-}));
+})));
