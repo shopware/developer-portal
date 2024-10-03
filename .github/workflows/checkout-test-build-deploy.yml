@@ -43,9 +43,11 @@ jobs:
 
       - name: Zip folder
         run: |
-          zip -q -r embed.zip ./src/ -x \*/node_modules/\* -x \*/.vitepress/\*
-          zip -q -r embed.zip ./src/frontends/_source/apps/ -x \*/node_modules/\*
-          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
+          echo "Creating full dump; including sources; excluding node_modules"
+          zip -q -r embed.zip ./src/ -x \*/node_modules/\* -y
+
+          echo "Creating DB index"
+          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
 
       - name: Upload build
         uses: actions/upload-artifact@v4
