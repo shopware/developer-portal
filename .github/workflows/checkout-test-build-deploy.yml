@@ -44,7 +44,7 @@ jobs:
       - name: Zip folder
         run: |
           echo "Creating full dump; including sources; excluding node_modules and hidden paths"
-          zip -r embed.zip ./src/ -x \*/node_modules/\* -x \*/.\* -y
+          zip -q -r embed.zip ./src/ -x \*/node_modules/\* -x \*/.\* -y
 
           echo "Creating DB index"
           cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*'
