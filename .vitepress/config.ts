@@ -196,7 +196,7 @@ const embeds: SwagEmbedsConfig[] = [
 ];
 
 const withExternals = async (config) => {
-  console.log('Loading external config')
+  console.log('\nLoading external config')
 
   try {
     const customConfig = await import(`../src/frontends/_source/apps/docs/.vitepress/config.hub`)
