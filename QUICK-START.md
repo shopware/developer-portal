@@ -37,8 +37,9 @@ up the environment in your local `../developer-portal` repository - it serves as
 `developer-portal` repository to your local machine and installing npm dependencies.
 
 ```bash
-# from an embedded repository
+# from the embedded repository
 $ pnpm docs:env
+
 # or manually
 $ cd /www/
 $ git clone ssh://git@github.com/shopware/developer-portal.git
@@ -49,6 +50,9 @@ $ pnpm i
 Check the CLI:
 
 ```bash
+# from the embedded repository
+$ pnpm docs:cli
+
 # from the /www/developer-portal/ dir
 $ ./docs-cli.cjs
 ```
@@ -108,7 +112,7 @@ $ git push --set-upstream origin my-feature-branch
 
 <ins>Previewing feature branch</ins>
 
-This workflow creates a PR in the `developer-portal` repository. It will mount your feature branch (instead of the
+This workflow creates a workflow in the `developer-portal` repository. It will mount your feature branch (instead of the
 `main` branch) and run all tests. Once completed, a new build will be deployed to Vercel. This allows you to preview how
 your changes integrate with all other repositories.
 
@@ -128,6 +132,7 @@ You can clone other repositories, choose a different branch, or organisation whe
 
 ```bash
 $ ./docs-cli.cjs clone
+
 # or
 $ pnpm docs:clone
 
@@ -142,6 +147,7 @@ requires `FIGMA_FILE` and `FIGMA_TOKEN`, and Frontends on GitLab require `GITLAB
 
 ```bash
 $ ./docs-cli.cjs embed
+
 # or
 $ pnpm docs:embed
 
@@ -153,6 +159,7 @@ You can run this command to add and/or remove multiple mount points in a single 
 
 ```bash
 $ ./docs-cli.cjs manage
+
 # or
 $ pnpm docs:manage
 
@@ -164,6 +171,7 @@ This command is just an alias for pulling changes from remote and installing NPM
 
 ```bash
 $ ./docs-cli.cjs pull
+
 # or
 $ pnpm docs:env
 

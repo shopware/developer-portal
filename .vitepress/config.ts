@@ -11,8 +11,6 @@ import Inspect from "vite-plugin-inspect";
 import liveReload from 'vite-plugin-live-reload'
 import { withMermaid } from "vitepress-plugin-mermaid";
 import topLevelAwait from "vite-plugin-top-level-await";
-//import { TsFunctionDescription, TsFunctionsList } from "@shopware-pwa/typer";
-import { TsFunctionDescription, TsFunctionsList } from "@shopware-docs/typer";
 import navigation from "./navigation";
 
 import {
@@ -144,7 +142,7 @@ const embeds: SwagEmbedsConfig[] = [
     points: {
       '/frontends/': 'main',
     },
-    folder: 'app/docs/docs'
+    folder: 'apps/docs/src'
   },
   {
     repository: 'meteor',
@@ -197,9 +195,23 @@ const embeds: SwagEmbedsConfig[] = [
   }
 ];
 
-const frontendsPath = "../src/frontends/_source";
+const withExternals = async (config) => {
+  console.log('Loading external config')
 
-export default withMermaid(defineConfigWithTheme<ThemeConfig>({
+  try {
+    const customConfig = await import(`../src/frontends/_source/apps/docs/.vitepress/config.hub`)
+    config = customConfig.default(config, {
+      projectRootDir: `${process.cwd()}/src/frontends/_source`,
+      mountPoint: `/frontends`,
+    })
+  } catch (e) {
+    console.error('WARNING: Custom Frontends config not found')
+  }
+
+  return config
+}
+
+export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig.default,
 
   title: "Shopware Documentation",
@@ -379,40 +391,6 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
         '../node_modules/vitepress-shopware-docs/**/*.*',
       ]),
       topLevelAwait(),
-      TsFunctionsList({
-        rootDir: resolve(__dirname, frontendsPath),
-        prefix: 'frontends/',
-      }),
-      TsFunctionDescription({
-        rootDir: resolve(__dirname, frontendsPath),
-        dirs: !fs.existsSync(resolve(__dirname, frontendsPath)) ? [] : [
-          {
-            autogenExampleAlias: "api-client",
-            functions: resolve(
-                __dirname,
-                `${frontendsPath}/packages/api-client-old/src/services/`,
-            ),
-            types: resolve(
-                __dirname,
-                `${frontendsPath}/packages/types/shopware-6-client/`,
-            ),
-          },
-          {
-            functions: resolve(__dirname, `${frontendsPath}/packages/composables/src/`),
-            types: resolve(
-                __dirname,
-                `${frontendsPath}/packages/types/shopware-6-client/`,
-            ),
-          },
-          {
-            functions: resolve(__dirname, `${frontendsPath}/packages/helpers/src/`),
-            types: resolve(
-                __dirname,
-                `${frontendsPath}/packages/types/shopware-6-client/`,
-            ),
-          },
-        ],
-      }),
       {
         name: 'create-release-notes-symlink-before-build',
         apply: 'build',
@@ -441,7 +419,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
           });
 
           if (!latestReleaseNote) {
-            console.error('No release notes found.');
+            console.error('No release notes found. Homepage will throw an error, but other mounted directories (/docs/, /frontends/, ...) should work.');
             return;
           }
 
@@ -543,30 +521,30 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       },
       // meteor-icon-kit
       {
-        src: './resources/meteor-icon-kit/public/icons/regular',
+        src: 'resources/meteor-icon-kit/public/icons/regular',
         dst: 'icons/regular',
       },
       {
-        src: './resources/meteor-icon-kit/public/icons/solid',
+        src: 'resources/meteor-icon-kit/public/icons/solid',
         dst: 'icons/solid',
       },
       // custom static files
       {
-        src: './docs/products/extensions/b2b-suite/guides/example-plugins',
+        src: 'docs/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
         ],
       },
       {
-        src: './docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
+        src: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
         ],
       },
       {
-        src: './docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
+        src: 'docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
@@ -574,7 +552,7 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       },
       // custom pdf
       {
-        src: './docs/assets',
+        src: 'docs/assets',
         dst: 'assets',
         ext: [
           '.pdf'
@@ -635,4 +613,4 @@ export default withMermaid(defineConfigWithTheme<ThemeConfig>({
       as: 'resources/api/store-api-reference.html',
     }, false);*/
   }
-}));
+})));
