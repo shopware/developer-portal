@@ -16,10 +16,8 @@ export default {
             ]
         },
         enhanceApp: async ({ app }) => {
-            console.log('Loading external theme config')
-          
             try {
-              const enhanceApp = await import(`../../src/frontends/_source/apps/docs/.vitepress/theme.hub`)
+              const enhanceApp = await import("../../src/frontends/_source/apps/docs/.vitepress/theme.hub.ts")
               enhanceApp.default({
                 app,
                 projectRootDir: `${process.cwd()}/src/frontends/_source`,
