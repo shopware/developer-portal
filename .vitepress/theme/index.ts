@@ -15,5 +15,19 @@ export default {
                 SwagCopilotMenu,
             ]
         },
+        enhanceApp: async ({ app }) => {
+            console.log('Loading external theme config')
+          
+            try {
+              const enhanceApp = await import(`../../src/frontends/_source/apps/docs/.vitepress/theme.hub`)
+              enhanceApp.default({
+                app,
+                projectRootDir: `${process.cwd()}/src/frontends/_source`,
+                mountPoint: `/frontends`,
+              })
+            } catch (e) {
+              console.error('WARNING: Custom Frontends theme config not found')
+            }
+        }
     }),
 }
