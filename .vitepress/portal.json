@@ -72,7 +72,7 @@
       "dst": "frontends",
       "branch": [
         "env.BRANCH_FRONTENDS",
-        "dx/extend-main-docs"
+        "main"
       ],
       "org": [
         "env.ORG_FRONTENDS",
