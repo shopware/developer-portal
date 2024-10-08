@@ -27,7 +27,7 @@
     "jsdom": "^24.1.1",
     "terser": "^5.31.0",
     "vite-bundle-visualizer": "^1.2.1",
-    "vitepress": "^1.3.4",
+    "vitepress": "^1.4.0",
     "vitepress-shopware-docs": "^1.3.0-alpha.18",
     "vue": "^3.4.27"
   },
