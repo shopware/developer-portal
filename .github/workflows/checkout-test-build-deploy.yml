@@ -91,6 +91,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: src
 
 #      - name: Unzip artifact
 #        run: |
@@ -127,6 +128,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: src
 
       #- name: Unzip artifact
       #  run: |
@@ -182,6 +184,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: src
 
       - uses: actions/download-artifact@v4
         with:
