@@ -122,9 +122,9 @@ jobs:
           name: embed-${{ github.sha }}
           path: embed.zip
 
-      - name: Unzip artifact
-        run: |
-          unzip -q -o embed.zip
+      #- name: Unzip artifact
+      #  run: |
+      #    unzip -q -o embed.zip
 
       - name: Collect Workflow Telemetry
         uses: catchpoint/workflow-telemetry-action@v2
