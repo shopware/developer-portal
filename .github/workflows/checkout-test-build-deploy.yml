@@ -91,7 +91,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
-          path: embed.zip
 
       - name: Unzip artifact
         run: |
@@ -120,7 +119,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
-          path: embed.zip
 
       #- name: Unzip artifact
       #  run: |
@@ -176,12 +174,10 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
-          path: embed.zip
 
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-          path: full-build.zip
 
       - name: Unzip artifact
         run: |
@@ -241,7 +237,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-          path: full-build.zip
 
       - name: Unzip artifact
         run: |
@@ -277,7 +272,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: db-index-${{ github.sha }}
-          path: db-index.zip
 
       #- uses: actions/download-artifact@v4
       #  with:
