@@ -61,7 +61,7 @@ jobs:
             !./src/**/node_modules/**
           if-no-files-found: error
           name: embed-${{ github.sha }}
-          path: embed.zip
+#          path: embed.zip
 
       - name: Upload DB index
         uses: actions/upload-artifact@v4
@@ -72,7 +72,7 @@ jobs:
             !./src/**/_source/**
           if-no-files-found: error
           name: db-index-${{ github.sha }}
-          path: src/db-index.zip
+#          path: src/db-index.zip
 
   test-dev:
     name: Test dev
@@ -91,6 +91,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: embed.zip
 
       - name: Unzip artifact
         run: |
@@ -119,6 +120,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: embed.zip
 
       - name: Unzip artifact
         run: |
@@ -174,10 +176,12 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: embed.zip
 
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
+          path: full-build.zip
 
       - name: Unzip artifact
         run: |
@@ -237,6 +241,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
+          path: full-build.zip
 
       - name: Unzip artifact
         run: |
@@ -272,6 +277,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: db-index-${{ github.sha }}
+          path: db-index.zip
 
       #- uses: actions/download-artifact@v4
       #  with:
