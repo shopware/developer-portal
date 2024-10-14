@@ -61,6 +61,7 @@ jobs:
             !./src/**/node_modules/**
           if-no-files-found: error
           name: embed-${{ github.sha }}
+          include-hidden-files: true
 #          path: embed.zip
 
       - name: Upload DB index
@@ -72,6 +73,7 @@ jobs:
             !./src/**/_source/**
           if-no-files-found: error
           name: db-index-${{ github.sha }}
+          include-hidden-files: true
 #          path: src/db-index.zip
 
   test-dev:
