@@ -44,6 +44,7 @@ jobs:
       - name: Zip folder
         run: |
           du -h -d 1 src
+          find src -maxdepth 1 ! -path "*/node_modules" ! -path "*/_source" -exec du -sh {} +
 
           echo "Creating full dump; including sources; excluding node_modules"
           zip -q -r -T embed.zip ./src/ -x \*/node_modules/\* -y
