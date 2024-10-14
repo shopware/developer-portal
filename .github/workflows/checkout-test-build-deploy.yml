@@ -41,21 +41,24 @@ jobs:
           chmod +x ./.github/scripts/embed.sh
           .github/scripts/embed.sh
 
-      - name: Zip folder
-        run: |
-          find ./src -type d \( -name "node_modules" -o -name ".git" \) -prune -exec rm -rf {} +
-          
-          du -h -d 1 src
-
-          echo "Creating full dump; including sources; excluding node_modules"
-          zip -q -r -T embed.zip ./src/ -x \*/node_modules/\* -y
-
-          echo "Creating DB index"
-          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
+#      - name: Zip folder
+#        run: |
+#          find ./src -type d \( -name "node_modules" -o -name ".git" \) -prune -exec rm -rf {} +
+#          
+#          du -h -d 1 src
+#
+#          echo "Creating full dump; including sources; excluding node_modules"
+#          zip -q -r -T embed.zip ./src/ -x \*/node_modules/\* -y
+#
+#          echo "Creating DB index"
+#          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
 
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
+          path: |
+            ./src/**
+            !./src/**/node_modules/**
           if-no-files-found: error
           name: embed-${{ github.sha }}
           path: embed.zip
@@ -63,6 +66,10 @@ jobs:
       - name: Upload DB index
         uses: actions/upload-artifact@v4
         with:
+          path: |
+            ./src/**/*.md
+            !./src/**/node_modules/**
+            !./src/**/_source/**
           if-no-files-found: error
           name: db-index-${{ github.sha }}
           path: src/db-index.zip
