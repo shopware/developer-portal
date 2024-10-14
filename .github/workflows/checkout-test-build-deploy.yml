@@ -92,9 +92,16 @@ jobs:
         with:
           name: embed-${{ github.sha }}
 
-      - name: Unzip artifact
+#      - name: Unzip artifact
+#        run: |
+#          unzip -q -o embed.zip
+
+      - name: Display structure of downloaded files
         run: |
-          unzip -q -o embed.zip
+          find src -type d
+          find src -type l
+          find src -type f -name '*.md'
+          find src -type f -name '*.zip'
 
       - name: Test
         run: |
