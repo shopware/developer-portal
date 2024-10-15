@@ -183,6 +183,9 @@ jobs:
         with:
           apt: true
 
+      - name: Prepare dist dir
+        run: mkdir -p .vitepress/dist
+
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
@@ -191,16 +194,11 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
+          path: .vitepress/dist
 
-      - name: Unzip artifact
-        run: |
-          unzip -q -o embed.zip
-
-      - name: Unzip artifact
-        run: |
-          mkdir -p .vitepress/dist
-          unzip -q -o full-build.zip
-          ls -la .vitepress/dist
+#      - name: Unzip artifact
+#        run: |
+#          unzip -q -o embed.zip
 
       - name: Test
         run: |
@@ -247,15 +245,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Prepare dist dir
+        run: mkdir -p .vitepress/dist
+
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
+          path: .vitepress/dist
 
-      - name: Unzip artifact
-        run: |
-          mkdir -p .vitepress/dist
-          unzip -q -o full-build.zip
-          ls -la .vitepress/dist
+#      - name: Unzip artifact
+#        run: |
+#          mkdir -p .vitepress/dist
+#          unzip -q -o full-build.zip
+#          ls -la .vitepress/dist
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
@@ -285,16 +287,17 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: db-index-${{ github.sha }}
-
+          path: merged
+          
       #- uses: actions/download-artifact@v4
       #  with:
       #    name: db-external-${{ github.sha }}
 
       - name: Merge base and external sources
         run: |
-          mkdir merged
-          unzip -q -o db-index.zip -d merged
-          true || unzip .q -o db-external.zip -d merged
+#          mkdir merged
+#          unzip -q -o db-index.zip -d merged
+#          true || unzip .q -o db-external.zip -d merged
           cd merged; zip -q -r ../db-merged.zip * 
 
       - name: Cleanup zip
