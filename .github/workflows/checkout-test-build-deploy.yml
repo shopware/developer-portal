@@ -142,15 +142,14 @@ jobs:
       #  run: |
       #    cd external && zip -r db-external.zip * -i '*.md'
 
-      - name: Zip folder
-        run: zip -q -r full-build.zip .vitepress/dist/ vercel.json
-
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
-          path: full-build.zip
+          path: |
+            .vitepress/dist/
+            vercel.json
 
       #- name: Upload external
       #  uses: actions/upload-artifact@v4
@@ -183,7 +182,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-#          path: .vitepress/dist
 
       - name: Test
         run: |
@@ -209,7 +207,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-#          path: .vitepress/dist
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
