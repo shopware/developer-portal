@@ -175,9 +175,6 @@ jobs:
         with:
           apt: true
 
-      - name: Prepare dist dir
-        run: mkdir -p .vitepress/dist
-
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
@@ -186,7 +183,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-          path: .vitepress/dist
+#          path: .vitepress/dist
 
       - name: Test
         run: |
@@ -209,13 +206,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare dist dir
-        run: mkdir -p .vitepress/dist
-
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-          path: .vitepress/dist
+#          path: .vitepress/dist
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
