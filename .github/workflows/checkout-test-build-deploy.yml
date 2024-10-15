@@ -253,10 +253,11 @@ jobs:
 
       - name: Merge base and external sources
         run: |
+          cd merged; zip -q -r ../db-merged.zip * 
+
 #          mkdir merged
 #          unzip -q -o db-index.zip -d merged
 #          true || unzip .q -o db-external.zip -d merged
-          cd merged; zip -q -r ../db-merged.zip * 
 
       - name: Cleanup zip
         run: |
