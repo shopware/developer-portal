@@ -41,27 +41,40 @@ jobs:
           chmod +x ./.github/scripts/embed.sh
           .github/scripts/embed.sh
 
-      - name: Zip folder
-        run: |
-          echo "Creating full dump; including sources; excluding node_modules"
-          zip -q -r embed.zip ./src/ -x \*/node_modules/\* -y
-
-          echo "Creating DB index"
-          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
+#      - name: Zip folder
+#        run: |
+#          find ./src -type d \( -name "node_modules" -o -name ".git" \) -prune -exec rm -rf {} +
+#          
+#          du -h -d 1 src
+#
+#          echo "Creating full dump; including sources; excluding node_modules"
+#          zip -q -r -T embed.zip ./src/ -x \*/node_modules/\* -y
+#
+#          echo "Creating DB index"
+#          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
 
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
+          path: |
+            ./src/**
+            !./src/**/node_modules/**
           if-no-files-found: error
           name: embed-${{ github.sha }}
-          path: embed.zip
+          include-hidden-files: true
+#          path: embed.zip
 
       - name: Upload DB index
         uses: actions/upload-artifact@v4
         with:
+          path: |
+            ./src/**/*.md
+            !./src/**/node_modules/**
+            !./src/**/_source/**
           if-no-files-found: error
           name: db-index-${{ github.sha }}
-          path: src/db-index.zip
+          include-hidden-files: true
+#          path: src/db-index.zip
 
   test-dev:
     name: Test dev
@@ -80,10 +93,15 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: src
 
-      - name: Unzip artifact
+      - name: Display structure of downloaded files
         run: |
-          unzip -q -o embed.zip
+          ls -la
+          find src -type d
+          find src -type l
+          find src -type f -name '*.md'
+          find src -type f -name '*.zip'
 
       - name: Test
         run: |
@@ -108,10 +126,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
-
-      - name: Unzip artifact
-        run: |
-          unzip -q -o embed.zip
+          path: src
 
       - name: Collect Workflow Telemetry
         uses: catchpoint/workflow-telemetry-action@v2
@@ -127,15 +142,14 @@ jobs:
       #  run: |
       #    cd external && zip -r db-external.zip * -i '*.md'
 
-      - name: Zip folder
-        run: zip -q -r full-build.zip .vitepress/dist/ vercel.json
-
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
-          path: full-build.zip
+          path: |
+            .vitepress/dist/
+            vercel.json
 
       #- name: Upload external
       #  uses: actions/upload-artifact@v4
@@ -163,50 +177,17 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: embed-${{ github.sha }}
+          path: src
 
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-
-      - name: Unzip artifact
-        run: |
-          unzip -q -o embed.zip
-
-      - name: Unzip artifact
-        run: |
-          mkdir -p .vitepress/dist
-          unzip -q -o full-build.zip
-          ls -la .vitepress/dist
 
       - name: Test
         run: |
           export NODE_OPTIONS="--max-old-space-size=12288"
           pnpm -C ./src/frontends/_source/ i
           pnpm run test:build
-
-#  chromatic:
-#    name: Deploy Storybook to Chromatic
-#    runs-on: ubuntu-latest
-#    timeout-minutes: 10
-#    needs:
-#      - test-cli
-#      - test-dev
-#      - test-build
-#      - build
-#    if: ${{ github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'chromatic') }}
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v4
-#        with:
-#          fetch-depth: 0
-#
-#      - name: Prepare
-#        uses: ./.github/actions/checkout-install
-#
-#      - name: Deploy Storybook to Chromatic
-#        env:
-#          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-#        run: pnpm chromatic
 
   deploy-vercel:
     name: Deploy to Vercel
@@ -226,12 +207,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: full-build-${{ github.sha }}
-
-      - name: Unzip artifact
-        run: |
-          mkdir -p .vitepress/dist
-          unzip -q -o full-build.zip
-          ls -la .vitepress/dist
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
@@ -261,17 +236,19 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: db-index-${{ github.sha }}
+          path: merged
 
-      #- uses: actions/download-artifact@v4
-      #  with:
-      #    name: db-external-${{ github.sha }}
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: db-external-${{ github.sha }}
 
       - name: Merge base and external sources
         run: |
-          mkdir merged
-          unzip -q -o db-index.zip -d merged
-          true || unzip .q -o db-external.zip -d merged
           cd merged; zip -q -r ../db-merged.zip * 
+
+#          mkdir merged
+#          unzip -q -o db-index.zip -d merged
+#          true || unzip .q -o db-external.zip -d merged
 
       - name: Cleanup zip
         run: |
