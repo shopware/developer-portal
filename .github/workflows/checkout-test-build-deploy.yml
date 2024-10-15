@@ -95,10 +95,6 @@ jobs:
           name: embed-${{ github.sha }}
           path: src
 
-#      - name: Unzip artifact
-#        run: |
-#          unzip -q -o embed.zip
-
       - name: Display structure of downloaded files
         run: |
           ls -la
@@ -131,10 +127,6 @@ jobs:
         with:
           name: embed-${{ github.sha }}
           path: src
-
-      #- name: Unzip artifact
-      #  run: |
-      #    unzip -q -o embed.zip
 
       - name: Collect Workflow Telemetry
         uses: catchpoint/workflow-telemetry-action@v2
@@ -196,39 +188,11 @@ jobs:
           name: full-build-${{ github.sha }}
           path: .vitepress/dist
 
-#      - name: Unzip artifact
-#        run: |
-#          unzip -q -o embed.zip
-
       - name: Test
         run: |
           export NODE_OPTIONS="--max-old-space-size=12288"
           pnpm -C ./src/frontends/_source/ i
           pnpm run test:build
-
-#  chromatic:
-#    name: Deploy Storybook to Chromatic
-#    runs-on: ubuntu-latest
-#    timeout-minutes: 10
-#    needs:
-#      - test-cli
-#      - test-dev
-#      - test-build
-#      - build
-#    if: ${{ github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'chromatic') }}
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v4
-#        with:
-#          fetch-depth: 0
-#
-#      - name: Prepare
-#        uses: ./.github/actions/checkout-install
-#
-#      - name: Deploy Storybook to Chromatic
-#        env:
-#          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-#        run: pnpm chromatic
 
   deploy-vercel:
     name: Deploy to Vercel
@@ -252,12 +216,6 @@ jobs:
         with:
           name: full-build-${{ github.sha }}
           path: .vitepress/dist
-
-#      - name: Unzip artifact
-#        run: |
-#          mkdir -p .vitepress/dist
-#          unzip -q -o full-build.zip
-#          ls -la .vitepress/dist
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
@@ -288,10 +246,10 @@ jobs:
         with:
           name: db-index-${{ github.sha }}
           path: merged
-          
-      #- uses: actions/download-artifact@v4
-      #  with:
-      #    name: db-external-${{ github.sha }}
+
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: db-external-${{ github.sha }}
 
       - name: Merge base and external sources
         run: |
