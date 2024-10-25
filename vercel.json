@@ -22,97 +22,97 @@
     {
       "source": "/docs/v6.6rc/:url*",
       "destination": "/docs/:url",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/v6.6/:url*",
       "destination": "/docs/:url",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/v6.5/:url(^(?!.*\\.).*[^/]$)",
       "destination": "/docs/v6.5/:url.html",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/v6.4/:url(^(?!.*\\.).*[^/]$)",
       "destination": "/docs/v6.4/:url.html",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": ":url(^(?!.*\\.).*[^/]$)",
       "destination": ":url.html",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/resources/guidelines/core:url*",
       "destination": "/docs/resources/guidelines/code/core:url",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/v/6.5/:url*",
       "destination": "/docs/v6.5/:url",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/v/6.4/:url*",
       "destination": "/docs/v6.4/:url",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/v/v6.4/:url*",
       "destination": "/docs/v6.4/:url",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/v/v6.5/:url*",
       "destination": "/docs/v6.5/:url",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/guides/integrations-api.html",
       "destination": "/docs/guides/integrations-api/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/guides/installation/legacy/:url*",
       "destination": "/docs/guides/installation/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/guides/installation/flex.html",
       "destination": "/docs/guides/installation/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/guides/installation.html",
       "destination": "/docs/guides/installation/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/concepts/api.html",
       "destination": "/docs/concepts/api/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/resources/guidelines/testing/store/quality-guidelines-plugins.html",
       "destination": "/docs/resources/guidelines/testing/store/quality-guidelines-plugins/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/SUMMARY.html",
       "destination": "/docs/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/products/extensions/advanced-search.html",
       "destination": "/docs/products/extensions/advanced-search/",
-      "statusCode": 301
+      "statusCode": 302
     },
     {
       "source": "/docs/guides/plugins/plugins/framework/custom-field.html",
       "destination": "/docs/guides/plugins/plugins/framework/custom-field/",
-      "statusCode": 301
+      "statusCode": 302
     }
   ]
 }
