@@ -211,6 +211,20 @@ const withExternals = async (config) => {
   return config
 }
 
+const missingAliases = () => {
+  const aliases = {}
+
+  if (!fs.existsSync('../src/frontends/_source/apps/docs/.vitepress/theme.hub.ts')) {
+    aliases['../../src/frontends/_source/apps/docs/.vitepress/theme.hub.ts'] = resolve(__dirname, '../hotfix/frontends-theme.ts')
+  }
+
+  if (!fs.existsSync('../src/release-notes/latest.md')) {
+    aliases['../release-notes/latest.md'] = resolve(__dirname, '../hotfix/release-notes-latest.md')
+  }
+
+  return aliases
+}
+
 export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig.default,
 
@@ -485,6 +499,8 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         './VPAlgoliaSearchBox.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/VPAlgoliaSearchBox.vue'),
         '../NotFound.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/NotFound.vue'),
         '../SwagRelatedArticles.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/SwagRelatedArticles.vue'),
+        // fixes missing mountpoints
+        ...missingAliases(),
       }
     }
   },
