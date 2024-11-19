@@ -1,4 +1,5 @@
 import {buildSidebarNav} from "../node_modules/vitepress-shopware-docs/src/shopware/composables/Sidebar";
+import {resourcesMenu} from "../node_modules/vitepress-shopware-docs/src/shopware/config/shared";
 import fs from "fs";
 
 const navigation = buildSidebarNav('./src/', [
@@ -23,72 +24,7 @@ const navigation = buildSidebarNav('./src/', [
         text: 'Frontends',
         repo: 'shopware/frontends',
     },
-    {
-        text: "Resources",
-        activeMatch: `^/(api)`,
-        items: [
-            {
-                text: "HTTP APIs",
-                items: [
-                    {
-                        text: "Store API",
-                        // link: "/resources/api/store-api-reference",
-                        link: 'https://shopware.stoplight.io/docs/store-api/',
-                        repo: 'shopware/store-api-reference',
-                    },
-                    {
-                        text: "Admin API",
-                        //link: "/resources/api/admin-api-reference",
-                        link: 'https://shopware.stoplight.io/docs/admin-api/',
-                        repo: 'shopware/admin-api-reference',
-                    }
-                ]
-            },
-            {
-                text: "Meteor",
-                items: [
-                    {
-                        text: "Meteor Admin SDK",
-                        link: "/resources/admin-extension-sdk/",
-                        repo: 'shopware/meteor-admin-sdk',
-                    },
-                    {
-                        text: "Meteor Icon Kit",
-                        link: "/resources/meteor-icon-kit/",
-                        repo: 'shopware/meteor',
-                    },
-                    {
-                        text: "Meteor Component Library",
-                        // link: "/resources/meteor-component-library/",
-                        link: 'https://meteor-component-library.vercel.app/',
-                        repo: 'shopware/meteor-component-library',
-                    }
-                ]
-            },
-            {
-                text: "Releases",
-                items: [
-                    {
-                        text: "Release notes",
-                        link: "/release-notes/",
-                    },
-                ]
-            },
-            {
-                text: "Learning",
-                items: [
-                    {
-                        text: "Academy",
-                        link: "https://academy.shopware.com/",
-                    },
-                    {
-                        text: "YouTube",
-                        link: "https://www.youtube.com/user/shopwareAG"
-                    }
-                ]
-            }
-        ]
-    },
+    resourcesMenu({ design: 'https://shopware.design/', developer: '/' }),
 ], [
     //'/docs/',
     '/docs/v6.7/',
