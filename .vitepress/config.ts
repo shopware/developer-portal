@@ -214,11 +214,13 @@ const withExternals = async (config) => {
 const missingAliases = () => {
   const aliases = {}
 
-  if (!fs.existsSync('../src/frontends/_source/apps/docs/.vitepress/theme.hub.ts')) {
+  if (!fs.existsSync('./src/frontends/_source/apps/docs/.vitepress/theme.hub.ts')) {
+    console.log('Warning: Aliasing Frontends theme (mount shopware/frontends repo)')
     aliases['../../src/frontends/_source/apps/docs/.vitepress/theme.hub.ts'] = resolve(__dirname, '../hotfix/frontends-theme.ts')
   }
 
-  if (!fs.existsSync('../src/release-notes/latest.md')) {
+  if (!fs.existsSync('./src/release-notes')) {
+    console.log('Warning: Aliasing release notes (mount shopware/release-notes repo)')
     aliases['../release-notes/latest.md'] = resolve(__dirname, '../hotfix/release-notes-latest.md')
   }
 
