@@ -227,6 +227,29 @@ const missingAliases = () => {
   return aliases
 }
 
+const addCanonicalTags = (head, context) => {
+  if (context.page.startsWith('docs/v6.')) {
+    // remove version parameter from url
+    const [docs, skip, ...rest] = context.page.split('/')
+    let href = `/${docs}/${rest.join('/')}`
+    if (href.endsWith('/index.md')) {
+      href = href.substring(0, href.length - 'index.md'.length)
+    } else if (href.endsWith('.md')) {
+      href = `${href.substring(0, href.length - '.md'.length)}.html`
+    }
+
+    head.push([
+      'link',
+        {
+          rel: 'canonical',
+          href,
+        }
+    ]);
+  }
+
+  return head
+}
+
 export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig.default,
 
@@ -513,7 +536,8 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   },
 
   async transformHead(context: TransformContext): Promise<HeadConfig[]> {
-    return addOGImage([], context);
+    const head = addOGImage([], context) || []
+    return addCanonicalTags(head, context);
   },
 
   async buildEnd() {

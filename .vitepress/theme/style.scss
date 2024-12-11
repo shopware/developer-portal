@@ -25,3 +25,7 @@
 .VPDoc {
     overflow: hidden;
 }
+
+.VPNavBar .container > .title {
+    flex-shrink: 1;
+}

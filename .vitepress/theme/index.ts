@@ -1,5 +1,6 @@
 import {SWAGTheme} from "vitepress-shopware-docs";
 import SwagRadialBg from "../../src/components/SwagRadialBg.vue";
+import SwagOutdatedVersion from "../../src/components/SwagOutdatedVersion.vue";
 //import SwagCopilotSidebar from "../../src/components/copilot/SwagCopilotSidebar.vue";
 import SwagCopilotMenu from "../../node_modules/vitepress-shopware-docs/src/shopware/components/copilot/SwagCopilotMenu.vue";
 import "./style.scss";
@@ -13,7 +14,10 @@ export default {
             ],
             'nav-bar-content-after': [
                 SwagCopilotMenu,
-            ]
+            ],
+            'doc-top': [
+              SwagOutdatedVersion,
+            ],
         },
         enhanceApp: async ({ app, projectPath }) => {
             try {
