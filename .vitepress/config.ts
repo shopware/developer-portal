@@ -227,6 +227,22 @@ const missingAliases = () => {
   return aliases
 }
 
+const addCanonicalTags = (head, context) => {
+  if (context.page.startsWith('docs/v6.')) {
+    // remove version parameter from url
+    const [docs, skip, ...rest] = context.page.split('/')
+    head.push([
+      'link',
+        {
+          rel: 'canonical',
+          href: `/${docs}/${rest.join('/')}`,
+        }
+    ]);
+  }
+
+  return head
+}
+
 export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig.default,
 
@@ -513,7 +529,8 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   },
 
   async transformHead(context: TransformContext): Promise<HeadConfig[]> {
-    return addOGImage([], context);
+    const head = addOGImage([], context) || []
+    return addCanonicalTags(head, context);
   },
 
   async buildEnd() {
