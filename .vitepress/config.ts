@@ -231,11 +231,18 @@ const addCanonicalTags = (head, context) => {
   if (context.page.startsWith('docs/v6.')) {
     // remove version parameter from url
     const [docs, skip, ...rest] = context.page.split('/')
+    let href = `/${docs}/${rest.join('/')}`
+    if (href.endsWith('/index.md')) {
+      href = href.substring(0, href.length - 'index.md'.length)
+    } else if (href.endsWith('.md')) {
+      href = `${href.substring(0, href.length - '.md'.length)}.html`
+    }
+
     head.push([
       'link',
         {
           rel: 'canonical',
-          href: `/${docs}/${rest.join('/')}`,
+          href,
         }
     ]);
   }
