@@ -4,14 +4,14 @@
         class="SwagOutdatedVersion my-8"
         :key="`${canonicalUrl}-next`"
         :page="canonicalUrl"
-        title="You are viewing next version (v6.7) of the documentation."
+        title="You are viewing the next version (v6.7) of the documentation."
         sub="Click here to switch to the stable version (v6.6), or use the version switcher on the left to navigate between versions." />
     <PageRef
         v-else-if="route.path.startsWith('/docs/v6.')"
         class="SwagOutdatedVersion my-8"
         :key="`${canonicalUrl}-outdated`"
         :page="canonicalUrl"
-        title="You are viewing outdated version of the documentation."
+        title="You are viewing an outdated version of the documentation."
         sub="Click here to switch to the stable version (v6.6), or use the version switcher on the left to navigate between versions." />
 </template>
 
