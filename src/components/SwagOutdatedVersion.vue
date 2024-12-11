@@ -15,10 +15,25 @@
 
 <script setup lang="ts">
 import { useRoute } from "vitepress";
+import { ref, watch } from "vue"
 
 const route = useRoute()
-const [ emptyPrefix, docs, version, ...rest ] = route.path.split('/')
-const canonicalUrl = `/${docs}/${rest.join('/')}`
+const canonicalUrl = ref('')
+
+watch(
+    () => route,
+    (route) => {
+        if (!route.path.startsWith('/docs/v6')) {
+            canonicalUrl.value = ''
+            return
+        }
+        const [ emptyPrefix, docs, version, ...rest ] = route.path.split('/')
+        canonicalUrl.value = `/${docs}/${rest.join('/')}`
+    },
+    {
+        immediate: true,
+    }
+)
 </script>
 
 <style lang="scss">
