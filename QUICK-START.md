@@ -13,7 +13,7 @@ In this introduction, you will learn how to:
 
 ## TL;DR>
 
-Try running the following commands in any repo that is embedded in DevHub:
+Try running the following commands in any repo that is embedded in Dev Docs:
 
 ```
 $ pnpm docs:env
@@ -32,7 +32,7 @@ the command `../developer-portal/docs-cli.cjs manage`._
 ## 1. Checkout the developer-portal repository
 
 The `developer-portal` repository allows you to set up a local environment for
-the [DevHub](https://developer.shopware.com). Embedded repositories have a `docs:env` npm script available for setting
+the [Dev Docs](https://developer.shopware.com). Embedded repositories have a `docs:env` npm script available for setting
 up the environment in your local `../developer-portal` repository - it serves as a shortcut for cloning or pulling the
 `developer-portal` repository to your local machine and installing npm dependencies.
 
