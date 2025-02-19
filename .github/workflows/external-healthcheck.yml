@@ -41,9 +41,14 @@ jobs:
 
       - name: Print inputs
         run: |
-          echo "branch" ${{ inputs.branch }}
-          echo "repo" ${{ inputs.repo }}
-          echo "sha" ${{ inputs.sha }}
+          echo "branch=${{ inputs.branch }}"
+          echo "repo=${{ inputs.repo }}"
+          echo "sha=${{ inputs.sha }}"
+          echo "owner=${{ inputs.owner }}"
+          echo "check=${{ inputs.check }}"
+
+      - name: Configure mountpoints
+        run: |
           
           ORG=${{ inputs.owner }}
           BRANCH=${{ inputs.branch }}
@@ -168,29 +173,3 @@ jobs:
           vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
           vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG
           vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
-
-  update-healthcheck-success:
-    name: Test build
-    runs-on: ubuntu-latest
-    needs:
-      - trigger-build
-      - deploy-vercel
-    if: ${{ always() }}
-    steps:
-
-      - uses: octokit/request-action@v2.x
-        name: Update check
-        with:
-          route: POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
-          owner: ${{ inputs.owner }}
-          repo: ${{ inputs.repo }}
-          ref: main
-          workflow_id: update-healthcheck.yml
-          inputs: |
-            owner: ${{ inputs.owner }}
-            repo: ${{ inputs.repo }}
-            check: "${{ inputs.check }}"
-            conclusion: ${{ needs.trigger-build.outputs.success && needs.trigger-build.outputs.success == 'yes' && 'success' || 'failure' }}
-            run_id: "${{ github.run_id }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEV_HUB_PERSONAL_ACCESS_TOKEN }}

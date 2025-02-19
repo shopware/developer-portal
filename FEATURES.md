@@ -59,26 +59,7 @@ set -e
 
 ## Auto-create PR workflow
 
-This project also provides custom GitHub actions and workflows for automatically creating PRs from your feature
-branches, so you can preview how your changes embed with other projects.
-See [./.github/workflows/create-pr.yml](./.github/workflows/create-pr.yml)
-and [./.github/workflows/self-trigger.yml](./.github/workflows/self-trigger.yml). You can trigger those actions by
-adding a workflow to your repository:
-
-```yml
-name: Notify developer-portal
-
-on: push
-
-jobs:
-  create-pr:
-    uses: shopware/developer-portal/.github/workflows/self-trigger.yml@main
-    with:
-      branch: ${{ github.ref_name }}
-      repository: ${{ github.repository }}
-    secrets:
-      access_token: ${{ secrets.DEVELOPER_PORTAL_WORKFLOW_TOKEN }}
-```
+Commit status checks and integration test workflow is handled by [DevHub Connector GitHub](https://github.com/shopware/devhub-github-app) app.
 
 ## Versioning
 
