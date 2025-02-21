@@ -110,9 +110,8 @@
     {
       "name": "shopware/meteor",
       "src": [
-        "packages",
-        "admin-sdk",
-        "docs"
+        "docs",
+        "admin-sdk"
       ],
       "dst": "resources/admin-extension-sdk",
       "branch": [
