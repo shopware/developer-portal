@@ -149,7 +149,7 @@ const embeds: SwagEmbedsConfig[] = [
     points: {
       '/resources/admin-extension-sdk/': 'main',
     },
-    folder: 'packages/admin-sdk/docs',
+    folder: 'docs/admin-sdk',
   },
   {
     repository: 'meteor-component-library',
