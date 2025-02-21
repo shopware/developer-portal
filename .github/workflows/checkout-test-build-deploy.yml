@@ -10,12 +10,13 @@ on:
         description: 'Source of event'
         required: false
         default: 'No source specified'
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  #handled by Dev Docs connector app
+  #push:
+  #  branches:
+  #    - main
+  #pull_request:
+  #  branches:
+  #    - main
 
 jobs:
 
