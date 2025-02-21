@@ -84,6 +84,9 @@ jobs:
             sed -i "0,/ORG_RELEASE_NOTES.*/s/.*ORG_RELEASE_NOTES.*/ORG_RELEASE_NOTES=$ORG/" ./.github/scripts/embed.sh
             sed -i "0,/BRANCH_RELEASE_NOTES.*/s/.*BRANCH_RELEASE_NOTES.*/BRANCH_RELEASE_NOTES=$BRANCH/" ./.github/scripts/embed.sh
           
+          elif [[ "${{ inputs.repo }}" == "developer-portal" ]]; then
+            echo "Embedding developer-portal, default setup"
+          
           else
             echo "Unknown repository ${{inputs.repo}}"
            echo "Branch ${{inputs.branch}}"
