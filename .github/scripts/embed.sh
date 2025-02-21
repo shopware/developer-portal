@@ -86,7 +86,7 @@ fi
  --ci \
  --repository shopware/meteor \
  --branch ${BRANCH_ADMIN_EXTENSION_SDK:-main} \
- --src packages/admin-sdk/docs \
+ --src docs/admin-sdk \
  --dst resources/admin-extension-sdk \
  --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
 
