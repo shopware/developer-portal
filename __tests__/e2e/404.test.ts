@@ -6,6 +6,6 @@ describe('render correct content', async () => {
     test('navigation', async() => {
         const headingsLocator = page.locator('h1');
         const headings = await headingsLocator.allTextContents()
-        expect(headings).toEqual(['404'])
+        expect(headings).toEqual(['404', 'Privacy Settings'])
     })
 })
