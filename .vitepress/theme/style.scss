@@ -8,8 +8,7 @@
         top: 0;
         bottom: 0;
         z-index: -1;
-        left: -9999rem;
-        right: -9999rem;
+        width: 100%;
         background: var(--sw-c-gray-100);
         .dark & {
             background: var(--sw-c-gray-dark-700);
@@ -20,10 +19,6 @@
         @apply flex gap-2 items-center text-xs font-semibold;
         --icon-size: 1.25rem;
     }
-}
-
-.VPDoc {
-    overflow: hidden;
 }
 
 .VPNavBar .container > .title {
