@@ -77,7 +77,8 @@
       "org": [
         "env.ORG_FRONTENDS",
         "shopware"
-      ]
+      ],
+      "keep": true
     },
     {
       "name": "gitlab.shopware.com/product/engineering/platform-group/pwa/frontends",
