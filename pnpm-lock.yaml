@@ -187,7 +187,7 @@ importers:
         specifier: ^12.1.3
         version: 12.1.3
       playwright-chromium:
-        specifier: ^1.41.1
+        specifier: ^1.46.1
         version: 1.49.1
       react:
         specifier: ^18.3.1
