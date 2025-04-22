@@ -22,7 +22,7 @@ const text = texts[Math.floor(Math.random() * texts.length)];
         @apply underline;
     }
     .SwagIcon {
-        @apply text-[--sw-c-blue-vivacious-900];
+        @apply hidden md:inline-flex text-[--sw-c-blue-vivacious-900];
     }
 }
 
