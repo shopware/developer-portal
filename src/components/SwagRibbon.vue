@@ -39,7 +39,7 @@ const text = texts[Math.floor(Math.random() * texts.length)];
 
   @media (min-width: 960px) {
     .Layout .VPContent {
-      //padding-top: calc(var(--vp-nav-height) + var(--vp-ribbon-height));
+      padding-top: calc(var(--vp-nav-height) + var(--vp-ribbon-height));
     }
   }
 }
