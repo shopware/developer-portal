@@ -30,12 +30,18 @@ const text = texts[Math.floor(Math.random() * texts.length)];
 
 #app:has(.SwagRibbon) {
     header.VPNav {
-        @apply mt-8;
+        top: var(--vp-ribbon-height);
     }
 
     .VPNavScreen {
         top: calc(var(--vp-nav-height, 0px) + var(--vp-layout-top-height, 0px) + 1rem);
     }
+
+  @media (min-width: 960px) {
+    .Layout .VPContent {
+      //padding-top: calc(var(--vp-nav-height) + var(--vp-ribbon-height));
+    }
+  }
 }
 
 </style>
