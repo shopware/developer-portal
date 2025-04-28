@@ -10,7 +10,7 @@ export default {
     ...SWAGTheme({
         slots: {
             'layout-top': [
-              SwagRibbon,
+              //SwagRibbon,
             ],
             'layout-bottom': [
                 SwagRadialBg,
