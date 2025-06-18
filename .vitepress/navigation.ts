@@ -27,7 +27,7 @@ const navigation = buildSidebarNav('./src/', [
     resourcesMenu({ design: 'https://shopware.design/', developer: '/' }),
 ], [
     //'/docs/',
-    '/docs/v6.7/',
+    '/docs/v6.6/',
     '/docs/v6.5/',
     '/docs/v6.4/',
     '/resources/admin-extension-sdk/',
@@ -37,17 +37,17 @@ const navigation = buildSidebarNav('./src/', [
     '/release-notes/',
 ], [
     '/docs/assets/',
-    '/docs/v6.7/assets/',
+    '/docs/v6.6/assets/',
     '/docs/v6.5/assets/',
     '/docs/snippets/',
-    '/docs/v6.7/snippets/',
+    '/docs/v6.6/snippets/',
     '/docs/v6.5/snippets/',
     '/docs/README.md',
-    '/docs/v6.7/README.md',
+    '/docs/v6.6/README.md',
     '/docs/v6.5/README.md',
     "/docs/resources/references/adr/YYYY-MM-DD-template.md",
+    "/docs/v6.6/resources/references/adr/YYYY-MM-DD-template.md",
     "/docs/v6.5/resources/references/adr/YYYY-MM-DD-template.md",
-    "/docs/v6.7/resources/references/adr/YYYY-MM-DD-template.md",
 ]);
 
 const prefixItems = (items, prefix) => items.map(item => {

@@ -3,7 +3,7 @@ set -e
 
 # custom config
 BRANCH_DOCS=main
-BRANCH_DOCS_67=next-6.7
+BRANCH_DOCS_66=v6.6
 BRANCH_DOCS_65=v6.5
 BRANCH_DOCS_64=v6.4
 BRANCH_FRONTENDS=main
@@ -42,10 +42,10 @@ fi
 ./docs-cli.cjs clone \
  --ci \
  --repository shopware/docs \
- --branch ${BRANCH_DOCS_67:-main} \
+ --branch ${BRANCH_DOCS_66:-main} \
  --src . \
- --dst docs/v6.7 \
- --org ${ORG_DOCS_67:-shopware}
+ --dst docs/v6.6 \
+ --org ${ORG_DOCS_66:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \
