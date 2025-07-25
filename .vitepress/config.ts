@@ -273,7 +273,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       // 'chat.md',
   ],
 
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
 
   rewrites: {
     'storefront/index.md': 'frontends/index.md',
