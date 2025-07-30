@@ -273,7 +273,14 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       // 'chat.md',
   ],
 
-  ignoreDeadLinks: false,
+  ignoreDeadLinks: [
+    (url) => ['localhost'].includes(new URL(url).hostname),
+    (url) => {
+      const { pathname } = new URL(url)
+      return pathname.startsWith('/docs/v6.4/')
+        ||  pathname.startsWith('/docs/v6.5/')
+    },
+  ],
 
   rewrites: {
     'storefront/index.md': 'frontends/index.md',
