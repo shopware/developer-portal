@@ -274,14 +274,8 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   ],
 
   ignoreDeadLinks: [
-    (url) => {
-      try {
-        return ['localhost'].includes(new URL(url, 'http://localhost').hostname)
-      } catch (e) {
-        console.error(e, url)
-        throw e
-      }
-    },
+    // ignore all localhost links
+    /^https?:\/\/localhost/,
     (url) => {
       try {
         const { pathname } = new URL(url, 'http://localhost')
