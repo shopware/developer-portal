@@ -274,11 +274,24 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   ],
 
   ignoreDeadLinks: [
-    (url) => ['localhost'].includes(new URL(url).hostname),
     (url) => {
-      const { pathname } = new URL(url)
-      return pathname.startsWith('/docs/v6.4/')
-        ||  pathname.startsWith('/docs/v6.5/')
+      try {
+        return ['localhost'].includes(new URL(url, 'http://localhost').hostname)
+      } catch (e) {
+        console.error(e, url)
+        throw e
+      }
+    },
+    (url) => {
+      try {
+        const { pathname } = new URL(url, 'http://localhost')
+        return pathname.startsWith('/docs/v6.4/')
+          || pathname.startsWith('/docs/v6.5/')
+          || pathname.startsWith('/docs/v6.6/')
+      } catch (e) {
+        console.error(e, url)
+        throw e
+      }
     },
   ],
 
