@@ -279,9 +279,9 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
     (url) => {
       try {
         const { pathname } = new URL(url, 'http://localhost')
-        return pathname.startsWith('/docs/v6.4/')
-          || pathname.startsWith('/docs/v6.5/')
-          || pathname.startsWith('/docs/v6.6/')
+        return pathname.includes('docs/v6.4')
+          || pathname.includes('docs/v6.5')
+          || pathname.includes('docs/v6.6')
       } catch (e) {
         console.error(e, url)
         throw e
