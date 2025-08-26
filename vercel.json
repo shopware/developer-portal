@@ -25,7 +25,7 @@
       "statusCode": 302
     },
     {
-      "source": "/docs/v6.6/:url*",
+      "source": "/docs/v6.7/:url*",
       "destination": "/docs/:url",
       "statusCode": 302
     },
