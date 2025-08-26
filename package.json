@@ -22,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shopware-ag/meteor-icon-kit": "^5.4.0",
+    "@shopware-ag/meteor-icon-kit": "^5.6.0",
     "cross-env": "^7.0.3",
     "jsdom": "^24.1.1",
     "terser": "^5.31.0",
