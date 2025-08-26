@@ -30,6 +30,11 @@
       "statusCode": 302
     },
     {
+      "source": "/docs/v6.6/:url(^(?!.*\\.).*[^/]$)",
+      "destination": "/docs/v6.6/:url.html",
+      "statusCode": 302
+    },
+    {
       "source": "/docs/v6.5/:url(^(?!.*\\.).*[^/]$)",
       "destination": "/docs/v6.5/:url.html",
       "statusCode": 302
