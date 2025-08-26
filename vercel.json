@@ -20,12 +20,12 @@
   ],
   "redirects": [
     {
-      "source": "/docs/v6.6rc/:url*",
+      "source": "/docs/v6.6rc/:url*(/)?",
       "destination": "/docs/:url",
       "statusCode": 302
     },
     {
-      "source": "/docs/v6.7/:url*",
+      "source": "/docs/v6.7/:url*(/)?",
       "destination": "/docs/:url",
       "statusCode": 302
     },
