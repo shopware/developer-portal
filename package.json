@@ -28,7 +28,7 @@
     "terser": "^5.31.0",
     "vite-bundle-visualizer": "^1.2.1",
     "vitepress": "^1.6.4",
-    "vitepress-shopware-docs": "^1.3.5",
+    "vitepress-shopware-docs": "^1.3.6",
     "vue": "^3.4.27"
   },
   "devDependencies": {
@@ -41,10 +41,10 @@
     "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "@originjs/vite-plugin-require-context": "^1.0.9",
     "@playwright/test": "1.46.1",
-    "@shopware-docs/cli": "^1.3.5",
-    "@shopware-docs/storybook": "^1.3.5",
-    "@shopware-docs/vitepress": "^1.3.5",
-    "@shopware-docs/vitest": "^1.3.5",
+    "@shopware-docs/cli": "^1.3.6",
+    "@shopware-docs/storybook": "^1.3.6",
+    "@shopware-docs/vitepress": "^1.3.6",
+    "@shopware-docs/vitest": "^1.3.6",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",
     "@storybook/addon-links": "^7.6.10",
