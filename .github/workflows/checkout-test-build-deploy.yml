@@ -223,7 +223,7 @@ jobs:
           
           vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
           vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG
-          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
+          vercel deploy --prebuilt --archive=tgz --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
   
   rebuild-index:
     name: Send documents
