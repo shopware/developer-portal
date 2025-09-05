@@ -24,7 +24,7 @@ import SwagStartBuilding from "./components/SwagStartBuilding.vue";
 import SwagExtendShopware from "./components/SwagExtendShopware.vue";
 import SwagContribute from "./components/SwagContribute.vue";
 import SwagChangelogWrapper from "./components/SwagChangelogWrapper.vue";
-import SwagSlackCommunity from "./components/SwagSlackCommunity.vue";
+import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
 </script>
 
 <!-- HERO -->
@@ -59,5 +59,5 @@ import SwagSlackCommunity from "./components/SwagSlackCommunity.vue";
     <SwagChangelogWrapper id="Changelog" class="my-20" />
 </Suspense>
 
-<!-- SLACK -->
-<SwagSlackCommunity />
+<!-- DISCORD -->
+<SwagDiscordCommunity />
