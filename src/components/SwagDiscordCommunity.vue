@@ -33,7 +33,7 @@
   }
 
   &_logo {
-    @apply max-w-5;
+    @apply max-w-[5rem] w-full;
   }
 }
 </style>
