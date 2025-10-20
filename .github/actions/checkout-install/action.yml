@@ -12,12 +12,12 @@ runs:
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20.8
+        node-version: 22.20
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v3
+      uses: pnpm/action-setup@v5
       with:
-        version: 9
+        version: 10
 
     - name: Install dependencies
       shell: bash

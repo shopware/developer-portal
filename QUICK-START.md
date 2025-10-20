@@ -23,7 +23,7 @@ $ pnpm docs:preview
 
 ## 0. Prerequisites
 
-- Node v18
+- Node v22
 
 _Note: These commands has been added to feature branches in all repositories and may not have been merged yet.
 It is advisable to check out the correct branch before proceeding. Alternatively, you can directly call the CLI by using
