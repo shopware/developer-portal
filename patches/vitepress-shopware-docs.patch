@@ -1,0 +1,21 @@
+diff --git a/src/shopware/components/override/VPAlgoliaSearchBox.vue b/src/shopware/components/override/VPAlgoliaSearchBox.vue
+index ce2302b405f5be71aa7e0471f84bb2d37ecf5cfa..5edcd29172cf85a92bf1759d115b131216e6c47a 100644
+--- a/src/shopware/components/override/VPAlgoliaSearchBox.vue
++++ b/src/shopware/components/override/VPAlgoliaSearchBox.vue
+@@ -73,6 +73,7 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
+             })
+         },
+ 
++        /*
+         // @ts-expect-error vue-tsc thinks this should return Vue JSX but it returns the required React one
+         hitComponent({ hit, children }) {
+             return {
+@@ -83,7 +84,7 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
+                 key: undefined,
+                 props: { href: hit.url, children }
+             }
+-        },
++        },*/
+ 
+         // https://www.algolia.com/doc/api-reference/search-api-parameters/
+         searchParameters: {
