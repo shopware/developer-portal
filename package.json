@@ -118,6 +118,9 @@
         "mkdirp",
         "vite"
       ]
+    },
+    "patchedDependencies": {
+      "vitepress-shopware-docs": "patches/vitepress-shopware-docs.patch"
     }
   },
   "engines": {
