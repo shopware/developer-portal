@@ -63,8 +63,6 @@ fi
  --dst docs/v6.4 \
  --org ${ORG_DOCS_64:-shopware}
 
-# Error: s/amazon-pay-button-example prepare: [error] Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
-# Running additional steps
 ./docs-cli.cjs clone \
  --ci \
  --keep \
@@ -72,7 +70,7 @@ fi
  --branch ${BRANCH_FRONTENDS:-main} \
  --src apps/docs/src \
  --dst frontends \
- --org ${ORG_FRONTENDS:-shopware} || true
+ --org ${ORG_FRONTENDS:-shopware}
 
 #./docs-cli.cjs clone \
 # --ci \
