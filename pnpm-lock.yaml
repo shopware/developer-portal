@@ -63,8 +63,8 @@ importers:
         specifier: ^1.0.9
         version: 1.0.9
       '@playwright/test':
-        specifier: 1.46.1
-        version: 1.46.1
+        specifier: 1.56.1
+        version: 1.56.1
       '@shopware-docs/cli':
         specifier: ^1.3.6
         version: 1.3.6
@@ -76,7 +76,7 @@ importers:
         version: 1.3.6(postcss@8.5.6)(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0))(vitepress@1.6.4(@algolia/client-search@5.40.1)(@types/node@20.19.22)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.1.0)(less@4.4.2)(postcss@8.5.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.93.2)(search-insights@2.17.3)(terser@5.44.0)(typescript@5.9.3))
       '@shopware-docs/vitest':
         specifier: ^1.3.6
-        version: 1.3.6(@playwright/test@1.46.1)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.1.0)(playwright-chromium@1.56.1)(postcss@8.5.6)(slugify@1.6.6)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0)))(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0))(vitepress@1.6.4(@algolia/client-search@5.40.1)(@types/node@20.19.22)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.1.0)(less@4.4.2)(postcss@8.5.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.93.2)(search-insights@2.17.3)(terser@5.44.0)(typescript@5.9.3))(vitest@2.1.9)
+        version: 1.3.6(@playwright/test@1.56.1)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.1.0)(playwright-chromium@1.56.1)(postcss@8.5.6)(slugify@1.6.6)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0)))(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0))(vitepress@1.6.4(@algolia/client-search@5.40.1)(@types/node@20.19.22)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.1.0)(less@4.4.2)(postcss@8.5.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.93.2)(search-insights@2.17.3)(terser@5.44.0)(typescript@5.9.3))(vitest@2.1.9)
       '@storybook/addon-essentials':
         specifier: ^7.6.10
         version: 7.6.20(@types/react-dom@17.0.26(@types/react@17.0.89))(@types/react@17.0.89)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1588,8 +1588,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@playwright/test@1.46.1':
-    resolution: {integrity: sha512-Fq6SwLujA/DOIvNC2EL/SojJnkKf/rAwJ//APpJJHRyMi1PdKrY3Az+4XNQ51N4RTbItbIByQ0jgd1tayq1aeA==}
+  '@playwright/test@1.56.1':
+    resolution: {integrity: sha512-vSMYtL/zOcFpvJCW71Q/OEGQb7KYBPAdKh35WNSkaZA75JlAO8ED8UN6GUNTm3drWomcbcqRPFqQbLae8yBTdg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2973,6 +2973,9 @@ packages:
 
   '@types/node@20.19.22':
     resolution: {integrity: sha512-hRnu+5qggKDSyWHlnmThnUqg62l29Aj/6vcYgUaSFL9oc7DVjeWEQN3PRgdSc6F8d9QRMWkf36CLMch1Do/+RQ==}
+
+  '@types/node@20.19.23':
+    resolution: {integrity: sha512-yIdlVVVHXpmqRhtyovZAcSy0MiPcYWGkoO4CGe/+jpP0hmNuihm4XhHbADpK++MsiLHP5MVlv+bcgdF99kSiFQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -6478,18 +6481,13 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.46.1:
-    resolution: {integrity: sha512-h9LqIQaAv+CYvWzsZ+h3RsrqCStkBHlgo6/TJlFst3cOTlLghBQlJwPOZKQJTKNaD3QIB7aAVQ+gfWbN3NXB7A==}
-    engines: {node: '>=18'}
-    hasBin: true
-
   playwright-core@1.56.1:
     resolution: {integrity: sha512-hutraynyn31F+Bifme+Ps9Vq59hKuUCz7H1kDOcBs+2oGguKkWTU50bBWrtz34OUWmIwpBTWDxaRPXrIXkgvmQ==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.46.1:
-    resolution: {integrity: sha512-oPcr1yqoXLCkgKtD5eNUPLiN40rYEM39odNpIb6VE6S7/15gJmA1NzVv6zJYusV0e7tzvkU/utBFNa/Kpxmwng==}
+  playwright@1.56.1:
+    resolution: {integrity: sha512-aFi5B0WovBHTEvpM3DzXTUaeN6eN0qWnTkKx4NQaH4Wvcmc153PdaY2UBdSYKaGYw+UyWXSVyxDUg5DoPEttjw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -9777,9 +9775,9 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@playwright/test@1.46.1':
+  '@playwright/test@1.56.1':
     dependencies:
-      playwright: 1.46.1
+      playwright: 1.56.1
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -10505,9 +10503,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@shopware-docs/vitest@1.3.6(@playwright/test@1.46.1)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.1.0)(playwright-chromium@1.56.1)(postcss@8.5.6)(slugify@1.6.6)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0)))(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0))(vitepress@1.6.4(@algolia/client-search@5.40.1)(@types/node@20.19.22)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.1.0)(less@4.4.2)(postcss@8.5.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.93.2)(search-insights@2.17.3)(terser@5.44.0)(typescript@5.9.3))(vitest@2.1.9)':
+  '@shopware-docs/vitest@1.3.6(@playwright/test@1.56.1)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.1.0)(playwright-chromium@1.56.1)(postcss@8.5.6)(slugify@1.6.6)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0)))(vite@5.4.21(@types/node@20.19.22)(less@4.4.2)(sass@1.93.2)(terser@5.44.0))(vitepress@1.6.4(@algolia/client-search@5.40.1)(@types/node@20.19.22)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.1.0)(less@4.4.2)(postcss@8.5.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.93.2)(search-insights@2.17.3)(terser@5.44.0)(typescript@5.9.3))(vitest@2.1.9)':
     dependencies:
-      '@playwright/test': 1.46.1
+      '@playwright/test': 1.56.1
       '@vitest/coverage-c8': 0.33.0(vitest@2.1.9)
       axios: 1.12.2
       get-port: 7.1.0
@@ -11812,6 +11810,10 @@ snapshots:
       undici-types: 5.26.5
 
   '@types/node@20.19.22':
+    dependencies:
+      undici-types: 6.21.0
+
+  '@types/node@20.19.23':
     dependencies:
       undici-types: 6.21.0
 
@@ -14550,7 +14552,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.19.22
+      '@types/node': 20.19.23
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -15693,13 +15695,11 @@ snapshots:
     dependencies:
       playwright-core: 1.56.1
 
-  playwright-core@1.46.1: {}
-
   playwright-core@1.56.1: {}
 
-  playwright@1.46.1:
+  playwright@1.56.1:
     dependencies:
-      playwright-core: 1.46.1
+      playwright-core: 1.56.1
     optionalDependencies:
       fsevents: 2.3.2
 
