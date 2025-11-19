@@ -24,3 +24,16 @@
 .VPNavBar .container > .title {
     flex-shrink: 1;
 }
+
+.content-container {
+    @apply flex flex-col;
+
+    .SwagRelatedArticles {
+        order: 10;
+    }
+}
+
+[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
+}

@@ -1,4 +1,5 @@
 import {SWAGTheme} from "vitepress-shopware-docs";
+import SwagDocFeedback from "../../src/components/feedback/SwagDocFeedback.vue";
 import SwagRadialBg from "../../src/components/SwagRadialBg.vue";
 import SwagOutdatedVersion from "../../src/components/SwagOutdatedVersion.vue";
 import SwagRibbon from "../../src/components/SwagRibbon.vue";
@@ -22,6 +23,12 @@ export default {
             'doc-top': [
               SwagOutdatedVersion,
             ],
+            'doc-after': [
+              SwagDocFeedback,
+            ],
+            /*'doc-after:unshift': [
+              SwagDocFeedback,
+            ],*/
         },
         enhanceApp: async ({ app, projectPath }) => {
             try {
