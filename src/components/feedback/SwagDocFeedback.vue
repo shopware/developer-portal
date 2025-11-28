@@ -187,6 +187,7 @@ const storeRating = async (rating: number) => {
     ratingId.value = response.data.id
     feedbackId.value = null
     localStorage.setItem(`SwagDocFeedback-rating-${identifier.value}`, JSON.stringify({ rating: selectedRating.value, ratingId: response.data.id }))
+    error.value = null
 }
 
 const feedbackId = ref(null)
@@ -202,6 +203,7 @@ const storeFeedback = async () => {
     ratingId.value = response.data.id
     feedbackId.value = response.data.id
     localStorage.setItem(`SwagDocFeedback-rating-${identifier.value}`, JSON.stringify({ rating: selectedRating.value, ratingId: response.data.id }))
+    error.value = null
 }
 
 const showStats = ref(false)
