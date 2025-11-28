@@ -7,6 +7,7 @@ editLink: false
 stackOverflowLink: false
 prev: false
 next: false
+feedback: false
 items:
   - text: What is Shopware
     link: /what-is-shopware.html

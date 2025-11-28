@@ -1,5 +1,5 @@
 <template>
-    <div class="SwagDocFeedback" v-if="shouldFetchFeedback">
+    <div class="SwagDocFeedback" v-if="!hidden && shouldFetchFeedback">
         <span class="SwagDocFeedback_heading">Was this page helpful?</span>
 
         <div class="SwagDocFeedback_starsWrapper">
@@ -15,31 +15,40 @@
 
         <span v-if="!stats.current.votes && !stats.current.votes" class="font-semibold">Be the first to vote!</span>
         <span v-else-if="!stats.current.votes" class="font-semibold">Be the first to comment changes!</span>
-        <div v-else class="flex items-center gap-4">
+        
+        <div class="flex items-center gap-4">
             <SwagIcon icon="star" type="solid" class="text-2xl color-orange" />
-            <span class="font-semibold">{{ stats.current.average }} / 5 ({{ stats.current.votes }} votes)</span>
-            <SwagIcon icon="chevron-circle-down" class="cursor-pointer" />
+            <span class="font-semibold">{{ stats.current.average.toFixed(1) }} / 5 &nbsp;({{ stats.current.votes }} vote{{ s(stats.current.votes) }})</span>
+            <SwagIcon icon="chevron-circle-down" class="cursor-pointer" @click="showStats = !showStats" />
+        </div>
+
+        <div v-if="showStats">
+            <div v-for="stat in finalStats" class="flex gap-2 items-center" style="font-variant-numeric: tabular-nums">
+                {{ stat.rating }} &nbsp;
+                <SwagIcon v-for="rating in [1, 2, 3, 4, 5]" icon="star" type="solid" :class="[stat.rating >= rating ? 'color-orange' : 'color-gray']" />
+                &nbsp;({{ stat.votes }})
+            </div>
         </div>
 
         <div class="flex flex-col items-center gap-2 text-sm">
             <span v-if="lastUpdated">Last updated: {{ lastUpdated }}</span>
-            <div class="flex items-center gap-2" v-if="hasPreviousVersion">
+            <div class="flex items-center gap-2" v-if="stats.previous.votes">
                 <span>Previous versions:</span> 
                 <SwagIcon icon="star" type="solid" class="text-xl color-orange" />
-                <span>{{ stats.previous.average }} / 5 ({{ stats.previous.votes }} votes)</span>
+                <span>{{ stats.previous.average }} / 5 ({{ stats.previous.votes }} vote{{ s(stats.previous.votes) }})</span>
             </div>
         </div>
 
         <span v-if="error" class="text-red font-medium">{{ error }}</span>
 
-        <div v-if="selectedRating" class="c-flat-card flex flex-col gap-6 p-6 items-center max-w-[36rem]">
-            <p class="font-medium">Your rating has been saved! <SwagIcon icon="party-horn" type="solid" class="inline-flex" /></p>
-
-            <p>Would you like to tell us more about your experience with Shopware 6 Developer docs? Let us know in the box below.</p>
-            <textarea class="form-control" name="message" placeholder="Tell us more" v-model="message"></textarea>
-            <button type="button" class="btn --primary self-end" @click.prevent="storeFeedback" :disabled="!(message?.trim()?.length >= 2)">Send feedback</button>
-
-            <p class="font-medium" v-if="feedbackId">Your message has been saved. Thank you for your feedback!</p>
+        <div v-if="rated" class="c-flat-card flex flex-col gap-6 p-6 items-center max-w-[36rem]">
+            <p v-if="feedbackId" class="font-medium">Your message has been saved. Thank you for your feedback!</p>
+            <template v-else>
+                <p class="font-medium">Your rating has been saved! <SwagIcon icon="party-horn" type="solid" class="inline-flex" /></p>
+                <p>Would you like to tell us more about your experience with Shopware 6 Developer docs? Let us know in the box below.</p>
+                <textarea class="form-control" name="message" placeholder="Tell us more" v-model="message"></textarea>
+                <button type="button" class="btn --primary self-end" @click.prevent="storeFeedback" :disabled="!(message?.trim()?.length >= 2)">Send feedback</button>
+            </template>
         </div>
     </div>
 </template>
@@ -67,9 +76,7 @@ const onLeave = () => {
 }
 const selectedRating: Ref<null | number> = ref(null)
 
-const hasPreviousVersion = true
-
-const { frontmatter } = useData()
+const { frontmatter, theme } = useData()
 const route = useRoute();
 
 const lastUpdated = computed(() => {
@@ -83,7 +90,7 @@ const lastUpdated = computed(() => {
     }).format(Date.parse(lastAuditAt))
 })
 
-const shouldFetchFeedback = () => !frontmatter.value?.swag || !('feedback' in frontmatter.value.swag) || frontmatter.value.swag.feedback;
+const shouldFetchFeedback = computed(() => (!frontmatter.value || !('feedback' in frontmatter.value) || frontmatter.value.feedback))
 
 const statDefaults = {
     current: {
@@ -93,12 +100,13 @@ const statDefaults = {
     previous: {
         votes: 0,
         average: 0,
-    }
+    },
+    all: [],
 }
 const stats = ref(statDefaults)
 
 const message = ref('')
-const feedbackAppHost = 'http://localhost:3000'
+const feedbackAppHost = theme.value.swag.feedback.host
 const identifier = computed(() => {
     let id = route.path.replace(/\.[^/.]+$/, ".md").substring(1);
     if (id.endsWith('/')) {
@@ -111,7 +119,7 @@ const postToApi = async (url: string, body = {}) => {
     try {
         body = {
             identifier: identifier.value,
-            lastUpdated: lastUpdated.value,
+            version: lastUpdated.value,
             clientId: await getClientId(),
             ...body,
         }
@@ -132,14 +140,19 @@ const postToApi = async (url: string, body = {}) => {
 
     return false
 }
+
+const hidden = ref(false)
 const fetchFeedback = async () => {
-    if (!shouldFetchFeedback()) {
+    if (!shouldFetchFeedback.value) {
         stats.value = statDefaults
         return;
     }
 
-    const data = await postToApi('/api/stats')
-    stats.value = data.stats || statDefaults
+    const response = await postToApi('/api/stats')
+    if (!response) {
+        hidden.value = true
+    }
+    stats.value = response?.data || statDefaults
 }
 
 const error: Ref<string | null> = ref(null)
@@ -160,41 +173,59 @@ const getClientId = async () => {
 }
 
 const ratingId = ref(null)
+const rated = ref(false)
 const storeRating = async (rating: number) => {
     selectedRating.value = rating
-    const data = await postToApi('/api/rating', { clientId: await getClientId(), identifier: identifier.value, rating: selectedRating.value })
-    if (!data?.success) {
-        console.error(data)
+    const response = await postToApi('/api/rating', { ratingId: ratingId.value, rating: selectedRating.value })
+    if (!response?.success) {
+        console.error(response)
         error.value = 'Error saving rating. Please, retry.'
         return
     }
 
-    ratingId.value = data.rating.id
+    rated.value = true
+    ratingId.value = response.data.id
+    feedbackId.value = null
+    localStorage.setItem(`SwagDocFeedback-rating-${identifier.value}`, JSON.stringify({ rating: selectedRating.value, ratingId: response.data.id }))
 }
 
 const feedbackId = ref(null)
 const storeFeedback = async () => {
-    const data = await postToApi('/api/feedback', { clientId: await getClientId(), identifier: identifier.value, message: message.value })
-    if (!data?.success) {
-        console.error(data)
+    const response = await postToApi('/api/feedback', { ratingId: ratingId.value, rating: selectedRating.value, message: message.value })
+    if (!response?.success) {
+        console.error(response)
         error.value = 'Error saving feedback. Please, retry.'
         return
     }
 
-    feedbackId.value = data.rating.id
+    rated.value = true
+    ratingId.value = response.data.id
+    feedbackId.value = response.data.id
+    localStorage.setItem(`SwagDocFeedback-rating-${identifier.value}`, JSON.stringify({ rating: selectedRating.value, ratingId: response.data.id }))
 }
 
-// due to immediate: false
+const showStats = ref(false)
+const finalStats = computed(() => [5, 4, 3, 2, 1].map(rating => stats.value.all.find((stat) => stat.rating === rating) || { rating, votes: 0 }))
+
+const s = (votes: number) => votes === 1 ? '' : 's'
+
 onMounted(() => {
     watch(
         () => route.path,
         async () => {
+            const storedValue = JSON.parse(localStorage.getItem(`SwagDocFeedback-rating-${identifier.value}`) || '{}')
+            console.log(storedValue)
+
             stats.value = statDefaults
             error.value = null
-            selectedRating.value = null
+            selectedRating.value = storedValue.rating || null
+            ratingId.value = storedValue.ratingId || null
+            rated.value = false
             message.value = ''
-            ratingId.value = null
             feedbackId.value = null
+            showStats.value = false
+            hidden.value = false
+            rerender(selectedRating.value)
             await fetchFeedback()
         },
         {
@@ -226,7 +257,7 @@ onMounted(() => {
     }
 
     &_star {
-        @apply text-4xl cursor-pointer mx-4 my-2 color-orange;
+        @apply text-4xl cursor-pointer mx-3 md:mx-4 my-2 color-orange;
     }
 
     &_starText {

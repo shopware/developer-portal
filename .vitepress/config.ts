@@ -328,6 +328,11 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       // config for the Algolia Search Modal lvl1
       sections,
 
+      // feedback app
+      feedback: {
+        host: 'https://devhub-feedback-app.vercel.app',
+      },
+
       // knowledge index
       similarArticles: {
         host: 'https://ai-ml.fly.dev',
