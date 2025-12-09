@@ -284,7 +284,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
           || pathname.includes('docs/v6.6')
       } catch (e) {
         console.error(e, url)
-        throw e
+        // throw e
       }
     },
   ],
