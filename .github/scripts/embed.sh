@@ -70,7 +70,7 @@ fi
  --branch ${BRANCH_FRONTENDS:-main} \
  --src apps/docs/src \
  --dst frontends \
- --org ${ORG_FRONTENDS:-shopware}
+ --org ${ORG_FRONTENDS:-shopware} || echo "Error cloning frontends"
 
 #./docs-cli.cjs clone \
 # --ci \
