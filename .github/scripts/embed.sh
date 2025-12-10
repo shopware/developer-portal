@@ -70,14 +70,7 @@ fi
  --branch ${BRANCH_FRONTENDS:-main} \
  --src apps/docs/src \
  --dst frontends \
- --org ${ORG_FRONTENDS:-shopware} || (echo "retrying..." && ./docs-cli.cjs clone \
- --ci \
- --keep \
- --repository shopware/frontends \
- --branch ${BRANCH_FRONTENDS:-main} \
- --src apps/docs/src \
- --dst frontends \
- --org ${ORG_FRONTENDS:-shopware})
+ --org ${ORG_FRONTENDS:-shopware}
 
 #./docs-cli.cjs clone \
 # --ci \
