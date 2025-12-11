@@ -273,7 +273,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       // 'chat.md',
   ],
 
-  ignoreDeadLinks: [
+  ignoreDeadLinks: process.env.SKIP_DEADLINK_CHECK ? true : [
     // ignore all localhost links
     /^https?:\/\/localhost/,
     (url) => {
