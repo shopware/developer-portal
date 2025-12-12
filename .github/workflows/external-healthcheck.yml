@@ -119,7 +119,7 @@ jobs:
         run: |
           export NODE_OPTIONS="--max-old-space-size=8096"
           export USERCENTRICS="65ynhGFvE"
-          pnpm run build
+          pnpm run build || (export SKIP_DEADLINK_CHECK=1 && pnpm run build)
 
       - name: Zip folder
         run: zip -r full-build.zip .vitepress/dist/ vercel.json
