@@ -130,7 +130,7 @@
       "dst": "resources/meteor-icon-kit",
       "branch": [
         "env.BRANCH_METEOR_ICON_KIT",
-        "main"
+        "dx/devhub-icon-kit"
       ],
       "org": [
         "env.ORG_METEOR_ICON_KIT",
