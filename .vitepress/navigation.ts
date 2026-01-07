@@ -48,6 +48,7 @@ const navigation = buildSidebarNav('./src/', [
     "/docs/resources/references/adr/YYYY-MM-DD-template.md",
     "/docs/v6.6/resources/references/adr/YYYY-MM-DD-template.md",
     "/docs/v6.5/resources/references/adr/YYYY-MM-DD-template.md",
+    "/docs/AGENTS.md",
 ]);
 
 const prefixItems = (items, prefix) => items.map(item => {
