@@ -11,6 +11,7 @@ import Inspect from "vite-plugin-inspect";
 import liveReload from 'vite-plugin-live-reload'
 import { withMermaid } from "vitepress-plugin-mermaid";
 import topLevelAwait from "vite-plugin-top-level-await";
+import llmstxt from "vitepress-plugin-llms";
 import navigation from "./navigation";
 
 import {
@@ -435,6 +436,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
 
   vite: {
     plugins: [
+      llmstxt(),
       Inspect(),
       ViteRequireContext.default({
         projectBasePath: `${process.cwd()}/src`
