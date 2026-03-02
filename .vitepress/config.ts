@@ -436,7 +436,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
 
   vite: {
     plugins: [
-      llmstxt(),
+      llmstxt({ injectLLMHint: false }),
       Inspect(),
       ViteRequireContext.default({
         projectBasePath: `${process.cwd()}/src`
