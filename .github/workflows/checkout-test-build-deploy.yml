@@ -20,68 +20,10 @@ on:
 
 jobs:
 
-  embed-docs:
-    name: Embed docs
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Prepare
-        uses: ./.github/actions/checkout-install
-
-      # @T00D00 - "pnpm run build" fails with symlinks
-      - name: Clone sub-docs
-        env:
-          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
-          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
-        run: |
-          chmod +x ./.github/scripts/embed.sh
-          .github/scripts/embed.sh
-
-#      - name: Zip folder
-#        run: |
-#          find ./src -type d \( -name "node_modules" -o -name ".git" \) -prune -exec rm -rf {} +
-#          
-#          du -h -d 1 src
-#
-#          echo "Creating full dump; including sources; excluding node_modules"
-#          zip -q -r -T embed.zip ./src/ -x \*/node_modules/\* -y
-#
-#          echo "Creating DB index"
-#          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
-
-      - name: Upload build
-        uses: actions/upload-artifact@v4
-        with:
-          path: |
-            ./src/**
-            !./src/**/node_modules/**
-          if-no-files-found: error
-          name: embed-${{ github.sha }}
-          include-hidden-files: true
-#          path: embed.zip
-
-      - name: Upload DB index
-        uses: actions/upload-artifact@v4
-        with:
-          path: |
-            ./src/**/*.md
-            !./src/**/node_modules/**
-            !./src/**/_source/**
-          if-no-files-found: error
-          name: db-index-${{ github.sha }}
-          include-hidden-files: true
-#          path: src/db-index.zip
-
   test-dev:
     name: Test dev
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: embed-docs
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -91,18 +33,15 @@ jobs:
         with:
           apt: true
 
-      - uses: actions/download-artifact@v4
-        with:
-          name: embed-${{ github.sha }}
-          path: src
-
-      - name: Display structure of downloaded files
+      - name: Clone sub-docs
+        env:
+          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
+          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
         run: |
-          ls -la
-          find src -type d
-          find src -type l
-          find src -type f -name '*.md'
-          find src -type f -name '*.zip'
+          chmod +x ./.github/scripts/embed.sh
+          .github/scripts/embed.sh
 
       - name: Test
         run: |
@@ -114,7 +53,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    needs: embed-docs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -124,10 +62,15 @@ jobs:
         with:
           apt: true
 
-      - uses: actions/download-artifact@v4
-        with:
-          name: embed-${{ github.sha }}
-          path: src
+      - name: Clone sub-docs
+        env:
+          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
+          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
+        run: |
+          chmod +x ./.github/scripts/embed.sh
+          .github/scripts/embed.sh
 
       - name: Collect Workflow Telemetry
         uses: catchpoint/workflow-telemetry-action@v2
@@ -139,10 +82,6 @@ jobs:
           pnpm -C ./src/frontends/_source/ i
           pnpm run build || (export SKIP_DEADLINK_CHECK=1 && pnpm run build)
 
-      #- name: Zip externals
-      #  run: |
-      #    cd external && zip -r db-external.zip * -i '*.md'
-
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
@@ -152,19 +91,22 @@ jobs:
             .vitepress/dist/
             vercel.json
 
-      #- name: Upload external
-      #  uses: actions/upload-artifact@v4
-      #  with:
-      #    if-no-files-found: error
-      #    name: db-external-${{ github.sha }}
-      #    path: external/db-external.zip
+      - name: Upload DB index
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            ./src/**/*.md
+            !./src/**/node_modules/**
+            !./src/**/_source/**
+          if-no-files-found: error
+          name: db-index-${{ github.sha }}
+          include-hidden-files: true
 
   test-build:
     name: Test build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     needs:
-      - embed-docs
       - build
     steps:
       - name: Checkout repository
@@ -175,10 +117,15 @@ jobs:
         with:
           apt: true
 
-      - uses: actions/download-artifact@v4
-        with:
-          name: embed-${{ github.sha }}
-          path: src
+      - name: Clone sub-docs
+        env:
+          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
+          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
+        run: |
+          chmod +x ./.github/scripts/embed.sh
+          .github/scripts/embed.sh
 
       - uses: actions/download-artifact@v4
         with:
@@ -220,17 +167,17 @@ jobs:
             VERCEL_ENV="production"
             VERCEL_ENV_FLAG="--prod"
           fi
-          
+
           vercel pull --yes --environment=$VERCEL_ENV --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ secrets.VERCEL_ORG_ID }}
           vercel build ./.vitepress/dist --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG
           vercel deploy --prebuilt --archive=tgz --token=${{ secrets.VERCEL_TOKEN }} $VERCEL_ENV_FLAG > ./vercel.env
-  
+
   rebuild-index:
     name: Send documents
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs:
-      - embed-docs
+      - build
       - deploy-vercel
 
     steps:
@@ -239,17 +186,9 @@ jobs:
           name: db-index-${{ github.sha }}
           path: merged
 
-#      - uses: actions/download-artifact@v4
-#        with:
-#          name: db-external-${{ github.sha }}
-
       - name: Merge base and external sources
         run: |
-          cd merged; zip -q -r ../db-merged.zip * 
-
-#          mkdir merged
-#          unzip -q -o db-index.zip -d merged
-#          true || unzip .q -o db-external.zip -d merged
+          cd merged; zip -q -r ../db-merged.zip *
 
       - name: Cleanup zip
         run: |
@@ -271,16 +210,16 @@ jobs:
             COLLECTION="shopware--developer-portal--$BRANCH"
             COLLECTION_PARAM="-F collection=\"${COLLECTION}\""
           fi
-          
+
           echo "Collection: ${COLLECTION}"
-          
+
           echo "Uploading documents"
           curl -v \
             --fail-with-body \
             -F content=@db-merged.zip $COLLECTION_PARAM \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
             "${KNOWLEDGE_URL}/upload-input"
-          
+
           echo "Ingesting documents"
           curl \
             --fail-with-body \
@@ -289,5 +228,5 @@ jobs:
             -H "Content-Type: application/json" \
             -H "X-Shopware-Api-Key: $KNOWLEDGE_API_KEY" \
             "${KNOWLEDGE_URL}/ingest"
-          
+
           echo "Documents ingested"
