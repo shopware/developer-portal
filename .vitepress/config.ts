@@ -36,7 +36,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/guides/plugins/apps/',
       '/docs/v6.6/guides/plugins/apps/',
       '/docs/v6.5/guides/plugins/apps/',
-      '/docs/v6.4/guides/plugins/apps/',
     ],
   },
   {
@@ -46,7 +45,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/guides/plugins/themes/',
       '/docs/v6.6/guides/plugins/themes/',
       '/docs/v6.5/guides/plugins/themes/',
-      '/docs/v6.4/guides/plugins/themes/',
     ],
   },
   {
@@ -56,7 +54,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/guides/plugins/plugins/',
       '/docs/v6.6/guides/plugins/plugins/',
       '/docs/v6.5/guides/plugins/plugins/',
-      '/docs/v6.4/guides/plugins/plugins/',
     ],
   },
   {
@@ -71,7 +68,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/concepts/',
       '/docs/v6.6/concepts/',
       '/docs/v6.5/concepts/',
-      '/docs/v6.4/concepts/',
     ],
   },
   {
@@ -80,7 +76,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/guides/',
       '/docs/v6.6/guides/',
       '/docs/v6.5/guides/',
-      '/docs/v6.4/guides/',
     ],
   },
   {
@@ -89,7 +84,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/products/',
       '/docs/v6.6/products/',
       '/docs/v6.5/products/',
-      '/docs/v6.4/products/',
     ],
   },
   {
@@ -98,7 +92,6 @@ const sections: SwagSectionsConfig[] = [
       '/docs/resources/',
       '/docs/v6.6/resources/',
       '/docs/v6.5/resources/',
-      '/docs/v6.4/resources/',
     ],
   },
   {
@@ -133,7 +126,6 @@ const embeds: SwagEmbedsConfig[] = [
     points: {
       '/docs/v6.6/': 'v6.6',
       '/docs/v6.5/': 'v6.5',
-      '/docs/v6.4/': 'v6.4',
       '/docs/': 'main',
     },
     folder: '.',
@@ -280,8 +272,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
     (url) => {
       try {
         const { pathname } = new URL(url, 'http://localhost')
-        return pathname.includes('docs/v6.4')
-          || pathname.includes('docs/v6.5')
+        return pathname.includes('docs/v6.5')
           || pathname.includes('docs/v6.6')
       } catch (e) {
         console.error(e, url)
@@ -357,21 +348,18 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
             exclude: [
               'docs/v6.6/',
               'docs/v6.5/',
-              'docs/v6.4/',
             ],
           },
           '/docs/': {
             exclude: [
               'docs/v6.6/',
               'docs/v6.5/',
-              'docs/v6.4/',
             ],
           },
           '/docs/v6.6/': {
             exclude: [
               'docs/',
               'docs/v6.5/',
-              'docs/v6.4/',
             ],
             include: [
               'docs/v6.6/',
@@ -381,20 +369,9 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
             exclude: [
               'docs/',
               'docs/v6.6/',
-              'docs/v6.4/',
             ],
             include: [
               'docs/v6.5/',
-            ]
-          },
-          '/docs/v6.4/': {
-            exclude: [
-              'docs/v6.6/',
-              'docs/v6.5/',
-              'docs/',
-            ],
-            include: [
-              'docs/v6.4/',
             ]
           },
         },
@@ -405,7 +382,6 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
             'docs': 'v6.7 (stable)',
             'docs/v6.6': 'v6.6',
             'docs/v6.5': 'v6.5',
-            'docs/v6.4': 'v6.4',
           }
         ]
       } as SwagVersionSwitcherConfig,
@@ -610,13 +586,6 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       {
         src: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
         dst: 'docs/v6.5/products/extensions/b2b-suite/guides/example-plugins',
-        ext: [
-          '.zip'
-        ],
-      },
-      {
-        src: 'docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
-        dst: 'docs/v6.4/products/extensions/b2b-suite/guides/example-plugins',
         ext: [
           '.zip'
         ],

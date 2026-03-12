@@ -47,22 +47,6 @@
       ]
     },
     {
-      "name": "shopware/docs",
-      "src": ".",
-      "dst": [
-        "docs",
-        "v6.4"
-      ],
-      "branch": [
-        "env.BRANCH_DOCS_64",
-        "v6.4"
-      ],
-      "org": [
-        "env.ORG_DOCS_64",
-        "shopware"
-      ]
-    },
-    {
       "name": "shopware/frontends",
       "src": [
         "apps",
