@@ -5,7 +5,6 @@ set -e
 BRANCH_DOCS=main
 BRANCH_DOCS_66=v6.6
 BRANCH_DOCS_65=v6.5
-BRANCH_DOCS_64=v6.4
 BRANCH_FRONTENDS=dx/fix-branch-outage-2025-20-10
 BRANCH_ADMIN_EXTENSION_SDK=main
 BRANCH_METEOR_ICON_KIT=dx/devhub-icon-kit
@@ -16,7 +15,6 @@ BRANCH_RELEASE_NOTES=main
 ORG_DOCS=shopware
 ORG_DOCS_67=shopware
 ORG_DOCS_65=shopware
-ORG_DOCS_64=shopware
 ORG_FRONTENDS=shopware
 ORG_ADMIN_EXTENSION_SDK=shopware
 ORG_METEOR_ICON_KIT=shopware
@@ -54,14 +52,6 @@ fi
  --src . \
  --dst docs/v6.5 \
  --org ${ORG_DOCS_65:-shopware}
-
-./docs-cli.cjs clone \
- --ci \
- --repository shopware/docs \
- --branch ${BRANCH_DOCS_64:-main} \
- --src . \
- --dst docs/v6.4 \
- --org ${ORG_DOCS_64:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \

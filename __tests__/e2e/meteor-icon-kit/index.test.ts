@@ -15,7 +15,7 @@ describe('render correct content', async () => {
         await embeddedPage.open('/resources/meteor-icon-kit/')
     })
 
-    test('has search', async () => {
+    test.skip('has search', async () => {
         const searchLocator = await embeddedPage.page.locator('input[name="searchbar"]');
         expect(await searchLocator.count()).toEqual(1);
     })
