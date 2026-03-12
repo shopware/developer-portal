@@ -45,11 +45,6 @@
       "statusCode": 302
     },
     {
-      "source": "/docs/v6.4/:url(^(?!.*\\.).*[^/]$)",
-      "destination": "/docs/v6.4/:url.html",
-      "statusCode": 302
-    },
-    {
       "source": ":url(^(?!.*\\.).*[^/]$)",
       "destination": ":url.html",
       "statusCode": 302
@@ -62,16 +57,6 @@
     {
       "source": "/docs/v/6.5/:url*",
       "destination": "/docs/v6.5/:url",
-      "statusCode": 302
-    },
-    {
-      "source": "/docs/v/6.4/:url*",
-      "destination": "/docs/v6.4/:url",
-      "statusCode": 302
-    },
-    {
-      "source": "/docs/v/v6.4/:url*",
-      "destination": "/docs/v6.4/:url",
       "statusCode": 302
     },
     {
