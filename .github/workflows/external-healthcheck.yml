@@ -87,6 +87,11 @@ jobs:
           elif [[ "${{ inputs.repo }}" == "developer-portal" ]]; then
             echo "Embedding developer-portal, default (unchanged) setup"
           
+          elif [[ "${{ inputs.repo }}" == "meteor" ]]; then
+            echo "Embedding admin-extension-sdk"
+            sed -i "0,/ORG_ADMIN_EXTENSION_SDK.*/s/.*ORG_ADMIN_EXTENSION_SDK.*/ORG_ADMIN_EXTENSION_SDK=$ORG/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_ADMIN_EXTENSION_SDK.*/s/.*BRANCH_ADMIN_EXTENSION_SDK.*/BRANCH_ADMIN_EXTENSION_SDK=$BRANCH/" ./.github/scripts/embed.sh
+          
           else
             echo "Unknown repository ${{inputs.repo}}"
            echo "Branch ${{inputs.branch}}"
