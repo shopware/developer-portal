@@ -12,6 +12,22 @@ There are a few known issues:
 If the build breaks for no reason, check out `./.github/scripts/debug.js` for automatically debugging hundreds of .md
 files for issues.
 
+## The local docs preview does not open in Chrome.
+
+If `pnpm docs:preview` starts successfully but the page does not open properly in Chrome during local development, your
+Linux `inotify` limits may be too low.
+
+Try the following commands, in `sudo` mode:
+
+```bash
+sysctl fs.inotify.max_queued_events=16384
+sysctl fs.inotify.max_user_instances=8192
+sysctl fs.inotify.max_user_watches=524288
+```
+
+If this fixes the issue, you may want to persist these values in your system `sysctl` configuration so they survive a
+reboot.
+
 ## PHPStorm does not reformat my frontmatter config properly.
 
 Please, enable registry key `markdown.experimental.frontmatter.support.enable=true` in your PhpStorm registry settings.
