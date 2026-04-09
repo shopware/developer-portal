@@ -170,6 +170,8 @@ jobs:
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
+        with:
+          playwright: true
 
       - uses: actions/download-artifact@v8
         with:

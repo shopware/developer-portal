@@ -102,6 +102,8 @@ jobs:
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
+        with:
+          playwright: true
 
       - name: Embed repos
         env:
