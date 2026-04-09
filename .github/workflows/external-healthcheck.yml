@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Print inputs
         run: |
@@ -102,8 +102,6 @@ jobs:
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
-        with:
-          apt: true
 
       - name: Embed repos
         env:
@@ -130,7 +128,7 @@ jobs:
         run: zip -r full-build.zip .vitepress/dist/ vercel.json
 
       - name: Upload build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
@@ -158,9 +156,9 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: full-build-${{ github.sha }}
 

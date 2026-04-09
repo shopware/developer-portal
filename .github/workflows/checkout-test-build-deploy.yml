@@ -26,7 +26,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
@@ -55,7 +55,7 @@ jobs:
 #          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
 
       - name: Upload build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           path: |
             ./src/**
@@ -66,7 +66,7 @@ jobs:
 #          path: embed.zip
 
       - name: Upload DB index
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           path: |
             ./src/**/*.md
@@ -84,14 +84,14 @@ jobs:
     needs: embed-docs
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
         with:
-          apt: true
+          playwright: true
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: embed-${{ github.sha }}
           path: src
@@ -117,14 +117,12 @@ jobs:
     needs: embed-docs
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
-        with:
-          apt: true
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: embed-${{ github.sha }}
           path: src
@@ -144,7 +142,7 @@ jobs:
       #    cd external && zip -r db-external.zip * -i '*.md'
 
       - name: Upload build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
@@ -153,7 +151,7 @@ jobs:
             vercel.json
 
       #- name: Upload external
-      #  uses: actions/upload-artifact@v4
+      #  uses: actions/upload-artifact@v6
       #  with:
       #    if-no-files-found: error
       #    name: db-external-${{ github.sha }}
@@ -168,19 +166,17 @@ jobs:
       - build
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
-        with:
-          apt: true
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: embed-${{ github.sha }}
           path: src
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: full-build-${{ github.sha }}
 
@@ -203,9 +199,9 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: full-build-${{ github.sha }}
 
@@ -234,12 +230,12 @@ jobs:
       - deploy-vercel
 
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: db-index-${{ github.sha }}
           path: merged
 
-#      - uses: actions/download-artifact@v4
+#      - uses: actions/download-artifact@v8
 #        with:
 #          name: db-external-${{ github.sha }}
 
