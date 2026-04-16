@@ -38,15 +38,15 @@ import SwagLinkLine from "./components/SwagLinkLine.vue";
                     <template #title>Local app development</template>
                     <template #sub>Learn how to develop your app on Platform.sh or with Docker.</template>
                 </SwagLandingCard>-->
-            <PageRef page="/docs/guides/plugins/apps/starter/product-translator.html">
+            <PageRef page="/docs/guides/plugins/apps/lifecycle/product-translator.html">
                 <template #title></template>
                 <template #sub>Learn how to set up an app server and read/write data to the Shopware APIs.</template>
             </PageRef>
-            <PageRef page="/docs/guides/plugins/apps/starter/add-api-endpoint.html">
+            <PageRef page="/docs/guides/plugins/apps/app-scripts/add-api-endpoint.html">
                 <template #title>Add custom API</template>
                 <template #sub>Learn how to add different custom API endpoints that delivers dynamic data.</template>
             </PageRef>
-            <PageRef page="/docs/guides/plugins/apps/starter/starter-admin-extension.html">
+            <PageRef page="/docs/guides/plugins/apps/administration/starter-admin-extension.html">
                 <template #title>Extend Admin UI</template>
                 <template #sub>Learn how to extend modules for the admin panel using Admin Extension API.</template>
             </PageRef>
@@ -68,12 +68,12 @@ import SwagLinkLine from "./components/SwagLinkLine.vue";
                         <ul>
                             <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart">Calculate cart</a></li>
                             <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-a-relative-discount">Define custom prices and evaluate discounts</a></li>
-                            <li><a href="/docs/guides/plugins/apps/tax-provider#tax-provider-endpoint">Calculate taxes</a></li>
+                            <li><a href="/docs/guides/plugins/apps/checkout/tax-provider#tax-provider-endpoint">Calculate taxes</a></li>
                             <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation#split-line-items">Modify line items</a></li>
                             <li><a href="/docs/guides/plugins/apps/custom-data/">Add custom data</a></li>
                             <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#rule-based-cart-scripts">Rule-based scripts</a></li>
                             <li><a href="/docs/guides/plugins/apps/app-scripts/cart-manipulation.html#add-errors-and-notifications-to-the-cart">Errors and notifications</a></li>
-                            <li><a href="/docs/guides/plugins/apps/payment">Payment & Refunds</a></li>
+                            <li><a href="/docs/guides/plugins/apps/checkout/payment">Payment & Refunds</a></li>
                         </ul>
                     </SwagCardSummary>
                     <SwagCardSummary icon="storefront">
