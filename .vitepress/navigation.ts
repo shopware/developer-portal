@@ -91,20 +91,23 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Local',
-                        link: '/docs/environment/cli/',
+                        // link: '/docs/environment/cli/',
+                        link: '/docs/products/cli/',
                     },
                     {
                         text: 'SaaS',
-                        link: '/docs/environment/saas/',
+                        // link: '/docs/environment/saas/',
+                        link: '/docs/products/saas.html',
                     },
                     {
                         text: 'PaaS',
-                        link: '/docs/environment/paas/',
+                        // link: '/docs/environment/paas/',
+                        link: '/docs/products/paas/',
                     },
-                    {
+                    /*{
                         text: 'Shopware.Build',
                         link: '/docs/environment/cli/',
-                    },
+                    },*/
                 ],
             },
             {
@@ -112,11 +115,13 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Shopware CLI',
-                        link: '/docs/environment/cli/',
+                        // link: '/docs/environment/cli/',
+                        link: '/docs/products/cli/',
                     },
                     {
                         text: 'Shopware MCP',
-                        link: '/docs/environment/mcp/',
+                        // link: '/docs/environment/mcp/',
+                        link: '/docs/products/cli/',
                     },
                 ]
             },
@@ -190,15 +195,17 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Frontends',
-                        link: '/docs/products/projects/frontends/',
+                        link: '/frontends/',
                     },
                     {
                         text: 'Sales Agent',
-                        link: '/docs/products/projects/sales-agent/',
+                        // link: '/docs/products/projects/sales-agent/',
+                        link: '/docs/products/sales-agent/',
                     },
                     {
                         text: 'Digital Sales Rooms',
-                        link: '/docs/products/projects/digital-sales-rooms/',
+                        // link: '/docs/products/projects/digital-sales-rooms/',
+                        link: '/docs/products/digital-sales-rooms/',
                     },
                 ],
             },
@@ -207,7 +214,8 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Nexus',
-                        link: '/docs/products/projects/Nexus/',
+                        // link: '/docs/products/projects/Nexus/',
+                        link: '/docs/products/Nexus/',
                     },
                 ],
             },
@@ -340,5 +348,7 @@ try {
 } catch (e) {
     console.log('Frontends sidebar not found');
 }
+
+console.log('navigation', navigation)
 
 export default navigation;
