@@ -288,7 +288,12 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   ignoreDeadLinks: process.env.SKIP_DEADLINK_CHECK ? true : [
     // ignore all localhost links
     /^https?:\/\/localhost/,
-    (url) => {
+    (url, file) => {
+      // skip broken links in versions
+      if (file?.includes('docs/v6.5') || file?.includes('docs/v6.6')) {
+        return false
+      }
+
       try {
         const { pathname } = new URL(url, 'http://localhost')
         return pathname.includes('docs/v6.5')
