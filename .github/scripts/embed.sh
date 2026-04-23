@@ -2,7 +2,7 @@
 set -e
 
 # custom config
-BRANCH_DOCS=main
+BRANCH_DOCS=dx/multi-product-reorg
 BRANCH_DOCS_66=v6.6
 BRANCH_DOCS_65=v6.5
 BRANCH_FRONTENDS=dx/fix-branch-outage-2025-20-10
