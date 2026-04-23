@@ -286,7 +286,7 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/resources/',
     '/docs/guides/',
 
-    '/docs/products/projects/Nexus/',
+    //'/docs/products/projects/Nexus/',
     //'/docs/products/cli/',
     '/docs/products/extensions/migration-assistant/',
     '/docs/products/extensions/b2b-suite/',
