@@ -84,6 +84,11 @@ jobs:
             sed -i "0,/ORG_RELEASE_NOTES.*/s/.*ORG_RELEASE_NOTES.*/ORG_RELEASE_NOTES=$ORG/" ./.github/scripts/embed.sh
             sed -i "0,/BRANCH_RELEASE_NOTES.*/s/.*BRANCH_RELEASE_NOTES.*/BRANCH_RELEASE_NOTES=$BRANCH/" ./.github/scripts/embed.sh
           
+          elif [[ "${{ inputs.repo }}" == "design-portal" ]]; then
+            echo "Embedding design-portal"
+            sed -i "0,/ORG_DESIGN.*/s/.*ORG_DESIGN.*/ORG_DESIGN=$ORG/" ./.github/scripts/embed.sh
+            sed -i "0,/BRANCH_DESIGN.*/s/.*BRANCH_DESIGN.*/BRANCH_DESIGN=$BRANCH/" ./.github/scripts/embed.sh
+          
           elif [[ "${{ inputs.repo }}" == "developer-portal" ]]; then
             echo "Embedding developer-portal, default (unchanged) setup"
           
