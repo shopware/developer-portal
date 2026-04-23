@@ -10,6 +10,7 @@ BRANCH_ADMIN_EXTENSION_SDK=main
 BRANCH_METEOR_ICON_KIT=dx/devhub-icon-kit
 BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 BRANCH_RELEASE_NOTES=main
+BRANCH_DESIGN=dx/embed-into-developer-portal
 
 # custom orgs
 ORG_DOCS=shopware
@@ -20,6 +21,7 @@ ORG_ADMIN_EXTENSION_SDK=shopware
 ORG_METEOR_ICON_KIT=shopware
 ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
 ORG_RELEASE_NOTES=shopware
+ORG_DESIGN=shopware
 
 if [[ "$PWD" != *"/developer-portal" ]]; then
   echo "DANGEROUS, WRONG PWD"
@@ -104,3 +106,11 @@ fi
  --src src \
  --dst release-notes \
  --org ${ORG_RELEASE_NOTES:-shopware}
+
+./docs-cli.cjs clone \
+ --ci \
+ --repository shopware/design-portal \
+ --branch ${BRANCH_DESIGN:-main} \
+ --src src \
+ --dst meteor \
+ --org ${ORG_DESIGN:-shopware}
