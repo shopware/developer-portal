@@ -6,10 +6,10 @@ const navigation = buildSidebarNav('./src/', [
     /*{
         text: 'Home',
         link: '/',
-    },*/
+    },
     {
         component: 'SwagBuildersNav',
-    },
+    },*/
     {
         text: 'Platform',
         items: [
