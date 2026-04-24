@@ -197,26 +197,32 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: 'Sales Agent',
-                        // link: '/docs/products/projects/sales-agent/',
                         link: '/docs/products/frontends/sales-agent/',
                     },
                     {
                         text: 'Digital Sales Rooms',
-                        // link: '/docs/products/projects/digital-sales-rooms/',
                         link: '/docs/products/frontends/digital-sales-rooms/',
                     },
                 ],
             },
             {
-                text: 'Project',
+                text: 'Services',
                 items: [
                     {
                         text: 'Nexus',
-                        link: '/docs/products/projects/nexus/',
+                        link: '/docs/products/services/nexus/',
                     },
                     {
                         text: 'Shopware Payments',
-                        link: '/docs/products/projects/shopware-payments.md',
+                        link: '/docs/products/services/shopware-payments.md',
+                    },
+                    {
+                        text: 'Shopware Analytics',
+                        link: '/docs/products/services/shopware-analytics.md',
+                    },
+                    {
+                        text: 'Shopware Intelligence+',
+                        link: '/docs/products/services/shopware-intelligence.md',
                     },
                 ],
             },
@@ -297,7 +303,7 @@ const navigation = buildSidebarNav('./src/', [
 
     // in migrations
     '/docs/products/environments/paas/',
-    '/docs/products/projects/nexus/',
+    '/docs/products/services/nexus/',
     '/docs/products/tools/cli/',
     '/docs/products/frontends/sales-agent/',
     '/docs/products/frontends/digital-sales-rooms/',
