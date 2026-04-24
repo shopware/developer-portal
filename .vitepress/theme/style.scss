@@ -33,6 +33,12 @@
     }
 }
 
+@media (min-width: 1024px) {
+  .VPDoc .container {
+    max-width: 1600px;
+  }
+}
+
 [disabled] {
     cursor: not-allowed;
     opacity: .5;
