@@ -1,0 +1,13 @@
+diff --git a/dist/node/chunk-D3CUZ4fa.js b/dist/node/chunk-D3CUZ4fa.js
+index fcc35e8af6f0178bd475a90d3e51efdb0d80d2c5..30da5a4a7b0f26d10ffb0f5af35c95145d7a3d94 100644
+--- a/dist/node/chunk-D3CUZ4fa.js
++++ b/dist/node/chunk-D3CUZ4fa.js
+@@ -36683,7 +36683,7 @@ async function createMarkdownToVueRenderFn(srcDir, options = {}, pages, isBuild
+           return ignore.test(url);
+         }
+         if (typeof ignore === "function") {
+-          return ignore(url);
++          return ignore(url, fileOrig);
+         }
+         return false;
+       });

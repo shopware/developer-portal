@@ -107,6 +107,18 @@ const sections: SwagSectionsConfig[] = [
     ],
   },
   {
+    title: 'Meteor Components',
+    matches: [
+      '/meteor/components/',
+    ],
+  },
+  {
+    title: 'Meteor',
+    matches: [
+      '/meteor/',
+    ],
+  },
+  {
     title: 'Release notes',
     matches: [
       '/release-notes/',
@@ -176,6 +188,13 @@ const embeds: SwagEmbedsConfig[] = [
     repository: 'release-notes',
     points: {
       '/release-notes/': 'main',
+    },
+    folder: 'src',
+  },
+  {
+    repository: 'design-portal',
+    points: {
+      '/meteor/': 'main',
     },
     folder: 'src',
   },
@@ -269,7 +288,12 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   ignoreDeadLinks: process.env.SKIP_DEADLINK_CHECK ? true : [
     // ignore all localhost links
     /^https?:\/\/localhost/,
-    (url) => {
+    (url, file) => {
+      // skip broken links in versions
+      if (file?.includes('docs/v6.5') || file?.includes('docs/v6.6')) {
+        return false
+      }
+
       try {
         const { pathname } = new URL(url, 'http://localhost')
         return pathname.includes('docs/v6.5')
@@ -630,6 +654,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         '/resources/meteor-icon-kit/': 1,
         '/resources/meteor-component-library/': 1,
         '/release-notes/': 1,
+        '/meteor/': 1,
       }
     });
 
