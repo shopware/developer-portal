@@ -6,7 +6,7 @@
 
       <!-- Steps Panel -->
       <div class="SwagGetToKnow_steps-panel">
-        <span class="h-label">Installation guide</span>
+        <span class="h-label">Shopware Setup</span>
         <h2 class="h-homepage">Start Shopware in 2 minutes</h2>
 
         <!-- Platform Tabs -->
@@ -25,39 +25,53 @@
 
         <!-- Step List -->
         <ol class="SwagGetToKnow_steps">
-          <li v-for="step in currentSteps" :key="step.id" class="SwagGetToKnow_step">
-            <div class="SwagGetToKnow_step-header">
-              <span class="SwagGetToKnow_step-number">{{ step.number }}</span>
+          <li v-for="step in steps" :key="step.id" class="SwagGetToKnow_step">
+            <span class="SwagGetToKnow_step-number">{{ step.number }}</span>
+
+            <div class="SwagGetToKnow_step-body">
               <strong class="SwagGetToKnow_step-title">{{ step.title }}</strong>
-            </div>
-            <p v-if="step.description" class="SwagGetToKnow_step-desc">{{ step.description }}</p>
+              <p v-if="step.description" class="SwagGetToKnow_step-desc">{{ step.description }}</p>
 
-            <!-- Credentials info box -->
-            <div v-if="step.credentials" class="SwagGetToKnow_credentials">
-              <svg class="SwagGetToKnow_info-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" />
-              </svg>
-              <div>
-                <strong>Login credentials</strong>
-                <span>Username: admin</span>
-                <span>Password: password</span>
+              <!-- Prerequisite pills -->
+              <div v-if="step.prereqs" class="SwagGetToKnow_prereqs">
+                <component
+                  :is="prereq.url ? 'a' : 'span'"
+                  v-for="prereq in currentPrereqs"
+                  :key="prereq.label"
+                  :href="prereq.url ?? undefined"
+                  :target="prereq.url ? '_blank' : undefined"
+                  :rel="prereq.url ? 'noopener noreferrer' : undefined"
+                  class="SwagGetToKnow_prereq-pill"
+                >{{ prereq.label }}</component>
               </div>
-            </div>
 
-            <!-- Command block -->
-            <div v-if="step.command" class="SwagGetToKnow_code">
-              <code class="SwagGetToKnow_command">{{ step.command }}</code>
-              <button
-                class="SwagGetToKnow_copy"
-                :title="copied === step.id ? 'Copied!' : 'Copy'"
-                @click="copyCommand(step.id, step.command)"
-              >
-                <span v-if="copied === step.id" class="SwagGetToKnow_copy-label">Copied!</span>
-                <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
-                  <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
-                  <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
+              <!-- Credentials info box -->
+              <div v-if="step.credentials" class="SwagGetToKnow_credentials">
+                <svg class="SwagGetToKnow_info-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" />
                 </svg>
-              </button>
+                <div>
+                  <strong>Login credentials</strong>
+                  <span>Username: admin</span>
+                  <span>Password: password</span>
+                </div>
+              </div>
+
+              <!-- Command block -->
+              <div v-if="step.command" class="SwagGetToKnow_code">
+                <code class="SwagGetToKnow_command">{{ step.command }}</code>
+                <button
+                  class="SwagGetToKnow_copy"
+                  :title="copied === step.id ? 'Copied!' : 'Copy'"
+                  @click="copyCommand(step.id, step.command)"
+                >
+                  <span v-if="copied === step.id" class="SwagGetToKnow_copy-label">Copied!</span>
+                  <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                    <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+                    <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </li>
         </ol>
@@ -89,12 +103,12 @@
     <!-- Redirect Banner -->
     <div class="SwagGetToKnow_redirect HomepageCard_item">
       <div class="SwagGetToKnow_redirect-content">
-        <span class="h-label">Installation guide</span>
-        <h2 class="SwagGetToKnow_redirect-title">Explore the full installation guide</h2>
-        <p>Dive deeper into setup options, advanced configurations, Docker alternatives, and system requirements for every environment.</p>
+        <span class="h-label">Tag or topic</span>
+        <h2 class="SwagGetToKnow_redirect-title">Redirect headline</h2>
+        <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
       </div>
       <a href="/docs/guides/installation/" class="SwagGetToKnow_redirect-btn btn --primary">
-        Get started
+        Button
       </a>
     </div>
 
@@ -109,6 +123,7 @@ interface Step {
   number: number;
   title: string;
   description: string;
+  prereqs?: boolean;
   command?: string;
   credentials?: boolean;
 }
@@ -117,142 +132,61 @@ const tabs = ['Windows', 'Linux', 'Mac'] as const;
 const activeTab = ref<typeof tabs[number]>('Windows');
 const copied = ref<string | null>(null);
 
-const windowsSteps: Step[] = [
-  {
-    id: 'win-1',
-    number: 1,
-    title: 'Enable WSL2',
-    description: 'Open PowerShell as Administrator and enable the Windows Subsystem for Linux.',
-    command: 'wsl --install',
-  },
-  {
-    id: 'win-2',
-    number: 2,
-    title: 'Install Docker Desktop',
-    description: 'Download Docker Desktop for Windows, install it, and make sure it is running.',
-    command: 'winget install --id Docker.DockerDesktop',
-  },
-  {
-    id: 'win-3',
-    number: 3,
-    title: 'Install Shopware CLI',
-    description: 'Inside your WSL2 terminal, install the Shopware CLI via the package repository.',
-    command: 'curl -1sLf https://dl.cloudsmith.io/public/shopware/shopware-cli/setup.deb.sh | sudo bash && sudo apt install -y shopware-cli',
-  },
-  {
-    id: 'win-create',
-    number: 4,
-    title: 'Create project',
-    description: 'To create a new project, run this command in the terminal.',
-    command: 'shopware-cli project create my-shop',
-  },
-  {
-    id: 'win-start',
-    number: 5,
-    title: 'Start environment',
-    description: 'Run this command to enter your project and start the local environment.',
-    command: 'cd my-shop && make up',
-  },
-  {
-    id: 'win-setup',
-    number: 6,
-    title: 'Set up Shopware',
-    description: 'Install Shopware and set up the database for your local environment.',
-    command: 'make setup',
-  },
-  {
-    id: 'win-running',
-    number: 7,
-    title: 'Your Shopware instance is running',
-    description: 'Open the admin panel to start managing your store.',
-    credentials: true,
-    command: 'http://localhost:8080/admin',
-  },
-];
+interface Prereq {
+  label: string;
+  url?: string;
+}
 
-const linuxSteps: Step[] = [
-  {
-    id: 'lnx-1',
-    number: 1,
-    title: 'Install Shopware CLI',
-    description: 'Install the Shopware CLI via the official package repository.',
-    command: 'curl -1sLf https://dl.cloudsmith.io/public/shopware/shopware-cli/setup.deb.sh | sudo bash && sudo apt install -y shopware-cli',
-  },
-  {
-    id: 'lnx-create',
-    number: 2,
-    title: 'Create project',
-    description: 'To create a new project, run this command in the terminal.',
-    command: 'shopware-cli project create my-shop',
-  },
-  {
-    id: 'lnx-start',
-    number: 3,
-    title: 'Start environment',
-    description: 'Run this command to enter your project and start the local environment.',
-    command: 'cd my-shop && make up',
-  },
-  {
-    id: 'lnx-setup',
-    number: 4,
-    title: 'Set up Shopware',
-    description: 'Install Shopware and set up the database for your local environment.',
-    command: 'make setup',
-  },
-  {
-    id: 'lnx-running',
-    number: 5,
-    title: 'Your Shopware instance is running',
-    description: 'Open the admin panel to start managing your store.',
-    credentials: true,
-    command: 'http://localhost:8080/admin',
-  },
-];
+const dockerPrereq: Prereq[] = [{ label: 'Docker', url: 'https://docs.docker.com/get-started/introduction/get-docker-desktop/' }];
 
-const macSteps: Step[] = [
-  {
-    id: 'mac-1',
-    number: 1,
-    title: 'Install Shopware CLI',
-    description: 'Install the Shopware CLI via Homebrew.',
-    command: 'brew install shopware-ag/tap/shopware-cli',
-  },
-  {
-    id: 'mac-create',
-    number: 2,
-    title: 'Create project',
-    description: 'To create a new project, run this command in the terminal.',
-    command: 'shopware-cli project create my-shop',
-  },
-  {
-    id: 'mac-start',
-    number: 3,
-    title: 'Start environment',
-    description: 'Run this command to enter your project and start the local environment.',
-    command: 'cd my-shop && make up',
-  },
-  {
-    id: 'mac-setup',
-    number: 4,
-    title: 'Set up Shopware',
-    description: 'Install Shopware and set up the database for your local environment.',
-    command: 'make setup',
-  },
-  {
-    id: 'mac-running',
-    number: 5,
-    title: 'Your Shopware instance is running',
-    description: 'Open the admin panel to start managing your store.',
-    credentials: true,
-    command: 'http://localhost:8080/admin',
-  },
-];
+const windowsPrereqs = dockerPrereq;
+const linuxPrereqs   = dockerPrereq;
+const macPrereqs     = dockerPrereq;
 
-const currentSteps = computed<Step[]>(() => {
-  if (activeTab.value === 'Windows') return windowsSteps;
-  if (activeTab.value === 'Linux') return linuxSteps;
-  return macSteps;
+const currentPrereqs = computed(() => {
+  if (activeTab.value === 'Windows') return windowsPrereqs;
+  if (activeTab.value === 'Linux')   return linuxPrereqs;
+  return macPrereqs;
 });
+
+const steps: Step[] = [
+  {
+    id: 'prereqs',
+    number: 1,
+    title: 'Install pre-requisites',
+    description: 'Make sure you have these pre-requisites installed',
+    prereqs: true,
+  },
+  {
+    id: 'create',
+    number: 2,
+    title: 'Create project',
+    description: 'To create a new project, run this command in the terminal',
+    command: 'shopware-cli project create my-shop',
+  },
+  {
+    id: 'start',
+    number: 3,
+    title: 'Start Environment',
+    description: 'Run this command to enter your project and start the local environment',
+    command: 'cd my-shop && make up',
+  },
+  {
+    id: 'setup',
+    number: 4,
+    title: 'Set-up Shopware',
+    description: 'Install Shopware and set up the database for your local environment',
+    command: 'make setup',
+  },
+  {
+    id: 'running',
+    number: 5,
+    title: 'Your Shopware instance is running',
+    description: 'Open the admin panel to start managing your store.',
+    credentials: true,
+    command: 'http://localhost:8080/admin',
+  },
+];
 
 async function copyCommand(id: string, command: string) {
   try {
@@ -312,59 +246,90 @@ async function copyCommand(id: string, command: string) {
 
   /* ── Steps ────────────────────────────── */
   &_steps {
-    @apply flex flex-col gap-3 list-none p-0 m-0;
+    @apply flex flex-col gap-6 list-none p-0 m-0;
   }
 
   &_step {
-    @apply rounded-lg p-4;
-    border: 1px solid var(--sw-c-blue-dark-100);
-    background-color: var(--sw-c-blue-dark-50);
+    @apply flex gap-4 items-start;
+  }
+
+  &_step-number {
+    @apply flex items-center justify-center rounded-full text-sm font-semibold shrink-0;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--sw-c-blue-vivacious);
+    color: var(--sw-c-blue-vivacious);
+    background-color: transparent;
 
     .dark & {
-      border-color: var(--sw-c-gray-dark-700);
-      background-color: var(--sw-c-gray-dark-600);
+      background-color: transparent;
+    }
+  }
+
+  &_step-body {
+    @apply flex flex-col gap-2 flex-1 min-w-0;
+    padding-top: 0.2rem;
+  }
+
+  &_step-title {
+    @apply text-base font-bold leading-tight;
+    color: var(--c-text);
+  }
+
+  &_step-desc {
+    @apply text-sm;
+    color: var(--c-text-light);
+    margin: 0;
+  }
+
+  /* ── Prerequisite pills ───────────────── */
+  &_prereqs {
+    @apply flex flex-wrap gap-2 mt-1;
+  }
+
+  &_prereq-pill {
+    @apply text-sm px-3 py-1 rounded-md transition-colors;
+    border: 1px solid var(--sw-c-blue-dark-200);
+    color: var(--c-text);
+    background-color: transparent;
+    text-decoration: none;
+
+    &[href]:hover {
+      border-color: var(--sw-c-blue-vivacious);
+      color: var(--sw-c-blue-vivacious);
+      background-color: var(--sw-c-blue-dark-50);
     }
 
-    &-header {
-      @apply flex items-center gap-3 mb-1;
-    }
+    .dark & {
+      border-color: var(--sw-c-gray-dark-600);
+      color: var(--sw-c-gray-200);
 
-    &-number {
-      @apply flex items-center justify-center rounded-full text-xs font-bold shrink-0;
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: var(--sw-c-blue-vivacious);
-      color: #fff;
-    }
-
-    &-title {
-      @apply text-sm font-semibold;
-      color: var(--c-text);
-    }
-
-    &-desc {
-      @apply text-xs ml-9 mb-2;
-      color: var(--c-text-light);
-      margin-top: 0.25rem;
+      &[href]:hover {
+        border-color: var(--sw-c-blue-vivacious);
+        color: var(--sw-c-blue-vivacious);
+        background-color: transparent;
+      }
     }
   }
 
   /* ── Credentials box ──────────────────── */
   &_credentials {
-    @apply flex gap-2 items-start rounded-md px-3 py-2 ml-9 mb-2;
+    @apply flex gap-2 items-start rounded-md px-3 py-2;
     background-color: var(--sw-c-blue-dark-100);
+    border: 1px solid var(--sw-c-blue-dark-200);
 
     .dark & {
       background-color: var(--sw-c-gray-dark-700);
+      border-color: var(--sw-c-gray-dark-600);
     }
 
     strong {
-      @apply block text-xs font-semibold mb-0.5;
+      @apply block text-sm font-semibold mb-0.5;
       color: var(--c-text);
     }
 
     span {
-      @apply block text-xs;
+      @apply block text-sm;
       color: var(--c-text-light);
     }
   }
@@ -378,20 +343,26 @@ async function copyCommand(id: string, command: string) {
 
   /* ── Code block ───────────────────────── */
   &_code {
-    @apply flex items-center justify-between rounded-md px-3 py-2 ml-9;
-    background-color: #1e2330;
+    @apply flex items-center justify-between rounded-md px-4 py-2.5;
+    background-color: var(--sw-c-blue-dark-50);
+    border: 1px solid var(--sw-c-blue-dark-100);
 
     .dark & {
-      background-color: #111827;
+      background-color: var(--sw-c-gray-dark-700);
+      border-color: var(--sw-c-gray-dark-600);
     }
   }
 
   &_command {
-    @apply text-xs font-mono truncate;
-    color: #e2e8f0;
+    @apply text-sm font-mono truncate;
+    color: var(--c-text);
     background: none;
     border: none;
     padding: 0;
+
+    .dark & {
+      color: var(--sw-c-gray-200);
+    }
   }
 
   &_copy {
@@ -399,15 +370,16 @@ async function copyCommand(id: string, command: string) {
     background: none;
     border: none;
     padding: 0;
-    color: var(--sw-c-blue-vivacious);
+    color: var(--c-text-light);
 
     &:hover {
-      opacity: 0.75;
+      color: var(--sw-c-blue-vivacious);
     }
   }
 
   &_copy-label {
     @apply text-xs font-medium;
+    color: var(--sw-c-blue-vivacious);
   }
 
   /* ── Video panel ──────────────────────── */
@@ -468,7 +440,7 @@ async function copyCommand(id: string, command: string) {
     }
 
     &-title {
-      @apply text-xl font-semibold m-0;
+      @apply text-2xl font-bold m-0;
       color: var(--c-text);
     }
 
