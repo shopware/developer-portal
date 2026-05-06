@@ -145,6 +145,32 @@
       "skip": true
     },
     {
+      "name": "shopware/admin-api-reference",
+      "src": "docs",
+      "dst": "resources/admin-api",
+      "branch": [
+        "env.BRANCH_ADMIN_API",
+        "main"
+      ],
+      "org": [
+        "env.ORG_ADMIN_API",
+        "shopware"
+      ]
+    },
+    {
+      "name": "shopware/store-api-reference",
+      "src": "docs",
+      "dst": "resources/store-api",
+      "branch": [
+        "env.BRANCH_STORE_API",
+        "main"
+      ],
+      "org": [
+        "env.ORG_STORE_API",
+        "shopware"
+      ]
+    },
+    {
       "name": "shopware/release-notes",
       "src": "src",
       "dst": "release-notes",

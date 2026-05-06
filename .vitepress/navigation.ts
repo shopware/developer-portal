@@ -52,11 +52,11 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Store API',
-                        link: '/docs/concepts/commerce/',
+                        link: '/resources/store-api/',
                     },
                     {
                         text: 'Admin API',
-                        link: '/docs/concepts/framework/',
+                        link: '/resources/admin-api/',
                     },
                 ],
             },
@@ -300,6 +300,10 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/concepts/',
     '/docs/resources/',
     '/docs/guides/',
+    
+    '/resources/',
+    '/resources/store-api/',
+    '/resources/admin-api/',
 
     // in migrations
     '/docs/products/environments/paas/',
