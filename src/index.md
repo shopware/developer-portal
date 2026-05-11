@@ -42,31 +42,72 @@ import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
 
 <!-- GET TO KNOW SHOPWARE -->
 <SwagGetToKnow id="GetToKnow" class="my-20">
-  <template #bash-1>
+  <template #code-mac-brew>
 
 ```bash
-shopware-cli project create my-shop
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
   </template>
-  <template #bash-2>
+  <template #code-mac-cli>
 
 ```bash
-cd my-shop && make up
+brew install --cask shopware/tap/shopware-cli
 ```
 
   </template>
-  <template #bash-3>
+  <template #lnx-cli>
 
 ```bash
-make setup
+brew install --cask shopware/tap/shopware-cli
 ```
 
   </template>
-  <template #bash-4>
+  <template #win-cli>
+
+```bash
+wsl
+cd ~
+mkdir project && cd project
+sudo apt update
+sudo apt install -y curl ca-certificates bash
+curl -s https://shopware-cli.shopware.com/install.sh | bash
+```
+
+  </template>
+  <template #url-admin>
 
 ```txt
 http://localhost:8080/admin
+```
+
+  </template>
+  <template #url-storefront>
+
+```txt
+http://localhost:8080
+```
+
+  </template>
+  <template #bash-create>
+
+```bash
+shopware-cli project create myshop
+cd myshop
+```
+
+  </template>
+  <template #bash-start>
+
+```bash
+make up
+```
+
+  </template>
+  <template #bash-setup>
+
+```bash
+shopware-cli project dev
 ```
 
   </template>

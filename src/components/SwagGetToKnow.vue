@@ -56,24 +56,7 @@
 
                 <!-- Expandable code pane for active prereq -->
                 <template v-if="activePrereq">
-                  <div
-                    v-for="(block, i) in activePrereq.codeBlocks"
-                    :key="i"
-                    class="SwagGetToKnow_code SwagGetToKnow_code--prereq"
-                  >
-                    <pre class="SwagGetToKnow_command SwagGetToKnow_command--multi">{{ block }}</pre>
-                    <button
-                      class="SwagGetToKnow_copy SwagGetToKnow_copy--top"
-                      :title="copied === `${activePrereq.id}-${i}` ? 'Copied!' : 'Copy'"
-                      @click="copyCommand(`${activePrereq.id}-${i}`, block)"
-                    >
-                      <span v-if="copied === `${activePrereq.id}-${i}`" class="SwagGetToKnow_copy-label">Copied!</span>
-                      <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
-                        <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
-                        <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
-                      </svg>
-                    </button>
-                  </div>
+                  <slot :name="activePrereq.id" />
                 </template>
               </template>
 
@@ -99,7 +82,10 @@
 
               <!-- URL blocks (step 6) -->
               <template v-if="step.urls">
-                <div v-for="url in step.urls" :key="url.label" class="SwagGetToKnow_code SwagGetToKnow_code--url">
+                <template v-for="url in step.urls" :key="url.label">
+                  <slot :name="url.id" />
+                </template>
+                <!--<div v-for="url in step.urls" :key="url.label" class="SwagGetToKnow_code SwagGetToKnow_code--url">
                   <span class="SwagGetToKnow_url-label">{{ url.label }}</span>
                   <code class="SwagGetToKnow_command">{{ url.value }}</code>
                   <button
@@ -113,24 +99,11 @@
                       <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
                     </svg>
                   </button>
-                </div>
+                </div>-->
               </template>
 
               <!-- Single command block -->
-              <div v-if="step.command" class="SwagGetToKnow_code">
-                <code class="SwagGetToKnow_command">{{ step.command }}</code>
-                <button
-                  class="SwagGetToKnow_copy"
-                  :title="copied === step.id ? 'Copied!' : 'Copy'"
-                  @click="copyCommand(step.id, step.command)"
-                >
-                  <span v-if="copied === step.id" class="SwagGetToKnow_copy-label">Copied!</span>
-                  <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
-                    <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
-                    <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
-                  </svg>
-                </button>
-              </div>
+              <slot v-if="step.command" :name="step.command" />
 
             </div>
           </li>
@@ -187,7 +160,7 @@ interface Prereq {
 
 interface UrlEntry {
   label: string;
-  value: string;
+  id: string;
 }
 
 interface Step {
@@ -221,7 +194,7 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
     number: 2,
     title: 'Create project',
     description: 'Create a new Shopware project using the CLI',
-    command: 'shopware-cli project create myshop',
+    command: 'bash-create',
   },
   {
     id: 'video',
@@ -235,14 +208,14 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
     number: 4,
     title: 'Start Environment',
     description: 'Enter your project directory and start the local environment',
-    command: 'cd myshop && make up',
+    command: 'bash-start',
   },
   {
     id: 'setup',
     number: 5,
     title: 'Set-up Shopware',
     description: 'Install Shopware and set up the database for your local environment',
-    command: 'bash-3',
+    command: 'bash-setup',
   },
   {
     id: 'running',
@@ -251,8 +224,8 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
     description: 'Your Shopware instance is running. Open the URLs below to get started.',
     credentials: true,
     urls: [
-      { label: 'Admin', value: 'http://localhost:8080/admin' },
-      { label: 'Storefront', value: 'http://localhost:8080' },
+      { id: 'url-admin', label: 'Admin' },
+      { id: 'url-storefront', label: 'Storefront' },
     ],
   },
 ];
@@ -262,10 +235,6 @@ const windowsSteps: Step[] = commonSteps([
   {
     id: 'win-cli',
     label: 'Shopware CLI',
-    codeBlocks: [
-      'wsl\ncd ~\nmkdir project && cd project\nsudo apt update\nsudo apt install -y curl ca-certificates bash',
-      'curl -s https://shopware-cli.shopware.com/install.sh | bash',
-    ],
   },
 ]);
 
@@ -274,16 +243,10 @@ const macSteps: Step[] = commonSteps([
   {
     id: 'mac-brew',
     label: 'Homebrew',
-    codeBlocks: [
-      '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"',
-    ],
   },
   {
     id: 'mac-cli',
     label: 'Shopware CLI',
-    codeBlocks: [
-      'brew install --cask shopware/tap/shopware-cli',
-    ],
   },
 ]);
 
@@ -292,9 +255,6 @@ const linuxSteps: Step[] = commonSteps([
   {
     id: 'lnx-cli',
     label: 'Shopware CLI',
-    codeBlocks: [
-      'brew install --cask shopware/tap/shopware-cli',
-    ],
   },
 ]);
 
@@ -323,16 +283,6 @@ function switchTab(tab: typeof tabs[number]) {
 
 function togglePrereq(id: string) {
   expandedPrereq.value = expandedPrereq.value === id ? null : id;
-}
-
-async function copyCommand(id: string, command: string) {
-  try {
-    await navigator.clipboard.writeText(command);
-    copied.value = id;
-    setTimeout(() => { copied.value = null; }, 2000);
-  } catch {
-    // clipboard API unavailable
-  }
 }
 </script>
 
