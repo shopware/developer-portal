@@ -235,6 +235,14 @@ const windowsSteps: Step[] = commonSteps([
   {
     id: 'win-cli',
     label: 'Shopware CLI',
+    codeBlocks: [
+      'wsl',
+      'cd ~',
+      'curl -1sLf \
+  'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' \
+ | sudo -E bash',
+      'sudo apt install shopware-cli',
+          ],
   },
 ]);
 
@@ -255,6 +263,12 @@ const linuxSteps: Step[] = commonSteps([
   {
     id: 'lnx-cli',
     label: 'Shopware CLI',
+    codeBlocks: [
+      'curl -1sLf \
+  'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' \
+ | sudo -E bash',
+      'sudo apt install shopware-cli',
+    ],
   },
 ]);
 
