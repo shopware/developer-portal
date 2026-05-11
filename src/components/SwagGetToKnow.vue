@@ -3,7 +3,6 @@
 
     <!-- Guide: Steps (left) + Video (right) -->
     <div class="SwagGetToKnow_guide">
-
       <!-- Steps Panel -->
       <div class="SwagGetToKnow_steps-panel">
         <span class="h-label">Shopware Setup</span>
@@ -58,20 +57,7 @@
               </div>
 
               <!-- Command block -->
-              <div v-if="step.command" class="SwagGetToKnow_code">
-                <code class="SwagGetToKnow_command">{{ step.command }}</code>
-                <button
-                  class="SwagGetToKnow_copy"
-                  :title="copied === step.id ? 'Copied!' : 'Copy'"
-                  @click="copyCommand(step.id, step.command)"
-                >
-                  <span v-if="copied === step.id" class="SwagGetToKnow_copy-label">Copied!</span>
-                  <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
-                    <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
-                    <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
-                  </svg>
-                </button>
-              </div>
+              <slot v-if="step.command" :name="step.command" />
             </div>
           </li>
         </ol>
@@ -162,21 +148,21 @@ const steps: Step[] = [
     number: 2,
     title: 'Create project',
     description: 'To create a new project, run this command in the terminal',
-    command: 'shopware-cli project create my-shop',
+    command: 'bash-1',
   },
   {
     id: 'start',
     number: 3,
     title: 'Start Environment',
     description: 'Run this command to enter your project and start the local environment',
-    command: 'cd my-shop && make up',
+    command: 'bash-2',
   },
   {
     id: 'setup',
     number: 4,
     title: 'Set-up Shopware',
     description: 'Install Shopware and set up the database for your local environment',
-    command: 'make setup',
+    command: 'bash-3',
   },
   {
     id: 'running',
@@ -184,23 +170,17 @@ const steps: Step[] = [
     title: 'Your Shopware instance is running',
     description: 'Open the admin panel to start managing your store.',
     credentials: true,
-    command: 'http://localhost:8080/admin',
+    command: 'bash-4',
   },
 ];
-
-async function copyCommand(id: string, command: string) {
-  try {
-    await navigator.clipboard.writeText(command);
-    copied.value = id;
-    setTimeout(() => { copied.value = null; }, 2000);
-  } catch {
-    // clipboard API unavailable
-  }
-}
 </script>
 
 <style lang="scss">
 .SwagGetToKnow {
+  .vp-doc & div[class*='language-'] {
+    @apply my-0;
+  }
+
   &_guide {
     @apply grid gap-10;
     align-items: start;
@@ -338,47 +318,6 @@ async function copyCommand(id: string, command: string) {
     @apply shrink-0 mt-0.5;
     width: 1rem;
     height: 1rem;
-    color: var(--sw-c-blue-vivacious);
-  }
-
-  /* ── Code block ───────────────────────── */
-  &_code {
-    @apply flex items-center justify-between rounded-md px-4 py-2.5;
-    background-color: var(--sw-c-blue-dark-50);
-    border: 1px solid var(--sw-c-blue-dark-100);
-
-    .dark & {
-      background-color: var(--sw-c-gray-dark-700);
-      border-color: var(--sw-c-gray-dark-600);
-    }
-  }
-
-  &_command {
-    @apply text-sm font-mono truncate;
-    color: var(--c-text);
-    background: none;
-    border: none;
-    padding: 0;
-
-    .dark & {
-      color: var(--sw-c-gray-200);
-    }
-  }
-
-  &_copy {
-    @apply shrink-0 ml-3 cursor-pointer flex items-center;
-    background: none;
-    border: none;
-    padding: 0;
-    color: var(--c-text-light);
-
-    &:hover {
-      color: var(--sw-c-blue-vivacious);
-    }
-  }
-
-  &_copy-label {
-    @apply text-xs font-medium;
     color: var(--sw-c-blue-vivacious);
   }
 

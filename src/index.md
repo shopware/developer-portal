@@ -41,7 +41,36 @@ import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
 </SwagHero>
 
 <!-- GET TO KNOW SHOPWARE -->
-<SwagGetToKnow id="GetToKnow" class="my-20" />
+<SwagGetToKnow id="GetToKnow" class="my-20">
+  <template #bash-1>
+
+```bash
+shopware-cli project create my-shop
+```
+
+  </template>
+  <template #bash-2>
+
+```bash
+cd my-shop && make up
+```
+
+  </template>
+  <template #bash-3>
+
+```bash
+make setup
+```
+
+  </template>
+  <template #bash-4>
+
+```txt
+http://localhost:8080/admin
+```
+
+  </template>
+</SwagGetToKnow>
 
 <!-- START BUILDING -->
 <SwagStartBuilding class="my-20" id="Start" />
