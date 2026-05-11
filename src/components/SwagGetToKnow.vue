@@ -1,7 +1,6 @@
 <template>
   <div class="SwagGetToKnow">
 
-    <!-- Guide: Steps (left) + Video (right) -->
     <div class="SwagGetToKnow_guide">
       <!-- Steps Panel -->
       <div class="SwagGetToKnow_steps-panel">
@@ -16,7 +15,7 @@
             role="tab"
             :aria-selected="activeTab === tab"
             :class="['SwagGetToKnow_tab', { '--active': activeTab === tab }]"
-            @click="activeTab = tab"
+            @click="switchTab(tab)"
           >
             {{ tab }}
           </button>
@@ -24,24 +23,66 @@
 
         <!-- Step List -->
         <ol class="SwagGetToKnow_steps">
-          <li v-for="step in steps" :key="step.id" class="SwagGetToKnow_step">
+          <li v-for="step in currentSteps" :key="step.id" class="SwagGetToKnow_step">
             <span class="SwagGetToKnow_step-number">{{ step.number }}</span>
 
             <div class="SwagGetToKnow_step-body">
               <strong class="SwagGetToKnow_step-title">{{ step.title }}</strong>
               <p v-if="step.description" class="SwagGetToKnow_step-desc">{{ step.description }}</p>
 
-              <!-- Prerequisite pills -->
-              <div v-if="step.prereqs" class="SwagGetToKnow_prereqs">
-                <component
-                  :is="prereq.url ? 'a' : 'span'"
-                  v-for="prereq in currentPrereqs"
-                  :key="prereq.label"
-                  :href="prereq.url ?? undefined"
-                  :target="prereq.url ? '_blank' : undefined"
-                  :rel="prereq.url ? 'noopener noreferrer' : undefined"
-                  class="SwagGetToKnow_prereq-pill"
-                >{{ prereq.label }}</component>
+              <!-- Prerequisite pills + expandable code -->
+              <template v-if="step.prereqs">
+                <div class="SwagGetToKnow_prereqs">
+                  <template v-for="prereq in step.prereqs" :key="prereq.id">
+                    <a
+                      v-if="prereq.url && !prereq.codeBlocks"
+                      :href="prereq.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="SwagGetToKnow_prereq-pill"
+                    >{{ prereq.label }}</a>
+                    <button
+                      v-else
+                      :class="['SwagGetToKnow_prereq-pill', { '--expanded': expandedPrereq === prereq.id }]"
+                      @click="togglePrereq(prereq.id)"
+                    >
+                      {{ prereq.label }}
+                      <svg class="SwagGetToKnow_prereq-chevron" :class="{ '--open': expandedPrereq === prereq.id }" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                  </template>
+                </div>
+
+                <!-- Expandable code pane for active prereq -->
+                <template v-if="activePrereq">
+                  <div
+                    v-for="(block, i) in activePrereq.codeBlocks"
+                    :key="i"
+                    class="SwagGetToKnow_code SwagGetToKnow_code--prereq"
+                  >
+                    <pre class="SwagGetToKnow_command SwagGetToKnow_command--multi">{{ block }}</pre>
+                    <button
+                      class="SwagGetToKnow_copy SwagGetToKnow_copy--top"
+                      :title="copied === `${activePrereq.id}-${i}` ? 'Copied!' : 'Copy'"
+                      @click="copyCommand(`${activePrereq.id}-${i}`, block)"
+                    >
+                      <span v-if="copied === `${activePrereq.id}-${i}`" class="SwagGetToKnow_copy-label">Copied!</span>
+                      <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                        <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+                        <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
+                      </svg>
+                    </button>
+                  </div>
+                </template>
+              </template>
+
+              <!-- Video reference step -->
+              <div v-if="step.videoRef" class="SwagGetToKnow_video-ref">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                </svg>
+                <span>Refer to the video on the right for the interactive installation walkthrough.</span>
               </div>
 
               <!-- Credentials info box -->
@@ -56,8 +97,41 @@
                 </div>
               </div>
 
-              <!-- Command block -->
-              <slot v-if="step.command" :name="step.command" />
+              <!-- URL blocks (step 6) -->
+              <template v-if="step.urls">
+                <div v-for="url in step.urls" :key="url.label" class="SwagGetToKnow_code SwagGetToKnow_code--url">
+                  <span class="SwagGetToKnow_url-label">{{ url.label }}</span>
+                  <code class="SwagGetToKnow_command">{{ url.value }}</code>
+                  <button
+                    class="SwagGetToKnow_copy"
+                    :title="copied === url.label ? 'Copied!' : 'Copy'"
+                    @click="copyCommand(url.label, url.value)"
+                  >
+                    <span v-if="copied === url.label" class="SwagGetToKnow_copy-label">Copied!</span>
+                    <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                      <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+                      <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
+                    </svg>
+                  </button>
+                </div>
+              </template>
+
+              <!-- Single command block -->
+              <div v-if="step.command" class="SwagGetToKnow_code">
+                <code class="SwagGetToKnow_command">{{ step.command }}</code>
+                <button
+                  class="SwagGetToKnow_copy"
+                  :title="copied === step.id ? 'Copied!' : 'Copy'"
+                  @click="copyCommand(step.id, step.command)"
+                >
+                  <span v-if="copied === step.id" class="SwagGetToKnow_copy-label">Copied!</span>
+                  <svg v-else viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                    <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+                    <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
+                  </svg>
+                </button>
+              </div>
+
             </div>
           </li>
         </ol>
@@ -66,7 +140,7 @@
       <!-- Video Panel -->
       <div class="SwagGetToKnow_video-panel">
         <a
-          href="https://www.youtube.com/watch?v=dg1eRkJFpFo"
+          href="https://shopwareag-my.sharepoint.com/:v:/r/personal/s_gupta_shopware_com/Documents/shopware-cli.mov?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ZYOm5t"
           target="_blank"
           rel="noopener noreferrer"
           class="SwagGetToKnow_video"
@@ -89,12 +163,12 @@
     <!-- Redirect Banner -->
     <div class="SwagGetToKnow_redirect HomepageCard_item">
       <div class="SwagGetToKnow_redirect-content">
-        <span class="h-label">Tag or topic</span>
-        <h2 class="SwagGetToKnow_redirect-title">Redirect headline</h2>
-        <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
+        <span class="h-label">Learn More</span>
+        <h2 class="SwagGetToKnow_redirect-title">Continue with the Full CLI Guide</h2>
+        <p>Follow the official Shopware documentation for detailed setup steps, configuration options, and advanced usage.</p>
       </div>
-      <a href="/docs/guides/installation/" class="SwagGetToKnow_redirect-btn btn --primary">
-        Button
+      <a href="https://developer.shopware.com/docs/products/cli/" class="SwagGetToKnow_redirect-btn btn --primary">
+        Open Docs
       </a>
     </div>
 
@@ -104,75 +178,162 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
+interface Prereq {
+  id: string;
+  label: string;
+  url?: string;
+  codeBlocks?: string[];
+}
+
+interface UrlEntry {
+  label: string;
+  value: string;
+}
+
 interface Step {
   id: string;
   number: number;
   title: string;
   description: string;
-  prereqs?: boolean;
+  prereqs?: Prereq[];
   command?: string;
+  videoRef?: boolean;
   credentials?: boolean;
+  urls?: UrlEntry[];
 }
 
-const tabs = ['Windows', 'Linux', 'Mac'] as const;
-const activeTab = ref<typeof tabs[number]>('Windows');
-const copied = ref<string | null>(null);
+const DOCKER_PREREQ: Prereq = {
+  id: 'docker',
+  label: 'Docker',
+  url: 'https://docs.docker.com/get-started/introduction/get-docker-desktop/',
+};
 
-interface Prereq {
-  label: string;
-  url?: string;
-}
-
-const dockerPrereq: Prereq[] = [{ label: 'Docker', url: 'https://docs.docker.com/get-started/introduction/get-docker-desktop/' }];
-
-const windowsPrereqs = dockerPrereq;
-const linuxPrereqs   = dockerPrereq;
-const macPrereqs     = dockerPrereq;
-
-const currentPrereqs = computed(() => {
-  if (activeTab.value === 'Windows') return windowsPrereqs;
-  if (activeTab.value === 'Linux')   return linuxPrereqs;
-  return macPrereqs;
-});
-
-const steps: Step[] = [
+const commonSteps = (prereqs: Prereq[]): Step[] => [
   {
     id: 'prereqs',
     number: 1,
     title: 'Install pre-requisites',
     description: 'Make sure you have these pre-requisites installed',
-    prereqs: true,
+    prereqs,
   },
   {
     id: 'create',
     number: 2,
     title: 'Create project',
-    description: 'To create a new project, run this command in the terminal',
-    command: 'bash-1',
+    description: 'Create a new Shopware project using the CLI',
+    command: 'shopware-cli project create myshop',
+  },
+  {
+    id: 'video',
+    number: 3,
+    title: 'Interactive installation',
+    description: 'Follow the video guide for the interactive Shopware installation setup.',
+    videoRef: true,
   },
   {
     id: 'start',
-    number: 3,
+    number: 4,
     title: 'Start Environment',
-    description: 'Run this command to enter your project and start the local environment',
-    command: 'bash-2',
+    description: 'Enter your project directory and start the local environment',
+    command: 'cd myshop && make up',
   },
   {
     id: 'setup',
-    number: 4,
+    number: 5,
     title: 'Set-up Shopware',
     description: 'Install Shopware and set up the database for your local environment',
     command: 'bash-3',
   },
   {
     id: 'running',
-    number: 5,
-    title: 'Your Shopware instance is running',
-    description: 'Open the admin panel to start managing your store.',
+    number: 6,
+    title: 'Access admin & storefront',
+    description: 'Your Shopware instance is running. Open the URLs below to get started.',
     credentials: true,
-    command: 'bash-4',
+    urls: [
+      { label: 'Admin', value: 'http://localhost:8080/admin' },
+      { label: 'Storefront', value: 'http://localhost:8080' },
+    ],
   },
 ];
+
+const windowsSteps: Step[] = commonSteps([
+  DOCKER_PREREQ,
+  {
+    id: 'win-cli',
+    label: 'Shopware CLI',
+    codeBlocks: [
+      'wsl\ncd ~\nmkdir project && cd project\nsudo apt update\nsudo apt install -y curl ca-certificates bash',
+      'curl -s https://shopware-cli.shopware.com/install.sh | bash',
+    ],
+  },
+]);
+
+const macSteps: Step[] = commonSteps([
+  DOCKER_PREREQ,
+  {
+    id: 'mac-brew',
+    label: 'Homebrew',
+    codeBlocks: [
+      '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"',
+    ],
+  },
+  {
+    id: 'mac-cli',
+    label: 'Shopware CLI',
+    codeBlocks: [
+      'brew install --cask shopware/tap/shopware-cli',
+    ],
+  },
+]);
+
+const linuxSteps: Step[] = commonSteps([
+  DOCKER_PREREQ,
+  {
+    id: 'lnx-cli',
+    label: 'Shopware CLI',
+    codeBlocks: [
+      'brew install --cask shopware/tap/shopware-cli',
+    ],
+  },
+]);
+
+const tabs = ['Windows', 'Linux', 'Mac'] as const;
+const activeTab = ref<typeof tabs[number]>('Windows');
+const expandedPrereq = ref<string | null>(null);
+const copied = ref<string | null>(null);
+
+const currentSteps = computed<Step[]>(() => {
+  if (activeTab.value === 'Windows') return windowsSteps;
+  if (activeTab.value === 'Linux')   return linuxSteps;
+  return macSteps;
+});
+
+const activePrereq = computed<Prereq | null>(() => {
+  if (!expandedPrereq.value) return null;
+  const prereqStep = currentSteps.value.find(s => s.prereqs);
+  return prereqStep?.prereqs?.find(p => p.id === expandedPrereq.value) ?? null;
+});
+
+function switchTab(tab: typeof tabs[number]) {
+  activeTab.value = tab;
+  expandedPrereq.value = null;
+  copied.value = null;
+}
+
+function togglePrereq(id: string) {
+  expandedPrereq.value = expandedPrereq.value === id ? null : id;
+}
+
+async function copyCommand(id: string, command: string) {
+  try {
+    await navigator.clipboard.writeText(command);
+    copied.value = id;
+    setTimeout(() => { copied.value = null; }, 2000);
+  } catch {
+    // clipboard API unavailable
+  }
+}
 </script>
 
 <style lang="scss">
@@ -240,10 +401,7 @@ const steps: Step[] = [
     border: 2px solid var(--sw-c-blue-vivacious);
     color: var(--sw-c-blue-vivacious);
     background-color: transparent;
-
-    .dark & {
-      background-color: transparent;
-    }
+    margin-top: 2px;
   }
 
   &_step-body {
@@ -268,13 +426,14 @@ const steps: Step[] = [
   }
 
   &_prereq-pill {
-    @apply text-sm px-3 py-1 rounded-md transition-colors;
+    @apply inline-flex items-center gap-1.5 text-sm px-3 py-1 rounded-md transition-all cursor-pointer;
     border: 1px solid var(--sw-c-blue-dark-200);
     color: var(--c-text);
     background-color: transparent;
     text-decoration: none;
 
-    &[href]:hover {
+    &:hover,
+    &.--expanded {
       border-color: var(--sw-c-blue-vivacious);
       color: var(--sw-c-blue-vivacious);
       background-color: var(--sw-c-blue-dark-50);
@@ -284,11 +443,62 @@ const steps: Step[] = [
       border-color: var(--sw-c-gray-dark-600);
       color: var(--sw-c-gray-200);
 
-      &[href]:hover {
+      &:hover,
+      &.--expanded {
         border-color: var(--sw-c-blue-vivacious);
         color: var(--sw-c-blue-vivacious);
         background-color: transparent;
       }
+    }
+  }
+
+  &_prereq-chevron {
+    @apply transition-transform;
+
+    &.--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  /* ── Prereq expandable code pane ─────── */
+  &_code--prereq {
+    @apply mt-1 mb-1 items-start;
+  }
+
+  &_command--multi {
+    @apply text-sm font-mono whitespace-pre;
+    color: var(--c-text);
+    background: none;
+    border: none;
+    padding: 0;
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+
+    .dark & {
+      color: var(--sw-c-gray-200);
+    }
+  }
+
+  &_copy--top {
+    @apply self-start mt-0.5;
+  }
+
+  /* ── Video reference ──────────────────── */
+  &_video-ref {
+    @apply flex items-center gap-2 text-sm rounded-md px-4 py-2.5;
+    background-color: var(--sw-c-blue-dark-50);
+    border: 1px solid var(--sw-c-blue-dark-100);
+    color: var(--sw-c-blue-vivacious);
+
+    .dark & {
+      background-color: var(--sw-c-gray-dark-700);
+      border-color: var(--sw-c-gray-dark-600);
+      color: var(--sw-c-blue-vivacious);
+    }
+
+    svg {
+      @apply shrink-0;
     }
   }
 
@@ -318,6 +528,61 @@ const steps: Step[] = [
     @apply shrink-0 mt-0.5;
     width: 1rem;
     height: 1rem;
+    color: var(--sw-c-blue-vivacious);
+  }
+
+  /* ── Code block ───────────────────────── */
+  &_code {
+    @apply flex items-center justify-between rounded-md px-4 py-2.5;
+    background-color: var(--sw-c-blue-dark-50);
+    border: 1px solid var(--sw-c-blue-dark-100);
+
+    .dark & {
+      background-color: var(--sw-c-gray-dark-700);
+      border-color: var(--sw-c-gray-dark-600);
+    }
+  }
+
+  &_code--url {
+    @apply gap-3;
+  }
+
+  &_url-label {
+    @apply text-xs font-semibold shrink-0 px-1.5 py-0.5 rounded;
+    background-color: var(--sw-c-blue-dark-100);
+    color: var(--sw-c-blue-vivacious);
+
+    .dark & {
+      background-color: var(--sw-c-gray-dark-600);
+    }
+  }
+
+  &_command {
+    @apply text-sm font-mono truncate flex-1;
+    color: var(--c-text);
+    background: none;
+    border: none;
+    padding: 0;
+
+    .dark & {
+      color: var(--sw-c-gray-200);
+    }
+  }
+
+  &_copy {
+    @apply shrink-0 ml-3 cursor-pointer flex items-center;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--c-text-light);
+
+    &:hover {
+      color: var(--sw-c-blue-vivacious);
+    }
+  }
+
+  &_copy-label {
+    @apply text-xs font-medium;
     color: var(--sw-c-blue-vivacious);
   }
 
@@ -359,9 +624,7 @@ const steps: Step[] = [
         background: linear-gradient(to top, rgba(10, 15, 30, 0.85) 60%, transparent);
       }
 
-      p {
-        margin: 0;
-      }
+      p { margin: 0; }
     }
   }
 
