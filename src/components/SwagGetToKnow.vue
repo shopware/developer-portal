@@ -23,7 +23,7 @@
 
         <!-- Step List -->
         <ol class="SwagGetToKnow_steps">
-          <li v-for="step in currentSteps" :key="step.id" class="SwagGetToKnow_step">
+          <li v-for="step in currentSteps" :key="step.id" :class="['SwagGetToKnow_step', { '--dimmed': expandedPrereq !== null && step.id !== 'prereqs' }]">
             <span class="SwagGetToKnow_step-number">{{ step.number }}</span>
 
             <div class="SwagGetToKnow_step-body">
@@ -56,6 +56,7 @@
 
                 <!-- Expandable code pane for active prereq -->
                 <template v-if="activePrereq">
+                  <p v-if="activePrereq.terminalHint" class="SwagGetToKnow_prereq-hint">{{ activePrereq.terminalHint }}</p>
                   <slot :name="activePrereq.id" />
                 </template>
               </template>
@@ -156,6 +157,7 @@ interface Prereq {
   label: string;
   url?: string;
   codeBlocks?: string[];
+  terminalHint?: string;
 }
 
 interface UrlEntry {
@@ -235,6 +237,7 @@ const windowsSteps: Step[] = commonSteps([
   {
     id: 'win-cli',
     label: 'Shopware CLI',
+    terminalHint: 'Open your Powershell terminal to execute the below commands',
     codeBlocks: [
       'wsl',
       'cd ~',
@@ -251,10 +254,12 @@ const macSteps: Step[] = commonSteps([
   {
     id: 'mac-brew',
     label: 'Homebrew',
+    terminalHint: 'Open your terminal to execute the below commands',
   },
   {
     id: 'mac-cli',
     label: 'Shopware CLI',
+    terminalHint: 'Open your terminal to execute the below commands',
   },
 ]);
 
@@ -263,6 +268,7 @@ const linuxSteps: Step[] = commonSteps([
   {
     id: 'lnx-cli',
     label: 'Shopware CLI',
+    terminalHint: 'Open your terminal to execute the below commands',
     codeBlocks: [
       'curl -1sLf \
   'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' \
@@ -272,15 +278,15 @@ const linuxSteps: Step[] = commonSteps([
   },
 ]);
 
-const tabs = ['Windows', 'Linux', 'Mac'] as const;
-const activeTab = ref<typeof tabs[number]>('Windows');
+const tabs = ['Mac', 'Linux', 'Windows'] as const;
+const activeTab = ref<typeof tabs[number]>('Mac');
 const expandedPrereq = ref<string | null>(null);
 const copied = ref<string | null>(null);
 
 const currentSteps = computed<Step[]>(() => {
-  if (activeTab.value === 'Windows') return windowsSteps;
+  if (activeTab.value === 'Mac')     return macSteps;
   if (activeTab.value === 'Linux')   return linuxSteps;
-  return macSteps;
+  return windowsSteps;
 });
 
 const activePrereq = computed<Prereq | null>(() => {
@@ -356,6 +362,12 @@ function togglePrereq(id: string) {
 
   &_step {
     @apply flex gap-4 items-start;
+    transition: opacity 0.2s;
+
+    &.--dimmed {
+      opacity: 0.3;
+      pointer-events: none;
+    }
   }
 
   &_step-number {
@@ -382,6 +394,12 @@ function togglePrereq(id: string) {
     @apply text-sm;
     color: var(--c-text-light);
     margin: 0;
+  }
+
+  &_prereq-hint {
+    @apply text-sm italic;
+    color: var(--c-text-light);
+    margin: 0 0 4px;
   }
 
   /* ── Prerequisite pills ───────────────── */
