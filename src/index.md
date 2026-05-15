@@ -42,14 +42,14 @@ import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
 
 <!-- GET TO KNOW SHOPWARE -->
 <SwagGetToKnow id="GetToKnow" class="my-20">
-  <template #code-mac-brew>
+  <template #mac-brew>
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
   </template>
-  <template #code-mac-cli>
+  <template #mac-cli>
 
 ```bash
 brew install --cask shopware/tap/shopware-cli
@@ -59,19 +59,41 @@ brew install --cask shopware/tap/shopware-cli
   <template #lnx-cli>
 
 ```bash
-brew install --cask shopware/tap/shopware-cli
+curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash
+```
+
+```bash
+sudo apt install shopware-cli
+```
+
+  </template>
+  <template #win-wsl>
+
+```bash
+wsl --install
+```
+
+```bash
+wsl
+```
+
+```bash
+cd ~
 ```
 
   </template>
   <template #win-cli>
 
 ```bash
-wsl
-cd ~
-mkdir project && cd project
-sudo apt update
-sudo apt install -y curl ca-certificates bash
-curl -s https://shopware-cli.shopware.com/install.sh | bash
+sudo apt update && sudo apt install -y curl ca-certificates bash
+```
+
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash
+```
+
+```bash
+sudo apt install shopware-cli
 ```
 
   </template>

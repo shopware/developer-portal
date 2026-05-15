@@ -58,6 +58,13 @@
                 <template v-if="activePrereq">
                   <p v-if="activePrereq.terminalHint" class="SwagGetToKnow_prereq-hint">{{ activePrereq.terminalHint }}</p>
                   <slot :name="activePrereq.id" />
+                  <div v-if="activePrereq.manualNote" class="SwagGetToKnow_manual-note">
+                    <span class="SwagGetToKnow_or-divider">or</span>
+                    <p class="SwagGetToKnow_manual-text">
+                      {{ activePrereq.manualNote.text }}:
+                      <a :href="activePrereq.manualNote.url" target="_blank" rel="noopener noreferrer">{{ activePrereq.manualNote.url }}</a>
+                    </p>
+                  </div>
                 </template>
               </template>
 
@@ -77,7 +84,7 @@
                 <div>
                   <strong>Login credentials</strong>
                   <span>Username: admin</span>
-                  <span>Password: password</span>
+                  <span>Password: shopware</span>
                 </div>
               </div>
 
@@ -158,6 +165,7 @@ interface Prereq {
   url?: string;
   codeBlocks?: string[];
   terminalHint?: string;
+  manualNote?: { text: string; url: string };
 }
 
 interface UrlEntry {
@@ -181,6 +189,11 @@ const DOCKER_PREREQ: Prereq = {
   id: 'docker',
   label: 'Docker',
   url: 'https://docs.docker.com/get-started/introduction/get-docker-desktop/',
+};
+
+const CLI_MANUAL_NOTE = {
+  text: 'Shopware CLI can be installed manually by downloading the appropriate archive for your system from the Shopware CLI Releases',
+  url: 'https://github.com/shopware/shopware-cli/releases',
 };
 
 const commonSteps = (prereqs: Prereq[]): Step[] => [
@@ -235,17 +248,21 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
 const windowsSteps: Step[] = commonSteps([
   DOCKER_PREREQ,
   {
+    id: 'win-wsl',
+    label: 'WSL',
+    terminalHint: 'Open your Powershell terminal to execute the below commands',
+    codeBlocks: ['wsl --install', 'wsl', 'cd ~'],
+  },
+  {
     id: 'win-cli',
     label: 'Shopware CLI',
     terminalHint: 'Open your Powershell terminal to execute the below commands',
+    manualNote: CLI_MANUAL_NOTE,
     codeBlocks: [
-      'wsl',
-      'cd ~',
-      'curl -1sLf \
-  'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' \
- | sudo -E bash',
+      'sudo apt update && sudo apt install -y curl ca-certificates bash',
+      "curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash",
       'sudo apt install shopware-cli',
-          ],
+    ],
   },
 ]);
 
@@ -254,12 +271,13 @@ const macSteps: Step[] = commonSteps([
   {
     id: 'mac-brew',
     label: 'Homebrew',
-    terminalHint: 'Open your terminal to execute the below commands',
+    terminalHint: 'Open your terminal to execute the below command',
   },
   {
     id: 'mac-cli',
     label: 'Shopware CLI',
-    terminalHint: 'Open your terminal to execute the below commands',
+    terminalHint: 'Open your terminal to execute the below command',
+    manualNote: CLI_MANUAL_NOTE,
   },
 ]);
 
@@ -269,6 +287,7 @@ const linuxSteps: Step[] = commonSteps([
     id: 'lnx-cli',
     label: 'Shopware CLI',
     terminalHint: 'Open your terminal to execute the below commands',
+    manualNote: CLI_MANUAL_NOTE,
     codeBlocks: [
       'curl -1sLf \
   'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' \
@@ -310,6 +329,8 @@ function togglePrereq(id: string) {
 .SwagGetToKnow {
   .vp-doc & div[class*='language-'] {
     @apply my-0;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   &_guide {
@@ -319,6 +340,11 @@ function togglePrereq(id: string) {
     @media (min-width: 960px) {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  &_steps-panel {
+    min-width: 0;
+    overflow: hidden;
   }
 
   /* ── Tabs ─────────────────────────────── */
@@ -400,6 +426,33 @@ function togglePrereq(id: string) {
     @apply text-sm italic;
     color: var(--c-text-light);
     margin: 0 0 4px;
+  }
+
+  &_manual-note {
+    @apply flex items-start gap-2 mt-2;
+  }
+
+  &_or-divider {
+    @apply text-xs font-semibold shrink-0 px-2 py-0.5 rounded mt-0.5;
+    background-color: var(--sw-c-blue-dark-100);
+    color: var(--c-text-light);
+
+    .dark & {
+      background-color: var(--sw-c-gray-dark-600);
+    }
+  }
+
+  &_manual-text {
+    @apply text-sm;
+    color: var(--c-text-light);
+    margin: 0;
+
+    a {
+      color: var(--sw-c-blue-vivacious);
+      text-decoration: underline;
+
+      &:hover { opacity: 0.8; }
+    }
   }
 
   /* ── Prerequisite pills ───────────────── */
