@@ -52,11 +52,13 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Store API',
-                        link: '/resources/store-api/',
+                        // link: '/resources/store-api/',
+                        link: 'https://shopware.stoplight.io/docs/store-api/',
                     },
                     {
                         text: 'Admin API',
-                        link: '/resources/admin-api/',
+                        // link: '/resources/admin-api/',
+                        link: 'https://shopware.stoplight.io/docs/admin-api/',
                     },
                 ],
             },
@@ -92,17 +94,20 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Local',
                         // link: '/docs/environment/cli/',
-                        link: '/docs/products/tools/cli/',
+                        // link: '/docs/products/tools/cli/',
+                        link: '/docs/products/cli/',
                     },
                     {
                         text: 'SaaS',
                         // link: '/docs/environment/saas/',
-                        link: '/docs/products/environments/saas.html',
+                        // link: '/docs/products/environments/saas.html',
+                        link: '/docs/products/saas.html',
                     },
                     {
                         text: 'PaaS',
                         // link: '/docs/environment/paas/',
-                        link: '/docs/products/environments/paas/',
+                        // link: '/docs/products/environments/paas/',
+                        link: '/docs/products/paas/',
                     },
                     /*{
                         text: 'Shopware.Build',
@@ -115,11 +120,13 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Shopware CLI',
-                        link: '/docs/products/tools/cli/',
+                        // link: '/docs/products/tools/cli/',
+                        link: '/docs/products/cli/',
                     },
                     {
                         text: 'Shopware MCP',
-                        link: '/docs/products/tools/mcp/',
+                        // link: '/docs/products/tools/mcp/',
+                        link: '/docs/guides/development/tooling/mcp/',
                     },
                 ]
             },
@@ -197,11 +204,13 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: 'Sales Agent',
-                        link: '/docs/products/frontends/sales-agent/',
+                        // link: '/docs/products/frontends/sales-agent/',
+                        link: '/docs/products/sales-agent/',
                     },
                     {
                         text: 'Digital Sales Rooms',
-                        link: '/docs/products/frontends/digital-sales-rooms/',
+                        // link: '/docs/products/frontends/digital-sales-rooms/',
+                        link: '/docs/products/digital-sales-rooms/',
                     },
                 ],
             },
@@ -210,9 +219,10 @@ const navigation = buildSidebarNav('./src/', [
                 items: [
                     {
                         text: 'Nexus',
-                        link: '/docs/products/services/nexus/',
+                        // link: '/docs/products/services/nexus/',
+                        link: '/docs/products/nexus/',
                     },
-                    {
+                    /*{
                         text: 'Shopware Payments',
                         link: '/docs/products/services/shopware-payments.md',
                     },
@@ -223,7 +233,7 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Shopware Intelligence+',
                         link: '/docs/products/services/shopware-intelligence.md',
-                    },
+                    },*/
                 ],
             },
             {
@@ -302,15 +312,20 @@ const navigation = buildSidebarNav('./src/', [
     '/docs/guides/',
     
     '/resources/',
-    '/resources/store-api/',
-    '/resources/admin-api/',
+    // '/resources/store-api/',
+    // '/resources/admin-api/',
 
     // in migrations
-    '/docs/products/environments/paas/',
-    '/docs/products/services/nexus/',
-    '/docs/products/tools/cli/',
-    '/docs/products/frontends/sales-agent/',
-    '/docs/products/frontends/digital-sales-rooms/',
+    '/docs/products/paas/',
+    '/docs/products/nexus/',
+    '/docs/products/cli/',
+    '/docs/products/sales-agent/',
+    '/docs/products/digital-sales-rooms/',
+    // '/docs/products/environments/paas/',
+    // '/docs/products/services/nexus/',
+    // '/docs/products/tools/cli/',
+    // '/docs/products/frontends/sales-agent/',
+    // '/docs/products/frontends/digital-sales-rooms/',
 
     '/docs/products/extensions/migration-assistant/',
     '/docs/products/extensions/b2b-suite/',
