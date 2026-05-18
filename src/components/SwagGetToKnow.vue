@@ -23,7 +23,7 @@
 
         <!-- Step List -->
         <ol class="SwagGetToKnow_steps">
-          <li v-for="step in currentSteps" :key="step.id" :class="['SwagGetToKnow_step', { '--dimmed': expandedPrereq !== null && step.id !== 'prereqs' }]">
+          <li v-for="step in currentSteps" :key="step.id" class="SwagGetToKnow_step">
             <span class="SwagGetToKnow_step-number">{{ step.number }}</span>
 
             <div class="SwagGetToKnow_step-body">
@@ -43,11 +43,11 @@
                     >{{ prereq.label }}</a>
                     <button
                       v-else
-                      :class="['SwagGetToKnow_prereq-pill', { '--expanded': expandedPrereq === prereq.id }]"
-                      @click="togglePrereq(prereq.id)"
+                      :class="['SwagGetToKnow_prereq-pill', { '--expanded': expandedPrereq === prereq.label }]"
+                      @click="togglePrereq(prereq.label)"
                     >
                       {{ prereq.label }}
-                      <svg class="SwagGetToKnow_prereq-chevron" :class="{ '--open': expandedPrereq === prereq.id }" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
+                      <svg class="SwagGetToKnow_prereq-chevron" :class="{ '--open': expandedPrereq === prereq.label }" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                       </svg>
                     </button>
@@ -55,17 +55,14 @@
                 </div>
 
                 <!-- Expandable code pane for active prereq -->
-                <template v-if="activePrereq">
+                <div v-if="activePrereq" class="border-solid border-1 border-[--sw-c-blue-vivacious] dark: rounded-lg p-4">
                   <p v-if="activePrereq.terminalHint" class="SwagGetToKnow_prereq-hint">{{ activePrereq.terminalHint }}</p>
                   <slot :name="activePrereq.id" />
-                  <div v-if="activePrereq.manualNote" class="SwagGetToKnow_manual-note">
-                    <span class="SwagGetToKnow_or-divider">or</span>
-                    <p class="SwagGetToKnow_manual-text">
-                      {{ activePrereq.manualNote.text }}:
-                      <a :href="activePrereq.manualNote.url" target="_blank" rel="noopener noreferrer">{{ activePrereq.manualNote.url }}</a>
-                    </p>
-                  </div>
-                </template>
+                  <p class="SwagGetToKnow_manual-text" v-if="activePrereq?.manualNote">
+                    {{ activePrereq.manualNote.text }}:
+                    <a :href="activePrereq.manualNote.url" target="_blank" rel="noopener noreferrer">{{ activePrereq.manualNote.url }}</a>
+                  </p>
+                </div>
               </template>
 
               <!-- Video reference step -->
@@ -251,18 +248,12 @@ const windowsSteps: Step[] = commonSteps([
     id: 'win-wsl',
     label: 'WSL',
     terminalHint: 'Open your Powershell terminal to execute the below commands',
-    codeBlocks: ['wsl --install', 'wsl', 'cd ~'],
   },
   {
     id: 'win-cli',
     label: 'Shopware CLI',
     terminalHint: 'Open your Powershell terminal to execute the below commands',
     manualNote: CLI_MANUAL_NOTE,
-    codeBlocks: [
-      'sudo apt update && sudo apt install -y curl ca-certificates bash',
-      "curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash",
-      'sudo apt install shopware-cli',
-    ],
   },
 ]);
 
@@ -288,12 +279,6 @@ const linuxSteps: Step[] = commonSteps([
     label: 'Shopware CLI',
     terminalHint: 'Open your terminal to execute the below commands',
     manualNote: CLI_MANUAL_NOTE,
-    codeBlocks: [
-      'curl -1sLf \
-  'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' \
- | sudo -E bash',
-      'sudo apt install shopware-cli',
-    ],
   },
 ]);
 
@@ -311,17 +296,17 @@ const currentSteps = computed<Step[]>(() => {
 const activePrereq = computed<Prereq | null>(() => {
   if (!expandedPrereq.value) return null;
   const prereqStep = currentSteps.value.find(s => s.prereqs);
-  return prereqStep?.prereqs?.find(p => p.id === expandedPrereq.value) ?? null;
+  return prereqStep?.prereqs?.find(p => p.label === expandedPrereq.value) ?? null;
 });
 
 function switchTab(tab: typeof tabs[number]) {
   activeTab.value = tab;
-  expandedPrereq.value = null;
+  // expandedPrereq.value = null;
   copied.value = null;
 }
 
-function togglePrereq(id: string) {
-  expandedPrereq.value = expandedPrereq.value === id ? null : id;
+function togglePrereq(label: string) {
+  expandedPrereq.value = expandedPrereq.value === label ? null : label;
 }
 </script>
 
@@ -389,11 +374,6 @@ function togglePrereq(id: string) {
   &_step {
     @apply flex gap-4 items-start;
     transition: opacity 0.2s;
-
-    &.--dimmed {
-      opacity: 0.3;
-      pointer-events: none;
-    }
   }
 
   &_step-number {
@@ -425,25 +405,10 @@ function togglePrereq(id: string) {
   &_prereq-hint {
     @apply text-sm italic;
     color: var(--c-text-light);
-    margin: 0 0 4px;
-  }
-
-  &_manual-note {
-    @apply flex items-start gap-2 mt-2;
-  }
-
-  &_or-divider {
-    @apply text-xs font-semibold shrink-0 px-2 py-0.5 rounded mt-0.5;
-    background-color: var(--sw-c-blue-dark-100);
-    color: var(--c-text-light);
-
-    .dark & {
-      background-color: var(--sw-c-gray-dark-600);
-    }
   }
 
   &_manual-text {
-    @apply text-sm;
+    @apply text-xs;
     color: var(--c-text-light);
     margin: 0;
 
@@ -665,7 +630,7 @@ function togglePrereq(id: string) {
 
   /* ── Redirect banner ──────────────────── */
   &_redirect {
-    @apply flex flex-wrap items-center justify-between gap-6 mt-8;
+    @apply flex flex-col md:flex-row items-center justify-between gap-6 mt-8;
 
     &-content {
       @apply flex flex-col gap-1 flex-1 min-w-0;
