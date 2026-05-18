@@ -2,15 +2,15 @@
 set -e
 
 # custom config
-BRANCH_DOCS=dx/multi-product-reorg
+BRANCH_DOCS=main
 BRANCH_DOCS_66=v6.6
 BRANCH_DOCS_65=v6.5
 BRANCH_FRONTENDS=dx/fix-branch-outage-2025-20-10
 BRANCH_ADMIN_EXTENSION_SDK=main
 BRANCH_METEOR_ICON_KIT=dx/devhub-icon-kit
 BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
-BRANCH_ADMIN_API=main
-BRANCH_STORE_API=main
+#BRANCH_ADMIN_API=main
+#BRANCH_STORE_API=main
 BRANCH_RELEASE_NOTES=main
 BRANCH_DESIGN=dx/embed-into-developer-portal
 
@@ -22,8 +22,8 @@ ORG_FRONTENDS=shopware
 ORG_ADMIN_EXTENSION_SDK=shopware
 ORG_METEOR_ICON_KIT=shopware
 ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
-ORG_ADMIN_API=shopware
-ORG_STORE_API=shopware
+#ORG_ADMIN_API=shopware
+#ORG_STORE_API=shopware
 ORG_RELEASE_NOTES=shopware
 ORG_DESIGN=shopware
 
@@ -103,21 +103,21 @@ fi
 # --dst resources/meteor-component-library \
 # --org ${ORG_METEOR_COMPONENT_LIBRARY:-shopware}
 
-./docs-cli.cjs clone \
- --ci \
- --repository shopware/admin-api-reference \
- --branch ${BRANCH_ADMIN_API:-main} \
- --src docs \
- --dst resources/admin-api \
- --org ${ORG_ADMIN_API:-shopware}
+#./docs-cli.cjs clone \
+# --ci \
+# --repository shopware/admin-api-reference \
+# --branch ${BRANCH_ADMIN_API:-main} \
+# --src docs \
+# --dst resources/admin-api \
+# --org ${ORG_ADMIN_API:-shopware}
 
-./docs-cli.cjs clone \
- --ci \
- --repository shopware/store-api-reference \
- --branch ${BRANCH_STORE_API:-main} \
- --src docs \
- --dst resources/store-api \
- --org ${ORG_STORE_API:-shopware}
+#./docs-cli.cjs clone \
+# --ci \
+# --repository shopware/store-api-reference \
+# --branch ${BRANCH_STORE_API:-main} \
+# --src docs \
+# --dst resources/store-api \
+# --org ${ORG_STORE_API:-shopware}
 
 ./docs-cli.cjs clone \
  --ci \
