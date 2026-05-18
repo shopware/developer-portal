@@ -220,7 +220,7 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Nexus',
                         // link: '/docs/products/services/nexus/',
-                        link: '/docs/products/nexus/',
+                        link: '/docs/products/Nexus/',
                     },
                     /*{
                         text: 'Shopware Payments',
@@ -317,7 +317,7 @@ const navigation = buildSidebarNav('./src/', [
 
     // in migrations
     '/docs/products/paas/',
-    '/docs/products/nexus/',
+    '/docs/products/Nexus/',
     '/docs/products/cli/',
     '/docs/products/sales-agent/',
     '/docs/products/digital-sales-rooms/',
