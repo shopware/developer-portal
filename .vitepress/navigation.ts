@@ -123,11 +123,11 @@ const navigation = buildSidebarNav('./src/', [
                         // link: '/docs/products/tools/cli/',
                         link: '/docs/products/cli/',
                     },
-                    {
+                    /*{
                         text: 'Shopware MCP',
                         // link: '/docs/products/tools/mcp/',
                         link: '/docs/guides/development/tooling/mcp/',
-                    },
+                    },*/
                 ]
             },
         ],
