@@ -35,7 +35,7 @@
                 <div class="SwagGetToKnow_prereqs">
                   <template v-for="prereq in step.prereqs" :key="prereq.id">
                     <a
-                      v-if="prereq.url && !prereq.codeBlocks"
+                      v-if="prereq.url"
                       :href="prereq.url"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -160,7 +160,6 @@ interface Prereq {
   id: string;
   label: string;
   url?: string;
-  codeBlocks?: string[];
   terminalHint?: string;
   manualNote?: { text: string; url: string };
 }
@@ -285,7 +284,6 @@ const linuxSteps: Step[] = commonSteps([
 const tabs = ['Mac', 'Linux', 'Windows'] as const;
 const activeTab = ref<typeof tabs[number]>('Mac');
 const expandedPrereq = ref<string | null>(null);
-const copied = ref<string | null>(null);
 
 const currentSteps = computed<Step[]>(() => {
   if (activeTab.value === 'Mac')     return macSteps;
@@ -296,17 +294,16 @@ const currentSteps = computed<Step[]>(() => {
 const activePrereq = computed<Prereq | null>(() => {
   if (!expandedPrereq.value) return null;
   const prereqStep = currentSteps.value.find(s => s.prereqs);
-  return prereqStep?.prereqs?.find(p => p.label === expandedPrereq.value) ?? null;
+  return prereqStep?.prereqs?.find(p => p.id === expandedPrereq.value) ?? null;
 });
 
 function switchTab(tab: typeof tabs[number]) {
   activeTab.value = tab;
-  // expandedPrereq.value = null;
-  copied.value = null;
+  expandedPrereq.value = null;
 }
 
-function togglePrereq(label: string) {
-  expandedPrereq.value = expandedPrereq.value === label ? null : label;
+function togglePrereq(id: string) {
+  expandedPrereq.value = expandedPrereq.value === id ? null : id;
 }
 </script>
 
