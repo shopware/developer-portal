@@ -12,25 +12,31 @@ const navigation = buildSidebarNav('./src/', [
     },*/
     {
         text: 'Platform',
+        activeMatch: /^\/docs\/concepts\//,
         items: [
             {
                 text: 'Concepts',
+                activeMatch: /^\/docs\/concepts\//,
                 items: [
                     {
                         text: 'Commerce',
                         link: '/docs/concepts/commerce/',
+                        activeMatch: '^\\/docs\\/concepts\\/commerce\\/',
                     },
                     {
                         text: 'Framework',
                         link: '/docs/concepts/framework/',
+                        activeMatch: '^\\/docs\\/concepts\\/framework\\/',
                     },
                     {
                         text: 'Extensions',
                         link: '/docs/concepts/extensions/',
+                        activeMatch: '^\\/docs\\/concepts\\/extensions\\/',
                     },
                     {
                         text: 'API',
                         link: '/docs/concepts/api/',
+                        activeMatch: '^\\/docs\\/concepts\\/api\\/',
                     },
                 ],
             },
@@ -40,10 +46,12 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'References',
                         link: '/docs/resources/references/',
+                        activeMatch: '^\\/docs\\/resources\\/references\\/',
                     },
                     {
                         text: 'Guidelines',
                         link: '/docs/resources/guidelines/',
+                        activeMatch: '^\\/docs\\/resources\\/guidelines\\/',
                     },
                 ],
             },
@@ -66,6 +74,7 @@ const navigation = buildSidebarNav('./src/', [
     },
     {
         text: 'Development',
+        activeMatch: /^\/docs\/guides\//,
         items: [
             {
                 text: 'Guides',
@@ -73,18 +82,22 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Installation',
                         link: '/docs/guides/installation/',
+                        activeMatch: '^\\/docs\\/guides\\/installation\\/',
                     },
                     {
                         text: 'Development',
                         link: '/docs/guides/development/',
+                        activeMatch: '^\\/docs\\/guides\\/development\\/',
                     },
                     {
                         text: 'Hosting and deployment',
                         link: '/docs/guides/hosting/',
+                        activeMatch: '^\\/docs\\/guides\\/hosting\\/',
                     },
                     {
                         text: 'Upgrades and migrations',
                         link: '/docs/guides/upgrades-migrations/',
+                        activeMatch: '^\\/docs\\/guides\\/upgrades-migrations\\/',
                     },
                 ],
             },
@@ -95,7 +108,7 @@ const navigation = buildSidebarNav('./src/', [
                         text: 'Local',
                         // link: '/docs/environment/cli/',
                         // link: '/docs/products/tools/cli/',
-                        link: '/docs/products/cli/',
+                        link: '/docs/guides/installation/',
                     },
                     {
                         text: 'SaaS',
@@ -108,6 +121,7 @@ const navigation = buildSidebarNav('./src/', [
                         // link: '/docs/environment/paas/',
                         // link: '/docs/products/environments/paas/',
                         link: '/docs/products/paas/',
+                        activeMatch: '^\\/docs\\/products\\/paas\\/',
                     },
                     /*{
                         text: 'Shopware.Build',
@@ -122,6 +136,7 @@ const navigation = buildSidebarNav('./src/', [
                         text: 'Shopware CLI',
                         // link: '/docs/products/tools/cli/',
                         link: '/docs/products/cli/',
+                        activeMatch: '^\\/docs\\/products\\/cli\\/',
                     },
                     /*{
                         text: 'Shopware MCP',
@@ -134,6 +149,7 @@ const navigation = buildSidebarNav('./src/', [
     },
     {
         text: 'Extensions',
+        activeMatch: /^\/docs\/guides\/plugins\//,
         items: [
             {
                 text: 'Development',
@@ -141,14 +157,17 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Apps',
                         link: '/docs/guides/plugins/apps/',
+                        activeMatch: '^\\/docs\\/guides\\/plugins\\/apps\\/',
                     },
                     {
                         text: 'Plugins',
                         link: '/docs/guides/plugins/plugins/',
+                        activeMatch: '^\\/docs\\/guides\\/plugins\\/plugins\\/',
                     },
                     {
                         text: 'Themes',
                         link: '/docs/guides/plugins/themes/',
+                        activeMatch: '^\\/docs\\/guides\\/plugins\\/themes\\/',
                     },
                 ],
             },
@@ -158,10 +177,12 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Migration assistant',
                         link: '/docs/products/extensions/migration-assistant/',
+                        activeMatch: '^\\/docs\\/products\\/extensions\\/migration-assistant\\/',
                     },
                     {
                         text: 'Subscriptions',
                         link: '/docs/products/extensions/subscriptions/',
+                        activeMatch: '^\\/docs\\/products\\/extensions\\/subscriptions\\/',
                     },
                 ],
             },
@@ -171,22 +192,27 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Commercial',
                         link: '/docs/products/extensions/commercial/',
+                        activeMatch: '^\\/docs\\/products\\/extensions\\/commercial\\/',
                     },
                     {
                         text: 'Advanced search',
                         link: '/docs/products/extensions/advanced-search/',
+                        activeMatch: '^\\/docs\\/products\\/extensions\\/advanced-search\\/',
                     },
                     {
                         text: 'B2B Suite',
                         link: '/docs/products/extensions/b2b-suite/',
+                        activeMatch: '^\\/docs\\/products\\/extensions\\/b2b-suite\\/',
                     },
                     {
                         text: 'B2B Components',
                         link: '/docs/products/extensions/b2b-components/',
+                        activeMatch: '^\\/docs\\/products\\/extensions\\/b2b-components\\/',
                     },
                     {
                         text: 'B2B Suite Migration',
                         link: '/docs/products/extensions/b2b-suite-migration/',
+                        activeMatch: '^\\/docs\\/products\\/extensions\\/b2b-suite-migration\\/',
                     },
                 ],
             },
@@ -201,16 +227,19 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Frontends',
                         link: '/frontends/',
+                        activeMatch: '^\\/frontends\\/',
                     },
                     {
                         text: 'Sales Agent',
                         // link: '/docs/products/frontends/sales-agent/',
                         link: '/docs/products/sales-agent/',
+                        activeMatch: '^\\/docs\\/products\\/sales-agent\\/',
                     },
                     {
                         text: 'Digital Sales Rooms',
                         // link: '/docs/products/frontends/digital-sales-rooms/',
                         link: '/docs/products/digital-sales-rooms/',
+                        activeMatch: '^\\/docs\\/products\\/digital-sales-rooms\\/',
                     },
                 ],
             },
@@ -221,6 +250,7 @@ const navigation = buildSidebarNav('./src/', [
                         text: 'Nexus',
                         // link: '/docs/products/services/nexus/',
                         link: '/docs/products/nexus/',
+                        activeMatch: '^\\/docs\\/products\\/nexus\\/',
                     },
                     /*{
                         text: 'Shopware Payments',
@@ -237,11 +267,17 @@ const navigation = buildSidebarNav('./src/', [
                 ],
             },
             {
-                text: 'Meteor',
+                text: 'Design',
                 items: [
+                    /*{
+                        text: 'Meteor design system',
+                        link: '/meteor/',
+                        activeMatch: '^\\/meteor\\/(?!tokens(?:\\/|$))',
+                    },*/
                     {
                         text: 'Meteor tokens',
                         link: '/meteor/tokens/',
+                        activeMatch: '^\\/meteor\\/tokens\\/',
                     },
                     {
                         text: 'Meteor icon kit',
@@ -250,6 +286,7 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Admin extension SDK',
                         link: '/resources/admin-extension-sdk/',
+                        activeMatch: '^\\/resources\\/admin-extension-sdk\\/',
                     },
                 ],
             },
