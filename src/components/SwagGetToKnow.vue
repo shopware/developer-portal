@@ -118,7 +118,7 @@
       <!-- Video Panel -->
       <div class="SwagGetToKnow_video-panel">
         <a
-          href="https://shopwareag-my.sharepoint.com/:v:/r/personal/s_gupta_shopware_com/Documents/shopware-cli.mov?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ZYOm5t"
+          href="https://www.youtube.com/watch?v=rDwzr16q_bQ"
           target="_blank"
           rel="noopener noreferrer"
           class="SwagGetToKnow_video"
