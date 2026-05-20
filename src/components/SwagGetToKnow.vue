@@ -5,7 +5,7 @@
       <!-- Steps Panel -->
       <div class="SwagGetToKnow_steps-panel">
         <span class="h-label">Shopware Setup</span>
-        <h2 class="h-homepage">Start Shopware in 2 minutes</h2>
+        <h2 class="h-homepage">Start Shopware in just minutes</h2>
 
         <!-- Platform Tabs -->
         <div class="SwagGetToKnow_tabs" role="tablist">
@@ -43,11 +43,11 @@
                     >{{ prereq.label }}</a>
                     <button
                       v-else
-                      :class="['SwagGetToKnow_prereq-pill', { '--expanded': expandedPrereq === prereq.label }]"
-                      @click="togglePrereq(prereq.label)"
+                      :class="['SwagGetToKnow_prereq-pill', { '--expanded': expandedPrereq === prereq.id }]"
+                      @click="togglePrereq(prereq.id)"
                     >
                       {{ prereq.label }}
-                      <svg class="SwagGetToKnow_prereq-chevron" :class="{ '--open': expandedPrereq === prereq.label }" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
+                      <svg class="SwagGetToKnow_prereq-chevron" :class="{ '--open': expandedPrereq === prereq.id }" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                       </svg>
                     </button>
@@ -59,8 +59,7 @@
                   <p v-if="activePrereq.terminalHint" class="SwagGetToKnow_prereq-hint">{{ activePrereq.terminalHint }}</p>
                   <slot :name="activePrereq.id" />
                   <p class="SwagGetToKnow_manual-text" v-if="activePrereq?.manualNote">
-                    {{ activePrereq.manualNote.text }}:
-                    <a :href="activePrereq.manualNote.url" target="_blank" rel="noopener noreferrer">{{ activePrereq.manualNote.url }}</a>
+                    {{ activePrereq.manualNote.text }}<a :href="activePrereq.manualNote.url" target="_blank" rel="noopener noreferrer">Shopware CLI Releases</a>
                   </p>
                 </div>
               </template>
@@ -80,8 +79,8 @@
                 </svg>
                 <div>
                   <strong>Login credentials</strong>
-                  <span>Username: admin</span>
-                  <span>Password: shopware</span>
+                  <span>Username: <em>admin</em></span>
+                  <span>Password: <em>shopware</em></span>
                 </div>
               </div>
 
@@ -124,6 +123,12 @@
           class="SwagGetToKnow_video"
           aria-label="Watch: How to install Shopware in 2 minutes"
         >
+          <img
+            src="https://img.youtube.com/vi/rDwzr16q_bQ/hqdefault.jpg"
+            class="SwagGetToKnow_video-thumbnail"
+            alt=""
+            aria-hidden="true"
+          />
           <div class="SwagGetToKnow_video-play">
             <svg viewBox="0 0 24 24" fill="currentColor" width="52" height="52" aria-hidden="true">
               <path d="M8 5v14l11-7z" />
@@ -188,7 +193,7 @@ const DOCKER_PREREQ: Prereq = {
 };
 
 const CLI_MANUAL_NOTE = {
-  text: 'Shopware CLI can be installed manually by downloading the appropriate archive for your system from the Shopware CLI Releases',
+  text: 'Shopware CLI can be installed manually by downloading the appropriate archive for your system from the ',
   url: 'https://github.com/shopware/shopware-cli/releases',
 };
 
@@ -196,42 +201,41 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
   {
     id: 'prereqs',
     number: 1,
-    title: 'Install pre-requisites',
-    description: 'Make sure you have these pre-requisites installed',
+    title: 'Install Prerequisites',
+    description: 'Make sure you have these prerequisites installed.',
     prereqs,
   },
   {
     id: 'create',
     number: 2,
-    title: 'Create project',
-    description: 'Create a new Shopware project using the CLI',
+    title: 'Create Project',
+    description: 'Create a new Shopware project using the CLI.',
     command: 'bash-create',
   },
   {
     id: 'video',
     number: 3,
-    title: 'Interactive installation',
-    description: 'Follow the video guide for the interactive Shopware installation setup.',
+    title: 'Interactive Installation',
     videoRef: true,
   },
   {
     id: 'start',
     number: 4,
     title: 'Start Environment',
-    description: 'Enter your project directory and start the local environment',
+    description: 'Enter your project directory and start the local environment.',
     command: 'bash-start',
   },
   {
     id: 'setup',
     number: 5,
-    title: 'Set-up Shopware',
-    description: 'Install Shopware and set up the database for your local environment',
+    title: 'Setup Shopware',
+    description: 'Install Shopware and set up the database for your local environment.',
     command: 'bash-setup',
   },
   {
     id: 'running',
     number: 6,
-    title: 'Access admin & storefront',
+    title: 'Access Admin and Storefront',
     description: 'Your Shopware instance is running. Open the URLs below to get started.',
     credentials: true,
     urls: [
@@ -246,12 +250,12 @@ const windowsSteps: Step[] = commonSteps([
   {
     id: 'win-wsl',
     label: 'WSL',
-    terminalHint: 'Open your Powershell terminal to execute the below commands',
+    terminalHint: 'Open your Powershell terminal to execute the below commands:',
   },
   {
     id: 'win-cli',
     label: 'Shopware CLI',
-    terminalHint: 'Open your Powershell terminal to execute the below commands',
+    terminalHint: 'Open your Powershell terminal to execute the below commands:',
     manualNote: CLI_MANUAL_NOTE,
   },
 ]);
@@ -589,6 +593,14 @@ function togglePrereq(label: string) {
       position: sticky;
       top: calc(var(--vp-nav-height) + 1.5rem);
     }
+  }
+
+  &_video-thumbnail {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &_video {

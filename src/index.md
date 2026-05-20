@@ -85,22 +85,22 @@ sudo apt install shopware-cli
   <template #url-admin>
 
 ```txt
-http://localhost:8080/admin
+http://127.0.0.1:8000/admin
 ```
 
   </template>
   <template #url-storefront>
 
 ```txt
-http://localhost:8080
+http://127.0.0.1:8000
 ```
 
   </template>
   <template #bash-create>
 
 ```bash
-shopware-cli project create myshop
-cd myshop
+shopware-cli project create myStore
+cd myStore
 ```
 
   </template>
