@@ -290,7 +290,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
     /^https?:\/\/localhost/,
     (url, file) => {
       // skip broken links in versions
-      if (file?.includes('docs/v6.5') || file?.includes('docs/v6.6')) {
+      if (file?.includes('docs/v6.5') || file?.includes('docs/v6.6') || file?.includes('resources/references/adr/')) {
         return true
       }
 
