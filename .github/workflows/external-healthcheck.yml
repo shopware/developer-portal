@@ -38,6 +38,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.repo == 'developer-portal' && inputs.owner == 'shopware' && inputs.branch || github.ref }}
 
       - name: Print inputs
         run: |
