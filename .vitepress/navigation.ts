@@ -135,8 +135,8 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Shopware CLI',
                         // link: '/docs/products/tools/cli/',
-                        link: '/docs/products/cli/',
-                        activeMatch: '^\\/docs\\/products\\/cli\\/',
+                        link: '/docs/products/tools/cli/',
+                        activeMatch: '^\\/docs\\/products\\/tools\\/cli\\/',
                     },
                     /*{
                         text: 'Shopware MCP',
