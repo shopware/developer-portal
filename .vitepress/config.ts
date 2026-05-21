@@ -291,7 +291,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
     (url, file) => {
       // skip broken links in versions
       if (file?.includes('docs/v6.5') || file?.includes('docs/v6.6')) {
-        return false
+        return true
       }
 
       try {
