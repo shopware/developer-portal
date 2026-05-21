@@ -28,6 +28,7 @@ This repository:
     - [shopware/docs](https://github.com/shopware/docs)
     - [shopware/frontends](https://github.com/shopware/frontends)
     - [shopware/meteor](https://github.com/shopware/meteor)
+    - [shopware/design-portal](https://github.com/shopware/design-portal)
     - [shopware/release-notes](https://github.com/shopware/release-notes)
     - [shopware/store-api-reference](https://github.com/shopware/store-api-reference)
     - [shopware/admin-api-reference](https://github.com/shopware/admin-api-reference)

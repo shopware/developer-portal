@@ -20,6 +20,8 @@ src/public/shiki
 # embeddings
 src/frontends/
 src/frontends
+src/meteor/
+src/meteor
 src/docs/
 src/docs
 src/resources/admin-extension-sdk/

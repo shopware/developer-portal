@@ -121,7 +121,8 @@
       ]
     },
     "patchedDependencies": {
-      "vitepress-shopware-docs": "patches/vitepress-shopware-docs.patch"
+      "vitepress-shopware-docs": "patches/vitepress-shopware-docs.patch",
+      "vitepress": "patches/vitepress.patch"
     }
   },
   "engines": {
