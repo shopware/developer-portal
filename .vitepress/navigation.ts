@@ -355,7 +355,7 @@ const navigation = buildSidebarNav('./src/', [
     // in migrations
     '/docs/products/paas/',
     '/docs/products/nexus/',
-    '/docs/products/cli/',
+    '/docs/products/tools/cli/',
     '/docs/products/sales-agent/',
     '/docs/products/digital-sales-rooms/',
     // '/docs/products/environments/paas/',
