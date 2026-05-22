@@ -62,6 +62,9 @@ brew install --cask shopware/tap/shopware-cli
 
 ```bash
 curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash
+```
+
+```bash
 sudo apt install shopware-cli
 ```
 
@@ -70,7 +73,13 @@ sudo apt install shopware-cli
 
 ```bash
 wsl --install
+```
+
+```bash
 wsl
+```
+
+```bash
 cd ~
 ```
 
@@ -79,7 +88,13 @@ cd ~
 
 ```bash
 sudo apt update && sudo apt install -y curl ca-certificates bash
+```
+
+```bash
 curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash
+```
+
+```bash
 sudo apt install shopware-cli
 ```
 
