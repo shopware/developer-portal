@@ -150,7 +150,7 @@
         <h2 class="SwagGetToKnow_redirect-title">Continue with the Full CLI Guide</h2>
         <p>Follow the official Shopware documentation for detailed setup steps, configuration options, and advanced usage.</p>
       </div>
-      <a href="https://developer.shopware.com/docs/products/cli/" class="SwagGetToKnow_redirect-btn btn --primary">
+      <a href="/docs/products/tools/cli/" class="SwagGetToKnow_redirect-btn btn --primary">
         Open Docs
       </a>
     </div>
