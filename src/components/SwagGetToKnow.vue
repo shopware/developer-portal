@@ -43,11 +43,11 @@
                     >{{ prereq.label }}</a>
                     <button
                       v-else
-                      :class="['SwagGetToKnow_prereq-pill', { '--expanded': expandedPrereq === prereq.id }]"
-                      @click="togglePrereq(prereq.id)"
+                      :class="['SwagGetToKnow_prereq-pill', { '--expanded': expandedPrereq === prereq.label }]"
+                      @click="togglePrereq(prereq.label)"
                     >
                       {{ prereq.label }}
-                      <svg class="SwagGetToKnow_prereq-chevron" :class="{ '--open': expandedPrereq === prereq.id }" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
+                      <svg class="SwagGetToKnow_prereq-chevron" :class="{ '--open': expandedPrereq === prereq.label }" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                       </svg>
                     </button>
@@ -178,7 +178,7 @@ interface Step {
   id: string;
   number: number;
   title: string;
-  description: string;
+  description?: string;
   prereqs?: Prereq[];
   command?: string;
   videoRef?: boolean;
