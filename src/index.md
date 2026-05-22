@@ -43,7 +43,84 @@ import SwagResources from "./meteor/components/home/SwagResources.vue";
 </SwagHero>
 
 <!-- GET TO KNOW SHOPWARE -->
-<SwagGetToKnow id="GetToKnow" class="my-20" />
+<SwagGetToKnow id="GetToKnow" class="my-20">
+  <template #mac-brew>
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+  </template>
+  <template #mac-cli>
+
+```bash
+brew install --cask shopware/tap/shopware-cli
+```
+
+  </template>
+  <template #lnx-cli>
+
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash
+sudo apt install shopware-cli
+```
+
+  </template>
+  <template #win-wsl>
+
+```bash
+wsl --install
+wsl
+cd ~
+```
+
+  </template>
+  <template #win-cli>
+
+```bash
+sudo apt update && sudo apt install -y curl ca-certificates bash
+curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash
+sudo apt install shopware-cli
+```
+
+  </template>
+  <template #url-admin>
+
+```txt
+http://127.0.0.1:8000/admin
+```
+
+  </template>
+  <template #url-storefront>
+
+```txt
+http://127.0.0.1:8000
+```
+
+  </template>
+  <template #bash-create>
+
+```bash
+shopware-cli project create myStore
+cd myStore
+```
+
+  </template>
+  <template #bash-start>
+
+```bash
+make up
+```
+
+  </template>
+  <template #bash-setup>
+
+```bash
+shopware-cli project dev
+```
+
+  </template>
+</SwagGetToKnow>
 
 <!-- START BUILDING -->
 <SwagStartBuilding class="my-20" id="Start" />
