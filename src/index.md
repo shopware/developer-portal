@@ -26,6 +26,8 @@ import SwagExtendShopware from "./components/SwagExtendShopware.vue";
 import SwagContribute from "./components/SwagContribute.vue";
 import SwagChangelogWrapper from "./components/SwagChangelogWrapper.vue";
 import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
+// imported from embedded repo
+import SwagResources from "./meteor/components/home/SwagResources.vue";
 </script>
 
 <!-- HERO -->
@@ -124,6 +126,9 @@ shopware-cli project dev
 <SwagStartBuilding class="my-20" id="Start" />
 
 <hr class="my-20" />
+
+<!-- METEOR -->
+<SwagResources class="my-20" id="Meteor" />
 
 <!-- EXTEND SHOPWARE -->
 <SwagExtendShopware id="Extend" class="my-20" />

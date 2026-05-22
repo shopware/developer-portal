@@ -57,3 +57,11 @@
         margin-bottom: 0;
     }
 }
+
+.Layout .VPSidebar {
+    z-index: 1;
+}
+
+.VPFlyout:has(.menu a.active) .text {
+    color: var(--vp-c-brand-1);
+}
