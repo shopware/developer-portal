@@ -105,7 +105,7 @@
     "vite-plugin-wasm": "^3.2.2",
     "vitepress-plugin-llms": "^1.11.0",
     "vitepress-plugin-mermaid": "^2.0.16",
-    "vitest": "^2.0.5",
+    "vitest": "^4.1.0",
     "vue-instantsearch": "^4.17.0"
   },
   "pnpm": {
