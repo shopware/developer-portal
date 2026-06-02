@@ -306,8 +306,8 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   ],
 
   rewrites: {
-    'storefront/index.md': 'frontends/index.md',
-    'frontends/index.md': 'frontends/overview.md',
+    //'storefront/index.md': 'frontends/index.md',
+    //'frontends/index.md': 'frontends/overview.md',
     //'landing/apps.md': 'docs/guides/plugins/apps/index.md',
     //'landing/apps.md': 'apps/index.md',
     //'landing/themes.md': 'docs/guides/plugins/themes/index.md',
