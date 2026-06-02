@@ -138,11 +138,11 @@ const navigation = buildSidebarNav('./src/', [
                         link: '/docs/products/tools/cli/',
                         activeMatch: '^\\/docs\\/products\\/tools\\/cli\\/',
                     },
-                    /*{
+                    {
                         text: 'Shopware MCP',
-                        // link: '/docs/products/tools/mcp/',
-                        link: '/docs/guides/development/tooling/mcp/',
-                    },*/
+                        link: '/docs/products/tools/mcp-server/',
+                        activeMatch: '^\\/docs\\/products\\/tools\\/mcp-server\\/',
+                    },
                 ]
             },
         ],
