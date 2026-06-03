@@ -3,8 +3,9 @@ import type { HeadConfig, TransformContext } from 'vitepress'
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
 import { baseConfig } from "@shopware-docs/vitepress";
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
-import { resolve, join, basename } from "path";
+import { resolve, join, basename, dirname } from "path";
 import fs from 'fs';
+import type { Plugin } from 'vite';
 
 import { CssCleanup, baseCleanup, MarkdownTransform, copyAdditionalAssets, createSitemap, storeRedirects, addOGImage, userCentricsHead, generateMarkdownFromStoplight, getStoplightUrls } from "@shopware-docs/vitepress";
 import Inspect from "vite-plugin-inspect";
@@ -262,6 +263,53 @@ const addCanonicalTags = (head, context) => {
   return head
 }
 
+function missingVueImportFallback(): Plugin {
+  const virtualPrefix = '\0missing-vue-import:'
+
+  return {
+    name: 'missing-vue-import-fallback',
+    enforce: 'pre',
+
+    resolveId(source, importer) {
+      const optionalImports = new Set([
+        './meteor/components/home/SwagResources.vue',
+        '../release-notes/latest.md',
+      ])
+
+      if (!importer || !optionalImports.has(source)) {
+        return
+      }
+
+      const resolvedPath = resolve(dirname(importer), source)
+
+      if (!fs.existsSync(resolvedPath)) {
+        return `${virtualPrefix}${source}`
+      }
+    },
+
+    load(id) {
+      if (!id.startsWith(virtualPrefix)) return
+
+      const missingImport = id.slice(virtualPrefix.length)
+
+      return `
+        import { defineComponent, h } from 'vue'
+
+        export default defineComponent({
+          name: 'MissingVueImportFallback',
+          setup() {
+            console.warn('[missing-vue-import-fallback] Replaced missing import with dummy component: ${JSON.stringify(missingImport)}')
+            return () => h('div', {
+              style: 'display: none;',
+              'data-missing-vue-import': ${JSON.stringify(missingImport)}
+            })
+          }
+        })
+      `
+    },
+  }
+}
+
 export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig.default,
 
@@ -492,7 +540,8 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
 
           console.log(`Symlink created from ${symlinkPath} to ${latestReleaseNote}`);
         }
-      }
+      },
+      missingVueImportFallback(),
     ],
     server: {
       watch: {
