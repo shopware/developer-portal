@@ -56,6 +56,28 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "frontends.shopware.com"
+        }
+      ],
+      "destination": "https://developer.shopware.com/frontends/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "frontends.shopware.com"
+        }
+      ],
+      "destination": "https://developer.shopware.com/frontends/:path*",
+      "permanent": true
+    },
+    {
       "source": "/docs/v6.6rc/:url*(/)?",
       "destination": "/docs/:url",
       "statusCode": 302
