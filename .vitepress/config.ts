@@ -592,7 +592,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         '@node_modules': resolve(process.cwd(), 'node_modules'),
         '../composables/edit-link': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/composables/edit-link.ts'),
         './VPNavBarTitle.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/VPNavBarTitle.vue'),
-        './VPAlgoliaSearchBox.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/VPAlgoliaSearchBox.vue'),
+        './VPAlgoliaSearchBox.vue': resolve(__dirname, './theme/VPAlgoliaSearchBox.vue'),
         '../NotFound.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/NotFound.vue'),
         '../SwagRelatedArticles.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/SwagRelatedArticles.vue'),
         // fixes missing mountpoints
