@@ -116,14 +116,14 @@ http://127.0.0.1:8000
   <template #bash-create>
 
 ```bash
-shopware-cli project create myStore
+shopware-cli project create mystore
 ```
 
   </template>
   <template #bash-start>
 
 ```bash
-cd myStore && make up
+cd mystore && make up
 ```
 
   </template>
