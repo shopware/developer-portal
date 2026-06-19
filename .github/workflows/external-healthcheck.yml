@@ -57,7 +57,7 @@ jobs:
       - name: Configure mountpoints
         run: |
           
-          ORG=${{ inputs.fork || inputs.owner }}
+          ORG="${{ inputs.fork || inputs.owner }}"
           BRANCH=${{ inputs.branch }}
           BRANCH=$(printf '%s' "$BRANCH" | sed 's/\//\\\//g')
           
