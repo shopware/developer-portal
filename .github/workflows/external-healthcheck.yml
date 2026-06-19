@@ -1,7 +1,7 @@
 name: External healthcheck
-run-name: External healthcheck - ${{ inputs.branch }} @ ${{ inputs.owner }}/${{ inputs.repo }}
+run-name: External healthcheck - ${{ inputs.branch }} @ ${{ inputs.fork || inputs.owner }}/${{ inputs.repo }}
 concurrency:
-  group: ${{ github.workflow }}-${{ inputs.branch }}-${{ inputs.owner }}-${{ inputs.repo }}
+  group: ${{ github.workflow }}-${{ inputs.branch }}-${{ inputs.fork || inputs.owner }}-${{ inputs.repo }}
   cancel-in-progress: true
 
 on:
@@ -10,6 +10,10 @@ on:
       owner:
         description: "Owner to checkout"
         required: true
+        type: string
+      fork:
+        description: "Fork to checkout"
+        required: false
         type: string
       repo:
         description: "Repo to checkout"
@@ -47,12 +51,13 @@ jobs:
           echo "repo=${{ inputs.repo }}"
           echo "sha=${{ inputs.sha }}"
           echo "owner=${{ inputs.owner }}"
+          echo "fork=${{ inputs.fork }}"
           echo "check=${{ inputs.check }}"
 
       - name: Configure mountpoints
         run: |
           
-          ORG=${{ inputs.owner }}
+          ORG=${{ inputs.fork || inputs.owner }}
           BRANCH=${{ inputs.branch }}
           BRANCH=$(printf '%s' "$BRANCH" | sed 's/\//\\\//g')
           
@@ -101,7 +106,7 @@ jobs:
           
           else
             echo "Unknown repository ${{inputs.repo}}"
-           echo "Branch ${{inputs.branch}}"
+            echo "Branch ${{inputs.branch}}"
             exit 1
           fi
           
