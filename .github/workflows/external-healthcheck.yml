@@ -12,7 +12,7 @@ on:
         required: true
         type: string
       fork:
-        description: "Fork to checkout"
+        description: "Optional fork owner (GitHub org/user) to source embedded repos from; defaults to 'owner' when unset"
         required: false
         type: string
       repo:
