@@ -281,7 +281,7 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: 'Meteor icon kit',
-                        link: '/resources/meteor-icon-kit/',
+                        link: 'https://shopware.design/icons/',
                     },
                     {
                         text: 'Admin extension SDK',
@@ -377,7 +377,6 @@ const navigation = buildSidebarNav('./src/', [
     '/resources/admin-extension-sdk/',
     //'/resources/meteor-component-library/',
     '/', // always have root sidebar - because?
-    '/resources/meteor-icon-kit/',
     '/release-notes/',
     '/meteor/',
 ], [

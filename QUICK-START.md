@@ -140,10 +140,7 @@ $ pnpm docs:clone
 
 **Embed all repositories at once**
 
-This command is useful if you really want to test production build locally. Some repositories require special
-environment variables (secrets) because a part of them is not publicly available. For example, the Meteor Icon Kit
-requires `FIGMA_FILE` and `FIGMA_TOKEN`, and Frontends on GitLab require `GITLAB_FRONTENDS_USERNAME` and
-`GITLAB_FRONTENDS_ACCESS_KEY`.
+This command is useful if you really want to test production build locally.
 
 ```bash
 $ ./docs-cli.cjs embed

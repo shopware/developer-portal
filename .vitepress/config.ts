@@ -102,12 +102,6 @@ const sections: SwagSectionsConfig[] = [
     ],
   },
   {
-    title: 'Meteor Icon Kit',
-    matches: [
-      '/resources/meteor-icon-kit/',
-    ],
-  },
-  {
     title: 'Meteor Components',
     matches: [
       '/meteor/components/',
@@ -163,13 +157,6 @@ const embeds: SwagEmbedsConfig[] = [
       '/resources/meteor-component-library/': 'main',
     },
     folder: 'docs',
-  },
-  {
-    repository: 'meteor',
-    points: {
-      '/resources/meteor-icon-kit/': 'main',
-    },
-    folder: 'packages/icon-kit/docs',
   },
   {
     repository: 'admin-api-reference',
@@ -700,7 +687,6 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         '/docs/': 1,
         '/frontends/': 1,
         '/resources/admin-extension-sdk/': 1,
-        '/resources/meteor-icon-kit/': 1,
         '/resources/meteor-component-library/': 1,
         '/release-notes/': 1,
         '/meteor/': 1,
