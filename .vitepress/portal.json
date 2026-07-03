@@ -182,19 +182,6 @@
         "env.ORG_RELEASE_NOTES",
         "shopware"
       ]
-    },
-    {
-      "name": "shopware/design-portal",
-      "src": "src",
-      "dst": "meteor",
-      "branch": [
-        "env.BRANCH_DESIGN_PORTAL",
-        "main"
-      ],
-      "org": [
-        "env.ORG_DESIGN_PORTAL",
-        "shopware"
-      ]
     }
   ]
 }
