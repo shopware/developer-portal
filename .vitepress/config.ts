@@ -619,15 +619,6 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
           '.wasm'
         ],
       },
-      // meteor-icon-kit
-      {
-        src: 'resources/meteor-icon-kit/public/icons/regular',
-        dst: 'icons/regular',
-      },
-      {
-        src: 'resources/meteor-icon-kit/public/icons/solid',
-        dst: 'icons/solid',
-      },
       // custom static files
       {
         src: 'docs/products/extensions/b2b-suite/guides/example-plugins',
