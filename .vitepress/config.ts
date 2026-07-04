@@ -573,6 +573,9 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       ],
     },*/
     build: {
+      // esbuild 0.28+ cannot downlevel destructuring for Vite's default targets
+      // (chrome87/safari14). es2022 supports top-level await and destructuring natively.
+      target: 'es2022',
       rollupOptions: {
         output: {
           manualChunks(id) {
