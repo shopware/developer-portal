@@ -110,7 +110,7 @@
     "vitepress-plugin-mermaid": "^2.0.17",
     "vitest": "^2.1.9",
     "vue-instantsearch": "^4.21.3",
-    "webpack": "^5.107.2"
+    "webpack": "^5.108.3"
   },
   "engines": {
     "node": ">=24.6.0"
