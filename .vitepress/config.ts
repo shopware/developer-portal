@@ -102,18 +102,6 @@ const sections: SwagSectionsConfig[] = [
     ],
   },
   {
-    title: 'Meteor Components',
-    matches: [
-      '/meteor/components/',
-    ],
-  },
-  {
-    title: 'Meteor',
-    matches: [
-      '/meteor/',
-    ],
-  },
-  {
     title: 'Release notes',
     matches: [
       '/release-notes/',
@@ -176,13 +164,6 @@ const embeds: SwagEmbedsConfig[] = [
     repository: 'release-notes',
     points: {
       '/release-notes/': 'main',
-    },
-    folder: 'src',
-  },
-  {
-    repository: 'design-portal',
-    points: {
-      '/meteor/': 'main',
     },
     folder: 'src',
   },
@@ -259,7 +240,6 @@ function missingVueImportFallback(): Plugin {
 
     resolveId(source, importer) {
       const optionalImports = new Set([
-        './meteor/components/home/SwagResources.vue',
         '../release-notes/latest.md',
       ])
 
@@ -680,7 +660,6 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         '/resources/admin-extension-sdk/': 1,
         '/resources/meteor-component-library/': 1,
         '/release-notes/': 1,
-        '/meteor/': 1,
       }
     });
 
