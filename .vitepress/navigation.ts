@@ -267,7 +267,7 @@ const navigation = buildSidebarNav('./src/', [
                 ],
             },
             {
-                text: 'Design',
+                text: 'Meteor',
                 items: [
                     {
                         text: 'shopware.design',
@@ -283,9 +283,13 @@ const navigation = buildSidebarNav('./src/', [
                         link: '/resources/meteor-icon-kit/',
                     },
                     {
-                        text: 'Admin extension SDK',
+                        text: 'Meteor Admin SDK',
                         link: '/resources/admin-extension-sdk/',
                         activeMatch: '^\\/resources\\/admin-extension-sdk\\/',
+                    },
+                    {
+                        text: 'Meteor component library',
+                        link: 'https://storybook.meteor.shopware.com/',
                     },
                 ],
             },
