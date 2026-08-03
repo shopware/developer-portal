@@ -280,7 +280,7 @@ const navigation = buildSidebarNav('./src/', [
                     },
                     {
                         text: 'Meteor icon kit',
-                        link: 'https://shopware.design/icons/',
+                        link: 'https://meteor.shopware.com/documentation/design/icons',
                     },
                     {
                         text: 'Meteor Admin SDK',
