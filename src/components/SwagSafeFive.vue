@@ -17,7 +17,7 @@
       font-family: Inter, sans-serif;
       font-weight: 600;
       font-size: 1.5rem;
-      letter-spacing: 0%;
+      letter-spacing: 0rem;
       line-height: 120%;
     }
     &_content {
