@@ -14,10 +14,10 @@
     @apply flex flex-col justify-center items-center;
 
     &_title {
-      font-family: Poppins, sans-serif;
-      font-weight: 500;
+      font-family: Inter, sans-serif;
+      font-weight: 600;
       font-size: 1.5rem;
-      letter-spacing: -0.09rem;
+      letter-spacing: 0%;
       line-height: 120%;
     }
     &_content {
