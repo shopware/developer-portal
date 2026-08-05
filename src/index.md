@@ -32,7 +32,7 @@ import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
 <SwagHero class="py-24">
       <template #label>Shopware for developers</template>
       <template #title>Open commerce platform, made easy.</template>
-      <template #content><p>Shopware, the leading open commerce platform, powers exceptional online stores and thrives with a global community of developers, agencies and merchants. With our API and App-centric approach, we are committed to providing you with the tools and resources needed to create outstanding online stores. Our comprehensive documentation empowers your journey with step-by-step guidance, making everything smoother. Documentation at your service!</p></template>
+      <template #content><p>Shopware, the leading open commerce platform, helps developers, agencies, and merchants create exceptional online stores. Our API- and app-centric approach, global community, and comprehensive documentation provide the tools and guidance you need to succeed.</p></template>
       <template #links>
         <SwagBtn href="#GetToKnow" class="--primary --sm" icon="long-arrow-right" icon-at="end">Get started</SwagBtn>
         <SwagBtn href="/docs/" class="--primary --subtle --with-border --sm --transparent">View developer docs</SwagBtn>
