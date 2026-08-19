@@ -310,7 +310,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
       // release notes optimization
       'release-notes/latest.md',
       // frontends packages without source files (e.g., cms-base-layer converted to pure Nuxt layer)
-      'frontends/packages/cms-base-layer.md',
+      '**/frontends/packages/cms-base-layer.md',
       // tmp
       // 'chat.md',
   ],
