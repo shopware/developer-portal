@@ -67,3 +67,40 @@
 .VPFlyout:has(.menu a.active) .text {
     color: var(--vp-c-brand-1);
 }
+
+:root {
+    --docsearch-modal-width: 720px;
+    --docsearch-hit-height: auto;
+}
+
+.DocSearch-Modal {
+    border-radius: 8px;
+}
+
+.DocSearch-Hit a {
+    min-height: 62px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.DocSearch-Hit-content-wrapper {
+    gap: 3px;
+    white-space: normal;
+}
+
+.DocSearch-Hit-title {
+    line-height: 1.35;
+}
+
+.DocSearch-Hit-path {
+    color: var(--docsearch-muted-color);
+    font-size: 0.74rem;
+    line-height: 1.35;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.DocSearch-Hit-source {
+    margin-top: 16px;
+}
