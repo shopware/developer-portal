@@ -85,7 +85,7 @@
               </div>
 
               <!-- URL blocks (step 5) -->
-              <template v-if="step.urls">
+              <div v-if="step.urls" class="flex flex-col gap-4">
                 <template v-for="url in step.urls" :key="url.label">
                   <slot :name="url.id" />
                 </template>
@@ -104,7 +104,7 @@
                     </svg>
                   </button>
                 </div>-->
-              </template>
+              </div>
 
               <!-- Single command block -->
               <slot v-if="step.command" :name="step.command" />
