@@ -84,8 +84,8 @@
                 </div>
               </div>
 
-              <!-- URL blocks (step 5) -->
-              <div v-if="step.urls" class="flex flex-col gap-4">
+              <!-- URL blocks (step 6) -->
+              <template v-if="step.urls">
                 <template v-for="url in step.urls" :key="url.label">
                   <slot :name="url.id" />
                 </template>
@@ -104,7 +104,7 @@
                     </svg>
                   </button>
                 </div>-->
-              </div>
+              </template>
 
               <!-- Single command block -->
               <slot v-if="step.command" :name="step.command" />
@@ -222,12 +222,19 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
     id: 'start',
     number: 4,
     title: 'Start Environment',
-    description: 'Enter your project directory and start the development environment. This starts Docker, runs the installer on first launch, and opens the Development TUI.',
+    description: 'Enter your project directory and start the local environment.',
     command: 'bash-start',
   },
   {
-    id: 'running',
+    id: 'setup',
     number: 5,
+    title: 'Setup Shopware',
+    description: 'Install Shopware and set up the database for your local environment.',
+    command: 'bash-setup',
+  },
+  {
+    id: 'running',
+    number: 6,
     title: 'Access Admin and Storefront',
     description: 'Your Shopware instance is running. Open the URLs below to get started.',
     credentials: true,
