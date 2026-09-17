@@ -117,7 +117,7 @@
       <!-- Video Panel -->
       <div class="SwagGetToKnow_video-panel">
         <a
-          href="https://www.youtube.com/watch?v=rDwzr16q_bQ"
+          href="https://youtu.be/KZhhjKWbDUY"
           target="_blank"
           rel="noopener noreferrer"
           class="SwagGetToKnow_video"
