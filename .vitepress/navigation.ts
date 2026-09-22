@@ -267,16 +267,15 @@ const navigation = buildSidebarNav('./src/', [
                 ],
             },
             {
-                text: 'Design',
+                text: 'Meteor',
                 items: [
-                    /*{
-                        text: 'Meteor design system',
-                        link: '/meteor/',
-                        activeMatch: '^\\/meteor\\/(?!tokens(?:\\/|$))',
-                    },*/
+                    {
+                        text: 'shopware.design',
+                        link: 'https://shopware.design/',
+                    },
                     {
                         text: 'Meteor tokens',
-                        link: '/meteor/tokens/',
+                        link: 'https://shopware.design/tokens/',
                         activeMatch: '^\\/meteor\\/tokens\\/',
                     },
                     {
@@ -284,9 +283,13 @@ const navigation = buildSidebarNav('./src/', [
                         link: '/resources/meteor-icon-kit/',
                     },
                     {
-                        text: 'Admin extension SDK',
+                        text: 'Meteor Admin SDK',
                         link: '/resources/admin-extension-sdk/',
                         activeMatch: '^\\/resources\\/admin-extension-sdk\\/',
+                    },
+                    {
+                        text: 'Meteor component library',
+                        link: 'https://storybook.meteor.shopware.com/',
                     },
                 ],
             },
@@ -332,10 +335,6 @@ const navigation = buildSidebarNav('./src/', [
             },
         ],
     },
-    /*resourcesMenu({
-        design: 'https://developer.shopware.com/meteor/',
-        developer: '/'
-    }),*/
 ], [
     '/docs/',
     '/docs/guides/plugins/apps/',
@@ -379,7 +378,6 @@ const navigation = buildSidebarNav('./src/', [
     '/', // always have root sidebar - because?
     '/resources/meteor-icon-kit/',
     '/release-notes/',
-    '/meteor/',
 ], [
     '/docs/assets/',
     '/docs/v6.6/assets/',

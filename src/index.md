@@ -26,15 +26,13 @@ import SwagExtendShopware from "./components/SwagExtendShopware.vue";
 import SwagContribute from "./components/SwagContribute.vue";
 import SwagChangelogWrapper from "./components/SwagChangelogWrapper.vue";
 import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
-// imported from embedded repo
-import SwagResources from "./meteor/components/home/SwagResources.vue";
 </script>
 
 <!-- HERO -->
 <SwagHero class="py-24">
       <template #label>Shopware for developers</template>
       <template #title>Open commerce platform, made easy.</template>
-      <template #content><p>Shopware, the leading open commerce platform, powers exceptional online stores and thrives with a global community of developers, agencies and merchants. With our API and App-centric approach, we are committed to providing you with the tools and resources needed to create outstanding online stores. Our comprehensive documentation empowers your journey with step-by-step guidance, making everything smoother. Documentation at your service!</p></template>
+      <template #content><p>Shopware, the leading open commerce platform, helps developers, agencies, and merchants create exceptional online stores. Our API- and app-centric approach, global community, and comprehensive documentation provide the tools and guidance you need to succeed.</p></template>
       <template #links>
         <SwagBtn href="#GetToKnow" class="--primary --sm" icon="long-arrow-right" icon-at="end">Get started</SwagBtn>
         <SwagBtn href="/docs/" class="--primary --subtle --with-border --sm --transparent">View developer docs</SwagBtn>
@@ -116,21 +114,14 @@ http://127.0.0.1:8000
   <template #bash-create>
 
 ```bash
-shopware-cli project create mystore
+shopware-cli project create my-shop
 ```
 
   </template>
   <template #bash-start>
 
 ```bash
-cd mystore && make up
-```
-
-  </template>
-  <template #bash-setup>
-
-```bash
-make setup
+cd my-shop && shopware-cli project dev
 ```
 
   </template>
@@ -140,9 +131,6 @@ make setup
 <SwagStartBuilding class="my-20" id="Start" />
 
 <hr class="my-20" />
-
-<!-- METEOR -->
-<SwagResources class="my-20" id="Meteor" />
 
 <!-- EXTEND SHOPWARE -->
 <SwagExtendShopware id="Extend" class="my-20" />
