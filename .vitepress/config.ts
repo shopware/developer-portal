@@ -588,10 +588,16 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
 
   markdown: {
     config(md) {
-      const defaultCodeInline = md.renderer.rules.code_inline!
+      const defaultCodeInline = md.renderer.rules.code_inline
       md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {
-        tokens[idx].attrSet('v-pre', '')
-        return defaultCodeInline(tokens, idx, options, env, self)
+        const token = tokens[idx]
+        token.attrSet('v-pre', '')
+
+        if (defaultCodeInline) {
+          return defaultCodeInline(tokens, idx, options, env, self)
+        }
+
+        return `<code${self.renderAttrs(token)}>${md.utils.escapeHtml(token.content)}</code>`
       }
     }
   },
