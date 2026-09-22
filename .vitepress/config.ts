@@ -573,6 +573,16 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
     reactivityTransform: resolve(__dirname, 'src'), // true
   },
 
+  markdown: {
+    config(md) {
+      const defaultCodeInline = md.renderer.rules.code_inline!
+      md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {
+        tokens[idx].attrSet('v-pre', '')
+        return defaultCodeInline(tokens, idx, options, env, self)
+      }
+    }
+  },
+
   async transformHead(context: TransformContext): Promise<HeadConfig[]> {
     const head = addOGImage([], context) || []
     return addCanonicalTags(head, context);

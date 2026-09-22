@@ -84,8 +84,8 @@
                 </div>
               </div>
 
-              <!-- URL blocks (step 6) -->
-              <template v-if="step.urls">
+              <!-- URL blocks (step 5) -->
+              <div v-if="step.urls" class="flex flex-col gap-4">
                 <template v-for="url in step.urls" :key="url.label">
                   <slot :name="url.id" />
                 </template>
@@ -104,7 +104,7 @@
                     </svg>
                   </button>
                 </div>-->
-              </template>
+              </div>
 
               <!-- Single command block -->
               <slot v-if="step.command" :name="step.command" />
@@ -117,7 +117,7 @@
       <!-- Video Panel -->
       <div class="SwagGetToKnow_video-panel">
         <a
-          href="https://www.youtube.com/watch?v=rDwzr16q_bQ"
+          href="https://youtu.be/KZhhjKWbDUY"
           target="_blank"
           rel="noopener noreferrer"
           class="SwagGetToKnow_video"
@@ -222,19 +222,12 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
     id: 'start',
     number: 4,
     title: 'Start Environment',
-    description: 'Enter your project directory and start the local environment.',
+    description: 'Enter your project directory and start the development environment. This starts Docker, runs the installer on first launch, and opens the Development TUI.',
     command: 'bash-start',
   },
   {
-    id: 'setup',
-    number: 5,
-    title: 'Setup Shopware',
-    description: 'Install Shopware and set up the database for your local environment.',
-    command: 'bash-setup',
-  },
-  {
     id: 'running',
-    number: 6,
+    number: 5,
     title: 'Access Admin and Storefront',
     description: 'Your Shopware instance is running. Open the URLs below to get started.',
     credentials: true,
