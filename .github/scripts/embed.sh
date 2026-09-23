@@ -7,7 +7,6 @@ BRANCH_DOCS_66=v6.6
 BRANCH_DOCS_65=v6.5
 BRANCH_FRONTENDS=main
 BRANCH_ADMIN_EXTENSION_SDK=main
-BRANCH_METEOR_ICON_KIT=dx/devhub-icon-kit
 BRANCH_METEOR_COMPONENT_LIBRARY=DX-231
 #BRANCH_ADMIN_API=main
 #BRANCH_STORE_API=main
@@ -19,7 +18,6 @@ ORG_DOCS_67=shopware
 ORG_DOCS_65=shopware
 ORG_FRONTENDS=shopware
 ORG_ADMIN_EXTENSION_SDK=shopware
-ORG_METEOR_ICON_KIT=shopware
 ORG_METEOR_COMPONENT_LIBRARY=bojanrajh
 #ORG_ADMIN_API=shopware
 #ORG_STORE_API=shopware
@@ -66,16 +64,6 @@ fi
  --dst frontends \
  --org ${ORG_FRONTENDS:-shopware}
 
-#./docs-cli.cjs clone \
-# --ci \
-# --repository gitlab.shopware.com/product/engineering/platform-group/pwa/frontends \
-# --user ${GITLAB_FRONTENDS_USERNAME} \
-# --pass ${GITLAB_FRONTENDS_ACCESS_KEY} \
-# --branch ${BRANCH_FRONTENDS:-main} \
-# --src apps/docs/src \
-# --dst frontends-gl \
-# --git gitlab.shopware.com
-
 ./docs-cli.cjs clone \
  --ci \
  --repository shopware/meteor \
@@ -83,15 +71,6 @@ fi
  --src docs/admin-sdk \
  --dst resources/admin-extension-sdk \
  --org ${ORG_ADMIN_EXTENSION_SDK:-shopware}
-
-./docs-cli.cjs clone \
- --ci \
- --repository shopware/meteor \
- --branch ${BRANCH_METEOR_ICON_KIT:-main} \
- --src packages/icon-kit/docs \
- --dst resources/meteor-icon-kit \
- --org ${ORG_METEOR_ICON_KIT:-shopware} \
- --root ../..
 
 #./docs-cli.cjs clone \
 # --ci \
