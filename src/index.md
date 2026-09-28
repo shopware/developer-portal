@@ -49,6 +49,7 @@ import SwagDiscordCommunity from "./components/SwagDiscordCommunity.vue";
 ```
 
   </template>
+
   <template #mac-cli>
 
 ```bash
@@ -56,6 +57,7 @@ brew install --cask shopware/tap/shopware-cli
 ```
 
   </template>
+
   <template #lnx-cli>
 
 ```bash
@@ -67,21 +69,7 @@ sudo apt install shopware-cli
 ```
 
   </template>
-  <template #win-wsl>
 
-```bash
-wsl --install
-```
-
-```bash
-wsl
-```
-
-```bash
-cd ~
-```
-
-  </template>
   <template #win-cli>
 
 ```bash
@@ -97,6 +85,7 @@ sudo apt install shopware-cli
 ```
 
   </template>
+
   <template #url-admin>
 
 ```txt
@@ -104,6 +93,7 @@ http://127.0.0.1:8000/admin
 ```
 
   </template>
+
   <template #url-storefront>
 
 ```txt
@@ -111,6 +101,7 @@ http://127.0.0.1:8000
 ```
 
   </template>
+
   <template #bash-create>
 
 ```bash
@@ -118,6 +109,7 @@ shopware-cli project create my-shop
 ```
 
   </template>
+
   <template #bash-start>
 
 ```bash
@@ -138,7 +130,7 @@ cd my-shop && shopware-cli project dev
 <!-- CONTRIBUTE TO SHOPWARE -->
 <SwagContribute class="my-20" />
 
-<!-- CHANGELOG --->
+<!-- CHANGELOG -->
 
 <Suspense>
     <SwagChangelogWrapper id="Changelog" class="my-20" />
