@@ -192,6 +192,12 @@ const DOCKER_PREREQ: Prereq = {
   url: 'https://docs.docker.com/get-started/introduction/get-docker-desktop/',
 };
 
+const WSL_PREREQ: Prereq = {
+  id: 'win-wsl',
+  label: 'WSL',
+  url: 'https://learn.microsoft.com/en-us/windows/wsl/install',
+};
+
 const CLI_MANUAL_NOTE = {
   text: 'Shopware CLI can be installed manually by downloading the appropriate archive for your system from the ',
   url: 'https://github.com/shopware/shopware-cli/releases',
@@ -240,11 +246,7 @@ const commonSteps = (prereqs: Prereq[]): Step[] => [
 
 const windowsSteps: Step[] = commonSteps([
   DOCKER_PREREQ,
-  {
-    id: 'win-wsl',
-    label: 'WSL',
-    terminalHint: 'Open your Powershell terminal to execute the below commands:',
-  },
+  WSL_PREREQ,
   {
     id: 'win-cli',
     label: 'Shopware CLI',
@@ -410,7 +412,9 @@ function togglePrereq(label: string) {
       color: var(--sw-c-blue-vivacious);
       text-decoration: underline;
 
-      &:hover { opacity: 0.8; }
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 
@@ -478,7 +482,7 @@ function togglePrereq(label: string) {
     @apply self-start mt-0.5;
   }
 
-  /* ── Video reference ──────────────────── */
+  /* ── Video reference ─────────────────── */
   &_video-ref {
     @apply flex items-center gap-2 text-sm rounded-md px-4 py-2.5;
     background-color: var(--sw-c-blue-dark-50);
@@ -626,7 +630,9 @@ function togglePrereq(label: string) {
         background: linear-gradient(to top, rgba(10, 15, 30, 0.85) 60%, transparent);
       }
 
-      p { margin: 0; }
+      p {
+        margin: 0;
+      }
     }
   }
 
