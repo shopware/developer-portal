@@ -16,46 +16,6 @@
 
 - [Checkout](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
 
-## Checkout
-
-- [Checkout](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
-
-## Checkout
-
-- [Checkout](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
-
-## Checkout
-
-- [Checkout](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
-
-## Checkout
-
-- [Checkout](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
-
-## Content
-
-- [Content](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
-
-## Content
-
-- [Content](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
-
-## Content
-
-- [Content](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
-
-## Content
-
-- [Content](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
-
-## Content
-
-- [Content](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
-
-## Content
-
-- [Content](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
-
 ## Content
 
 - [Content](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
@@ -63,42 +23,6 @@
 ## Elasticsearch
 
 - [Elasticsearch](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/elasticsearch/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
-
-## Framework
-
-- [Framework](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
 
 ## Framework
 

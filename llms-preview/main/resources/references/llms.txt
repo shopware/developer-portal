@@ -12,14 +12,6 @@
 
 - [App Reference](https://developer.shopware.com/resources/references/app-reference/llms.txt): Browse this documentation section.
 
-## App Reference
-
-- [App Reference](https://developer.shopware.com/resources/references/app-reference/llms.txt): Browse this documentation section.
-
-## Config Reference
-
-- [Config Reference](https://developer.shopware.com/resources/references/config-reference/llms.txt): Browse this documentation section.
-
 ## Config Reference
 
 - [Config Reference](https://developer.shopware.com/resources/references/config-reference/llms.txt): Browse this documentation section.

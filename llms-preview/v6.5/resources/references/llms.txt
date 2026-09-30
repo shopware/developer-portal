@@ -20,21 +20,9 @@
 
 - [App Reference](https://developer.shopware.com/docs/v6.5/resources/references/app-reference/llms.txt): Browse this documentation section.
 
-## App Reference
-
-- [App Reference](https://developer.shopware.com/docs/v6.5/resources/references/app-reference/llms.txt): Browse this documentation section.
-
 ## Config Reference
 
 - [Config Reference](https://developer.shopware.com/docs/v6.5/resources/references/config-reference/llms.txt): Browse this documentation section.
-
-## Config Reference
-
-- [Config Reference](https://developer.shopware.com/docs/v6.5/resources/references/config-reference/llms.txt): Browse this documentation section.
-
-## Core Reference
-
-- [Core Reference](https://developer.shopware.com/docs/v6.5/resources/references/core-reference/llms.txt): Browse this documentation section.
 
 ## Core Reference
 
@@ -47,10 +35,6 @@
 ## Testing Reference
 
 - [Testing Reference](https://developer.shopware.com/docs/v6.5/resources/references/testing-reference/llms.txt): Browse this documentation section.
-
-## Upgrades
-
-- [Upgrades](https://developer.shopware.com/docs/v6.5/resources/references/upgrades/llms.txt): Browse this documentation section.
 
 ## Upgrades
 
