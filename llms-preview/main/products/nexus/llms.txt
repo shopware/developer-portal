@@ -1,0 +1,14 @@
+# Products / Nexus
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Business Central Integration](https://developer.shopware.com/docs/products/nexus/integration.md): Business Central Integration: The Business Central integration allows workflows to perform CRUD operations on supported entities via the Business Central API.
+- [Getting Started](https://developer.shopware.com/docs/products/nexus/getting-started.md): Getting Started: Your shops are pulled from the Shopware Business Platform.
+- [Security & Data Handling](https://developer.shopware.com/docs/products/nexus/security.md): Security & Data Handling: If runtime extension management is disabled (common on composer-managed installations), the Shopware Nexus Event Ingestion Service cannot be activated from the Administration. Activate it from the CLI instead:
+- [Shopware Nexus Overview](https://developer.shopware.com/docs/products/nexus.md): Shopware Nexus Overview: Early Access Notice
+- [User Management](https://developer.shopware.com/docs/products/nexus/user-management.md): User Management: Nexus access is scoped to your company. Every user who belongs to the company is assigned a role that controls what they can see and do.
+- [Workflow Builder](https://developer.shopware.com/docs/products/nexus/workflow.md): Workflow Builder: This page covers the fundamentals of building workflows in Shopware Nexus:

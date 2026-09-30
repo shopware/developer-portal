@@ -1,0 +1,9 @@
+# Products / Extensions / Commercial
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Commercial](https://developer.shopware.com/docs/products/extensions/commercial.md): Commercial: The Shopware 6 commercial feature-set comprises myriad features, the sum of which provide additional support for businesses which require extended functionality within the Shopware 6 ecosystem.

@@ -1,0 +1,19 @@
+# Products / Extensions / Advanced Search
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Add / Modify Completion](https://developer.shopware.com/docs/products/extensions/advanced-search/How-to-modify-completion.md): Add / Modify Completion: The Advanced Search does not use the default Elasticsearch completion because it only supports a fixed order and the storage size is high. As an alternative, Advanced Search uses aggregations to find the most important w
+- [Add / Modify language analyzers, stopwords, stemmer](https://developer.shopware.com/docs/products/extensions/advanced-search/How-to-add-modify-language-analyzers-stopwords-stemmer.md): Add / Modify language analyzers, stopwords, stemmer: With the introduction of the multi-language index, support for built-in Elasticsearch language analyzers was also introduced.
+- [Add more Fields to Product Search](https://developer.shopware.com/docs/products/extensions/advanced-search/How-to-add-more-fields-to-product-search.md): Add more Fields to Product Search: You can add more searchable fields into your product or any Elasticsearch definition.
+- [Advanced Search](https://developer.shopware.com/docs/products/extensions/advanced-search.md): Advanced Search: Advanced Search is available starting with Commercial 5.5.0
+- [Configure Searchable Fields](https://developer.shopware.com/docs/products/extensions/advanced-search/How-to-configure-searchable-fields.md): Configure Searchable Fields: Search entities and their searchable fields are stored in advancedsearchconfig and advancedsearchconfigfield table respectively.
+- [Cross Search](https://developer.shopware.com/docs/products/extensions/advanced-search/Cross-search.md): Cross Search: @Refer: \Shopware\Commercial\AdvancedSearch\Domain\CrossSearch\CrossSearchLogic
+- [Define a Custom Elasticsearch Definition](https://developer.shopware.com/docs/products/extensions/advanced-search/How-to-define-your-custom-Elasticsearch-definition.md): Define a Custom Elasticsearch Definition: In the previous implementation, the Elasticsearch index was language-based, meaning each system's language would be indexed in a separate index. With the introduction of the multilingual index:
+- [Extend Search Template](https://developer.shopware.com/docs/products/extensions/advanced-search/How-to-extend-the-search-and-suggest-template.md): Extend Search Template: To show the results in the search overview, you have to extend the search/index.html.twig and then apply the results in your desired styling.
+- [Installation](https://developer.shopware.com/docs/products/extensions/advanced-search/installation.md): Installation: This module requires the following:
+- [Modify Search Logic](https://developer.shopware.com/docs/products/extensions/advanced-search/How-to-modify-search-logic.md): Modify Search Logic: @Refer: \Shopware\Commercial\AdvancedSearch\Domain\Search\SearchLogic
+- [Search and Suggest Routes](https://developer.shopware.com/docs/products/extensions/advanced-search/Search-and-suggest-routes.md): Search and Suggest Routes: @Refer: \Shopware\Commercial\AdvancedSearch\Domain\Search\ProductSearchRouteDecorator

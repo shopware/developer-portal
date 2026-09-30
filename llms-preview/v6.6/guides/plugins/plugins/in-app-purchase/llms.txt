@@ -1,0 +1,9 @@
+# Guides / Plugins / Plugins / In App Purchase
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [In-App Purchases](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/in-app-purchase.md): In-App Purchases: In-App Purchase is available since Shopware version 6.6.9.0

@@ -1,0 +1,11 @@
+# Guides / Plugins / Plugins / Database
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Database](https://developer.shopware.com/docs/guides/plugins/plugins/database.md): Database: Plugins can extend or interact with the Shopware database using migrations, entities, and custom fields.
+- [Database Migrations](https://developer.shopware.com/docs/guides/plugins/plugins/database/database-migrations.md): Database Migrations: Migrations are PHP classes used to manage incremental database schema changes. Shopware comes with a pre-built migration system to take away most of the work for you. Throughout this guide, you will find the $ symbol rep
+- [Using Custom Fields of Type Media](https://developer.shopware.com/docs/guides/plugins/plugins/database/custom-fields-of-type-media.md): Using Custom Fields of Type Media: After adding a custom field of type media in the Administration or via a plugin, you can assign media objects to different entities.

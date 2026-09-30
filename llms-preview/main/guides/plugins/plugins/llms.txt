@@ -1,0 +1,223 @@
+# Guides / Plugins / Plugins
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Administration
+
+- [Administration](https://developer.shopware.com/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Architecture
+
+- [Architecture](https://developer.shopware.com/guides/plugins/plugins/architecture/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Database
+
+- [Database](https://developer.shopware.com/guides/plugins/plugins/database/llms.txt): Browse this documentation section.
+
+## Dependencies
+
+- [Dependencies](https://developer.shopware.com/guides/plugins/plugins/dependencies/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## Integrations
+
+- [Integrations](https://developer.shopware.com/guides/plugins/plugins/integrations/llms.txt): Browse this documentation section.
+
+## Integrations
+
+- [Integrations](https://developer.shopware.com/guides/plugins/plugins/integrations/llms.txt): Browse this documentation section.
+
+## Integrations
+
+- [Integrations](https://developer.shopware.com/guides/plugins/plugins/integrations/llms.txt): Browse this documentation section.
+
+## Plugin Fundamentals
+
+- [Plugin Fundamentals](https://developer.shopware.com/guides/plugins/plugins/plugin-fundamentals/llms.txt): Browse this documentation section.
+
+## Services
+
+- [Services](https://developer.shopware.com/guides/plugins/plugins/services/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [Creating Plugins](https://developer.shopware.com/docs/guides/plugins/plugins/creating-plugins.md): Creating Plugins: This guide walks you through creating and scaffolding a basic Shopware plugin so it can be installed locally on your Shopware 6 instance.
+- [Extending the MCP Server via Plugin](https://developer.shopware.com/docs/guides/plugins/plugins/mcp-server.md): Extending the MCP Server via Plugin: Shopware plugins and Symfony bundles can add custom tools, prompts, and resources to the MCP server. This guide covers the plugin path: in-process PHP with full DAL access and the Shopware plugin lifecycle.
+- [In-App Purchases](https://developer.shopware.com/docs/guides/plugins/plugins/in-app-purchases.md): In-App Purchases: In-App Purchases are available since Shopware version 6.6.9.0
+- [Install and Activate Plugins](https://developer.shopware.com/docs/guides/plugins/plugins/install-activate-plugin.md): Install and Activate Plugins: This guide explains how to install and activate a newly created plugin.
+- [Plugin Base Guide](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-base-guide.md): Plugin Base Guide: This guide outlines the typical development flow when creating a Shopware plugin, using the recommended static plugin approach. Core concepts apply to all plugin types. Not every plugin requires all steps.
+- [Plugins](https://developer.shopware.com/docs/guides/plugins/plugins.md): Plugins: Plugins are Shopware’s PHP-based, server-side extension type for enhancing platform functionality. They allow you to extend, overwrite, and modify Shopware's core capabilities at runtime.
+- [Using Symfony Bundles Instead of Plugins](https://developer.shopware.com/docs/guides/plugins/plugins/bundle.md): Using Symfony Bundles Instead of Plugins: This guide covers some basic concepts of Shopware plugins, which are also covered in the Plugin base guide. You may want to refresh your knowledge of Symfony's Bundle system.

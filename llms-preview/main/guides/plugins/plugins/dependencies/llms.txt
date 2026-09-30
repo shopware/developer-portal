@@ -1,0 +1,12 @@
+# Guides / Plugins / Plugins / Dependencies
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Add Plugin Dependencies](https://developer.shopware.com/docs/guides/plugins/plugins/dependencies/add-plugin-dependencies.md): Add Plugin Dependencies: Declare a dependency when your plugin cannot work without another plugin. Shopware uses Composer's require section for these dependencies. See the Composer package links documentation for the underlying Composer behavior
+- [Adding Composer Dependencies](https://developer.shopware.com/docs/guides/plugins/plugins/dependencies/using-composer-dependencies.md): Adding Composer Dependencies: Use this guide when your extension needs another PHP package — for example, a library for exports, PDF generation, or an external API client. Like any PHP project, Shopware plugins declare such packages in their composer
+- [Adding NPM Dependencies](https://developer.shopware.com/docs/guides/plugins/plugins/dependencies/using-npm-dependencies.md): Adding NPM Dependencies: In this guide, you'll learn how to add NPM dependencies to your plugin.
+- [Dependencies](https://developer.shopware.com/docs/guides/plugins/plugins/dependencies.md): Dependencies: These guides explain how to manage plugin dependencies in Shopware, including plugin requirements, Composer packages, and NPM packages. Use them to:

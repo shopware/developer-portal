@@ -1,0 +1,246 @@
+# Guides / Plugins
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Apps
+
+- [Apps](https://developer.shopware.com/docs/v6.6/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Themes
+
+- [Themes](https://developer.shopware.com/docs/v6.6/guides/plugins/themes/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [Extensions](https://developer.shopware.com/docs/v6.6/guides/plugins.md): Extensions: As a Shopware developer, your main work will be to develop extensions that enhance or modify the functionality of Shopware in a specific way. Shopware offers different types of extensions, each with its own benefits and
+- [Overview](https://developer.shopware.com/docs/v6.6/guides/plugins/overview.md): Overview: The variety of Shopware's extension interfaces can be overwhelming, so let us start with a simple overview comparing the three approaches Plugins, Themes, and Apps.
