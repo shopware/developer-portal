@@ -1,0 +1,15 @@
+# Guides / Plugins / Plugins / Integrations
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Adding Product Entity Extension to Elasticsearch](https://developer.shopware.com/docs/guides/plugins/plugins/integrations/elasticsearch/add-product-entity-extension-to-elasticsearch.md): Adding Product Entity Extension to Elasticsearch: In this guide you'll learn how to add extended fields of the product entity to the elasticsearch engine to make it searchable.
+- [Commercial Plugins](https://developer.shopware.com/docs/guides/plugins/plugins/integrations/commercial.md): Commercial Plugins: The Commercial plugin extends Shopware with advanced enterprise features available in Shopware Commercial plans.
+- [Customer-Specific Pricing](https://developer.shopware.com/docs/guides/plugins/plugins/integrations/commercial/customer-specific-pricing.md): Customer-Specific Pricing: The Customer-specific pricing feature enables significant advances in pricing model capabilities in the Shopware 6 ecosystem.
+- [Elasticsearch](https://developer.shopware.com/docs/guides/plugins/plugins/integrations/elasticsearch.md): Elasticsearch: By extending fields of an entity to the Elasticsearch engine, you expand the search capabilities of Shopware, allowing users to search based on additional attributes or metadata. This enhances the overall search experien
+- [Integrations](https://developer.shopware.com/docs/guides/plugins/plugins/integrations.md): Integrations: Plugins are commonly used to integrate external systems and infrastructure services into Shopware. Typical scenarios that go beyond basic plugin setup include:
+- [Multi-Inventory](https://developer.shopware.com/docs/guides/plugins/plugins/integrations/commercial/multi-inventory.md): Multi-Inventory: Multi-Inventory extends Shopware’s stock management by letting you manage inventory across multiple warehouses and warehouse groups. It is designed primarily for API-first integrations with ERP systems, while also provid
+- [Redis](https://developer.shopware.com/docs/guides/plugins/plugins/integrations/redis.md): Redis: Starting with Shopware v6.6.8.0, Redis support has been improved, giving you more flexibility in how you use it in your projects and plugins.

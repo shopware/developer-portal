@@ -1,0 +1,13 @@
+# Guides / Plugins / Plugins / Testing
+
+> v6.5 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.5/llms.txt)
+
+## Pages
+
+- [End-to-End Testing](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/testing/end-to-end-testing.md): End-to-End Testing: In end-to-end testing \(E2E testing in short\) real user workflows are simulated, whereby as many as possible functional areas and parts of the technology stack used in the application should be included. This way, we ar
+- [Jest Unit Tests in Shopware's Administration](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/testing/jest-admin.md): Jest Unit Tests in Shopware's Administration: You should write a unit test for every functional change. It should guarantee that your written code works and that a third developer can't break the functionality with their code.
+- [Jest Unit Tests in Shopware's Storefront](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/testing/jest-storefront.md): Jest Unit Tests in Shopware's Storefront: You should write a unit test for every functional change. Writing tests will ensure that your written code works and that another change can't break your code's functionality with their code.
+- [PHP Unit Testing](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/testing/php-unit.md): PHP Unit Testing: This guide will cover the creation of PHPUnit tests in Shopware 6. Refer to the official PHPUnit documentation for a deep dive into PHP unit testing.
+- [Testing](https://developer.shopware.com/docs/v6.5/guides/plugins/plugins/testing.md): Testing: When it comes to testing, you might immediately think about unit tests. Of course, we have got you covered then:

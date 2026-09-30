@@ -1,0 +1,31 @@
+# Resources / References
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Adr
+
+- [Adr](https://developer.shopware.com/resources/references/adr/llms.txt): Browse this documentation section.
+
+## App Reference
+
+- [App Reference](https://developer.shopware.com/resources/references/app-reference/llms.txt): Browse this documentation section.
+
+## Config Reference
+
+- [Config Reference](https://developer.shopware.com/resources/references/config-reference/llms.txt): Browse this documentation section.
+
+## Core Reference
+
+- [Core Reference](https://developer.shopware.com/resources/references/core-reference/llms.txt): Browse this documentation section.
+
+## Testing Reference
+
+- [Testing Reference](https://developer.shopware.com/resources/references/testing-reference/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [References](https://developer.shopware.com/docs/resources/references.md): References: This section contains structured technical reference documentation for Shopware. Use it when you need precise specifications, XML schemas, CLI commands, event payloads, or implementation details. Step-by-step guides are
+- [Security](https://developer.shopware.com/docs/resources/references/security.md): Security: This reference presents a comprehensive compilation of all security measures implemented in Shopware 6, along with instructions on how to configure them.
+- [Shopware Tools Telemetry](https://developer.shopware.com/docs/resources/references/telemetry.md): Shopware Tools Telemetry: Shopware gathers limited telemetry about usage of its open-source developer tools to improve product quality and user experience. This telemetry is designed not to include personal data, secrets, file contents, or creden

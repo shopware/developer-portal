@@ -1,0 +1,33 @@
+# Products
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Digital Sales Rooms
+
+- [Digital Sales Rooms](https://developer.shopware.com/products/digital-sales-rooms/llms.txt): Browse this documentation section.
+
+## Extensions
+
+- [Extensions](https://developer.shopware.com/products/extensions/llms.txt): Browse this documentation section.
+
+## Nexus
+
+- [Nexus](https://developer.shopware.com/products/nexus/llms.txt): Browse this documentation section.
+
+## Paas
+
+- [Paas](https://developer.shopware.com/products/paas/llms.txt): Browse this documentation section.
+
+## Sales Agent
+
+- [Sales Agent](https://developer.shopware.com/products/sales-agent/llms.txt): Browse this documentation section.
+
+## Tools
+
+- [Tools](https://developer.shopware.com/products/tools/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [Cloud](https://developer.shopware.com/docs/products/saas.md): Cloud: With the SaaS platform, Shopware provides updates, hosting, and infrastructure. Also, there are ways to extend it.
