@@ -80,7 +80,7 @@
     "jest-expect-message": "^1.1.3",
     "jest-image-snapshot": "^6.5.2",
     "lorem-ipsum": "^3.0.0",
-    "markdown-it": "^14.1.1",
+    "markdown-it": "^14.2.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.5.0",
     "markdown-it-emoji": "^3.0.0",
