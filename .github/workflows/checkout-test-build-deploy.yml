@@ -127,9 +127,6 @@ jobs:
           name: embed-${{ github.sha }}
           path: src
 
-      - name: Collect Workflow Telemetry
-        uses: catchpoint/workflow-telemetry-action@v2
-
       - name: Build project
         run: |
           export NODE_OPTIONS="--max-old-space-size=12288"
