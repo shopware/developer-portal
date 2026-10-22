@@ -1,0 +1,14 @@
+# Guides / Installation
+
+> v6.5 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.5/llms.txt)
+
+## Pages
+
+- [Community Setup](https://developer.shopware.com/docs/v6.5/guides/installation/community.md): Community Setup: The community setup is the recommended installation procedure for the latest versions of Shopware. It is a streamlined installation process, providing an intuitive interface for users to set up their Shopware store via D
+- [Devenv](https://developer.shopware.com/docs/v6.5/guides/installation/devenv.md): Devenv: Imagine devenv to function as a dependency manager for the services and packages that you need to run your application for local development or even in a CI/CD context.
+- [Dockware](https://developer.shopware.com/docs/v6.5/guides/installation/community/dockware.md): Dockware: Dockware is basically a managed Docker setup for Shopware 6. It makes it possible to start Shopware 6 very quickly using dockware.io. It comes with everything you need for a smooth development workflow. This includes all
+- [Installation Overview](https://developer.shopware.com/docs/v6.5/guides/installation.md): Installation Overview: This section discusses ways to set up Shopware on local machines so you can use it as a foundation for your development.
+- [Requirements](https://developer.shopware.com/docs/v6.5/guides/installation/requirements.md): Requirements: Before installing Shopware 6, take a quick look at the requirements below to check if your local environment is capable of running it.
+- [Symfony Flex](https://developer.shopware.com/docs/v6.5/guides/installation/template.md): Symfony Flex: Symfony Flex is a Composer plugin that helps you to manage and keep your Shopware configuration files up-to-date.

@@ -1,0 +1,21 @@
+# Guides / Plugins
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Apps
+
+- [Apps](https://developer.shopware.com/guides/plugins/apps/llms.txt): Browse this documentation section.
+
+## Plugins
+
+- [Plugins](https://developer.shopware.com/guides/plugins/plugins/llms.txt): Browse this documentation section.
+
+## Themes
+
+- [Themes](https://developer.shopware.com/guides/plugins/themes/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [Extensions](https://developer.shopware.com/docs/guides/plugins.md): Extensions: As a Shopware developer, your primary focus is on developing extensions that enhance or modify Shopware's functionality.

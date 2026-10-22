@@ -1,0 +1,11 @@
+# Resources / References / Storefront Reference
+
+> v6.5 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.5/llms.txt)
+
+## Pages
+
+- [Shopware's twig functions](https://developer.shopware.com/docs/v6.5/resources/references/storefront-reference/twig-function-reference.md): Shopware's twig functions: In Shopware, we extend Twig's functionality by custom ones. See our own actions below.
+- [Storefront plugins and helper](https://developer.shopware.com/docs/v6.5/resources/references/storefront-reference/plugin-reference.md): Storefront plugins and helper: This is a list of available javascript plugins and helpers that can be used and extended.
+- [Storefront Reference](https://developer.shopware.com/docs/v6.5/resources/references/storefront-reference.md): Storefront Reference: The storefront reference documents functions, filters, and extensions that are available for customizing storefronts. It helps you understand how to use these features to enhance the functionality and appearance of your

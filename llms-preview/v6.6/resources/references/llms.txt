@@ -1,0 +1,46 @@
+# Resources / References
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Administration Reference
+
+- [Administration Reference](https://developer.shopware.com/docs/v6.6/resources/references/administration-reference/llms.txt): Browse this documentation section.
+
+## Adr
+
+- [Adr](https://developer.shopware.com/docs/v6.6/resources/references/adr/llms.txt): Browse this documentation section.
+
+## Api Reference
+
+- [Api Reference](https://developer.shopware.com/docs/v6.6/resources/references/api-reference/llms.txt): Browse this documentation section.
+
+## App Reference
+
+- [App Reference](https://developer.shopware.com/docs/v6.6/resources/references/app-reference/llms.txt): Browse this documentation section.
+
+## Config Reference
+
+- [Config Reference](https://developer.shopware.com/docs/v6.6/resources/references/config-reference/llms.txt): Browse this documentation section.
+
+## Core Reference
+
+- [Core Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/llms.txt): Browse this documentation section.
+
+## Storefront Reference
+
+- [Storefront Reference](https://developer.shopware.com/docs/v6.6/resources/references/storefront-reference/llms.txt): Browse this documentation section.
+
+## Testing Reference
+
+- [Testing Reference](https://developer.shopware.com/docs/v6.6/resources/references/testing-reference/llms.txt): Browse this documentation section.
+
+## Upgrades
+
+- [Upgrades](https://developer.shopware.com/docs/v6.6/resources/references/upgrades/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [References](https://developer.shopware.com/docs/v6.6/resources/references.md): References: The references serve as essential resources for developers, administrators, and testers, providing comprehensive details on implementation parameters. They cover every aspect of the platform, including objects, functions
+- [Security](https://developer.shopware.com/docs/v6.6/resources/references/security.md): Security: This reference presents a comprehensive compilation of all security measures implemented in Shopware 6, along with instructions on how to configure them.

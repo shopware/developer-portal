@@ -1,0 +1,20 @@
+# Resources / References / Core Reference
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [Actions Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/actions-reference.md): Actions Reference: Shopware developer documentation.
+- [Aggregations Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/dal-reference/aggregations-reference.md): Aggregations Reference: Aggregations allow you to determine further information about the overall result in addition to the actual search results. These include totals, unique values, or the average of a field.
+- [Commands Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/commands-reference.md): Commands Reference: These commands can be executed using the Shopware command line interface \(CLI\), located within your Shopware project.
+- [Composer Commands Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/composer-commands-reference.md): Composer Commands Reference: These commands are only available inside shopware/shopware GitHub repository, so when you contribute to Shopware. For regular projects, use ./bin/.sh scripts.
+- [Core Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference.md): Core Reference: The Core reference documents essential components like the DAL, administration panel, flags, filters, Flow Builder, and Rules for efficient platform usage. It details about the classes, methods, commands, events, etc, fo
+- [DAL Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/dal-reference.md): DAL Reference: The DAL reference documents fields, flags, filters, and aggregations for effective data management and querying within the platform.
+- [EnumField reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/dal-reference/fields-reference/enum-field.md): EnumField reference: The EnumField can be used to restrict string or int values to a fixed set.
+- [Fields Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/dal-reference/fields-reference.md): Fields Reference: Shopware developer documentation.
+- [Filters Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/dal-reference/filters-reference.md): Filters Reference: The Equals filter allows you to check fields for an exact value. The following SQL statement is executed in the background: WHERE stock = 10.
+- [Flags Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/dal-reference/flags-reference.md): Flags Reference: Shopware developer documentation.
+- [Flow Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/flow-reference.md): Flow Reference: This functionality is available starting with Shopware 6.4.6.0
+- [Rules Reference](https://developer.shopware.com/docs/v6.6/resources/references/core-reference/rules-reference.md): Rules Reference: List of all rule classes across Shopware 6.

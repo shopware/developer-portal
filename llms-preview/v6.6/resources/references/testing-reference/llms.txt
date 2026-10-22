@@ -1,0 +1,11 @@
+# Resources / References / Testing Reference
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [Custom E2E Commands](https://developer.shopware.com/docs/v6.6/resources/references/testing-reference/e2e-custom-commands.md): Custom E2E Commands: Shopware developer documentation.
+- [E2E Commands](https://developer.shopware.com/docs/v6.6/resources/references/testing-reference/e2e-commands.md): E2E Commands: Shopware developer documentation.
+- [Testing Reference](https://developer.shopware.com/docs/v6.6/resources/references/testing-reference.md): Testing Reference: In this reference, all Shopware commands provided by E2E-testsuite-platform or Shopware Platform are listed here.

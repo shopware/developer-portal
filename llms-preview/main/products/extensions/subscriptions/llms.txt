@@ -1,0 +1,15 @@
+# Products / Extensions / Subscriptions
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [B2B Employee Integration for Subscriptions](https://developer.shopware.com/docs/products/extensions/subscriptions/guides/b2b-employee-integration.md): B2B Employee Integration for Subscriptions: When using Subscriptions together with B2B Components Employee Management, subscriptions can be managed and tracked in a B2B employee context.
+- [Guides](https://developer.shopware.com/docs/products/extensions/subscriptions/guides.md): Guides: This section will help with common topics regarding the usage of subscriptions.
+- [Mixed subscription checkout](https://developer.shopware.com/docs/products/extensions/subscriptions/guides/mixed-checkout.md): Mixed subscription checkout: Available since Shopware version 6.7.4.0
+- [Separate subscription checkout](https://developer.shopware.com/docs/products/extensions/subscriptions/guides/separate-checkout.md): Separate subscription checkout: This guide describes how buying a subscription via the separate checkout flow works and how extensions should integrate with it.
+- [Subscription concept](https://developer.shopware.com/docs/products/extensions/subscriptions/concept.md): Subscription concept: To use subscriptions, you will need to be familiar with three core concepts: Subscription Plans, Subscription Intervals, and the Checkout Processes.
+- [Subscription template scoping](https://developer.shopware.com/docs/products/extensions/subscriptions/guides/template-scoping.md): Subscription template scoping: Please familiarize yourself with the concept first before continuing here.
+- [Subscriptions](https://developer.shopware.com/docs/products/extensions/subscriptions.md): Subscriptions: To enable flexibility in product offerings, the subscription extension aims to provide a subscription-based model for products.
