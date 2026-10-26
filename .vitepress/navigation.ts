@@ -276,7 +276,6 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Meteor tokens',
                         link: 'https://shopware.design/tokens/',
-                        activeMatch: '^\\/meteor\\/tokens\\/',
                     },
                     {
                         text: 'Meteor icon kit',
