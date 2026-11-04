@@ -27,6 +27,7 @@ This repository:
   folder (destination) in this repository:
     - [shopware/docs](https://github.com/shopware/docs)
     - [shopware/frontends](https://github.com/shopware/frontends)
+    - [shopware/nexus-docs](https://github.com/shopware/nexus-docs)
     - [shopware/meteor](https://github.com/shopware/meteor)
     - [shopware/release-notes](https://github.com/shopware/release-notes)
     - [shopware/store-api-reference](https://github.com/shopware/store-api-reference)

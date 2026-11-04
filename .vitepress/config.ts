@@ -114,6 +114,12 @@ const sections: SwagSectionsConfig[] = [
     ],
   },
   {
+    title: 'Nexus',
+    matches: [
+      '/nexus/',
+    ],
+  },
+  {
     title: 'General',
     matches: [
       '/',
@@ -177,6 +183,13 @@ const embeds: SwagEmbedsConfig[] = [
     repository: 'release-notes',
     points: {
       '/release-notes/': 'main',
+    },
+    folder: 'src',
+  },
+  {
+    repository: 'nexus-docs',
+    points: {
+      '/nexus/': 'main',
     },
     folder: 'src',
   },
@@ -693,6 +706,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         '/resources/meteor-icon-kit/': 1,
         '/resources/meteor-component-library/': 1,
         '/release-notes/': 1,
+        '/nexus/': 1,
       }
     });
 
