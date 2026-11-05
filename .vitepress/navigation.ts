@@ -249,8 +249,8 @@ const navigation = buildSidebarNav('./src/', [
                     {
                         text: 'Nexus',
                         // link: '/docs/products/services/nexus/',
-                        link: '/docs/products/nexus/',
-                        activeMatch: '^\\/docs\\/products\\/nexus\\/',
+                        link: '/nexus/',
+                        activeMatch: '^\\/nexus\\/',
                     },
                     /*{
                         text: 'Shopware Payments',
@@ -353,7 +353,6 @@ const navigation = buildSidebarNav('./src/', [
 
     // in migrations
     '/docs/products/paas/',
-    '/docs/products/nexus/',
     '/docs/products/tools/cli/',
     '/docs/products/sales-agent/',
     '/docs/products/digital-sales-rooms/',
@@ -378,6 +377,7 @@ const navigation = buildSidebarNav('./src/', [
     '/', // always have root sidebar - because?
     '/resources/meteor-icon-kit/',
     '/release-notes/',
+    '/nexus/',
 ], [
     '/docs/assets/',
     '/docs/v6.6/assets/',

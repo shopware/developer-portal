@@ -182,6 +182,19 @@
         "env.ORG_RELEASE_NOTES",
         "shopware"
       ]
+    },
+    {
+      "name": "shopware/nexus-docs",
+      "src": "src",
+      "dst": "nexus",
+      "branch": [
+        "env.BRANCH_NEXUS",
+        "main"
+      ],
+      "org": [
+        "env.ORG_NEXUS",
+        "shopware"
+      ]
     }
   ]
 }
