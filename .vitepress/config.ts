@@ -265,7 +265,7 @@ const addOGImage = (head: HeadConfig[], context: TransformContext) => {
     'meta',
     {
       property: 'og:image',
-      content: `https://og-image-generator-eta-nine.vercel.app/og/dev/v1.png?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
+      content: `https://og-image-generator-eta-nine.vercel.app/og/docs/v1.png?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
     },
   ])
 
