@@ -257,6 +257,21 @@ const addCanonicalTags = (head, context) => {
   return head
 }
 
+const addOGImage = (head: HeadConfig[], context: TransformContext) => {
+  const title = context.title.split('|', 1)[0].trim()
+  const description = context.description
+
+  head.push([
+    'meta',
+    {
+      property: 'og:image',
+      content: `https://og-image-generator-eta-nine.vercel.app/og/docs/v1.png?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
+    },
+  ])
+
+  return head
+}
+
 function missingVueImportFallback(): Plugin {
   const virtualPrefix = '\0missing-vue-import:'
 
