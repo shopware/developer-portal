@@ -1,0 +1,27 @@
+# Shopware Developer Documentation — v6.6
+
+> Developer documentation from the shopware/docs v6.6 branch. Page applicability within this branch is unknown unless the linked page explicitly says otherwise.
+
+Choose a section index to browse the documentation. Branch membership identifies the source revision; it does not prove a page applies to every release on that branch.
+
+Other branch indexes: [main](https://developer.shopware.com/llms.txt); [v6.5](https://developer.shopware.com/docs/v6.5/llms.txt).
+
+## Overview
+
+- [Overview](https://developer.shopware.com/docs/v6.6/overview/llms.txt): Browse overview documentation.
+
+## Concepts
+
+- [Concepts](https://developer.shopware.com/docs/v6.6/concepts/llms.txt): Browse concepts documentation.
+
+## Guides
+
+- [Guides](https://developer.shopware.com/docs/v6.6/guides/llms.txt): Browse guides documentation.
+
+## Products
+
+- [Products](https://developer.shopware.com/docs/v6.6/products/llms.txt): Browse products documentation.
+
+## Resources
+
+- [Resources](https://developer.shopware.com/docs/v6.6/resources/llms.txt): Browse resources documentation.

@@ -1,0 +1,19 @@
+# Guides / Upgrades Migrations
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Administration](https://developer.shopware.com/docs/guides/upgrades-migrations/administration.md): Administration: These guides cover architectural changes and migration paths affecting Administration extensions, helping you prepare plugins for major system transitions. Depending on the version, some changes—for example, Vue 3, Pinia
+- [Future Development Roadmap: Changing from Webpack to Vite](https://developer.shopware.com/docs/guides/upgrades-migrations/administration/vite.md): Future Development Roadmap: Changing from Webpack to Vite: The information provided in this article, including timelines and specific implementations, is subject to change.
+- [Future Development Roadmap: Removing Vue Migration Build](https://developer.shopware.com/docs/guides/upgrades-migrations/administration/vue-migration-build.md): Future Development Roadmap: Removing Vue Migration Build: The information provided in this article, including timelines and specific implementations, is subject to change.
+- [Future Development Roadmap: Upgrading to Meteor Components](https://developer.shopware.com/docs/guides/upgrades-migrations/administration/meteor-components.md): Future Development Roadmap: Upgrading to Meteor Components: The information provided in this article, including timelines and specific implementations, is subject to change.
+- [Migrating Extension Translations to the Country-Independent Snippet Layer](https://developer.shopware.com/docs/guides/upgrades-migrations/extension-translation.md): Migrating Extension Translations to the Country-Independent Snippet Layer: Starting with Shopware 6.7.3, a new country-independent snippet layer has been introduced to reduce duplicate
+- [Migration from Vuex in Shopware to Pinia](https://developer.shopware.com/docs/guides/upgrades-migrations/administration/pinia.md): Migration from Vuex in Shopware to Pinia: With the release of Shopware 6.7, we will replace Vuex with Pinia as the state management library for the administration.
+- [Migration Guide: Language Pack Plugin → Integrated Translation Handling](https://developer.shopware.com/docs/guides/upgrades-migrations/language-pack-migration.md): Migration Guide: Language Pack Plugin → Integrated Translation Handling: Starting with Shopware 6.7.3.0, translations are managed directly in Shopware. From 6.8.0.0, the
+- [Moving Towards Native Vue](https://developer.shopware.com/docs/guides/upgrades-migrations/administration/vue-native.md): Moving Towards Native Vue: This article was updated. It previously described the migration as a fixed roadmap tied to specific Shopware versions.
+- [Upgrade Shopware](https://developer.shopware.com/docs/guides/upgrades-migrations/upgrade-shopware.md): Upgrade Shopware: This guide explains how to update an existing Shopware installation. For local project preparation, the recommended workflow is the Shopware CLI upgrade wizard, which combines readiness checks, extension compatibility an
+- [Version Upgrades and Migrations](https://developer.shopware.com/docs/guides/upgrades-migrations.md): Version Upgrades and Migrations: This section covers version-based upgrades and the required migration effort for Shopware core and extensions. When upgrading to a new minor or major Shopware version, review it to understand breaking changes, required a
+- [Vue 3 Upgrade](https://developer.shopware.com/docs/guides/upgrades-migrations/administration/vue3.md): Vue 3 Upgrade: The Shopware administration uses Vue.js 2, which will reach its end of life (EOL) on December 31st, 2023. To deliver up-to-date and maintainable software, the administration will use Vue.js 3 from Shopware version 6.6 an

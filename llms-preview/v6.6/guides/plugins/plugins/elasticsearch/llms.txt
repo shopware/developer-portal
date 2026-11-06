@@ -1,0 +1,10 @@
+# Guides / Plugins / Plugins / Elasticsearch
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [Adding Product Entity Extension to Elasticsearch](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/elasticsearch/add-product-entity-extension-to-elasticsearch.md): Adding Product Entity Extension to Elasticsearch: In this guide you'll learn how to add extended fields of the product entity to the elasticsearch engine to make it searchable.
+- [Elasticsearch](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/elasticsearch.md): Elasticsearch: By extending fields of an entity to the Elasticsearch engine, you expand the search capabilities of Shopware, allowing users to search based on additional attributes or metadata. This enhances the overall search experien

@@ -1,0 +1,15 @@
+# Guides / Installation
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [Devenv](https://developer.shopware.com/docs/v6.6/guides/installation/setups/devenv.md): Devenv: Imagine devenv to function as a dependency manager for the services and packages that you need to run your application for local development or even in a CI/CD context.
+- [Docker](https://developer.shopware.com/docs/v6.6/guides/installation/setups/docker.md): Docker: This setup is intended for development, if you want to use Docker for production, please check out this guide.
+- [Installation Overview](https://developer.shopware.com/docs/v6.6/guides/installation.md): Installation Overview: This section discusses ways to set up Shopware on local machines so you can use it as a foundation for your development.
+- [Project Template](https://developer.shopware.com/docs/v6.6/guides/installation/template.md): Project Template: The Shopware project template is a Composer project that can be used as starting point for new Shopware Projects, or if you want to develop extensions or themes for Shopware.
+- [Requirements](https://developer.shopware.com/docs/v6.6/guides/installation/requirements.md): Requirements: Before installing Shopware 6, take a quick look at the requirements below to check if your local environment is capable of running it.
+- [Setups](https://developer.shopware.com/docs/v6.6/guides/installation/setups.md): Setups: Head over to the Requirements section to install and configure the necessary services like a database and a webserver to a Unix system like Linux, macOS, WSL, etc.
+- [Symfony CLI](https://developer.shopware.com/docs/v6.6/guides/installation/setups/symfony-cli.md): Symfony CLI: Symfony CLI is a popular tool in the Symfony ecosystem that helps to spawn a local development environment. It is a lightweight and an alternative way to Docker to run the application locally.

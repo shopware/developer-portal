@@ -1,0 +1,12 @@
+# Resources / References / Config Reference
+
+> v6.5 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.5/llms.txt)
+
+## Pages
+
+- [Apache](https://developer.shopware.com/docs/v6.5/resources/references/config-reference/server/apache.md): Apache: The document root must always point to the public folder, to ensure all functionality works.
+- [Config Reference](https://developer.shopware.com/docs/v6.5/resources/references/config-reference.md): Config Reference: This section gives you a reference on server configuration.
+- [Nginx](https://developer.shopware.com/docs/v6.5/resources/references/config-reference/server/nginx.md): Nginx: The document root must always point to the public folder, to ensure all functionality works.
+- [Server](https://developer.shopware.com/docs/v6.5/resources/references/config-reference/server.md): Server: This section gives you a reference on server configuration.

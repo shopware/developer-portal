@@ -1,0 +1,10 @@
+# Resources / References / Adr / By 2025
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [Make Rule classes final](https://developer.shopware.com/docs/v6.6/resources/references/adr/2025-01-29-make-rule-classes-final.md): Make Rule classes final: This document represents an architecture decision record (ADR) and has been mirrored from the ADR section in our Shopware 6 repository.
+- [Remove the asterisk next to every price and replace it with actual text](https://developer.shopware.com/docs/v6.6/resources/references/adr/2025-01-01-remove-asterisk-next-to-every-price.md): Remove the asterisk next to every price and replace it with actual text: This document represents an architecture decision record (ADR) and has been mirrored from the ADR section in our Shopware 6 repository.
