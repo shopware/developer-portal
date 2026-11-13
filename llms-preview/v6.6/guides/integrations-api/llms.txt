@@ -1,0 +1,15 @@
+# Guides / Integrations Api
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [API Versioning](https://developer.shopware.com/docs/v6.6/guides/integrations-api/general-concepts/api-versioning.md): API Versioning: Starting with Shopware version 6.4.0.0, we decided to change our API versioning strategy. This article will cover what has been done and changed, how it used to be, and what the version strategy looks like now.
+- [General Concepts](https://developer.shopware.com/docs/v6.6/guides/integrations-api/general-concepts.md): General Concepts: Even though the Admin API and the Store API serve very different purposes, they have some commonalities handy to be aware of.
+- [Generated Reference](https://developer.shopware.com/docs/v6.6/guides/integrations-api/general-concepts/generated-reference.md): Generated Reference: Shopware generates schemas for both HTTP APIs that can be interpreted by API client libraries and documentation tools, such as Swagger.io.
+- [Integrations/API](https://developer.shopware.com/docs/v6.6/guides/integrations-api.md): Integrations/API: Generally, Shopware provides two APIs that serve two aspects of integrations with our platform. Both APIs are based on HTTP and though they serve different use cases, they share some underlying concepts. We recommend und
+- [Partial Data Loading](https://developer.shopware.com/docs/v6.6/guides/integrations-api/general-concepts/partial-data-loading.md): Partial Data Loading: Partial data loading allows you to select specific fields of an entity to be returned by the API. This can be useful if you only need a few fields of an entity and don't want to load the whole entity. This can reduce the
+- [Request Headers](https://developer.shopware.com/docs/v6.6/guides/integrations-api/general-concepts/request-headers.md): Request Headers: By default, the API delivers the entities via the system language. This can be changed by specifying a language id using the sw-language-id header.
+- [Search Criteria](https://developer.shopware.com/docs/v6.6/guides/integrations-api/general-concepts/search-criteria.md): Search Criteria: Generally, we refer to the endpoints that use POST method and receive the criteria as a JSON object as search criteria. It takes the same arguments as a DAL criteria. Some endpoints expect more parameters than specified

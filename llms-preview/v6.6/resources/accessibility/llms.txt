@@ -1,0 +1,9 @@
+# Resources / Accessibility
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [Accessibility in the Storefront](https://developer.shopware.com/docs/v6.6/resources/accessibility/storefront.md): Accessibility in the Storefront: At Shopware, we are committed to creating inclusive and barrier-free shopping experiences for our merchants and their customers.

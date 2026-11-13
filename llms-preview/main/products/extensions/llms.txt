@@ -1,0 +1,37 @@
+# Products / Extensions
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Advanced Search
+
+- [Advanced Search](https://developer.shopware.com/products/extensions/advanced-search/llms.txt): Browse this documentation section.
+
+## B2B Components
+
+- [B2B Components](https://developer.shopware.com/products/extensions/b2b-components/llms.txt): Browse this documentation section.
+
+## B2B Suite
+
+- [B2B Suite](https://developer.shopware.com/products/extensions/b2b-suite/llms.txt): Browse this documentation section.
+
+## B2B Suite Migration
+
+- [B2B Suite Migration](https://developer.shopware.com/products/extensions/b2b-suite-migration/llms.txt): Browse this documentation section.
+
+## Commercial
+
+- [Commercial](https://developer.shopware.com/products/extensions/commercial/llms.txt): Browse this documentation section.
+
+## Migration Assistant
+
+- [Migration Assistant](https://developer.shopware.com/products/extensions/migration-assistant/llms.txt): Browse this documentation section.
+
+## Subscriptions
+
+- [Subscriptions](https://developer.shopware.com/products/extensions/subscriptions/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [Extensions](https://developer.shopware.com/docs/products/extensions.md): Extensions: Shopware provides some unique extensions:

@@ -1,0 +1,13 @@
+# Resources / Tooling
+
+> v6.5 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.5/llms.txt)
+
+## Pages
+
+- [CLI](https://developer.shopware.com/docs/v6.5/resources/tooling/cli.md): CLI: Shopware developer documentation.
+- [Hot Module Reloading](https://developer.shopware.com/docs/v6.5/resources/tooling/cli/using-watchers.md): Hot Module Reloading: When developing with Shopware, you will probably notice that changes in JavaScript require commands to build the Administration or Storefront, depending on your change using the following commands:
+- [IDE](https://developer.shopware.com/docs/v6.5/resources/tooling/ide.md): IDE: Shopware developer documentation.
+- [Shopware 6 Toolbox](https://developer.shopware.com/docs/v6.5/resources/tooling/ide/shopware-toolbox.md): Shopware 6 Toolbox: Shopware 6 Toolbox is a helper plugin and productivity tool for common tasks for Shopware 6 development. It adds some live templates and scaffolding of common Shopware files.
+- [Tooling](https://developer.shopware.com/docs/v6.5/resources/tooling.md): Tooling: Shopware developer documentation.
