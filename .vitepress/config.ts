@@ -114,6 +114,12 @@ const sections: SwagSectionsConfig[] = [
     ],
   },
   {
+    title: 'Nexus',
+    matches: [
+      '/nexus/',
+    ],
+  },
+  {
     title: 'General',
     matches: [
       '/',
@@ -181,6 +187,13 @@ const embeds: SwagEmbedsConfig[] = [
     folder: 'src',
   },
   {
+    repository: 'nexus-docs',
+    points: {
+      '/nexus/': 'main',
+    },
+    folder: 'src',
+  },
+  {
     repository: 'developer-portal',
     points: {
       '/': 'main',
@@ -240,6 +253,21 @@ const addCanonicalTags = (head, context) => {
         }
     ]);
   }
+
+  return head
+}
+
+const addOGImage = (head: HeadConfig[], context: TransformContext) => {
+  const title = context.title.split('|', 1)[0].trim()
+  const description = context.description
+
+  head.push([
+    'meta',
+    {
+      property: 'og:image',
+      content: `https://og-image-generator-eta-nine.vercel.app/og/docs/v1.png?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
+    },
+  ])
 
   return head
 }
@@ -598,6 +626,11 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
 
   async transformHead(context: TransformContext): Promise<HeadConfig[]> {
     const head = addOGImage([], context) || []
+
+    if (context.pageData.frontmatter?.meta?.description) {
+      head.push(['meta', { property: 'description', content: context.pageData.frontmatter.meta.description }])
+    }
+
     return addCanonicalTags(head, context);
   },
 
@@ -693,6 +726,7 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         '/resources/meteor-icon-kit/': 1,
         '/resources/meteor-component-library/': 1,
         '/release-notes/': 1,
+        '/nexus/': 1,
       }
     });
 
