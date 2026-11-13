@@ -626,6 +626,11 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
 
   async transformHead(context: TransformContext): Promise<HeadConfig[]> {
     const head = addOGImage([], context) || []
+
+    if (context.pageData.frontmatter?.meta?.description) {
+      head.push(['meta', { property: 'description', content: context.pageData.frontmatter.meta.description }])
+    }
+
     return addCanonicalTags(head, context);
   },
 
