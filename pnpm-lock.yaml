@@ -19,6 +19,9 @@ importers:
       '@shopware-ag/meteor-icon-kit':
         specifier: ^5.6.0
         version: 5.6.0(typescript@6.0.3)
+      '@shopware/chatbot':
+        specifier: ^2.4.3
+        version: 2.4.3(vue@3.5.34(typescript@6.0.3))
       '@vue-flow/core':
         specifier: ^1.48.2
         version: 1.48.2(vue@3.5.34(typescript@6.0.3))
@@ -2655,6 +2658,11 @@ packages:
       vite-plugin-inspect: ^0.8.7
       vitepress: ^1.4.0
       vitest: ^2.1.2
+
+  '@shopware/chatbot@2.4.3':
+    resolution: {integrity: sha512-E1k79WXXGPBn0PzchimVdP4fgqitGy9Q0848E4rZzeC3cm4D7wZ88GCZioVYUGBHV5L2NSWAAwbcA/X1Acjhxw==}
+    peerDependencies:
+      vue: ^3.5.0
 
   '@sinclair/typebox@0.27.10':
     resolution: {integrity: sha512-MTBk/3jGLNB2tVxv6uLlFh1iu64iYOQ2PbdOSK3NW8JZsmlaOh2q6sdtKowBhfw8QFLmYNzTW4/oK4uATIi6ZA==}
@@ -11450,6 +11458,10 @@ snapshots:
       - postcss
       - supports-color
       - vite
+
+  '@shopware/chatbot@2.4.3(vue@3.5.34(typescript@6.0.3))':
+    dependencies:
+      vue: 3.5.34(typescript@6.0.3)
 
   '@sinclair/typebox@0.27.10': {}
 
