@@ -1,0 +1,12 @@
+# Guides / Plugins / Plugins / Services
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Add Custom Service](https://developer.shopware.com/docs/guides/plugins/plugins/services/add-custom-service.md): Add Custom Service: In this guide you'll learn how to create a custom service using the Symfony DI Container.
+- [Adjusting a Service](https://developer.shopware.com/docs/guides/plugins/plugins/services/adjusting-service.md): Adjusting a Service: Service decoration is one of the main ways to extend Shopware behavior from a plugin, alongside reacting to events. Prefer events when you need to react to something Shopware does. Prefer service decoration when you need
+- [Dependency Injection](https://developer.shopware.com/docs/guides/plugins/plugins/services/dependency-injection.md): Dependency Injection: This guide explains how to inject services into other services. For more details, see the Symfony documentation.
+- [Services](https://developer.shopware.com/docs/guides/plugins/plugins/services.md): Services: This section covers the service layer of plugin development. Services are where reusable plugin logic lives, dependency injection wires services together, and service decoration lets plugins change existing Shopware beha

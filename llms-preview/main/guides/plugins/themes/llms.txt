@@ -1,0 +1,24 @@
+# Guides / Plugins / Themes
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Add Assets to a Theme](https://developer.shopware.com/docs/guides/plugins/themes/assets/add-assets-to-theme.md): Add Assets to a Theme: Your theme can include custom assets like images. This short guide will show you where to store your custom assets and how you can link them in Twig and SCSS.
+- [Add Custom Icons](https://developer.shopware.com/docs/guides/plugins/themes/assets/add-icons.md): Add Custom Icons: In this guide, you will learn how to use the icon renderer component as well as adding custom icons.
+- [Add SCSS Styling and JavaScript to a Theme](https://developer.shopware.com/docs/guides/plugins/themes/styling/add-css-js-to-theme.md): Add SCSS Styling and JavaScript to a Theme: This guide explains how you can add your custom styling via SCSS and add your custom JavaScript to your theme.
+- [Create a Theme](https://developer.shopware.com/docs/guides/plugins/themes/create-a-theme.md): Create a Theme: This guide covers how to create, install, and activate a custom Shopware 6 theme.
+- [Override Bootstrap Variables in a Theme](https://developer.shopware.com/docs/guides/plugins/themes/styling/override-bootstrap-variables-in-a-theme.md): Override Bootstrap Variables in a Theme: The storefront theme is implemented as a skin on top of Bootstrap:
+- [Override responsive breakpoints in a Theme](https://developer.shopware.com/docs/guides/plugins/themes/styling/override-theme-breakpoints.md): Override responsive breakpoints in a Theme: Shopware uses the default breakpoint configuration of Bootstrap for responsive layout adjustments. However, these breakpoints are also passed to Twig and JS. If you want to override these breakpoints with your custom con
+- [Storefront Themes](https://developer.shopware.com/docs/guides/plugins/themes.md): Storefront Themes: Storefront Themes let you customize the visual appearance of the Shopware Storefront. They are not a separate extension type, but are either implemented as plugins or, in Cloud environments, delivered via apps.
+- [Theme Assets](https://developer.shopware.com/docs/guides/plugins/themes/assets.md): Theme Assets: This section explains how to work with assets in a Shopware theme.
+- [Theme Base Guide](https://developer.shopware.com/docs/guides/plugins/themes/theme-base-guide.md): Theme Base Guide: If you are building a theme, follow this path:
+- [Theme Configuration](https://developer.shopware.com/docs/guides/plugins/themes/configuration.md): Theme Configuration: This section explains how to configure themes in Shopware.
+- [Theme Configuration](https://developer.shopware.com/docs/guides/plugins/themes/configuration/theme-configuration.md): Theme Configuration: The configInheritance is available from Shopware Version 6.4.8.0
+- [Theme Inheritance](https://developer.shopware.com/docs/guides/plugins/themes/inheritance.md): Theme Inheritance: This section explains how to extend and compose themes using Shopware’s inheritance system. Guides cover:
+- [Theme Inheritance](https://developer.shopware.com/docs/guides/plugins/themes/inheritance/add-theme-inheritance.md): Theme Inheritance: This guide explains how you can extend an existing theme. What are use cases to inherit from another theme? Maybe you already use a specific theme for a sales channel and you want to use it in another sales channel for a
+- [Theme Inheritance Configuration](https://developer.shopware.com/docs/guides/plugins/themes/configuration/theme-inheritance-configuration.md): Theme Inheritance Configuration: The configInheritance is available from Shopware Version 6.4.8.0
+- [Theme Styling](https://developer.shopware.com/docs/guides/plugins/themes/styling.md): Theme Styling: This section explains how to customize the visual styling of a Shopware theme. Included guides:
+- [Theme with Bootstrap Styling](https://developer.shopware.com/docs/guides/plugins/themes/inheritance/add-theme-inheritance-without-resources.md): Theme with Bootstrap Styling: The Shopware default theme is using Bootstrap with additional custom styling. But sometimes you want to develop a theme without the Shopware default styling.

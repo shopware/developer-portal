@@ -1,0 +1,15 @@
+# Products / Sales Agent
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [Appearance](https://developer.shopware.com/docs/v6.6/products/sales-agent/appearance.md): Appearance: To change the appearance of your Sales Agent, you can customize the theme, colors, and logo.
+- [Client and Server Routing](https://developer.shopware.com/docs/v6.6/products/sales-agent/routing.md): Client and Server Routing: Refer to the Nuxt documentation for more information about how server and client routes work internally.
+- [Creating a user and set restrictions](https://developer.shopware.com/docs/v6.6/products/sales-agent/users.md): Creating a user and set restrictions: You can create a user by sending a POST request to the /api/user endpoint. The x-api-key header is required and can be set in the environment (APIAUTHSECRETKEY).
+- [Deployment](https://developer.shopware.com/docs/v6.6/products/sales-agent/deployment.md): Deployment: For general information about running a Nuxt application in production, refer to the official docs.
+- [Installation](https://developer.shopware.com/docs/v6.6/products/sales-agent/installation.md): Installation: 1.) Clone the Repository
+- [Sales Agent Overview](https://developer.shopware.com/docs/v6.6/products/sales-agent.md): Sales Agent Overview: This project is designed to streamline the communication and sales processes between sales representatives and their customers. By integrating Shopware, it enables sales representatives to handle various tasks in an opti
+- [Testing](https://developer.shopware.com/docs/v6.6/products/sales-agent/testing.md): Testing: Vitest is used for unit testing. The tests are located in the tests directory.
