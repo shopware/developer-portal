@@ -75,8 +75,8 @@ importers:
         specifier: ^1.0.9
         version: 1.0.9
       '@playwright/test':
-        specifier: 1.46.1
-        version: 1.46.1
+        specifier: 1.61.0
+        version: 1.61.0
       '@shopware-docs/cli':
         specifier: ^1.3.7
         version: 1.3.7
@@ -88,7 +88,7 @@ importers:
         version: 1.3.7(postcss@8.5.15)(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1))(vitepress@1.6.4(patch_hash=66a5003f382f50f1a98fa341ba42b8c7eea8255440ed1c116747cade746088eb)(@algolia/client-search@5.40.1)(@types/node@25.9.1)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.3.0)(less@4.4.2)(postcss@8.5.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sass@1.99.0)(search-insights@2.17.3)(terser@5.47.1)(typescript@6.0.3))
       '@shopware-docs/vitest':
         specifier: ^1.3.7
-        version: 1.3.7(@playwright/test@1.46.1)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.2.0)(playwright-chromium@1.60.0)(postcss@8.5.15)(slugify@1.6.9)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1)))(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1))(vitepress@1.6.4(patch_hash=66a5003f382f50f1a98fa341ba42b8c7eea8255440ed1c116747cade746088eb)(@algolia/client-search@5.40.1)(@types/node@25.9.1)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.3.0)(less@4.4.2)(postcss@8.5.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sass@1.99.0)(search-insights@2.17.3)(terser@5.47.1)(typescript@6.0.3))(vitest@2.1.9)
+        version: 1.3.7(@playwright/test@1.61.0)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.2.0)(playwright-chromium@1.61.0)(postcss@8.5.15)(slugify@1.6.9)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1)))(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1))(vitepress@1.6.4(patch_hash=66a5003f382f50f1a98fa341ba42b8c7eea8255440ed1c116747cade746088eb)(@algolia/client-search@5.40.1)(@types/node@25.9.1)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.3.0)(less@4.4.2)(postcss@8.5.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sass@1.99.0)(search-insights@2.17.3)(terser@5.47.1)(typescript@6.0.3))(vitest@2.1.9)
       '@storybook/addon-essentials':
         specifier: ^7.6.10
         version: 7.6.20(@types/react-dom@17.0.26(@types/react@17.0.89))(@types/react@17.0.89)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -204,8 +204,8 @@ importers:
         specifier: ^12.1.3
         version: 12.1.3
       playwright-chromium:
-        specifier: ^1.60.0
-        version: 1.60.0
+        specifier: 1.61.0
+        version: 1.61.0
       react:
         specifier: ^19.2.6
         version: 19.2.6
@@ -1627,42 +1627,36 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm-musl@2.5.6':
     resolution: {integrity: sha512-Ve3gUCG57nuUUSyjBq/MAM0CzArtuIOxsBdQ+ftz6ho8n7s1i9E1Nmk/xmP323r2YL0SONs1EuwqBp2u1k5fxg==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-linux-arm64-glibc@2.5.6':
     resolution: {integrity: sha512-f2g/DT3NhGPdBmMWYoxixqYr3v/UXcmLOYy16Bx0TM20Tchduwr4EaCbmxh1321TABqPGDpS8D/ggOTaljijOA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-arm64-musl@2.5.6':
     resolution: {integrity: sha512-qb6naMDGlbCwdhLj6hgoVKJl2odL34z2sqkC7Z6kzir8b5W65WYDpLB6R06KabvZdgoHI/zxke4b3zR0wAbDTA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-linux-x64-glibc@2.5.6':
     resolution: {integrity: sha512-kbT5wvNQlx7NaGjzPFu8nVIW1rWqV780O7ZtkjuWaPUgpv2NMFpjYERVi0UYj1msZNyCzGlaCWEtzc+exjMGbQ==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@parcel/watcher-linux-x64-musl@2.5.6':
     resolution: {integrity: sha512-1JRFeC+h7RdXwldHzTsmdtYR/Ku8SylLgTU/reMuqdVD7CtLwf0VR1FqeprZ0eHQkO0vqsbvFLXUmYm/uNKJBg==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@parcel/watcher-win32-arm64@2.5.6':
     resolution: {integrity: sha512-3ukyebjc6eGlw9yRt678DxVF7rjXatWiHvTXqphZLvo7aC5NdEgFufVwjFfY51ijYEWpXbqF5jtrK275z52D4Q==}
@@ -1690,8 +1684,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@playwright/test@1.46.1':
-    resolution: {integrity: sha512-Fq6SwLujA/DOIvNC2EL/SojJnkKf/rAwJ//APpJJHRyMi1PdKrY3Az+4XNQ51N4RTbItbIByQ0jgd1tayq1aeA==}
+  '@playwright/test@1.61.0':
+    resolution: {integrity: sha512-cKA5B6lpFEMyMGjxF54QihfYpB4FkEGH+qZhtArDEG+wezQAJY8Pq6C7T1SjWz+FFzt3TbyoXBQYk/0292TdJA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2439,67 +2433,56 @@ packages:
     resolution: {integrity: sha512-PsNAbcyv9CcecAUagQefwX8fQn9LQ4nZkpDboBOttmyffnInRy8R8dSg6hxxl2Re5QhHBf6FYIDhIj5v982ATQ==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.52.5':
     resolution: {integrity: sha512-Fw4tysRutyQc/wwkmcyoqFtJhh0u31K+Q6jYjeicsGJJ7bbEq8LwPWV/w0cnzOqR2m694/Af6hpFayLJZkG2VQ==}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.52.5':
     resolution: {integrity: sha512-a+3wVnAYdQClOTlyapKmyI6BLPAFYs0JM8HRpgYZQO02rMR09ZcV9LbQB+NL6sljzG38869YqThrRnfPMCDtZg==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.52.5':
     resolution: {integrity: sha512-AvttBOMwO9Pcuuf7m9PkC1PUIKsfaAJ4AYhy944qeTJgQOqJYJ9oVl2nYgY7Rk0mkbsuOpCAYSs6wLYB2Xiw0Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-loong64-gnu@4.52.5':
     resolution: {integrity: sha512-DkDk8pmXQV2wVrF6oq5tONK6UHLz/XcEVow4JTTerdeV1uqPeHxwcg7aFsfnSm9L+OO8WJsWotKM2JJPMWrQtA==}
     cpu: [loong64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-ppc64-gnu@4.52.5':
     resolution: {integrity: sha512-W/b9ZN/U9+hPQVvlGwjzi+Wy4xdoH2I8EjaCkMvzpI7wJUs8sWJ03Rq96jRnHkSrcHTpQe8h5Tg3ZzUPGauvAw==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.52.5':
     resolution: {integrity: sha512-sjQLr9BW7R/ZiXnQiWPkErNfLMkkWIoCz7YMn27HldKsADEKa5WYdobaa1hmN6slu9oWQbB6/jFpJ+P2IkVrmw==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-musl@4.52.5':
     resolution: {integrity: sha512-hq3jU/kGyjXWTvAh2awn8oHroCbrPm8JqM7RUpKjalIRWWXE01CQOf/tUNWNHjmbMHg/hmNCwc/Pz3k1T/j/Lg==}
     cpu: [riscv64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-s390x-gnu@4.52.5':
     resolution: {integrity: sha512-gn8kHOrku8D4NGHMK1Y7NA7INQTRdVOntt1OCYypZPRt6skGbddska44K8iocdpxHTMMNui5oH4elPH4QOLrFQ==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.52.5':
     resolution: {integrity: sha512-hXGLYpdhiNElzN770+H2nlx+jRog8TyynpTVzdlc6bndktjKWyZyiCsuDAlpd+j+W+WNqfcyAWz9HxxIGfZm1Q==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.52.5':
     resolution: {integrity: sha512-arCGIcuNKjBoKAXD+y7XomR9gY6Mw7HnFBv5Rw7wQRvwYLR7gBAgV7Mb2QTyjXfTveBNFAtPt46/36vV9STLNg==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-openharmony-arm64@4.52.5':
     resolution: {integrity: sha512-QoFqB6+/9Rly/RiPjaomPLmR/13cgkIGfA40LHly9zcH1S0bN2HVFYk3a1eAyHQyjs3ZJYlXvIGtcCs5tko9Cw==}
@@ -3079,28 +3062,24 @@ packages:
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@swc/core-linux-arm64-musl@1.13.5':
     resolution: {integrity: sha512-9+ZxFN5GJag4CnYnq6apKTnnezpfJhCumyz0504/JbHLo+Ue+ZtJnf3RhyA9W9TINtLE0bC4hKpWi8ZKoETyOQ==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@swc/core-linux-x64-gnu@1.13.5':
     resolution: {integrity: sha512-WD530qvHrki8Ywt/PloKUjaRKgstQqNGvmZl54g06kA+hqtSE2FTG9gngXr3UJxYu/cNAjJYiBifm7+w4nbHbA==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@swc/core-linux-x64-musl@1.13.5':
     resolution: {integrity: sha512-Luj8y4OFYx4DHNQTWjdIuKTq2f5k6uSXICqx+FSabnXptaOBAbJHNbHT/06JZh6NRUouaf0mYXN0mcsqvkhd7Q==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@swc/core-win32-arm64-msvc@1.13.5':
     resolution: {integrity: sha512-cZ6UpumhF9SDJvv4DA2fo9WIzlNFuKSkZpZmPG1c+4PFSEMy5DFOjBSllCvnqihCabzXzpn6ykCwBmHpy31vQw==}
@@ -5598,6 +5577,7 @@ packages:
   image-size@0.5.5:
     resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please migrate to image-size@2.x
     hasBin: true
 
   immutable@5.1.5:
@@ -7064,23 +7044,18 @@ packages:
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
 
-  playwright-chromium@1.60.0:
-    resolution: {integrity: sha512-xxz9pc2HIxQW/Qg9ijG2fZOHRT//KhLo0KfvJRa45YYRrcA7ZONoilgJR40SW5pmecb6HkuROaeViXoCaXTZyQ==}
+  playwright-chromium@1.61.0:
+    resolution: {integrity: sha512-7gZbsqqLT4WSeK/DUrsAFFvPdzP3Bh3kn9sK+YLZ9Q2e6CB+vd0TeqHvmkPQKK2IyXhPNGx5DV0YbEP6sTFBHA==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.46.1:
-    resolution: {integrity: sha512-h9LqIQaAv+CYvWzsZ+h3RsrqCStkBHlgo6/TJlFst3cOTlLghBQlJwPOZKQJTKNaD3QIB7aAVQ+gfWbN3NXB7A==}
+  playwright-core@1.61.0:
+    resolution: {integrity: sha512-caX7TrY3Ml6egyDX0WUcTHDxodl/b51y5wJOdCEA36QviK/s2g081hvmGs8eaE3DWb6NYZQ6BjO/QkNRPenoPA==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.60.0:
-    resolution: {integrity: sha512-9bW6zvX/m0lEbgTKJ6YppOKx8H3VOPBMOCFh2irXFOT4BbHgrx5hPjwJYLT40Lu+4qtD36qKc/Hn56StUW57IA==}
-    engines: {node: '>=18'}
-    hasBin: true
-
-  playwright@1.46.1:
-    resolution: {integrity: sha512-oPcr1yqoXLCkgKtD5eNUPLiN40rYEM39odNpIb6VE6S7/15gJmA1NzVv6zJYusV0e7tzvkU/utBFNa/Kpxmwng==}
+  playwright@1.61.0:
+    resolution: {integrity: sha512-Z+7BeeqQPRRzklHsVFP4KTGIyMxKUmfeRA4WisM6G3/XW6nwGeX6fX9qYaDa+CiUqpOkb2f6X3nar05R3kSuJQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -8722,8 +8697,8 @@ packages:
   vue-component-type-helpers@2.2.12:
     resolution: {integrity: sha512-YbGqHZ5/eW4SnkPNR44mKVc6ZKQoRs/Rux1sxC6rdwXb4qpbOSYfDr9DsTHolOTGmIKgM9j141mZbBeg05R1pw==}
 
-  vue-component-type-helpers@3.3.9:
-    resolution: {integrity: sha512-3c/UfMe0SqyEfcGTyH7mfshHagJ9QTCbppCb0/uGpHZpFug7+If3GeGZN7I0YheKEExemx3xldQPoO7PQSOLQg==}
+  vue-component-type-helpers@3.3.14:
+    resolution: {integrity: sha512-Pq3+OnbCiPCHk0R7KSZrx+j/XXaUn2kSQ1epxq60w8CPbByLjC1EJgV51n4WY851sTXUVzsNMuitywdkdVyKjA==}
 
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
@@ -10534,9 +10509,9 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@playwright/test@1.46.1':
+  '@playwright/test@1.61.0':
     dependencies:
-      playwright: 1.46.1
+      playwright: 1.61.0
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -11431,13 +11406,13 @@ snapshots:
       - supports-color
       - vite
 
-  '@shopware-docs/vitest@1.3.7(@playwright/test@1.46.1)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.2.0)(playwright-chromium@1.60.0)(postcss@8.5.15)(slugify@1.6.9)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1)))(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1))(vitepress@1.6.4(patch_hash=66a5003f382f50f1a98fa341ba42b8c7eea8255440ed1c116747cade746088eb)(@algolia/client-search@5.40.1)(@types/node@25.9.1)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.3.0)(less@4.4.2)(postcss@8.5.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sass@1.99.0)(search-insights@2.17.3)(terser@5.47.1)(typescript@6.0.3))(vitest@2.1.9)':
+  '@shopware-docs/vitest@1.3.7(@playwright/test@1.61.0)(@vitest/coverage-c8@0.33.0(vitest@2.1.9))(get-port@7.2.0)(playwright-chromium@1.61.0)(postcss@8.5.15)(slugify@1.6.9)(vite-plugin-inspect@0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1)))(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1))(vitepress@1.6.4(patch_hash=66a5003f382f50f1a98fa341ba42b8c7eea8255440ed1c116747cade746088eb)(@algolia/client-search@5.40.1)(@types/node@25.9.1)(@types/react@17.0.89)(axios@1.12.2)(fuse.js@7.3.0)(less@4.4.2)(postcss@8.5.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sass@1.99.0)(search-insights@2.17.3)(terser@5.47.1)(typescript@6.0.3))(vitest@2.1.9)':
     dependencies:
-      '@playwright/test': 1.46.1
+      '@playwright/test': 1.61.0
       '@vitest/coverage-c8': 0.33.0(vitest@2.1.9)
       axios: 1.12.2
       get-port: 7.2.0
-      playwright-chromium: 1.60.0
+      playwright-chromium: 1.61.0
       slugify: 1.6.9
       unocss: 66.5.4(postcss@8.5.15)(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1))
       vite-plugin-inspect: 0.8.9(rollup@4.52.5)(vite@5.4.21(@types/node@25.9.1)(less@4.4.2)(sass@1.99.0)(terser@5.47.1))
@@ -12602,7 +12577,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.5.34(typescript@6.0.3)
-      vue-component-type-helpers: 3.3.9
+      vue-component-type-helpers: 3.3.14
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -17061,17 +17036,15 @@ snapshots:
       mlly: 1.8.0
       pathe: 2.0.3
 
-  playwright-chromium@1.60.0:
+  playwright-chromium@1.61.0:
     dependencies:
-      playwright-core: 1.60.0
+      playwright-core: 1.61.0
 
-  playwright-core@1.46.1: {}
+  playwright-core@1.61.0: {}
 
-  playwright-core@1.60.0: {}
-
-  playwright@1.46.1:
+  playwright@1.61.0:
     dependencies:
-      playwright-core: 1.46.1
+      playwright-core: 1.61.0
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -18955,7 +18928,7 @@ snapshots:
 
   vue-component-type-helpers@2.2.12: {}
 
-  vue-component-type-helpers@3.3.9: {}
+  vue-component-type-helpers@3.3.14: {}
 
   vue-demi@0.14.10(vue@3.5.34(typescript@6.0.3)):
     dependencies:
