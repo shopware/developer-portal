@@ -1,12 +1,50 @@
 <template>
   <div class="SwagCopilotNew">
+
     <shopware-chatbot
       v-if="registered"
       class="SwagCopilotNew_chatbot"
       api-base="https://mcp.web.shopware.in/api/v1/chatbot/public/intelligent/stream"
+      :shopware-version="selectedVersion"
+      chatbot-kind="public_embed"
+      title="Developer Docs Mentor"
+      assistant-name="Developer Docs Mentor"
+      intro="Ask about Shopware developer docs, implementation steps, and troubleshooting checks."
     />
+
+    <div class="SwagCopilotNew_versionSelector">
+      <label for="shopware-version">Shopware version:</label>
+      <select
+        id="shopware-version"
+        v-model="selectedVersion"
+        @change="updateVersionQuery"
+      >
+        <option value="6.7">6.7 (latest)</option>
+        <option value="6.6">6.6</option>
+        <option value="6.5">6.5</option>
+      </select>
+    </div>
   </div>
 </template>
+
+<style lang="scss">
+.SwagCopilotNew_versionSelector {
+  margin-right: 1.25rem;
+  display: flex;
+  justify-self: end;
+  font-size: 14px;
+  gap: .5rem;
+  align-items: center;
+  color: var(--c-text-light);
+  margin-bottom: 4rem;
+}
+
+.SwagCopilotNew_versionSelector select {
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
@@ -22,6 +60,22 @@ onMounted(async () => {
 
   registered.value = true;
 });
+
+const supportedVersions = ['6.7', '6.6', '6.5'] as const
+type ShopwareVersion = typeof supportedVersions[number]
+
+const requestedVersion = new URLSearchParams(window.location.search).get('version')
+const selectedVersion = ref<ShopwareVersion>(
+  supportedVersions.includes(requestedVersion as ShopwareVersion)
+    ? requestedVersion as ShopwareVersion
+    : '6.7',
+)
+
+function updateVersionQuery() {
+  const url = new URL(window.location.href)
+  url.searchParams.set('version', selectedVersion.value)
+  window.history.replaceState(window.history.state, '', url)
+}
 </script>
 
 <style lang="scss">
