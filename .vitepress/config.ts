@@ -612,6 +612,11 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
   vue: {
     // https://github.com/vitejs/vite/issues/7854
     reactivityTransform: resolve(__dirname, 'src'), // true
+    template: {
+      compilerOptions: {
+        isCustomElement: tag => tag === 'shopware-chatbot',
+      },
+    },
   },
 
   markdown: {
