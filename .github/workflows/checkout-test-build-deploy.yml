@@ -26,7 +26,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
@@ -55,7 +55,7 @@ jobs:
 #          cd src && zip -q -r db-index.zip * -i '*.md' -x '*/node_modules/*' -x '*/_source/*' -y
 
       - name: Upload build
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           path: |
             ./src/**
@@ -66,7 +66,7 @@ jobs:
 #          path: embed.zip
 
       - name: Upload DB index
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           path: |
             ./src/**/*.md
@@ -84,7 +84,7 @@ jobs:
     needs: embed-docs
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
@@ -117,7 +117,7 @@ jobs:
     needs: embed-docs
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
@@ -139,7 +139,7 @@ jobs:
       #    cd external && zip -r db-external.zip * -i '*.md'
 
       - name: Upload build
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
@@ -148,7 +148,7 @@ jobs:
             vercel.json
 
       #- name: Upload external
-      #  uses: actions/upload-artifact@v6
+      #  uses: actions/upload-artifact@v7
       #  with:
       #    if-no-files-found: error
       #    name: db-external-${{ github.sha }}
@@ -163,7 +163,7 @@ jobs:
       - build
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
@@ -198,11 +198,16 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - uses: actions/download-artifact@v8
         with:
           name: full-build-${{ github.sha }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest

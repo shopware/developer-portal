@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ inputs.repo == 'developer-portal' && inputs.owner == 'shopware' && inputs.branch || github.ref }}
 
@@ -142,7 +142,7 @@ jobs:
         run: zip -r full-build.zip .vitepress/dist/ vercel.json
 
       - name: Upload build
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           if-no-files-found: error
           name: full-build-${{ github.sha }}
@@ -170,7 +170,7 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - uses: actions/download-artifact@v8
         with:
@@ -181,6 +181,11 @@ jobs:
           mkdir -p .vitepress/dist
           unzip -o full-build.zip
           ls -la .vitepress/dist
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
