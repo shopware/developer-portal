@@ -78,6 +78,11 @@
       "permanent": true
     },
     {
+      "source": "/resources/meteor-icon-kit/",
+      "destination": "https://shopware.design/icons/",
+      "statusCode": 302
+    },
+    {
       "source": "/docs/v6.6rc/:url*(/)?",
       "destination": "/docs/:url",
       "statusCode": 302

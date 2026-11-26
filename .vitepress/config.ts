@@ -102,12 +102,6 @@ const sections: SwagSectionsConfig[] = [
     ],
   },
   {
-    title: 'Meteor Icon Kit',
-    matches: [
-      '/resources/meteor-icon-kit/',
-    ],
-  },
-  {
     title: 'Release notes',
     matches: [
       '/release-notes/',
@@ -157,13 +151,6 @@ const embeds: SwagEmbedsConfig[] = [
       '/resources/meteor-component-library/': 'main',
     },
     folder: 'docs',
-  },
-  {
-    repository: 'meteor',
-    points: {
-      '/resources/meteor-icon-kit/': 'main',
-    },
-    folder: 'packages/icon-kit/docs',
   },
   {
     repository: 'admin-api-reference',
@@ -655,15 +642,6 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
           '.wasm'
         ],
       },
-      // meteor-icon-kit
-      {
-        src: 'resources/meteor-icon-kit/public/icons/regular',
-        dst: 'icons/regular',
-      },
-      {
-        src: 'resources/meteor-icon-kit/public/icons/solid',
-        dst: 'icons/solid',
-      },
       // custom static files
       {
         src: 'docs/products/extensions/b2b-suite/guides/example-plugins',
@@ -723,7 +701,6 @@ export default await withExternals(withMermaid(defineConfigWithTheme<ThemeConfig
         '/docs/': 1,
         '/frontends/': 1,
         '/resources/admin-extension-sdk/': 1,
-        '/resources/meteor-icon-kit/': 1,
         '/resources/meteor-component-library/': 1,
         '/release-notes/': 1,
         '/nexus/': 1,

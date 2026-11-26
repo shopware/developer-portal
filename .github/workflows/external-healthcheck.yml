@@ -71,11 +71,6 @@ jobs:
             sed -i "0,/ORG_ADMIN_EXTENSION_SDK.*/s/.*ORG_ADMIN_EXTENSION_SDK.*/ORG_ADMIN_EXTENSION_SDK=$ORG/" ./.github/scripts/embed.sh
             sed -i "0,/BRANCH_ADMIN_EXTENSION_SDK.*/s/.*BRANCH_ADMIN_EXTENSION_SDK.*/BRANCH_ADMIN_EXTENSION_SDK=$BRANCH/" ./.github/scripts/embed.sh
           
-          elif [[ "${{ inputs.repo }}" == "meteor-icon-kit" ]]; then
-            echo "Embedding meteor-icon-kit"
-            sed -i "0,/ORG_METEOR_ICON_KIT.*/s/.*ORG_METEOR_ICON_KIT.*/ORG_METEOR_ICON_KIT=$ORG/" ./.github/scripts/embed.sh
-            sed -i "0,/BRANCH_METEOR_ICON_KIT.*/s/.*BRANCH_METEOR_ICON_KIT.*/BRANCH_METEOR_ICON_KIT=$BRANCH/" ./.github/scripts/embed.sh
-          
           elif [[ "${{ inputs.repo }}" == "meteor-component-library" ]]; then
             echo "Embedding meteor-component-library"
             sed -i "0,/ORG_METEOR_COMPONENT_LIBRARY.*/s/.*ORG_METEOR_COMPONENT_LIBRARY.*/ORG_METEOR_COMPONENT_LIBRARY=$ORG/" ./.github/scripts/embed.sh
@@ -118,11 +113,6 @@ jobs:
           playwright: true
 
       - name: Embed repos
-        env:
-          GITLAB_FRONTENDS_USERNAME: ${{ secrets.GITLAB_FRONTENDS_USERNAME }}
-          GITLAB_FRONTENDS_ACCESS_KEY: ${{ secrets.GITLAB_FRONTENDS_ACCESS_KEY }}
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-          FIGMA_FILE: ${{ secrets.FIGMA_FILE }}
         run: |
           chmod +x ./.github/scripts/embed.sh
           .github/scripts/embed.sh
