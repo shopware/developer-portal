@@ -30,3 +30,9 @@ src/resources/meteor-component-library/
 src/resources/meteor-component-library
 src/release-notes/
 src/release-notes
+src/nexus/
+src/nexus
+src/resources/admin-api/
+src/resources/admin-api
+src/resources/store-api/
+src/resources/store-api
