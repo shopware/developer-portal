@@ -1,0 +1,53 @@
+# Guides / Plugins / Plugins
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Administration
+
+- [Administration](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/administration/llms.txt): Browse this documentation section.
+
+## Api
+
+- [Api](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/api/llms.txt): Browse this documentation section.
+
+## Checkout
+
+- [Checkout](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/checkout/llms.txt): Browse this documentation section.
+
+## Content
+
+- [Content](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/content/llms.txt): Browse this documentation section.
+
+## Elasticsearch
+
+- [Elasticsearch](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/elasticsearch/llms.txt): Browse this documentation section.
+
+## Framework
+
+- [Framework](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/framework/llms.txt): Browse this documentation section.
+
+## In App Purchase
+
+- [In App Purchase](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/in-app-purchase/llms.txt): Browse this documentation section.
+
+## Plugin Fundamentals
+
+- [Plugin Fundamentals](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/plugin-fundamentals/llms.txt): Browse this documentation section.
+
+## Storefront
+
+- [Storefront](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/storefront/llms.txt): Browse this documentation section.
+
+## Testing
+
+- [Testing](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/testing/llms.txt): Browse this documentation section.
+
+## Pages
+
+- [Bundle](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/bundle.md): Bundle: Plugins are based on the Symfony bundle concept, but offer additional features like lifecycle events and the ability to be managed in the Shopware administration.
+- [Plugin Base Guide](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/plugin-base-guide.md): Plugin Base Guide: Plugins in Shopware are essentially an extension of Symfony bundles. Such bundles and plugins can provide their own resources like assets, controllers, services or tests, which you'll learn in the next guides.
+- [Plugins](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins.md): Plugins: Shopware plugins are extensions that enhance the functionality and features of the Shopware e-commerce platform. Plugins are designed to extend the core capabilities of Shopware and offer additional functionalities that
+- [Plugins for Symfony Developers](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/plugins-for-symfony-developers.md): Plugins for Symfony Developers: This guide serves as an entry point for developers familiar with the concepts of Symfony bundles.
+- [Redis](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/redis.md): Redis: Starting with Shopware v6.6.8.0, Redis support has been improved, giving you more flexibility in how you use it in your projects and plugins.

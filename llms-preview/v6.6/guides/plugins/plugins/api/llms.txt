@@ -1,0 +1,11 @@
+# Guides / Plugins / Plugins / Api
+
+> v6.6 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.6/llms.txt)
+
+## Pages
+
+- [API](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/api.md): API: Commercial plugins are pre-built extensions developed by third-party vendors that offer specific features and integrations. In some cases, commercial plugins may expose their own APIs, which developers can use to interac
+- [Customer-specific Pricing](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/api/customer-specific-pricing.md): Customer-specific Pricing: The Customer-specific pricing feature allows massive advances in the pricing model capabilities in the Shopware 6 ecosystem.
+- [Multi-Inventory](https://developer.shopware.com/docs/v6.6/guides/plugins/plugins/api/multi-inventory.md): Multi-Inventory: Multi-Inventory is part of the Commercial plugin available along with the Beyond plan. This feature requires:

@@ -1,0 +1,11 @@
+# Resources / References / Upgrades
+
+> v6.5 documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/docs/v6.5/llms.txt)
+
+## Pages
+
+- [Administration](https://developer.shopware.com/docs/v6.5/resources/references/upgrades/administration.md): Administration: This section contains all upgrade guides related to the Shopware Administration.
+- [Upgrades](https://developer.shopware.com/docs/v6.5/resources/references/upgrades.md): Upgrades: Software projects typically undergo changes and upgrades, for Shopware this is not different.
+- [Vue 3 upgrade](https://developer.shopware.com/docs/v6.5/resources/references/upgrades/administration/vue3.md): Vue 3 upgrade: The Shopware administration uses Vue.js 2, which will reach its end of life (EOL) on December 31st 2023. To deliver up-to-date and maintainable software, the administration will use Vue.js 3 from Shopware version 6.6 and

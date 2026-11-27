@@ -1,0 +1,18 @@
+# Guides / Installation
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Additional Devenv Options](https://developer.shopware.com/docs/guides/installation/legacy-setups/devenv-options.md): Additional Devenv Options: To enable Blackfire profiling in your Devenv setup, add the following configuration to your devenv.local.nix file:
+- [Advanced Options](https://developer.shopware.com/docs/guides/installation/advanced-options.md): Advanced Options: This section covers optional and advanced Docker configuration for Shopware projects. Refer to it once your local environment is running and you want to customize your setup, mirror production more closely, or support ad
+- [Install Shopware with Devenv](https://developer.shopware.com/docs/guides/installation/legacy-setups/devenv-setup.md): Install Shopware with Devenv: Devenv is a Nix-based tool for defining and managing fully reproducible development environments for local workstations or continuous integration (CI) systems. It works like a dependency manager for your entire developme
+- [Install Shopware with Docker](https://developer.shopware.com/docs/guides/installation/legacy-setups/docker-setup.md): Install Shopware with Docker: The Docker-based setup aims to provide a smooth onboarding experience aligned with modern development practices. By the end of this section, you will have an empty, running Shopware instance and can immediately start dev
+- [Install Shopware with Symfony CLI](https://developer.shopware.com/docs/guides/installation/legacy-setups/symfony-cli-setup.md): Install Shopware with Symfony CLI: Symfony CLI lets you run Shopware 6 locally without Docker. It's a lightweight option that uses your system’s PHP, Composer, and Node.js installations.
+- [Legacy Setups](https://developer.shopware.com/docs/guides/installation/legacy-setups.md): Legacy Setups: Legacy local development setups are documented here for reference only and are no longer recommended for new projects. Refer to Install Shopware with Docker instead.
+- [Migrate from Zip Installation to Composer Project Template](https://developer.shopware.com/docs/guides/installation/legacy-setups/migrate-zip-to-composer-project.md): Migrate from Zip Installation to Composer Project Template: This guide only applies to legacy Shopware installations created before version 6.5 using the deprecated zip distribution. For new projects, use the recommended CLI installation with Docker setup.
+- [Shopware 6 Community Edition Installation](https://developer.shopware.com/docs/guides/installation.md): Shopware 6 Community Edition Installation: The recommended way for developers to build Shopware is with the Docker setup, made simple by the Shopware CLI installation path. Docker provides a consistent, production-like environment for development. Previous instal
+- [System Requirements](https://developer.shopware.com/docs/guides/installation/system-requirements.md): System Requirements: Before setting up the Shopware 6 development environment, ensure your system meets the following requirements.
+- [Understanding Your Shopware Project](https://developer.shopware.com/docs/guides/installation/project-overview.md): Understanding Your Shopware Project: You have just installed Shopware, and this section guides you through the fundamentals you will use throughout the rest of your development workflow.

@@ -1,0 +1,15 @@
+# Guides / Plugins / Plugins / Plugin Fundamentals
+
+> main documentation section. Applicability within this branch is unknown unless a linked page says otherwise.
+
+[Branch index](https://developer.shopware.com/llms.txt)
+
+## Pages
+
+- [Add Custom CLI Commands](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/add-custom-commands.md): Add Custom CLI Commands: Shopware CLI commands are based on Symfony Console. This means that creating custom commands in Shopware plugins follows the standard Symfony approach.
+- [Add Plugin Configuration](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/add-plugin-configuration.md): Add Plugin Configuration: Shopware allows you to define a configuration page for your plugin using a config.xml file. No custom Administration module or knowledge of templating is required.
+- [Add Scheduled Task](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/add-scheduled-task.md): Add Scheduled Task: Quite often one might want to run any type of code on a regular basis, e.g. to clean up very old entries every once in a while, automatically. Usually known as "Cronjobs", Shopware 6 supports a ScheduledTask for this.
+- [Logging](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/logging.md): Logging: As a plugin developer, you may want to log certain actions or errors to a log file to aid in debugging or to keep a record of performed actions.
+- [Plugin Fundamentals](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals.md): Plugin Fundamentals: Plugin fundamentals are the building blocks for adding behavior to a Shopware plugin. Use this page to jump directly to the task you want to solve.
+- [Plugin Lifecycle Methods](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/plugin-lifecycle.md): Plugin Lifecycle Methods: When creating a Shopware plugin, you must extend the Shopware\Core\Framework\Plugin class. This extends Shopware\Core\Framework\Bundle, which in turn extends the Symfony Bundle class:
+- [Use Plugin Configuration](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/use-plugin-configuration.md): Use Plugin Configuration: The Add a Plugin Configuration Guide shows how to define configuration options in your plugins. This guide helps you to use them in your plugin, showing you how to read plugin configuration values in PHP, Administration
